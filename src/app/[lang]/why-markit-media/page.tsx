@@ -70,6 +70,14 @@ const processSteps = [
   { num: "05", title: "Reporting", desc: "Transparent dashboards and regular reports focused on revenue metrics, not vanity numbers." },
 ];
 
+const faqItems = [
+  { q: "How is Markit Media different from a freelancer?", a: "A freelancer typically covers one discipline. We provide an integrated team across strategy, creative, development, and media buying — all coordinated under a single account lead. You get agency depth with freelancer-level access." },
+  { q: "Do you specialize in a specific industry?", a: "We work across 20+ industries. Our approach is to deeply understand each client's market during discovery. This cross-industry perspective often surfaces competitive advantages that industry-only agencies miss." },
+  { q: "What size companies do you work with?", a: "From funded startups to mid-market businesses to enterprise divisions. Our engagement models flex to match your scale and stage — from project-based work to full-service retainers." },
+  { q: "How do you ensure brand consistency across channels?", a: "Every engagement starts with a brand and messaging framework. This document governs tone, visuals, and positioning across all channels so your audience gets a consistent experience whether they find you via search, social, or paid ads." },
+  { q: "Can I start with one service and expand later?", a: "Absolutely. Many clients start with one channel, see results, and expand from there. Our full-stack capability means you do not need to find another agency when you are ready to scale." },
+];
+
 export default function WhyMarkitMediaPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -78,9 +86,20 @@ export default function WhyMarkitMediaPage() {
     description: "What makes Markit Media different from typical digital marketing agencies.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Why Markit Media" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16">
@@ -192,7 +211,30 @@ export default function WhyMarkitMediaPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Cross links">
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Questions About Choosing an Agency</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {faqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16" aria-label="Cross links">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

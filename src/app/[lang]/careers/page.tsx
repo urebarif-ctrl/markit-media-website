@@ -10,9 +10,8 @@ export const metadata: Metadata = {
   description: "Join Markit Media. We are looking for talented marketers, designers, developers, and strategists to help businesses grow across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/careers" },
   openGraph: {
-    title: "Careers at Markit Media",
-    description:
-      "Join our team of marketers, designers, developers, and strategists helping businesses grow across 6 countries.",
+    title: "Careers — Markit Media",
+    description: "Join our remote-first digital marketing team.",
   },
 };
 
@@ -33,6 +32,14 @@ const departments = [
   { name: "Strategy & Analytics", roles: "Marketing strategy, data analytics, CRM consulting, and client leadership." },
 ];
 
+const careersFaqItems = [
+  { q: "Do I need to be in a specific location?", a: "We are remote-first. We hire talented people regardless of location." },
+  { q: "What tools do you use?", a: "We use industry-standard tools including Slack, Notion, Figma, Google Analytics, and various marketing platforms depending on the role." },
+  { q: "How long does the hiring process take?", a: "Typically 1-2 weeks from application to offer." },
+  { q: "Do you offer internships?", a: "Yes, we offer internship opportunities for motivated individuals looking to gain hands-on experience." },
+  { q: "What's the team size?", a: "We are a lean, agile team. Everyone has a direct impact on client outcomes." },
+];
+
 export default function CareersPage() {
   const careersSchema = {
     "@context": "https://schema.org",
@@ -41,9 +48,20 @@ export default function CareersPage() {
     description: "Join our team of digital marketing professionals.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: careersFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={careersSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Careers" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-20">
@@ -150,18 +168,91 @@ export default function CareersPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-20" aria-label="Why work at Markit Media">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Benefits</SectionLabel>
+            <SectionTitle>Why Work at Markit Media</SectionTitle>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {[
+              { title: "Remote-First Culture", desc: "Work from anywhere with flexible hours. We are built around async communication and trust, not office seats." },
+              { title: "Growth & Learning", desc: "Access to training, conferences, and skill development. We invest in your career so you keep getting better at what you do." },
+              { title: "Meaningful Work", desc: "Work on diverse projects across industries worldwide. Every engagement brings new challenges and real results." },
+              { title: "Collaborative Team", desc: "Small team, big impact. Your voice matters. Designers, developers, and marketers work side by side on every engagement." },
+            ].map((item) => (
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Our hiring process">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Hiring</SectionLabel>
+            <SectionTitle>Our Hiring Process</SectionTitle>
+            <SectionDesc>
+              Five straightforward steps from application to your first day.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="space-y-0 mt-12">
+            {[
+              { num: "01", title: "Application", desc: "Submit your portfolio and resume. We review every application within 1-2 business days." },
+              { num: "02", title: "Initial Chat", desc: "A casual conversation about your goals. We share details about the role and learn what motivates you." },
+              { num: "03", title: "Skills Assessment", desc: "A practical task relevant to the role. We want to see how you think and work, not how you interview." },
+              { num: "04", title: "Team Interview", desc: "Meet the team you would work with. Ask questions, get a feel for the people and the work." },
+              { num: "05", title: "Offer", desc: "We move fast when we find the right fit. Clear terms, fair compensation, and a start date that works." },
+            ].map((step) => (
+              <div key={step.num} className="flex gap-6 py-8 border-b border-gray-200">
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/10 flex-shrink-0 leading-none w-10">{step.num}</span>
+                <div>
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{step.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions</SectionTitle>
+          </Animate>
+          <div className="mt-12">
+            {careersFaqItems.map((item, i) => (
+              <Animate key={item.q} animation="fade-up" delay={i * 60}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-12" aria-label="Learn more">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <p className="text-base text-gray-500 mb-4">Learn more about who we are and how we work:</p>
             <div className="flex flex-wrap gap-3">
               {[
-                { label: "About Us", href: "/about" },
-                { label: "Our Approach", href: "/approach" },
+                { label: "About", href: "/about" },
+                { label: "Contact", href: "/contact" },
                 { label: "Our Process", href: "/process" },
-                { label: "Why Markit Media", href: "/why-markit-media" },
+                { label: "Our Work", href: "/work" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

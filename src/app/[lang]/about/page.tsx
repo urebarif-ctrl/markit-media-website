@@ -71,6 +71,14 @@ const locations = [
 ];
 
 export default function AboutPage() {
+  const faqItems = [
+    { q: "What kind of businesses does Markit Media work with?", a: "We work with businesses of all sizes across 20+ industries, from startups building their first digital presence to established companies scaling their marketing operations. Our services adapt to your stage, goals, and budget." },
+    { q: "Where is Markit Media based?", a: "We serve clients across six countries: the United States, Canada, United Arab Emirates, United Kingdom, Australia, and Saudi Arabia. Our team works remotely, allowing us to provide flexible support across time zones." },
+    { q: "What makes Markit Media different from other agencies?", a: "We are a full-stack agency, meaning we handle everything from strategy through execution across all digital channels. You work directly with senior marketers who execute your campaigns, not junior account managers relaying messages." },
+    { q: "How do I get started with Markit Media?", a: "Start with a free consultation. We will discuss your business goals, current marketing efforts, and competitive landscape. From there, we provide a tailored recommendation and proposal. No obligation, no pressure." },
+    { q: "Do you offer month-to-month contracts?", a: "Yes. We offer flexible month-to-month agreements for retainer clients. We believe in earning your business every month, not locking you into long-term contracts." },
+  ];
+
   const aboutSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -85,9 +93,20 @@ export default function AboutPage() {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={aboutSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
@@ -375,6 +394,51 @@ export default function AboutPage() {
               </span>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Common Questions About Working With Us</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {faqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Our Services", href: "/services" },
+                { label: "Our Process", href: "/process" },
+                { label: "Case Studies", href: "/case-studies" },
+                { label: "Industries", href: "/industries" },
+                { label: "Careers", href: "/careers" },
+                { label: "Contact Us", href: "/contact" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Animate>
         </div>
       </section>
 

@@ -33,6 +33,21 @@ const approach = [
   { step: "05", title: "Reporting", desc: "Transparent dashboards and regular reports show exactly where your budget goes and what it produces." },
 ];
 
+const principles = [
+  { title: "Research First", desc: "Every project starts with understanding your market, audience, and competition before we write a single line of code or copy." },
+  { title: "Strategy-Led Execution", desc: "We don’t just build — we build with purpose. Every decision ties back to your business objectives." },
+  { title: "Transparent Collaboration", desc: "You see the work as it happens. Regular updates, shared dashboards, and open communication throughout." },
+  { title: "Measurable Outcomes", desc: "We define success metrics at the start and report against them. No vanity metrics, only numbers that matter." },
+];
+
+const faqItems = [
+  { q: "What industries do you work with?", a: "We work across 20+ industries including e-commerce, healthcare, real estate, SaaS, hospitality, and professional services. See our Industries page for the full list." },
+  { q: "How long does a typical project take?", a: "It depends on scope. A landing page might take 1–2 weeks; a full website with marketing strategy can take 6–12 weeks. We provide a timeline during discovery." },
+  { q: "Do you work with startups or only established businesses?", a: "Both. We work with startups looking to establish their digital presence and established businesses looking to scale. Our approach adapts to your stage." },
+  { q: "Can I see examples of your work?", a: "Our portfolio showcases select projects. For more specific examples relevant to your industry, reach out and we’ll share relevant case studies." },
+  { q: "What happens after the project launches?", a: "We offer ongoing retainer support for marketing, optimization, and growth. Many of our project clients transition to retainer partnerships." },
+];
+
 export default function WorkPage() {
   const workSchema = {
     "@context": "https://schema.org",
@@ -41,9 +56,20 @@ export default function WorkPage() {
     description: "Portfolio of digital marketing work by Markit Media.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={workSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-20">
@@ -133,15 +159,56 @@ export default function WorkPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-20" aria-label="Our approach to every project">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Our Principles</SectionLabel>
+            <SectionTitle>Our Approach to Every Project</SectionTitle>
+            <SectionDesc>
+              These four principles guide how we work, regardless of scope, industry, or channel.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {principles.map((item) => (
+              <div key={item.title} className="bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Work FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Common Questions</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {faqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-3">
               {[
-                { label: "Case Studies", href: "/case-studies" },
+                { label: "Industries", href: "/industries" },
                 { label: "Our Process", href: "/process" },
-                { label: "How We Measure Results", href: "/results" },
-                { label: "Industries We Serve", href: "/industries" },
+                { label: "Case Studies", href: "/case-studies" },
                 { label: "Get a Quote", href: "/get-a-quote" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
