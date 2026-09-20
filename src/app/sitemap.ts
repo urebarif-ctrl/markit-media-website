@@ -48,6 +48,7 @@ const staticPages = [
   "/resources/utm-builder",
   "/resources/contrast-checker",
   "/resources/image-size-guide",
+  "/resources/keyword-density-checker",
   "/tools",
   "/approach",
   "/pricing",

@@ -181,6 +181,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Keyword Density Checker",
+    desc: "Analyze your content for keyword frequency and density. Paste your text and get instant SEO insights with density percentages and recommendations.",
+    href: "/resources/keyword-density-checker",
+    count: "Interactive tool",
+  },
+  {
     title: "Competitor Analysis",
     desc: "Map out your competitive landscape with this interactive worksheet. Compare up to 6 competitors across strategy, channels, and positioning.",
     href: "/resources/competitor-analysis",

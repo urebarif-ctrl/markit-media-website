@@ -127,7 +127,7 @@ export default function LocationsPage() {
               { title: "Multi-Language Capability", desc: "We create campaigns in English, Arabic, and Urdu, with native-speaking specialists who understand cultural nuance." },
               { title: "Single Point of Contact", desc: "One team manages all your markets. No fragmented vendor relationships, no conflicting strategies." },
             ].map((item) => (
-              <div key={item.title} className="bg-white p-8 border border-gray-200">
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>

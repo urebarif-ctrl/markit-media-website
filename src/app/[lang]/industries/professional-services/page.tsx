@@ -251,7 +251,7 @@ export default function ProfessionalServicesPage() {
             {challenges.map((c, i) => (
               <Animate key={i} animation="fade-up" delay={i * 50}>
                 <li className="flex items-start gap-4 py-3 border-b border-gray-200">
-                  <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                  <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold">
                     {i + 1}
                   </span>
                   <div>
@@ -287,7 +287,7 @@ export default function ProfessionalServicesPage() {
             {results.map((r, i) => (
               <Animate key={i} animation="fade-up" delay={i * 50}>
                 <li className="flex items-start gap-4 py-3 border-b border-gray-200">
-                  <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                  <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold">
                     {i + 1}
                   </span>
                   <div>

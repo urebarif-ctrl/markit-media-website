@@ -191,7 +191,7 @@ export default async function HomePage() {
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col">
+                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-6 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="w-12 h-12 bg-black text-white flex items-center justify-center mb-4">
                     <Icon size={22} strokeWidth={2} aria-hidden="true" />
                   </div>
@@ -224,7 +224,7 @@ export default async function HomePage() {
             {industries.map((ind) => {
               const Icon = ind.icon;
               return (
-                <Link key={ind.href} href={ind.href} className="group border border-gray-200 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 text-center">
+                <Link key={ind.href} href={ind.href} className="group border border-gray-200 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="w-14 h-14 bg-gray-100 group-hover:bg-black group-hover:text-white text-gray-500 flex items-center justify-center mx-auto mb-4 transition-colors">
                     <Icon size={24} strokeWidth={2} aria-hidden="true" />
                   </div>
@@ -289,7 +289,7 @@ export default async function HomePage() {
               { title: "Transparent Reporting", desc: "Clear dashboards and regular reports show exactly where your budget goes and what results it produces." },
               { title: "Flexible Engagements", desc: "No cookie-cutter packages. We build custom plans around your goals, budget, and timeline." },
             ].map((item) => (
-              <div key={item.title} className="p-8 bg-white border border-gray-200">
+              <div key={item.title} className="p-8 bg-white border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>
@@ -364,7 +364,7 @@ export default async function HomePage() {
               { title: "E-commerce Growth", desc: "Shopify or WooCommerce optimization, product feed management, Google Shopping, and conversion rate optimization.", budget: "Ongoing retainer" },
               { title: "Fractional CMO", desc: "Senior marketing leadership for businesses that need strategic direction without a full-time executive hire.", budget: "Monthly advisory" },
             ].map((item) => (
-              <div key={item.title} className="bg-white border border-gray-200 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+              <div key={item.title} className="bg-white border border-gray-200 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed mb-3">{item.desc}</p>
                 <span className="text-base font-medium text-gray-400">{item.budget}</span>
@@ -400,7 +400,7 @@ export default async function HomePage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group border border-gray-200 hover:border-black/30 transition-all flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
                   {post.cover_image ? (
