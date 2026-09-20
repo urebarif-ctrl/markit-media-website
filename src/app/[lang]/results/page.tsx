@@ -45,6 +45,13 @@ const reportingCadence = [
   { freq: "Quarterly", desc: "Deep-dive business reviews covering ROI analysis, market trends, competitive positioning, and strategy refinement.", type: "Executive" },
 ];
 
+const resultsFaqItems = [
+  { q: "What KPIs should I track for digital marketing?", a: "The right KPIs depend on your goals. For lead generation, track cost per acquisition and lead quality score. For e-commerce, focus on ROAS and customer lifetime value. For brand awareness, monitor organic traffic growth and engagement rates. We help you define the right KPIs during discovery." },
+  { q: "How often will I receive performance reports?", a: "You get weekly performance snapshots, monthly comprehensive reports with strategic recommendations, and quarterly executive reviews with deep-dive ROI analysis. You also have real-time dashboard access at all times." },
+  { q: "What is the difference between vanity metrics and actionable metrics?", a: "Vanity metrics look impressive but do not drive decisions — like total page views or follower count. Actionable metrics connect to revenue — like conversion rate, cost per acquisition, and ROAS. We track both but optimize for the ones that impact your bottom line." },
+  { q: "Can I see campaign performance in real time?", a: "Yes. We provide live dashboard access through platforms like Looker Studio, Google Analytics 4, and platform-specific dashboards. You never have to wait for a report to know how your campaigns are performing." },
+];
+
 export default function ResultsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -53,9 +60,20 @@ export default function ResultsPage() {
     description: "Our transparent reporting framework for measuring marketing performance.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: resultsFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Results" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16">
@@ -184,6 +202,29 @@ export default function ResultsPage() {
               </div>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Results FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Questions About Reporting and Results</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {resultsFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

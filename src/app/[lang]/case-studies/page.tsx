@@ -196,7 +196,24 @@ const caseStudies = [
   },
 ];
 
+const caseStudyFaqItems = [
+  { q: "Are these real client projects?", a: "Yes. Every case study represents a real engagement with a real business. We share the industry, the challenge, and the approach we took. Specific client names and detailed metrics are shared only with their permission — contact us for more details on any case study." },
+  { q: "Can I see results specific to my industry?", a: "If your industry is listed on our Industries page, we likely have relevant experience. Reach out and we will share case studies and insights specific to your vertical and business model." },
+  { q: "How do you measure success in a case study?", a: "We define success metrics at the start of every engagement — typically revenue growth, lead volume, cost per acquisition, or traffic growth. Our case studies report against the KPIs that were agreed upon, not cherry-picked vanity metrics." },
+  { q: "How long do these campaigns typically take to show results?", a: "Paid advertising campaigns can show initial results within the first week. SEO and content marketing campaigns typically take 3-6 months to show meaningful organic growth. Branding and web development projects have defined timelines based on scope." },
+];
+
 export default function CaseStudiesPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: caseStudyFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   const caseStudiesSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -209,6 +226,7 @@ export default function CaseStudiesPage() {
   return (
     <article>
       <JsonLd data={caseStudiesSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[{ label: "Home", href: "/" }, { label: "Case Studies" }]}
       />
@@ -371,6 +389,50 @@ export default function CaseStudiesPage() {
               <Link href="/industries" className="border border-black bg-black text-white px-4 py-2 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All Industries &rarr;
               </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Case studies FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Questions About Our Work</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {caseStudyFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Our Services", href: "/services" },
+                { label: "Our Process", href: "/process" },
+                { label: "Results & Reporting", href: "/results" },
+                { label: "Industries", href: "/industries" },
+                { label: "Get a Quote", href: "/get-a-quote" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </Animate>
         </div>
