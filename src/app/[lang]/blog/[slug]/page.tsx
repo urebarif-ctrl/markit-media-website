@@ -111,8 +111,8 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
 const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   SEO: [
     { label: "SEO Health Check", href: "/resources/seo-checklist" },
-    { label: "Website Grader", href: "/resources/website-grader" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+    { label: "Content Brief Generator", href: "/resources/content-brief" },
+    { label: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
     { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
   ],
   "Performance Marketing": [
@@ -124,12 +124,12 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   "Social Media": [
     { label: "Social Media Audit", href: "/resources/social-media-audit" },
     { label: "Social Media ROI Calculator", href: "/resources/social-media-roi" },
-    { label: "Social Media Planner", href: "/resources/social-media-planner" },
+    { label: "Influencer ROI Calculator", href: "/resources/influencer-roi" },
     { label: "Hashtag Generator", href: "/resources/hashtag-generator" },
   ],
   "Content Marketing": [
     { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
-    { label: "Content Calendar", href: "/resources/content-calendar" },
+    { label: "Content Brief Generator", href: "/resources/content-brief" },
     { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
     { label: "Readability Checker", href: "/resources/readability-checker" },
   ],
@@ -155,7 +155,7 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
     { label: "Brand Name Generator", href: "/resources/brand-name-generator" },
     { label: "Color Palette Generator", href: "/resources/color-palette-generator" },
-    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+    { label: "Social Proof Strategy Builder", href: "/resources/social-proof-guide" },
   ],
   "Video Marketing": [
     { label: "Social Media Planner", href: "/resources/social-media-planner" },
@@ -196,8 +196,8 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   Strategy: [
     { label: "SWOT Analysis", href: "/resources/swot-analysis" },
     { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
-    { label: "Persona Builder", href: "/resources/persona-builder" },
-    { label: "CLV Calculator", href: "/resources/clv-calculator" },
+    { label: "Competitive Gap Analyzer", href: "/resources/competitive-gap" },
+    { label: "Marketing Maturity Assessment", href: "/resources/marketing-maturity" },
   ],
   "Local SEO": [
     { label: "SEO Health Check", href: "/resources/seo-checklist" },
@@ -214,8 +214,8 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   "Digital Marketing": [
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
-    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
-    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "KPI Dashboard Builder", href: "/resources/kpi-dashboard" },
+    { label: "Marketing Maturity Assessment", href: "/resources/marketing-maturity" },
   ],
   PPC: [
     { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
