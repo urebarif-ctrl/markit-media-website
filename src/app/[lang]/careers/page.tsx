@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Careers",
   description: "Join Markit Media. We are looking for talented marketers, designers, developers, and strategists to help businesses grow across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/careers" },
+  openGraph: {
+    title: "Careers at Markit Media",
+    description:
+      "Join our team of marketers, designers, developers, and strategists helping businesses grow across 6 countries.",
+  },
 };
 
 const perks = [

@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Locations — Markets We Serve",
   description: "Markit Media serves clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia with full-stack digital marketing services.",
   alternates: { canonical: "https://themarkitmedia.com/en/locations" },
+  openGraph: {
+    title: "Markets We Serve",
+    description: "Digital marketing services across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
+  },
 };
 
 const locations = [

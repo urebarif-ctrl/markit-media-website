@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Tools & Platforms — Technology We Use",
   description: "The platforms, tools, and technology stack we use to deliver data-driven marketing results. Google, Meta, HubSpot, Shopify, WordPress, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/tools" },
+  openGraph: {
+    title: "Tools & Platforms We Use",
+    description: "Google, Meta, HubSpot, Shopify, WordPress, and more — the tools behind our results.",
+  },
 };
 
 const categories = [

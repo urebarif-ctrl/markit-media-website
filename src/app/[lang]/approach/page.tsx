@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: "Our Approach — How We Drive Marketing Results",
   description: "Learn how Markit Media approaches digital marketing: our methodology, frameworks, and the principles behind every campaign we run.",
   alternates: { canonical: "https://themarkitmedia.com/en/approach" },
+  openGraph: {
+    title: "Our Approach to Digital Marketing",
+    description:
+      "The methodology, frameworks, and principles behind every campaign we run. Business goals first, then tactics.",
+  },
 };
 
 const pillars = [

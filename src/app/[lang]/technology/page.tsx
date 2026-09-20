@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Technology Stack — Platforms & Tools We Use",
   description: "Explore the platforms, tools, and technologies Markit Media uses to plan, execute, and measure digital marketing campaigns.",
   alternates: { canonical: "https://themarkitmedia.com/en/technology" },
+  openGraph: {
+    title: "Our Technology Stack",
+    description: "The platforms and tools we use to plan, execute, and measure digital marketing campaigns.",
+  },
 };
 
 const categories = [

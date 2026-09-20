@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Industries We Serve",
   description: "Specialized digital marketing for 20 industries: home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries" },
+  openGraph: {
+    title: "Industries We Serve",
+    description:
+      "Specialized digital marketing for 20+ industries including e-commerce, healthcare, real estate, SaaS, and more.",
+  },
 };
 
 const industries = [

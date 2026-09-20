@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   title: "Get a Free Quote",
   description: "Request a free digital marketing quote. Tell us about your business and goals, and we'll build a custom proposal within 2 business days.",
   alternates: { canonical: "https://themarkitmedia.com/en/get-a-quote" },
+  openGraph: {
+    title: "Get a Free Marketing Quote",
+    description: "Tell us your goals and get a custom digital marketing proposal within 2 business days.",
+  },
 };
 
 const steps = [

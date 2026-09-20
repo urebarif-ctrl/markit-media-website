@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "Our Capabilities",
   description: "Full-service digital marketing capabilities: SEO, PPC, social media, branding, web development, AI, video production, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/capabilities" },
+  openGraph: {
+    title: "Our Marketing Capabilities",
+    description:
+      "Full-service digital marketing: SEO, PPC, social media, branding, web development, AI, and video production.",
+  },
 };
 
 const capabilities = [

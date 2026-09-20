@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   title: "Services",
   description: "Explore Markit Media's full-stack digital marketing services: SEO, PPC, social media, web development, branding, video, AI, email, content, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/services" },
+  openGraph: {
+    title: "Digital Marketing Services",
+    description:
+      "Full-stack digital marketing: SEO, PPC, social media, web development, branding, video, AI, email, and content.",
+  },
 };
 
 const serviceCategories = [

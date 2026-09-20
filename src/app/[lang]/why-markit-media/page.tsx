@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Why Markit Media — What Makes Us Different",
   description: "Learn what sets Markit Media apart: senior talent, full-stack execution, transparent reporting, and data-driven marketing across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/why-markit-media" },
+  openGraph: {
+    title: "Why Choose Markit Media",
+    description: "Senior talent, full-stack execution, transparent reporting, and data-driven marketing across 6 countries.",
+  },
 };
 
 const comparisons = [

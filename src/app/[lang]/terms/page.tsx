@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms of service for Markit Media digital marketing services.",
   alternates: { canonical: "https://themarkitmedia.com/en/terms" },
+  openGraph: {
+    title: "Terms of Service",
+    description: "Terms of service for Markit Media digital marketing services.",
+  },
 };
 
 export default function TermsPage() {

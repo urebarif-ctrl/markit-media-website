@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Blog — Digital Marketing Insights",
   description: "Expert insights on SEO, paid advertising, social media, branding, web development, and digital marketing strategy from Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/blog" },
+  openGraph: {
+    title: "Markit Media Blog",
+    description:
+      "Expert insights on SEO, paid ads, social media, branding, and digital marketing strategy.",
+  },
 };
 
 export default function BlogPage() {

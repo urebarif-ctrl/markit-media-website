@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Platform Partnerships",
   description: "Markit Media works with leading advertising, analytics, and development platforms to deliver integrated digital marketing solutions.",
   alternates: { canonical: "https://themarkitmedia.com/en/partners" },
+  openGraph: {
+    title: "Our Platform Partnerships",
+    description: "We work with leading advertising, analytics, and development platforms to deliver results.",
+  },
 };
 
 const platformPartners = [

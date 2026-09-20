@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Pricing — How We Structure Our Engagements",
   description: "Learn how Markit Media structures pricing for digital marketing services. Custom quotes based on your goals, scope, and budget.",
   alternates: { canonical: "https://themarkitmedia.com/en/pricing" },
+  openGraph: {
+    title: "Pricing — Markit Media",
+    description:
+      "Custom digital marketing pricing based on your goals, scope, and budget. Retainer, project, and performance models.",
+  },
 };
 
 const pricingModels = [

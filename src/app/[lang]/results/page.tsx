@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "How We Measure Results",
   description: "Learn how Markit Media measures, reports, and optimizes marketing performance. Our transparent reporting framework keeps you informed at every step.",
   alternates: { canonical: "https://themarkitmedia.com/en/results" },
+  openGraph: {
+    title: "How We Measure Results",
+    description:
+      "Transparent reporting on marketing performance — revenue metrics, traffic, conversions, and channel results.",
+  },
 };
 
 const kpiCategories = [

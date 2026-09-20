@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Resources — Digital Marketing Guides & Tools",
   description: "Free digital marketing resources: blog articles, glossary, checklists, and guides to help you grow your business online.",
   alternates: { canonical: "https://themarkitmedia.com/en/resources" },
+  openGraph: {
+    title: "Free Marketing Resources",
+    description:
+      "Blog articles, glossary, checklists, ROI calculator, and guides to help you grow your business online.",
+  },
 };
 
 const resources = [

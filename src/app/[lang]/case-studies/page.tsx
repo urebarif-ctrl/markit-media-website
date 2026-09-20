@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description:
     "Measurable marketing results across industries. Case studies in SEO, PPC, branding, web development, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/case-studies" },
+  openGraph: {
+    title: "Case Studies — Markit Media",
+    description:
+      "Measurable marketing results across industries — SEO, PPC, branding, web development, and more.",
+  },
 };
 
 const serviceFilters = [

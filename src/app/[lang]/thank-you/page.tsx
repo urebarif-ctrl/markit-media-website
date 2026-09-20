@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Thank You — We'll Be in Touch",
   description: "Thank you for contacting Markit Media. We will respond within one business day.",
   robots: { index: false, follow: true },
+  openGraph: {
+    title: "Thank You",
+    description: "Thanks for reaching out. We will respond within one business day.",
+  },
 };
 
 export default function ThankYouPage() {

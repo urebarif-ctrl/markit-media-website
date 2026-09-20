@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Our Work",
   description: "See how Markit Media helps businesses grow through digital marketing, website development, branding, and creative production across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/work" },
+  openGraph: {
+    title: "Our Work — Markit Media",
+    description:
+      "See how we help businesses grow through digital marketing, web development, branding, and creative production.",
+  },
 };
 
 const capabilities = [
