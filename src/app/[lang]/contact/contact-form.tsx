@@ -66,7 +66,7 @@ export function ContactForm() {
     }
   }
 
-  const inputClass = "w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none";
+  const inputClass = "w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none min-h-[44px]";
   const labelClass = "block text-base font-bold text-black uppercase tracking-wide mb-2";
 
   return (
@@ -150,7 +150,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={state.status === "sending"}
-            className="mt-6 w-full bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+            className="mt-6 w-full bg-black text-white px-8 py-4 font-bold text-base min-h-[44px] hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
             {state.status === "sending" ? "Sending..." : "Send Message"}
           </button>
