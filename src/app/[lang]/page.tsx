@@ -465,6 +465,8 @@ export default async function HomePage() {
               { title: "Persona Builder", desc: "Build detailed buyer personas for your marketing strategy.", href: "/resources/persona-builder" },
               { title: "Color Palette", desc: "Generate brand color palettes with WCAG contrast ratios.", href: "/resources/color-palette-generator" },
               { title: "Content Calendar", desc: "Generate a weekly content calendar by industry and channels.", href: "/resources/content-calendar" },
+              { title: "Social Media ROI", desc: "Calculate the ROI of your social media marketing investment.", href: "/resources/social-media-roi" },
+              { title: "SWOT Analysis", desc: "Build a SWOT analysis with strategy recommendations.", href: "/resources/swot-analysis" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

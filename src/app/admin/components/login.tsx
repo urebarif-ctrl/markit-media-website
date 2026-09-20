@@ -55,7 +55,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+              className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="admin@markitmedia.com"
             />
           </div>
@@ -67,7 +67,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+              className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="••••••••"
             />
           </div>

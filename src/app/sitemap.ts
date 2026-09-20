@@ -60,6 +60,8 @@ const staticPages = [
   "/resources/persona-builder",
   "/resources/color-palette-generator",
   "/resources/content-calendar",
+  "/resources/social-media-roi",
+  "/resources/swot-analysis",
   "/tools",
   "/approach",
   "/pricing",

@@ -289,6 +289,18 @@ const resources = [
     count: "5 palette types",
   },
   {
+    title: "Social Media ROI Calculator",
+    desc: "Calculate the return on investment of your social media marketing. Enter your spend, engagement, and conversion data for instant ROI analysis.",
+    href: "/resources/social-media-roi",
+    count: "Interactive tool",
+  },
+  {
+    title: "SWOT Analysis",
+    desc: "Build a complete SWOT analysis with strengths, weaknesses, opportunities, and threats. Get strategy recommendations based on your inputs.",
+    href: "/resources/swot-analysis",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

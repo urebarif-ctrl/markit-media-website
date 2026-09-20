@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getPublishedPosts(100);
+  const posts = getPublishedPosts(200);
   const dbCategories = getAllCategories();
   const categories = ["All", ...dbCategories];
 
@@ -47,7 +47,7 @@ export default function BlogPage() {
               Digital Marketing Insights
             </h1>
             <SectionDesc>
-              Expert perspectives on SEO, advertising, social media, branding, and growth strategy.
+              {posts.length}+ articles on SEO, advertising, social media, branding, web development, and growth strategy.
             </SectionDesc>
           </Animate>
         </div>

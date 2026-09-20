@@ -139,7 +139,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                   const title = e.target.value;
                   setEditing((p) => p ? { ...p, title, slug: p.isNew ? generateSlug(title) : p.slug } : null);
                 }}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
               />
             </div>
             <div>
@@ -148,7 +148,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                 type="text"
                 value={editing.slug}
                 onChange={(e) => setEditing((p) => p ? { ...p, slug: e.target.value } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
               />
             </div>
           </div>
@@ -159,7 +159,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
               value={editing.excerpt}
               onChange={(e) => setEditing((p) => p ? { ...p, excerpt: e.target.value } : null)}
               rows={2}
-              className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none resize-y"
+              className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none resize-y"
             />
           </div>
 
@@ -209,7 +209,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                   value={editing.content}
                   onChange={(e) => setEditing((p) => p ? { ...p, content: e.target.value } : null)}
                   rows={18}
-                  className="w-full border border-gray-300 px-4 py-3 text-base font-mono focus:border-black focus:outline-none resize-y"
+                  className="w-full border border-gray-300 px-4 py-3 text-base font-mono focus-visible:border-black focus-visible:outline-none resize-y"
                 />
               </>
             ) : (
@@ -228,7 +228,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                 list="category-options"
                 value={editing.category}
                 onChange={(e) => setEditing((p) => p ? { ...p, category: e.target.value } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. SEO, Marketing"
               />
               <datalist id="category-options">
@@ -241,7 +241,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                 type="text"
                 value={editing.author}
                 onChange={(e) => setEditing((p) => p ? { ...p, author: e.target.value } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
               />
             </div>
             <div>
@@ -250,7 +250,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                 type="number"
                 value={editing.reading_time}
                 onChange={(e) => setEditing((p) => p ? { ...p, reading_time: Number(e.target.value) } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
               />
             </div>
           </div>
@@ -262,7 +262,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                 type="text"
                 value={editing.cover_image}
                 onChange={(e) => setEditing((p) => p ? { ...p, cover_image: e.target.value } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="/uploads/blog/image.jpg"
               />
             </div>
@@ -271,7 +271,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
               <select
                 value={editing.status}
                 onChange={(e) => setEditing((p) => p ? { ...p, status: e.target.value } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base bg-white focus:border-black focus:outline-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base bg-white focus-visible:border-black focus-visible:outline-none"
               >
                 <option value="draft">Draft</option>
                 <option value="published">Published</option>
@@ -289,7 +289,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                   type="text"
                   value={editing.meta_title}
                   onChange={(e) => setEditing((p) => p ? { ...p, meta_title: e.target.value } : null)}
-                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black focus:outline-none"
+                  className="w-full border border-gray-300 px-4 py-2 text-sm focus-visible:border-black focus-visible:outline-none"
                   placeholder="Leave empty to use post title"
                 />
                 <span className="text-xs text-gray-400 mt-1 block">{editing.meta_title.length}/60</span>
@@ -300,7 +300,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                   value={editing.meta_description}
                   onChange={(e) => setEditing((p) => p ? { ...p, meta_description: e.target.value } : null)}
                   rows={2}
-                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black focus:outline-none resize-y"
+                  className="w-full border border-gray-300 px-4 py-2 text-sm focus-visible:border-black focus-visible:outline-none resize-y"
                   placeholder="Leave empty to use post excerpt"
                 />
                 <span className="text-xs text-gray-400 mt-1 block">{editing.meta_description.length}/160</span>
@@ -311,7 +311,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                   type="text"
                   value={editing.og_image}
                   onChange={(e) => setEditing((p) => p ? { ...p, og_image: e.target.value } : null)}
-                  className="w-full border border-gray-300 px-4 py-2 text-sm focus:border-black focus:outline-none"
+                  className="w-full border border-gray-300 px-4 py-2 text-sm focus-visible:border-black focus-visible:outline-none"
                   placeholder="/uploads/blog/og-image.jpg"
                 />
               </div>
