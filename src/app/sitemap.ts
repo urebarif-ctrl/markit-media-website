@@ -68,6 +68,8 @@ const staticPages = [
   "/resources/migration-checklist",
   "/resources/social-media-audit",
   "/resources/pricing-calculator",
+  "/resources/cro-audit",
+  "/resources/email-deliverability",
   "/tools",
   "/approach",
   "/pricing",

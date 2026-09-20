@@ -342,6 +342,18 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "CRO Audit Checklist",
+    desc: "A 20-point conversion rate optimization audit across technical performance, above-the-fold design, copy, and forms/CTAs. Instant grading with priority fixes.",
+    href: "/resources/cro-audit",
+    count: "20-point audit",
+  },
+  {
+    title: "Email Deliverability Checker",
+    desc: "Assess your email deliverability health across authentication, list hygiene, content quality, and sending practices. Priority action plan included.",
+    href: "/resources/email-deliverability",
+    count: "20-point checklist",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

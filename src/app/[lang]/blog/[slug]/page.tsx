@@ -134,21 +134,21 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Readability Checker", href: "/resources/readability-checker" },
   ],
   "Email Marketing": [
+    { label: "Email Deliverability Checker", href: "/resources/email-deliverability" },
     { label: "Email ROI Calculator", href: "/resources/email-roi-calculator" },
     { label: "Email Subject Line Tester", href: "/resources/email-subject-tester" },
     { label: "Email Campaign Planner", href: "/resources/email-campaign-planner" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
   ],
   "Web Design": [
+    { label: "CRO Audit", href: "/resources/cro-audit" },
     { label: "Website Grader", href: "/resources/website-grader" },
     { label: "Migration Checklist", href: "/resources/migration-checklist" },
     { label: "Website Speed Assessment", href: "/resources/speed-test" },
-    { label: "SEO Health Check", href: "/resources/seo-checklist" },
   ],
   "Web Development": [
+    { label: "CRO Audit", href: "/resources/cro-audit" },
     { label: "Website Grader", href: "/resources/website-grader" },
     { label: "Migration Checklist", href: "/resources/migration-checklist" },
-    { label: "Website Speed Assessment", href: "/resources/speed-test" },
     { label: "Schema Markup Generator", href: "/resources/schema-generator" },
   ],
   Branding: [
