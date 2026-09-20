@@ -372,6 +372,24 @@ const resources = [
     count: "Interactive worksheet",
   },
   {
+    title: "SEO Content Brief Generator",
+    desc: "Generate a complete SEO content brief with suggested title, heading structure, content outline, internal linking recommendations, and SEO checklist.",
+    href: "/resources/content-brief",
+    count: "Interactive tool",
+  },
+  {
+    title: "Social Proof Strategy Builder",
+    desc: "Develop your social proof strategy by business type. Get a social proof score, priority types to develop, placement recommendations, and a 90-day plan.",
+    href: "/resources/social-proof-guide",
+    count: "Interactive guide",
+  },
+  {
+    title: "Marketing KPI Dashboard Builder",
+    desc: "Define the right KPIs for your marketing dashboard based on business goals, active channels, budget, and stage. Channel-specific benchmarks included.",
+    href: "/resources/kpi-dashboard",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
