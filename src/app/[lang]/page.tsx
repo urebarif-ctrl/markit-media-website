@@ -435,7 +435,7 @@ export default async function HomePage() {
               { title: "Headline Analyzer", desc: "Test your blog titles, ad copy, and email subjects for impact.", href: "/resources/headline-analyzer" },
               { title: "ROI Calculator", desc: "Estimate your digital marketing return on investment.", href: "/resources/roi-calculator" },
               { title: "Website Grader", desc: "Score your website across performance, SEO, and UX.", href: "/resources/website-grader" },
-              { title: "Marketing Stats 2025", desc: "45+ data points across SEO, PPC, social, and email.", href: "/resources/marketing-statistics" },
+              { title: "Marketing Stats 2026", desc: "35+ benchmarks across SEO, PPC, social, email, and AI.", href: "/resources/marketing-statistics-2026" },
               { title: "Meta Description Tool", desc: "Write and optimize meta descriptions for better CTR.", href: "/resources/meta-description-generator" },
               { title: "Social Share Preview", desc: "See how your links look on Facebook, Twitter, and LinkedIn.", href: "/resources/og-preview" },
               { title: "Budget Calculator", desc: "Get a recommended channel allocation for your budget.", href: "/resources/budget-calculator" },
@@ -443,6 +443,10 @@ export default async function HomePage() {
               { title: "Email Subject Tester", desc: "Test your subject lines for deliverability and engagement.", href: "/resources/email-subject-tester" },
               { title: "Brand Name Generator", desc: "Get instant brand name ideas for your business.", href: "/resources/brand-name-generator" },
               { title: "Competitor Analysis", desc: "Map your competitive landscape with our interactive worksheet.", href: "/resources/competitor-analysis" },
+              { title: "UTM Link Builder", desc: "Generate tracked URLs for your marketing campaigns.", href: "/resources/utm-builder" },
+              { title: "Contrast Checker", desc: "Test color combinations for WCAG accessibility compliance.", href: "/resources/contrast-checker" },
+              { title: "Marketing Trends 2026", desc: "10 shifts shaping digital marketing this year.", href: "/resources/marketing-trends-2026" },
+              { title: "Speed Assessment", desc: "Score your website speed with prioritized recommendations.", href: "/resources/speed-test" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

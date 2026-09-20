@@ -193,6 +193,18 @@ const resources = [
     count: "8-point assessment",
   },
   {
+    title: "UTM Link Builder",
+    desc: "Generate UTM-tagged URLs for your marketing campaigns. Track which channels, campaigns, and creatives drive results in Google Analytics.",
+    href: "/resources/utm-builder",
+    count: "Interactive tool",
+  },
+  {
+    title: "Color Contrast Checker",
+    desc: "Check if your text and background colors meet WCAG accessibility standards. Live preview with AA and AAA compliance results.",
+    href: "/resources/contrast-checker",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

@@ -44,6 +44,8 @@ const staticPages = [
   "/resources/email-subject-tester",
   "/resources/marketing-budget-planner",
   "/resources/speed-test",
+  "/resources/utm-builder",
+  "/resources/contrast-checker",
   "/tools",
   "/approach",
   "/pricing",
