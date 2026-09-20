@@ -205,6 +205,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Image Size Guide",
+    desc: "Complete reference for image dimensions across Facebook, Instagram, LinkedIn, X, YouTube, Google Ads, and website SEO.",
+    href: "/resources/image-size-guide",
+    count: "7 platforms",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

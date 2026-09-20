@@ -46,6 +46,7 @@ const staticPages = [
   "/resources/speed-test",
   "/resources/utm-builder",
   "/resources/contrast-checker",
+  "/resources/image-size-guide",
   "/tools",
   "/approach",
   "/pricing",

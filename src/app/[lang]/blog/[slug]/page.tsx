@@ -8,6 +8,193 @@ import { getPostBySlug, getRelatedPosts, getAllPublishedSlugs } from "@/lib/blog
 import { ShareControls } from "./share-controls";
 import { ReadingProgress } from "@/components/reading-progress";
 
+/* ── Category-to-service mapping ─────────────────────────── */
+const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
+  SEO: [
+    { label: "SEO Services", href: "/services/seo" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
+  ],
+  "Performance Marketing": [
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "Paid Advertising", href: "/services/paid-advertising" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+  ],
+  "Social Media": [
+    { label: "Social Media Marketing", href: "/services/social-media" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
+    { label: "Video Production", href: "/services/video-production" },
+  ],
+  "Content Marketing": [
+    { label: "Content Marketing", href: "/services/content-marketing" },
+    { label: "SEO Services", href: "/services/seo" },
+    { label: "Social Media Marketing", href: "/services/social-media" },
+  ],
+  "Email Marketing": [
+    { label: "Email Marketing", href: "/services/email-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
+  ],
+  "Web Design": [
+    { label: "Website Development", href: "/services/website-development" },
+    { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
+    { label: "Branding", href: "/services/branding" },
+  ],
+  "Web Development": [
+    { label: "Website Development", href: "/services/website-development" },
+    { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
+    { label: "SEO Services", href: "/services/seo" },
+  ],
+  Branding: [
+    { label: "Branding", href: "/services/branding" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
+    { label: "Website Development", href: "/services/website-development" },
+  ],
+  "Video Marketing": [
+    { label: "Video Production", href: "/services/video-production" },
+    { label: "Social Media Marketing", href: "/services/social-media" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
+  ],
+  "Video Production": [
+    { label: "Video Production", href: "/services/video-production" },
+    { label: "Social Media Marketing", href: "/services/social-media" },
+    { label: "Branding", href: "/services/branding" },
+  ],
+  "AI & Automation": [
+    { label: "AI & Automation", href: "/services/ai" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  Analytics: [
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "SEO Services", href: "/services/seo" },
+  ],
+  "E-commerce": [
+    { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
+    { label: "Paid Advertising", href: "/services/paid-advertising" },
+    { label: "Email Marketing", href: "/services/email-marketing" },
+  ],
+  Advertising: [
+    { label: "Paid Advertising", href: "/services/paid-advertising" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "Social Media Marketing", href: "/services/social-media" },
+  ],
+  Strategy: [
+    { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+};
+
+/* ── Category-to-free-tools mapping ──────────────────────── */
+const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
+  SEO: [
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+    { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
+  ],
+  "Performance Marketing": [
+    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+  ],
+  "Social Media": [
+    { label: "Social Media Planner", href: "/resources/social-media-planner" },
+    { label: "Social Share Preview", href: "/resources/og-preview" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+  ],
+  "Content Marketing": [
+    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+    { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+  ],
+  "Email Marketing": [
+    { label: "Email ROI Calculator", href: "/resources/email-roi-calculator" },
+    { label: "Email Subject Line Tester", href: "/resources/email-subject-tester" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+  ],
+  "Web Design": [
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Website Speed Assessment", href: "/resources/speed-test" },
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Social Share Preview", href: "/resources/og-preview" },
+  ],
+  "Web Development": [
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Website Speed Assessment", href: "/resources/speed-test" },
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Social Share Preview", href: "/resources/og-preview" },
+  ],
+  Branding: [
+    { label: "Brand Name Generator", href: "/resources/brand-name-generator" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+    { label: "Social Share Preview", href: "/resources/og-preview" },
+    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+  ],
+  "Video Marketing": [
+    { label: "Social Media Planner", href: "/resources/social-media-planner" },
+    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+  ],
+  "Video Production": [
+    { label: "Social Media Planner", href: "/resources/social-media-planner" },
+    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "Social Share Preview", href: "/resources/og-preview" },
+  ],
+  "AI & Automation": [
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+  ],
+  Analytics: [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
+  ],
+  "E-commerce": [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Email ROI Calculator", href: "/resources/email-roi-calculator" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+  ],
+  Advertising: [
+    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+  ],
+  Strategy: [
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+  ],
+};
+
+/* Fallback entries when a category has no explicit mapping */
+const DEFAULT_SERVICES = [
+  { label: "Digital Marketing", href: "/services/digital-marketing" },
+  { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
+  { label: "Performance Marketing", href: "/services/performance-marketing" },
+];
+
+const DEFAULT_TOOLS = [
+  { label: "ROI Calculator", href: "/resources/roi-calculator" },
+  { label: "Budget Calculator", href: "/resources/budget-calculator" },
+  { label: "Website Grader", href: "/resources/website-grader" },
+  { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+];
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -147,6 +334,58 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </section>
       )}
+
+      {/* ── Relevant Services ────────────────────────────────── */}
+      <section className="px-6 lg:px-12 py-16 border-t border-gray-200" aria-label="Relevant services">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">
+              Relevant Services
+            </h2>
+            <p className="text-base text-gray-500 leading-relaxed mb-6">
+              Explore our services related to {post.category.toLowerCase()}.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {(CATEGORY_SERVICES[post.category] ?? DEFAULT_SERVICES).map((svc) => (
+                <Link
+                  key={svc.href}
+                  href={svc.href}
+                  className="group border border-gray-200 bg-white p-5 hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  <span className="text-base font-bold text-black group-hover:underline">{svc.label}</span>
+                  <span className="block text-base text-gray-500 mt-1">&rarr;</span>
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      {/* ── Free Tools ────────────────────────────────────────── */}
+      <section className="px-6 lg:px-12 py-16 bg-black" aria-label="Free tools">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-white mb-3">
+              Free Tools
+            </h2>
+            <p className="text-base text-gray-400 leading-relaxed mb-6">
+              Put these insights into action with our free marketing tools.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {(CATEGORY_TOOLS[post.category] ?? DEFAULT_TOOLS).map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group flex items-center justify-between border border-white/20 p-5 hover:border-white transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                >
+                  <span className="text-base font-bold text-white group-hover:underline">{tool.label}</span>
+                  <span className="text-base text-gray-400 group-hover:text-white transition-colors">&rarr;</span>
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
 
       <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
