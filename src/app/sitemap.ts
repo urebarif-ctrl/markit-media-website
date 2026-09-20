@@ -62,6 +62,7 @@ const staticPages = [
   "/resources/content-calendar",
   "/resources/social-media-roi",
   "/resources/swot-analysis",
+  "/resources/clv-calculator",
   "/tools",
   "/approach",
   "/pricing",

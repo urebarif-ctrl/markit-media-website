@@ -150,6 +150,127 @@ export default function PartnersPage() {
         </div>
       </section>
 
+      {/* How We Work With Partners */}
+      <section className="px-6 lg:px-12 py-16" aria-label="How we work with partners">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Approach</SectionLabel>
+            <SectionTitle>How We Work With Partners</SectionTitle>
+            <SectionDesc>
+              Every partnership is different, but our approach stays consistent — clear communication, shared goals, and a focus on outcomes that matter to both sides.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {[
+              {
+                title: "Joint Strategy Sessions",
+                desc: "We align on goals and build a shared roadmap before any work begins. This means fewer surprises, clearer priorities, and campaigns that reflect both our expertise and your business context.",
+              },
+              {
+                title: "Transparent Communication",
+                desc: "Regular updates, shared dashboards, and open access to performance data. You always know where things stand — no waiting for a monthly report to find out what happened.",
+              },
+              {
+                title: "Flexible Engagement Models",
+                desc: "Project-based, retainer, or white-label arrangements — we structure the partnership around how you actually work, not the other way around.",
+              },
+              {
+                title: "Mutual Growth Focus",
+                desc: "We succeed when our partners succeed. That means we think beyond deliverables — we look for opportunities to expand what is working and flag what is not.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Common Questions About Partnering With Us</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="mt-12 space-y-4">
+            {[
+              {
+                q: "What types of businesses do you partner with?",
+                a: "We work with agencies, consultancies, SaaS companies, and in-house marketing teams. Some partners bring us in for specific platform expertise they do not have internally. Others use us as an extension of their team for overflow or specialized projects. There is no minimum size requirement — what matters is that the work is a good fit for both sides.",
+              },
+              {
+                q: "How do you handle white-label work?",
+                a: "For white-label engagements, all deliverables go out under your brand. We stay behind the scenes — your clients interact with you, not us. We can work within your existing reporting templates, communication tools, and processes. Confidentiality is standard, and we are happy to sign NDAs before any engagement begins.",
+              },
+              {
+                q: "What's the typical onboarding process for new partners?",
+                a: "It usually starts with an introductory call to understand your business, your clients, and what you need from us. From there, we scope out a small initial project or trial engagement so both sides can evaluate the fit before committing to anything larger. We find that starting small and building from there leads to stronger long-term partnerships.",
+              },
+              {
+                q: "Do you offer referral programs?",
+                a: "Yes, we have referral arrangements for partners who send work our way. The specifics depend on the nature of the referral and the scope of the engagement. If you are interested, reach out and we will walk through how it works and what makes sense for your situation.",
+              },
+              {
+                q: "How do you measure partnership success?",
+                a: "We look at the outcomes that matter to you — whether that is campaign performance, client retention, revenue growth, or operational efficiency. We set expectations together at the start and review them regularly. If something is not working, we would rather have that conversation early than let it drift.",
+              },
+            ].map((item) => (
+              <details key={item.q} className="group border border-gray-200 bg-white">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-bold text-black select-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {item.q}
+                  <span className="ml-4 text-gray-400 group-open:rotate-45 transition-transform duration-200 motion-reduce:transition-none" aria-hidden="true">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-base text-gray-500 leading-relaxed">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Cross-link cards */}
+      <section className="px-6 lg:px-12 py-16" aria-label="Explore more">
+        <div className="max-w-5xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Explore</SectionLabel>
+            <SectionTitle>Learn More About How We Work</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {[
+              {
+                title: "Our Services",
+                desc: "See the full range of marketing, advertising, and development services we offer.",
+                href: "/services",
+              },
+              {
+                title: "Our Process",
+                desc: "Understand how we plan, execute, and optimize — from kickoff to ongoing performance.",
+                href: "/process",
+              },
+              {
+                title: "Get in Touch",
+                desc: "Ready to explore a partnership? Start a conversation with our team.",
+                href: "/contact",
+              },
+            ].map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="block border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-3">{card.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{card.desc}</p>
+                <span className="inline-block mt-4 text-base font-bold text-black">Learn more &rarr;</span>
+              </Link>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">

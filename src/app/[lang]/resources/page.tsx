@@ -16,7 +16,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "560+ articles",
+    count: "570+ articles",
   },
   {
     title: "FAQ",
@@ -298,6 +298,12 @@ const resources = [
     title: "SWOT Analysis",
     desc: "Build a complete SWOT analysis with strengths, weaknesses, opportunities, and threats. Get strategy recommendations based on your inputs.",
     href: "/resources/swot-analysis",
+    count: "Interactive tool",
+  },
+  {
+    title: "Customer Lifetime Value Calculator",
+    desc: "Calculate the lifetime value of your customers. Enter order value, purchase frequency, and margins to find your CLV, CLV:CAC ratio, and payback period.",
+    href: "/resources/clv-calculator",
     count: "Interactive tool",
   },
   {

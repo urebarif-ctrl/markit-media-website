@@ -182,6 +182,120 @@ export default function TechnologyPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Technology selection philosophy">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Principles</SectionLabel>
+            <SectionTitle>Our Technology Selection Philosophy</SectionTitle>
+            <SectionDesc>
+              Every technology decision we make is guided by four core principles that keep your project on the right track.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {[
+              {
+                title: "Right Tool for the Job",
+                desc: "We do not force one stack on every project. Your business goals, audience, and growth plans determine the technology — not our habits or vendor partnerships.",
+              },
+              {
+                title: "Performance First",
+                desc: "Speed and reliability drive our choices. Every framework, plugin, and integration is evaluated for its impact on load times, uptime, and real-world user experience.",
+              },
+              {
+                title: "Scalable by Design",
+                desc: "We build solutions that grow with your business. Whether you are launching with ten pages or ten thousand products, the architecture is ready for what comes next.",
+              },
+              {
+                title: "Future-Proof",
+                desc: "We invest in technologies backed by strong ecosystems and active community support. That means fewer costly migrations and longer-lasting value from every build.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16" aria-label="Frequently asked questions">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Common Questions About Our Technology</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="mt-12 space-y-4">
+            {[
+              {
+                q: "What CMS platforms do you work with?",
+                a: "We work primarily with WordPress and Shopify, and we also build headless CMS setups using platforms like Sanity or WordPress as a back end paired with a modern front-end framework. The right choice depends on how your team manages content, what integrations you need, and how much design flexibility you want.",
+              },
+              {
+                q: "Do you build custom solutions or use existing platforms?",
+                a: "Both. For many businesses, a well-configured platform like WordPress or Shopify is the most practical and cost-effective starting point. When requirements go beyond what a platform handles cleanly — complex workflows, unique user experiences, or deep integrations — we build custom applications using frameworks like Next.js. We always recommend the approach that delivers the best outcome for your budget.",
+              },
+              {
+                q: "How do you ensure website performance?",
+                a: "Performance is part of our process from day one, not an afterthought. We optimize images, minimize third-party scripts, choose modern hosting infrastructure, and test across devices and real network conditions. After launch, we monitor Core Web Vitals and address any regressions as they appear.",
+              },
+              {
+                q: "What analytics and tracking tools do you use?",
+                a: "We typically set up Google Analytics 4 and Google Tag Manager as a baseline. Depending on the project, we layer in tools like Hotjar or Microsoft Clarity for behavior analysis, Looker Studio for custom reporting dashboards, and platform-specific conversion tracking for ad campaigns. Everything is configured to respect user privacy and comply with relevant regulations.",
+              },
+              {
+                q: "How do you handle website security?",
+                a: "We follow established security practices: SSL certificates, regular software updates, strong access controls, and secure hosting environments. For WordPress sites, we harden the installation and use reputable security plugins. For custom applications, we follow OWASP guidelines and test thoroughly before launch. Automated backups are standard so recovery is straightforward if anything goes wrong.",
+              },
+            ].map((item) => (
+              <details key={item.q} className="group border border-gray-200 bg-white">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-bold text-black font-[family-name:var(--font-display)] hover:bg-gray-50 transition-colors duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {item.q}
+                  <span className="ml-4 text-gray-400 group-open:rotate-45 transition-transform duration-300 motion-reduce:transition-none" aria-hidden="true">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-base text-gray-500 leading-relaxed">
+                  {item.a}
+                </div>
+              </details>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Explore related pages">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Explore</SectionLabel>
+            <SectionTitle>Where to Go Next</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {[
+              {
+                title: "Website Development",
+                desc: "See how we plan, design, and build websites that perform — from single-page sites to complex e-commerce stores.",
+                href: "/services/website-development",
+              },
+              {
+                title: "Our Process",
+                desc: "Learn how we take a project from discovery through launch and ongoing support, step by step.",
+                href: "/process",
+              },
+              {
+                title: "Get in Touch",
+                desc: "Have a project in mind or questions about our approach? Start a conversation with our team.",
+                href: "/contact",
+              },
+            ].map((card) => (
+              <Link key={card.href} href={card.href} className="block bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{card.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{card.desc}</p>
+                <span className="inline-block mt-4 text-base font-bold text-black" aria-hidden="true">&rarr;</span>
+              </Link>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-12" aria-label="Related pages">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">

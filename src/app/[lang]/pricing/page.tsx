@@ -163,8 +163,10 @@ export default function PricingPage() {
             <div className="flex flex-wrap gap-3">
               {[
                 { label: "ROI Calculator", href: "/resources/roi-calculator" },
+                { label: "Budget Planner", href: "/resources/marketing-budget-planner" },
                 { label: "Service Finder Quiz", href: "/services/finder" },
                 { label: "Our Process", href: "/process" },
+                { label: "Client Onboarding", href: "/onboarding" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}

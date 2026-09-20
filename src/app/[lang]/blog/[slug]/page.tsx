@@ -122,9 +122,9 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
   ],
   "Social Media": [
+    { label: "Social Media ROI Calculator", href: "/resources/social-media-roi" },
     { label: "Social Media Planner", href: "/resources/social-media-planner" },
     { label: "Hashtag Generator", href: "/resources/hashtag-generator" },
-    { label: "Social Share Preview", href: "/resources/og-preview" },
     { label: "Content Calendar", href: "/resources/content-calendar" },
   ],
   "Content Marketing": [
@@ -177,15 +177,15 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   ],
   Analytics: [
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "CLV Calculator", href: "/resources/clv-calculator" },
+    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
     { label: "Website Grader", href: "/resources/website-grader" },
-    { label: "Budget Calculator", href: "/resources/budget-calculator" },
-    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
   ],
   "E-commerce": [
+    { label: "CLV Calculator", href: "/resources/clv-calculator" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "Email ROI Calculator", href: "/resources/email-roi-calculator" },
-    { label: "Budget Calculator", href: "/resources/budget-calculator" },
-    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
   ],
   Advertising: [
     { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
@@ -194,10 +194,10 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
   ],
   Strategy: [
+    { label: "SWOT Analysis", href: "/resources/swot-analysis" },
     { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
     { label: "Persona Builder", href: "/resources/persona-builder" },
-    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
-    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
+    { label: "CLV Calculator", href: "/resources/clv-calculator" },
   ],
   "Local SEO": [
     { label: "SEO Health Check", href: "/resources/seo-checklist" },
@@ -235,7 +235,7 @@ const DEFAULT_SERVICES = [
 const DEFAULT_TOOLS = [
   { label: "ROI Calculator", href: "/resources/roi-calculator" },
   { label: "Website Grader", href: "/resources/website-grader" },
-  { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+  { label: "SWOT Analysis", href: "/resources/swot-analysis" },
   { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
 ];
 
