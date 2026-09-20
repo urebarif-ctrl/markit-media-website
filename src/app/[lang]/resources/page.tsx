@@ -277,6 +277,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Color Palette Generator",
+    desc: "Generate brand color palettes with complementary, analogous, triadic, and monochromatic schemes. WCAG contrast ratios included.",
+    href: "/resources/color-palette-generator",
+    count: "5 palette types",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
