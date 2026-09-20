@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="sa-grid" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0L0 0 0 22" fill="none" stroke="#000" stroke-width="0.25" opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#fff"/>
+  <rect width="800" height="600" fill="url(#sa-grid)"/>
+  <!-- Kingdom Tower / Jeddah Tower inspired - tapered spire -->
+  <polygon points="360,460 370,120 380,40 390,120 400,460" fill="#000"/>
+  <rect x="365" y="200" width="30" height="6" fill="#000"/>
+  <rect x="362" y="280" width="36" height="6" fill="#000"/>
+  <rect x="358" y="360" width="44" height="6" fill="#000"/>
+  <!-- Kingdom Centre inspired - arch opening -->
+  <rect x="170" y="180" width="60" height="280" fill="#000"/>
+  <ellipse cx="200" cy="200" rx="16" ry="24" fill="#fff"/>
+  <!-- Faisaliyah Tower inspired - sphere on tower -->
+  <rect x="530" y="200" width="40" height="260" fill="#000"/>
+  <rect x="525" y="250" width="50" height="6" fill="#000"/>
+  <rect x="525" y="340" width="50" height="6" fill="#000"/>
+  <circle cx="550" cy="240" r="18" fill="#000"/>
+  <circle cx="550" cy="240" r="10" fill="#fff"/>
+  <polygon points="540,200 550,160 560,200" fill="#000"/>
+  <!-- Traditional architectural elements - minarets -->
+  <rect x="80" y="280" width="16" height="180" fill="#000"/>
+  <circle cx="88" cy="278" r="10" fill="#000"/>
+  <polygon points="83,268 88,248 93,268" fill="#000"/>
+  <rect x="700" y="260" width="16" height="200" fill="#000"/>
+  <circle cx="708" cy="258" r="10" fill="#000"/>
+  <polygon points="703,248 708,228 713,248" fill="#000"/>
+  <!-- Geometric Islamic pattern element - octagonal frame -->
+  <rect x="620" y="340" width="60" height="120" fill="#000"/>
+  <rect x="630" y="355" width="40" height="40" fill="#fff" transform="rotate(45 650 375)"/>
+  <rect x="638" y="363" width="24" height="24" fill="#000" transform="rotate(45 650 375)"/>
+  <!-- Secondary buildings -->
+  <rect x="250" y="340" width="35" height="120" fill="#000"/>
+  <rect x="252" y="328" width="31" height="16" fill="#000" rx="6"/>
+  <rect x="460" y="360" width="40" height="100" fill="#000"/>
+  <rect x="462" y="350" width="36" height="14" fill="#000" rx="4"/>
+  <!-- Shorter structures -->
+  <rect x="110" y="380" width="40" height="80" fill="#000"/>
+  <rect x="110" y="370" width="40" height="14" fill="#000" rx="4"/>
+  <!-- Windows -->
+  <g fill="#fff" opacity="0.85">
+    <rect x="180" y="240" width="8" height="10"/><rect x="200" y="240" width="8" height="10"/>
+    <rect x="180" y="280" width="8" height="10"/><rect x="200" y="280" width="8" height="10"/>
+    <rect x="180" y="320" width="8" height="10"/><rect x="200" y="320" width="8" height="10"/>
+    <rect x="180" y="360" width="8" height="10"/><rect x="200" y="360" width="8" height="10"/>
+    <rect x="180" y="400" width="8" height="10"/><rect x="200" y="400" width="8" height="10"/>
+    <rect x="540" y="270" width="8" height="10"/><rect x="554" y="270" width="8" height="10"/>
+    <rect x="540" y="360" width="8" height="10"/><rect x="554" y="360" width="8" height="10"/>
+    <rect x="540" y="400" width="8" height="10"/><rect x="554" y="400" width="8" height="10"/>
+    <rect x="258" y="360" width="6" height="8"/><rect x="272" y="360" width="6" height="8"/>
+    <rect x="258" y="400" width="6" height="8"/><rect x="272" y="400" width="6" height="8"/>
+    <rect x="468" y="380" width="7" height="9"/><rect x="484" y="380" width="7" height="9"/>
+    <rect x="468" y="410" width="7" height="9"/><rect x="484" y="410" width="7" height="9"/>
+  </g>
+  <!-- Ground -->
+  <rect x="0" y="458" width="800" height="2" fill="#000"/>
+  <rect x="0" y="460" width="800" height="140" fill="#000"/>
+</svg>

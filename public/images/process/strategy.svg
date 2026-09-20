@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.8" fill="#000" opacity="0.08"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#dots)"/>
+  <!-- Chess knight outline -->
+  <path d="M340 360 L340 200 Q340 180 355 175 L370 170 Q380 168 385 175 L395 190 Q400 200 395 210 L380 225 Q370 235 375 245 L400 360 Z" stroke="#000" stroke-width="2.5" fill="none"/>
+  <rect x="325" y="360" width="90" height="15" stroke="#000" stroke-width="2" fill="none"/>
+  <circle cx="365" cy="200" r="4" fill="#000"/>
+  <!-- Flow arrows -->
+  <line x1="480" y1="200" x2="560" y2="200" stroke="#000" stroke-width="2"/>
+  <polygon points="560,195 575,200 560,205" fill="#000"/>
+  <line x1="480" y1="280" x2="560" y2="280" stroke="#000" stroke-width="2"/>
+  <polygon points="560,275 575,280 560,285" fill="#000"/>
+  <line x1="480" y1="360" x2="560" y2="360" stroke="#000" stroke-width="2"/>
+  <polygon points="560,355 575,360 560,365" fill="#000"/>
+  <!-- Target boxes -->
+  <rect x="580" y="180" width="100" height="40" stroke="#000" stroke-width="1.5" fill="none"/>
+  <rect x="580" y="260" width="100" height="40" stroke="#000" stroke-width="1.5" fill="none"/>
+  <rect x="580" y="340" width="100" height="40" stroke="#000" stroke-width="1.5" fill="none"/>
+  <!-- Lines inside boxes (text placeholders) -->
+  <line x1="592" y1="197" x2="650" y2="197" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <line x1="592" y1="207" x2="668" y2="207" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <line x1="592" y1="277" x2="660" y2="277" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <line x1="592" y1="287" x2="640" y2="287" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <line x1="592" y1="357" x2="655" y2="357" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <line x1="592" y1="367" x2="645" y2="367" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <!-- Vertical connector -->
+  <line x1="630" y1="220" x2="630" y2="260" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="630" y1="300" x2="630" y2="340" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Geometric accents -->
+  <polygon points="180,150 220,150 200,120" stroke="#000" stroke-width="1.5" fill="none"/>
+  <polygon points="190,160 230,160 210,190" stroke="#000" stroke-width="1" fill="none" opacity="0.2"/>
+  <circle cx="200" cy="400" r="25" stroke="#000" stroke-width="1" fill="none" opacity="0.15"/>
+  <circle cx="200" cy="400" r="15" stroke="#000" stroke-width="1" fill="none" opacity="0.1"/>
+  <rect x="140" y="280" width="50" height="50" stroke="#000" stroke-width="1" fill="none" transform="rotate(45 165 305)" opacity="0.12"/>
+</svg>

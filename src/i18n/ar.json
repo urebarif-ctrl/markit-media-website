@@ -1,0 +1,59 @@
+{
+  "common": {
+    "skipToMainContent": "انتقل إلى المحتوى الرئيسي",
+    "learnMore": "اعرف المزيد",
+    "getStarted": "ابدأ الآن",
+    "contactUs": "اتصل بنا",
+    "viewAll": "عرض الكل",
+    "readMore": "اقرأ المزيد",
+    "backToTop": "العودة للأعلى",
+    "loading": "جار التحميل"
+  },
+  "nav": {
+    "services": "الخدمات",
+    "industries": "القطاعات",
+    "insights": "المدونة",
+    "work": "أعمالنا",
+    "about": "عن الشركة",
+    "contact": "اتصل بنا",
+    "blog": "المدونة",
+    "process": "آلية العمل",
+    "careers": "الوظائف",
+    "getQuote": "احصل على عرض سعر"
+  },
+  "footer": {
+    "tagline": "تسويق رقمي متكامل للشركات التي تريد النمو.",
+    "services": "الخدمات",
+    "company": "الشركة",
+    "resources": "الموارد",
+    "legal": "القانونية",
+    "terms": "شروط الخدمة",
+    "privacy": "سياسة الخصوصية",
+    "copyright": "© 2026 ماركت ميديا. جميع الحقوق محفوظة."
+  },
+  "cta": {
+    "title": "هل أنت مستعد لتنمية أعمالك؟",
+    "description": "تحدث مع فريقنا حول استراتيجية مصممة حول أهدافك.",
+    "primary": "ابدأ مشروعك",
+    "secondary": "شاهد أعمالنا"
+  },
+  "accessibility": {
+    "mainNavigation": "التنقل الرئيسي",
+    "footerNavigation": "تنقل التذييل",
+    "breadcrumb": "مسار التنقل",
+    "tableOfContents": "جدول المحتويات",
+    "cookieConsent": "موافقة ملفات تعريف الارتباط"
+  },
+  "home": {
+    "heroTitle": "نبني علامات تجارية تحقق نتائج",
+    "heroSubtitle": "تسويق رقمي متكامل وتطوير مواقع وخدمات إبداعية للشركات.",
+    "servicesTitle": "خدماتنا",
+    "servicesSubtitle": "الخدمات",
+    "industriesTitle": "القطاعات التي نخدمها",
+    "industriesSubtitle": "القطاعات",
+    "ctaTitle": "هل أنت مستعد لتنمية أعمالك؟",
+    "ctaDescription": "تحدث مع فريقنا حول استراتيجية مصممة حول أهدافك.",
+    "faqTitle": "الأسئلة الشائعة",
+    "faqSubtitle": "أسئلة وأجوبة"
+  }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+<rect width="800" height="600" fill="white"/>
+<!-- Dot grid background -->
+<g opacity="0.06"><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="black"/></pattern><rect width="800" height="600" fill="url(#d)"/></g>
+<!-- Hotel building -->
+<rect x="250" y="150" width="300" height="350" fill="none" stroke="black" stroke-width="3"/>
+<rect x="350" y="150" width="100" height="50" fill="none" stroke="black" stroke-width="2"/>
+<!-- Windows grid -->
+<g stroke="black" stroke-width="1.5" fill="none">
+<rect x="280" y="220" width="40" height="40"/>
+<rect x="340" y="220" width="40" height="40"/>
+<rect x="420" y="220" width="40" height="40"/>
+<rect x="480" y="220" width="40" height="40"/>
+<rect x="280" y="280" width="40" height="40"/>
+<rect x="340" y="280" width="40" height="40"/>
+<rect x="420" y="280" width="40" height="40"/>
+<rect x="480" y="280" width="40" height="40"/>
+<rect x="280" y="340" width="40" height="40"/>
+<rect x="340" y="340" width="40" height="40"/>
+<rect x="420" y="340" width="40" height="40"/>
+<rect x="480" y="340" width="40" height="40"/>
+</g>
+<!-- Door -->
+<rect x="370" y="430" width="60" height="70" fill="none" stroke="black" stroke-width="2"/>
+<circle cx="420" cy="465" r="3" fill="black"/>
+<!-- Stars -->
+<g fill="black" opacity="0.3">
+<polygon points="400,120 403,130 413,130 405,136 408,146 400,140 392,146 395,136 387,130 397,130"/>
+<polygon points="370,120 373,130 383,130 375,136 378,146 370,140 362,146 365,136 357,130 367,130"/>
+<polygon points="430,120 433,130 443,130 435,136 438,146 430,140 422,146 425,136 417,130 427,130"/>
+</g>
+</svg>

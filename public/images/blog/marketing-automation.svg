@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0v36" fill="none" stroke="#000" stroke-width=".3" opacity=".05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#fff"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Large gear - left -->
+  <g transform="translate(420,280)">
+    <circle cx="0" cy="0" r="90" fill="#000"/>
+    <circle cx="0" cy="0" r="55" fill="#fff"/>
+    <circle cx="0" cy="0" r="25" fill="#000"/>
+    <!-- Gear teeth -->
+    <rect x="-12" y="-100" width="24" height="30" rx="4" fill="#000"/>
+    <rect x="-12" y="70" width="24" height="30" rx="4" fill="#000"/>
+    <rect x="-100" y="-12" width="30" height="24" rx="4" fill="#000"/>
+    <rect x="70" y="-12" width="30" height="24" rx="4" fill="#000"/>
+    <rect x="50" y="-75" width="24" height="30" rx="4" fill="#000" transform="rotate(45,62,-60)"/>
+    <rect x="-74" y="45" width="24" height="30" rx="4" fill="#000" transform="rotate(45,-62,60)"/>
+    <rect x="-74" y="-75" width="24" height="30" rx="4" fill="#000" transform="rotate(-45,-62,-60)"/>
+    <rect x="50" y="45" width="24" height="30" rx="4" fill="#000" transform="rotate(-45,62,60)"/>
+  </g>
+  <!-- Small gear - right top -->
+  <g transform="translate(580,170)">
+    <circle cx="0" cy="0" r="50" fill="#000"/>
+    <circle cx="0" cy="0" r="30" fill="#fff"/>
+    <circle cx="0" cy="0" r="14" fill="#000"/>
+    <rect x="-8" y="-56" width="16" height="20" rx="3" fill="#000"/>
+    <rect x="-8" y="36" width="16" height="20" rx="3" fill="#000"/>
+    <rect x="-56" y="-8" width="20" height="16" rx="3" fill="#000"/>
+    <rect x="36" y="-8" width="20" height="16" rx="3" fill="#000"/>
+  </g>
+  <!-- Flow arrows pipeline -->
+  <g stroke="#000" stroke-width="2.5" fill="none" opacity=".6">
+    <!-- Arrow line 1 -->
+    <line x1="650" y1="200" x2="720" y2="240"/>
+    <polygon points="720,240 708,232 714,244" fill="#000" stroke="none" opacity=".6"/>
+    <!-- Arrow line 2 -->
+    <line x1="720" y1="240" x2="790" y2="240"/>
+    <polygon points="790,240 778,234 778,246" fill="#000" stroke="none" opacity=".6"/>
+  </g>
+  <!-- Pipeline stages -->
+  <rect x="790" y="210" width="80" height="60" rx="6" fill="#000"/>
+  <rect x="810" y="228" width="40" height="6" rx="3" fill="#fff" opacity=".5"/>
+  <rect x="810" y="240" width="30" height="6" rx="3" fill="#fff" opacity=".3"/>
+  <g stroke="#000" stroke-width="2" fill="none" opacity=".4">
+    <line x1="870" y1="240" x2="920" y2="240"/>
+    <polygon points="920,240 910,235 910,245" fill="#000" stroke="none" opacity=".4"/>
+  </g>
+  <rect x="920" y="210" width="80" height="60" rx="6" fill="none" stroke="#000" stroke-width="2"/>
+  <rect x="940" y="228" width="40" height="6" rx="3" fill="#000" opacity=".3"/>
+  <rect x="940" y="240" width="30" height="6" rx="3" fill="#000" opacity=".15"/>
+  <!-- Flow arrows bottom -->
+  <g stroke="#000" stroke-width="2" fill="none" opacity=".3">
+    <line x1="540" y1="340" x2="620" y2="380"/>
+    <polygon points="620,380 608,374 612,386" fill="#000" stroke="none" opacity=".3"/>
+  </g>
+  <rect x="620" y="360" width="80" height="50" rx="6" fill="#000" opacity=".7"/>
+  <rect x="638" y="378" width="44" height="5" rx="2" fill="#fff" opacity=".4"/>
+  <g stroke="#000" stroke-width="2" fill="none" opacity=".3">
+    <line x1="700" y1="385" x2="760" y2="385"/>
+    <polygon points="760,385 750,380 750,390" fill="#000" stroke="none" opacity=".3"/>
+  </g>
+  <rect x="760" y="360" width="80" height="50" rx="6" fill="none" stroke="#000" stroke-width="1.5" opacity=".5"/>
+  <rect x="778" y="378" width="44" height="5" rx="2" fill="#000" opacity=".2"/>
+  <!-- Label bar -->
+  <rect x="380" y="540" width="440" height="44" rx="22" fill="#000"/>
+  <text x="600" y="568" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="3">MARKETING AUTOMATION</text>
+</svg>

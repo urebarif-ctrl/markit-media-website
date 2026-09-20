@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background dot pattern -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#000" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#fff"/>
+  <rect width="800" height="600" fill="url(#dots)"/>
+
+  <!-- Team silhouettes - abstract geometric people -->
+  <!-- Person 1 -->
+  <circle cx="200" cy="220" r="35" fill="#000"/>
+  <rect x="170" y="265" width="60" height="120" rx="8" fill="#000"/>
+
+  <!-- Person 2 (taller, center) -->
+  <circle cx="340" cy="200" r="40" fill="#000"/>
+  <rect x="305" y="250" width="70" height="140" rx="8" fill="#000"/>
+
+  <!-- Person 3 -->
+  <circle cx="480" cy="210" r="38" fill="#000"/>
+  <rect x="447" y="258" width="66" height="130" rx="8" fill="#000"/>
+
+  <!-- Person 4 -->
+  <circle cx="610" cy="225" r="34" fill="#000"/>
+  <rect x="581" y="269" width="58" height="115" rx="8" fill="#000"/>
+
+  <!-- Connecting lines (collaboration) -->
+  <line x1="230" y1="300" x2="310" y2="290" stroke="#000" stroke-width="2" opacity="0.15"/>
+  <line x1="370" y1="295" x2="450" y2="298" stroke="#000" stroke-width="2" opacity="0.15"/>
+  <line x1="510" y1="300" x2="585" y2="305" stroke="#000" stroke-width="2" opacity="0.15"/>
+
+  <!-- Abstract desk/table -->
+  <rect x="120" y="400" width="560" height="8" fill="#000" opacity="0.1" rx="4"/>
+
+  <!-- Monitor screens on desk -->
+  <rect x="180" y="350" width="80" height="50" fill="#000" opacity="0.08" rx="2"/>
+  <rect x="300" y="340" width="90" height="60" fill="#000" opacity="0.08" rx="2"/>
+  <rect x="430" y="345" width="85" height="55" fill="#000" opacity="0.08" rx="2"/>
+  <rect x="555" y="355" width="70" height="45" fill="#000" opacity="0.08" rx="2"/>
+
+  <!-- Data/chart elements floating above -->
+  <rect x="150" y="120" width="40" height="5" fill="#000" opacity="0.1" rx="2"/>
+  <rect x="150" y="130" width="30" height="5" fill="#000" opacity="0.1" rx="2"/>
+  <rect x="150" y="140" width="45" height="5" fill="#000" opacity="0.1" rx="2"/>
+
+  <rect x="580" y="130" width="35" height="5" fill="#000" opacity="0.1" rx="2"/>
+  <rect x="580" y="140" width="50" height="5" fill="#000" opacity="0.1" rx="2"/>
+  <rect x="580" y="150" width="28" height="5" fill="#000" opacity="0.1" rx="2"/>
+
+  <!-- Growth arrow -->
+  <path d="M300 160 L350 130 L400 145 L450 110 L500 100" stroke="#000" stroke-width="2" opacity="0.15" fill="none"/>
+  <polygon points="500,95 510,100 500,105" fill="#000" opacity="0.15"/>
+
+  <!-- Bottom tagline area -->
+  <rect x="250" y="470" width="300" height="40" fill="#000" rx="2"/>
+  <text x="400" y="495" text-anchor="middle" fill="#fff" font-size="14" font-weight="700" font-family="sans-serif">FULL-STACK DIGITAL TEAM</text>
+</svg>

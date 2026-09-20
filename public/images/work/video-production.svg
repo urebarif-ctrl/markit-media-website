@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+<rect width="800" height="450" fill="#fff"/>
+<pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+<circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/>
+</pattern>
+<rect width="800" height="450" fill="url(#dots)"/>
+<!-- Film frame -->
+<rect x="140" y="80" width="340" height="240" rx="4" stroke="#000" stroke-width="3" fill="none"/>
+<!-- Film sprocket holes left -->
+<rect x="148" y="90" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="110" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="130" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="150" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="170" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="190" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="210" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="230" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="250" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="270" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="148" y="290" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<!-- Film sprocket holes right -->
+<rect x="460" y="90" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="110" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="130" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="150" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="170" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="190" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="210" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="230" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="250" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="270" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<rect x="460" y="290" width="12" height="10" rx="2" fill="#000" opacity="0.3"/>
+<!-- Play button -->
+<circle cx="310" cy="200" r="50" stroke="#000" stroke-width="3" fill="none"/>
+<polygon points="295,175 340,200 295,225" fill="#000"/>
+<!-- Camera aperture shape -->
+<circle cx="600" cy="180" r="80" stroke="#000" stroke-width="3" fill="none"/>
+<circle cx="600" cy="180" r="35" stroke="#000" stroke-width="2" fill="none"/>
+<!-- Aperture blades -->
+<line x1="600" y1="100" x2="570" y2="155" stroke="#000" stroke-width="2"/>
+<line x1="530" y1="145" x2="570" y2="200" stroke="#000" stroke-width="2"/>
+<line x1="530" y1="220" x2="575" y2="210" stroke="#000" stroke-width="2"/>
+<line x1="600" y1="260" x2="630" y2="205" stroke="#000" stroke-width="2"/>
+<line x1="670" y1="220" x2="630" y2="165" stroke="#000" stroke-width="2"/>
+<line x1="670" y1="145" x2="625" y2="155" stroke="#000" stroke-width="2"/>
+<!-- Timeline bar at bottom -->
+<rect x="140" y="370" width="520" height="6" rx="3" fill="#000" opacity="0.15"/>
+<rect x="140" y="370" width="280" height="6" rx="3" fill="#000"/>
+<!-- Playhead -->
+<rect x="416" y="364" width="8" height="18" rx="2" fill="#000"/>
+<!-- Clapperboard accent -->
+<path d="M140,350 L200,350 L200,362 L140,362 Z" stroke="#000" stroke-width="1.5" fill="none" opacity="0.4"/>
+<line x1="155" y1="350" x2="165" y2="362" stroke="#000" stroke-width="1" opacity="0.4"/>
+<line x1="175" y1="350" x2="185" y2="362" stroke="#000" stroke-width="1" opacity="0.4"/>
+</svg>

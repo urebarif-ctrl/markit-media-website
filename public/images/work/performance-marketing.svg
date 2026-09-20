@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+<rect width="800" height="450" fill="#fff"/>
+<pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+<circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/>
+</pattern>
+<rect width="800" height="450" fill="url(#dots)"/>
+<!-- Rising bar chart -->
+<rect x="160" y="310" width="48" height="60" fill="#000" rx="2"/>
+<rect x="228" y="260" width="48" height="110" fill="#000" rx="2"/>
+<rect x="296" y="200" width="48" height="170" fill="#000" rx="2"/>
+<rect x="364" y="150" width="48" height="220" fill="#000" rx="2"/>
+<rect x="432" y="90" width="48" height="280" fill="#000" rx="2"/>
+<!-- Trend line -->
+<polyline points="184,295 252,245 320,185 388,130 456,75" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="456" cy="75" r="5" fill="#000"/>
+<!-- Arrow head on trend -->
+<polygon points="456,65 466,78 450,78" fill="#000"/>
+<!-- Conversion funnel -->
+<path d="M560,100 L680,100 L650,200 L590,200 Z" stroke="#000" stroke-width="2.5" fill="none"/>
+<path d="M590,210 L650,210 L635,280 L605,280 Z" stroke="#000" stroke-width="2.5" fill="none"/>
+<path d="M605,290 L635,290 L625,340 L615,340 Z" stroke="#000" stroke-width="2.5" fill="none"/>
+<!-- Funnel arrows -->
+<line x1="620" y1="202" x2="620" y2="208" stroke="#000" stroke-width="1.5"/>
+<line x1="620" y1="282" x2="620" y2="288" stroke="#000" stroke-width="1.5"/>
+<!-- Target icon -->
+<circle cx="620" cy="370" r="20" stroke="#000" stroke-width="2.5" fill="none"/>
+<circle cx="620" cy="370" r="12" stroke="#000" stroke-width="2" fill="none"/>
+<circle cx="620" cy="370" r="4" fill="#000"/>
+<!-- Axis lines -->
+<line x1="140" y1="380" x2="500" y2="380" stroke="#000" stroke-width="2"/>
+<line x1="140" y1="380" x2="140" y2="70" stroke="#000" stroke-width="2"/>
+<!-- Small tick marks -->
+<line x1="140" y1="310" x2="148" y2="310" stroke="#000" stroke-width="1.5"/>
+<line x1="140" y1="240" x2="148" y2="240" stroke="#000" stroke-width="1.5"/>
+<line x1="140" y1="170" x2="148" y2="170" stroke="#000" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#f9fafb"/>
+  <rect x="160" y="60" width="480" height="50" rx="4" fill="#000"/>
+  <text x="400" y="92" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="18" font-weight="700">CONVERSION FUNNEL</text>
+  <path d="M200 140 L600 140 L520 250 L280 250 Z" fill="#e5e7eb" stroke="#d1d5db" stroke-width="2"/>
+  <text x="400" y="200" text-anchor="middle" fill="#6b7280" font-family="system-ui" font-size="16" font-weight="600">VISITORS</text>
+  <path d="M280 260 L520 260 L470 340 L330 340 Z" fill="#d1d5db" stroke="#9ca3af" stroke-width="2"/>
+  <text x="400" y="305" text-anchor="middle" fill="#374151" font-family="system-ui" font-size="15" font-weight="600">LEADS</text>
+  <path d="M330 350 L470 350 L440 410 L360 410 Z" fill="#000"/>
+  <text x="400" y="387" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="700">SALES</text>
+  <text x="680" y="200" text-anchor="middle" fill="#000" font-family="system-ui" font-size="36" font-weight="800">+47%</text>
+  <text x="680" y="225" text-anchor="middle" fill="#6b7280" font-family="system-ui" font-size="12">CONVERSION</text>
+</svg>

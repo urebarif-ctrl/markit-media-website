@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- Handshake -->
+  <path d="M140 280 L200 240 L260 280" fill="none" stroke="#000" stroke-width="3"/>
+  <path d="M260 280 L320 240 L380 280" fill="none" stroke="#000" stroke-width="3"/>
+  <path d="M140 280 L140 310 Q140 330 160 330 L240 330" fill="none" stroke="#000" stroke-width="2.5"/>
+  <path d="M380 280 L380 310 Q380 330 360 330 L280 330" fill="none" stroke="#000" stroke-width="2.5"/>
+  <!-- Fingers/grip -->
+  <line x1="240" y1="330" x2="280" y2="330" stroke="#000" stroke-width="3"/>
+  <path d="M220 340 L290 340" stroke="#000" stroke-width="2" opacity="0.4"/>
+  <path d="M230 350 L280 350" stroke="#000" stroke-width="2" opacity="0.3"/>
+  <!-- Cuffs -->
+  <rect x="110" y="270" width="40" height="50" fill="none" stroke="#000" stroke-width="2"/>
+  <rect x="370" y="270" width="40" height="50" fill="none" stroke="#000" stroke-width="2"/>
+  <!-- Building -->
+  <rect x="520" y="130" width="100" height="200" fill="none" stroke="#000" stroke-width="3"/>
+  <rect x="520" y="120" width="100" height="15" fill="#000"/>
+  <!-- Building windows -->
+  <rect x="535" y="155" width="20" height="20" fill="#000" opacity="0.15" stroke="#000" stroke-width="1.5"/>
+  <rect x="570" y="155" width="20" height="20" fill="#000" opacity="0.15" stroke="#000" stroke-width="1.5"/>
+  <rect x="535" y="195" width="20" height="20" fill="#000" opacity="0.15" stroke="#000" stroke-width="1.5"/>
+  <rect x="570" y="195" width="20" height="20" fill="#000" opacity="0.15" stroke="#000" stroke-width="1.5"/>
+  <rect x="535" y="235" width="20" height="20" fill="#000" opacity="0.15" stroke="#000" stroke-width="1.5"/>
+  <rect x="570" y="235" width="20" height="20" fill="#000" opacity="0.15" stroke="#000" stroke-width="1.5"/>
+  <rect x="555" y="285" width="25" height="45" fill="none" stroke="#000" stroke-width="2"/>
+  <!-- Connected Nodes / Network -->
+  <circle cx="180" cy="470" r="15" fill="#000"/>
+  <circle cx="300" cy="430" r="15" fill="#000"/>
+  <circle cx="260" cy="540" r="15" fill="#000"/>
+  <circle cx="120" cy="540" r="12" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="360" cy="530" r="12" fill="none" stroke="#000" stroke-width="2.5"/>
+  <line x1="193" y1="478" x2="287" y2="438" stroke="#000" stroke-width="2"/>
+  <line x1="186" y1="484" x2="254" y2="526" stroke="#000" stroke-width="2"/>
+  <line x1="274" y1="538" x2="295" y2="445" stroke="#000" stroke-width="2"/>
+  <line x1="167" y1="478" x2="128" y2="530" stroke="#000" stroke-width="2"/>
+  <line x1="312" y1="440" x2="350" y2="522" stroke="#000" stroke-width="2"/>
+  <!-- Briefcase -->
+  <rect x="560" y="420" width="140" height="100" rx="6" fill="none" stroke="#000" stroke-width="2.5"/>
+  <line x1="560" y1="455" x2="700" y2="455" stroke="#000" stroke-width="2"/>
+  <rect x="605" y="400" width="50" height="25" rx="3" fill="none" stroke="#000" stroke-width="2"/>
+  <!-- Clasp -->
+  <rect x="620" y="448" width="20" height="14" rx="2" fill="#000"/>
+</svg>

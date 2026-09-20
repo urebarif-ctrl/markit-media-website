@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#000" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#fff"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Radiating lines behind -->
+  <g opacity=".08" stroke="#000" stroke-width="1.5">
+    <line x1="600" y1="315" x2="600" y2="40"/>
+    <line x1="600" y1="315" x2="600" y2="590"/>
+    <line x1="600" y1="315" x2="200" y2="315"/>
+    <line x1="600" y1="315" x2="1000" y2="315"/>
+    <line x1="600" y1="315" x2="320" y2="100"/>
+    <line x1="600" y1="315" x2="880" y2="100"/>
+    <line x1="600" y1="315" x2="320" y2="530"/>
+    <line x1="600" y1="315" x2="880" y2="530"/>
+    <line x1="600" y1="315" x2="220" y2="180"/>
+    <line x1="600" y1="315" x2="980" y2="180"/>
+    <line x1="600" y1="315" x2="220" y2="450"/>
+    <line x1="600" y1="315" x2="980" y2="450"/>
+  </g>
+  <!-- Concentric rings -->
+  <circle cx="600" cy="315" r="220" fill="none" stroke="#000" stroke-width="1" opacity=".06"/>
+  <circle cx="600" cy="315" r="170" fill="none" stroke="#000" stroke-width="1" opacity=".1"/>
+  <circle cx="600" cy="315" r="120" fill="none" stroke="#000" stroke-width="1.5" opacity=".15"/>
+  <!-- Diamond/shield shape -->
+  <path d="M600 140L740 280 600 490 460 280Z" fill="#000"/>
+  <!-- Inner diamond cutout -->
+  <path d="M600 200L690 280 600 420 510 280Z" fill="#fff"/>
+  <!-- Inner solid core -->
+  <path d="M600 250L650 290 600 360 550 290Z" fill="#000"/>
+  <!-- Corner accents -->
+  <rect x="160" y="80" width="60" height="4" fill="#000" opacity=".2"/>
+  <rect x="160" y="80" width="4" height="60" fill="#000" opacity=".2"/>
+  <rect x="980" y="80" width="60" height="4" fill="#000" opacity=".2"/>
+  <rect x="1036" y="80" width="4" height="60" fill="#000" opacity=".2"/>
+  <rect x="160" y="546" width="60" height="4" fill="#000" opacity=".2"/>
+  <rect x="160" y="490" width="4" height="60" fill="#000" opacity=".2"/>
+  <rect x="980" y="546" width="60" height="4" fill="#000" opacity=".2"/>
+  <rect x="1036" y="490" width="4" height="60" fill="#000" opacity=".2"/>
+  <!-- Label -->
+  <rect x="420" y="545" width="360" height="44" rx="22" fill="#000"/>
+  <text x="600" y="573" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="15" font-weight="700" letter-spacing="3">BRAND STRATEGY</text>
+</svg>

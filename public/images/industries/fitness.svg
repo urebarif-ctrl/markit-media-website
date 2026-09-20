@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+<rect width="800" height="600" fill="white"/>
+<g opacity="0.06"><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="black"/></pattern><rect width="800" height="600" fill="url(#d)"/></g>
+<!-- Dumbbell -->
+<g stroke="black" stroke-width="3" fill="none">
+<rect x="200" y="260" width="60" height="80" rx="5"/>
+<rect x="540" y="260" width="60" height="80" rx="5"/>
+<line x1="260" y1="300" x2="540" y2="300"/>
+<rect x="170" y="275" width="30" height="50" rx="3"/>
+<rect x="600" y="275" width="30" height="50" rx="3"/>
+</g>
+<!-- Heart rate -->
+<polyline points="100,450 200,450 230,420 260,480 290,420 320,450 400,450 430,420 460,480 490,420 520,450 700,450" stroke="black" stroke-width="2" fill="none" opacity="0.2"/>
+<!-- Circular elements -->
+<circle cx="400" cy="200" r="50" stroke="black" stroke-width="2" fill="none" opacity="0.15"/>
+<circle cx="400" cy="200" r="35" stroke="black" stroke-width="1.5" fill="none" opacity="0.1"/>
+</svg>

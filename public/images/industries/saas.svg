@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- Cloud -->
+  <path d="M250 250 Q250 190 310 190 Q320 140 380 140 Q440 140 460 180 Q470 170 490 170 Q530 170 540 200 Q580 200 580 240 Q580 270 550 270 L270 270 Q250 270 250 250Z" fill="none" stroke="#000" stroke-width="3"/>
+  <!-- Dashboard inside cloud -->
+  <rect x="300" y="200" width="80" height="50" fill="none" stroke="#000" stroke-width="1.5"/>
+  <rect x="305" y="205" width="20" height="20" fill="#000"/>
+  <rect x="330" y="205" width="20" height="20" fill="#000" opacity="0.3"/>
+  <rect x="355" y="205" width="20" height="20" fill="#000" opacity="0.15"/>
+  <line x1="305" y1="235" x2="375" y2="235" stroke="#000" stroke-width="1"/>
+  <line x1="305" y1="242" x2="350" y2="242" stroke="#000" stroke-width="1"/>
+  <!-- Devices -->
+  <rect x="120" y="340" width="180" height="120" rx="4" fill="none" stroke="#000" stroke-width="2.5"/>
+  <line x1="120" y1="435" x2="300" y2="435" stroke="#000" stroke-width="2"/>
+  <rect x="185" y="460" width="50" height="5" fill="#000"/>
+  <rect x="160" y="465" width="100" height="4" fill="#000"/>
+  <!-- Laptop content -->
+  <rect x="140" y="355" width="50" height="8" fill="#000"/>
+  <rect x="140" y="370" width="70" height="5" fill="#000" opacity="0.3"/>
+  <rect x="140" y="380" width="60" height="5" fill="#000" opacity="0.3"/>
+  <rect x="230" y="355" width="50" height="60" fill="none" stroke="#000" stroke-width="1.5"/>
+  <!-- Phone -->
+  <rect x="520" y="340" width="80" height="140" rx="8" fill="none" stroke="#000" stroke-width="2.5"/>
+  <line x1="520" y1="360" x2="600" y2="360" stroke="#000" stroke-width="1.5"/>
+  <line x1="520" y1="460" x2="600" y2="460" stroke="#000" stroke-width="1.5"/>
+  <rect x="535" y="375" width="50" height="8" fill="#000"/>
+  <rect x="535" y="390" width="40" height="5" fill="#000" opacity="0.3"/>
+  <rect x="535" y="410" width="50" height="30" fill="none" stroke="#000" stroke-width="1"/>
+  <!-- Subscription arrows -->
+  <path d="M400 320 L400 380" stroke="#000" stroke-width="2" stroke-dasharray="6 4"/>
+  <path d="M400 380 L360 340" stroke="#000" stroke-width="2"/>
+  <path d="M400 380 L440 340" stroke="#000" stroke-width="2"/>
+  <!-- Renewal cycle -->
+  <circle cx="680" cy="220" r="50" fill="none" stroke="#000" stroke-width="2"/>
+  <path d="M680 170 L690 180 L670 180Z" fill="#000"/>
+  <path d="M730 220 L720 210 L720 230Z" fill="#000"/>
+  <path d="M680 270 L670 260 L690 260Z" fill="#000"/>
+</svg>

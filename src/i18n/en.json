@@ -1,0 +1,59 @@
+{
+  "common": {
+    "skipToMainContent": "Skip to main content",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "viewAll": "View All",
+    "readMore": "Read More",
+    "backToTop": "Back to top",
+    "loading": "Loading"
+  },
+  "nav": {
+    "services": "Services",
+    "industries": "Industries",
+    "insights": "Insights",
+    "work": "Work",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "process": "Process",
+    "careers": "Careers",
+    "getQuote": "Get a Quote"
+  },
+  "footer": {
+    "tagline": "Full-stack digital marketing for businesses that want to grow.",
+    "services": "Services",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 Markit Media. All rights reserved."
+  },
+  "cta": {
+    "title": "Ready to Grow Your Business?",
+    "description": "Talk to our team about a strategy built around your goals.",
+    "primary": "Start Your Project",
+    "secondary": "View Our Work"
+  },
+  "accessibility": {
+    "mainNavigation": "Main navigation",
+    "footerNavigation": "Footer navigation",
+    "breadcrumb": "Breadcrumb",
+    "tableOfContents": "Table of contents",
+    "cookieConsent": "Cookie consent"
+  },
+  "home": {
+    "heroTitle": "We Build Brands That Perform",
+    "heroSubtitle": "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
+    "servicesTitle": "What We Do",
+    "servicesSubtitle": "Services",
+    "industriesTitle": "Industries We Serve",
+    "industriesSubtitle": "Industries",
+    "ctaTitle": "Ready to Grow Your Business?",
+    "ctaDescription": "Talk to our team about a strategy built around your goals. No commitment, no pressure — just a conversation about what's possible.",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "FAQs"
+  }
+}

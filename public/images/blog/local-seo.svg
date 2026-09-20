@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1" fill="#000" opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#fff"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Map pin central -->
+  <path d="M600 140c-55 0-100 45-100 100 0 80 100 160 100 160s100-80 100-160c0-55-45-100-100-100z" fill="#000"/>
+  <circle cx="600" cy="240" r="35" fill="#fff"/>
+  <!-- Network nodes -->
+  <circle cx="360" cy="280" r="18" fill="#000"/>
+  <circle cx="840" cy="280" r="18" fill="#000"/>
+  <circle cx="280" cy="400" r="14" fill="#000"/>
+  <circle cx="920" cy="400" r="14" fill="#000"/>
+  <circle cx="440" cy="440" r="12" fill="#000"/>
+  <circle cx="760" cy="440" r="12" fill="#000"/>
+  <circle cx="200" cy="300" r="10" fill="#000"/>
+  <circle cx="1000" cy="300" r="10" fill="#000"/>
+  <!-- Connection lines -->
+  <line x1="600" y1="300" x2="360" y2="280" stroke="#000" stroke-width="2" opacity=".3"/>
+  <line x1="600" y1="300" x2="840" y2="280" stroke="#000" stroke-width="2" opacity=".3"/>
+  <line x1="360" y1="280" x2="280" y2="400" stroke="#000" stroke-width="1.5" opacity=".2"/>
+  <line x1="840" y1="280" x2="920" y2="400" stroke="#000" stroke-width="1.5" opacity=".2"/>
+  <line x1="360" y1="280" x2="440" y2="440" stroke="#000" stroke-width="1.5" opacity=".2"/>
+  <line x1="840" y1="280" x2="760" y2="440" stroke="#000" stroke-width="1.5" opacity=".2"/>
+  <line x1="360" y1="280" x2="200" y2="300" stroke="#000" stroke-width="1" opacity=".15"/>
+  <line x1="840" y1="280" x2="1000" y2="300" stroke="#000" stroke-width="1" opacity=".15"/>
+  <line x1="280" y1="400" x2="440" y2="440" stroke="#000" stroke-width="1" opacity=".15"/>
+  <line x1="920" y1="400" x2="760" y2="440" stroke="#000" stroke-width="1" opacity=".15"/>
+  <!-- Small location markers -->
+  <path d="M360 250c-8 0-15 7-15 15s15 25 15 25 15-17 15-25-7-15-15-15z" fill="#000" opacity=".4"/>
+  <path d="M840 250c-8 0-15 7-15 15s15 25 15 25 15-17 15-25-7-15-15-15z" fill="#000" opacity=".4"/>
+  <!-- Label bar -->
+  <rect x="420" y="520" width="360" height="44" rx="22" fill="#000"/>
+  <text x="600" y="548" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="16" font-weight="700" letter-spacing="3">LOCAL SEO</text>
+</svg>

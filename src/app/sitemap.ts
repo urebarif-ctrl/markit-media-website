@@ -1,0 +1,203 @@
+import type { MetadataRoute } from "next";
+import { getAllPublishedSlugs, getAllCategories } from "@/lib/blog";
+
+const BASE_URL = "https://themarkitmedia.com";
+
+const staticPages = [
+  "",
+  "/about",
+  "/contact",
+  "/work",
+  "/process",
+  "/careers",
+  "/faq",
+  "/get-a-quote",
+  "/services/finder",
+  "/glossary",
+  "/why-markit-media",
+  "/resources",
+  "/resources/checklists",
+  "/resources/roi-calculator",
+  "/resources/seo-vs-ppc",
+  "/resources/web-platform-guide",
+  "/resources/budget-calculator",
+  "/resources/small-business-guide",
+  "/resources/seo-checklist",
+  "/resources/website-grader",
+  "/resources/headline-analyzer",
+  "/resources/meta-description-generator",
+  "/resources/og-preview",
+  "/resources/marketing-statistics",
+  "/resources/marketing-trends-2025",
+  "/resources/agency-comparison",
+  "/resources/startup-marketing-guide",
+  "/resources/email-roi-calculator",
+  "/resources/ppc-audit-checklist",
+  "/resources/content-roi-calculator",
+  "/resources/social-media-planner",
+  "/resources/brand-name-generator",
+  "/resources/competitor-analysis",
+  "/resources/ad-copy-generator",
+  "/resources/email-subject-tester",
+  "/resources/marketing-budget-planner",
+  "/resources/speed-test",
+  "/tools",
+  "/approach",
+  "/pricing",
+  "/blog",
+  "/terms",
+  "/privacy-policy",
+  "/services",
+  "/services/performance-marketing",
+  "/services/performance-marketing/google-ads",
+  "/services/performance-marketing/meta-ads",
+  "/services/performance-marketing/tiktok-ads",
+  "/services/performance-marketing/linkedin-ads",
+  "/services/performance-marketing/ppc-management",
+  "/services/performance-marketing/retargeting",
+  "/services/seo",
+  "/services/seo/technical-seo",
+  "/services/seo/local-seo",
+  "/services/seo/content-seo",
+  "/services/seo/link-building",
+  "/services/seo/seo-audits",
+  "/services/seo/keyword-research",
+  "/services/social-media",
+  "/services/social-media/social-strategy",
+  "/services/social-media/content-creation",
+  "/services/social-media/community-management",
+  "/services/social-media/influencer-marketing",
+  "/services/social-media/social-analytics",
+  "/services/website-development",
+  "/services/website-development/wordpress",
+  "/services/website-development/shopify",
+  "/services/website-development/nextjs",
+  "/services/website-development/custom-web-apps",
+  "/services/website-development/landing-pages",
+  "/services/website-development/ecommerce",
+  "/services/branding",
+  "/services/branding/brand-strategy",
+  "/services/branding/logo-design",
+  "/services/branding/visual-identity",
+  "/services/branding/brand-guidelines",
+  "/services/branding/packaging-design",
+  "/services/video-production",
+  "/services/video-production/commercial-production",
+  "/services/video-production/video-editing",
+  "/services/video-production/motion-graphics",
+  "/services/video-production/reels-short-form",
+  "/services/video-production/animation",
+  "/services/ai",
+  "/services/ai/chatbots",
+  "/services/ai/marketing-automation",
+  "/services/ai/consulting",
+  "/services/ai/predictive-analytics",
+  "/services/email-marketing",
+  "/services/email-marketing/campaign-design",
+  "/services/email-marketing/automation",
+  "/services/email-marketing/list-management",
+  "/services/email-marketing/ab-testing",
+  "/services/email-marketing/deliverability",
+  "/services/content-marketing",
+  "/services/content-marketing/content-strategy",
+  "/services/content-marketing/copywriting",
+  "/services/content-marketing/blog-writing",
+  "/services/content-marketing/whitepapers",
+  "/services/content-marketing/seo-content",
+  "/services/paid-advertising",
+  "/services/paid-advertising/programmatic",
+  "/services/paid-advertising/display-ads",
+  "/services/paid-advertising/native-advertising",
+  "/services/paid-advertising/media-buying",
+  "/services/digital-marketing",
+  "/services/digital-marketing/analytics-setup",
+  "/services/digital-marketing/crm-consulting",
+  "/services/digital-marketing/orm",
+  "/services/digital-marketing/fractional-cmo",
+  "/services/digital-marketing/marketing-strategy",
+  "/services/ecommerce-marketing",
+  "/services/ecommerce-marketing/amazon-ads",
+  "/services/ecommerce-marketing/shopify-marketing",
+  "/services/ecommerce-marketing/product-feed-optimization",
+  "/services/ecommerce-marketing/marketplace-management",
+  "/services/bpo",
+  "/services/bpo/virtual-assistants",
+  "/services/bpo/data-entry",
+  "/services/bpo/customer-support",
+  "/services/bpo/operations",
+  "/industries",
+  "/industries/home-services",
+  "/industries/ecommerce",
+  "/industries/healthcare",
+  "/industries/real-estate",
+  "/industries/restaurants",
+  "/industries/fashion",
+  "/industries/b2b",
+  "/industries/ev-chargers",
+  "/industries/education",
+  "/industries/legal",
+  "/industries/saas",
+  "/industries/finance",
+  "/industries/hospitality",
+  "/industries/fitness",
+  "/industries/automotive",
+  "/industries/nonprofits",
+  "/locations",
+  "/locations/united-states",
+  "/locations/canada",
+  "/locations/uae",
+  "/locations/uk",
+  "/locations/australia",
+  "/locations/saudi-arabia",
+  "/results",
+  "/capabilities",
+  "/technology",
+  "/partners",
+  "/thank-you",
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const locales = ["en"];
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const locale of locales) {
+    for (const page of staticPages) {
+      const depth = page.split("/").filter(Boolean).length;
+      let priority = 0.7;
+      if (page === "") priority = 1;
+      else if (depth === 1) priority = 0.9;
+      else if (depth === 2) priority = 0.8;
+      else priority = 0.7;
+
+      entries.push({
+        url: `${BASE_URL}/${locale}${page}`,
+        lastModified: new Date(),
+        changeFrequency: page === "" || page === "/blog" ? "weekly" : "monthly",
+        priority,
+      });
+    }
+
+    const blogSlugs = getAllPublishedSlugs();
+    for (const slug of blogSlugs) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+
+    const blogCategories = getAllCategories();
+    for (const cat of blogCategories) {
+      const slug = cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/category/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7,
+      });
+    }
+  }
+
+  return entries;
+}

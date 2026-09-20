@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1" fill="#000" opacity=".06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#fff"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Network graph nodes -->
+  <!-- Central hub node -->
+  <circle cx="600" cy="280" r="45" fill="#000"/>
+  <rect x="582" y="262" width="36" height="36" rx="6" fill="#fff"/>
+  <text x="600" y="290" text-anchor="middle" fill="#000" font-family="system-ui,sans-serif" font-size="22" font-weight="700">in</text>
+  <!-- Primary connections -->
+  <circle cx="380" cy="180" r="30" fill="#000"/>
+  <circle cx="380" cy="165" r="9" fill="#fff"/>
+  <path d="M366 185Q366 178 380 178Q394 178 394 185" fill="#fff"/>
+  <circle cx="820" cy="180" r="30" fill="#000"/>
+  <circle cx="820" cy="165" r="9" fill="#fff"/>
+  <path d="M806 185Q806 178 820 178Q834 178 834 185" fill="#fff"/>
+  <circle cx="380" cy="400" r="30" fill="#000"/>
+  <circle cx="380" cy="385" r="9" fill="#fff"/>
+  <path d="M366 405Q366 398 380 398Q394 398 394 405" fill="#fff"/>
+  <circle cx="820" cy="400" r="30" fill="#000"/>
+  <circle cx="820" cy="385" r="9" fill="#fff"/>
+  <path d="M806 405Q806 398 820 398Q834 398 834 405" fill="#fff"/>
+  <!-- Secondary connections -->
+  <circle cx="240" cy="100" r="20" fill="#000" opacity=".5"/>
+  <circle cx="240" cy="90" r="6" fill="#fff"/>
+  <circle cx="960" cy="100" r="20" fill="#000" opacity=".5"/>
+  <circle cx="960" cy="90" r="6" fill="#fff"/>
+  <circle cx="200" cy="300" r="18" fill="#000" opacity=".4"/>
+  <circle cx="200" cy="292" r="5" fill="#fff"/>
+  <circle cx="1000" cy="300" r="18" fill="#000" opacity=".4"/>
+  <circle cx="1000" cy="292" r="5" fill="#fff"/>
+  <circle cx="260" cy="480" r="16" fill="#000" opacity=".3"/>
+  <circle cx="260" cy="473" r="5" fill="#fff"/>
+  <circle cx="940" cy="480" r="16" fill="#000" opacity=".3"/>
+  <circle cx="940" cy="473" r="5" fill="#fff"/>
+  <!-- Primary connection lines -->
+  <line x1="560" y1="260" x2="410" y2="195" stroke="#000" stroke-width="2" opacity=".2"/>
+  <line x1="640" y1="260" x2="790" y2="195" stroke="#000" stroke-width="2" opacity=".2"/>
+  <line x1="560" y1="305" x2="410" y2="385" stroke="#000" stroke-width="2" opacity=".2"/>
+  <line x1="640" y1="305" x2="790" y2="385" stroke="#000" stroke-width="2" opacity=".2"/>
+  <!-- Cross connections -->
+  <line x1="410" y1="185" x2="790" y2="185" stroke="#000" stroke-width="1" opacity=".06" stroke-dasharray="4,6"/>
+  <line x1="410" y1="395" x2="790" y2="395" stroke="#000" stroke-width="1" opacity=".06" stroke-dasharray="4,6"/>
+  <line x1="385" y1="210" x2="385" y2="370" stroke="#000" stroke-width="1" opacity=".06" stroke-dasharray="4,6"/>
+  <line x1="815" y1="210" x2="815" y2="370" stroke="#000" stroke-width="1" opacity=".06" stroke-dasharray="4,6"/>
+  <!-- Secondary connection lines -->
+  <line x1="355" y1="165" x2="260" y2="115" stroke="#000" stroke-width="1" opacity=".1"/>
+  <line x1="845" y1="165" x2="940" y2="115" stroke="#000" stroke-width="1" opacity=".1"/>
+  <line x1="350" y1="190" x2="220" y2="290" stroke="#000" stroke-width="1" opacity=".08"/>
+  <line x1="850" y1="190" x2="980" y2="290" stroke="#000" stroke-width="1" opacity=".08"/>
+  <line x1="360" y1="425" x2="280" y2="470" stroke="#000" stroke-width="1" opacity=".06"/>
+  <line x1="840" y1="425" x2="920" y2="470" stroke="#000" stroke-width="1" opacity=".06"/>
+  <!-- Label bar -->
+  <rect x="390" y="540" width="420" height="44" rx="22" fill="#000"/>
+  <text x="600" y="568" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="3">LINKEDIN STRATEGY</text>
+</svg>

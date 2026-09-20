@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- Bank Building -->
+  <polygon points="200,200 300,140 400,200" fill="none" stroke="#000" stroke-width="3"/>
+  <rect x="220" y="200" width="160" height="140" fill="none" stroke="#000" stroke-width="2.5"/>
+  <rect x="210" y="335" width="180" height="12" fill="#000"/>
+  <!-- Columns -->
+  <rect x="240" y="210" width="12" height="125" fill="#000"/>
+  <rect x="274" y="210" width="12" height="125" fill="#000"/>
+  <rect x="314" y="210" width="12" height="125" fill="#000"/>
+  <rect x="348" y="210" width="12" height="125" fill="#000"/>
+  <!-- Rising chart -->
+  <line x1="480" y1="350" x2="480" y2="150" stroke="#000" stroke-width="2"/>
+  <line x1="480" y1="350" x2="720" y2="350" stroke="#000" stroke-width="2"/>
+  <polyline points="500,320 540,300 580,280 620,240 660,200 700,160" fill="none" stroke="#000" stroke-width="3"/>
+  <circle cx="500" cy="320" r="4" fill="#000"/>
+  <circle cx="540" cy="300" r="4" fill="#000"/>
+  <circle cx="580" cy="280" r="4" fill="#000"/>
+  <circle cx="620" cy="240" r="4" fill="#000"/>
+  <circle cx="660" cy="200" r="4" fill="#000"/>
+  <circle cx="700" cy="160" r="4" fill="#000"/>
+  <!-- Arrow up -->
+  <path d="M700 160 L710 175 L690 175Z" fill="#000"/>
+  <!-- Shield -->
+  <path d="M150 430 L150 490 Q150 540 200 560 Q250 540 250 490 L250 430Z" fill="none" stroke="#000" stroke-width="2.5"/>
+  <polyline points="175,490 190,505 225,470" fill="none" stroke="#000" stroke-width="3"/>
+  <!-- Coin stacks -->
+  <ellipse cx="420" cy="500" rx="35" ry="10" fill="none" stroke="#000" stroke-width="2"/>
+  <ellipse cx="420" cy="490" rx="35" ry="10" fill="none" stroke="#000" stroke-width="2"/>
+  <ellipse cx="420" cy="480" rx="35" ry="10" fill="none" stroke="#000" stroke-width="2"/>
+  <line x1="385" y1="480" x2="385" y2="500" stroke="#000" stroke-width="2"/>
+  <line x1="455" y1="480" x2="455" y2="500" stroke="#000" stroke-width="2"/>
+  <ellipse cx="520" cy="510" rx="35" ry="10" fill="none" stroke="#000" stroke-width="2"/>
+  <ellipse cx="520" cy="500" rx="35" ry="10" fill="none" stroke="#000" stroke-width="2"/>
+  <line x1="485" y1="500" x2="485" y2="510" stroke="#000" stroke-width="2"/>
+  <line x1="555" y1="500" x2="555" y2="510" stroke="#000" stroke-width="2"/>
+  <!-- Percentage sign -->
+  <text x="650" y="480" font-size="60" fill="#000" opacity="0.1" font-family="sans-serif" font-weight="bold">%</text>
+</svg>

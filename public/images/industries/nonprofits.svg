@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+<rect width="800" height="600" fill="white"/>
+<g opacity="0.06"><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="black"/></pattern><rect width="800" height="600" fill="url(#d)"/></g>
+<!-- Heart -->
+<path d="M400 450 C300 350 150 300 150 220 C150 150 220 100 300 100 C340 100 370 120 400 160 C430 120 460 100 500 100 C580 100 650 150 650 220 C650 300 500 350 400 450Z" stroke="black" stroke-width="3" fill="none"/>
+<!-- Hands holding -->
+<path d="M200 380 C220 350 260 340 280 360" stroke="black" stroke-width="2" fill="none" opacity="0.3"/>
+<path d="M600 380 C580 350 540 340 520 360" stroke="black" stroke-width="2" fill="none" opacity="0.3"/>
+<!-- People circles -->
+<circle cx="250" cy="500" r="15" stroke="black" stroke-width="2" fill="none" opacity="0.2"/>
+<circle cx="320" cy="500" r="15" stroke="black" stroke-width="2" fill="none" opacity="0.2"/>
+<circle cx="400" cy="500" r="15" stroke="black" stroke-width="2" fill="none" opacity="0.2"/>
+<circle cx="480" cy="500" r="15" stroke="black" stroke-width="2" fill="none" opacity="0.2"/>
+<circle cx="550" cy="500" r="15" stroke="black" stroke-width="2" fill="none" opacity="0.2"/>
+<!-- Globe -->
+<circle cx="400" cy="250" r="60" stroke="black" stroke-width="1.5" fill="none" opacity="0.1"/>
+<ellipse cx="400" cy="250" rx="30" ry="60" stroke="black" stroke-width="1" fill="none" opacity="0.08"/>
+<line x1="340" y1="250" x2="460" y2="250" stroke="black" stroke-width="1" opacity="0.08"/>
+</svg>

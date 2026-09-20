@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="1" fill="#000" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#fff"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <!-- Central hexagonal layout -->
+  <!-- Eye icon (vision) - top center -->
+  <g transform="translate(600,160)">
+    <circle cx="0" cy="0" r="55" fill="#000"/>
+    <ellipse cx="0" cy="0" rx="30" ry="20" fill="#fff"/>
+    <circle cx="0" cy="0" r="10" fill="#000"/>
+    <path d="M-35 0Q0-25 35 0" fill="none" stroke="#fff" stroke-width="2"/>
+    <path d="M-35 0Q0 25 35 0" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+  <!-- Keyboard icon - left -->
+  <g transform="translate(370,320)">
+    <circle cx="0" cy="0" r="55" fill="#000"/>
+    <rect x="-28" y="-18" width="56" height="36" rx="4" fill="none" stroke="#fff" stroke-width="2"/>
+    <rect x="-20" y="-10" width="8" height="6" rx="1" fill="#fff"/>
+    <rect x="-8" y="-10" width="8" height="6" rx="1" fill="#fff"/>
+    <rect x="4" y="-10" width="8" height="6" rx="1" fill="#fff"/>
+    <rect x="-20" y="0" width="8" height="6" rx="1" fill="#fff"/>
+    <rect x="-8" y="0" width="8" height="6" rx="1" fill="#fff"/>
+    <rect x="4" y="0" width="8" height="6" rx="1" fill="#fff"/>
+    <rect x="-14" y="10" width="28" height="5" rx="2" fill="#fff"/>
+  </g>
+  <!-- Screen reader icon - right -->
+  <g transform="translate(830,320)">
+    <circle cx="0" cy="0" r="55" fill="#000"/>
+    <!-- Monitor -->
+    <rect x="-22" y="-20" width="44" height="30" rx="3" fill="none" stroke="#fff" stroke-width="2"/>
+    <line x1="-8" y1="14" x2="8" y2="14" stroke="#fff" stroke-width="2"/>
+    <!-- Sound waves -->
+    <path d="M28-12Q38 0 28 12" fill="none" stroke="#fff" stroke-width="2"/>
+    <path d="M34-18Q48 0 34 18" fill="none" stroke="#fff" stroke-width="1.5" opacity=".6"/>
+  </g>
+  <!-- Accessibility person icon - bottom center -->
+  <g transform="translate(600,440)">
+    <circle cx="0" cy="0" r="55" fill="#000"/>
+    <circle cx="0" cy="-16" r="7" fill="#fff"/>
+    <line x1="0" y1="-9" x2="0" y2="10" stroke="#fff" stroke-width="2.5"/>
+    <line x1="-16" y1="-2" x2="16" y2="-2" stroke="#fff" stroke-width="2.5"/>
+    <line x1="0" y1="10" x2="-12" y2="25" stroke="#fff" stroke-width="2.5"/>
+    <line x1="0" y1="10" x2="12" y2="25" stroke="#fff" stroke-width="2.5"/>
+  </g>
+  <!-- Connection lines between icons -->
+  <line x1="560" y1="200" x2="410" y2="280" stroke="#000" stroke-width="1.5" opacity=".12"/>
+  <line x1="640" y1="200" x2="790" y2="280" stroke="#000" stroke-width="1.5" opacity=".12"/>
+  <line x1="420" y1="360" x2="560" y2="410" stroke="#000" stroke-width="1.5" opacity=".12"/>
+  <line x1="780" y1="360" x2="640" y2="410" stroke="#000" stroke-width="1.5" opacity=".12"/>
+  <line x1="370" y1="370" x2="370" y2="420" stroke="none"/>
+  <!-- Outer ring -->
+  <circle cx="600" cy="300" r="240" fill="none" stroke="#000" stroke-width="1" opacity=".08"/>
+</svg>

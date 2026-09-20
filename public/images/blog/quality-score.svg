@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#f9fafb"/>
+  <circle cx="400" cy="225" r="140" fill="none" stroke="#e5e7eb" stroke-width="20"/>
+  <circle cx="400" cy="225" r="140" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="660 220" stroke-linecap="round" transform="rotate(-90 400 225)"/>
+  <text x="400" y="205" text-anchor="middle" fill="#000" font-family="system-ui" font-size="64" font-weight="800">8/10</text>
+  <text x="400" y="245" text-anchor="middle" fill="#6b7280" font-family="system-ui" font-size="18" font-weight="600">QUALITY SCORE</text>
+  <rect x="200" y="400" width="120" height="8" rx="4" fill="#000"/>
+  <rect x="340" y="400" width="120" height="8" rx="4" fill="#d1d5db"/>
+  <rect x="480" y="400" width="120" height="8" rx="4" fill="#e5e7eb"/>
+</svg>

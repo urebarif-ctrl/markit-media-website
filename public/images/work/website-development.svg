@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+<rect width="800" height="450" fill="#fff"/>
+<pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+<circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/>
+</pattern>
+<rect width="800" height="450" fill="url(#dots)"/>
+<!-- Main browser window -->
+<rect x="120" y="60" width="380" height="280" rx="6" stroke="#000" stroke-width="2.5" fill="none"/>
+<!-- Browser toolbar -->
+<line x1="120" y1="95" x2="500" y2="95" stroke="#000" stroke-width="2"/>
+<!-- Traffic light dots -->
+<circle cx="142" cy="78" r="5" fill="#000" opacity="0.3"/>
+<circle cx="160" cy="78" r="5" fill="#000" opacity="0.3"/>
+<circle cx="178" cy="78" r="5" fill="#000" opacity="0.3"/>
+<!-- URL bar -->
+<rect x="200" y="71" width="280" height="14" rx="7" stroke="#000" stroke-width="1.5" fill="none"/>
+<!-- Code brackets in browser -->
+<text x="240" y="175" font-family="monospace" font-size="48" fill="#000" font-weight="bold">&lt;/&gt;</text>
+<!-- Code lines -->
+<line x1="160" y1="210" x2="280" y2="210" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+<line x1="175" y1="230" x2="320" y2="230" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+<line x1="175" y1="250" x2="290" y2="250" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+<line x1="160" y1="270" x2="250" y2="270" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+<line x1="160" y1="290" x2="310" y2="290" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+<!-- Cursor blink -->
+<rect x="330" y="225" width="2" height="16" fill="#000"/>
+<!-- Tablet outline -->
+<rect x="540" y="100" width="140" height="200" rx="8" stroke="#000" stroke-width="2.5" fill="none"/>
+<line x1="540" y1="125" x2="680" y2="125" stroke="#000" stroke-width="1.5"/>
+<!-- Tablet content lines -->
+<line x1="560" y1="150" x2="660" y2="150" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+<line x1="560" y1="170" x2="650" y2="170" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+<rect x="560" y="190" width="100" height="50" rx="2" stroke="#000" stroke-width="1.5" fill="none" opacity="0.3"/>
+<line x1="560" y1="260" x2="640" y2="260" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+<!-- Phone outline -->
+<rect x="580" y="320" width="80" height="120" rx="10" stroke="#000" stroke-width="2.5" fill="none"/>
+<line x1="580" y1="342" x2="660" y2="342" stroke="#000" stroke-width="1.5"/>
+<!-- Phone content -->
+<line x1="595" y1="360" x2="645" y2="360" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+<line x1="595" y1="375" x2="640" y2="375" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+<rect x="595" y="390" width="50" height="25" rx="2" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+<!-- Responsive arrows -->
+<path d="M510,220 Q520,220 520,180 L530,180" stroke="#000" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+<path d="M530,310 Q540,310 560,340" stroke="#000" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+</svg>

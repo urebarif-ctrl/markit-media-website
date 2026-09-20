@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- Medical Cross -->
+  <rect x="150" y="140" width="120" height="120" rx="8" fill="none" stroke="#000" stroke-width="3"/>
+  <rect x="190" y="160" width="40" height="80" fill="#000"/>
+  <rect x="170" y="180" width="80" height="40" fill="#000"/>
+  <!-- Stethoscope -->
+  <path d="M480,140 L480,220 Q480,300 420,300 Q360,300 360,220 L360,140" fill="none" stroke="#000" stroke-width="3"/>
+  <circle cx="420" cy="320" r="30" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="420" cy="320" r="8" fill="#000"/>
+  <circle cx="360" cy="135" r="8" fill="#000"/>
+  <circle cx="480" cy="135" r="8" fill="#000"/>
+  <!-- Heart Rate Line -->
+  <polyline points="80,460 180,460 210,460 230,420 250,500 270,380 290,520 310,440 330,460 450,460 480,460" fill="none" stroke="#000" stroke-width="2.5"/>
+  <!-- Pulse line fade -->
+  <line x1="480" y1="460" x2="560" y2="460" stroke="#000" stroke-width="2" opacity="0.3"/>
+  <!-- Pill Capsule -->
+  <g transform="translate(640,200) rotate(30)">
+    <rect x="-20" y="-45" width="40" height="90" rx="20" fill="none" stroke="#000" stroke-width="2.5"/>
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#000" stroke-width="2"/>
+    <rect x="-20" y="0" width="40" height="45" rx="20" fill="#000" opacity="0.15"/>
+  </g>
+  <!-- Heart -->
+  <path d="M620 430 Q620 400 645 400 Q670 400 670 430 Q670 400 695 400 Q720 400 720 430 Q720 480 670 520 Q620 480 620 430Z" fill="none" stroke="#000" stroke-width="2.5"/>
+  <!-- Small cross accent -->
+  <line x1="668" y1="445" x2="668" y2="485" stroke="#000" stroke-width="2" opacity="0.3"/>
+  <line x1="648" y1="465" x2="688" y2="465" stroke="#000" stroke-width="2" opacity="0.3"/>
+</svg>

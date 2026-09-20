@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.8" fill="#000" opacity="0.08"/>
+  </pattern>
+  <rect width="800" height="600" fill="url(#dots)"/>
+  <!-- Dashboard frame -->
+  <rect x="160" y="140" width="480" height="320" stroke="#000" stroke-width="2.5" fill="none"/>
+  <line x1="160" y1="175" x2="640" y2="175" stroke="#000" stroke-width="1.5"/>
+  <!-- Window dots -->
+  <circle cx="180" cy="157" r="4" fill="#000" opacity="0.3"/>
+  <circle cx="195" cy="157" r="4" fill="#000" opacity="0.3"/>
+  <circle cx="210" cy="157" r="4" fill="#000" opacity="0.3"/>
+  <!-- Bar chart -->
+  <rect x="195" y="340" width="25" height="90" stroke="#000" stroke-width="1.5" fill="#000"/>
+  <rect x="235" y="310" width="25" height="120" stroke="#000" stroke-width="1.5" fill="#000"/>
+  <rect x="275" y="360" width="25" height="70" stroke="#000" stroke-width="1.5" fill="#000"/>
+  <rect x="315" y="280" width="25" height="150" stroke="#000" stroke-width="1.5" fill="#000"/>
+  <rect x="355" y="300" width="25" height="130" stroke="#000" stroke-width="1.5" fill="#000"/>
+  <!-- Baseline -->
+  <line x1="185" y1="430" x2="390" y2="430" stroke="#000" stroke-width="1"/>
+  <!-- Pie chart -->
+  <circle cx="510" cy="310" r="55" stroke="#000" stroke-width="2" fill="none"/>
+  <line x1="510" y1="310" x2="510" y2="255" stroke="#000" stroke-width="1.5"/>
+  <line x1="510" y1="310" x2="558" y2="338" stroke="#000" stroke-width="1.5"/>
+  <line x1="510" y1="310" x2="470" y2="348" stroke="#000" stroke-width="1.5"/>
+  <!-- KPI boxes at top of dashboard -->
+  <rect x="185" y="195" width="100" height="55" stroke="#000" stroke-width="1" fill="none"/>
+  <rect x="305" y="195" width="100" height="55" stroke="#000" stroke-width="1" fill="none"/>
+  <rect x="425" y="195" width="100" height="55" stroke="#000" stroke-width="1" fill="none"/>
+  <!-- KPI numbers (abstract lines) -->
+  <line x1="200" y1="215" x2="250" y2="215" stroke="#000" stroke-width="2.5" opacity="0.4"/>
+  <line x1="200" y1="233" x2="270" y2="233" stroke="#000" stroke-width="1" opacity="0.2"/>
+  <line x1="320" y1="215" x2="375" y2="215" stroke="#000" stroke-width="2.5" opacity="0.4"/>
+  <line x1="320" y1="233" x2="390" y2="233" stroke="#000" stroke-width="1" opacity="0.2"/>
+  <line x1="440" y1="215" x2="490" y2="215" stroke="#000" stroke-width="2.5" opacity="0.4"/>
+  <line x1="440" y1="233" x2="510" y2="233" stroke="#000" stroke-width="1" opacity="0.2"/>
+  <!-- Small up arrows in KPI boxes -->
+  <polygon points="265,220 272,210 279,220" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+  <polygon points="385,220 392,210 399,220" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+  <polygon points="505,220 512,210 519,220" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+  <!-- Geometric accents outside dashboard -->
+  <rect x="670" y="160" width="35" height="35" stroke="#000" stroke-width="1" fill="none" opacity="0.12"/>
+  <circle cx="130" cy="400" r="18" stroke="#000" stroke-width="1" fill="none" opacity="0.1"/>
+  <polygon points="700,450 720,450 710,430" stroke="#000" stroke-width="1" fill="none" opacity="0.12"/>
+  <circle cx="680" cy="520" r="10" stroke="#000" stroke-width="1" fill="none" opacity="0.08"/>
+</svg>

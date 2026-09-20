@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+<rect width="800" height="600" fill="white"/>
+<g opacity="0.06"><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="black"/></pattern><rect width="800" height="600" fill="url(#d)"/></g>
+<!-- Car body -->
+<path d="M180 350 L250 250 L550 250 L620 350" stroke="black" stroke-width="3" fill="none"/>
+<rect x="150" y="350" width="500" height="80" rx="10" stroke="black" stroke-width="3" fill="none"/>
+<!-- Windows -->
+<path d="M270 260 L300 350 L380 350 L380 260 Z" stroke="black" stroke-width="2" fill="none"/>
+<path d="M390 260 L390 350 L500 350 L530 260 Z" stroke="black" stroke-width="2" fill="none"/>
+<!-- Wheels -->
+<circle cx="250" cy="430" r="45" stroke="black" stroke-width="3" fill="none"/>
+<circle cx="250" cy="430" r="20" stroke="black" stroke-width="2" fill="none"/>
+<circle cx="550" cy="430" r="45" stroke="black" stroke-width="3" fill="none"/>
+<circle cx="550" cy="430" r="20" stroke="black" stroke-width="2" fill="none"/>
+<!-- Road line -->
+<line x1="50" y1="475" x2="750" y2="475" stroke="black" stroke-width="1" opacity="0.15"/>
+<line x1="200" y1="500" x2="350" y2="500" stroke="black" stroke-width="3" opacity="0.1" stroke-dasharray="20 15"/>
+<line x1="450" y1="500" x2="600" y2="500" stroke="black" stroke-width="3" opacity="0.1" stroke-dasharray="20 15"/>
+</svg>

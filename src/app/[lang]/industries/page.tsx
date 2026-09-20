@@ -1,0 +1,121 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Animate, Stagger } from "@/components/animate";
+import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
+import { Breadcrumb } from "@/components/breadcrumb";
+import { JsonLd } from "@/components/json-ld";
+
+export const metadata: Metadata = {
+  title: "Industries We Serve",
+  description: "Markit Media provides specialized digital marketing for 16 industries including home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, hospitality, fitness, automotive, and nonprofits.",
+  alternates: { canonical: "https://themarkitmedia.com/en/industries" },
+};
+
+const industries = [
+  { title: "Home Services", desc: "HVAC, plumbing, roofing, landscaping, and home improvement businesses. We help local service providers generate qualified leads and build trust in their communities.", href: "/industries/home-services", image: "/images/industries/home-services.svg" },
+  { title: "E-commerce", desc: "Online stores, DTC brands, and marketplace sellers. From product feed optimization to conversion rate optimization, we drive profitable online sales.", href: "/industries/ecommerce", image: "/images/industries/ecommerce.svg" },
+  { title: "Healthcare", desc: "Medical practices, dental clinics, wellness brands, and health tech. HIPAA-aware marketing that builds patient trust and drives appointments.", href: "/industries/healthcare", image: "/images/industries/healthcare.svg" },
+  { title: "Real Estate", desc: "Developers, brokers, property managers, and real estate agencies. High-intent lead generation and brand building in competitive local markets.", href: "/industries/real-estate", image: "/images/industries/real-estate.svg" },
+  { title: "Restaurants", desc: "Restaurants, cafes, food delivery, and hospitality brands. Local SEO, social media, and reputation management that fill tables.", href: "/industries/restaurants", image: "/images/industries/restaurant.svg" },
+  { title: "Fashion", desc: "Fashion brands, apparel companies, and luxury retail. Visual storytelling, influencer partnerships, and conversion-focused e-commerce marketing.", href: "/industries/fashion", image: "/images/industries/fashion.svg" },
+  { title: "B2B", desc: "SaaS, professional services, manufacturing, and enterprise companies. Long-cycle lead nurturing, thought leadership, and account-based marketing.", href: "/industries/b2b", image: "/images/industries/b2b.svg" },
+  { title: "EV Chargers", desc: "EV charging networks, clean energy, and sustainability brands. Market positioning and demand generation in a rapidly growing sector.", href: "/industries/ev-chargers", image: "/images/industries/ev-chargers.svg" },
+  { title: "Education", desc: "Schools, universities, online courses, and EdTech companies. Enrollment marketing, brand positioning, and student acquisition across digital channels.", href: "/industries/education", image: "/images/industries/education.svg" },
+  { title: "Legal", desc: "Law firms, solo practitioners, and legal services. Ethical digital marketing that builds trust, generates qualified leads, and differentiates your practice.", href: "/industries/legal", image: "/images/industries/legal.svg" },
+  { title: "SaaS", desc: "Software companies and tech startups. Demand generation, product-led growth, content marketing, and full-funnel paid acquisition for recurring revenue businesses.", href: "/industries/saas", image: "/images/industries/saas.svg" },
+  { title: "Financial Services", desc: "Banks, fintech, insurance, accounting, and wealth management. Compliant digital marketing that builds trust and generates qualified financial leads.", href: "/industries/finance", image: "/images/industries/finance.svg" },
+  { title: "Hospitality & Hotels", desc: "Hotels, resorts, vacation rentals, and travel brands. Direct booking strategies, reputation management, and seasonal marketing that fills rooms year-round.", href: "/industries/hospitality", image: "/images/industries/hospitality.svg" },
+  { title: "Fitness & Wellness", desc: "Gyms, studios, wellness centers, and fitness brands. Membership acquisition, retention marketing, and local visibility to grow your community.", href: "/industries/fitness", image: "/images/industries/fitness.svg" },
+  { title: "Automotive", desc: "Dealerships, auto services, parts retailers, and car brands. Inventory-based advertising, local search dominance, and lead generation that drives test drives.", href: "/industries/automotive", image: "/images/industries/automotive.svg" },
+  { title: "Nonprofits & NGOs", desc: "Charities, foundations, and advocacy organizations. Donor acquisition, Google Ad Grants management, and impact-driven storytelling on a limited budget.", href: "/industries/nonprofits", image: "/images/industries/nonprofits.svg" },
+];
+
+export default function IndustriesPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Industries Served by Markit Media",
+    description: "Specialized digital marketing for multiple industries.",
+  };
+
+  return (
+    <article>
+      <JsonLd data={schema} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Industries" }]} />
+
+      <section className="px-6 lg:px-12 pt-24 pb-12">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Industries</SectionLabel>
+            <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
+              Marketing Built for Your Industry
+            </h1>
+            <SectionDesc>
+              Cookie-cutter strategies don&apos;t work. Every industry has unique buyer journeys, compliance needs, and competitive dynamics. We bring deep expertise and tailored strategies to each sector we serve.
+            </SectionDesc>
+          </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-12" aria-label="Industries">
+        <div className="max-w-7xl mx-auto">
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {industries.map((ind) => (
+              <Link key={ind.href} href={ind.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={ind.image}
+                    alt=""
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">{ind.title}</h2>
+                  <p className="text-base text-gray-500 leading-relaxed">{ind.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Why industry specialization matters">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Our Approach</SectionLabel>
+            <SectionTitle>Why Industry Specialization Matters</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              { title: "Faster Ramp-Up", desc: "We already know your industry's landscape, terminology, and buyer behavior. No time wasted learning the basics." },
+              { title: "Proven Playbooks", desc: "Strategies refined through experience with similar businesses. We know what works and what to avoid." },
+              { title: "Relevant Benchmarks", desc: "We measure your performance against real industry standards, not generic marketing averages." },
+            ].map((item) => (
+              <div key={item.title} className="bg-white p-8 border border-gray-200">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
+              Don&apos;t See Your Industry?
+            </h2>
+            <p className="text-lg text-gray-400 mt-4 mb-8">
+              We work with businesses across many sectors. Contact us to discuss your specific needs.
+            </p>
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors">
+              Get in Touch &rarr;
+            </Link>
+          </Animate>
+        </div>
+      </section>
+    </article>
+  );
+}

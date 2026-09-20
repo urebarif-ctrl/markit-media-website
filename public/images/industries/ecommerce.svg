@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- Shopping Cart -->
+  <polyline points="100,160 130,160 180,320 340,320" fill="none" stroke="#000" stroke-width="3"/>
+  <circle cx="200" cy="350" r="15" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="310" cy="350" r="15" fill="none" stroke="#000" stroke-width="2.5"/>
+  <polyline points="145,190 350,190 330,290 170,290" fill="none" stroke="#000" stroke-width="2.5"/>
+  <!-- Items in cart -->
+  <rect x="200" y="220" width="30" height="40" fill="#000" opacity="0.15"/>
+  <rect x="245" y="230" width="30" height="30" fill="#000" opacity="0.1"/>
+  <!-- Browser Window -->
+  <rect x="420" y="120" width="280" height="200" rx="6" fill="none" stroke="#000" stroke-width="2.5"/>
+  <line x1="420" y1="155" x2="700" y2="155" stroke="#000" stroke-width="2"/>
+  <circle cx="442" cy="138" r="5" fill="#000" opacity="0.3"/>
+  <circle cx="460" cy="138" r="5" fill="#000" opacity="0.3"/>
+  <circle cx="478" cy="138" r="5" fill="#000" opacity="0.3"/>
+  <!-- Browser content -->
+  <rect x="440" y="170" width="80" height="60" fill="#000" opacity="0.08"/>
+  <rect x="540" y="170" width="80" height="60" fill="#000" opacity="0.08"/>
+  <rect x="440" y="245" width="80" height="8" fill="#000" opacity="0.2"/>
+  <rect x="540" y="245" width="80" height="8" fill="#000" opacity="0.2"/>
+  <rect x="440" y="260" width="60" height="6" fill="#000" opacity="0.1"/>
+  <rect x="540" y="260" width="60" height="6" fill="#000" opacity="0.1"/>
+  <!-- Credit Card -->
+  <rect x="100" y="420" width="200" height="130" rx="10" fill="none" stroke="#000" stroke-width="2.5"/>
+  <rect x="120" y="450" width="40" height="28" rx="3" fill="#000" opacity="0.2" stroke="#000" stroke-width="1.5"/>
+  <line x1="120" y1="500" x2="280" y2="500" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <rect x="120" y="515" width="90" height="8" fill="#000" opacity="0.15"/>
+  <rect x="240" y="515" width="40" height="8" fill="#000" opacity="0.15"/>
+  <!-- Package Box -->
+  <rect x="500" y="400" width="160" height="140" fill="none" stroke="#000" stroke-width="2.5"/>
+  <line x1="500" y1="440" x2="660" y2="440" stroke="#000" stroke-width="2"/>
+  <line x1="580" y1="400" x2="580" y2="540" stroke="#000" stroke-width="2"/>
+  <!-- Tape -->
+  <rect x="565" y="400" width="30" height="40" fill="#000" opacity="0.1"/>
+  <!-- Arrow on box -->
+  <line x1="580" y1="470" x2="580" y2="520" stroke="#000" stroke-width="2"/>
+  <polyline points="565,485 580,470 595,485" fill="none" stroke="#000" stroke-width="2"/>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/></pattern></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- Lightning Bolt -->
+  <polygon points="200,120 160,300 210,300 170,420 280,250 230,250 270,120" fill="#000" stroke="#000" stroke-width="2"/>
+  <!-- Charging Station -->
+  <rect x="430" y="140" width="120" height="220" rx="8" fill="none" stroke="#000" stroke-width="3"/>
+  <rect x="430" y="130" width="120" height="20" rx="4" fill="#000"/>
+  <!-- Screen on station -->
+  <rect x="450" y="170" width="80" height="60" fill="none" stroke="#000" stroke-width="2"/>
+  <polyline points="460,210 475,195 490,205 505,185 520,200" fill="none" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+  <!-- Plug socket -->
+  <circle cx="490" cy="280" r="20" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="480" cy="275" r="4" fill="#000"/>
+  <circle cx="500" cy="275" r="4" fill="#000"/>
+  <line x1="483" y1="290" x2="497" y2="290" stroke="#000" stroke-width="2"/>
+  <!-- Cable -->
+  <path d="M490 300 Q490 340 460 360 Q420 385 420 420" fill="none" stroke="#000" stroke-width="2.5"/>
+  <rect x="410" y="420" width="20" height="30" rx="4" fill="#000"/>
+  <!-- Station base -->
+  <rect x="440" y="355" width="100" height="10" fill="#000"/>
+  <!-- Electric Car Outline -->
+  <path d="M100 530 L120 530 Q130 480 180 480 L320 480 Q370 480 380 530 L400 530" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="160" cy="535" r="20" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="160" cy="535" r="8" fill="#000"/>
+  <circle cx="350" cy="535" r="20" fill="none" stroke="#000" stroke-width="2.5"/>
+  <circle cx="350" cy="535" r="8" fill="#000"/>
+  <!-- Car body top -->
+  <path d="M170 480 Q180 440 220 430 L310 430 Q340 430 340 480" fill="none" stroke="#000" stroke-width="2.5"/>
+  <!-- Car windows -->
+  <line x1="260" y1="435" x2="260" y2="478" stroke="#000" stroke-width="1.5"/>
+  <!-- Battery -->
+  <rect x="600" y="400" width="140" height="80" rx="6" fill="none" stroke="#000" stroke-width="2.5"/>
+  <rect x="740" y="425" width="15" height="30" rx="3" fill="#000"/>
+  <!-- Battery level bars -->
+  <rect x="615" y="415" width="20" height="50" fill="#000"/>
+  <rect x="645" y="415" width="20" height="50" fill="#000"/>
+  <rect x="675" y="415" width="20" height="50" fill="#000"/>
+  <rect x="705" y="415" width="20" height="50" fill="#000" opacity="0.15"/>
+  <!-- Small bolt on battery -->
+  <polygon points="670,200 658,240 675,240 660,270 690,230 672,230 685,200" fill="none" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+</svg>

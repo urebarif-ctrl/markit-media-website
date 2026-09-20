@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#f9fafb"/>
+  <rect x="160" y="80" width="480" height="60" rx="4" fill="#000"/>
+  <text x="400" y="118" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="22" font-weight="700">CONTENT CALENDAR</text>
+  <g>
+    <rect x="160" y="160" width="150" height="100" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="160" y="160" width="150" height="28" rx="3" fill="#000"/>
+    <text x="235" y="180" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">MON</text>
+    <rect x="175" y="200" width="50" height="8" rx="2" fill="#d1d5db"/>
+    <rect x="175" y="216" width="80" height="8" rx="2" fill="#e5e7eb"/>
+    <rect x="175" y="232" width="60" height="8" rx="2" fill="#e5e7eb"/>
+  </g>
+  <g>
+    <rect x="325" y="160" width="150" height="100" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="325" y="160" width="150" height="28" rx="3" fill="#000"/>
+    <text x="400" y="180" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">WED</text>
+    <rect x="340" y="200" width="70" height="8" rx="2" fill="#000"/>
+    <rect x="340" y="216" width="90" height="8" rx="2" fill="#d1d5db"/>
+    <rect x="340" y="232" width="40" height="8" rx="2" fill="#e5e7eb"/>
+  </g>
+  <g>
+    <rect x="490" y="160" width="150" height="100" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="490" y="160" width="150" height="28" rx="3" fill="#000"/>
+    <text x="565" y="180" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">FRI</text>
+    <rect x="505" y="200" width="60" height="8" rx="2" fill="#d1d5db"/>
+    <rect x="505" y="216" width="100" height="8" rx="2" fill="#e5e7eb"/>
+    <rect x="505" y="232" width="50" height="8" rx="2" fill="#e5e7eb"/>
+  </g>
+  <g>
+    <rect x="160" y="280" width="150" height="100" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="160" y="280" width="150" height="28" rx="3" fill="#374151"/>
+    <text x="235" y="300" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">BLOG</text>
+    <rect x="175" y="320" width="80" height="8" rx="2" fill="#d1d5db"/>
+    <rect x="175" y="336" width="60" height="8" rx="2" fill="#e5e7eb"/>
+  </g>
+  <g>
+    <rect x="325" y="280" width="150" height="100" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="325" y="280" width="150" height="28" rx="3" fill="#374151"/>
+    <text x="400" y="300" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">EMAIL</text>
+    <rect x="340" y="320" width="70" height="8" rx="2" fill="#000"/>
+    <rect x="340" y="336" width="50" height="8" rx="2" fill="#d1d5db"/>
+  </g>
+  <g>
+    <rect x="490" y="280" width="150" height="100" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="490" y="280" width="150" height="28" rx="3" fill="#374151"/>
+    <text x="565" y="300" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">SOCIAL</text>
+    <rect x="505" y="320" width="90" height="8" rx="2" fill="#d1d5db"/>
+    <rect x="505" y="336" width="70" height="8" rx="2" fill="#e5e7eb"/>
+  </g>
+</svg>

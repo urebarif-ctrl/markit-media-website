@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#f9fafb"/>
+  <rect x="180" y="80" width="440" height="260" rx="6" fill="#000"/>
+  <polygon points="370,170 370,250 440,210" fill="#fff"/>
+  <rect x="180" y="340" width="440" height="8" rx="4" fill="#e5e7eb"/>
+  <rect x="180" y="340" width="280" height="8" rx="4" fill="#000"/>
+  <circle cx="460" cy="344" r="12" fill="#000"/>
+  <text x="400" y="390" text-anchor="middle" fill="#6b7280" font-family="system-ui" font-size="14">2:45 / 4:30</text>
+  <rect x="180" y="410" width="80" height="28" rx="4" fill="#000"/>
+  <text x="220" y="429" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="11" font-weight="700">VIEWS</text>
+  <rect x="270" y="410" width="80" height="28" rx="4" fill="#374151"/>
+  <text x="310" y="429" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="11" font-weight="700">SHARES</text>
+  <rect x="360" y="410" width="80" height="28" rx="4" fill="#6b7280"/>
+  <text x="400" y="429" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="11" font-weight="700">LEADS</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+<rect width="800" height="450" fill="#fff"/>
+<pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+<circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/>
+</pattern>
+<rect width="800" height="450" fill="url(#dots)"/>
+<!-- Diamond/shield shape -->
+<path d="M300,60 L420,140 L300,360 L180,140 Z" stroke="#000" stroke-width="3" fill="none" stroke-linejoin="round"/>
+<!-- Inner diamond accent -->
+<path d="M300,110 L370,160 L300,300 L230,160 Z" stroke="#000" stroke-width="1.5" fill="none" opacity="0.4"/>
+<!-- Shield center line decoration -->
+<line x1="300" y1="140" x2="300" y2="260" stroke="#000" stroke-width="1.5" opacity="0.3"/>
+<!-- Typography element - large A -->
+<text x="275" y="215" font-family="serif" font-size="72" fill="#000" font-weight="bold">A</text>
+<!-- Typography lines representing text -->
+<text x="480" y="130" font-family="serif" font-size="36" fill="#000" font-weight="bold">Aa</text>
+<line x1="480" y1="150" x2="640" y2="150" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+<line x1="480" y1="170" x2="620" y2="170" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+<line x1="480" y1="190" x2="600" y2="190" stroke="#000" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+<!-- Palette squares -->
+<rect x="480" y="230" width="50" height="50" fill="#000" rx="4"/>
+<rect x="540" y="230" width="50" height="50" stroke="#000" stroke-width="2.5" fill="none" rx="4"/>
+<rect x="600" y="230" width="50" height="50" fill="#000" opacity="0.6" rx="4"/>
+<rect x="660" y="230" width="50" height="50" fill="#000" opacity="0.2" rx="4"/>
+<!-- Second row of palette -->
+<rect x="480" y="290" width="50" height="50" fill="#000" opacity="0.1" rx="4"/>
+<rect x="540" y="290" width="50" height="50" fill="#000" opacity="0.4" rx="4"/>
+<rect x="600" y="290" width="50" height="50" fill="#000" opacity="0.8" rx="4"/>
+<rect x="660" y="290" width="50" height="50" stroke="#000" stroke-width="2.5" fill="none" rx="4"/>
+<!-- Grid guides -->
+<line x1="120" y1="400" x2="700" y2="400" stroke="#000" stroke-width="0.5" opacity="0.15"/>
+<line x1="120" y1="50" x2="700" y2="50" stroke="#000" stroke-width="0.5" opacity="0.15"/>
+<!-- Corner marks -->
+<path d="M120,60 L120,50 L130,50" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M690,50 L700,50 L700,60" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M120,390 L120,400 L130,400" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+<path d="M690,400 L700,400 L700,390" stroke="#000" stroke-width="1" fill="none" opacity="0.3"/>
+</svg>
