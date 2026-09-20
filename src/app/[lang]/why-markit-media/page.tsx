@@ -216,7 +216,7 @@ export default function WhyMarkitMediaPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Schedule a free consultation. No pitch decks, no pressure — just a conversation about what could work for your business.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
               Get Started &rarr;
             </Link>
           </Animate>

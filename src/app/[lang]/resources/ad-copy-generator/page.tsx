@@ -240,7 +240,7 @@ export default function AdCopyGeneratorPage() {
                   value={product}
                   onChange={(e) => setProduct(e.target.value)}
                   placeholder="e.g. SEO services, web design, HVAC"
-                  className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                  className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                 />
               </div>
               <div>
@@ -253,7 +253,7 @@ export default function AdCopyGeneratorPage() {
                   value={benefit}
                   onChange={(e) => setBenefit(e.target.value)}
                   placeholder="e.g. increase leads by 50%, save time"
-                  className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                  className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                 />
               </div>
             </div>

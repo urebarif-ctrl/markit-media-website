@@ -71,7 +71,7 @@ function InputField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+        className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
       />
       {hint && <p className="text-base text-gray-400 mt-1">{hint}</p>}
     </div>
@@ -171,7 +171,7 @@ function OrganizationForm({
                 setSameAs(updated);
               }}
               placeholder="https://twitter.com/yourcompany"
-              className="flex-1 border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="flex-1 border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             />
             {sameAs.length > 1 && (
               <button
@@ -239,7 +239,7 @@ function ProductForm({
           id="prod-avail"
           value={data.availability ?? ""}
           onChange={(e) => set("availability")(e.target.value)}
-          className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 bg-white min-h-[44px]"
+          className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 bg-white min-h-[44px]"
         >
           <option value="">Select availability</option>
           <option value="https://schema.org/InStock">In Stock</option>
@@ -327,7 +327,7 @@ function FAQForm({
               }}
               placeholder="We offer a 30-day return policy..."
               rows={3}
-              className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             />
           </div>
         </div>

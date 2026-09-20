@@ -148,7 +148,7 @@ export default function BrandNameGeneratorPage() {
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
                 placeholder="e.g. design, health, tech, food"
-                className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
               />
               <p className="text-base text-gray-400 mt-1">
                 Add a word related to your industry or niche for more relevant suggestions.

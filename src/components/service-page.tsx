@@ -219,7 +219,7 @@ export function ServicePage({
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Let&apos;s discuss how {title.toLowerCase()} can grow your business.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
               Get a Free Consultation &rarr;
             </Link>
           </Animate>

@@ -67,7 +67,7 @@ export default function UtmBuilderPage() {
                 placeholder="https://yourwebsite.com/landing-page"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
               />
             </div>
           </Animate>
@@ -84,7 +84,7 @@ export default function UtmBuilderPage() {
                 value={source}
                 onChange={(e) => setSource(e.target.value)}
                 list="source-suggestions"
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
               />
               <datalist id="source-suggestions">
                 {sources.map((s) => <option key={s} value={s} />)}
@@ -105,7 +105,7 @@ export default function UtmBuilderPage() {
                 value={medium}
                 onChange={(e) => setMedium(e.target.value)}
                 list="medium-suggestions"
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
               />
               <datalist id="medium-suggestions">
                 {mediums.map((m) => <option key={m} value={m} />)}
@@ -125,7 +125,7 @@ export default function UtmBuilderPage() {
                 placeholder="e.g., spring-sale, brand-awareness-q3"
                 value={campaign}
                 onChange={(e) => setCampaign(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
               />
               <p className="text-base text-gray-400 mt-1">A name for your campaign (e.g., spring-sale, product-launch-2026)</p>
             </div>
@@ -143,7 +143,7 @@ export default function UtmBuilderPage() {
                   placeholder="e.g., running+shoes"
                   value={term}
                   onChange={(e) => setTerm(e.target.value)}
-                  className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                  className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                 />
                 <p className="text-base text-gray-400 mt-1">Paid search keyword</p>
               </div>
@@ -157,7 +157,7 @@ export default function UtmBuilderPage() {
                   placeholder="e.g., banner-v2, blue-cta"
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                  className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                 />
                 <p className="text-base text-gray-400 mt-1">Differentiate ad or link variants</p>
               </div>

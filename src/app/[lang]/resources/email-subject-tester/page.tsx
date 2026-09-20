@@ -183,7 +183,7 @@ export default function EmailSubjectTesterPage() {
                   onChange={(e) => setSubject(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && test()}
                   placeholder="e.g. 5 Proven Strategies to Boost Your Website Traffic"
-                  className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                  className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                 />
               </div>
               <button

@@ -205,7 +205,7 @@ export default function FinancePage() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="bg-white border border-gray-200 p-6"
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none"
               >
                 <div className="w-10 h-10 bg-black text-white flex items-center justify-center mb-4">
                   <svc.icon size={20} strokeWidth={2} aria-hidden="true" />

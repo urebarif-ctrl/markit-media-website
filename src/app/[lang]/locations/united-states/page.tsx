@@ -182,7 +182,7 @@ export default function UnitedStatesPage() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="bg-white border border-gray-200 p-6"
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none"
               >
                 <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2">
                   {svc.title}
@@ -273,7 +273,7 @@ export default function UnitedStatesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none"
             >
               Get a Free Consultation &rarr;
             </Link>

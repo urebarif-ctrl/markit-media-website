@@ -225,7 +225,7 @@ export default async function HomePage() {
               const Icon = ind.icon;
               return (
                 <Link key={ind.href} href={ind.href} className="group border border-gray-200 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  <div className="w-14 h-14 bg-gray-100 group-hover:bg-black group-hover:text-white text-gray-500 flex items-center justify-center mx-auto mb-4 transition-colors">
+                  <div className="w-14 h-14 bg-gray-100 group-hover:bg-black group-hover:text-white text-gray-500 flex items-center justify-center mx-auto mb-4 transition-colors motion-reduce:transition-none">
                     <Icon size={24} strokeWidth={2} aria-hidden="true" />
                   </div>
                   <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline">{ind.title}</h3>
@@ -340,7 +340,7 @@ export default async function HomePage() {
           </Animate>
           <Stagger stagger={100} animation="fade-up" className="flex flex-wrap justify-center gap-4 mt-12">
             {markets.map((m) => (
-              <span key={m} className="px-6 py-3 border border-white/20 text-base font-medium text-gray-300 hover:border-white hover:text-white transition-colors">
+              <span key={m} className="px-6 py-3 border border-white/20 text-base font-medium text-gray-300 hover:border-white hover:text-white transition-colors motion-reduce:transition-none">
                 {m}
               </span>
             ))}

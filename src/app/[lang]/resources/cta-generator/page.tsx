@@ -860,7 +860,7 @@ export default function CtaGeneratorPage() {
                 id="business-type"
                 value={businessType}
                 onChange={(e) => setBusinessType(e.target.value as BusinessType)}
-                className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black focus:border-black focus:outline-none appearance-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black focus-visible:border-black focus-visible:outline-none appearance-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 {businessTypes.map((b) => (
                   <option key={b} value={b}>
@@ -884,7 +884,7 @@ export default function CtaGeneratorPage() {
                   setGoal(e.target.value as Goal);
                   setResults(null);
                 }}
-                className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black focus:border-black focus:outline-none appearance-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black focus-visible:border-black focus-visible:outline-none appearance-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 {goals.map((g) => (
                   <option key={g} value={g}>
@@ -933,7 +933,7 @@ export default function CtaGeneratorPage() {
                 value={product}
                 onChange={(e) => setProduct(e.target.value)}
                 placeholder="e.g. SEO audit, web design, CRM platform"
-                className="w-full px-4 py-3 border border-gray-200 text-base min-h-[44px] focus:border-black focus:outline-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="w-full px-4 py-3 border border-gray-200 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               />
             </div>
           </Animate>

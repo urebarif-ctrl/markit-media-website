@@ -202,7 +202,7 @@ export default function LegalPage() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="bg-white border border-gray-200 p-6"
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none"
               >
                 <div className="w-10 h-10 bg-black text-white flex items-center justify-center mb-4">
                   <svc.icon size={20} strokeWidth={2} aria-hidden="true" />
@@ -298,7 +298,7 @@ export default function LegalPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none"
             >
               Get a Free Consultation &rarr;
             </Link>

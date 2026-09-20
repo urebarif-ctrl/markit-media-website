@@ -110,7 +110,7 @@ export default function CompetitorAnalysisPage() {
                         value={comp.name}
                         onChange={(e) => updateCompetitor(i, "name", e.target.value)}
                         placeholder="Competitor name"
-                        className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                       />
                     </div>
                     <div>
@@ -120,7 +120,7 @@ export default function CompetitorAnalysisPage() {
                         value={comp.website}
                         onChange={(e) => updateCompetitor(i, "website", e.target.value)}
                         placeholder="competitor.com"
-                        className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                       />
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function CompetitorAnalysisPage() {
                         onChange={(e) => updateCompetitor(i, "strengths", e.target.value)}
                         placeholder="What do they do well?"
                         rows={3}
-                        className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none resize-none"
+                        className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none resize-none"
                       />
                     </div>
                     <div>
@@ -142,7 +142,7 @@ export default function CompetitorAnalysisPage() {
                         onChange={(e) => updateCompetitor(i, "weaknesses", e.target.value)}
                         placeholder="Where do they fall short?"
                         rows={3}
-                        className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none resize-none"
+                        className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none resize-none"
                       />
                     </div>
                   </div>
@@ -154,7 +154,7 @@ export default function CompetitorAnalysisPage() {
                         value={comp.pricing}
                         onChange={(e) => updateCompetitor(i, "pricing", e.target.value)}
                         placeholder="e.g. Premium, Mid-range, Budget"
-                        className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                       />
                     </div>
                     <div>
@@ -164,7 +164,7 @@ export default function CompetitorAnalysisPage() {
                         value={comp.audience}
                         onChange={(e) => updateCompetitor(i, "audience", e.target.value)}
                         placeholder="e.g. Small businesses, Enterprise, B2C"
-                        className="w-full px-4 py-3 border border-gray-200 text-base focus:border-black focus:outline-none"
+                        className="w-full px-4 py-3 border border-gray-200 text-base focus-visible:border-black focus-visible:outline-none"
                       />
                     </div>
                   </div>

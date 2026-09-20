@@ -66,7 +66,7 @@ export function ContactForm() {
     }
   }
 
-  const inputClass = "w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:border-black focus:outline-none transition-colors";
+  const inputClass = "w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none";
   const labelClass = "block text-base font-bold text-black uppercase tracking-wide mb-2";
 
   return (

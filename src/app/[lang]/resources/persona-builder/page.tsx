@@ -229,7 +229,7 @@ function SelectField({
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black focus:border-black focus:outline-none appearance-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+        className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black focus-visible:border-black focus-visible:outline-none appearance-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
       >
         <option value="">{placeholder || "Select..."}</option>
         {options.map((o) => (
@@ -266,7 +266,7 @@ function TextField({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full px-4 py-3 border border-gray-200 text-base min-h-[44px] focus:border-black focus:outline-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+        className="w-full px-4 py-3 border border-gray-200 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
       />
     </div>
   );
@@ -296,7 +296,7 @@ function TextareaField({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         rows={3}
-        className="w-full px-4 py-3 border border-gray-200 text-base min-h-[88px] focus:border-black focus:outline-none resize-y focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+        className="w-full px-4 py-3 border border-gray-200 text-base min-h-[88px] focus-visible:border-black focus-visible:outline-none resize-y focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
       />
     </div>
   );

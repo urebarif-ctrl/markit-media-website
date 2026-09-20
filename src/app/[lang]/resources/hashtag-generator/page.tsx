@@ -278,7 +278,7 @@ export default function HashtagGeneratorPage() {
                   setSelectedNiche(e.target.value as Niche);
                   setGenerated(null);
                 }}
-                className="w-full border border-gray-300 px-4 py-3 text-base bg-white focus:border-black focus:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
+                className="w-full border border-gray-300 px-4 py-3 text-base bg-white focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
               >
                 <option value="">Select a niche...</option>
                 {niches.map((n) => (
@@ -301,7 +301,7 @@ export default function HashtagGeneratorPage() {
                 placeholder="e.g. meal prep for weight loss, startup SaaS launch"
                 value={customTopic}
                 onChange={(e) => setCustomTopic(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
+                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
               />
             </div>
           </Animate>
