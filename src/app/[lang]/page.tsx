@@ -482,6 +482,9 @@ export default async function HomePage() {
               { title: "Pricing Calculator", desc: "Estimate marketing costs by service, business size, and goals.", href: "/resources/pricing-calculator" },
               { title: "CRO Audit", desc: "20-point conversion rate optimization checklist.", href: "/resources/cro-audit" },
               { title: "Email Deliverability", desc: "Check your email deliverability across 20 key factors.", href: "/resources/email-deliverability" },
+              { title: "Influencer ROI", desc: "Estimate influencer marketing campaign ROI.", href: "/resources/influencer-roi" },
+              { title: "Competitive Gap", desc: "Analyze gaps vs your competitors across 10 dimensions.", href: "/resources/competitive-gap" },
+              { title: "Marketing Maturity", desc: "24-question assessment of your marketing maturity.", href: "/resources/marketing-maturity" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

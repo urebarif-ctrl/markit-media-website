@@ -32,11 +32,11 @@ export function NewsletterCta() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"
         required
-        className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
+        className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none min-h-[44px]"
       />
       <button
         type="submit"
-        className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 whitespace-nowrap"
+        className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 whitespace-nowrap min-h-[44px]"
       >
         Subscribe
       </button>

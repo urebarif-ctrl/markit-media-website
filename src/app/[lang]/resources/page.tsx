@@ -354,6 +354,24 @@ const resources = [
     count: "20-point checklist",
   },
   {
+    title: "Influencer ROI Calculator",
+    desc: "Estimate the ROI of influencer marketing campaigns. Set budget, tier, platform, and campaign type for reach, engagement, and revenue projections.",
+    href: "/resources/influencer-roi",
+    count: "Interactive tool",
+  },
+  {
+    title: "Marketing Maturity Assessment",
+    desc: "24-question assessment across 6 dimensions: strategy, data, content, channels, technology, and team. Get your maturity level with a tailored growth roadmap.",
+    href: "/resources/marketing-maturity",
+    count: "24-question quiz",
+  },
+  {
+    title: "Competitive Gap Analyzer",
+    desc: "Rate yourself and your top competitor across 10 marketing dimensions. Get a visual gap analysis with priority action plan and quick wins.",
+    href: "/resources/competitive-gap",
+    count: "Interactive worksheet",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
