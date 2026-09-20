@@ -235,6 +235,48 @@ const faqCategories = [
       },
     ],
   },
+  {
+    category: "E-commerce",
+    questions: [
+      {
+        q: "Do you work with Shopify and WooCommerce?",
+        a: "Yes. We build and optimize stores on both Shopify and WooCommerce. We handle everything from store setup and design to product feed optimization, Google Shopping campaigns, and conversion rate optimization.",
+      },
+      {
+        q: "Can you help with Amazon advertising?",
+        a: "Yes. We manage Amazon Sponsored Products, Sponsored Brands, and Sponsored Display campaigns. We also handle product listing optimization, A+ content creation, and marketplace strategy.",
+      },
+      {
+        q: "What is product feed optimization?",
+        a: "Product feed optimization involves structuring and enriching your product data for platforms like Google Shopping, Meta Catalog, and Amazon. Better feeds improve ad relevance, reduce wasted spend, and increase conversion rates.",
+      },
+      {
+        q: "How do you reduce cart abandonment?",
+        a: "We use a combination of email recovery sequences, retargeting ads, checkout optimization, trust signals, and UX improvements. Each approach is tested and measured to find what works best for your specific audience.",
+      },
+    ],
+  },
+  {
+    category: "Video & Creative",
+    questions: [
+      {
+        q: "What types of video do you produce?",
+        a: "We produce commercials, brand films, product videos, testimonial videos, social media content (Reels, TikToks, Shorts), motion graphics, animation, and explainer videos. We handle everything from concept to final delivery.",
+      },
+      {
+        q: "Do you create content for social media?",
+        a: "Yes. We create platform-specific content for Instagram, TikTok, LinkedIn, Facebook, YouTube, and more. This includes static graphics, carousels, short-form video, long-form video, and copywriting tailored to each platform.",
+      },
+      {
+        q: "Can you help with brand photography?",
+        a: "Yes. We coordinate and produce brand photography for websites, social media, and marketing materials. This includes product photography, team headshots, lifestyle imagery, and behind-the-scenes content.",
+      },
+      {
+        q: "How long does a video project take?",
+        a: "Timeline depends on complexity. Simple social media videos can be turned around in days. Full commercial productions typically take 4-8 weeks from concept to delivery, including scripting, production, and post-production.",
+      },
+    ],
+  },
 ];
 
 export default function FaqPage() {

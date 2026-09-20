@@ -22,13 +22,13 @@ const resources = [
     title: "FAQ",
     desc: "Answers to the most common questions about our services, process, pricing, and what it's like to work with us.",
     href: "/faq",
-    count: "42 questions",
+    count: "50 questions",
   },
   {
     title: "Glossary",
     desc: "A comprehensive reference for key digital marketing terms, acronyms, and concepts.",
     href: "/glossary",
-    count: "150 terms",
+    count: "175 terms",
   },
   {
     title: "Checklists",
