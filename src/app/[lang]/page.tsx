@@ -452,6 +452,10 @@ export default async function HomePage() {
               { title: "Contrast Checker", desc: "Test color combinations for WCAG accessibility compliance.", href: "/resources/contrast-checker" },
               { title: "Marketing Trends 2026", desc: "10 shifts shaping digital marketing this year.", href: "/resources/marketing-trends-2026" },
               { title: "Speed Assessment", desc: "Score your website speed with prioritized recommendations.", href: "/resources/speed-test" },
+              { title: "A/B Test Calculator", desc: "Calculate sample size and duration for statistically valid tests.", href: "/resources/ab-test-calculator" },
+              { title: "Keyword Density", desc: "Analyze keyword frequency and density in your content.", href: "/resources/keyword-density-checker" },
+              { title: "Readability Checker", desc: "Score your content's readability with Flesch Reading Ease.", href: "/resources/readability-checker" },
+              { title: "CTA Generator", desc: "Generate call-to-action copy by business type, goal, and tone.", href: "/resources/cta-generator" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

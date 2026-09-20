@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getPublishedPosts(50);
+  const posts = getPublishedPosts(60);
   const dbCategories = getAllCategories();
   const categories = ["All", ...dbCategories];
 
@@ -87,7 +87,7 @@ export default function BlogPage() {
             <Animate animation="fade-up">
               <Link
                 href={`/blog/${featured.slug}`}
-                className="group grid grid-cols-1 lg:grid-cols-2 gap-8 border border-gray-200 hover:border-black/30 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="group grid grid-cols-1 lg:grid-cols-2 gap-8 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] lg:aspect-auto overflow-hidden">
                   {featured.cover_image ? (
@@ -129,7 +129,7 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group border border-gray-200 hover:border-black/30 transition-all flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <div className="aspect-[16/9] bg-gray-100 flex items-center justify-center overflow-hidden">
                     {post.cover_image ? (

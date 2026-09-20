@@ -98,7 +98,7 @@ export default function ContactPage() {
             {[
               { label: "Markets Served", value: "6 Countries" },
               { label: "Services", value: "12 Disciplines" },
-              { label: "Industries", value: "16 Verticals" },
+              { label: "Industries", value: "20 Verticals" },
               { label: "Response Time", value: "1 Business Day" },
             ].map((item) => (
               <div key={item.label}>
@@ -122,7 +122,7 @@ export default function ContactPage() {
               { step: "2", title: "Discovery Call", desc: "We schedule a call to understand your business, goals, competitive landscape, and current marketing efforts." },
               { step: "3", title: "Custom Proposal", desc: "You receive a tailored strategy recommendation with clear deliverables, timelines, and investment options." },
             ].map((item) => (
-              <div key={item.step} className="bg-white border border-gray-200 p-8">
+              <div key={item.step} className="bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <div className="w-10 h-10 bg-black text-white flex items-center justify-center font-bold text-base mb-4">{item.step}</div>
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
