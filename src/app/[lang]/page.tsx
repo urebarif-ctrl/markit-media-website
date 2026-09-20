@@ -500,6 +500,8 @@ export default async function HomePage() {
               { title: "Social Calendar", desc: "Generate a 4-week social content calendar for your industry.", href: "/resources/social-calendar" },
               { title: "Funnel Visualizer", desc: "Analyze your marketing funnel with conversion rate insights.", href: "/resources/funnel-visualizer" },
               { title: "Launch Checklist", desc: "44-item pre-launch checklist with countdown and tracking.", href: "/resources/launch-countdown" },
+              { title: "Lead Magnet Generator", desc: "Get lead magnet ideas tailored to your industry and funnel stage.", href: "/resources/lead-magnet-generator" },
+              { title: "Pricing Page Optimizer", desc: "Audit your pricing page across 32 conversion factors.", href: "/resources/pricing-optimizer" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

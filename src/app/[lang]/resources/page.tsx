@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "630+ articles",
+    count: "660+ articles",
   },
   {
     title: "FAQ",
@@ -460,6 +460,18 @@ const resources = [
     desc: "A 44-item pre-launch checklist with countdown timer. Track progress across content, SEO, design, technical, legal, and marketing categories.",
     href: "/resources/launch-countdown",
     count: "44-item checklist",
+  },
+  {
+    title: "Lead Magnet Idea Generator",
+    desc: "Generate high-converting lead magnet ideas tailored to your industry, funnel stage, and preferred format with promotion strategies.",
+    href: "/resources/lead-magnet-generator",
+    count: "Interactive tool",
+  },
+  {
+    title: "Pricing Page Optimizer",
+    desc: "Audit your pricing page across 32 conversion factors — structure, trust signals, CTAs, objection handling, UX, and psychology.",
+    href: "/resources/pricing-optimizer",
+    count: "32-point audit",
   },
   {
     title: "Small Business Guide",

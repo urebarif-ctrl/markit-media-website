@@ -11,926 +11,766 @@ import { JsonLd } from "@/components/json-ld";
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
 
-interface QuizOption {
-  label: string;
-  value: string;
-}
+type SequenceType =
+  | "welcome"
+  | "nurture"
+  | "reengagement"
+  | "onboarding"
+  | "cart"
+  | "postpurchase"
+  | "event"
+  | "seasonal";
 
-interface QuizStep {
-  id: string;
-  question: string;
-  options: QuizOption[];
-}
-
-interface EmailPlan {
-  emailNumber: number;
-  sendTiming: string;
+interface EmailConfig {
   subjectLine: string;
+  daysAfterTrigger: number;
   purpose: string;
-  contentPoints: string[];
-  ctaText: string;
+  ctaType: string;
 }
 
-interface SequenceTip {
-  title: string;
+interface SequenceOption {
+  value: SequenceType;
+  label: string;
   description: string;
+  triggerLabel: string;
 }
 
-interface Results {
-  overviewTitle: string;
-  overviewDescription: string;
-  emails: EmailPlan[];
-  tips: SequenceTip[];
-}
-
-type AnswerMap = Record<string, string>;
-
 /* ------------------------------------------------------------------ */
-/*  Quiz steps                                                         */
+/*  Constants                                                          */
 /* ------------------------------------------------------------------ */
 
-const steps: QuizStep[] = [
+const STEP_LABELS = ["Configure", "Customize Emails", "Your Plan"];
+
+const sequenceOptions: SequenceOption[] = [
   {
-    id: "sequenceType",
-    question: "What type of email sequence do you need?",
-    options: [
-      { label: "Welcome Series", value: "welcome" },
-      { label: "Onboarding", value: "onboarding" },
-      { label: "Re-engagement", value: "reengagement" },
-      { label: "Cart Abandonment", value: "cart" },
-      { label: "Lead Nurture", value: "nurture" },
-      { label: "Post-Purchase", value: "postpurchase" },
-      { label: "Event Promotion", value: "event" },
-    ],
+    value: "welcome",
+    label: "Welcome Series",
+    description:
+      "Introduce new subscribers to your brand and guide them toward their first action.",
+    triggerLabel: "after signup",
   },
   {
-    id: "industry",
-    question: "What industry are you in?",
-    options: [
-      { label: "E-commerce", value: "ecommerce" },
-      { label: "B2B SaaS", value: "saas" },
-      { label: "Healthcare", value: "healthcare" },
-      { label: "Professional Services", value: "services" },
-      { label: "Real Estate", value: "realestate" },
-      { label: "Education", value: "education" },
-      { label: "Finance", value: "finance" },
-      { label: "Hospitality", value: "hospitality" },
-    ],
+    value: "nurture",
+    label: "Lead Nurture",
+    description:
+      "Build trust through educational content and gradually move leads toward conversion.",
+    triggerLabel: "after lead capture",
   },
   {
-    id: "familiarity",
-    question: "How familiar is your audience with your brand?",
-    options: [
-      { label: "Cold (Never Heard of You)", value: "cold" },
-      { label: "Warm (Aware but Not Engaged)", value: "warm" },
-      { label: "Hot (Engaged/Past Customer)", value: "hot" },
-    ],
+    value: "reengagement",
+    label: "Re-engagement",
+    description:
+      "Win back inactive subscribers with fresh value and compelling reasons to return.",
+    triggerLabel: "after inactivity detected",
   },
   {
-    id: "length",
-    question: "How many emails should the sequence include?",
-    options: [
-      { label: "3 Emails", value: "3" },
-      { label: "5 Emails", value: "5" },
-      { label: "7 Emails", value: "7" },
-      { label: "10 Emails", value: "10" },
-    ],
+    value: "onboarding",
+    label: "Onboarding",
+    description:
+      "Guide new users through setup and help them reach their first success milestone.",
+    triggerLabel: "after account creation",
   },
   {
-    id: "goal",
-    question: "What is the primary goal of this sequence?",
-    options: [
-      { label: "Drive Purchase", value: "purchase" },
-      { label: "Book Consultation", value: "consultation" },
-      { label: "Download Resource", value: "download" },
-      { label: "Start Free Trial", value: "trial" },
-      { label: "Increase Engagement", value: "engagement" },
-      { label: "Collect Reviews", value: "reviews" },
-    ],
+    value: "cart",
+    label: "Cart Abandonment",
+    description:
+      "Recover lost sales by reminding shoppers about items left in their cart.",
+    triggerLabel: "after cart abandonment",
+  },
+  {
+    value: "postpurchase",
+    label: "Post-Purchase",
+    description:
+      "Maximize customer lifetime value with follow-ups, reviews, and cross-sells.",
+    triggerLabel: "after purchase",
+  },
+  {
+    value: "event",
+    label: "Event / Webinar",
+    description:
+      "Drive attendance and engagement before, during, and after your event.",
+    triggerLabel: "after registration",
+  },
+  {
+    value: "seasonal",
+    label: "Seasonal / Holiday",
+    description:
+      "Capitalize on seasonal buying moments with timely, themed campaigns.",
+    triggerLabel: "before season or holiday",
   },
 ];
 
-/* ------------------------------------------------------------------ */
-/*  Sequence label helpers                                             */
-/* ------------------------------------------------------------------ */
-
-const sequenceTypeLabels: Record<string, string> = {
-  welcome: "Welcome Series",
-  onboarding: "Onboarding",
-  reengagement: "Re-engagement",
-  cart: "Cart Abandonment",
-  nurture: "Lead Nurture",
-  postpurchase: "Post-Purchase",
-  event: "Event Promotion",
-};
-
-const industryLabels: Record<string, string> = {
-  ecommerce: "E-commerce",
-  saas: "B2B SaaS",
-  healthcare: "Healthcare",
-  services: "Professional Services",
-  realestate: "Real Estate",
-  education: "Education",
-  finance: "Finance",
-  hospitality: "Hospitality",
-};
-
-const goalLabels: Record<string, string> = {
-  purchase: "Drive Purchase",
-  consultation: "Book Consultation",
-  download: "Download Resource",
-  trial: "Start Free Trial",
-  engagement: "Increase Engagement",
-  reviews: "Collect Reviews",
-};
+const ctaOptions = [
+  "Shop Now",
+  "Learn More",
+  "Book a Call",
+  "Download Resource",
+  "Start Free Trial",
+  "Leave a Review",
+  "Register Now",
+  "Claim Offer",
+  "Reply to This Email",
+  "Visit Website",
+  "Add to Calendar",
+  "Share with a Friend",
+  "Get Started",
+  "Watch Now",
+  "Read the Guide",
+  "Complete Your Order",
+  "Return to Cart",
+  "Explore Collection",
+];
 
 /* ------------------------------------------------------------------ */
-/*  Send timing generator                                              */
+/*  Default data generators                                            */
 /* ------------------------------------------------------------------ */
 
-function getSendTimings(
-  sequenceType: string,
-  emailCount: number
-): string[] {
-  const timingPatterns: Record<string, number[]> = {
-    welcome: [0, 1, 3, 5, 7, 10, 14, 18, 21, 25],
-    onboarding: [0, 1, 3, 5, 7, 10, 14, 21, 28, 35],
-    reengagement: [0, 3, 7, 14, 21, 30, 45, 60, 75, 90],
-    cart: [0, 0.04, 1, 3, 5, 7, 10, 14, 21, 28],
-    nurture: [0, 3, 7, 10, 14, 21, 28, 35, 42, 49],
-    postpurchase: [0, 3, 7, 14, 21, 30, 45, 60, 75, 90],
-    event: [0, 1, 3, 5, 7, 10, 14, 7, 3, 1],
+function getDefaultTimings(type: SequenceType, count: number): number[] {
+  const patterns: Record<SequenceType, number[]> = {
+    welcome: [0, 1, 3, 5, 7, 10, 14, 18, 21, 25, 28, 30],
+    nurture: [0, 3, 7, 10, 14, 21, 28, 35, 42, 49, 56, 63],
+    reengagement: [0, 3, 7, 14, 21, 30, 45, 60, 75, 90, 105, 120],
+    onboarding: [0, 1, 3, 5, 7, 10, 14, 21, 28, 35, 42, 49],
+    cart: [0, 1, 3, 5, 7, 10, 14, 21, 28, 35, 42, 49],
+    postpurchase: [0, 3, 7, 14, 21, 30, 45, 60, 75, 90, 105, 120],
+    event: [0, 1, 3, 5, 7, 10, 14, 7, 3, 1, 0, 1],
+    seasonal: [0, 3, 7, 10, 14, 17, 21, 24, 27, 28, 30, 33],
   };
-
-  const days = (timingPatterns[sequenceType] || timingPatterns.welcome).slice(
-    0,
-    emailCount
-  );
-
-  return days.map((d, i) => {
-    if (i === 0) {
-      if (sequenceType === "cart") return "Immediately after cart abandonment";
-      if (sequenceType === "postpurchase") return "Immediately after purchase";
-      if (sequenceType === "event") return "Immediately after registration";
-      return "Immediately after signup";
-    }
-    if (sequenceType === "cart" && i === 1)
-      return "1 hour after abandonment";
-    if (d === 1) return "Day 1";
-    return `Day ${d}`;
-  });
+  return patterns[type].slice(0, count);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Subject line generator                                             */
-/* ------------------------------------------------------------------ */
-
-function getSubjectLines(
-  sequenceType: string,
-  industry: string,
-  goal: string,
-  familiarity: string,
-  emailCount: number
+function getDefaultSubjectLines(
+  type: SequenceType,
+  count: number
 ): string[] {
-  const subjects: string[] = [];
-
-  const industryNoun =
-    industry === "ecommerce"
-      ? "store"
-      : industry === "saas"
-        ? "platform"
-        : industry === "healthcare"
-          ? "practice"
-          : industry === "services"
-            ? "firm"
-            : industry === "realestate"
-              ? "listings"
-              : industry === "education"
-                ? "program"
-                : industry === "finance"
-                  ? "financial plan"
-                  : "experience";
-
-  if (sequenceType === "welcome") {
-    subjects.push(
-      `Welcome to [Brand] — here's what to expect`,
-      `The one thing most new subscribers miss`,
-      `Why [number]+ ${industry === "ecommerce" ? "shoppers" : "professionals"} trust us`,
-      `Your quick-start guide to [Brand]`,
-      `[First Name], your exclusive welcome offer inside`,
-      `3 ways to get the most from [Brand]`,
-      `The story behind [Brand] (and why it matters to you)`,
-      `Don't miss this — reserved for new members only`,
-      `What our best ${industry === "ecommerce" ? "customers" : "clients"} do first`,
-      `Still exploring? Here's why [Brand] is different`
-    );
-  } else if (sequenceType === "onboarding") {
-    subjects.push(
-      `Let's get you started — Step 1 of your setup`,
-      `Quick win: complete this in under 5 minutes`,
-      `You're 50% set up — keep the momentum going`,
-      `Pro tip: the feature most people overlook`,
-      `[First Name], your ${industryNoun} is almost ready`,
-      `Unlock the full power of your ${industryNoun}`,
-      `Here's what successful users do in week one`,
-      `Need help? Your personal setup checklist`,
-      `Milestone reached — here's what's next`,
-      `You're all set — time to see real results`
-    );
-  } else if (sequenceType === "reengagement") {
-    subjects.push(
-      `We miss you, [First Name] — here's what's new`,
-      `A lot has changed since you last visited`,
-      `Is this goodbye? (We hope not)`,
-      `Your ${industryNoun} is waiting for you`,
-      `[First Name], we saved something for you`,
-      `Come back and see what you've been missing`,
-      `Last chance: your exclusive return offer expires soon`,
-      `We listened — here's what we improved`,
-      `Quick question: what would bring you back?`,
-      `Final note from us (unless you say otherwise)`
-    );
-  } else if (sequenceType === "cart") {
-    subjects.push(
-      `You left something behind — still interested?`,
-      `Your cart is waiting (items selling fast)`,
-      `Complete your order and save [X]%`,
-      `[First Name], your items won't last long`,
-      `Still thinking it over? Here's what others say`,
-      `Last reminder: your cart expires soon`,
-      `We saved your cart — ready when you are`,
-      `Free shipping on your pending order — today only`,
-      `Your ${industryNoun} is one click away`,
-      `Final notice: your reserved items are about to go`
-    );
-  } else if (sequenceType === "nurture") {
-    subjects.push(
-      `[Industry insight]: the trend you can't ignore`,
-      `How [type of business] achieve [specific result]`,
-      `The #1 mistake in ${industry === "ecommerce" ? "online selling" : industry === "saas" ? "SaaS growth" : industry === "finance" ? "financial planning" : "your industry"}`,
-      `Case study: [X]% improvement in [metric]`,
-      `[First Name], this resource was made for you`,
-      `The simple framework that changes everything`,
-      `What the top 10% do differently`,
-      `Your free guide: [relevant resource title]`,
-      `Ready to take the next step?`,
-      `[First Name], let's talk about your goals`
-    );
-  } else if (sequenceType === "postpurchase") {
-    subjects.push(
-      `Thank you for your order — here's what happens next`,
-      `Pro tips: get the most from your purchase`,
-      `How's everything going? We'd love to hear`,
-      `[First Name], a few ideas to try next`,
-      `Your honest feedback means the world to us`,
-      `Because you loved [product], you might also like...`,
-      `Exclusive offer for our valued customers`,
-      `Your [product] story — share it and get rewarded`,
-      `It's been a month — time for a check-in`,
-      `Welcome to the inner circle — VIP perks inside`
-    );
-  } else if (sequenceType === "event") {
-    subjects.push(
-      `You're registered — mark your calendar for [date]`,
-      `What to expect at [event name]`,
-      `Speaker spotlight: meet [speaker name]`,
-      `[X] days until [event] — are you ready?`,
-      `Your event prep checklist`,
-      `Agenda released: sessions you won't want to miss`,
-      `Bring a colleague — exclusive invite inside`,
-      `Tomorrow is the day — last-minute details`,
-      `Starting soon — join the live stream now`,
-      `Thank you for attending — recordings + next steps`
-    );
-  }
-
-  return subjects.slice(0, emailCount);
-}
-
-/* ------------------------------------------------------------------ */
-/*  Email purpose generator                                            */
-/* ------------------------------------------------------------------ */
-
-function getEmailPurposes(
-  sequenceType: string,
-  goal: string,
-  emailCount: number
-): string[] {
-  const purposes: Record<string, string[]> = {
+  const subjects: Record<SequenceType, string[]> = {
     welcome: [
-      "Introduce your brand, set expectations, and deliver any promised incentive",
-      "Share your brand story and core values to build emotional connection",
-      "Highlight your most popular products/services with social proof",
+      "Welcome to [Brand] — here is what to expect",
+      "The one thing most new subscribers miss",
+      "Your quick-start guide to [Brand]",
+      "[First Name], here is your exclusive welcome offer",
+      "3 ways to get the most from [Brand]",
+      "The story behind [Brand] (and why it matters to you)",
+      "Reserved for new members only — don't miss this",
+      "What our best customers do first",
+      "Still exploring? Here is why [Brand] is different",
+      "Your welcome offer expires tomorrow",
+      "One last thing before your offer ends",
+      "[First Name], you are officially part of the family",
+    ],
+    nurture: [
+      "The industry trend you cannot afford to ignore",
+      "How top performers achieve [specific result]",
+      "The #1 mistake holding your business back",
+      "Case study: how [Company] achieved [result]",
+      "[First Name], this resource was made for you",
+      "The simple framework that changes everything",
+      "What the top 10% do differently",
+      "Your free guide: [relevant resource title]",
+      "Ready to take the next step?",
+      "[First Name], let us talk about your goals",
+      "A personal invitation from our team",
+      "Last chance to access [exclusive resource]",
+    ],
+    reengagement: [
+      "We miss you, [First Name] — here is what is new",
+      "A lot has changed since you last visited",
+      "Is this goodbye? (We hope not)",
+      "[First Name], we saved something for you",
+      "Come back and see what you have been missing",
+      "Last chance: your exclusive return offer expires soon",
+      "We listened — here is what we improved",
+      "Quick question: what would bring you back?",
+      "Final note from us (unless you say otherwise)",
+      "It has been a while — one more reason to return",
+      "Your account is waiting — here is a gift",
+      "We are cleaning our list — should we keep you?",
+    ],
+    onboarding: [
+      "Let us get you started — Step 1 of your setup",
+      "Quick win: complete this in under 5 minutes",
+      "You are 50% set up — keep the momentum going",
+      "Pro tip: the feature most people overlook",
+      "[First Name], your account is almost ready",
+      "Unlock the full power of your account",
+      "Here is what successful users do in week one",
+      "Need help? Your personal setup checklist",
+      "Milestone reached — here is what comes next",
+      "You are all set — time to see real results",
+      "Advanced tips for power users",
+      "Your first month recap — look how far you have come",
+    ],
+    cart: [
+      "You left something behind — still interested?",
+      "Your cart is waiting (items selling fast)",
+      "Complete your order and save [X]%",
+      "[First Name], your items will not last long",
+      "Still thinking it over? Here is what others say",
+      "Last reminder: your cart expires soon",
+      "We saved your cart — ready when you are",
+      "Free shipping on your pending order — today only",
+      "One click away from getting what you wanted",
+      "Final notice: your reserved items are about to go",
+      "We held your items — here is a little extra incentive",
+      "Cart closing: last chance to complete your order",
+    ],
+    postpurchase: [
+      "Thank you for your order — here is what happens next",
+      "Pro tips: get the most from your purchase",
+      "How is everything going? We would love to hear",
+      "[First Name], a few ideas to try next",
+      "Your honest feedback means the world to us",
+      "Because you loved [product], you might also like...",
+      "Exclusive offer for our valued customers",
+      "Share your [product] story and get rewarded",
+      "It has been a month — time for a check-in",
+      "Welcome to the inner circle — VIP perks inside",
+      "Your loyalty reward is waiting",
+      "Anniversary special: celebrate with us",
+    ],
+    event: [
+      "You are registered — mark your calendar for [date]",
+      "What to expect at [event name]",
+      "Speaker spotlight: meet [speaker name]",
+      "[X] days until [event] — are you ready?",
+      "Your event prep checklist",
+      "Agenda released: sessions you will not want to miss",
+      "Bring a colleague — exclusive invite inside",
+      "Tomorrow is the day — last-minute details",
+      "Starting soon — join now",
+      "Thank you for attending — recordings and next steps",
+      "Key takeaways from [event name]",
+      "Save the date: our next event is coming",
+    ],
+    seasonal: [
+      "[Season/Holiday] is coming — get ready with [Brand]",
+      "Early access: our [Season] collection is live",
+      "Your [Holiday] planning guide starts here",
+      "Countdown: [X] days until [Holiday]",
+      "[First Name], have you started your [Holiday] prep?",
+      "Our most popular [Season] picks — going fast",
+      "Last-minute [Holiday] deals you will not want to miss",
+      "[Holiday] is almost here — final hours to order",
+      "Happy [Holiday] from the [Brand] team",
+      "Post-[Holiday] clearance event starts now",
+      "Thank you for celebrating [Season] with us",
+      "Mark your calendar: next season launches [date]",
+    ],
+  };
+  return subjects[type].slice(0, count);
+}
+
+function getDefaultPurposes(
+  type: SequenceType,
+  count: number
+): string[] {
+  const purposes: Record<SequenceType, string[]> = {
+    welcome: [
+      "Introduce your brand and deliver any promised incentive",
+      "Share your brand story and build emotional connection",
+      "Highlight popular products or services with social proof",
       "Address common questions and overcome initial objections",
-      "Present a compelling offer to drive the first conversion",
+      "Present a compelling offer to drive first conversion",
       "Showcase customer success stories and testimonials",
-      "Reinforce brand differentiators and unique value proposition",
+      "Reinforce your unique value proposition",
       "Create urgency with a time-limited welcome offer",
-      "Introduce your community, social channels, or loyalty program",
-      "Final welcome push — strong CTA to convert or engage deeper",
+      "Introduce your community, loyalty program, or social channels",
+      "Final welcome push with a strong conversion-oriented CTA",
+      "Urgency reminder about expiring welcome benefits",
+      "Transition to regular communication cadence",
+    ],
+    nurture: [
+      "Deliver high-value educational content related to their interest",
+      "Share an actionable framework or methodology they can apply today",
+      "Present data, research, or industry insights that build authority",
+      "Provide a relevant case study demonstrating real results",
+      "Offer a free resource such as a guide, template, or checklist",
+      "Address their core pain point with your solution as the answer",
+      "Share expert tips that position you as a trusted advisor",
+      "Introduce your solution naturally through problem-solving",
+      "Build urgency and present a clear path to the next step",
+      "Direct ask — invite them to take the primary conversion action",
+      "Personal outreach from a team member to humanize the brand",
+      "Final value delivery with a clear deadline or scarcity element",
+    ],
+    reengagement: [
+      "Acknowledge absence and remind them what they are missing",
+      "Share the most significant updates since they last engaged",
+      "Offer a personalized incentive to return",
+      "Use social proof to show what peers are achieving",
+      "Ask for feedback to understand why they disengaged",
+      "Present a low-friction way to re-engage with one click",
+      "Create urgency with a time-limited reactivation offer",
+      "Share fresh content or a new resource relevant to them",
+      "Provide a final compelling reason to stay subscribed",
+      "Sunset message — confirm they want to remain on the list",
+      "Last gift or exclusive access before removal",
+      "Final list-cleaning notice with one-click opt-in to stay",
     ],
     onboarding: [
       "Welcome and guide through the essential first action",
-      "Walk through the core feature or product benefit",
+      "Walk through the core feature or primary product benefit",
       "Celebrate early progress and introduce the next milestone",
       "Share a power-user tip that accelerates time-to-value",
       "Address the most common support question proactively",
       "Highlight an underused feature that drives retention",
       "Share a success story from a similar user or customer",
-      "Prompt a key action that correlates with long-term retention",
-      "Summarize progress made and preview advanced capabilities",
+      "Prompt a key action correlated with long-term retention",
+      "Summarize progress and preview advanced capabilities",
       "Transition from onboarding to regular engagement cadence",
-    ],
-    reengagement: [
-      "Acknowledge the absence and remind them what they're missing",
-      "Share the most significant updates or improvements since they left",
-      "Offer a personalized incentive to return",
-      "Use social proof — show what peers are achieving",
-      "Ask for feedback — find out why they disengaged",
-      "Present a low-friction way to re-engage (one-click action)",
-      "Create urgency with a time-limited reactivation offer",
-      "Share fresh content or a new resource relevant to their interests",
-      "Provide a final compelling reason to stay subscribed",
-      "Sunset message — confirm they want to remain on the list",
+      "Introduce advanced features for users ready to level up",
+      "First month recap celebrating milestones and suggesting next goals",
     ],
     cart: [
       "Gentle reminder that items are still in their cart",
       "Address common purchase hesitations with reassurance",
-      "Offer social proof — reviews and ratings for carted items",
-      "Introduce a small incentive (discount or free shipping)",
+      "Show social proof — reviews and ratings for carted items",
+      "Introduce a small incentive like a discount or free shipping",
       "Create urgency — low stock or expiring cart notification",
       "Highlight your guarantee, return policy, or risk reversal",
-      "Final reminder with strongest incentive",
-      "Suggest alternative products if original items sell out",
+      "Final reminder with your strongest incentive",
+      "Suggest alternative products if original items are selling out",
       "Win-back attempt with a fresh approach or bundle offer",
       "Last-chance notification before cart is cleared",
-    ],
-    nurture: [
-      "Deliver high-value educational content related to their interest",
-      "Share an actionable framework or methodology they can apply",
-      "Present data, research, or industry insights that build authority",
-      "Provide a relevant case study demonstrating real results",
-      "Offer a free resource (guide, template, checklist)",
-      "Address the core pain point with your solution as the answer",
-      "Share expert tips that position you as a trusted advisor",
-      "Introduce your solution naturally through a problem-solving lens",
-      "Build urgency and present a clear path to the next step",
-      "Direct ask — invite them to take the primary conversion action",
+      "Offer extended hold with a small extra perk",
+      "Final clearance notice with best available deal",
     ],
     postpurchase: [
-      "Confirm the order and set clear delivery/service expectations",
+      "Confirm the order and set clear delivery or service expectations",
       "Provide tips for getting maximum value from their purchase",
       "Check in on satisfaction and offer proactive support",
-      "Suggest complementary products or services (cross-sell)",
+      "Suggest complementary products or services as a cross-sell",
       "Request a review or testimonial while satisfaction is high",
       "Share user-generated content and community stories",
       "Offer an exclusive loyalty or repeat-purchase incentive",
       "Invite them to join your referral or ambassador program",
-      "Re-engage with new arrivals or updated offerings",
-      "Celebrate the customer relationship milestone with VIP access",
+      "Re-engage with new arrivals or updated offerings relevant to them",
+      "Celebrate the customer relationship with VIP access or perks",
+      "Deliver a loyalty reward based on their purchase history",
+      "Anniversary or milestone celebration with exclusive offer",
     ],
     event: [
-      "Confirm registration and share key event details",
+      "Confirm registration and share key event details and calendar link",
       "Build excitement with agenda highlights and speaker previews",
       "Provide preparation materials or pre-event resources",
       "Share networking tips and attendee engagement opportunities",
       "Send a countdown reminder with logistics and access links",
-      "Highlight specific sessions or workshops aligned to their interests",
+      "Highlight specific sessions aligned to their interests",
       "Encourage them to invite colleagues with a shareable link",
       "Day-before reminder with final logistics and tech check",
       "Day-of notification with live access link and schedule",
       "Post-event follow-up with recordings, resources, and next steps",
+      "Key takeaways summary and post-event action items",
+      "Announce the next event and offer early registration",
+    ],
+    seasonal: [
+      "Build anticipation and awareness of upcoming seasonal offerings",
+      "Offer early access to loyal subscribers before public launch",
+      "Provide gift guides, planning resources, or seasonal tips",
+      "Create countdown urgency as the holiday approaches",
+      "Remind and re-engage with personalized seasonal recommendations",
+      "Promote limited-time seasonal bundles or exclusive deals",
+      "Drive last-minute purchases with urgency and shipping deadlines",
+      "Deliver warm holiday greetings with a soft promotional touch",
+      "Celebrate the season and deliver on any holiday promises",
+      "Launch post-holiday clearance or new-season preview",
+      "Thank subscribers and preview what is coming next",
+      "Bridge to the next season to maintain year-round engagement",
     ],
   };
-
-  return (purposes[sequenceType] || purposes.welcome).slice(0, emailCount);
+  return purposes[type].slice(0, count);
 }
 
-/* ------------------------------------------------------------------ */
-/*  Content points generator                                           */
-/* ------------------------------------------------------------------ */
-
-function getContentPoints(
-  sequenceType: string,
-  industry: string,
-  goal: string,
-  familiarity: string,
-  emailIndex: number
+function getDefaultCtaTypes(
+  type: SequenceType,
+  count: number
 ): string[] {
-  const isEarly = emailIndex < 2;
-  const isMid = emailIndex >= 2 && emailIndex < 5;
-
-  if (sequenceType === "welcome") {
-    if (isEarly) {
-      return [
-        "Brief brand introduction with a clear, human voice",
-        `Deliver the promised lead magnet or ${goal === "purchase" ? "discount code" : "resource"}`,
-        "Set expectations for email frequency and content type",
-        "Include one clear, low-commitment CTA",
-      ];
-    }
-    if (isMid) {
-      return [
-        "Feature your top-performing product/service with a compelling visual",
-        "Include 1-2 customer testimonials or trust signals",
-        `Tie content back to their ${familiarity === "cold" ? "initial interest" : "previous engagement"}`,
-        `Drive toward ${goalLabels[goal]?.toLowerCase() || "your primary action"}`,
-      ];
-    }
-    return [
-      "Create urgency with a time-sensitive or exclusive offer",
-      "Recap the key value proposition in a fresh way",
-      "Use a strong, benefit-driven CTA with clear next step",
-      "Add a P.S. line with a secondary engagement path",
-    ];
-  }
-
-  if (sequenceType === "onboarding") {
-    if (isEarly) {
-      return [
-        "Welcome message with a single, clear first action to complete",
-        `Guide them through the core ${industry === "saas" ? "product setup" : "service activation"} step`,
-        "Include a progress indicator or checklist visual",
-        "Link to help resources or a quick-start video",
-      ];
-    }
-    if (isMid) {
-      return [
-        `Share a ${industry === "saas" ? "power-user feature" : "professional tip"} they haven't tried yet`,
-        "Include a real example or use case from a similar customer",
-        "Address the most common question or friction point",
-        "Celebrate their progress and reinforce the value they've gained",
-      ];
-    }
-    return [
-      "Summarize what they've accomplished during onboarding",
-      `Introduce advanced capabilities or ${industry === "saas" ? "premium features" : "additional services"}`,
-      "Set the stage for ongoing engagement and regular communication",
-      `Prompt the action most correlated with long-term ${goal === "purchase" ? "purchasing" : "retention"}`,
-    ];
-  }
-
-  if (sequenceType === "cart") {
-    if (isEarly) {
-      return [
-        "Show the exact items left in cart with images and prices",
-        "Keep the tone helpful, not pushy — assume they got distracted",
-        "Include a direct link back to the cart (one-click recovery)",
-        "Mention your shipping policy, guarantees, or return policy",
-      ];
-    }
-    if (isMid) {
-      return [
-        "Add customer reviews or ratings for the specific carted products",
-        `Offer a small incentive (${industry === "ecommerce" ? "free shipping or 10% off" : "extended trial or bonus"})`,
-        "Address the top purchase objections for your industry",
-        "Include a countdown or stock-level urgency indicator",
-      ];
-    }
-    return [
-      "Present your strongest offer as a final incentive",
-      "Suggest alternative products if originals are selling out",
-      "Use a clear, urgent subject line and preview text",
-      "Include a simple unsubscribe option to maintain list health",
-    ];
-  }
-
-  if (sequenceType === "reengagement") {
-    if (isEarly) {
-      return [
-        "Acknowledge they've been away without guilt-tripping",
-        "Highlight 2-3 specific improvements or new features since their last visit",
-        `Reference their previous ${familiarity === "hot" ? "purchases or interactions" : "interest area"}`,
-        "Include a single, low-friction re-engagement CTA",
-      ];
-    }
-    if (isMid) {
-      return [
-        "Share a compelling piece of social proof or recent win",
-        `Offer an exclusive ${goal === "purchase" ? "discount or bundle deal" : "resource or consultation"}`,
-        "Ask a simple survey question to understand their needs",
-        "Make the value of returning tangible and specific",
-      ];
-    }
-    return [
-      "Create genuine urgency — this is the final outreach attempt",
-      "Clearly state what they'll miss if they don't re-engage",
-      "Offer a one-click way to stay subscribed or update preferences",
-      "Respect their choice — include a clear opt-out with no friction",
-    ];
-  }
-
-  if (sequenceType === "nurture") {
-    if (isEarly) {
-      return [
-        `Open with a relevant ${industry === "saas" ? "industry trend" : industry === "finance" ? "market insight" : "pain point"} they care about`,
-        "Deliver genuinely useful content — not a sales pitch",
-        "Establish your expertise with data, examples, or frameworks",
-        "End with a soft CTA — read more, download, or reply",
-      ];
-    }
-    if (isMid) {
-      return [
-        "Present a case study or success story with specific metrics",
-        "Introduce your solution as a natural extension of the content",
-        `Address the key objection for ${industryLabels[industry] || "your"} buyers`,
-        "Include proof elements: logos, numbers, testimonials",
-      ];
-    }
-    return [
-      `Make a direct, confident ask to ${goalLabels[goal]?.toLowerCase() || "take the next step"}`,
-      "Recap the problem, solution, and proof in a concise format",
-      "Remove friction — make the next step as easy as possible",
-      "Add urgency through scarcity, timing, or exclusive access",
-    ];
-  }
-
-  if (sequenceType === "postpurchase") {
-    if (isEarly) {
-      return [
-        "Confirm the purchase with clear next-step expectations",
-        "Provide practical tips or a quick-start guide for their purchase",
-        `Include ${industry === "ecommerce" ? "shipping and delivery details" : "onboarding or service timeline"}`,
-        "Reinforce their decision with a warm, personal tone",
-      ];
-    }
-    if (isMid) {
-      return [
-        "Check in on satisfaction before they have a chance to forget",
-        `Suggest complementary ${industry === "ecommerce" ? "products" : "services"} based on their purchase`,
-        "Share tips from other customers who bought the same thing",
-        "Request a review while satisfaction and recall are high",
-      ];
-    }
-    return [
-      `Offer a loyalty incentive or ${industry === "ecommerce" ? "repeat-purchase discount" : "referral bonus"}`,
-      "Invite them to join your community or referral program",
-      "Share new arrivals or upcoming offerings relevant to them",
-      "Celebrate the relationship milestone and offer VIP perks",
-    ];
-  }
-
-  /* event */
-  if (isEarly) {
-    return [
-      "Confirm their registration with calendar links (ICS/Google)",
-      "Highlight 2-3 must-see sessions or speakers",
-      "Share preparation resources or pre-event content",
-      "Build excitement with attendee count or notable participants",
-    ];
-  }
-  if (isMid) {
-    return [
-      "Share detailed agenda with session descriptions",
-      "Provide networking tips and engagement opportunities",
-      "Encourage social sharing with event hashtag and handles",
-      "Send logistics: parking, virtual access links, dress code",
-    ];
-  }
-  return [
-    "Final reminder with all access details and start time",
-    "Include live-stream or virtual attendance backup option",
-    "Post-event: share recordings, slides, and key takeaways",
-    "Follow up with related resources and next event announcement",
-  ];
-}
-
-/* ------------------------------------------------------------------ */
-/*  CTA text generator                                                 */
-/* ------------------------------------------------------------------ */
-
-function getCtaText(
-  sequenceType: string,
-  goal: string,
-  emailIndex: number,
-  emailCount: number
-): string {
-  const isLast = emailIndex === emailCount - 1;
-  const isFirst = emailIndex === 0;
-
-  if (sequenceType === "cart") {
-    if (isFirst) return "Return to Your Cart";
-    if (isLast) return "Complete Your Order Now";
-    return "Finish Checkout";
-  }
-
-  if (sequenceType === "event") {
-    if (isFirst) return "Add to Calendar";
-    if (isLast) return "Watch the Recordings";
-    if (emailIndex >= emailCount - 2) return "Join the Event Now";
-    return "View the Full Agenda";
-  }
-
-  const ctaByGoal: Record<string, string[]> = {
-    purchase: ["Shop Now", "Browse the Collection", "Claim Your Offer"],
-    consultation: [
-      "Book Your Free Consultation",
-      "Schedule a Call",
-      "Reserve Your Spot",
+  const ctas: Record<SequenceType, string[]> = {
+    welcome: [
+      "Get Started",
+      "Learn More",
+      "Explore Collection",
+      "Learn More",
+      "Claim Offer",
+      "Read the Guide",
+      "Shop Now",
+      "Claim Offer",
+      "Visit Website",
+      "Shop Now",
+      "Claim Offer",
+      "Get Started",
     ],
-    download: [
-      "Download the Free Guide",
-      "Get Your Copy",
-      "Access the Resource",
+    nurture: [
+      "Read the Guide",
+      "Download Resource",
+      "Learn More",
+      "Read the Guide",
+      "Download Resource",
+      "Learn More",
+      "Read the Guide",
+      "Download Resource",
+      "Book a Call",
+      "Book a Call",
+      "Reply to This Email",
+      "Claim Offer",
     ],
-    trial: [
-      "Start Your Free Trial",
-      "Try It Free",
-      "Activate Your Trial",
+    reengagement: [
+      "Visit Website",
+      "Learn More",
+      "Claim Offer",
+      "Visit Website",
+      "Reply to This Email",
+      "Get Started",
+      "Claim Offer",
+      "Read the Guide",
+      "Visit Website",
+      "Reply to This Email",
+      "Claim Offer",
+      "Get Started",
     ],
-    engagement: [
-      "Explore More",
-      "See What's New",
-      "Join the Conversation",
+    onboarding: [
+      "Get Started",
+      "Get Started",
+      "Get Started",
+      "Learn More",
+      "Visit Website",
+      "Get Started",
+      "Read the Guide",
+      "Download Resource",
+      "Get Started",
+      "Visit Website",
+      "Learn More",
+      "Get Started",
     ],
-    reviews: [
+    cart: [
+      "Return to Cart",
+      "Complete Your Order",
+      "Complete Your Order",
+      "Return to Cart",
+      "Return to Cart",
+      "Complete Your Order",
+      "Complete Your Order",
+      "Shop Now",
+      "Explore Collection",
+      "Complete Your Order",
+      "Claim Offer",
+      "Complete Your Order",
+    ],
+    postpurchase: [
+      "Visit Website",
+      "Read the Guide",
+      "Reply to This Email",
+      "Shop Now",
       "Leave a Review",
-      "Share Your Experience",
-      "Rate Your Purchase",
+      "Shop Now",
+      "Claim Offer",
+      "Share with a Friend",
+      "Visit Website",
+      "Claim Offer",
+      "Shop Now",
+      "Claim Offer",
+    ],
+    event: [
+      "Add to Calendar",
+      "Learn More",
+      "Learn More",
+      "Add to Calendar",
+      "Download Resource",
+      "Register Now",
+      "Share with a Friend",
+      "Add to Calendar",
+      "Watch Now",
+      "Watch Now",
+      "Download Resource",
+      "Register Now",
+    ],
+    seasonal: [
+      "Explore Collection",
+      "Shop Now",
+      "Read the Guide",
+      "Shop Now",
+      "Explore Collection",
+      "Shop Now",
+      "Claim Offer",
+      "Shop Now",
+      "Visit Website",
+      "Shop Now",
+      "Visit Website",
+      "Explore Collection",
     ],
   };
-
-  const options = ctaByGoal[goal] || ctaByGoal.engagement;
-
-  if (isFirst) return options[0];
-  if (isLast) return options[2];
-  return options[1];
+  return ctas[type].slice(0, count);
 }
 
 /* ------------------------------------------------------------------ */
-/*  Build results                                                      */
+/*  Best practices per sequence type                                   */
 /* ------------------------------------------------------------------ */
 
-function buildResults(answers: AnswerMap): Results {
-  const sequenceType = answers.sequenceType;
-  const industry = answers.industry;
-  const familiarity = answers.familiarity;
-  const goal = answers.goal;
-  const emailCount = parseInt(answers.length, 10);
-
-  const timings = getSendTimings(sequenceType, emailCount);
-  const subjects = getSubjectLines(
-    sequenceType,
-    industry,
-    goal,
-    familiarity,
-    emailCount
-  );
-  const purposes = getEmailPurposes(sequenceType, goal, emailCount);
-
-  const emails: EmailPlan[] = [];
-  for (let i = 0; i < emailCount; i++) {
-    emails.push({
-      emailNumber: i + 1,
-      sendTiming: timings[i],
-      subjectLine: subjects[i],
-      purpose: purposes[i],
-      contentPoints: getContentPoints(
-        sequenceType,
-        industry,
-        goal,
-        familiarity,
-        i
-      ),
-      ctaText: getCtaText(sequenceType, goal, i, emailCount),
-    });
-  }
-
-  const tips = getSequenceTips(sequenceType, industry, familiarity);
-
-  const overviewTitle = `${sequenceTypeLabels[sequenceType]} for ${industryLabels[industry]}`;
-  const overviewDescription = `A ${emailCount}-email ${sequenceTypeLabels[sequenceType]?.toLowerCase()} sequence designed for ${familiarity === "cold" ? "cold audiences who don't know your brand yet" : familiarity === "warm" ? "warm audiences who are aware but haven't engaged" : "hot audiences who are engaged or past customers"}, optimized to ${goalLabels[goal]?.toLowerCase()}.`;
-
-  return { overviewTitle, overviewDescription, emails, tips };
+interface Tip {
+  title: string;
+  description: string;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Sequence tips                                                      */
-/* ------------------------------------------------------------------ */
-
-function getSequenceTips(
-  sequenceType: string,
-  industry: string,
-  familiarity: string
-): SequenceTip[] {
-  const universalTips: SequenceTip[] = [
-    {
-      title: "Test Subject Lines",
-      description:
-        "A/B test at least 2 subject line variations per email. Even small wording changes can improve open rates by 10-20%.",
-    },
-    {
-      title: "Optimize Send Times",
-      description:
-        "Test different send times for your audience. B2B emails often perform best Tuesday-Thursday mid-morning; B2C peaks on weekends.",
-    },
-    {
-      title: "Mobile-First Design",
-      description:
-        "Over 60% of emails are opened on mobile. Keep subject lines under 40 characters and use a single-column layout with large tap targets.",
-    },
-    {
-      title: "Monitor and Iterate",
-      description:
-        "Track open rates, click rates, and conversion rates for each email. Remove or rewrite underperformers after 2-4 weeks of data.",
-    },
-  ];
-
-  const specificTips: Record<string, SequenceTip[]> = {
+function getBestPractices(type: SequenceType): Tip[] {
+  const tips: Record<SequenceType, Tip[]> = {
     welcome: [
       {
         title: "Send Immediately",
         description:
-          "Welcome emails sent within 1 hour of signup see 4x higher open rates. Automate instant delivery.",
+          "Welcome emails sent within the first hour of signup see significantly higher open rates than those delayed. Automate instant delivery.",
       },
       {
         title: "Deliver on Promises",
         description:
-          "If you offered a lead magnet or discount, deliver it in the first email. Broken promises kill trust.",
+          "If you offered a lead magnet or discount at signup, deliver it in the first email. Broken promises erode trust from the start.",
       },
       {
         title: "Set Frequency Expectations",
         description:
-          "Tell subscribers how often they'll hear from you and what type of content to expect. Reduces unsubscribes.",
+          "Tell subscribers how often they will hear from you and what type of content to expect. This reduces early unsubscribes.",
       },
       {
         title: "Personalize Early",
         description:
-          "Use their first name and reference the specific page or offer that triggered the signup. Generic feels spammy.",
-      },
-    ],
-    onboarding: [
-      {
-        title: "One Action Per Email",
-        description:
-          "Each onboarding email should have exactly one clear action. Multiple CTAs create decision paralysis.",
-      },
-      {
-        title: "Show Progress",
-        description:
-          "Include a visual progress bar or checklist. People are motivated to complete sequences they've started.",
-      },
-      {
-        title: "Time-Gate Based on Behavior",
-        description:
-          "Trigger the next email only after they complete the previous action. Don't send Step 3 if they haven't done Step 2.",
-      },
-      {
-        title: "Celebrate Milestones",
-        description:
-          "Acknowledge each completed step with positive reinforcement. Small wins build momentum toward full adoption.",
-      },
-    ],
-    reengagement: [
-      {
-        title: "Segment by Inactivity Period",
-        description:
-          "Someone inactive for 30 days needs a different message than someone gone for 6 months. Segment accordingly.",
-      },
-      {
-        title: "Lead with Value, Not Guilt",
-        description:
-          "'We miss you' is less effective than 'Here's what you're missing.' Focus on value, not emotion.",
-      },
-      {
-        title: "Clean Your List",
-        description:
-          "If they don't re-engage after the full sequence, remove them. A smaller, engaged list outperforms a large, dead one.",
-      },
-      {
-        title: "Ask Why They Left",
-        description:
-          "A simple one-question survey in the sequence can reveal systemic issues and inform product decisions.",
-      },
-    ],
-    cart: [
-      {
-        title: "Speed Matters",
-        description:
-          "Send the first reminder within 1 hour. Cart recovery rates drop 50% after 24 hours.",
-      },
-      {
-        title: "Show the Products",
-        description:
-          "Include images, names, and prices of the exact items in their cart. Visual reminders outperform text-only.",
-      },
-      {
-        title: "Escalate Incentives",
-        description:
-          "Start with no discount. Add a small incentive in email 2-3. Reserve your best offer for the final email.",
-      },
-      {
-        title: "Remove Friction",
-        description:
-          "Link directly to a pre-filled checkout. Every extra click between the email and completion loses 20% of recoveries.",
+          "Use their first name and reference the specific page or offer that triggered the signup. Generic messages feel like spam.",
       },
     ],
     nurture: [
       {
         title: "80/20 Content Rule",
         description:
-          "80% educational value, 20% promotion. Nurture sequences that sell too early see sharp unsubscribe spikes.",
+          "Keep roughly 80% educational value and 20% promotion. Nurture sequences that sell too early see sharp unsubscribe spikes.",
       },
       {
-        title: "Match Content to Stage",
-        description: `${familiarity === "cold" ? "Cold leads need awareness content first. Don't pitch until email 3-4 at the earliest." : familiarity === "warm" ? "Warm leads are ready for deeper content. Move from education to consideration faster." : "Hot leads know you. Skip the intro — go straight to differentiation and proof."}`,
+        title: "Match Content to Buyer Stage",
+        description:
+          "Cold leads need awareness content first. Warm leads are ready for comparison content. Hot leads want proof and offers.",
       },
       {
         title: "Use Reply Triggers",
         description:
-          "Ask a genuine question and watch for replies. Leads who reply are 10x more likely to convert.",
+          "Ask a genuine question and monitor for replies. Subscribers who reply to your emails are far more likely to convert.",
       },
       {
-        title: "Gate the Best Content",
+        title: "Gate Your Best Content",
         description:
-          "Put your most valuable resource behind a micro-commitment (click, reply, or form). Engagement predicts intent.",
+          "Put your most valuable resource behind a micro-commitment such as a click, reply, or short form. Engagement predicts purchase intent.",
+      },
+    ],
+    reengagement: [
+      {
+        title: "Segment by Inactivity Period",
+        description:
+          "Someone inactive for 30 days needs a different message than someone gone for 6 months. Create separate segments for each window.",
+      },
+      {
+        title: "Lead with Value, Not Guilt",
+        description:
+          "Focus on what they are missing rather than how you feel. Show new features, content, or offers — not emotional pleas.",
+      },
+      {
+        title: "Clean Your List",
+        description:
+          "If they do not re-engage after the full sequence, remove them. A smaller, engaged list outperforms a large, inactive one.",
+      },
+      {
+        title: "Ask Why They Left",
+        description:
+          "A simple one-question survey in the sequence can reveal systemic issues and inform product or service improvements.",
+      },
+    ],
+    onboarding: [
+      {
+        title: "One Action Per Email",
+        description:
+          "Each onboarding email should have exactly one clear action. Multiple CTAs in a single email create decision paralysis.",
+      },
+      {
+        title: "Show Progress",
+        description:
+          "Include a visual progress bar or checklist. People are motivated to complete sequences they have already started.",
+      },
+      {
+        title: "Trigger Based on Behavior",
+        description:
+          "Send the next email only after they complete the previous action. Do not send Step 3 if they have not finished Step 2.",
+      },
+      {
+        title: "Celebrate Milestones",
+        description:
+          "Acknowledge each completed step with positive reinforcement. Small wins build momentum toward full product adoption.",
+      },
+    ],
+    cart: [
+      {
+        title: "Speed Matters",
+        description:
+          "Send the first reminder within 1 hour of abandonment. Recovery rates drop significantly after 24 hours pass.",
+      },
+      {
+        title: "Show the Products",
+        description:
+          "Include images, names, and prices of the exact items in their cart. Visual reminders outperform text-only messages.",
+      },
+      {
+        title: "Escalate Incentives Gradually",
+        description:
+          "Start with no discount. Add a small incentive in email 2 or 3. Reserve your best offer for the final email in the sequence.",
+      },
+      {
+        title: "Remove Checkout Friction",
+        description:
+          "Link directly to a pre-filled checkout page. Every extra click between the email and purchase completion loses potential recoveries.",
       },
     ],
     postpurchase: [
       {
         title: "Ask for Reviews at Peak Satisfaction",
         description:
-          "Request reviews 7-14 days after purchase — enough time to use the product, soon enough to remember the excitement.",
+          "Request reviews 7 to 14 days after purchase — enough time to use the product, soon enough to remember the initial excitement.",
       },
       {
-        title: "Cross-Sell, Don't Upsell",
+        title: "Cross-Sell, Not Upsell",
         description:
-          "Suggest complementary items, not upgrades. 'Goes great with...' converts better than 'You should also buy...'",
+          "Suggest complementary items rather than upgrades. Phrasing like 'goes great with' converts better than 'you should also buy' language.",
       },
       {
         title: "Provide Usage Tips",
         description:
-          "Help them succeed with their purchase. Customers who see results buy again. Customers who don't, churn.",
+          "Help them succeed with their purchase. Customers who see results from a product buy again. Those who do not will churn.",
       },
       {
         title: "Build a Referral Loop",
         description:
-          "Happy customers are your best marketers. Include a referral incentive in the later emails of the sequence.",
+          "Happy customers are your best acquisition channel. Include a referral incentive in the later emails of the sequence.",
       },
     ],
     event: [
       {
         title: "Front-Load Value",
         description:
-          "Share exclusive pre-event content or resources. Give them a reason to stay engaged before the event starts.",
+          "Share exclusive pre-event content or resources. Give registrants a reason to stay engaged before the event starts.",
       },
       {
         title: "Make It Shareable",
         description:
-          "Include a 'forward to a colleague' link or social share buttons. Peer invitations have the highest conversion rate.",
+          "Include a forward-to-a-colleague link or social share buttons. Peer invitations have the highest registration conversion rate.",
       },
       {
         title: "Send a Day-Before Reminder",
         description:
-          "No-show rates drop 25-30% with a well-timed day-before email that includes all logistics and access links.",
+          "A well-timed day-before email with all logistics and access links significantly reduces no-show rates.",
       },
       {
         title: "Follow Up Within 24 Hours",
         description:
-          "Send recordings, key takeaways, and a next-step CTA within 24 hours. Interest decays rapidly after events.",
+          "Send recordings, key takeaways, and a next-step CTA within 24 hours of the event. Interest decays rapidly after events end.",
+      },
+    ],
+    seasonal: [
+      {
+        title: "Start 4 to 6 Weeks Early",
+        description:
+          "Begin your seasonal sequence well before the holiday. Early birds capture budget before competitors flood inboxes.",
+      },
+      {
+        title: "Segment by Purchase History",
+        description:
+          "Returning seasonal buyers deserve different messaging than first-timers. Personalize offers based on past holiday purchases.",
+      },
+      {
+        title: "Plan for Post-Season Too",
+        description:
+          "The sequence should not end on the holiday. Post-season clearance and thank-you emails extend the revenue window.",
+      },
+      {
+        title: "Respect Inbox Fatigue",
+        description:
+          "During peak holiday periods, every brand increases email volume. Stand out with quality over quantity and clear value in every send.",
       },
     ],
   };
-
-  return specificTips[sequenceType] || universalTips;
+  return tips[type];
 }
 
 /* ------------------------------------------------------------------ */
-/*  Format results as plain text                                       */
+/*  Generate default emails                                            */
 /* ------------------------------------------------------------------ */
 
-function formatResultsText(results: Results): string {
+function generateDefaultEmails(
+  type: SequenceType,
+  count: number
+): EmailConfig[] {
+  const timings = getDefaultTimings(type, count);
+  const subjects = getDefaultSubjectLines(type, count);
+  const purposes = getDefaultPurposes(type, count);
+  const ctas = getDefaultCtaTypes(type, count);
+
+  return Array.from({ length: count }, (_, i) => ({
+    subjectLine: subjects[i] || `Email ${i + 1} subject line`,
+    daysAfterTrigger: timings[i] ?? i * 3,
+    purpose: purposes[i] || `Purpose for email ${i + 1}`,
+    ctaType: ctas[i] || "Learn More",
+  }));
+}
+
+/* ------------------------------------------------------------------ */
+/*  Timing formatter                                                   */
+/* ------------------------------------------------------------------ */
+
+function formatTiming(days: number, triggerLabel: string): string {
+  if (days === 0) return `Immediately ${triggerLabel}`;
+  if (days === 1) return `1 day ${triggerLabel}`;
+  if (days === 7) return `1 week ${triggerLabel}`;
+  if (days === 14) return `2 weeks ${triggerLabel}`;
+  if (days === 21) return `3 weeks ${triggerLabel}`;
+  if (days === 28) return `4 weeks ${triggerLabel}`;
+  if (days === 30) return `1 month ${triggerLabel}`;
+  if (days === 60) return `2 months ${triggerLabel}`;
+  if (days === 90) return `3 months ${triggerLabel}`;
+  return `${days} days ${triggerLabel}`;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Export as plain text                                                */
+/* ------------------------------------------------------------------ */
+
+function formatExportText(
+  type: SequenceType,
+  emails: EmailConfig[],
+  tips: Tip[]
+): string {
+  const typeLabel =
+    sequenceOptions.find((o) => o.value === type)?.label ?? type;
+  const triggerLabel =
+    sequenceOptions.find((o) => o.value === type)?.triggerLabel ?? "";
+
   const lines: string[] = [];
 
-  lines.push("EMAIL SEQUENCE PLANNER RESULTS");
+  lines.push("EMAIL SEQUENCE PLAN");
   lines.push("=".repeat(50));
   lines.push("");
-
-  lines.push(`SEQUENCE: ${results.overviewTitle}`);
-  lines.push(results.overviewDescription);
+  lines.push(`Sequence Type: ${typeLabel}`);
+  lines.push(`Total Emails: ${emails.length}`);
   lines.push("");
 
-  lines.push("EMAIL SEQUENCE");
-  lines.push("-".repeat(30));
+  lines.push("SEQUENCE TIMELINE");
+  lines.push("-".repeat(40));
 
-  results.emails.forEach((email) => {
+  emails.forEach((email, i) => {
     lines.push("");
     lines.push(
-      `EMAIL ${email.emailNumber}: ${email.sendTiming}`
+      `EMAIL ${i + 1} — ${formatTiming(email.daysAfterTrigger, triggerLabel)}`
     );
     lines.push(`  Subject: ${email.subjectLine}`);
     lines.push(`  Purpose: ${email.purpose}`);
-    lines.push("  Key Content:");
-    email.contentPoints.forEach((point) => {
-      lines.push(`    - ${point}`);
-    });
-    lines.push(`  CTA: ${email.ctaText}`);
+    lines.push(`  CTA: ${email.ctaType}`);
   });
 
   lines.push("");
   lines.push("BEST PRACTICES");
-  lines.push("-".repeat(30));
-  results.tips.forEach((tip) => {
+  lines.push("-".repeat(40));
+  tips.forEach((tip) => {
     lines.push(`- ${tip.title}: ${tip.description}`);
   });
 
@@ -946,6 +786,61 @@ function formatResultsText(results: Results): string {
 /* ------------------------------------------------------------------ */
 /*  Sub-components                                                     */
 /* ------------------------------------------------------------------ */
+
+function StepIndicator({
+  current,
+  labels,
+}: {
+  current: number;
+  labels: string[];
+}) {
+  return (
+    <div className="flex items-center gap-0 w-full print:hidden">
+      {labels.map((label, i) => {
+        const isActive = i === current;
+        const isComplete = i < current;
+        return (
+          <div key={label} className="flex-1 flex flex-col items-center gap-2">
+            <div className="flex items-center w-full">
+              {i > 0 && (
+                <div
+                  className={`flex-1 h-[2px] ${
+                    isComplete || isActive ? "bg-black" : "bg-gray-200"
+                  }`}
+                />
+              )}
+              <div
+                className={`w-10 h-10 flex items-center justify-center text-base font-bold flex-shrink-0 ${
+                  isActive
+                    ? "bg-black text-white"
+                    : isComplete
+                      ? "bg-black text-white"
+                      : "bg-gray-200 text-gray-500"
+                }`}
+              >
+                {isComplete ? "✓" : i + 1}
+              </div>
+              {i < labels.length - 1 && (
+                <div
+                  className={`flex-1 h-[2px] ${
+                    isComplete ? "bg-black" : "bg-gray-200"
+                  }`}
+                />
+              )}
+            </div>
+            <span
+              className={`text-base font-bold text-center ${
+                isActive || isComplete ? "text-black" : "text-gray-400"
+              }`}
+            >
+              {label}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
@@ -963,10 +858,52 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={copy}
-      aria-label="Copy results to clipboard"
+      aria-label="Copy email sequence plan to clipboard"
       className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
     >
       {copied ? "Copied" : "Copy to Clipboard"}
+    </button>
+  );
+}
+
+function DownloadButton({
+  text,
+  filename,
+}: {
+  text: string;
+  filename: string;
+}) {
+  const download = useCallback(() => {
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, [text, filename]);
+
+  return (
+    <button
+      onClick={download}
+      aria-label="Download email sequence plan as text file"
+      className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+    >
+      Download as Text
+    </button>
+  );
+}
+
+function PrintButton() {
+  return (
+    <button
+      onClick={() => window.print()}
+      aria-label="Print email sequence plan"
+      className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+    >
+      Print Summary
     </button>
   );
 }
@@ -976,52 +913,80 @@ function CopyButton({ text }: { text: string }) {
 /* ------------------------------------------------------------------ */
 
 export default function EmailSequencePlannerPage() {
-  const [answers, setAnswers] = useState<AnswerMap>({});
-  const [currentStep, setCurrentStep] = useState(0);
-  const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState(0);
+  const [sequenceType, setSequenceType] = useState<SequenceType | null>(
+    null
+  );
+  const [emailCount, setEmailCount] = useState(5);
+  const [emails, setEmails] = useState<EmailConfig[]>([]);
+  const [expandedEmail, setExpandedEmail] = useState<number | null>(null);
 
-  const totalSteps = steps.length;
-  const step = steps[currentStep];
-  const currentAnswered = answers[step.id] !== undefined;
-  const allAnswered = steps.every((s) => answers[s.id] !== undefined);
-  const answeredCount = steps.filter(
-    (s) => answers[s.id] !== undefined
-  ).length;
-
-  function handleSelect(value: string) {
-    setAnswers((prev) => ({ ...prev, [step.id]: value }));
-  }
-
-  function handleNext() {
-    if (currentStep < totalSteps - 1) {
-      setCurrentStep((prev) => prev + 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }
-
-  function handlePrev() {
-    if (currentStep > 0) {
-      setCurrentStep((prev) => prev - 1);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }
-
-  function handleSubmit() {
-    if (allAnswered) {
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }
-
-  function handleReset() {
-    setAnswers({});
-    setSubmitted(false);
-    setCurrentStep(0);
+  /* -- Step navigation -- */
+  function goToStep(target: number) {
+    setStep(target);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  const results = submitted ? buildResults(answers) : null;
-  const plainText = results ? formatResultsText(results) : "";
+  function handleConfigureDone() {
+    if (!sequenceType) return;
+    const defaults = generateDefaultEmails(sequenceType, emailCount);
+    setEmails(defaults);
+    setExpandedEmail(null);
+    goToStep(1);
+  }
+
+  function handleCustomizeDone() {
+    goToStep(2);
+  }
+
+  function handleReset() {
+    setStep(0);
+    setSequenceType(null);
+    setEmailCount(5);
+    setEmails([]);
+    setExpandedEmail(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function handleBackToConfigure() {
+    goToStep(0);
+  }
+
+  function handleBackToCustomize() {
+    goToStep(1);
+  }
+
+  /* -- Email editing helpers -- */
+  function updateEmail(
+    index: number,
+    field: keyof EmailConfig,
+    value: string | number
+  ) {
+    setEmails((prev) =>
+      prev.map((e, i) => (i === index ? { ...e, [field]: value } : e))
+    );
+  }
+
+  function resetEmailToDefault(index: number) {
+    if (!sequenceType) return;
+    const defaults = generateDefaultEmails(sequenceType, emails.length);
+    if (defaults[index]) {
+      setEmails((prev) =>
+        prev.map((e, i) => (i === index ? defaults[index] : e))
+      );
+    }
+  }
+
+  /* -- Derived -- */
+  const selectedOption = sequenceOptions.find(
+    (o) => o.value === sequenceType
+  );
+  const triggerLabel = selectedOption?.triggerLabel ?? "";
+  const tips = sequenceType ? getBestPractices(sequenceType) : [];
+  const plainText =
+    sequenceType && emails.length > 0
+      ? formatExportText(sequenceType, emails, tips)
+      : "";
 
   return (
     <article className="min-h-screen">
@@ -1031,7 +996,7 @@ export default function EmailSequencePlannerPage() {
           "@type": "WebApplication",
           name: "Email Sequence Planner",
           description:
-            "Free interactive tool that generates a complete email sequence plan based on your business type, industry, audience, and goals.",
+            "Free interactive tool to plan email marketing sequences. Choose a sequence type, set the number of emails, customize subject lines, timing, and CTAs, then export a printable plan.",
           applicationCategory: "MarketingApplication",
           operatingSystem: "Any",
           offers: {
@@ -1058,310 +1023,546 @@ export default function EmailSequencePlannerPage() {
               Email Sequence Planner
             </h1>
             <SectionDesc>
-              Answer 5 quick questions and get a complete email sequence
-              plan with subject lines, content outlines, send timing, and
-              best practices tailored to your business.
+              Plan a complete email marketing sequence in minutes. Choose
+              your sequence type, set the number of emails, customize each
+              one, and export a ready-to-implement plan.
             </SectionDesc>
           </Animate>
         </div>
       </section>
 
-      {!submitted ? (
-        <>
-          {/* ---- Progress Indicator ---- */}
-          <section className="px-6 lg:px-12 pb-6">
-            <div className="max-w-3xl mx-auto">
-              <Animate animation="fade-up">
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-base font-bold text-black">
-                    Question {currentStep + 1} of {totalSteps}
-                  </p>
-                  <p className="text-base text-gray-500">
-                    {answeredCount} / {totalSteps} answered
-                  </p>
-                </div>
-                <div className="w-full bg-gray-200 h-2">
-                  <div
-                    className="bg-black h-2 transition-all motion-reduce:transition-none"
-                    style={{
-                      width: `${(answeredCount / totalSteps) * 100}%`,
-                    }}
-                  />
-                </div>
+      {/* ---- Step indicator ---- */}
+      <section className="px-6 lg:px-12 pb-8 print:hidden">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <StepIndicator current={step} labels={STEP_LABELS} />
+          </Animate>
+        </div>
+      </section>
 
-                {/* Step nav pills */}
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {steps.map((s, i) => {
-                    const stepAnswered = answers[s.id] !== undefined;
-                    return (
+      {/* ================================================================ */}
+      {/*  STEP 0 — Configure                                              */}
+      {/* ================================================================ */}
+      {step === 0 && (
+        <section className="px-6 lg:px-12 pb-12">
+          <div className="max-w-3xl mx-auto space-y-10">
+            {/* Sequence type selector */}
+            <Animate animation="fade-up">
+              <div className="border border-gray-200">
+                <div className="bg-black text-white px-6 py-5">
+                  <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.25rem,3vw,1.5rem)] font-extrabold">
+                    Choose Your Sequence Type
+                  </h2>
+                </div>
+                <div className="p-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {sequenceOptions.map((opt) => (
                       <button
-                        key={s.id}
-                        onClick={() => setCurrentStep(i)}
-                        className={`min-h-[44px] px-4 py-2 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
-                          i === currentStep
+                        key={opt.value}
+                        onClick={() => setSequenceType(opt.value)}
+                        className={`min-h-[44px] p-5 text-left transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                          sequenceType === opt.value
                             ? "bg-black text-white"
-                            : stepAnswered
-                              ? "bg-gray-800 text-white"
-                              : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                            : "bg-gray-50 text-gray-700 hover:bg-gray-100 hover:shadow-lg hover:-translate-y-1"
                         }`}
                       >
-                        {i + 1}
-                      </button>
-                    );
-                  })}
-                </div>
-              </Animate>
-            </div>
-          </section>
-
-          {/* ---- Current Question ---- */}
-          <section
-            className="px-6 lg:px-12 py-8"
-            aria-label="Quiz question"
-          >
-            <div className="max-w-3xl mx-auto">
-              <Animate animation="fade-up" key={step.id}>
-                <div className="border border-gray-200 mb-8">
-                  <div className="bg-black text-white px-6 py-5">
-                    <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.25rem,3vw,1.5rem)] font-extrabold">
-                      {step.question}
-                    </h2>
-                  </div>
-
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {step.options.map((opt) => (
-                        <button
-                          key={opt.value}
-                          onClick={() => handleSelect(opt.value)}
-                          className={`min-h-[44px] px-5 py-4 text-base text-left font-bold transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
-                            answers[step.id] === opt.value
-                              ? "bg-black text-white"
-                              : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:shadow-lg hover:-translate-y-1"
+                        <span className="block text-base font-bold">
+                          {opt.label}
+                        </span>
+                        <span
+                          className={`block text-base mt-1 leading-relaxed ${
+                            sequenceType === opt.value
+                              ? "text-gray-300"
+                              : "text-gray-500"
                           }`}
                         >
-                          {opt.label}
-                        </button>
-                      ))}
-                    </div>
+                          {opt.description}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Animate>
+
+            {/* Email count selector */}
+            <Animate animation="fade-up">
+              <div className="border border-gray-200">
+                <div className="bg-black text-white px-6 py-5">
+                  <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.25rem,3vw,1.5rem)] font-extrabold">
+                    How Many Emails?
+                  </h2>
+                </div>
+                <div className="p-6 space-y-6">
+                  <div className="flex items-center gap-6">
+                    <label
+                      htmlFor="email-count"
+                      className="text-base font-bold text-black whitespace-nowrap"
+                    >
+                      Number of emails:
+                    </label>
+                    <input
+                      id="email-count"
+                      type="range"
+                      min={3}
+                      max={12}
+                      value={emailCount}
+                      onChange={(e) =>
+                        setEmailCount(parseInt(e.target.value, 10))
+                      }
+                      className="flex-1 accent-black min-h-[44px] cursor-pointer"
+                    />
+                    <span className="text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black min-w-[48px] text-center font-[family-name:var(--font-display)]">
+                      {emailCount}
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-base text-gray-400">
+                    <span>3 emails</span>
+                    <span>12 emails</span>
+                  </div>
+                  {sequenceType && (
+                    <p className="text-base text-gray-500">
+                      A {emailCount}-email{" "}
+                      {selectedOption?.label.toLowerCase()} sequence
+                      starting{" "}
+                      {triggerLabel}.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </Animate>
+
+            {/* Best practices preview */}
+            {sequenceType && (
+              <Animate animation="fade-up">
+                <div className="border border-gray-200">
+                  <div className="bg-black text-white px-6 py-5">
+                    <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.25rem,3vw,1.5rem)] font-extrabold">
+                      Best Practices: {selectedOption?.label}
+                    </h2>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    {tips.map((tip) => (
+                      <div
+                        key={tip.title}
+                        className="flex items-start gap-3 border-b border-gray-100 pb-4 last:border-b-0 last:pb-0"
+                      >
+                        <span className="inline-flex items-center justify-center min-w-[28px] h-7 bg-black text-white text-base font-bold flex-shrink-0">
+                          {"✓"}
+                        </span>
+                        <div>
+                          <p className="text-base font-bold text-black">
+                            {tip.title}
+                          </p>
+                          <p className="text-base text-gray-500 mt-1 leading-relaxed">
+                            {tip.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Animate>
+            )}
 
-              {/* Navigation buttons */}
-              <div className="flex items-center justify-between gap-4">
+            {/* Next button */}
+            <Animate animation="fade-up">
+              <div className="flex items-center gap-4">
                 <button
-                  onClick={handlePrev}
-                  disabled={currentStep === 0}
-                  className={`min-h-[44px] px-8 py-4 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
-                    currentStep === 0
-                      ? "bg-gray-100 text-gray-300 cursor-not-allowed"
-                      : "border-2 border-black text-black hover:bg-black hover:text-white"
+                  onClick={handleConfigureDone}
+                  disabled={!sequenceType}
+                  className={`min-h-[44px] px-10 py-4 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    sequenceType
+                      ? "bg-black text-white hover:bg-gray-800"
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  &larr; Previous
+                  Customize Emails &rarr;
                 </button>
-
-                {currentStep < totalSteps - 1 ? (
-                  <button
-                    onClick={handleNext}
-                    disabled={!currentAnswered}
-                    className={`min-h-[44px] px-8 py-4 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
-                      currentAnswered
-                        ? "bg-black text-white hover:bg-gray-800"
-                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    }`}
-                  >
-                    Next &rarr;
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleSubmit}
-                    disabled={!allAnswered}
-                    className={`min-h-[44px] px-10 py-4 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
-                      allAnswered
-                        ? "bg-black text-white hover:bg-gray-800"
-                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    }`}
-                  >
-                    Generate My Sequence &rarr;
-                  </button>
+                {!sequenceType && (
+                  <p className="text-base text-gray-400">
+                    Select a sequence type to continue.
+                  </p>
                 )}
               </div>
+            </Animate>
+          </div>
+        </section>
+      )}
 
-              {!allAnswered && currentStep === totalSteps - 1 && (
-                <p className="text-base text-gray-400 text-center mt-4">
-                  Answer all {totalSteps} questions to generate your
-                  sequence
-                </p>
-              )}
-            </div>
-          </section>
-        </>
-      ) : results ? (
-        <>
-          {/* ---- Results ---- */}
-          <section
-            className="px-6 lg:px-12 py-8"
-            aria-label="Email sequence results"
-          >
-            <div className="max-w-3xl mx-auto">
-              {/* ---- Sequence Overview ---- */}
-              <Animate animation="fade-up">
+      {/* ================================================================ */}
+      {/*  STEP 1 — Customize Emails                                       */}
+      {/* ================================================================ */}
+      {step === 1 && sequenceType && (
+        <section className="px-6 lg:px-12 pb-12">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <Animate animation="fade-up">
+              <div>
                 <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
-                  {results.overviewTitle}
+                  Customize Your {selectedOption?.label} Sequence
                 </h2>
-                <p className="text-base text-gray-500 mb-8">
-                  {results.overviewDescription}
+                <p className="text-base text-gray-500 leading-relaxed">
+                  Each email below is pre-filled with recommended defaults.
+                  Click any email to expand and edit its subject line,
+                  timing, purpose, and call-to-action. Your changes are
+                  saved automatically.
                 </p>
-              </Animate>
+              </div>
+            </Animate>
 
-              {/* ---- Visual Timeline ---- */}
-              <Animate animation="fade-up">
-                <div className="border border-gray-200 p-6 mb-12">
-                  <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-6">
-                    Sequence Timeline
-                  </h3>
-                  <div className="relative">
-                    {/* Timeline line */}
-                    <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gray-200" />
+            {/* Email cards */}
+            <Stagger stagger={80} className="space-y-4">
+              {emails.map((email, i) => {
+                const isExpanded = expandedEmail === i;
+                return (
+                  <div key={i} className="border border-gray-200">
+                    {/* Collapsed header */}
+                    <button
+                      onClick={() =>
+                        setExpandedEmail(isExpanded ? null : i)
+                      }
+                      aria-expanded={isExpanded}
+                      aria-controls={`email-editor-${i}`}
+                      className="w-full px-6 py-4 flex items-center justify-between gap-4 text-left min-h-[44px] hover:bg-gray-50 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    >
+                      <div className="flex items-center gap-4 min-w-0">
+                        <span className="w-10 h-10 bg-black text-white flex items-center justify-center text-base font-bold flex-shrink-0">
+                          {i + 1}
+                        </span>
+                        <div className="min-w-0">
+                          <p className="text-base font-bold text-black truncate">
+                            {email.subjectLine}
+                          </p>
+                          <p className="text-base text-gray-500">
+                            {formatTiming(
+                              email.daysAfterTrigger,
+                              triggerLabel
+                            )}{" "}
+                            &middot; {email.ctaType}
+                          </p>
+                        </div>
+                      </div>
+                      <span
+                        className={`text-base text-gray-400 flex-shrink-0 transition-transform motion-reduce:transition-none ${
+                          isExpanded ? "rotate-180" : ""
+                        }`}
+                        aria-hidden="true"
+                      >
+                        &#9660;
+                      </span>
+                    </button>
 
-                    <div className="space-y-4">
-                      {results.emails.map((email, i) => (
-                        <div
-                          key={i}
-                          className="flex items-start gap-4 relative"
-                        >
-                          {/* Dot */}
-                          <div className="relative z-10 flex-shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center text-base font-bold">
-                            {email.emailNumber}
-                          </div>
-                          {/* Content */}
-                          <div className="pt-2 min-h-[44px]">
-                            <p className="text-base font-bold text-black">
-                              Email {email.emailNumber}
-                            </p>
-                            <p className="text-base text-gray-500">
-                              {email.sendTiming}
-                            </p>
+                    {/* Expanded editor */}
+                    {isExpanded && (
+                      <div
+                        id={`email-editor-${i}`}
+                        className="border-t border-gray-200 p-6 space-y-5 bg-gray-50"
+                      >
+                        {/* Subject line */}
+                        <div>
+                          <label
+                            htmlFor={`subject-${i}`}
+                            className="block text-base font-bold text-black mb-2"
+                          >
+                            Subject Line
+                          </label>
+                          <input
+                            id={`subject-${i}`}
+                            type="text"
+                            value={email.subjectLine}
+                            onChange={(e) =>
+                              updateEmail(
+                                i,
+                                "subjectLine",
+                                e.target.value
+                              )
+                            }
+                            className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black min-h-[44px] focus-visible:border-black focus-visible:outline-none motion-reduce:transition-none"
+                          />
+                        </div>
+
+                        {/* Timing */}
+                        <div>
+                          <label
+                            htmlFor={`timing-${i}`}
+                            className="block text-base font-bold text-black mb-2"
+                          >
+                            Days After Trigger
+                          </label>
+                          <div className="flex items-center gap-4">
+                            <input
+                              id={`timing-${i}`}
+                              type="number"
+                              min={0}
+                              max={365}
+                              value={email.daysAfterTrigger}
+                              onChange={(e) =>
+                                updateEmail(
+                                  i,
+                                  "daysAfterTrigger",
+                                  Math.max(
+                                    0,
+                                    parseInt(e.target.value, 10) || 0
+                                  )
+                                )
+                              }
+                              className="w-24 px-4 py-3 border border-gray-200 text-base bg-white text-black min-h-[44px] focus-visible:border-black focus-visible:outline-none motion-reduce:transition-none"
+                            />
+                            <span className="text-base text-gray-500">
+                              {formatTiming(
+                                email.daysAfterTrigger,
+                                triggerLabel
+                              )}
+                            </span>
                           </div>
                         </div>
-                      ))}
+
+                        {/* Purpose */}
+                        <div>
+                          <label
+                            htmlFor={`purpose-${i}`}
+                            className="block text-base font-bold text-black mb-2"
+                          >
+                            Purpose / Goal
+                          </label>
+                          <textarea
+                            id={`purpose-${i}`}
+                            value={email.purpose}
+                            onChange={(e) =>
+                              updateEmail(
+                                i,
+                                "purpose",
+                                e.target.value
+                              )
+                            }
+                            rows={3}
+                            className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black min-h-[44px] resize-y focus-visible:border-black focus-visible:outline-none motion-reduce:transition-none"
+                          />
+                        </div>
+
+                        {/* CTA type */}
+                        <div>
+                          <label
+                            htmlFor={`cta-${i}`}
+                            className="block text-base font-bold text-black mb-2"
+                          >
+                            CTA Type
+                          </label>
+                          <select
+                            id={`cta-${i}`}
+                            value={email.ctaType}
+                            onChange={(e) =>
+                              updateEmail(
+                                i,
+                                "ctaType",
+                                e.target.value
+                              )
+                            }
+                            className="w-full px-4 py-3 border border-gray-200 text-base bg-white text-black min-h-[44px] appearance-none focus-visible:border-black focus-visible:outline-none motion-reduce:transition-none"
+                          >
+                            {ctaOptions.map((cta) => (
+                              <option key={cta} value={cta}>
+                                {cta}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        {/* Reset single email */}
+                        <button
+                          onClick={() => resetEmailToDefault(i)}
+                          className="min-h-[44px] px-4 py-2 text-base font-bold text-gray-500 hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                        >
+                          Reset to Default
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </Stagger>
+
+            {/* Navigation */}
+            <Animate animation="fade-up">
+              <div className="flex items-center justify-between gap-4 pt-4">
+                <button
+                  onClick={handleBackToConfigure}
+                  className="min-h-[44px] px-8 py-4 text-base font-bold border-2 border-black text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  &larr; Back
+                </button>
+                <button
+                  onClick={handleCustomizeDone}
+                  className="min-h-[44px] px-10 py-4 text-base font-bold bg-black text-white hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  Generate Plan &rarr;
+                </button>
+              </div>
+            </Animate>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================ */}
+      {/*  STEP 2 — Results                                                */}
+      {/* ================================================================ */}
+      {step === 2 && sequenceType && emails.length > 0 && (
+        <section className="px-6 lg:px-12 pb-12">
+          <div className="max-w-3xl mx-auto space-y-12">
+            {/* ---- Sequence overview ---- */}
+            <Animate animation="fade-up">
+              <div>
+                <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
+                  {selectedOption?.label} — {emails.length}-Email Plan
+                </h2>
+                <p className="text-base text-gray-500 leading-relaxed">
+                  Your complete email sequence plan with subject lines,
+                  timing, purposes, and calls-to-action. Use the export
+                  options below to save or share this plan.
+                </p>
+              </div>
+            </Animate>
+
+            {/* ---- Visual timeline ---- */}
+            <Animate animation="fade-up">
+              <div className="border border-gray-200 p-6">
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-6">
+                  Sequence Timeline
+                </h3>
+                <div className="relative">
+                  {/* Vertical line */}
+                  <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gray-200" />
+
+                  <div className="space-y-4">
+                    {emails.map((email, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-4 relative"
+                      >
+                        <div className="relative z-10 flex-shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center text-base font-bold">
+                          {i + 1}
+                        </div>
+                        <div className="pt-1 min-h-[44px]">
+                          <p className="text-base font-bold text-black">
+                            {formatTiming(
+                              email.daysAfterTrigger,
+                              triggerLabel
+                            )}
+                          </p>
+                          <p className="text-base text-gray-500 truncate max-w-[260px] sm:max-w-none">
+                            {email.subjectLine}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Animate>
+
+            {/* ---- Full email cards ---- */}
+            <Animate animation="fade-up">
+              <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-6">
+                Your Email Sequence
+              </h3>
+            </Animate>
+
+            <Stagger stagger={100} className="space-y-6">
+              {emails.map((email, i) => (
+                <div key={i} className="border border-gray-200">
+                  <div className="bg-black text-white px-6 py-4">
+                    <div className="flex items-center justify-between gap-4 flex-wrap">
+                      <span className="font-[family-name:var(--font-display)] text-[clamp(1.25rem,3vw,1.5rem)] font-extrabold">
+                        Email {i + 1}
+                      </span>
+                      <span className="text-base text-gray-300">
+                        {formatTiming(
+                          email.daysAfterTrigger,
+                          triggerLabel
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-5">
+                    {/* Subject line */}
+                    <div>
+                      <p className="text-base font-bold text-black mb-1">
+                        Subject Line
+                      </p>
+                      <p className="text-base text-gray-600 bg-gray-50 px-4 py-3 border border-gray-100">
+                        {email.subjectLine}
+                      </p>
+                    </div>
+
+                    {/* Purpose */}
+                    <div>
+                      <p className="text-base font-bold text-black mb-1">
+                        Purpose
+                      </p>
+                      <p className="text-base text-gray-600 leading-relaxed">
+                        {email.purpose}
+                      </p>
+                    </div>
+
+                    {/* CTA */}
+                    <div>
+                      <p className="text-base font-bold text-black mb-1">
+                        Recommended CTA
+                      </p>
+                      <span className="inline-block bg-black text-white px-4 py-2 text-base font-bold">
+                        {email.ctaType}
+                      </span>
                     </div>
                   </div>
                 </div>
-              </Animate>
+              ))}
+            </Stagger>
 
-              {/* ---- Individual Email Cards ---- */}
-              <Animate animation="fade-up">
-                <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-6">
-                  Your Email Sequence
-                </h2>
-              </Animate>
+            {/* ---- Best practices ---- */}
+            <Animate animation="fade-up">
+              <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
+                Best Practices
+              </h3>
+              <p className="text-base text-gray-500 mb-6">
+                Tips to maximize the performance of your{" "}
+                {selectedOption?.label.toLowerCase()} sequence.
+              </p>
+            </Animate>
 
-              <Stagger stagger={100} className="space-y-6 mb-12">
-                {results.emails.map((email) => (
-                  <div
-                    key={email.emailNumber}
-                    className="border border-gray-200"
-                  >
-                    <div className="bg-black text-white px-6 py-4">
-                      <div className="flex items-center justify-between gap-4 flex-wrap">
-                        <span className="font-[family-name:var(--font-display)] text-[clamp(1.25rem,3vw,1.5rem)] font-extrabold">
-                          Email {email.emailNumber}
-                        </span>
-                        <span className="text-base text-gray-300">
-                          {email.sendTiming}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6 space-y-5">
-                      {/* Subject Line */}
-                      <div>
-                        <p className="text-base font-bold text-black mb-1">
-                          Subject Line
-                        </p>
-                        <p className="text-base text-gray-600 bg-gray-50 px-4 py-3 border border-gray-100">
-                          {email.subjectLine}
-                        </p>
-                      </div>
+            <Stagger
+              stagger={100}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+              {tips.map((tip) => (
+                <div
+                  key={tip.title}
+                  className="border border-gray-200 p-6"
+                >
+                  <h4 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2">
+                    {tip.title}
+                  </h4>
+                  <p className="text-base text-gray-600 leading-relaxed">
+                    {tip.description}
+                  </p>
+                </div>
+              ))}
+            </Stagger>
 
-                      {/* Purpose */}
-                      <div>
-                        <p className="text-base font-bold text-black mb-1">
-                          Purpose
-                        </p>
-                        <p className="text-base text-gray-600">
-                          {email.purpose}
-                        </p>
-                      </div>
-
-                      {/* Content Points */}
-                      <div>
-                        <p className="text-base font-bold text-black mb-2">
-                          Key Content Points
-                        </p>
-                        <ul className="space-y-2">
-                          {email.contentPoints.map((point, j) => (
-                            <li
-                              key={j}
-                              className="flex items-start gap-3 text-base text-gray-600"
-                            >
-                              <span className="text-black font-bold mt-0.5 flex-shrink-0">
-                                --
-                              </span>
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* CTA */}
-                      <div>
-                        <p className="text-base font-bold text-black mb-1">
-                          Recommended CTA
-                        </p>
-                        <span className="inline-block bg-black text-white px-4 py-2 text-base font-bold">
-                          {email.ctaText}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </Stagger>
-
-              {/* ---- Sequence Tips ---- */}
-              <Animate animation="fade-up">
-                <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
-                  Best Practices
-                </h2>
-                <p className="text-base text-gray-500 mb-6">
-                  Tips to maximize the performance of your email sequence.
-                </p>
-              </Animate>
-
-              <Stagger
-                stagger={100}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12"
-              >
-                {results.tips.map((tip) => (
-                  <div
-                    key={tip.title}
-                    className="border border-gray-200 p-6"
-                  >
-                    <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2">
-                      {tip.title}
-                    </h3>
-                    <p className="text-base text-gray-600">
-                      {tip.description}
-                    </p>
-                  </div>
-                ))}
-              </Stagger>
-
-              {/* ---- Actions ---- */}
-              <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {/* ---- Export actions ---- */}
+            <Animate animation="fade-up">
+              <div className="flex flex-wrap justify-center gap-4 print:hidden">
                 <CopyButton text={plainText} />
+                <DownloadButton
+                  text={plainText}
+                  filename="email-sequence-plan.txt"
+                />
+                <PrintButton />
+                <button
+                  onClick={handleBackToCustomize}
+                  className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  Edit Emails
+                </button>
                 <button
                   onClick={handleReset}
                   className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border-2 border-black text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
@@ -1369,13 +1570,169 @@ export default function EmailSequencePlannerPage() {
                   Start Over
                 </button>
               </div>
-            </div>
-          </section>
-        </>
-      ) : null}
+            </Animate>
+          </div>
+        </section>
+      )}
 
-      {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      {/* ---- Subject Line Formulas Reference ---- */}
+      {step === 0 && (
+        <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto">
+            <Animate animation="fade-up">
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
+                Subject Line Formulas That Work
+              </h2>
+              <p className="text-base text-gray-500 mb-8 leading-relaxed">
+                Use these proven subject line structures as starting points
+                when customizing your sequence emails.
+              </p>
+            </Animate>
+            <Stagger
+              stagger={100}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            >
+              {[
+                {
+                  formula: "The Curiosity Gap",
+                  example:
+                    "The one thing most [audience] get wrong about [topic]",
+                  tip: "Tease information without giving it away. The reader opens to close the gap.",
+                },
+                {
+                  formula: "The How-To",
+                  example:
+                    "How to [achieve result] in [timeframe]",
+                  tip: "Promise a clear outcome with a specific timeframe. Specificity builds credibility.",
+                },
+                {
+                  formula: "The Number List",
+                  example:
+                    "[Number] ways to [achieve result] without [common pain]",
+                  tip: "Odd numbers tend to outperform even ones. Keep the number between 3 and 9.",
+                },
+                {
+                  formula: "The Personal Touch",
+                  example:
+                    "[First Name], I noticed you [action] — here is your next step",
+                  tip: "Reference a specific behavior or interaction. Personalization goes beyond first name.",
+                },
+                {
+                  formula: "The Urgency Driver",
+                  example: "Ending tonight: [offer or benefit]",
+                  tip: "Only use real deadlines. False urgency erodes trust and damages deliverability over time.",
+                },
+                {
+                  formula: "The Social Proof",
+                  example:
+                    "Why [number]+ [audience type] switched to [Brand]",
+                  tip: "Let your audience size or customer results do the selling. Numbers add weight.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.formula}
+                  className="border border-gray-200 p-6"
+                >
+                  <div className="flex items-start gap-4">
+                    <div>
+                      <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2">
+                        {item.formula}
+                      </h3>
+                      <p className="text-base text-gray-600 bg-gray-50 px-4 py-3 border border-gray-100 mb-3 italic">
+                        {item.example}
+                      </p>
+                      <p className="text-base text-gray-500 leading-relaxed">
+                        {item.tip}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
+
+      {/* ---- Optimal Send Times Reference ---- */}
+      {step === 0 && (
+        <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto">
+            <Animate animation="fade-up">
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
+                Optimal Send Timing by Sequence Type
+              </h2>
+              <p className="text-base text-gray-500 mb-8 leading-relaxed">
+                Recommended spacing between emails based on sequence type
+                and subscriber engagement patterns.
+              </p>
+            </Animate>
+            <Stagger stagger={100} className="space-y-4">
+              {[
+                {
+                  type: "Welcome Series",
+                  timing: "Day 0, 1, 3, 5, 7",
+                  note: "Front-load the first week while brand awareness is highest. Space out after the initial burst.",
+                },
+                {
+                  type: "Lead Nurture",
+                  timing: "Every 3 to 7 days",
+                  note: "Consistent but not overwhelming. Match frequency to content depth: heavier content needs more breathing room.",
+                },
+                {
+                  type: "Cart Abandonment",
+                  timing: "1 hour, 1 day, 3 days, 5 days",
+                  note: "The first reminder should arrive within 1 hour. Urgency decreases with each subsequent email.",
+                },
+                {
+                  type: "Onboarding",
+                  timing: "Day 0, 1, 3, 5, 7, 14",
+                  note: "Ideally triggered by user actions, not just time. If behavior-triggered, these serve as fallback timing.",
+                },
+                {
+                  type: "Re-engagement",
+                  timing: "Day 0, 3, 7, 14, 21",
+                  note: "Wider spacing signals respect for their inbox. Compress only if offering escalating incentives.",
+                },
+                {
+                  type: "Post-Purchase",
+                  timing: "Day 0, 3, 7, 14, 30",
+                  note: "Match timing to product delivery and usage cycle. Review requests work best 7 to 14 days after receipt.",
+                },
+                {
+                  type: "Event / Webinar",
+                  timing: "Registration, 7 days, 1 day, day-of, +1 day",
+                  note: "Increase frequency as the event approaches. Post-event follow-up should land within 24 hours.",
+                },
+                {
+                  type: "Seasonal / Holiday",
+                  timing: "4 weeks, 2 weeks, 1 week, 3 days, day-of",
+                  note: "Start early to capture planners. Increase frequency in the final week with clear shipping or access deadlines.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.type}
+                  className="border border-gray-200 p-6 grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-4"
+                >
+                  <div>
+                    <p className="text-base font-bold text-black">
+                      {item.type}
+                    </p>
+                    <p className="text-base text-gray-600 mt-1">
+                      {item.timing}
+                    </p>
+                  </div>
+                  <p className="text-base text-gray-500 leading-relaxed">
+                    {item.note}
+                  </p>
+                </div>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
+
+      {/* ---- Bottom CTA ---- */}
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center print:hidden">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
@@ -1388,7 +1745,7 @@ export default function EmailSequencePlannerPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              className="inline-flex items-center justify-center gap-3 bg-white text-black px-10 py-5 min-h-[44px] font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;
             </Link>

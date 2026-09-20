@@ -88,6 +88,8 @@ const staticPages = [
   "/resources/social-calendar",
   "/resources/funnel-visualizer",
   "/resources/launch-countdown",
+  "/resources/lead-magnet-generator",
+  "/resources/pricing-optimizer",
   "/tools",
   "/approach",
   "/pricing",
