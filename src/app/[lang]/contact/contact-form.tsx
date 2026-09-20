@@ -67,7 +67,7 @@ export function ContactForm() {
   }
 
   const inputClass = "w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:border-black focus:outline-none transition-colors";
-  const labelClass = "block text-sm font-bold text-black uppercase tracking-wide mb-2";
+  const labelClass = "block text-base font-bold text-black uppercase tracking-wide mb-2";
 
   return (
     <div className="bg-gray-50 p-8 lg:p-10">
@@ -142,7 +142,7 @@ export function ContactForm() {
           </div>
 
           {state.status === "error" && (
-            <div className="mt-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm" role="alert">
+            <div className="mt-4 p-3 bg-red-50 border border-red-200 text-red-700 text-base" role="alert">
               {state.message}
             </div>
           )}
@@ -155,7 +155,7 @@ export function ContactForm() {
             {state.status === "sending" ? "Sending..." : "Send Message"}
           </button>
 
-          <p className="text-sm text-gray-400 mt-4">
+          <p className="text-base text-gray-400 mt-4">
             By submitting this form, you agree to our privacy policy.
           </p>
         </form>

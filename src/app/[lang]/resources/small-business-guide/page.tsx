@@ -127,7 +127,7 @@ export default function SmallBusinessGuidePage() {
               <div key={ch.title} className="bg-white border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black">{ch.title}</h3>
-                  <span className={`text-[13px] font-bold uppercase tracking-wide px-2 py-1 ${ch.priority === "Essential" ? "bg-black text-white" : ch.priority === "High" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-600"}`}>
+                  <span className={`text-base font-bold uppercase tracking-wide px-2 py-1 ${ch.priority === "Essential" ? "bg-black text-white" : ch.priority === "High" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-600"}`}>
                     {ch.priority}
                   </span>
                 </div>
@@ -182,7 +182,7 @@ export default function SmallBusinessGuidePage() {
           <Stagger stagger={50} animation="fade-up" className="mt-10 space-y-4">
             {mistakes.map((m, i) => (
               <div key={i} className="flex items-start gap-4 py-3">
-                <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">{i + 1}</span>
+                <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold">{i + 1}</span>
                 <p className="text-base text-gray-600 leading-relaxed">{m}</p>
               </div>
             ))}

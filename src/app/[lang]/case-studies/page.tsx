@@ -157,6 +157,38 @@ const caseStudies = [
       "Integrated digital marketing campaign including local SEO, reputation management, and paid advertising.",
     Pattern: PatternF,
   },
+  {
+    industry: "Home Services",
+    service: "SEO & PPC",
+    title: "Local Lead Generation for Home Services Client",
+    description:
+      "Local SEO optimization and Google Ads campaigns to drive qualified leads for a multi-location home services provider.",
+    Pattern: PatternA,
+  },
+  {
+    industry: "Finance",
+    service: "Content Marketing",
+    title: "Content Marketing for Financial Services Client",
+    description:
+      "Educational content strategy, lead magnets, and email nurture sequences for a financial advisory firm.",
+    Pattern: PatternC,
+  },
+  {
+    industry: "Fashion",
+    service: "Social Media",
+    title: "Social Commerce Strategy for Fashion Brand",
+    description:
+      "Instagram and TikTok content strategy, influencer partnerships, and shoppable content to drive direct-to-consumer sales.",
+    Pattern: PatternE,
+  },
+  {
+    industry: "Legal",
+    service: "Web Development & SEO",
+    title: "Website Redesign & SEO for Law Firm",
+    description:
+      "Complete website redesign with conversion optimization and local SEO strategy for a multi-practice law firm.",
+    Pattern: PatternD,
+  },
 ];
 
 export default function CaseStudiesPage() {
@@ -233,17 +265,17 @@ export default function CaseStudiesPage() {
             {caseStudies.map((study) => (
               <div
                 key={study.title}
-                className="bg-white border border-gray-200 hover:border-black/30 transition-all overflow-hidden group"
+                className="bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none overflow-hidden group"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-gray-100">
                   <study.Pattern />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-[13px] font-semibold text-gray-500 uppercase tracking-wider bg-gray-100 px-2.5 py-1">
+                    <span className="text-base font-semibold text-gray-500 uppercase tracking-wider bg-gray-100 px-2.5 py-1">
                       {study.industry}
                     </span>
-                    <span className="text-[13px] font-semibold text-black uppercase tracking-wider bg-gray-100 px-2.5 py-1">
+                    <span className="text-base font-semibold text-black uppercase tracking-wider bg-gray-100 px-2.5 py-1">
                       {study.service}
                     </span>
                   </div>
@@ -277,6 +309,65 @@ export default function CaseStudiesPage() {
               </div>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      {/* Approach Overview */}
+      <section className="px-6 lg:px-12 py-16" aria-label="Our approach to client work">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Our Approach</SectionLabel>
+            <SectionTitle>How We Deliver Results</SectionTitle>
+            <SectionDesc>
+              Every engagement follows a structured process designed to minimize risk and maximize impact.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+            {[
+              { step: "01", title: "Discovery & Audit", desc: "We analyze your current position, competitive landscape, and business objectives before recommending anything." },
+              { step: "02", title: "Strategy Development", desc: "A custom strategy document with specific channels, tactics, KPIs, and timelines tailored to your goals." },
+              { step: "03", title: "Execution & Optimization", desc: "We launch, test, measure, and refine. Every campaign gets continuous attention — not set-and-forget." },
+              { step: "04", title: "Reporting & Scaling", desc: "Transparent reporting with clear metrics. We show what worked, what didn't, and where to invest next." },
+            ].map((item) => (
+              <div key={item.step} className="border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-gray-200 block mb-4">{item.step}</span>
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up">
+            <div className="mt-10 text-center">
+              <Link href="/process" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Learn more about our process &rarr;
+              </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      {/* Industry Coverage */}
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Industries we serve">
+        <div className="max-w-4xl mx-auto text-center">
+          <Animate animation="fade-up">
+            <SectionLabel>Industries</SectionLabel>
+            <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">
+              Experience Across 20 Verticals
+            </h2>
+            <p className="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
+              Every industry has unique buyer journeys and competitive dynamics. Our experience across verticals means we bring cross-industry insights to every engagement.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["E-commerce", "Healthcare", "Real Estate", "B2B SaaS", "Education", "Hospitality", "Finance", "Legal", "Home Services", "Fashion", "Construction", "Manufacturing"].map((ind) => (
+                <span key={ind} className="border border-gray-200 bg-white px-4 py-2 text-base font-medium text-black">
+                  {ind}
+                </span>
+              ))}
+              <Link href="/industries" className="border border-black bg-black text-white px-4 py-2 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                View All Industries &rarr;
+              </Link>
+            </div>
+          </Animate>
         </div>
       </section>
 

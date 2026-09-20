@@ -16,7 +16,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "500+ articles",
+    count: "550+ articles",
   },
   {
     title: "FAQ",
@@ -233,6 +233,24 @@ const resources = [
     desc: "Generate call-to-action copy for buttons, headlines, and subheadlines. Choose your business type, goal, and tone for instant CTA variations.",
     href: "/resources/cta-generator",
     count: "Interactive tool",
+  },
+  {
+    title: "Website Audit Checklist",
+    desc: "Answer 25 questions across 5 categories and get an instant website audit score with priority recommendations.",
+    href: "/resources/website-audit",
+    count: "25-point audit",
+  },
+  {
+    title: "Marketing Funnel Calculator",
+    desc: "Input your traffic and conversion metrics at each funnel stage to find where you're losing the most revenue.",
+    href: "/resources/funnel-calculator",
+    count: "Interactive tool",
+  },
+  {
+    title: "Schema Markup Generator",
+    desc: "Generate JSON-LD structured data for your website. Support for LocalBusiness, Organization, Product, FAQPage, Article, and BreadcrumbList schemas.",
+    href: "/resources/schema-generator",
+    count: "6 schema types",
   },
   {
     title: "Small Business Guide",

@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
-  description: "Markit Media provides specialized digital marketing for 16 industries including home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, hospitality, fitness, automotive, and nonprofits.",
+  description: "Markit Media provides specialized digital marketing for 20 industries including home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, hospitality, fitness, automotive, nonprofits, construction, travel, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries" },
 };
 
@@ -65,7 +65,7 @@ export default function IndustriesPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((ind) => (
-              <Link key={ind.href} href={ind.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={ind.href} href={ind.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={ind.image}
@@ -96,7 +96,7 @@ export default function IndustriesPage() {
               { title: "Proven Playbooks", desc: "Strategies refined through experience with similar businesses. We know what works and what to avoid." },
               { title: "Relevant Benchmarks", desc: "We measure your performance against real industry standards, not generic marketing averages." },
             ].map((item) => (
-              <div key={item.title} className="bg-white p-8 border border-gray-200">
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>

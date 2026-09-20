@@ -116,7 +116,7 @@ export default function ToolsPage() {
             </Animate>
             <Stagger stagger={40} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {cat.tools.map((tool) => (
-                <div key={tool.name} className="bg-white border border-gray-200 p-6">
+                <div key={tool.name} className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{tool.name}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p>
                 </div>

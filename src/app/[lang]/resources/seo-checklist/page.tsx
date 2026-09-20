@@ -130,7 +130,7 @@ export default function SEOChecklistPage() {
                         }`}
                         aria-label={`Mark "${item.label}" as ${checked.has(item.id) ? "incomplete" : "complete"}`}
                       >
-                        {checked.has(item.id) && <span className="text-sm">&#10003;</span>}
+                        {checked.has(item.id) && <span className="text-base">&#10003;</span>}
                       </button>
                       <span className={`text-base ${checked.has(item.id) ? "text-gray-400 line-through" : "text-black"} flex-1`}>
                         {item.label}

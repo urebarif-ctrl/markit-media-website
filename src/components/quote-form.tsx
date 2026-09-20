@@ -58,7 +58,7 @@ export function QuoteForm({ service }: { service?: string }) {
       <input type="email" name="email" required placeholder="Email address" className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none" />
       {service && <input type="hidden" name="service" value={service} />}
       <textarea name="message" rows={3} required placeholder="Tell us about your project..." className="w-full border border-gray-300 px-4 py-3 text-base focus:border-black focus:outline-none resize-y" />
-      {status === "error" && <p className="text-sm text-red-600" role="alert">Please fill in all fields and try again.</p>}
+      {status === "error" && <p className="text-base text-red-600" role="alert">Please fill in all fields and try again.</p>}
       <button type="submit" disabled={status === "sending"} className="w-full bg-black text-white py-4 font-bold text-base hover:bg-gray-800 transition-colors disabled:opacity-50">
         {status === "sending" ? "Sending..." : "Send Request"}
       </button>

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">
+    <div className="text-base font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">
       {children}
     </div>
   );

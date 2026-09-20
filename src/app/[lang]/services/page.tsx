@@ -144,7 +144,7 @@ export default function ServicesPage() {
       <JsonLd data={servicesSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-8">
+      <section className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Our Services</SectionLabel>
@@ -154,7 +154,33 @@ export default function ServicesPage() {
             <SectionDesc>
               From strategy to execution, we cover every digital marketing channel. Choose the services you need, or let us build a complete growth plan.
             </SectionDesc>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Get a Free Consultation &rarr;
+              </Link>
+              <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Find the Right Service
+              </Link>
+            </div>
           </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 pb-8" aria-label="Service stats">
+        <div className="max-w-7xl mx-auto">
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { value: "13", label: "Service Categories" },
+              { value: "60+", label: "Individual Services" },
+              { value: "20", label: "Industries Served" },
+              { value: "6", label: "Countries" },
+            ].map((stat) => (
+              <div key={stat.label} className="border border-gray-200 p-6 text-center">
+                <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold text-black">{stat.value}</p>
+                <p className="text-base text-gray-500 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </Stagger>
         </div>
       </section>
 
@@ -164,7 +190,7 @@ export default function ServicesPage() {
             {serviceCategories.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
                     <img src={s.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
@@ -206,19 +232,140 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Why Full-Service */}
+      <section className="px-6 lg:px-12 py-16" aria-label="Full-service advantages">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Why Full-Service</SectionLabel>
+            <SectionTitle>The Advantage of a Single Partner</SectionTitle>
+            <SectionDesc>
+              When every channel is managed under one roof, strategy compounds instead of fragmenting.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+            {[
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <rect x="4" y="4" width="10" height="10" stroke="black" strokeWidth="2" />
+                    <rect x="18" y="4" width="10" height="10" stroke="black" strokeWidth="2" />
+                    <rect x="4" y="18" width="10" height="10" stroke="black" strokeWidth="2" />
+                    <rect x="18" y="18" width="10" height="10" stroke="black" strokeWidth="2" />
+                    <line x1="14" y1="9" x2="18" y2="9" stroke="black" strokeWidth="2" />
+                    <line x1="9" y1="14" x2="9" y2="18" stroke="black" strokeWidth="2" />
+                    <line x1="23" y1="14" x2="23" y2="18" stroke="black" strokeWidth="2" />
+                    <line x1="14" y1="23" x2="18" y2="23" stroke="black" strokeWidth="2" />
+                  </svg>
+                ),
+                title: "Unified Strategy",
+                desc: "SEO, paid ads, social, content, and design all work from the same brief — no conflicting priorities.",
+              },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="12" stroke="black" strokeWidth="2" />
+                    <polyline points="10,18 14,12 18,16 24,8" stroke="black" strokeWidth="2" fill="none" />
+                  </svg>
+                ),
+                title: "Cross-Channel Insights",
+                desc: "Learnings from one channel feed into every other. Your PPC data improves your SEO. Your social insights sharpen your content.",
+              },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <rect x="6" y="6" width="20" height="20" stroke="black" strokeWidth="2" />
+                    <line x1="6" y1="16" x2="26" y2="16" stroke="black" strokeWidth="2" />
+                    <line x1="16" y1="6" x2="16" y2="26" stroke="black" strokeWidth="2" />
+                    <circle cx="11" cy="11" r="2" fill="black" />
+                    <circle cx="21" cy="21" r="2" fill="black" />
+                  </svg>
+                ),
+                title: "Single Point of Contact",
+                desc: "One account lead who knows your business. No repeating context to five different agencies.",
+              },
+              {
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <path d="M8 24 L16 8 L24 24" stroke="black" strokeWidth="2" fill="none" />
+                    <line x1="11" y1="19" x2="21" y2="19" stroke="black" strokeWidth="2" />
+                    <circle cx="16" cy="8" r="3" stroke="black" strokeWidth="2" fill="none" />
+                  </svg>
+                ),
+                title: "Faster Execution",
+                desc: "No back-and-forth between vendors. Changes that take weeks with multiple agencies take days with one.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+                <div className="mb-4">{item.icon}</div>
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="px-6 lg:px-12 py-16 bg-black text-white" aria-label="Industries served">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Industries</SectionLabel>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-tight mt-3 mb-3">
+              Specialized Experience Across 20 Verticals
+            </h2>
+            <p className="text-base text-gray-400 max-w-2xl mb-10">
+              Every industry has unique buyer journeys, compliance requirements, and competitive dynamics. We build strategies that account for all of them.
+            </p>
+          </Animate>
+          <Stagger stagger={40} animation="fade-up" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {[
+              { label: "Home Services", href: "/industries/home-services" },
+              { label: "E-commerce", href: "/industries/ecommerce" },
+              { label: "Healthcare", href: "/industries/healthcare" },
+              { label: "Real Estate", href: "/industries/real-estate" },
+              { label: "Restaurants", href: "/industries/restaurants" },
+              { label: "Fashion", href: "/industries/fashion" },
+              { label: "B2B", href: "/industries/b2b" },
+              { label: "EV Chargers", href: "/industries/ev-chargers" },
+              { label: "Education", href: "/industries/education" },
+              { label: "Legal", href: "/industries/legal" },
+              { label: "SaaS", href: "/industries/saas" },
+              { label: "Finance", href: "/industries/finance" },
+              { label: "Hospitality", href: "/industries/hospitality" },
+              { label: "Fitness", href: "/industries/fitness" },
+              { label: "Automotive", href: "/industries/automotive" },
+              { label: "Nonprofits", href: "/industries/nonprofits" },
+              { label: "Construction", href: "/industries/construction" },
+              { label: "Travel", href: "/industries/travel" },
+              { label: "Professional Services", href: "/industries/professional-services" },
+              { label: "Manufacturing", href: "/industries/manufacturing" },
+            ].map((ind) => (
+              <Link key={ind.href} href={ind.href} className="border border-white/20 px-4 py-4 text-base font-medium text-white hover:bg-white hover:text-black transition-colors duration-200 motion-reduce:transition-none text-center focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                {ind.label}
+              </Link>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up">
+            <p className="text-base text-gray-400 mt-8">
+              Don&apos;t see your industry? <Link href="/contact" className="text-white underline hover:no-underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in touch</Link> — most of what we do applies across verticals.
+            </p>
+          </Animate>
+        </div>
+      </section>
+
       {/* Cross-links */}
       <section className="px-6 lg:px-12 py-16" aria-label="Related pages">
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/capabilities" className="group border border-gray-200 hover:border-black/30 transition-all p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/capabilities" className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Full Capabilities</h3>
               <p className="text-base text-gray-500">See the complete breakdown of what we offer and the advantage of working with a full-service agency.</p>
             </Link>
-            <Link href="/results" className="group border border-gray-200 hover:border-black/30 transition-all p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/results" className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">How We Measure Results</h3>
               <p className="text-base text-gray-500">Our KPI framework, reporting cadence, and the analytics platforms behind every campaign.</p>
             </Link>
-            <Link href="/process" className="group border border-gray-200 hover:border-black/30 transition-all p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/process" className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Our Process</h3>
               <p className="text-base text-gray-500">From discovery to optimization — a proven 5-step process for every engagement.</p>
             </Link>

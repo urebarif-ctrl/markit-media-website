@@ -57,7 +57,7 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
                 <ul className="space-y-3">
                   {details.map((d, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="w-6 h-6 bg-black text-white flex items-center justify-center flex-shrink-0 text-xs font-bold mt-0.5">{i + 1}</span>
+                      <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold mt-0.5">{i + 1}</span>
                       <span className="text-base text-gray-600 leading-relaxed">{d}</span>
                     </li>
                   ))}

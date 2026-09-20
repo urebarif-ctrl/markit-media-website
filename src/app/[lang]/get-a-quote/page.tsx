@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
-import { SectionLabel } from "@/components/section";
+import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ContactForm } from "@/app/[lang]/contact/contact-form";
@@ -83,6 +84,52 @@ export default function GetAQuotePage() {
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">Request Your Quote</h2>
               <ContactForm />
             </div>
+          </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-12 bg-black text-white" aria-label="Trust signals">
+        <div className="max-w-7xl mx-auto">
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "13", label: "Service Disciplines" },
+              { value: "20", label: "Industries Served" },
+              { value: "6", label: "Countries" },
+              { value: "2 Days", label: "Proposal Turnaround" },
+            ].map((item) => (
+              <div key={item.label}>
+                <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold text-white">{item.value}</p>
+                <p className="text-base text-gray-400 mt-1">{item.label}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Common questions about quotes">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Questions</SectionLabel>
+            <SectionTitle>About the Quote Process</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="mt-10 space-y-6">
+            {[
+              { q: "Is the consultation really free?", a: "Yes. The initial discovery call and strategy recommendation come at no cost and with no obligation." },
+              { q: "How detailed is the proposal?", a: "Our proposals include recommended channels, estimated timelines, specific deliverables, and transparent pricing. Not a generic template." },
+              { q: "What information do you need from me?", a: "At minimum: your industry, business goals, approximate budget range, and timeline. The more context you share, the better our recommendation." },
+              { q: "Do you require long-term contracts?", a: "We offer flexible engagement models including monthly retainers, project-based work, and performance-based pricing. No lock-in required." },
+              { q: "Can you work with my existing agency or team?", a: "Absolutely. We frequently collaborate with in-house marketing teams and complement existing agency relationships." },
+            ].map((item) => (
+              <div key={item.q} className="bg-white border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.q}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up">
+            <p className="mt-8 text-base text-gray-500">
+              More questions? Check our <Link href="/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link> or <Link href="/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>.
+            </p>
           </Animate>
         </div>
       </section>
