@@ -6,6 +6,7 @@ import { SectionLabel } from "@/components/section";
 export const metadata: Metadata = {
   title: "Thank You — We'll Be in Touch",
   description: "Thank you for contacting Markit Media. We will respond within one business day.",
+  alternates: { canonical: "https://themarkitmedia.com/en/thank-you" },
   robots: { index: false, follow: true },
   openGraph: {
     title: "Thank You",
