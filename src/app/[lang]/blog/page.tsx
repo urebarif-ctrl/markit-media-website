@@ -19,7 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getPublishedPosts(200);
+  const allPosts = getPublishedPosts(9999);
+  const posts = allPosts.slice(0, 30);
   const dbCategories = getAllCategories();
   const categories = ["All", ...dbCategories];
 
@@ -52,7 +53,7 @@ export default function BlogPage() {
               Digital Marketing Insights
             </h1>
             <SectionDesc>
-              {posts.length}+ articles on SEO, advertising, social media, branding, web development, and growth strategy.
+              {allPosts.length}+ articles on SEO, advertising, social media, branding, web development, and growth strategy.
             </SectionDesc>
           </Animate>
         </div>
@@ -164,6 +165,47 @@ export default function BlogPage() {
           )}
         </div>
       </section>
+
+      {allPosts.length > 30 && (
+        <section className="px-6 lg:px-12 py-8" aria-label="More pages">
+          <div className="max-w-4xl mx-auto text-center">
+            <Animate animation="fade-up">
+              <Link
+                href="/blog/page/2"
+                className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                View More Articles &rarr;
+              </Link>
+            </Animate>
+          </div>
+        </section>
+      )}
+
+      {allPosts.length > 30 && (
+        <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Browse by category">
+          <div className="max-w-4xl mx-auto text-center">
+            <Animate animation="fade-up">
+              <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
+                Browse All {allPosts.length}+ Articles by Category
+              </h2>
+              <div className="flex flex-wrap gap-3 justify-center">
+                {dbCategories.map((cat) => {
+                  const slug = cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
+                  return (
+                    <Link
+                      key={cat}
+                      href={`/blog/category/${slug}`}
+                      className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    >
+                      {cat}
+                    </Link>
+                  );
+                })}
+              </div>
+            </Animate>
+          </div>
+        </section>
+      )}
 
       <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
         <div className="max-w-4xl mx-auto">

@@ -39,6 +39,9 @@ export function Footer({ locale, translations }: { locale: string; translations:
     { label: "Email Marketing", href: "/services/email-marketing" },
     { label: "Content Marketing", href: "/services/content-marketing" },
     { label: "E-commerce Marketing", href: "/services/ecommerce-marketing" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Paid Advertising", href: "/services/paid-advertising" },
+    { label: "BPO Services", href: "/services/bpo" },
   ];
 
   const companyLinks = [
@@ -69,6 +72,8 @@ export function Footer({ locale, translations }: { locale: string; translations:
     { label: "A/B Test Calculator", href: "/resources/ab-test-calculator" },
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
     { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
     { label: "Service Finder", href: "/services/finder" },
     { label: "Tools We Use", href: "/tools" },
     { label: "Industries", href: "/industries" },

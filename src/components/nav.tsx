@@ -40,6 +40,14 @@ const industryList = [
   { label: "Legal", href: "/industries/legal" },
   { label: "SaaS", href: "/industries/saas" },
   { label: "Finance", href: "/industries/finance" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Fitness", href: "/industries/fitness" },
+  { label: "Automotive", href: "/industries/automotive" },
+  { label: "Nonprofits", href: "/industries/nonprofits" },
+  { label: "Construction", href: "/industries/construction" },
+  { label: "Travel", href: "/industries/travel" },
+  { label: "Professional Services", href: "/industries/professional-services" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
 ];
 
 function moveFocusInPanel(panelId: string, direction: "next" | "prev" | "first" | "last") {
@@ -212,10 +220,10 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               <svg className={`w-3.5 h-3.5 transition-transform ${industriesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
             </Link>
             <div id="industries-dropdown" role="region" aria-label="Industries menu"
-              className={`${dropdownPanelBase} w-[600px] ${industriesOpen ? dropdownVisible : dropdownHidden}`}
+              className={`${dropdownPanelBase} w-[720px] ${industriesOpen ? dropdownVisible : dropdownHidden}`}
               onKeyDown={(e) => handlePanelKeyDown(e, "industries-dropdown", () => setIndustriesOpen(false), industriesTriggerRef)}
             >
-              <div className="grid grid-cols-2 gap-0 p-6">
+              <div className="grid grid-cols-3 gap-0 p-6">
                 {industryList.map((ind) => (
                   <Link key={ind.href} href={ind.href} className="px-4 py-2.5 text-base font-semibold text-black hover:bg-gray-50 hover:underline transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {ind.label}

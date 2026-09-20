@@ -90,6 +90,7 @@ const staticPages = [
   "/resources/launch-countdown",
   "/resources/lead-magnet-generator",
   "/resources/pricing-optimizer",
+  "/resources/email-health-checker",
   "/tools",
   "/approach",
   "/pricing",
@@ -238,6 +239,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.6,
+      });
+    }
+
+    const totalBlogPages = Math.ceil(blogSlugs.length / 30);
+    for (let p = 2; p <= totalBlogPages; p++) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/page/${p}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.5,
       });
     }
 

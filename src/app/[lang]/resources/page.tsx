@@ -474,6 +474,12 @@ const resources = [
     count: "32-point audit",
   },
   {
+    title: "Email Marketing Health Checker",
+    desc: "Audit your email marketing across 25 factors — list hygiene, content quality, sending practices, engagement, and compliance.",
+    href: "/resources/email-health-checker",
+    count: "25-point audit",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
