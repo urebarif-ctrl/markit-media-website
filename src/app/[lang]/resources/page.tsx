@@ -247,6 +247,18 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Email Campaign Planner",
+    desc: "Select your campaign type, audience, and list size to get a complete email sequence with subject line templates, timing, and benchmarks.",
+    href: "/resources/email-campaign-planner",
+    count: "6 campaign types",
+  },
+  {
+    title: "Landing Page Grader",
+    desc: "Answer 20 questions about your landing page and get an instant grade with priority recommendations and quick wins.",
+    href: "/resources/landing-page-grader",
+    count: "20-point grader",
+  },
+  {
     title: "Schema Markup Generator",
     desc: "Generate JSON-LD structured data for your website. Support for LocalBusiness, Organization, Product, FAQPage, Article, and BreadcrumbList schemas.",
     href: "/resources/schema-generator",

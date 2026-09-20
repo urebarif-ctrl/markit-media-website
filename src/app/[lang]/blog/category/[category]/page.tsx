@@ -118,7 +118,7 @@ export default async function BlogCategoryPage({
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group border border-gray-200 hover:border-black/30 transition-all flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
                   {post.cover_image ? (

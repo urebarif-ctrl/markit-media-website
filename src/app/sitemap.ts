@@ -54,6 +54,8 @@ const staticPages = [
   "/resources/schema-generator",
   "/resources/website-audit",
   "/resources/funnel-calculator",
+  "/resources/landing-page-grader",
+  "/resources/email-campaign-planner",
   "/tools",
   "/approach",
   "/pricing",
