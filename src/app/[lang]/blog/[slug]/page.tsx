@@ -85,6 +85,26 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
     { label: "Digital Marketing", href: "/services/digital-marketing" },
     { label: "Performance Marketing", href: "/services/performance-marketing" },
   ],
+  "Local SEO": [
+    { label: "Local SEO", href: "/services/seo/local-seo" },
+    { label: "SEO Services", href: "/services/seo" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+  ],
+  "Local Marketing": [
+    { label: "Local SEO", href: "/services/seo/local-seo" },
+    { label: "SEO Services", href: "/services/seo" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  "Digital Marketing": [
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  PPC: [
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+    { label: "Google Ads", href: "/services/performance-marketing/google-ads" },
+    { label: "PPC Management", href: "/services/performance-marketing/ppc-management" },
+  ],
 };
 
 /* ── Category-to-free-tools mapping ──────────────────────── */
@@ -178,6 +198,30 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
+  ],
+  "Local SEO": [
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
+    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
+  ],
+  "Local Marketing": [
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
+  ],
+  "Digital Marketing": [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+  ],
+  PPC: [
+    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
+    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
   ],
 };
 
@@ -314,7 +358,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <Link
                   key={r.slug}
                   href={`/blog/${r.slug}`}
-                  className="group border border-gray-200 bg-white hover:border-black/30 transition-all overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="group border border-gray-200 bg-white hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   {r.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
@@ -350,7 +394,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <Link
                   key={svc.href}
                   href={svc.href}
-                  className="group border border-gray-200 bg-white p-5 hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="group border border-gray-200 bg-white p-5 hover:border-black hover:shadow-md transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <span className="text-base font-bold text-black group-hover:underline">{svc.label}</span>
                   <span className="block text-base text-gray-500 mt-1">&rarr;</span>
@@ -376,7 +420,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <Link
                   key={tool.href}
                   href={tool.href}
-                  className="group flex items-center justify-between border border-white/20 p-5 hover:border-white transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+                  className="group flex items-center justify-between border border-white/20 p-5 hover:border-white hover:bg-white/5 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                 >
                   <span className="text-base font-bold text-white group-hover:underline">{tool.label}</span>
                   <span className="text-base text-gray-400 group-hover:text-white transition-colors">&rarr;</span>

@@ -265,6 +265,18 @@ const resources = [
     count: "6 schema types",
   },
   {
+    title: "Hashtag Generator",
+    desc: "Generate optimized hashtags for Instagram, TikTok, LinkedIn, Twitter/X, and YouTube. 30 hashtags per niche across high-reach, medium, and low-competition tiers.",
+    href: "/resources/hashtag-generator",
+    count: "15 niches",
+  },
+  {
+    title: "Buyer Persona Builder",
+    desc: "Build detailed buyer personas with demographics, psychographics, buying behavior, and brand preferences. Export as text for your marketing team.",
+    href: "/resources/persona-builder",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
