@@ -480,6 +480,12 @@ const resources = [
     count: "25-point audit",
   },
   {
+    title: "Competitor Analysis Matrix",
+    desc: "Rate your company and up to 4 competitors across 10 dimensions. Visualize with radar chart, get gap analysis and strategic recommendations.",
+    href: "/resources/competitor-matrix",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

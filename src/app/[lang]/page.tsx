@@ -503,6 +503,7 @@ export default async function HomePage() {
               { title: "Lead Magnet Generator", desc: "Get lead magnet ideas tailored to your industry and funnel stage.", href: "/resources/lead-magnet-generator" },
               { title: "Pricing Page Optimizer", desc: "Audit your pricing page across 32 conversion factors.", href: "/resources/pricing-optimizer" },
               { title: "Email Health Checker", desc: "25-point audit of your email marketing practices.", href: "/resources/email-health-checker" },
+              { title: "Competitor Matrix", desc: "Rate and compare against competitors across 10 dimensions.", href: "/resources/competitor-matrix" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
