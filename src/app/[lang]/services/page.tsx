@@ -373,6 +373,28 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-12" aria-label="Free tools">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <h2 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-4">Free Tools to Get Started</h2>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "ROI Calculator", href: "/resources/roi-calculator" },
+                { label: "Service Finder Quiz", href: "/services/finder" },
+                { label: "Budget Planner", href: "/resources/marketing-budget-planner" },
+                { label: "SEO Health Check", href: "/resources/seo-checklist" },
+                { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
+                { label: "Website Grader", href: "/resources/website-grader" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">

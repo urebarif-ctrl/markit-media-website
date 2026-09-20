@@ -325,6 +325,12 @@ const resources = [
     count: "30-point checklist",
   },
   {
+    title: "Social Media Audit",
+    desc: "Grade your social media presence with a 25-point checklist across profile, content, engagement, analytics, and growth. Get actionable recommendations.",
+    href: "/resources/social-media-audit",
+    count: "25-point audit",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

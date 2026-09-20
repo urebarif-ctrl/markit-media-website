@@ -66,6 +66,7 @@ const staticPages = [
   "/resources/brand-voice-generator",
   "/resources/google-ads-estimator",
   "/resources/migration-checklist",
+  "/resources/social-media-audit",
   "/tools",
   "/approach",
   "/pricing",

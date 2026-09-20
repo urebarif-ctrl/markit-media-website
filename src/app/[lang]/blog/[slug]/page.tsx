@@ -122,10 +122,10 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
   ],
   "Social Media": [
+    { label: "Social Media Audit", href: "/resources/social-media-audit" },
     { label: "Social Media ROI Calculator", href: "/resources/social-media-roi" },
     { label: "Social Media Planner", href: "/resources/social-media-planner" },
     { label: "Hashtag Generator", href: "/resources/hashtag-generator" },
-    { label: "Content Calendar", href: "/resources/content-calendar" },
   ],
   "Content Marketing": [
     { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },

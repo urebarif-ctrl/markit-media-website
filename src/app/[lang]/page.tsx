@@ -478,6 +478,7 @@ export default async function HomePage() {
               { title: "Brand Voice", desc: "Generate a brand voice guide with tone, samples, and word bank.", href: "/resources/brand-voice-generator" },
               { title: "Google Ads Estimator", desc: "Estimate CPC, clicks, and conversions by industry.", href: "/resources/google-ads-estimator" },
               { title: "Migration Checklist", desc: "30-point checklist for website migrations.", href: "/resources/migration-checklist" },
+              { title: "Social Media Audit", desc: "25-point social media audit with grading.", href: "/resources/social-media-audit" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

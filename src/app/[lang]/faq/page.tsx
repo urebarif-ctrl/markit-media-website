@@ -337,6 +337,26 @@ export default function FaqPage() {
         </section>
       ))}
 
+      <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Glossary", href: "/glossary" },
+                { label: "Blog", href: "/blog" },
+                { label: "Pricing", href: "/pricing" },
+                { label: "Our Process", href: "/process" },
+                { label: "Resources", href: "/resources" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">

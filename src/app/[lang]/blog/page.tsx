@@ -160,6 +160,25 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Resources & Tools", href: "/resources" },
+                { label: "Glossary", href: "/glossary" },
+                { label: "FAQ", href: "/faq" },
+                { label: "All Services", href: "/services" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Newsletter signup">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
