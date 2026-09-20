@@ -92,7 +92,7 @@ export default function IndustriesPage() {
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={ind.image}
-                    alt=""
+                    alt={`${ind.title} marketing`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none"
                     loading="lazy"
                   />

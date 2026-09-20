@@ -93,7 +93,7 @@ export function ServicePage({
           </Animate>
           {heroImage && (
             <Animate animation="fade-in" delay={200}>
-              <img src={heroImage} alt="" className="w-full aspect-[4/3] object-cover" />
+              <img src={heroImage} alt={`${title} illustration`} className="w-full aspect-[4/3] object-cover" />
             </Animate>
           )}
         </div>
@@ -177,7 +177,7 @@ export function ServicePage({
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {post.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
-                      <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" loading="lazy" />
+                      <img src={post.cover_image} alt={`Cover for ${post.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" loading="lazy" />
                     </div>
                   )}
                   <div className="p-5 flex-1">

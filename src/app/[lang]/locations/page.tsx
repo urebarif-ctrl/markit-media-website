@@ -112,7 +112,7 @@ export default function LocationsPage() {
             {locations.map((loc) => (
               <Link key={loc.href} href={loc.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="aspect-[3/1] bg-gray-50 overflow-hidden">
-                  <img src={`/images/locations/${loc.href.split('/').pop()}.svg`} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                  <img src={`/images/locations/${loc.href.split('/').pop()}.svg`} alt={`${loc.country} market`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                 </div>
                 <div className="p-8">
                 <div className="text-4xl mb-4" aria-hidden="true">{loc.flag}</div>

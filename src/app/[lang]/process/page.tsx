@@ -143,7 +143,7 @@ export default function ProcessPage() {
                 <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                   <img
                     src={step.image}
-                    alt=""
+                    alt={`Step ${i + 1}: ${step.title}`}
                     className="w-full aspect-[4/3] object-cover"
                     loading={i > 0 ? "lazy" : undefined}
                   />

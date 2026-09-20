@@ -216,7 +216,7 @@ export default function ServicesPage() {
               return (
                 <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
-                    <img src={s.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" loading="lazy" />
+                    <img src={s.image} alt={`${s.title} services`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" loading="lazy" />
                   </div>
                   <div className="p-6 md:p-8 flex-1">
                     <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">
