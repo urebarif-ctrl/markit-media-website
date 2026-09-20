@@ -52,6 +52,7 @@ export function Footer({ locale, translations }: { locale: string; translations:
     { label: "Pricing", href: "/pricing" },
     { label: "Get a Quote", href: "/get-a-quote" },
     { label: "How We Measure Results", href: "/results" },
+    { label: "Client Onboarding", href: "/onboarding" },
     { label: t.nav.caseStudies, href: "/case-studies" },
     { label: "Capabilities", href: "/capabilities" },
     { label: "Technology", href: "/technology" },

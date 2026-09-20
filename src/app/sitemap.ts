@@ -175,6 +175,7 @@ const staticPages = [
   "/technology",
   "/partners",
   "/thank-you",
+  "/onboarding",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
