@@ -438,6 +438,12 @@ const resources = [
     count: "Interactive advisor",
   },
   {
+    title: "Competitive SWOT Matrix",
+    desc: "Build a side-by-side SWOT comparison of your company against competitors. Identify competitive advantages, vulnerabilities, and strategic opportunities.",
+    href: "/resources/competitive-swot",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

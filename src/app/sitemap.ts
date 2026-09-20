@@ -84,6 +84,7 @@ const staticPages = [
   "/resources/ad-spend-calculator",
   "/resources/email-sequence-planner",
   "/resources/tech-stack-advisor",
+  "/resources/competitive-swot",
   "/tools",
   "/approach",
   "/pricing",
