@@ -150,7 +150,7 @@ export default function TechnologyPage() {
             </Animate>
             <Stagger stagger={50} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {cat.tools.map((tool) => (
-                <div key={tool.name} className="bg-white border border-gray-200 p-6">
+                <div key={tool.name} className="bg-white border border-gray-200 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black mb-2">{tool.name}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{tool.what}</p>
                 </div>
@@ -173,7 +173,7 @@ export default function TechnologyPage() {
               { title: "Your Data, Your Access", desc: "We set up accounts in your name. You own your data, your dashboards, and your platform accounts." },
               { title: "Training Included", desc: "We do not just use tools for you — we train your team to understand the dashboards, reports, and data we deliver." },
             ].map((item) => (
-              <div key={item.title} className="bg-gray-50 p-8 border border-gray-200">
+              <div key={item.title} className="bg-gray-50 p-8 border border-gray-200 hover:shadow-md transition-shadow duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>

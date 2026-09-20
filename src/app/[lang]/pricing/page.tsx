@@ -93,7 +93,7 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {pricingModels.map((model) => (
-              <div key={model.title} className="border border-gray-200 p-8 flex flex-col">
+              <div key={model.title} className="border border-gray-200 p-8 flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">{model.title}</h2>
                 <p className="text-base text-gray-500 leading-relaxed mb-6">{model.desc}</p>
                 <ul className="space-y-3 mb-6 flex-1">
@@ -125,7 +125,7 @@ export default function PricingPage() {
                 { title: "Scope of Work", desc: "A full-service retainer covering strategy, execution, and reporting costs more than a single-channel engagement." },
                 { title: "Business Goals", desc: "Aggressive growth targets require more investment than maintenance-level marketing. We calibrate to your ambitions." },
               ].map((item) => (
-                <div key={item.title} className="bg-white border border-gray-200 p-6">
+                <div key={item.title} className="bg-white border border-gray-200 p-6 hover:shadow-md transition-shadow duration-300 motion-reduce:transition-none">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>

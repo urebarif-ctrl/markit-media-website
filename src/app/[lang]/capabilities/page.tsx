@@ -138,7 +138,7 @@ export default function CapabilitiesPage() {
                 <Link
                   key={cap.title}
                   href={cap.href}
-                  className="group border border-gray-200 p-8 hover:border-black transition-colors flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="group border border-gray-200 p-8 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <Icon className="w-8 h-8 text-black mb-4" strokeWidth={1.5} aria-hidden="true" />
                   <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2 group-hover:underline">
@@ -147,7 +147,7 @@ export default function CapabilitiesPage() {
                   <p className="text-base text-gray-500 leading-relaxed flex-1 mb-4">{cap.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {cap.tags.map((tag) => (
-                      <span key={tag} className="text-[13px] font-medium text-gray-400 bg-gray-50 px-2 py-1">
+                      <span key={tag} className="text-base font-medium text-gray-400 bg-gray-50 px-2 py-1">
                         {tag}
                       </span>
                     ))}

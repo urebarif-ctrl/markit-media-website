@@ -119,7 +119,7 @@ export default function WorkPage() {
               { title: "Data-Comfortable", desc: "You appreciate data-driven decisions and want to see how your marketing investment performs." },
               { title: "Ready to Execute", desc: "You have a product or service that works. You need marketing that puts it in front of the right people." },
             ].map((item) => (
-              <div key={item.title} className="bg-white p-8 border border-gray-200">
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>

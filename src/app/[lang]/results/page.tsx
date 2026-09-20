@@ -78,7 +78,7 @@ export default function ResultsPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {kpiCategories.map((cat) => (
-              <div key={cat.title} className="bg-white border border-gray-200 p-8">
+              <div key={cat.title} className="bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black uppercase tracking-wide mb-2">{cat.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed mb-4">{cat.desc}</p>
                 <ul className="space-y-2">
@@ -106,7 +106,7 @@ export default function ResultsPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {reportingCadence.map((r) => (
-              <div key={r.freq} className="border border-gray-200 p-8">
+              <div key={r.freq} className="border border-gray-200 p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
                 <div className="text-base font-bold text-gray-400 uppercase tracking-wide mb-1">{r.type}</div>
                 <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">{r.freq}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>
@@ -130,7 +130,7 @@ export default function ResultsPage() {
               { title: "Continuous Optimization", desc: "Reporting is not a retrospective exercise. We use real-time data to optimize campaigns continuously, not just at reporting intervals." },
             ].map((item, i) => (
               <div key={item.title} className="flex gap-8 py-8 border-b border-gray-200">
-                <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-sm font-bold">{i + 1}</span>
+                <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold">{i + 1}</span>
                 <div>
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>

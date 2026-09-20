@@ -137,7 +137,7 @@ export default function ProcessPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {principles.map((p) => (
-              <div key={p.title} className="bg-white p-8 border border-gray-200">
+              <div key={p.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{p.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{p.desc}</p>
               </div>

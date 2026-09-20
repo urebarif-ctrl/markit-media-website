@@ -63,7 +63,7 @@ export default function CareersPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {perks.map((perk) => (
-              <div key={perk.title} className="bg-white p-8 border border-gray-200">
+              <div key={perk.title} className="bg-white p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{perk.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{perk.desc}</p>
               </div>
@@ -84,7 +84,7 @@ export default function CareersPage() {
           <div className="mt-12 space-y-0">
             {departments.map((dept, i) => (
               <Animate key={dept.name} animation="fade-up" delay={i * 60}>
-                <div className="flex flex-col md:flex-row gap-6 py-8 border-b border-gray-200">
+                <div className="flex flex-col md:flex-row gap-6 py-8 border-b border-gray-200 hover:bg-gray-50 transition-colors duration-300 motion-reduce:transition-none px-4 -mx-4">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black w-56 flex-shrink-0">{dept.name}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{dept.roles}</p>
                 </div>
@@ -107,7 +107,7 @@ export default function CareersPage() {
               { title: "Clarity", desc: "You communicate directly. You can explain complex ideas simply, to clients and colleagues alike." },
               { title: "Craft", desc: "You care about the quality of your work. Details matter. Good enough isn't." },
             ].map((item) => (
-              <div key={item.title} className="bg-white p-8 border border-gray-200">
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>

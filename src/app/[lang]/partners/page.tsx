@@ -112,7 +112,7 @@ export default function PartnersPage() {
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {platformPartners.map((partner) => (
-              <div key={partner.name} className="border border-gray-200 p-8">
+              <div key={partner.name} className="border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2">{partner.name}</h3>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {partner.platforms.map((p) => (
@@ -141,7 +141,7 @@ export default function PartnersPage() {
               { title: "Unified Reporting", desc: "All channel performance in a single dashboard. No switching between platforms to understand how your marketing performs." },
               { title: "Server-Side Tracking", desc: "We implement server-side tracking and Conversions APIs to capture accurate data in a cookie-less world." },
             ].map((item) => (
-              <div key={item.title} className="bg-white p-8 border border-gray-200">
+              <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-md transition-shadow duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>

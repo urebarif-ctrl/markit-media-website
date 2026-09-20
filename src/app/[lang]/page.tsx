@@ -11,6 +11,7 @@ import {
   Building2, Utensils, Heart, Home, Shirt, Zap,
   GraduationCap, Scale, Cloud, Landmark,
   Hotel, Dumbbell, Car, HeartHandshake,
+  Building, Plane, Factory,
 } from "lucide-react";
 import { HeroStats } from "@/components/hero-stats";
 import { HeroGraphic } from "@/components/hero-graphic";
@@ -64,6 +65,10 @@ const industries = [
   { icon: Dumbbell, title: "Fitness", href: "/industries/fitness" },
   { icon: Car, title: "Automotive", href: "/industries/automotive" },
   { icon: HeartHandshake, title: "Nonprofits", href: "/industries/nonprofits" },
+  { icon: Building, title: "Construction", href: "/industries/construction" },
+  { icon: Plane, title: "Travel", href: "/industries/travel" },
+  { icon: Briefcase, title: "Professional Services", href: "/industries/professional-services" },
+  { icon: Factory, title: "Manufacturing", href: "/industries/manufacturing" },
 ];
 
 const markets = ["United States", "Canada", "United Arab Emirates", "United Kingdom", "Australia", "Saudi Arabia"];

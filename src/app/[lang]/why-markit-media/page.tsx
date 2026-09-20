@@ -89,7 +89,7 @@ export default function WhyMarkitMediaPage() {
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="space-y-0">
             {comparisons.map((c) => (
-              <div key={c.category} className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-b border-gray-200">
+              <div key={c.category} className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-b border-gray-200 hover:bg-white transition-colors duration-300 motion-reduce:transition-none px-4 -mx-4">
                 <div className="font-[family-name:var(--font-display)] text-base font-extrabold text-black">{c.category}</div>
                 <div className="text-base text-gray-400 leading-relaxed">
                   <span className="md:hidden text-base font-bold text-gray-400 uppercase tracking-wide block mb-1">Typical Agency</span>
@@ -113,7 +113,7 @@ export default function WhyMarkitMediaPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {values.map((v) => (
-              <div key={v.title} className="bg-gray-50 p-8 border border-gray-200">
+              <div key={v.title} className="bg-gray-50 p-8 border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{v.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{v.desc}</p>
               </div>

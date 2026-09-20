@@ -43,6 +43,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "A/B Test Calculator",
+    desc: "Calculate the sample size and duration needed for statistically significant A/B tests. Enter your traffic and conversion rates for instant results.",
+    href: "/resources/ab-test-calculator",
+    count: "Interactive tool",
+  },
+  {
     title: "Service Finder",
     desc: "Answer a few questions and get personalized service recommendations for your business goals.",
     href: "/services/finder",

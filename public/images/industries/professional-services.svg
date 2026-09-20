@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+<rect width="800" height="600" fill="white"/>
+<!-- Dot grid background -->
+<g opacity="0.06"><pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1.5" fill="black"/></pattern><rect width="800" height="600" fill="url(#d)"/></g>
+<!-- Briefcase -->
+<rect x="270" y="220" width="260" height="180" rx="4" fill="none" stroke="black" stroke-width="3"/>
+<path d="M340,220 V190 H460 V220" fill="none" stroke="black" stroke-width="2.5"/>
+<line x1="270" y1="290" x2="530" y2="290" stroke="black" stroke-width="2"/>
+<rect x="385" y="275" width="30" height="30" rx="2" fill="none" stroke="black" stroke-width="2"/>
+<!-- Document stack -->
+<g stroke="black" stroke-width="1.5" fill="none" opacity="0.4">
+<rect x="580" y="200" width="100" height="130" rx="2"/>
+<line x1="600" y1="230" x2="660" y2="230"/>
+<line x1="600" y1="250" x2="660" y2="250"/>
+<line x1="600" y1="270" x2="640" y2="270"/>
+<line x1="600" y1="290" x2="650" y2="290"/>
+</g>
+<!-- Scale of justice -->
+<g stroke="black" stroke-width="2" fill="none" opacity="0.3">
+<line x1="160" y1="200" x2="160" y2="350"/>
+<line x1="110" y1="260" x2="210" y2="260"/>
+<line x1="140" y1="350" x2="180" y2="350"/>
+<!-- Left pan -->
+<path d="M110,260 L100,310 L130,310 Z"/>
+<!-- Right pan -->
+<path d="M210,260 L200,310 L230,310 Z"/>
+</g>
+<!-- Chart bars -->
+<g fill="black" opacity="0.15">
+<rect x="300" y="450" width="30" height="60"/>
+<rect x="350" y="430" width="30" height="80"/>
+<rect x="400" y="410" width="30" height="100"/>
+<rect x="450" y="440" width="30" height="70"/>
+</g>
+</svg>

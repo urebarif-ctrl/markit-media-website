@@ -28,6 +28,10 @@ const industries = [
   { title: "Fitness & Wellness", desc: "Gyms, studios, wellness centers, and fitness brands. Membership acquisition, retention marketing, and local visibility to grow your community.", href: "/industries/fitness", image: "/images/industries/fitness.svg" },
   { title: "Automotive", desc: "Dealerships, auto services, parts retailers, and car brands. Inventory-based advertising, local search dominance, and lead generation that drives test drives.", href: "/industries/automotive", image: "/images/industries/automotive.svg" },
   { title: "Nonprofits & NGOs", desc: "Charities, foundations, and advocacy organizations. Donor acquisition, Google Ad Grants management, and impact-driven storytelling on a limited budget.", href: "/industries/nonprofits", image: "/images/industries/nonprofits.svg" },
+  { title: "Construction & Home Building", desc: "Contractors, home builders, remodelers, and construction companies. Local SEO, PPC, reputation management, and project showcases that generate qualified leads.", href: "/industries/construction", image: "/images/industries/construction.svg" },
+  { title: "Travel & Tourism", desc: "Travel agencies, tour operators, destinations, and tourism brands. Social media marketing, SEO, video production, and email campaigns that drive bookings.", href: "/industries/travel", image: "/images/industries/travel.svg" },
+  { title: "Professional Services", desc: "Law firms, accounting practices, consulting firms, and professional service providers. SEO, content marketing, LinkedIn marketing, and PPC to build authority and generate leads.", href: "/industries/professional-services", image: "/images/industries/professional-services.svg" },
+  { title: "Manufacturing & Industrial", desc: "Manufacturers, industrial suppliers, and B2B companies. SEO, content marketing, LinkedIn advertising, video production, and trade show marketing to reach engineers and buyers.", href: "/industries/manufacturing", image: "/images/industries/manufacturing.svg" },
 ];
 
 export default function IndustriesPage() {
