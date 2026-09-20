@@ -139,7 +139,7 @@ export default function BlogPage() {
                 >
                   <div className="aspect-[16/9] bg-gray-100 flex items-center justify-center overflow-hidden">
                     {post.cover_image ? (
-                      <img src={post.cover_image} alt={`Cover for ${post.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                      <img src={post.cover_image} alt={`Cover for ${post.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" loading="lazy" />
                     ) : (
                       <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
                     )}

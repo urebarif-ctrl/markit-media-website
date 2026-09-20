@@ -486,6 +486,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "A/B Test Ideas Generator",
+    desc: "Generate prioritized A/B test ideas for any page type. ICE scoring, sample size estimates, hypothesis templates, and implementation guidance.",
+    href: "/resources/ab-test-ideas",
+    count: "350+ test ideas",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

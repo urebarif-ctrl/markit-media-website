@@ -96,7 +96,7 @@ export default function WorkPage() {
             {capabilities.map((cap) => (
               <Link key={cap.title} href={cap.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="aspect-[16/9] overflow-hidden">
-                  <img src={cap.image} alt={`${cap.title} work`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                  <img src={cap.image} alt={`${cap.title} work`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide group-hover:underline mb-2">
