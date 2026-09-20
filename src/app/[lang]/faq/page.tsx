@@ -29,7 +29,7 @@ const faqCategories = [
       },
       {
         q: "What industries do you specialize in?",
-        a: "We have deep experience in home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, and clean energy. That said, our core marketing expertise applies across many industries.",
+        a: "We serve 20 industry verticals including home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, SaaS, finance, legal, education, hospitality, fitness, automotive, nonprofits, construction, travel, professional services, manufacturing, and EV charging. Our marketing expertise applies across verticals.",
       },
       {
         q: "Which countries do you serve?",

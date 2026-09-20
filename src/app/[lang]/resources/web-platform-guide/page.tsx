@@ -256,10 +256,10 @@ export default function WebPlatformGuidePage() {
               Tell us about your project and we will recommend the right platform, scope, and timeline for your business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors">
+              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
                 Get a Free Consultation &rarr;
               </Link>
-              <Link href="/services/website-development" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors">
+              <Link href="/services/website-development" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none">
                 Explore Web Development
               </Link>
             </div>

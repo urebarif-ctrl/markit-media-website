@@ -179,7 +179,7 @@ export default function HeadlineAnalyzerPage() {
                 onChange={(e) => setHeadline(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleAnalyze()}
                 placeholder="e.g., 7 Proven SEO Strategies to Double Your Traffic in 2025"
-                className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors"
+                className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
                 maxLength={200}
                 aria-describedby="headline-hint"
               />

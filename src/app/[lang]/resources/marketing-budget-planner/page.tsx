@@ -241,7 +241,7 @@ export default function MarketingBudgetPlannerPage() {
                         </div>
                         <div className="w-full bg-gray-100 h-3 mb-2">
                           <div
-                            className="bg-black h-3 transition-all"
+                            className="bg-black h-3 transition-all motion-reduce:transition-none"
                             style={{ width: `${a.percentage}%` }}
                           />
                         </div>

@@ -62,32 +62,32 @@ export default function ContentRoiCalculatorPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="articles" className="block text-base font-bold text-black mb-1">Articles Per Month</label>
-                <input id="articles" type="number" value={articlesPerMonth} onChange={(e) => setArticlesPerMonth(Math.max(1, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="articles" type="number" value={articlesPerMonth} onChange={(e) => setArticlesPerMonth(Math.max(1, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div>
                 <label htmlFor="cost" className="block text-base font-bold text-black mb-1">Cost Per Article ($)</label>
-                <input id="cost" type="number" value={costPerArticle} onChange={(e) => setCostPerArticle(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="cost" type="number" value={costPerArticle} onChange={(e) => setCostPerArticle(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div>
                 <label htmlFor="traffic" className="block text-base font-bold text-black mb-1">Monthly Organic Traffic (starting)</label>
-                <input id="traffic" type="number" value={monthlyTraffic} onChange={(e) => setMonthlyTraffic(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="traffic" type="number" value={monthlyTraffic} onChange={(e) => setMonthlyTraffic(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div>
                 <label htmlFor="growth" className="block text-base font-bold text-black mb-1">Monthly Traffic Growth (%)</label>
-                <input id="growth" type="number" step="1" value={trafficGrowth} onChange={(e) => setTrafficGrowth(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="growth" type="number" step="1" value={trafficGrowth} onChange={(e) => setTrafficGrowth(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
                 <p className="text-base text-gray-400 mt-1">Typical: 10-20% month-over-month</p>
               </div>
               <div>
                 <label htmlFor="conv" className="block text-base font-bold text-black mb-1">Traffic-to-Lead Rate (%)</label>
-                <input id="conv" type="number" step="0.1" value={conversionRate} onChange={(e) => setConversionRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="conv" type="number" step="0.1" value={conversionRate} onChange={(e) => setConversionRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div>
                 <label htmlFor="lv" className="block text-base font-bold text-black mb-1">Average Lead Value ($)</label>
-                <input id="lv" type="number" value={leadValue} onChange={(e) => setLeadValue(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="lv" type="number" value={leadValue} onChange={(e) => setLeadValue(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div className="md:col-span-2">
                 <label htmlFor="months" className="block text-base font-bold text-black mb-1">Time Period (months)</label>
-                <input id="months" type="number" value={months} min={3} max={36} onChange={(e) => setMonths(Math.max(3, Math.min(36, Number(e.target.value))))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors" />
+                <input id="months" type="number" value={months} min={3} max={36} onChange={(e) => setMonths(Math.max(3, Math.min(36, Number(e.target.value))))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
               </div>
             </div>
 

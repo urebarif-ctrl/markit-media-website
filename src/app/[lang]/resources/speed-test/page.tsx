@@ -138,7 +138,7 @@ export default function SpeedTestPage() {
             <div className="flex items-center gap-3 mb-2">
               <div className="flex-1 bg-gray-100 h-2">
                 <div
-                  className="bg-black h-2 transition-all"
+                  className="bg-black h-2 transition-all motion-reduce:transition-none"
                   style={{ width: `${(answered / total) * 100}%` }}
                 />
               </div>

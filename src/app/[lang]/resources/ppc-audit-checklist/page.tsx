@@ -154,7 +154,7 @@ export default function PpcAuditChecklistPage() {
                     {section.items.map((item) => (
                       <label
                         key={item.id}
-                        className="flex items-start gap-3 p-4 border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors"
+                        className="flex items-start gap-3 p-4 border-b border-gray-100 cursor-pointer hover:bg-gray-50 transition-colors motion-reduce:transition-none"
                       >
                         <input
                           type="checkbox"

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = getPublishedPosts(60);
+  const posts = getPublishedPosts(100);
   const dbCategories = getAllCategories();
   const categories = ["All", ...dbCategories];
 

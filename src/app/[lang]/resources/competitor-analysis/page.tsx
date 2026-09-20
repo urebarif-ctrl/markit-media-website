@@ -249,7 +249,7 @@ export default function CompetitorAnalysisPage() {
                             <span className="font-bold text-black">{count}/{filled.length} competitors</span>
                           </div>
                           <div className="w-full bg-gray-100 h-2">
-                            <div className="bg-black h-2 transition-all" style={{ width: `${pct}%` }} />
+                            <div className="bg-black h-2 transition-all motion-reduce:transition-none" style={{ width: `${pct}%` }} />
                           </div>
                         </div>
                       );

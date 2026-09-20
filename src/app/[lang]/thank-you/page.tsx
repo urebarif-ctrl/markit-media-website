@@ -33,15 +33,15 @@ export default function ThankYouPage() {
       <section className="px-6 lg:px-12 pb-20" aria-label="Explore while you wait">
         <div className="max-w-4xl mx-auto">
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/blog" className="group bg-gray-50 border border-gray-200 hover:border-black/30 transition-all p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/blog" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Read Our Blog</h2>
               <p className="text-base text-gray-500">Expert insights on digital marketing strategy and execution.</p>
             </Link>
-            <Link href="/resources/checklists" className="group bg-gray-50 border border-gray-200 hover:border-black/30 transition-all p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/resources/checklists" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Marketing Checklists</h2>
               <p className="text-base text-gray-500">Interactive checklists for website launches, SEO, and more.</p>
             </Link>
-            <Link href="/process" className="group bg-gray-50 border border-gray-200 hover:border-black/30 transition-all p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/process" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Our Process</h2>
               <p className="text-base text-gray-500">See how we take your project from strategy to results.</p>
             </Link>

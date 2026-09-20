@@ -169,9 +169,9 @@ export default function BudgetCalculatorPage() {
     <article className="min-h-screen">
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-black transition-colors motion-reduce:transition-none">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black font-medium">Budget Calculator</li>
         </ol>
@@ -331,7 +331,7 @@ export default function BudgetCalculatorPage() {
             This calculator gives you a starting point. Let our team build a detailed media plan based on
             your specific business, audience, and growth targets.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors">
+          <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
             Get a Custom Strategy &rarr;
           </Link>
         </div>

@@ -90,7 +90,7 @@ export default function LocationsPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((loc) => (
-              <Link key={loc.href} href={loc.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={loc.href} href={loc.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="aspect-[3/1] bg-gray-50 overflow-hidden">
                   <img src={`/images/locations/${loc.href.split('/').pop()}.svg`} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>

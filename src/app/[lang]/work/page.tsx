@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Our Work",
-  description: "See how Markit Media helps businesses grow through digital marketing, website development, branding, and creative production across 7 countries.",
+  description: "See how Markit Media helps businesses grow through digital marketing, website development, branding, and creative production across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/work" },
 };
 
@@ -49,7 +49,7 @@ export default function WorkPage() {
               Results That Speak for Themselves
             </h1>
             <SectionDesc>
-              We help businesses across 7 countries grow through strategic digital marketing, compelling creative, and data-driven execution.
+              We help businesses across 6 countries grow through strategic digital marketing, compelling creative, and data-driven execution.
             </SectionDesc>
           </Animate>
         </div>
@@ -63,7 +63,7 @@ export default function WorkPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {capabilities.map((cap) => (
-              <Link key={cap.title} href={cap.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={cap.title} href={cap.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img src={cap.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>

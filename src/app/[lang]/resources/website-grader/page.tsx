@@ -114,9 +114,9 @@ export default function WebsiteGraderPage() {
     <article>
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-black transition-colors motion-reduce:transition-none">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black font-medium">Website Grader</li>
         </ol>
@@ -196,7 +196,7 @@ export default function WebsiteGraderPage() {
                     <div className="text-lg font-bold mt-2">{label}</div>
                     <div className="text-base text-gray-400 mt-2">{totalScore} / {maxScore} points</div>
                     <div className="w-full bg-white/20 h-3 mt-6">
-                      <div className="bg-white h-3 transition-all" style={{ width: `${(totalScore / maxScore) * 100}%` }} />
+                      <div className="bg-white h-3 transition-all motion-reduce:transition-none" style={{ width: `${(totalScore / maxScore) * 100}%` }} />
                     </div>
                     <p className="text-base text-gray-300 mt-4">{desc}</p>
                   </div>
@@ -224,7 +224,7 @@ export default function WebsiteGraderPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <button
                 onClick={() => { setAnswers({}); setSubmitted(false); }}
-                className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors"
+                className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none"
               >
                 Retake Quiz
               </button>
@@ -242,10 +242,10 @@ export default function WebsiteGraderPage() {
             Our team can provide a comprehensive website audit with specific, actionable recommendations.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
               Request a Free Audit &rarr;
             </Link>
-            <Link href="/services/website-development" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors">
+            <Link href="/services/website-development" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none">
               Website Services
             </Link>
           </div>

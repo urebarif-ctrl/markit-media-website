@@ -83,7 +83,7 @@ export default function ContrastCheckerPage() {
                     value={fg}
                     onChange={(e) => setFg(e.target.value)}
                     placeholder="#000000"
-                    className="flex-1 border border-gray-300 px-4 py-3 text-base font-mono focus:border-black focus:outline-none transition-colors"
+                    className="flex-1 border border-gray-300 px-4 py-3 text-base font-mono focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
                   />
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function ContrastCheckerPage() {
                     value={bg}
                     onChange={(e) => setBg(e.target.value)}
                     placeholder="#ffffff"
-                    className="flex-1 border border-gray-300 px-4 py-3 text-base font-mono focus:border-black focus:outline-none transition-colors"
+                    className="flex-1 border border-gray-300 px-4 py-3 text-base font-mono focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
                   />
                 </div>
               </div>
