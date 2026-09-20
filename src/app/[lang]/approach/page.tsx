@@ -153,6 +153,13 @@ const operatingPrinciples = [
   },
 ];
 
+const approachFaqItems = [
+  { q: "How is your approach different from other agencies?", a: "We start with your business goals — revenue targets, market position, unit economics — before choosing any channels or tactics. Most agencies lead with what they sell. We lead with what you need." },
+  { q: "What if I have already tried marketing and it did not work?", a: "That actually helps us. Knowing what has been tried and what failed is valuable data. We audit previous efforts, identify what went wrong, and build a strategy that avoids those same mistakes." },
+  { q: "How do you decide which marketing channels to recommend?", a: "Channel selection follows from your goals, audience, budget, and timeline. We map your buyer journey, identify where the biggest opportunities are, and recommend the channels that will move your most important metrics." },
+  { q: "How long before I see results from your approach?", a: "Timelines depend on the channel mix. Paid advertising can show results within weeks. SEO and content typically need three to six months to build momentum. We set realistic expectations and share progress data from day one." },
+];
+
 export default function ApproachPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -161,9 +168,20 @@ export default function ApproachPage() {
     description: "How Markit Media approaches digital marketing strategy and execution.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: approachFaqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Our Approach" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16">
@@ -318,6 +336,28 @@ export default function ApproachPage() {
               </Link>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-white" aria-label="FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Our Approach — Common Questions</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {approachFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

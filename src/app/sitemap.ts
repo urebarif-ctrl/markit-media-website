@@ -82,6 +82,8 @@ const staticPages = [
   "/resources/buyer-persona-quiz",
   "/resources/content-gap-analyzer",
   "/resources/ad-spend-calculator",
+  "/resources/email-sequence-planner",
+  "/resources/tech-stack-advisor",
   "/tools",
   "/approach",
   "/pricing",

@@ -107,6 +107,13 @@ const capabilities = [
   },
 ];
 
+const capabilityFaqItems = [
+  { q: "Do I need to use all your capabilities or can I start with one?", a: "You can absolutely start with a single service. Many clients begin with SEO or PPC and expand into other channels as they see results. We will recommend the right starting point based on your goals and budget." },
+  { q: "How do your capabilities work together?", a: "Our services are designed to reinforce each other. Your SEO insights inform PPC targeting, your content strategy feeds social media, and your analytics data improves every channel. A unified approach avoids the silos that come from using separate agencies." },
+  { q: "What happens if I already have an in-house team for some services?", a: "We work alongside internal teams regularly. We can handle the channels where you need extra expertise while your team keeps ownership of others. We share data and insights openly so both teams are aligned." },
+  { q: "How quickly can you ramp up a new capability for my account?", a: "Most capabilities can be active within two to four weeks, including strategy development, account setup, and launch. Some services like SEO take longer to show results, but execution begins quickly." },
+];
+
 export default function CapabilitiesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -115,9 +122,20 @@ export default function CapabilitiesPage() {
     description: "Full-service digital marketing capabilities.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: capabilityFaqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Capabilities" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16">
@@ -183,6 +201,28 @@ export default function CapabilitiesPage() {
               </div>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-white" aria-label="FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Capability Questions</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {capabilityFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

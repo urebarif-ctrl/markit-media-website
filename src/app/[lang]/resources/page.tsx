@@ -426,6 +426,18 @@ const resources = [
     count: "Interactive calculator",
   },
   {
+    title: "Email Sequence Planner",
+    desc: "Plan email marketing sequences for welcome series, nurture flows, cart abandonment, and more. Get subject line templates, timing recommendations, and best practices.",
+    href: "/resources/email-sequence-planner",
+    count: "Interactive planner",
+  },
+  {
+    title: "Website Tech Stack Advisor",
+    desc: "Find the right technology stack for your website or web app. Answer questions about your project and get platform, hosting, and tool recommendations.",
+    href: "/resources/tech-stack-advisor",
+    count: "Interactive advisor",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

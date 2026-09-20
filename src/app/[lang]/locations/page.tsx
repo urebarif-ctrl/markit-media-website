@@ -60,6 +60,13 @@ const locations = [
   },
 ];
 
+const locationFaqItems = [
+  { q: "Do I need to be in the same city as my marketing agency?", a: "No. Modern digital marketing is location-independent. We work with clients across six countries using video calls, shared dashboards, and project management tools. You get the same level of service regardless of where you are." },
+  { q: "How do you handle marketing in different languages?", a: "We create campaigns in English, Arabic, and Urdu with native-speaking team members who understand cultural nuance. For other languages, we work with trusted localization partners to ensure messaging resonates authentically." },
+  { q: "Can you run campaigns targeting multiple countries at once?", a: "Yes. We manage multi-market campaigns regularly, adjusting messaging, platform selection, and bidding strategies for each region. A single team managing all your markets ensures strategic consistency." },
+  { q: "Do you understand the advertising regulations in my country?", a: "We stay current with advertising regulations across every market we serve, including platform-specific policies and industry compliance requirements. Our team flags regulatory considerations during campaign planning." },
+];
+
 export default function LocationsPage() {
   const locationsSchema = {
     "@context": "https://schema.org",
@@ -74,6 +81,15 @@ export default function LocationsPage() {
   return (
     <article>
       <JsonLd data={locationsSchema} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: locationFaqItems.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Locations" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12">
@@ -137,6 +153,28 @@ export default function LocationsPage() {
               </div>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-white" aria-label="FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Working Across Markets</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {locationFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

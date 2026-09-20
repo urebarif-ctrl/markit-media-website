@@ -39,6 +39,13 @@ const industries = [
   { title: "Manufacturing & Industrial", desc: "Manufacturers, industrial suppliers, and B2B companies. SEO, content marketing, LinkedIn advertising, video production, and trade show marketing to reach engineers and buyers.", href: "/industries/manufacturing", image: "/images/industries/manufacturing.svg" },
 ];
 
+const industryFaqItems = [
+  { q: "Do you specialize in specific industries or work with any business?", a: "We have deep experience in 20+ industries, from healthcare and real estate to SaaS and e-commerce. Our teams understand the unique buyer journeys, compliance requirements, and competitive dynamics of each sector we serve." },
+  { q: "How does industry specialization improve marketing results?", a: "Industry expertise means faster ramp-up times, proven channel strategies, and relevant benchmarks. We already know what messaging resonates with your audience, which platforms perform best, and what compliance rules apply — so your campaigns start strong instead of requiring months of trial and error." },
+  { q: "Can you handle industries with strict compliance requirements?", a: "Yes. We work with healthcare, legal, financial services, and other regulated industries regularly. We build campaigns that meet industry-specific advertising guidelines, privacy regulations, and ethical standards." },
+  { q: "What if my industry is not listed on this page?", a: "The industries listed here represent our deepest areas of expertise, but we work with businesses across many sectors. Contact us to discuss your specific needs — our core digital marketing skills transfer well across industries." },
+];
+
 export default function IndustriesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -47,9 +54,20 @@ export default function IndustriesPage() {
     description: "Specialized digital marketing for multiple industries.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: industryFaqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Industries" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12">
@@ -107,6 +125,28 @@ export default function IndustriesPage() {
               </div>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-white" aria-label="FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Industry Marketing Questions</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {industryFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

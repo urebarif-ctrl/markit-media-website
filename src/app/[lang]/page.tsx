@@ -494,6 +494,8 @@ export default async function HomePage() {
               { title: "Buyer Persona Quiz", desc: "Build a detailed buyer persona with communication strategy.", href: "/resources/buyer-persona-quiz" },
               { title: "Content Gap Analyzer", desc: "Evaluate content across buyer journey stages.", href: "/resources/content-gap-analyzer" },
               { title: "Ad Spend Calculator", desc: "Evaluate your ad spend efficiency with ROAS benchmarks.", href: "/resources/ad-spend-calculator" },
+              { title: "Email Sequence Planner", desc: "Plan email sequences with timing and subject line templates.", href: "/resources/email-sequence-planner" },
+              { title: "Tech Stack Advisor", desc: "Find the right platform and tools for your website project.", href: "/resources/tech-stack-advisor" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
