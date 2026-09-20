@@ -178,9 +178,9 @@ export default function ServiceFinderPage() {
             <>
               <Animate animation="fade-up">
                 <SectionLabel>Your Recommendations</SectionLabel>
-                <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
+                <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
                   Services We Recommend
-                </h1>
+                </h2>
                 <p className="text-lg text-gray-500 leading-relaxed mt-4">
                   Based on your answers, here are the services that would work best for your business.
                 </p>
