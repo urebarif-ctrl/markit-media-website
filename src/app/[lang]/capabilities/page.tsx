@@ -10,8 +10,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Capabilities — Full-Service Digital Marketing",
-  description: "Explore Markit Media's full range of digital marketing capabilities: SEO, PPC, social media, branding, web development, AI marketing, video production, and more.",
+  title: "Our Capabilities",
+  description: "Full-service digital marketing capabilities: SEO, PPC, social media, branding, web development, AI, video production, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/capabilities" },
 };
 

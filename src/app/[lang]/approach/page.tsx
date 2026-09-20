@@ -316,6 +316,25 @@ export default function ApproachPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Our Process", href: "/process" },
+                { label: "Why Markit Media", href: "/why-markit-media" },
+                { label: "How We Measure Results", href: "/results" },
+                { label: "Case Studies", href: "/case-studies" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
@@ -326,10 +345,10 @@ export default function ApproachPage() {
               Every great campaign starts with a conversation. Tell us about your goals, and we will tell you how we would approach them.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Schedule a Call &rarr;
               </Link>
-              <Link href="/get-a-quote" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Quote
               </Link>
             </div>

@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "Client Onboarding — Your First 30 Days With Markit Media",
+  title: "Client Onboarding — Your First 30 Days",
   description: "What to expect when you start working with Markit Media. A transparent look at the first 30 days: access setup, discovery, strategy, and launch.",
   alternates: { canonical: "https://themarkitmedia.com/en/onboarding" },
 };

@@ -16,7 +16,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "570+ articles",
+    count: "600+ articles",
   },
   {
     title: "FAQ",
@@ -329,6 +329,12 @@ const resources = [
     desc: "Grade your social media presence with a 25-point checklist across profile, content, engagement, analytics, and growth. Get actionable recommendations.",
     href: "/resources/social-media-audit",
     count: "25-point audit",
+  },
+  {
+    title: "Marketing Pricing Calculator",
+    desc: "Estimate marketing costs by business size, services needed, and engagement type. Per-service breakdown with industry benchmarks.",
+    href: "/resources/pricing-calculator",
+    count: "Interactive tool",
   },
   {
     title: "Small Business Guide",

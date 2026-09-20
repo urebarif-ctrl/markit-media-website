@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { ContactForm } from "@/app/[lang]/contact/contact-form";
 
 export const metadata: Metadata = {
-  title: "Get a Free Quote — Markit Media",
+  title: "Get a Free Quote",
   description: "Request a free digital marketing quote. Tell us about your business and goals, and we'll build a custom proposal within 2 business days.",
   alternates: { canonical: "https://themarkitmedia.com/en/get-a-quote" },
 };

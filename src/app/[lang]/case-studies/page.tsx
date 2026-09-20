@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/json-ld";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "See how Markit Media delivers measurable marketing results across industries. Explore case studies in SEO, performance marketing, branding, web development, and more.",
+    "Measurable marketing results across industries. Case studies in SEO, PPC, branding, web development, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/case-studies" },
 };
 

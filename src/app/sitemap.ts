@@ -67,6 +67,7 @@ const staticPages = [
   "/resources/google-ads-estimator",
   "/resources/migration-checklist",
   "/resources/social-media-audit",
+  "/resources/pricing-calculator",
   "/tools",
   "/approach",
   "/pricing",

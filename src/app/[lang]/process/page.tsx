@@ -8,7 +8,7 @@ import { MarketingFunnel } from "@/components/animated-infographic";
 
 export const metadata: Metadata = {
   title: "Our Process",
-  description: "Learn how Markit Media works: from discovery and strategy through execution, optimization, and reporting. A proven 5-step process for digital marketing success.",
+  description: "From discovery and strategy through execution, optimization, and reporting. A proven 5-step digital marketing process.",
   alternates: { canonical: "https://themarkitmedia.com/en/process" },
 };
 

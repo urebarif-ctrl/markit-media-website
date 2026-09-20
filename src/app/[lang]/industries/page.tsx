@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
-  description: "Markit Media provides specialized digital marketing for 20 industries including home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, hospitality, fitness, automotive, nonprofits, construction, travel, and more.",
+  description: "Specialized digital marketing for 20 industries: home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries" },
 };
 
