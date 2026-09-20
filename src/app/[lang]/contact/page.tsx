@@ -60,7 +60,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-black text-base">Email</h3>
-                      <a href="mailto:ciao@themarkitmedia.com" className="text-base text-gray-500 hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                      <a href="mailto:ciao@themarkitmedia.com" className="text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                         ciao@themarkitmedia.com
                       </a>
                     </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                 { label: "Service Finder Quiz", href: "/services/finder" },
                 { label: "ROI Calculator", href: "/resources/roi-calculator" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

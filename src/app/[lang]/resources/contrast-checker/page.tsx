@@ -110,7 +110,7 @@ export default function ContrastCheckerPage() {
 
             <button
               onClick={() => { const t = fg; setFg(bg); setBg(t); }}
-              className="mb-8 border border-gray-200 px-4 py-2 text-base font-medium text-black hover:bg-gray-50 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="mb-8 border border-gray-200 px-4 py-2 text-base font-medium text-black hover:bg-gray-50 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Swap Colors
             </button>
@@ -191,7 +191,7 @@ export default function ContrastCheckerPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our web development team can audit your website for WCAG compliance and implement fixes to ensure accessibility for all users.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get an Accessibility Audit &rarr;
             </Link>
           </Animate>

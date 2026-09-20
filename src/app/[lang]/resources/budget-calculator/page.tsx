@@ -227,7 +227,7 @@ export default function BudgetCalculatorPage() {
                     key={bt}
                     type="button"
                     onClick={() => setBusinessType(bt)}
-                    className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       businessType === bt
                         ? "bg-black text-white"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -248,7 +248,7 @@ export default function BudgetCalculatorPage() {
                     key={g}
                     type="button"
                     onClick={() => setGoal(g)}
-                    className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       goal === g
                         ? "bg-black text-white"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -279,7 +279,7 @@ export default function BudgetCalculatorPage() {
                     </div>
                     <div className="w-full bg-gray-200 h-4" role="meter" aria-label={`${channel.label}: ${channel.pct}%`} aria-valuenow={channel.pct} aria-valuemin={0} aria-valuemax={100}>
                       <div
-                        className="h-full bg-black transition-all duration-300"
+                        className="h-full bg-black transition-all motion-reduce:transition-none duration-300"
                         style={{ width: `${barWidth}%` }}
                       />
                     </div>

@@ -66,7 +66,7 @@ export default function OgPreviewPage() {
                   placeholder="A brief description of your page content..."
                   rows={3}
                   maxLength={300}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none resize-none"
                 />
                 <p className="text-base text-gray-400 mt-1">{description.length}/200 characters {description.length > 200 ? "(will be truncated)" : ""}</p>
               </div>
@@ -224,7 +224,7 @@ export default function OgPreviewPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               OG tags are just the start. Let our team build a social media strategy that drives real engagement.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Talk to a Social Media Expert &rarr;
             </Link>
           </Animate>

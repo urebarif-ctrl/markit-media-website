@@ -118,7 +118,7 @@ export default function MetaDescriptionGeneratorPage() {
             <div className="flex gap-2 mb-8">
               <button
                 onClick={() => setMode("write")}
-                className={`px-6 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                className={`px-6 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                   mode === "write" ? "bg-black text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -126,7 +126,7 @@ export default function MetaDescriptionGeneratorPage() {
               </button>
               <button
                 onClick={() => setMode("template")}
-                className={`px-6 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                className={`px-6 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                   mode === "template" ? "bg-black text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -146,7 +146,7 @@ export default function MetaDescriptionGeneratorPage() {
                   placeholder="Enter your meta description here..."
                   rows={4}
                   maxLength={300}
-                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors resize-none"
+                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none resize-none"
                 />
                 <div className="flex justify-between items-center">
                   <p className={`text-base ${description.length > 160 ? "text-gray-800 font-bold" : "text-gray-400"}`}>
@@ -156,7 +156,7 @@ export default function MetaDescriptionGeneratorPage() {
                   <button
                     onClick={handleAnalyze}
                     disabled={description.trim().length === 0}
-                    className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     Analyze
                   </button>
@@ -171,7 +171,7 @@ export default function MetaDescriptionGeneratorPage() {
                       <button
                         key={t.label}
                         onClick={() => { setSelectedTemplate(i); setFieldValues({}); }}
-                        className={`px-4 py-2 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                        className={`px-4 py-2 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                           selectedTemplate === i ? "bg-black text-white" : "border border-gray-200 text-gray-600 hover:border-black"
                         }`}
                       >
@@ -205,7 +205,7 @@ export default function MetaDescriptionGeneratorPage() {
 
                 <button
                   onClick={handleGenerate}
-                  className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   Generate &amp; Analyze
                 </button>
@@ -291,7 +291,7 @@ export default function MetaDescriptionGeneratorPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Meta descriptions are one piece of the SEO puzzle. Let our team optimize your entire search presence.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Talk to an SEO Expert &rarr;
             </Link>
           </Animate>

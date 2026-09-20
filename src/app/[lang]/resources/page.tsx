@@ -494,7 +494,7 @@ export default function ResourcesPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((r) => (
-              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <span className="text-base font-medium text-gray-400 mb-2 block">{r.count}</span>
                 <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">{r.title}</h2>
                 <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>

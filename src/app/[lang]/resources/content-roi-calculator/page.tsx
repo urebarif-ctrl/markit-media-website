@@ -91,7 +91,7 @@ export default function ContentRoiCalculatorPage() {
               </div>
             </div>
 
-            <button onClick={handleCalculate} className="mt-8 bg-black text-white px-10 py-4 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <button onClick={handleCalculate} className="mt-8 bg-black text-white px-10 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Calculate ROI
             </button>
           </Animate>
@@ -165,7 +165,7 @@ export default function ContentRoiCalculatorPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our content marketing team creates SEO-optimized content that ranks and converts. Strategy, writing, and optimization — all under one roof.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Talk to a Content Strategist &rarr;
             </Link>
           </Animate>

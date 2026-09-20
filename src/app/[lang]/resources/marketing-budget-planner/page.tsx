@@ -169,7 +169,7 @@ export default function MarketingBudgetPlannerPage() {
                   <button
                     key={s}
                     onClick={() => setStage(s)}
-                    className={`px-4 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-4 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       stage === s
                         ? "bg-black text-white"
                         : "border border-gray-200 text-gray-600 hover:border-black"
@@ -190,7 +190,7 @@ export default function MarketingBudgetPlannerPage() {
                   <button
                     key={g}
                     onClick={() => setGoal(g)}
-                    className={`px-4 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-4 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       goal === g
                         ? "bg-black text-white"
                         : "border border-gray-200 text-gray-600 hover:border-black"
@@ -206,7 +206,7 @@ export default function MarketingBudgetPlannerPage() {
           <Animate animation="fade-up" delay={180}>
             <button
               onClick={() => setShowPlan(true)}
-              className="bg-black text-white px-8 py-4 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="bg-black text-white px-8 py-4 text-base font-bold hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Generate Budget Plan
             </button>
@@ -298,7 +298,7 @@ export default function MarketingBudgetPlannerPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our strategy team will analyze your business, goals, and market to build a custom budget plan that maximizes your ROI.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Custom Budget Plan &rarr;
             </Link>
           </Animate>

@@ -260,7 +260,7 @@ export default function CaseStudiesPage() {
               {serviceFilters.map((filter, i) => (
                 <button
                   key={filter}
-                  className={`px-5 py-2.5 text-base font-semibold border transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                  className={`px-5 py-2.5 text-base font-semibold border transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                     i === 0
                       ? "bg-black text-white border-black"
                       : "bg-white text-gray-600 border-gray-200 hover:border-black hover:text-black"
@@ -386,7 +386,7 @@ export default function CaseStudiesPage() {
                   {ind}
                 </span>
               ))}
-              <Link href="/industries" className="border border-black bg-black text-white px-4 py-2 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/industries" className="border border-black bg-black text-white px-4 py-2 text-base font-bold hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All Industries &rarr;
               </Link>
             </div>
@@ -407,7 +407,7 @@ export default function CaseStudiesPage() {
                 <details className="group border-b border-gray-200">
                   <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
                   </summary>
                   <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
                 </details>
@@ -429,7 +429,7 @@ export default function CaseStudiesPage() {
                 { label: "Industries", href: "/industries" },
                 { label: "Get a Quote", href: "/get-a-quote" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
                   {link.label}
                 </Link>
               ))}
@@ -451,7 +451,7 @@ export default function CaseStudiesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Start a Conversation &rarr;
             </Link>

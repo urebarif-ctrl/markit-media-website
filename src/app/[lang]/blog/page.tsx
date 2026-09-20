@@ -75,7 +75,7 @@ export default function BlogPage() {
                   <Link
                     key={cat}
                     href={`/blog/category/${slug}`}
-                    className="px-4 py-2 text-base font-medium bg-gray-100 text-gray-600 hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    className="px-4 py-2 text-base font-medium bg-gray-100 text-gray-600 hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     {cat}
                   </Link>
@@ -96,7 +96,7 @@ export default function BlogPage() {
               >
                 <div className="aspect-[16/9] lg:aspect-auto overflow-hidden">
                   {featured.cover_image ? (
-                    <img src={featured.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={featured.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                   ) : (
                     <div className="w-full h-full bg-gray-100 flex items-center justify-center">
                       <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
@@ -138,7 +138,7 @@ export default function BlogPage() {
                 >
                   <div className="aspect-[16/9] bg-gray-100 flex items-center justify-center overflow-hidden">
                     {post.cover_image ? (
-                      <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                     ) : (
                       <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
                     )}

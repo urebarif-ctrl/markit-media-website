@@ -127,7 +127,7 @@ export default function PpcAuditChecklistPage() {
                 <span className="text-base font-bold text-black">{pct}%</span>
               </div>
               <div className="w-full h-3 bg-gray-100 overflow-hidden">
-                <div className="h-full bg-black transition-all duration-300" style={{ width: `${pct}%` }} />
+                <div className="h-full bg-black transition-all motion-reduce:transition-none duration-300" style={{ width: `${pct}%` }} />
               </div>
               {checkedCount > 0 && (
                 <p className="text-base text-gray-500 mt-2">{grade}</p>
@@ -184,7 +184,7 @@ export default function PpcAuditChecklistPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our PPC specialists will audit your Google Ads account in detail and identify specific opportunities to reduce waste and improve performance.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Request a Free PPC Audit &rarr;
             </Link>
           </Animate>

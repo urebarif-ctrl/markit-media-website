@@ -25,13 +25,13 @@ export function ShareControls({ title }: { title: string }) {
   return (
     <div className="flex items-center gap-3">
       <span className="text-base font-bold text-black uppercase tracking-wide">Share:</span>
-      <button onClick={shareTwitter} className="text-base text-gray-500 hover:text-black transition-colors px-3 py-2 min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" aria-label="Share on Twitter">
+      <button onClick={shareTwitter} className="text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none px-3 py-2 min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" aria-label="Share on Twitter">
         Twitter
       </button>
-      <button onClick={shareLinkedIn} className="text-base text-gray-500 hover:text-black transition-colors px-3 py-2 min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" aria-label="Share on LinkedIn">
+      <button onClick={shareLinkedIn} className="text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none px-3 py-2 min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" aria-label="Share on LinkedIn">
         LinkedIn
       </button>
-      <button onClick={copyLink} className="text-base text-gray-500 hover:text-black transition-colors px-3 py-2 min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+      <button onClick={copyLink} className="text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none px-3 py-2 min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
         {copied ? "Copied!" : "Copy Link"}
       </button>
     </div>

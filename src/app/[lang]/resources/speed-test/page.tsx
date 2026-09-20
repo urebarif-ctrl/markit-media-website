@@ -161,7 +161,7 @@ export default function SpeedTestPage() {
                     <button
                       key={opt.label}
                       onClick={() => handleAnswer(q.id, opt.score)}
-                      className={`w-full text-left px-4 py-3 text-base transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                      className={`w-full text-left px-4 py-3 text-base transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                         answers[q.id] === opt.score
                           ? "bg-black text-white"
                           : "border border-gray-200 text-gray-600 hover:border-black"
@@ -184,7 +184,7 @@ export default function SpeedTestPage() {
             <Animate animation="fade-up">
               <button
                 onClick={() => setShowResults(true)}
-                className="w-full bg-black text-white py-4 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="w-full bg-black text-white py-4 text-base font-bold hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 See Your Results
               </button>
@@ -242,7 +242,7 @@ export default function SpeedTestPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our development team can audit your website and implement optimizations that improve Core Web Vitals and page speed.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Speed Audit &rarr;
             </Link>
           </Animate>

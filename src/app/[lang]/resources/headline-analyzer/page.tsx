@@ -189,7 +189,7 @@ export default function HeadlineAnalyzerPage() {
               <button
                 onClick={handleAnalyze}
                 disabled={headline.trim().length < 3}
-                className="bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Analyze Headline
               </button>
@@ -211,7 +211,7 @@ export default function HeadlineAnalyzerPage() {
                   <div className="flex-1">
                     <div className="w-full h-3 bg-gray-100 overflow-hidden">
                       <div
-                        className="h-full bg-black transition-all duration-500"
+                        className="h-full bg-black transition-all motion-reduce:transition-none duration-500"
                         style={{ width: `${result.score}%` }}
                       />
                     </div>
@@ -309,7 +309,7 @@ export default function HeadlineAnalyzerPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Headlines are just the beginning. Let our team build a content strategy that drives traffic and conversions.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Consultation &rarr;
             </Link>
           </Animate>

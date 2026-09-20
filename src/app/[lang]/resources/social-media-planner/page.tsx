@@ -92,7 +92,7 @@ export default function SocialMediaPlannerPage() {
                 <button
                   key={p.name}
                   onClick={() => togglePlatform(p.name)}
-                  className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                  className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                     selected.includes(p.name)
                       ? "bg-black text-white"
                       : "border border-gray-200 text-gray-600 hover:border-black"
@@ -174,7 +174,7 @@ export default function SocialMediaPlannerPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our social media team handles strategy, content creation, scheduling, community management, and analytics.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Social Media Help &rarr;
             </Link>
           </Animate>

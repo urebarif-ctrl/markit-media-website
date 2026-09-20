@@ -196,7 +196,7 @@ export default function ChecklistsPage() {
                 role="tab"
                 aria-selected={activeTab === tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                   activeTab === tab
                     ? "bg-black text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -214,7 +214,7 @@ export default function ChecklistsPage() {
           <div className="flex items-center gap-4">
             <div className="flex-1 bg-gray-100 h-3 overflow-hidden" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label={`${progress}% complete`}>
               <div
-                className="h-full bg-black transition-all duration-300"
+                className="h-full bg-black transition-all motion-reduce:transition-none duration-300"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -236,7 +236,7 @@ export default function ChecklistsPage() {
                   const isChecked = checked[key] || false;
                   return (
                     <li key={item.label}>
-                      <label className={`flex items-start gap-4 p-4 border cursor-pointer transition-all ${isChecked ? "bg-gray-50 border-gray-300" : "bg-white border-gray-200 hover:border-gray-300"}`}>
+                      <label className={`flex items-start gap-4 p-4 border cursor-pointer transition-all motion-reduce:transition-none ${isChecked ? "bg-gray-50 border-gray-300" : "bg-white border-gray-200 hover:border-gray-300"}`}>
                         <input
                           type="checkbox"
                           checked={isChecked}

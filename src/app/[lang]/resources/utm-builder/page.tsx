@@ -174,7 +174,7 @@ export default function UtmBuilderPage() {
                   <div className="bg-gray-50 p-4 text-base text-gray-600 break-all font-mono">{generatedUrl}</div>
                   <button
                     onClick={handleCopy}
-                    className="mt-3 bg-black text-white px-6 py-3 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    className="mt-3 bg-black text-white px-6 py-3 text-base font-bold hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     {copied ? "Copied!" : "Copy URL"}
                   </button>
@@ -247,7 +247,7 @@ export default function UtmBuilderPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our analytics team can set up comprehensive tracking, attribution models, and reporting dashboards for your marketing campaigns.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Analytics Help &rarr;
             </Link>
           </Animate>

@@ -154,7 +154,7 @@ export function ServicePage({
                 <details className="group border-b border-gray-200">
                   <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
                   </summary>
                   <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
                 </details>
@@ -177,7 +177,7 @@ export function ServicePage({
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {post.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
-                      <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                      <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" loading="lazy" />
                     </div>
                   )}
                   <div className="p-5 flex-1">

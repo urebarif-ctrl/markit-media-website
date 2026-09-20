@@ -126,7 +126,7 @@ export default function MarketingStatistics2026Page() {
                 <a
                   key={cat.title}
                   href={`#${cat.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                  className="px-4 py-2 border border-gray-200 text-base font-bold text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="px-4 py-2 border border-gray-200 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   {cat.title}
                 </a>
@@ -196,7 +196,7 @@ export default function MarketingStatistics2026Page() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Data is only valuable when it drives action. Let us build a strategy informed by what actually works.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Strategy Session &rarr;
             </Link>
           </Animate>

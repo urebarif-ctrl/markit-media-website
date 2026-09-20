@@ -164,7 +164,7 @@ export default function BrandNameGeneratorPage() {
                   <button
                     key={s.key}
                     onClick={() => setStyle(s.key)}
-                    className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       style === s.key
                         ? "bg-black text-white"
                         : "border border-gray-200 text-gray-600 hover:border-black"
@@ -180,7 +180,7 @@ export default function BrandNameGeneratorPage() {
           <Animate animation="fade-up" delay={120}>
             <button
               onClick={generate}
-              className="bg-black text-white px-8 py-4 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="bg-black text-white px-8 py-4 text-base font-bold hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Generate Names
             </button>
@@ -203,7 +203,7 @@ export default function BrandNameGeneratorPage() {
                   <button
                     key={`${name}-${i}`}
                     onClick={() => toggleSave(name)}
-                    className={`text-left px-5 py-4 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`text-left px-5 py-4 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       saved.includes(name)
                         ? "bg-black text-white"
                         : "border border-gray-200 text-black hover:border-black"
@@ -286,7 +286,7 @@ export default function BrandNameGeneratorPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               From naming to logo design to full brand identity, our creative team builds brands that stand out.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Start Your Branding Project &rarr;
             </Link>
           </Animate>

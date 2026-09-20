@@ -197,10 +197,10 @@ export default function ApproachPage() {
                 your customers, and your competitive landscape. Then we build a plan to win.
               </SectionDesc>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/contact" className="inline-flex items-center bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   Talk to Us &rarr;
                 </Link>
-                <Link href="/process" className="inline-flex items-center border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/process" className="inline-flex items-center border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   See Our Process
                 </Link>
               </div>
@@ -252,7 +252,7 @@ export default function ApproachPage() {
           </Animate>
           <Stagger stagger={50} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {discoveryQuestions.map((q, i) => (
-              <div key={i} className="flex items-start gap-4 border border-white/10 p-5 hover:border-white/30 transition-colors duration-300">
+              <div key={i} className="flex items-start gap-4 border border-white/10 p-5 hover:border-white/30 transition-colors motion-reduce:transition-none duration-300">
                 <span className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-white/20 flex-shrink-0 w-8 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                 <p className="text-base text-gray-300 leading-relaxed">{q}</p>
               </div>

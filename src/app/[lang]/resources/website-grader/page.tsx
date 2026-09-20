@@ -150,7 +150,7 @@ export default function WebsiteGraderPage() {
                       <button
                         key={opt.label}
                         onClick={() => setAnswers({ ...answers, [q.id]: opt.score })}
-                        className={`w-full text-left px-4 py-3 text-base transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                        className={`w-full text-left px-4 py-3 text-base transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                           answers[q.id] === opt.score
                             ? "bg-black text-white"
                             : "bg-gray-50 text-gray-600 hover:bg-gray-100"
@@ -168,7 +168,7 @@ export default function WebsiteGraderPage() {
               <button
                 onClick={() => allAnswered && setSubmitted(true)}
                 disabled={!allAnswered}
-                className={`inline-flex items-center gap-3 px-10 py-5 font-bold text-base transition-colors ${
+                className={`inline-flex items-center gap-3 px-10 py-5 font-bold text-base transition-colors motion-reduce:transition-none ${
                   allAnswered
                     ? "bg-black text-white hover:bg-gray-800"
                     : "bg-gray-200 text-gray-400 cursor-not-allowed"

@@ -179,10 +179,10 @@ export default function ServicesPage() {
               From strategy to execution, we cover every digital marketing channel. Choose the services you need, or let us build a complete growth plan.
             </SectionDesc>
             <div className="flex flex-wrap gap-4 mt-8">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Get a Free Consultation &rarr;
               </Link>
-              <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Find the Right Service
               </Link>
             </div>
@@ -216,7 +216,7 @@ export default function ServicesPage() {
               return (
                 <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
-                    <img src={s.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    <img src={s.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" loading="lazy" />
                   </div>
                   <div className="p-6 md:p-8 flex-1">
                     <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">
@@ -231,7 +231,7 @@ export default function ServicesPage() {
                       ))}
                     </div>
                   </div>
-                  <span className="text-xl text-gray-400 group-hover:text-black transition-colors flex-shrink-0 hidden md:flex items-center pr-8" aria-hidden="true">&rarr;</span>
+                  <span className="text-xl text-gray-400 group-hover:text-black transition-colors motion-reduce:transition-none flex-shrink-0 hidden md:flex items-center pr-8" aria-hidden="true">&rarr;</span>
                 </Link>
               );
             })}
@@ -249,7 +249,7 @@ export default function ServicesPage() {
             <p className="text-base text-gray-500 mb-6">
               Answer a few quick questions and get personalized service recommendations.
             </p>
-            <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Take the Service Finder Quiz &rarr;
             </Link>
           </Animate>

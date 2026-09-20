@@ -231,7 +231,7 @@ export default function CareersPage() {
                 <details className="group border-b border-gray-200">
                   <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
                   </summary>
                   <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
                 </details>
@@ -270,7 +270,7 @@ export default function CareersPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Send us your resume and a brief note about what excites you about digital marketing. We review every application.
             </p>
-            <a href="mailto:ciao@themarkitmedia.com?subject=Career%20Inquiry" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <a href="mailto:ciao@themarkitmedia.com?subject=Career%20Inquiry" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Apply Now &rarr;
             </a>
           </Animate>

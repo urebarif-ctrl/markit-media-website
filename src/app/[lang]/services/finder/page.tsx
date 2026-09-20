@@ -142,7 +142,7 @@ export default function ServiceFinderPage() {
               <div className="mt-12">
                 <div className="flex gap-2 mb-8">
                   {questions.map((_, i) => (
-                    <div key={i} className={`h-1 flex-1 transition-colors ${i <= step ? "bg-black" : "bg-gray-200"}`} />
+                    <div key={i} className={`h-1 flex-1 transition-colors motion-reduce:transition-none ${i <= step ? "bg-black" : "bg-gray-200"}`} />
                   ))}
                 </div>
 
@@ -156,7 +156,7 @@ export default function ServiceFinderPage() {
                       <button
                         key={opt.value}
                         onClick={() => handleSelect(questions[step].id, opt.value)}
-                        className="w-full text-left p-5 border border-gray-200 hover:border-black transition-colors text-base font-medium text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                        className="w-full text-left p-5 border border-gray-200 hover:border-black transition-colors motion-reduce:transition-none text-base font-medium text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                       >
                         {opt.label}
                       </button>
@@ -167,7 +167,7 @@ export default function ServiceFinderPage() {
                 {step > 0 && (
                   <button
                     onClick={() => setStep(step - 1)}
-                    className="mt-6 text-base text-gray-500 hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    className="mt-6 text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     &larr; Previous question
                   </button>
@@ -191,7 +191,7 @@ export default function ServiceFinderPage() {
                   <Animate key={rec.href} animation="fade-up" delay={i * 80}>
                     <Link
                       href={rec.href}
-                      className="group flex items-start gap-6 p-6 border border-gray-200 hover:border-black/30 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                      className="group flex items-start gap-6 p-6 border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                     >
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -204,7 +204,7 @@ export default function ServiceFinderPage() {
                         </div>
                         <p className="text-base text-gray-500">{rec.desc}</p>
                       </div>
-                      <span className="text-xl text-gray-400 group-hover:text-black transition-colors flex-shrink-0" aria-hidden="true">&rarr;</span>
+                      <span className="text-xl text-gray-400 group-hover:text-black transition-colors motion-reduce:transition-none flex-shrink-0" aria-hidden="true">&rarr;</span>
                     </Link>
                   </Animate>
                 ))}
@@ -212,12 +212,12 @@ export default function ServiceFinderPage() {
 
               <Animate animation="fade-up" delay={400}>
                 <div className="mt-12 flex flex-wrap gap-4">
-                  <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     Get a Free Consultation &rarr;
                   </Link>
                   <button
                     onClick={reset}
-                    className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     Start Over
                   </button>

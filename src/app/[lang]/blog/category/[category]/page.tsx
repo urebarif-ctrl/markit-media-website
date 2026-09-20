@@ -94,7 +94,7 @@ export default async function BlogCategoryPage({
           <div className="flex flex-wrap gap-2 mb-8">
             <Link
               href="/blog"
-              className="px-4 py-2 text-base font-medium border border-gray-200 text-gray-600 hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="px-4 py-2 text-base font-medium border border-gray-200 text-gray-600 hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               All
             </Link>
@@ -102,7 +102,7 @@ export default async function BlogCategoryPage({
               <Link
                 key={cat}
                 href={`/blog/category/${categoryToSlug(cat)}`}
-                className={`px-4 py-2 text-base font-medium border transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                className={`px-4 py-2 text-base font-medium border transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                   cat === matchedCategory
                     ? "bg-black text-white border-black"
                     : "border-gray-200 text-gray-600 hover:bg-black hover:text-white"
@@ -129,7 +129,7 @@ export default async function BlogCategoryPage({
                     <img
                       src={post.cover_image}
                       alt=""
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500"
                       loading="lazy"
                     />
                   ) : (

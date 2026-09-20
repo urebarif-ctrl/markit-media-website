@@ -95,7 +95,7 @@ export default function MarketingTrends2025Page() {
       <section className="px-6 lg:px-12 pt-6 pb-4">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
-            <Link href="/resources/marketing-trends-2026" className="block bg-black text-white px-6 py-4 hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/resources/marketing-trends-2026" className="block bg-black text-white px-6 py-4 hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <span className="text-base font-bold">Looking for the latest?</span>{" "}
               <span className="text-base text-gray-300">Read our 2026 Marketing Trends &rarr;</span>
             </Link>
@@ -125,7 +125,7 @@ export default function MarketingTrends2025Page() {
                 <a
                   key={t.num}
                   href={`#trend-${t.num}`}
-                  className="px-3 py-2 border border-gray-200 text-base font-bold text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                  className="px-3 py-2 border border-gray-200 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   {t.num}
                 </a>
@@ -174,7 +174,7 @@ export default function MarketingTrends2025Page() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our team stays ahead of the curve so you do not have to. Let us build a strategy that works in 2025 and beyond.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Strategy Session &rarr;
             </Link>
           </Animate>

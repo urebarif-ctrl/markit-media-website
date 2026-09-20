@@ -175,7 +175,7 @@ export default function CompetitorAnalysisPage() {
                         <button
                           key={ch}
                           onClick={() => toggleChannel(i, ch)}
-                          className={`px-3 py-2 text-base transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                          className={`px-3 py-2 text-base transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                             comp.channels.includes(ch)
                               ? "bg-black text-white"
                               : "border border-gray-200 text-gray-500 hover:border-black"
@@ -195,7 +195,7 @@ export default function CompetitorAnalysisPage() {
             <Animate animation="fade-up">
               <button
                 onClick={addCompetitor}
-                className="w-full py-4 border-2 border-dashed border-gray-300 text-base font-bold text-gray-400 hover:border-black hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                className="w-full py-4 border-2 border-dashed border-gray-300 text-base font-bold text-gray-400 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 + Add Competitor ({competitors.length}/6)
               </button>
@@ -322,7 +322,7 @@ export default function CompetitorAnalysisPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our strategy team provides in-depth competitive research with actionable recommendations for your marketing plan.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Competitive Analysis &rarr;
             </Link>
           </Animate>

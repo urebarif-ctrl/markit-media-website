@@ -105,7 +105,7 @@ export default function SEOChecklistPage() {
             </div>
             <div className="flex-1">
               <div className="w-full bg-white/20 h-3">
-                <div className="bg-white h-3 transition-all duration-300" style={{ width: `${score}%` }} />
+                <div className="bg-white h-3 transition-all motion-reduce:transition-none duration-300" style={{ width: `${score}%` }} />
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function SEOChecklistPage() {
                     <div className="flex items-center gap-4 p-4">
                       <button
                         onClick={() => toggle(item.id)}
-                        className={`w-6 h-6 border-2 flex items-center justify-center flex-shrink-0 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                        className={`w-6 h-6 border-2 flex items-center justify-center flex-shrink-0 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                           checked.has(item.id) ? "bg-black border-black text-white" : "border-gray-300"
                         }`}
                         aria-label={`Mark "${item.label}" as ${checked.has(item.id) ? "incomplete" : "complete"}`}
@@ -137,7 +137,7 @@ export default function SEOChecklistPage() {
                       </span>
                       <button
                         onClick={() => toggleTip(item.id)}
-                        className="text-base text-gray-400 hover:text-black transition-colors px-2 py-1 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                        className="text-base text-gray-400 hover:text-black transition-colors motion-reduce:transition-none px-2 py-1 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                         aria-label={`${showTips.has(item.id) ? "Hide" : "Show"} tip for "${item.label}"`}
                       >
                         {showTips.has(item.id) ? "−" : "?"}

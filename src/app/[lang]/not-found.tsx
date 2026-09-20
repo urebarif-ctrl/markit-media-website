@@ -20,10 +20,10 @@ export default function NotFound() {
           </Link>
         </div>
         <div className="mt-16 flex flex-wrap justify-center gap-6 text-base">
-          <Link href="/blog" className="text-gray-500 hover:text-black transition-colors underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Blog</Link>
-          <Link href="/contact" className="text-gray-500 hover:text-black transition-colors underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Contact Us</Link>
-          <Link href="/about" className="text-gray-500 hover:text-black transition-colors underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">About Us</Link>
-          <Link href="/faq" className="text-gray-500 hover:text-black transition-colors underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">FAQ</Link>
+          <Link href="/blog" className="text-gray-500 hover:text-black transition-colors motion-reduce:transition-none underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Blog</Link>
+          <Link href="/contact" className="text-gray-500 hover:text-black transition-colors motion-reduce:transition-none underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Contact Us</Link>
+          <Link href="/about" className="text-gray-500 hover:text-black transition-colors motion-reduce:transition-none underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">About Us</Link>
+          <Link href="/faq" className="text-gray-500 hover:text-black transition-colors motion-reduce:transition-none underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">FAQ</Link>
         </div>
       </div>
     </section>

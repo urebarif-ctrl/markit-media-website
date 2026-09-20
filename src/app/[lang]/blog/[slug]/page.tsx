@@ -343,7 +343,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-base text-gray-500 leading-relaxed mb-6">
             Our team specializes in turning these insights into results. Get a free consultation to discuss your goals.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             Talk to an Expert &rarr;
           </Link>
         </div>
@@ -362,7 +362,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 >
                   {r.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
-                      <img src={r.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={r.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                     </div>
                   )}
                   <div className="p-6">

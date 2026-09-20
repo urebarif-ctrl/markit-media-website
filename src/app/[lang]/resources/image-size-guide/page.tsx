@@ -101,7 +101,7 @@ export default function ImageSizeGuidePage() {
                 <button
                   key={p}
                   onClick={() => setActivePlatform(p)}
-                  className={`px-4 py-2 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                  className={`px-4 py-2 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                     activePlatform === p
                       ? "bg-black text-white"
                       : "border border-gray-200 text-gray-600 hover:border-black"
@@ -119,7 +119,7 @@ export default function ImageSizeGuidePage() {
         <div className="max-w-4xl mx-auto">
           <Stagger stagger={40} animation="fade-up" className="space-y-4">
             {sizes.map((size) => (
-              <div key={size.name} className="border border-gray-200 p-6 hover:shadow-md transition-shadow duration-300">
+              <div key={size.name} className="border border-gray-200 p-6 hover:shadow-md transition-shadow duration-300 motion-reduce:transition-none">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div>
                     <h2 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black">{size.name}</h2>
@@ -175,7 +175,7 @@ export default function ImageSizeGuidePage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our creative team produces platform-optimized images, graphics, and video for all your marketing channels.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Creative Help &rarr;
             </Link>
           </Animate>

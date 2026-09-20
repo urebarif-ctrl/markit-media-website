@@ -167,7 +167,7 @@ export default function ROICalculatorPage() {
             </p>
 
             <div className="mt-8">
-              <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors w-full justify-center">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none w-full justify-center">
                 Get a Custom Projection &rarr;
               </Link>
             </div>
@@ -184,7 +184,7 @@ export default function ROICalculatorPage() {
               { title: "Better Conversion Rates", desc: "Optimized landing pages and messaging turn more visitors into leads and customers.", href: "/services/website-development" },
               { title: "Lower Cost Per Acquisition", desc: "Continuous optimization reduces wasted spend and improves campaign efficiency.", href: "/services/performance-marketing" },
             ].map((item) => (
-              <Link key={item.href} href={item.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={item.href} href={item.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </Link>

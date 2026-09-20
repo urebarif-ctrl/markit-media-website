@@ -203,7 +203,7 @@ export default function WhyMarkitMediaPage() {
           </Stagger>
           <Animate animation="fade-up">
             <div className="text-center mt-8">
-              <Link href="/process" className="inline-flex items-center gap-2 text-base font-bold text-black underline underline-offset-4 hover:no-underline transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/process" className="inline-flex items-center gap-2 text-base font-bold text-black underline underline-offset-4 hover:no-underline transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 See the full process in detail &rarr;
               </Link>
             </div>
@@ -224,7 +224,7 @@ export default function WhyMarkitMediaPage() {
                 <details className="group border-b border-gray-200">
                   <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
                   </summary>
                   <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
                 </details>

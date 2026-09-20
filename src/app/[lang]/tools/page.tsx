@@ -84,6 +84,13 @@ const categories = [
   },
 ];
 
+const toolsFaqItems = [
+  { q: "Do you use these tools on every client account?", a: "No. We select tools based on your specific needs, budget, and goals. A local service business needs different tools than a national e-commerce brand. We recommend what fits your situation, not the most expensive option." },
+  { q: "Will I have access to the platforms and data?", a: "Yes. We set up accounts in your name whenever possible. You own your data, your ad accounts, and your analytics. If we ever part ways, you keep everything." },
+  { q: "Do you charge extra for the tools you use?", a: "Our service fees cover our team's time and expertise. Platform costs like ad spend or software subscriptions are separate and transparent. We will never mark up third-party tool costs." },
+  { q: "How do you stay current with new marketing tools?", a: "Our team continuously evaluates new platforms and tools. We test them on internal projects before recommending them to clients. We only adopt tools that solve a real problem better than existing options." },
+];
+
 export default function ToolsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -92,9 +99,20 @@ export default function ToolsPage() {
     description: "Technology stack and tools used by Markit Media for digital marketing.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: toolsFaqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Tools & Platforms" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12">
@@ -142,6 +160,47 @@ export default function ToolsPage() {
                 We pick tools based on what works for your business — not what has the best referral program.
                 Our recommendations are always driven by your goals and budget.
               </p>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20" aria-label="FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Tools &amp; Platform Questions</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {toolsFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "All Services", href: "/services" },
+                { label: "Technology Stack", href: "/technology" },
+                { label: "Capabilities", href: "/capabilities" },
+                { label: "Our Process", href: "/process" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </Animate>
         </div>

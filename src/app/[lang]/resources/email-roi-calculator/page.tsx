@@ -93,7 +93,7 @@ export default function EmailRoiCalculatorPage() {
 
             <button
               onClick={handleCalculate}
-              className="mt-8 bg-black text-white px-10 py-4 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="mt-8 bg-black text-white px-10 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Calculate ROI
             </button>
@@ -177,7 +177,7 @@ export default function EmailRoiCalculatorPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our email marketing team builds high-performing campaigns, automation flows, and segmentation strategies.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Talk to an Email Expert &rarr;
             </Link>
           </Animate>

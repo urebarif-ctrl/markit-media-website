@@ -150,10 +150,10 @@ export default async function HomePage() {
             </Animate>
             <Animate animation="fade-up" delay={300}>
               <div className="flex flex-wrap gap-4 mt-10">
-                <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {t.cta.primary} &rarr;
                 </Link>
-                <Link href="/work" className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/work" className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {t.cta.secondary}
                 </Link>
               </div>
@@ -262,7 +262,7 @@ export default async function HomePage() {
               { metric: "Revenue Attribution", desc: "Clear line between marketing spend and revenue generated." },
               { metric: "Brand Visibility", desc: "Increased share of voice in your industry across all digital channels." },
             ].map((item) => (
-              <div key={item.metric} className="p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
+              <div key={item.metric} className="p-6 border border-white/10 hover:border-white/30 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-white uppercase tracking-wide mb-3">
                   {item.metric}
                 </h3>
@@ -411,7 +411,7 @@ export default async function HomePage() {
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
                   {post.cover_image ? (
-                    <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={post.cover_image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
@@ -497,7 +497,7 @@ export default async function HomePage() {
               { title: "Email Sequence Planner", desc: "Plan email sequences with timing and subject line templates.", href: "/resources/email-sequence-planner" },
               { title: "Tech Stack Advisor", desc: "Find the right platform and tools for your website project.", href: "/resources/tech-stack-advisor" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>
               </Link>
@@ -519,7 +519,7 @@ export default async function HomePage() {
                 <details className="group border-b border-gray-200">
                   <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
                   </summary>
                   <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
                 </details>
@@ -540,10 +540,10 @@ export default async function HomePage() {
               Talk to our team about a strategy built around your goals. No pitch decks, no fluff — just a straightforward conversation about what will work.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Start Your Project &rarr;
               </Link>
-              <Link href="/work" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/work" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 View Our Work
               </Link>
             </div>

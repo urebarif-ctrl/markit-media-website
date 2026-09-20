@@ -194,7 +194,7 @@ export default function AdCopyGeneratorPage() {
                   <button
                     key={p}
                     onClick={() => { setPlatform(p); setGenerated(null); }}
-                    className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       platform === p
                         ? "bg-black text-white"
                         : "border border-gray-200 text-gray-600 hover:border-black"
@@ -215,7 +215,7 @@ export default function AdCopyGeneratorPage() {
                   <button
                     key={t}
                     onClick={() => { setTone(t); setGenerated(null); }}
-                    className={`px-5 py-3 text-base font-bold transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
+                    className={`px-5 py-3 text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                       tone === t
                         ? "bg-black text-white"
                         : "border border-gray-200 text-gray-600 hover:border-black"
@@ -262,7 +262,7 @@ export default function AdCopyGeneratorPage() {
           <Animate animation="fade-up" delay={120}>
             <button
               onClick={generate}
-              className="bg-black text-white px-8 py-4 text-base font-bold hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              className="bg-black text-white px-8 py-4 text-base font-bold hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Generate Ad Copy
             </button>
@@ -363,7 +363,7 @@ export default function AdCopyGeneratorPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our copywriting team creates high-converting ad copy for Google, Meta, LinkedIn, and more — tested and optimized for your audience.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Professional Ad Copy &rarr;
             </Link>
           </Animate>
