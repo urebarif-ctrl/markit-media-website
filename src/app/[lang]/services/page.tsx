@@ -127,6 +127,14 @@ const serviceCategories = [
   },
 ];
 
+const servicesFaqItems = [
+  { q: "How do I know which services I need?", a: "Start with a free consultation. We will analyze your business goals, current marketing efforts, and competitive landscape to recommend the channels and services that will have the highest impact. You can also take our Service Finder Quiz for instant recommendations." },
+  { q: "Can I start with one service and add more later?", a: "Absolutely. Many clients start with one or two channels, see results, and expand from there. Our full-stack capability means you do not need to find another agency when you are ready to scale." },
+  { q: "Do you offer packages or custom plans?", a: "We build custom plans based on your goals, budget, and competitive landscape. No two businesses are the same, so cookie-cutter packages rarely deliver optimal results. See our Pricing page for how we structure engagements." },
+  { q: "How long does it take to see results?", a: "It depends on the channel. Paid advertising can generate results within the first week. SEO typically takes 3-6 months for meaningful organic growth. We set realistic expectations during strategy and provide interim metrics along the way." },
+  { q: "Do you work with businesses outside the USA?", a: "Yes. We serve clients across the United States, Canada, United Arab Emirates, United Kingdom, Australia, and Saudi Arabia. Our team works across time zones to provide responsive support." },
+];
+
 export default function ServicesPage() {
   const servicesSchema = {
     "@context": "https://schema.org",
@@ -144,9 +152,20 @@ export default function ServicesPage() {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: servicesFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={servicesSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12">
@@ -397,6 +416,29 @@ export default function ServicesPage() {
               ))}
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Services FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Common Questions About Our Services</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {servicesFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 
