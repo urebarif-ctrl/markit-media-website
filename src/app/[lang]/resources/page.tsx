@@ -444,6 +444,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Social Media Calendar",
+    desc: "Generate a 4-week social media content calendar with post ideas, content types, hashtags, and best posting times tailored to your industry and platforms.",
+    href: "/resources/social-calendar",
+    count: "4-week planner",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
