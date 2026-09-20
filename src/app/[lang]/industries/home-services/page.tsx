@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/home-services",
   },
+  openGraph: {
+    title: "Digital Marketing for Home Services",
+    description: "Marketing strategies for home service businesses including plumbing, HVAC, roofing, electrical, landscaping, and cleaning. SEO, PPC, local search, and r...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/ai/chatbots",
   },
+  openGraph: {
+    title: "AI Chatbot Development",
+    description: "Custom AI chatbot development for customer support, lead qualification, and engagement across your website, WhatsApp, and other messaging channels. Mark...",
+  },
 };
 
 export default function ChatbotsPage() {

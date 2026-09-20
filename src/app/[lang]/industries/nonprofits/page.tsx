@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/nonprofits",
   },
+  openGraph: {
+    title: "Digital Marketing for Nonprofits & NGOs",
+    description: "Marketing strategies for nonprofits and NGOs including SEO, social media, email marketing, website development, content marketing, and Google Ad Grants ...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

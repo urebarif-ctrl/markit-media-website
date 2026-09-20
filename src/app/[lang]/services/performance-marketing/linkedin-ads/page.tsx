@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/performance-marketing/linkedin-ads",
   },
+  openGraph: {
+    title: "LinkedIn Ads",
+    description: "LinkedIn advertising for B2B companies. Sponsored Content, InMail, lead gen forms, account-based marketing, and precise professional targeting to reach ...",
+  },
 };
 
 export default function LinkedInAdsPage() {

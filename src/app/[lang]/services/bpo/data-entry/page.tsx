@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/bpo/data-entry",
   },
+  openGraph: {
+    title: "Data Entry Services",
+    description: "Accurate, high-volume data entry, data cleaning, and database management services. Markit Media handles your data processing so your team can focus on d...",
+  },
 };
 
 export default function DataEntryPage() {

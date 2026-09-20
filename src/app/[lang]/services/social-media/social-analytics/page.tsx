@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/social-media/social-analytics",
   },
+  openGraph: {
+    title: "Social Media Analytics Services",
+    description: "Comprehensive social media analytics including performance tracking, custom reporting, audience insights, and competitor benchmarking. Markit Media turn...",
+  },
 };
 
 export default function SocialAnalyticsPage() {

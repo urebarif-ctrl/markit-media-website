@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/social-media/influencer-marketing",
   },
+  openGraph: {
+    title: "Influencer Marketing Services",
+    description: "End-to-end influencer marketing including identification, outreach, campaign management, and performance tracking. Markit Media connects your brand with...",
+  },
 };
 
 export default function InfluencerMarketingPage() {

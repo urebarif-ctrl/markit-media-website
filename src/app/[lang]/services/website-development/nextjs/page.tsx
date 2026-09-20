@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/website-development/nextjs",
   },
+  openGraph: {
+    title: "Next.js Development",
+    description: "High-performance Next.js development with server-side rendering, static site generation, API routes, and React-based architecture. Fast, scalable, SEO-o...",
+  },
 };
 
 export default function NextJsPage() {

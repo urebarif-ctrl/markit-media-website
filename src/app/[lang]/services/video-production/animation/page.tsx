@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/video-production/animation",
   },
+  openGraph: {
+    title: "Animation",
+    description: "Professional 2D animation services including explainer videos, animated infographics, character animation, and whiteboard animations that simplify compl...",
+  },
 };
 
 export default function AnimationPage() {

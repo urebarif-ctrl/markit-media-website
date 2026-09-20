@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/website-development/shopify",
   },
+  openGraph: {
+    title: "Shopify Development",
+    description: "Custom Shopify development including storefront design, theme customization, app integrations, and Shopify Plus solutions. Build a store that converts.",
+  },
 };
 
 export default function ShopifyPage() {

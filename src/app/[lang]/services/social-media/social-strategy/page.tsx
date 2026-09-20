@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/social-media/social-strategy",
   },
+  openGraph: {
+    title: "Social Media Strategy Services",
+    description: "Data-driven social media strategy covering platform analysis, audience research, content calendars, and KPI frameworks. Markit Media builds strategies t...",
+  },
 };
 
 export default function SocialStrategyPage() {

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/list-management",
   },
+  openGraph: {
+    title: "Email List Management Services",
+    description: "Email list management services including segmentation, list hygiene, subscriber growth strategies, and lifecycle management. Markit Media keeps your lis...",
+  },
 };
 
 export default function ListManagementPage() {

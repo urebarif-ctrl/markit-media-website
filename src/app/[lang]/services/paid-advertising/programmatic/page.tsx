@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/paid-advertising/programmatic",
   },
+  openGraph: {
+    title: "Programmatic Advertising Services",
+    description: "Automated media buying across display, video, and connected TV. Markit Media manages programmatic campaigns with real-time bidding, audience targeting, ...",
+  },
 };
 
 export default function ProgrammaticPage() {

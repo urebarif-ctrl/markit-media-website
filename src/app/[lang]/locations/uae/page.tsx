@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/locations/uae",
   },
+  openGraph: {
+    title: "Digital Marketing in UAE",
+    description: "Full-stack digital marketing services for businesses in the United Arab Emirates. SEO, PPC, social media, web development, branding, and more.",
+  },
 };
 
 const services = [

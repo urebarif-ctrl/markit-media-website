@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/crm-consulting",
   },
+  openGraph: {
+    title: "CRM Consulting Services",
+    description: "CRM selection, implementation, and workflow automation. Markit Media helps businesses choose the right platform, configure it properly, and automate pro...",
+  },
 };
 
 export default function CrmConsultingPage() {

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/paid-advertising/native-advertising",
   },
+  openGraph: {
+    title: "Native Advertising Services",
+    description: "Sponsored content and in-feed ad campaigns that match the look and feel of the platforms they appear on. Markit Media creates native ads that engage aud...",
+  },
 };
 
 export default function NativeAdvertisingPage() {

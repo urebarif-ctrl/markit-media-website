@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/paid-advertising/media-buying",
   },
+  openGraph: {
+    title: "Media Buying Services",
+    description: "Strategic media planning, negotiation, and placement across digital and traditional channels. Markit Media secures the best rates and placements to maxi...",
+  },
 };
 
 export default function MediaBuyingPage() {

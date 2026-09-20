@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/paid-advertising/display-ads",
   },
+  openGraph: {
+    title: "Display Advertising Services",
+    description: "Banner ads, rich media, and publisher network campaigns that build brand awareness and drive conversions. Markit Media designs and manages display campa...",
+  },
 };
 
 export default function DisplayAdsPage() {

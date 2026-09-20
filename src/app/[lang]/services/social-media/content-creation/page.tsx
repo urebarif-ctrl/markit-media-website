@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/social-media/content-creation",
   },
+  openGraph: {
+    title: "Social Media Content Creation Services",
+    description: "Professional social media content creation including graphics, video, copywriting, and platform-specific formats. Markit Media produces scroll-stopping ...",
+  },
 };
 
 export default function ContentCreationPage() {

@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/restaurants",
   },
+  openGraph: {
+    title: "Digital Marketing for Restaurants & Food Businesses",
+    description: "Marketing strategies for restaurants, cafes, food trucks, catering companies, and ghost kitchens. Local SEO, PPC, social media, food photography, and re...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

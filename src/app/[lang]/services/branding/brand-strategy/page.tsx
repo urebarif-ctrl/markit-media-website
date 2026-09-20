@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/branding/brand-strategy",
   },
+  openGraph: {
+    title: "Brand Strategy Services",
+    description: "Build a brand that stands apart. Markit Media develops brand positioning, messaging frameworks, architecture, and competitive differentiation strategies...",
+  },
 };
 
 export default function BrandStrategyPage() {

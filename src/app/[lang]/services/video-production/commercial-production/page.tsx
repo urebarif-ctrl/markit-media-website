@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/video-production/commercial-production",
   },
+  openGraph: {
+    title: "Commercial Production",
+    description: "End-to-end commercial video production for brands — from concept development and scripting through filming, post-production, and final delivery across a...",
+  },
 };
 
 export default function CommercialProductionPage() {

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/ecommerce-marketing/shopify-marketing",
   },
+  openGraph: {
+    title: "Shopify Marketing Services",
+    description: "Grow your Shopify store with targeted traffic acquisition, conversion rate optimization, and retention strategies. Markit Media helps Shopify brands sca...",
+  },
 };
 
 export default function ShopifyMarketingPage() {

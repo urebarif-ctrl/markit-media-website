@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/travel",
   },
+  openGraph: {
+    title: "Digital Marketing for Travel & Tourism",
+    description: "Marketing strategies for travel agencies, tour operators, destinations, and tourism brands. Social media marketing, SEO, PPC, video production, content ...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

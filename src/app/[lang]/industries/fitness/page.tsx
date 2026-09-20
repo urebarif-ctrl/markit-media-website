@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/fitness",
   },
+  openGraph: {
+    title: "Digital Marketing for Fitness & Wellness",
+    description: "Marketing strategies for gyms, studios, personal trainers, wellness centers, and fitness brands. SEO, PPC, social media, website development, email mark...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

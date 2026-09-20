@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/seo/link-building",
   },
+  openGraph: {
+    title: "Link Building Services",
+    description: "Build high-quality backlinks through digital PR, guest posting, outreach, and broken link building. Markit Media earns authoritative links that improve ...",
+  },
 };
 
 export default function LinkBuildingPage() {

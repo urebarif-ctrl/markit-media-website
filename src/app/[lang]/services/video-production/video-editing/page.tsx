@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/video-production/video-editing",
   },
+  openGraph: {
+    title: "Video Editing",
+    description: "Professional video editing services including color grading, sound design, and post-production. We transform raw footage into polished, engaging content...",
+  },
 };
 
 export default function VideoEditingPage() {

@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/manufacturing",
   },
+  openGraph: {
+    title: "Digital Marketing for Manufacturing & Industrial",
+    description: "Marketing strategies for manufacturers, industrial companies, and B2B suppliers. SEO, content marketing, LinkedIn advertising, website development, vide...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

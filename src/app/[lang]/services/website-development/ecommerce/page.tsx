@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/website-development/ecommerce",
   },
+  openGraph: {
+    title: "E-commerce Solutions",
+    description: "End-to-end e-commerce development including online store setup, payment integration, inventory management, and order processing. Sell online with a stor...",
+  },
 };
 
 export default function EcommercePage() {

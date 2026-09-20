@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/locations/uk",
   },
+  openGraph: {
+    title: "Digital Marketing in UK",
+    description: "Full-stack digital marketing services for businesses in the United Kingdom. SEO, PPC, social media, web development, branding, and more.",
+  },
 };
 
 const services = [

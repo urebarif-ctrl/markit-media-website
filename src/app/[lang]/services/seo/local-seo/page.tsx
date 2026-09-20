@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/seo/local-seo",
   },
+  openGraph: {
+    title: "Local SEO Services",
+    description: "Dominate the local map pack with Google Business Profile optimization, local citations, review management, and NAP consistency. Markit Media helps busin...",
+  },
 };
 
 export default function LocalSeoPage() {

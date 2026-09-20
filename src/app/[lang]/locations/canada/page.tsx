@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/locations/canada",
   },
+  openGraph: {
+    title: "Digital Marketing in Canada",
+    description: "Full-stack digital marketing services for Canadian businesses. SEO, PPC, social media, web development, branding, and more.",
+  },
 };
 
 const services = [

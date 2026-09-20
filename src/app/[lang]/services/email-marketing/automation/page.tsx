@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/automation",
   },
+  openGraph: {
+    title: "Email Automation Services",
+    description: "Email automation services including welcome sequences, drip campaigns, abandoned cart recovery, and lifecycle email flows. Markit Media builds automated...",
+  },
 };
 
 export default function EmailAutomationPage() {

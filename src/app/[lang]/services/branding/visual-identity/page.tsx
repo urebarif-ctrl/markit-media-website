@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/branding/visual-identity",
   },
+  openGraph: {
+    title: "Visual Identity Design Services",
+    description: "Comprehensive visual identity systems including color palettes, typography, iconography, and design elements. Markit Media creates cohesive brand visual...",
+  },
 };
 
 export default function VisualIdentityPage() {

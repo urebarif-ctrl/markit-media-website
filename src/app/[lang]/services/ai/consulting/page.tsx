@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/ai/consulting",
   },
+  openGraph: {
+    title: "AI Consulting Services",
+    description: "AI consulting services including strategy development, readiness assessment, tool selection, and implementation roadmaps. Markit Media helps businesses ...",
+  },
 };
 
 export default function AiConsultingPage() {

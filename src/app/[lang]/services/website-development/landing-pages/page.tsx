@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/website-development/landing-pages",
   },
+  openGraph: {
+    title: "Landing Page Design",
+    description: "High-converting landing page design for campaigns, product launches, and lead generation. Conversion-focused layouts with A/B testing and performance tr...",
+  },
 };
 
 export default function LandingPagesPage() {

@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/construction",
   },
+  openGraph: {
+    title: "Digital Marketing for Construction & Home Building",
+    description: "Marketing strategies for contractors, home builders, remodelers, and construction companies. Local SEO, PPC, website development, reputation management,...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

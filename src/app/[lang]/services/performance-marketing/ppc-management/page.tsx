@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/performance-marketing/ppc-management",
   },
+  openGraph: {
+    title: "PPC Management",
+    description: "Cross-platform PPC management covering Google, Meta, LinkedIn, TikTok, and Microsoft Ads. Bid optimization, A/B testing, budget allocation, and transpar...",
+  },
 };
 
 export default function PpcManagementPage() {

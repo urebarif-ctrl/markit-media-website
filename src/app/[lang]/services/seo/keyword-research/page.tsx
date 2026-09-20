@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/seo/keyword-research",
   },
+  openGraph: {
+    title: "Keyword Research Services",
+    description: "Data-driven keyword research including search intent analysis, long-tail keyword discovery, competitor keyword gaps, and strategic keyword mapping. Mark...",
+  },
 };
 
 export default function KeywordResearchPage() {

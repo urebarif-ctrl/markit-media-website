@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/bpo/virtual-assistants",
   },
+  openGraph: {
+    title: "Virtual Assistant Services",
+    description: "Professional virtual assistants for scheduling, email management, research, and administrative tasks. Markit Media provides trained VAs that integrate s...",
+  },
 };
 
 export default function VirtualAssistantsPage() {

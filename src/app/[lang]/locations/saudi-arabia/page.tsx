@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/locations/saudi-arabia",
   },
+  openGraph: {
+    title: "Digital Marketing in Saudi Arabia",
+    description: "Full-stack digital marketing services for businesses in Saudi Arabia. SEO, PPC, social media, web development, branding, and more.",
+  },
 };
 
 const services = [

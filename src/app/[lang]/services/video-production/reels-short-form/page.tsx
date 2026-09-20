@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/video-production/reels-short-form",
   },
+  openGraph: {
+    title: "Reels & Short-Form Video",
+    description: "Short-form vertical video production for Instagram Reels, TikTok, and YouTube Shorts. Scroll-stopping content designed for engagement, reach, and brand ...",
+  },
 };
 
 export default function ReelsShortFormPage() {

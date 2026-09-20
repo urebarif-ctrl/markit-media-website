@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "AI Solutions",
   description: "AI-powered marketing solutions: chatbots, marketing automation, AI consulting, and predictive analytics. Leverage artificial intelligence to scale your marketing.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/ai" },
+  openGraph: {
+    title: "AI Solutions",
+    description: "AI-powered marketing solutions: chatbots, marketing automation, AI consulting, and predictive analytics. Leverage artificial intelligence to scale your ...",
+  },
 };
 
 export default function AiPage() {

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Social Media Marketing",
   description: "Strategic social media marketing: content creation, community management, influencer partnerships, and analytics. Build your brand across every social platform.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/social-media" },
+  openGraph: {
+    title: "Social Media Marketing",
+    description: "Strategic social media marketing: content creation, community management, influencer partnerships, and analytics. Build your brand across every social p...",
+  },
 };
 
 export default function SocialMediaPage() {

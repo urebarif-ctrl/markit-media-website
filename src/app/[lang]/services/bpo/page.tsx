@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "BPO Services",
   description: "Business process outsourcing: virtual assistants, data entry, customer support, and operations management. Scale your team with reliable offshore support.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/bpo" },
+  openGraph: {
+    title: "BPO Services",
+    description: "Business process outsourcing: virtual assistants, data entry, customer support, and operations management. Scale your team with reliable offshore support.",
+  },
 };
 
 export default function BpoPage() {

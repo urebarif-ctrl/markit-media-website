@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/branding/logo-design",
   },
+  openGraph: {
+    title: "Logo Design Services",
+    description: "Professional logo design with multiple concepts, versatile variations, and production-ready file formats. Markit Media creates logos that work across di...",
+  },
 };
 
 export default function LogoDesignPage() {

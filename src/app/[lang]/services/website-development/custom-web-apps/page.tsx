@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/website-development/custom-web-apps",
   },
+  openGraph: {
+    title: "Custom Web Applications",
+    description: "Full-stack custom web application development including dashboards, internal tools, SaaS platforms, and third-party integrations. Built to solve your sp...",
+  },
 };
 
 export default function CustomWebAppsPage() {

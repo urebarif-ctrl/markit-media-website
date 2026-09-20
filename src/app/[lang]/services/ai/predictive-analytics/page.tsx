@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/ai/predictive-analytics",
   },
+  openGraph: {
+    title: "Predictive Analytics Services",
+    description: "Predictive analytics services including demand forecasting, customer behavior modeling, churn prediction, and data-driven decision support. Markit Media...",
+  },
 };
 
 export default function PredictiveAnalyticsPage() {

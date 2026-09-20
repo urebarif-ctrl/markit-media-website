@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/performance-marketing/meta-ads",
   },
+  openGraph: {
+    title: "Meta Ads (Facebook & Instagram)",
+    description: "Meta Ads management for Facebook and Instagram. Precision audience targeting, creative testing, catalog ads, lead generation forms, and retargeting to g...",
+  },
 };
 
 export default function MetaAdsPage() {

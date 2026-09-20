@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Content Marketing",
   description: "Content marketing services: content strategy, copywriting, blog writing, whitepapers, and SEO content. Attract, engage, and convert your audience with quality content.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/content-marketing" },
+  openGraph: {
+    title: "Content Marketing",
+    description: "Content marketing services: content strategy, copywriting, blog writing, whitepapers, and SEO content. Attract, engage, and convert your audience with q...",
+  },
 };
 
 export default function ContentMarketingPage() {

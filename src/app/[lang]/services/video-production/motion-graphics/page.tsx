@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/video-production/motion-graphics",
   },
+  openGraph: {
+    title: "Motion Graphics",
+    description: "Custom motion graphics including animated titles, lower thirds, logo animations, visual effects, and kinetic typography to elevate your video content an...",
+  },
 };
 
 export default function MotionGraphicsPage() {

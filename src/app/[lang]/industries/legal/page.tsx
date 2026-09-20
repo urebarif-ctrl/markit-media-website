@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/legal",
   },
+  openGraph: {
+    title: "Digital Marketing for Law Firms",
+    description: "Marketing strategies for law firms and legal services including SEO, PPC, website development, local SEO, content marketing, and reputation management.",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

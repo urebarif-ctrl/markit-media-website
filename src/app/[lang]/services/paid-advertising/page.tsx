@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Paid Advertising",
   description: "Paid advertising services: programmatic advertising, display ads, native advertising, and media buying. Reach your audience at scale with targeted ad placements.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/paid-advertising" },
+  openGraph: {
+    title: "Paid Advertising",
+    description: "Paid advertising services: programmatic advertising, display ads, native advertising, and media buying. Reach your audience at scale with targeted ad pl...",
+  },
 };
 
 export default function PaidAdvertisingPage() {

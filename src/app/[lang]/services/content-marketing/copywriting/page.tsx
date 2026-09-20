@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/copywriting",
   },
+  openGraph: {
+    title: "Copywriting Services",
+    description: "Professional copywriting for websites, landing pages, ad campaigns, and brand messaging. Markit Media writes conversion-focused copy that speaks your au...",
+  },
 };
 
 export default function CopywritingPage() {

@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     "Strategic digital marketing services for B2B companies including SaaS, professional services, manufacturing, and consulting. Drive qualified leads and shorten sales cycles with targeted campaigns.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries/b2b" },
+  openGraph: {
+    title: "Digital Marketing for B2B Companies",
+    description: "Strategic digital marketing services for B2B companies including SaaS, professional services, manufacturing, and consulting. Drive qualified leads and s...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/whitepapers",
   },
+  openGraph: {
+    title: "Whitepapers & Reports",
+    description: "Professional whitepapers, research reports, and lead magnets that demonstrate expertise and generate qualified leads. Markit Media handles research, wri...",
+  },
 };
 
 export default function WhitepapersPage() {

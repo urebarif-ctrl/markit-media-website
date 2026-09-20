@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/ecommerce-marketing/product-feed-optimization",
   },
+  openGraph: {
+    title: "Product Feed Optimization Services",
+    description: "Optimize your product feeds for Google Shopping, Meta Catalog, and marketplace channels. Markit Media ensures your product data is accurate, complete, a...",
+  },
 };
 
 export default function ProductFeedOptimizationPage() {

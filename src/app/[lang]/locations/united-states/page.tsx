@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/locations/united-states",
   },
+  openGraph: {
+    title: "Digital Marketing in United States",
+    description: "Full-stack digital marketing services for businesses across the United States. SEO, PPC, social media, web development, branding, and more.",
+  },
 };
 
 const services = [

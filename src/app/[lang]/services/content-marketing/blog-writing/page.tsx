@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/blog-writing",
   },
+  openGraph: {
+    title: "Blog Writing Services",
+    description: "SEO-optimized blog writing and thought leadership content. Markit Media produces well-researched articles that rank in search, build authority, and supp...",
+  },
 };
 
 export default function BlogWritingPage() {

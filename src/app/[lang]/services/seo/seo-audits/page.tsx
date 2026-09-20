@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/seo/seo-audits",
   },
+  openGraph: {
+    title: "SEO Audit Services",
+    description: "Comprehensive SEO audits covering technical health, content gaps, competitor benchmarking, and on-page optimization. Markit Media delivers actionable au...",
+  },
 };
 
 export default function SeoAuditsPage() {

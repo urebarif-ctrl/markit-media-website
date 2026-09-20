@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/automotive",
   },
+  openGraph: {
+    title: "Digital Marketing for Automotive Businesses",
+    description: "Marketing strategies for automotive businesses including dealerships, auto repair shops, and car rental companies. SEO, PPC, social media, website devel...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Digital Marketing",
   description: "Digital marketing consulting: analytics setup, CRM consulting, online reputation management, fractional CMO, and marketing strategy. Build a data-driven marketing operation.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/digital-marketing" },
+  openGraph: {
+    title: "Digital Marketing",
+    description: "Digital marketing consulting: analytics setup, CRM consulting, online reputation management, fractional CMO, and marketing strategy. Build a data-driven...",
+  },
 };
 
 export default function DigitalMarketingPage() {

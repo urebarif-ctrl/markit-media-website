@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Performance Marketing",
   description: "Results-driven performance marketing: Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, and PPC management. Maximize ROI with data-backed campaigns.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/performance-marketing" },
+  openGraph: {
+    title: "Performance Marketing",
+    description: "Results-driven performance marketing: Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, and PPC management. Maximize ROI with data-backed campaigns.",
+  },
 };
 
 export default function PerformanceMarketingPage() {

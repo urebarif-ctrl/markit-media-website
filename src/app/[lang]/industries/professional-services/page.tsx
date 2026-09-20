@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/professional-services",
   },
+  openGraph: {
+    title: "Digital Marketing for Professional Services",
+    description: "Marketing strategies for law firms, accounting practices, consulting firms, and professional service providers. SEO, content marketing, LinkedIn marketi...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

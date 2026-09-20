@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/content-strategy",
   },
+  openGraph: {
+    title: "Content Strategy Services",
+    description: "Build a content strategy that aligns with business goals. Markit Media provides editorial planning, content audits, governance frameworks, and roadmaps ...",
+  },
 };
 
 export default function ContentStrategyPage() {

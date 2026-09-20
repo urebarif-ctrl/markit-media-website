@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/fashion",
   },
+  openGraph: {
+    title: "Digital Marketing for Fashion & Apparel Brands",
+    description: "Marketing strategies for clothing brands, accessories, footwear, and fashion retailers. E-commerce SEO, paid social, influencer marketing, email campaig...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

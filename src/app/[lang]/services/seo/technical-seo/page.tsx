@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/seo/technical-seo",
   },
+  openGraph: {
+    title: "Technical SEO Services",
+    description: "Improve site speed, Core Web Vitals, crawlability, and indexation. Markit Media delivers technical SEO that builds a search-engine-friendly foundation f...",
+  },
 };
 
 export default function TechnicalSeoPage() {

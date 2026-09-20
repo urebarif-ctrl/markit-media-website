@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/orm",
   },
+  openGraph: {
+    title: "Online Reputation Management",
+    description: "Monitor, manage, and improve your online reputation. Markit Media provides review management, sentiment monitoring, and strategic response services to p...",
+  },
 };
 
 export default function OrmPage() {

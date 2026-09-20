@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Email Marketing",
   description: "Email marketing services: campaign design, email automation, list management, A/B testing, and deliverability optimization. Turn your email list into a revenue channel.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/email-marketing" },
+  openGraph: {
+    title: "Email Marketing",
+    description: "Email marketing services: campaign design, email automation, list management, A/B testing, and deliverability optimization. Turn your email list into a ...",
+  },
 };
 
 export default function EmailMarketingPage() {

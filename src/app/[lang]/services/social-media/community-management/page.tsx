@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/social-media/community-management",
   },
+  openGraph: {
+    title: "Community Management Services",
+    description: "Professional community management including audience engagement, comment moderation, response management, and brand voice consistency. Markit Media keep...",
+  },
 };
 
 export default function CommunityManagementPage() {

@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/bpo/operations",
   },
+  openGraph: {
+    title: "Operations Support Services",
+    description: "Streamline your back-office with process management, order fulfillment support, and operational task execution. Markit Media keeps your business running...",
+  },
 };
 
 export default function OperationsPage() {

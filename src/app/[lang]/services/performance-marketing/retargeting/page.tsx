@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/performance-marketing/retargeting",
   },
+  openGraph: {
+    title: "Retargeting & Remarketing",
+    description: "Cross-channel retargeting and remarketing campaigns. Dynamic ads, audience segmentation, frequency capping, and sequential messaging to convert warm pro...",
+  },
 };
 
 export default function RetargetingPage() {

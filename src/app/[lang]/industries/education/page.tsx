@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/education",
   },
+  openGraph: {
+    title: "Digital Marketing for Education",
+    description: "Marketing strategies for educational institutions including schools, universities, online courses, and EdTech companies. SEO, PPC, social media, and enr...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

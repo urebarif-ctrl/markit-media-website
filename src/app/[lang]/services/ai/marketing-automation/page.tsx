@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/ai/marketing-automation",
   },
+  openGraph: {
+    title: "Marketing Automation Services",
+    description: "Marketing automation services including workflow design, trigger-based campaigns, lead nurturing sequences, and CRM integration. Markit Media builds sys...",
+  },
 };
 
 export default function MarketingAutomationPage() {

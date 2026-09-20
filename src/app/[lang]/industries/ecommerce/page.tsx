@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/ecommerce",
   },
+  openGraph: {
+    title: "Digital Marketing for E-Commerce",
+    description: "E-commerce marketing services including SEO, PPC, shopping ads, email marketing, social media, conversion rate optimization, and content marketing.",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

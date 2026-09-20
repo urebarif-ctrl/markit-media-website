@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/performance-marketing/tiktok-ads",
   },
+  openGraph: {
+    title: "TikTok Ads",
+    description: "TikTok advertising management including Spark Ads, TopView, in-feed video ads, advanced targeting, and creator partnerships. Reach engaged audiences thr...",
+  },
 };
 
 export default function TikTokAdsPage() {

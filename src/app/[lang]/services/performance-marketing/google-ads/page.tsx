@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/performance-marketing/google-ads",
   },
+  openGraph: {
+    title: "Google Ads Management",
+    description: "Expert Google Ads management covering Search, Display, Shopping, YouTube, and remarketing campaigns. Data-driven bid strategies and conversion tracking ...",
+  },
 };
 
 export default function GoogleAdsPage() {

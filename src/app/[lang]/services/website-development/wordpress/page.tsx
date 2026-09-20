@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     canonical:
       "https://themarkitmedia.com/en/services/website-development/wordpress",
   },
+  openGraph: {
+    title: "WordPress Development",
+    description: "Custom WordPress development including theme design, plugin development, headless CMS architecture, and WooCommerce stores. Scalable, secure, and easy t...",
+  },
 };
 
 export default function WordPressPage() {

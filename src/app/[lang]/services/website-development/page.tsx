@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Website Development",
   description: "Custom website development: WordPress, Shopify, Next.js, web apps, landing pages, and e-commerce. Fast, responsive, SEO-optimized websites built for results.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development" },
+  openGraph: {
+    title: "Website Development",
+    description: "Custom website development: WordPress, Shopify, Next.js, web apps, landing pages, and e-commerce. Fast, responsive, SEO-optimized websites built for res...",
+  },
 };
 
 export default function WebsiteDevelopmentPage() {

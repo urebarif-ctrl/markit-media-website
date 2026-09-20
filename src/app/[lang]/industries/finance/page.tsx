@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/finance",
   },
+  openGraph: {
+    title: "Digital Marketing for Financial Services",
+    description: "Marketing strategies for banks, fintech, insurance, accounting, and wealth management firms. SEO, PPC, content marketing, email campaigns, and complianc...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

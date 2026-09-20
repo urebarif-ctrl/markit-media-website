@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/deliverability",
   },
+  openGraph: {
+    title: "Email Deliverability Services",
+    description: "Email deliverability services including inbox placement optimization, authentication setup, sender reputation management, and spam compliance. Markit Me...",
+  },
 };
 
 export default function DeliverabilityPage() {

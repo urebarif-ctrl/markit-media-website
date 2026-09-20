@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     "Digital marketing services for EV charging networks, solar installers, and clean energy providers. Build visibility, educate your market, and drive adoption with targeted campaigns.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries/ev-chargers" },
+  openGraph: {
+    title: "Digital Marketing for EV Chargers & Clean Energy",
+    description: "Digital marketing services for EV charging networks, solar installers, and clean energy providers. Build visibility, educate your market, and drive adop...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

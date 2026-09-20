@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/seo/content-seo",
   },
+  openGraph: {
+    title: "Content SEO Services",
+    description: "Keyword-optimized content creation, on-page optimization, content audits, and topic cluster strategies. Markit Media aligns your content with search int...",
+  },
 };
 
 export default function ContentSeoPage() {

@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/industries/saas",
   },
+  openGraph: {
+    title: "Digital Marketing for SaaS Companies",
+    description: "Marketing strategies for SaaS companies including performance marketing, SEO, content marketing, email nurture campaigns, LinkedIn marketing, and analyt...",
+  },
 };
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [

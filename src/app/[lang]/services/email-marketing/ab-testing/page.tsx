@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/ab-testing",
   },
+  openGraph: {
+    title: "Email A/B Testing Services",
+    description: "Email A/B testing services including subject line testing, content variations, send time optimization, and CTA experiments. Markit Media uses structured...",
+  },
 };
 
 export default function AbTestingPage() {

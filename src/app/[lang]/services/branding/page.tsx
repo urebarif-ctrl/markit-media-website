@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Branding & Design",
   description: "Brand strategy, logo design, visual identity, brand guidelines, and packaging design. Build a cohesive brand that stands out and earns trust.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/branding" },
+  openGraph: {
+    title: "Branding & Design",
+    description: "Brand strategy, logo design, visual identity, brand guidelines, and packaging design. Build a cohesive brand that stands out and earns trust.",
+  },
 };
 
 export default function BrandingPage() {

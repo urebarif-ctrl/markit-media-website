@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/branding/packaging-design",
   },
+  openGraph: {
+    title: "Packaging Design Services",
+    description: "Product packaging and label design that captures attention on shelves and online. Markit Media creates retail-ready packaging with structural design, ma...",
+  },
 };
 
 export default function PackagingDesignPage() {

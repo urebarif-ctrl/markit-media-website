@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/analytics-setup",
   },
+  openGraph: {
+    title: "Analytics Setup Services",
+    description: "GA4, Google Tag Manager, conversion tracking, and custom dashboards. Markit Media sets up accurate analytics infrastructure so you can measure what matt...",
+  },
 };
 
 export default function AnalyticsSetupPage() {

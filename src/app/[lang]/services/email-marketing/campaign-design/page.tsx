@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/campaign-design",
   },
+  openGraph: {
+    title: "Email Campaign Design Services",
+    description: "Professional email campaign design including custom templates, brand-consistent layouts, responsive design, and conversion-focused creative. Markit Medi...",
+  },
 };
 
 export default function CampaignDesignPage() {

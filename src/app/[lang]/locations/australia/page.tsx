@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://themarkitmedia.com/en/locations/australia",
   },
+  openGraph: {
+    title: "Digital Marketing in Australia",
+    description: "Full-stack digital marketing services for Australian businesses. SEO, PPC, social media, web development, branding, and more.",
+  },
 };
 
 const services = [
