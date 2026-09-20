@@ -67,6 +67,14 @@ const integrationAreas = [
   { title: "Creative", count: "5+ tools", desc: "Figma, Adobe CC, Premiere Pro, After Effects, Canva" },
 ];
 
+const partnerFaqItems = [
+  { q: "What types of businesses do you partner with?", a: "We work with agencies, consultancies, SaaS companies, and in-house marketing teams. Some partners bring us in for specific platform expertise they do not have internally. Others use us as an extension of their team for overflow or specialized projects. There is no minimum size requirement — what matters is that the work is a good fit for both sides." },
+  { q: "How do you handle white-label work?", a: "For white-label engagements, all deliverables go out under your brand. We stay behind the scenes — your clients interact with you, not us. We can work within your existing reporting templates, communication tools, and processes. Confidentiality is standard, and we are happy to sign NDAs before any engagement begins." },
+  { q: "What's the typical onboarding process for new partners?", a: "It usually starts with an introductory call to understand your business, your clients, and what you need from us. From there, we scope out a small initial project or trial engagement so both sides can evaluate the fit before committing to anything larger. We find that starting small and building from there leads to stronger long-term partnerships." },
+  { q: "Do you offer referral programs?", a: "Yes, we have referral arrangements for partners who send work our way. The specifics depend on the nature of the referral and the scope of the engagement. If you are interested, reach out and we will walk through how it works and what makes sense for your situation." },
+  { q: "How do you measure partnership success?", a: "We look at the outcomes that matter to you — whether that is campaign performance, client retention, revenue growth, or operational efficiency. We set expectations together at the start and review them regularly. If something is not working, we would rather have that conversation early than let it drift." },
+];
+
 export default function PartnersPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -75,9 +83,20 @@ export default function PartnersPage() {
     description: "Advertising, analytics, and development platform partnerships.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: partnerFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Partners" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12">
@@ -200,28 +219,7 @@ export default function PartnersPage() {
             <SectionTitle>Common Questions About Partnering With Us</SectionTitle>
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="mt-12 space-y-4">
-            {[
-              {
-                q: "What types of businesses do you partner with?",
-                a: "We work with agencies, consultancies, SaaS companies, and in-house marketing teams. Some partners bring us in for specific platform expertise they do not have internally. Others use us as an extension of their team for overflow or specialized projects. There is no minimum size requirement — what matters is that the work is a good fit for both sides.",
-              },
-              {
-                q: "How do you handle white-label work?",
-                a: "For white-label engagements, all deliverables go out under your brand. We stay behind the scenes — your clients interact with you, not us. We can work within your existing reporting templates, communication tools, and processes. Confidentiality is standard, and we are happy to sign NDAs before any engagement begins.",
-              },
-              {
-                q: "What's the typical onboarding process for new partners?",
-                a: "It usually starts with an introductory call to understand your business, your clients, and what you need from us. From there, we scope out a small initial project or trial engagement so both sides can evaluate the fit before committing to anything larger. We find that starting small and building from there leads to stronger long-term partnerships.",
-              },
-              {
-                q: "Do you offer referral programs?",
-                a: "Yes, we have referral arrangements for partners who send work our way. The specifics depend on the nature of the referral and the scope of the engagement. If you are interested, reach out and we will walk through how it works and what makes sense for your situation.",
-              },
-              {
-                q: "How do you measure partnership success?",
-                a: "We look at the outcomes that matter to you — whether that is campaign performance, client retention, revenue growth, or operational efficiency. We set expectations together at the start and review them regularly. If something is not working, we would rather have that conversation early than let it drift.",
-              },
-            ].map((item) => (
+            {partnerFaqItems.map((item) => (
               <details key={item.q} className="group border border-gray-200 bg-white">
                 <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-bold text-black select-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {item.q}

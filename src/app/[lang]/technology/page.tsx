@@ -114,6 +114,14 @@ const categories = [
   },
 ];
 
+const techFaqItems = [
+  { q: "What CMS platforms do you work with?", a: "We work primarily with WordPress and Shopify, and we also build headless CMS setups using platforms like Sanity or WordPress as a back end paired with a modern front-end framework. The right choice depends on how your team manages content, what integrations you need, and how much design flexibility you want." },
+  { q: "Do you build custom solutions or use existing platforms?", a: "Both. For many businesses, a well-configured platform like WordPress or Shopify is the most practical and cost-effective starting point. When requirements go beyond what a platform handles cleanly — complex workflows, unique user experiences, or deep integrations — we build custom applications using frameworks like Next.js. We always recommend the approach that delivers the best outcome for your budget." },
+  { q: "How do you ensure website performance?", a: "Performance is part of our process from day one, not an afterthought. We optimize images, minimize third-party scripts, choose modern hosting infrastructure, and test across devices and real network conditions. After launch, we monitor Core Web Vitals and address any regressions as they appear." },
+  { q: "What analytics and tracking tools do you use?", a: "We typically set up Google Analytics 4 and Google Tag Manager as a baseline. Depending on the project, we layer in tools like Hotjar or Microsoft Clarity for behavior analysis, Looker Studio for custom reporting dashboards, and platform-specific conversion tracking for ad campaigns. Everything is configured to respect user privacy and comply with relevant regulations." },
+  { q: "How do you handle website security?", a: "We follow established security practices: SSL certificates, regular software updates, strong access controls, and secure hosting environments. For WordPress sites, we harden the installation and use reputable security plugins. For custom applications, we follow OWASP guidelines and test thoroughly before launch. Automated backups are standard so recovery is straightforward if anything goes wrong." },
+];
+
 export default function TechnologyPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -122,9 +130,20 @@ export default function TechnologyPage() {
     description: "Platforms, tools, and technologies used by Markit Media.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: techFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Technology" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12">
@@ -230,28 +249,7 @@ export default function TechnologyPage() {
             <SectionTitle>Common Questions About Our Technology</SectionTitle>
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="mt-12 space-y-4">
-            {[
-              {
-                q: "What CMS platforms do you work with?",
-                a: "We work primarily with WordPress and Shopify, and we also build headless CMS setups using platforms like Sanity or WordPress as a back end paired with a modern front-end framework. The right choice depends on how your team manages content, what integrations you need, and how much design flexibility you want.",
-              },
-              {
-                q: "Do you build custom solutions or use existing platforms?",
-                a: "Both. For many businesses, a well-configured platform like WordPress or Shopify is the most practical and cost-effective starting point. When requirements go beyond what a platform handles cleanly — complex workflows, unique user experiences, or deep integrations — we build custom applications using frameworks like Next.js. We always recommend the approach that delivers the best outcome for your budget.",
-              },
-              {
-                q: "How do you ensure website performance?",
-                a: "Performance is part of our process from day one, not an afterthought. We optimize images, minimize third-party scripts, choose modern hosting infrastructure, and test across devices and real network conditions. After launch, we monitor Core Web Vitals and address any regressions as they appear.",
-              },
-              {
-                q: "What analytics and tracking tools do you use?",
-                a: "We typically set up Google Analytics 4 and Google Tag Manager as a baseline. Depending on the project, we layer in tools like Hotjar or Microsoft Clarity for behavior analysis, Looker Studio for custom reporting dashboards, and platform-specific conversion tracking for ad campaigns. Everything is configured to respect user privacy and comply with relevant regulations.",
-              },
-              {
-                q: "How do you handle website security?",
-                a: "We follow established security practices: SSL certificates, regular software updates, strong access controls, and secure hosting environments. For WordPress sites, we harden the installation and use reputable security plugins. For custom applications, we follow OWASP guidelines and test thoroughly before launch. Automated backups are standard so recovery is straightforward if anything goes wrong.",
-              },
-            ].map((item) => (
+            {techFaqItems.map((item) => (
               <details key={item.q} className="group border border-gray-200 bg-white">
                 <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-bold text-black font-[family-name:var(--font-display)] hover:bg-gray-50 transition-colors duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {item.q}

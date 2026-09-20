@@ -89,9 +89,20 @@ export default function OnboardingPage() {
     description: "What to expect in your first 30 days working with Markit Media.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Onboarding" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16">

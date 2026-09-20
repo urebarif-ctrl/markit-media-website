@@ -390,6 +390,24 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Brand Positioning Canvas",
+    desc: "Define your brand positioning across 8 dimensions and generate a positioning statement, messaging framework, and consistency checklist.",
+    href: "/resources/brand-positioning",
+    count: "Interactive tool",
+  },
+  {
+    title: "Marketing Channel Selector",
+    desc: "Take a 7-question quiz to get personalized marketing channel recommendations with budget allocation, timeline, and a quick-start roadmap.",
+    href: "/resources/channel-selector",
+    count: "Interactive quiz",
+  },
+  {
+    title: "Website Conversion Checklist",
+    desc: "Score your website's conversion readiness across 30 items in 5 categories. Get a letter grade, priority improvements, and category recommendations.",
+    href: "/resources/conversion-checklist",
+    count: "Interactive checklist",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

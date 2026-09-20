@@ -488,6 +488,9 @@ export default async function HomePage() {
               { title: "Content Brief Generator", desc: "Generate SEO content briefs with heading structure and outlines.", href: "/resources/content-brief" },
               { title: "Social Proof Builder", desc: "Build a social proof strategy by business type.", href: "/resources/social-proof-guide" },
               { title: "KPI Dashboard Builder", desc: "Define the right KPIs for your marketing dashboard.", href: "/resources/kpi-dashboard" },
+              { title: "Brand Positioning Canvas", desc: "Define positioning and generate a messaging framework.", href: "/resources/brand-positioning" },
+              { title: "Channel Selector Quiz", desc: "Find the best marketing channels for your business.", href: "/resources/channel-selector" },
+              { title: "Conversion Checklist", desc: "Score your website's conversion readiness across 30 items.", href: "/resources/conversion-checklist" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
