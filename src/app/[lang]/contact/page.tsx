@@ -97,7 +97,7 @@ export default function ContactPage() {
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { label: "Markets Served", value: "6 Countries" },
-              { label: "Services", value: "12 Disciplines" },
+              { label: "Services", value: "13 Disciplines" },
               { label: "Industries", value: "20 Verticals" },
               { label: "Response Time", value: "1 Business Day" },
             ].map((item) => (
@@ -138,7 +138,8 @@ export default function ContactPage() {
             <p className="text-base text-gray-500 mb-4">Not ready to reach out yet? Explore these resources:</p>
             <div className="flex flex-wrap gap-3">
               {[
-                { label: "Our Approach", href: "/approach" },
+                { label: "Client Onboarding", href: "/onboarding" },
+                { label: "Pricing", href: "/pricing" },
                 { label: "Our Process", href: "/process" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Service Finder Quiz", href: "/services/finder" },
