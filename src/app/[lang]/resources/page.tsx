@@ -223,6 +223,18 @@ const resources = [
     count: "7 platforms",
   },
   {
+    title: "Readability Checker",
+    desc: "Analyze your content's readability with Flesch Reading Ease scoring. Get grade-level interpretation, word stats, and tips for improving clarity.",
+    href: "/resources/readability-checker",
+    count: "Interactive tool",
+  },
+  {
+    title: "CTA Copy Generator",
+    desc: "Generate call-to-action copy for buttons, headlines, and subheadlines. Choose your business type, goal, and tone for instant CTA variations.",
+    href: "/resources/cta-generator",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
