@@ -450,6 +450,18 @@ const resources = [
     count: "4-week planner",
   },
   {
+    title: "Marketing Funnel Visualizer",
+    desc: "Build and analyze your marketing funnel. Enter stage data to see conversion rates, drop-off points, and optimization recommendations for your weakest stage.",
+    href: "/resources/funnel-visualizer",
+    count: "Interactive tool",
+  },
+  {
+    title: "Website Launch Checklist",
+    desc: "A 44-item pre-launch checklist with countdown timer. Track progress across content, SEO, design, technical, legal, and marketing categories.",
+    href: "/resources/launch-countdown",
+    count: "44-item checklist",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

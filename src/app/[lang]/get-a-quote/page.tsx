@@ -22,6 +22,14 @@ const steps = [
   { num: "3", title: "Receive Your Custom Proposal", desc: "A tailored strategy and quote delivered within 2 business days." },
 ];
 
+const quoteFaqItems = [
+  { q: "Is the consultation really free?", a: "Yes. The initial discovery call and strategy recommendation come at no cost and with no obligation." },
+  { q: "How detailed is the proposal?", a: "Our proposals include recommended channels, estimated timelines, specific deliverables, and transparent pricing. Not a generic template." },
+  { q: "What information do you need from me?", a: "At minimum: your industry, business goals, approximate budget range, and timeline. The more context you share, the better our recommendation." },
+  { q: "Do you require long-term contracts?", a: "We offer flexible engagement models including monthly retainers, project-based work, and performance-based pricing. No lock-in required." },
+  { q: "Can you work with my existing agency or team?", a: "Absolutely. We frequently collaborate with in-house marketing teams and complement existing agency relationships." },
+];
+
 export default function GetAQuotePage() {
   const schema = {
     "@context": "https://schema.org",
@@ -30,9 +38,20 @@ export default function GetAQuotePage() {
     description: "Request a free digital marketing consultation and proposal.",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: quoteFaqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Get a Quote" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16">
@@ -116,20 +135,19 @@ export default function GetAQuotePage() {
             <SectionLabel>Questions</SectionLabel>
             <SectionTitle>About the Quote Process</SectionTitle>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="mt-10 space-y-6">
-            {[
-              { q: "Is the consultation really free?", a: "Yes. The initial discovery call and strategy recommendation come at no cost and with no obligation." },
-              { q: "How detailed is the proposal?", a: "Our proposals include recommended channels, estimated timelines, specific deliverables, and transparent pricing. Not a generic template." },
-              { q: "What information do you need from me?", a: "At minimum: your industry, business goals, approximate budget range, and timeline. The more context you share, the better our recommendation." },
-              { q: "Do you require long-term contracts?", a: "We offer flexible engagement models including monthly retainers, project-based work, and performance-based pricing. No lock-in required." },
-              { q: "Can you work with my existing agency or team?", a: "Absolutely. We frequently collaborate with in-house marketing teams and complement existing agency relationships." },
-            ].map((item) => (
-              <div key={item.q} className="bg-white border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none">
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.q}</h3>
-                <p className="text-base text-gray-500 leading-relaxed">{item.a}</p>
-              </div>
+          <div className="mt-10">
+            {quoteFaqItems.map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
             ))}
-          </Stagger>
+          </div>
           <Animate animation="fade-up">
             <p className="mt-8 text-base text-gray-500">
               More questions? Check our <Link href="/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link> or <Link href="/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>.

@@ -86,6 +86,8 @@ const staticPages = [
   "/resources/tech-stack-advisor",
   "/resources/competitive-swot",
   "/resources/social-calendar",
+  "/resources/funnel-visualizer",
+  "/resources/launch-countdown",
   "/tools",
   "/approach",
   "/pricing",
