@@ -505,6 +505,8 @@ export default async function HomePage() {
               { title: "Email Health Checker", desc: "25-point audit of your email marketing practices.", href: "/resources/email-health-checker" },
               { title: "Competitor Matrix", desc: "Rate and compare against competitors across 10 dimensions.", href: "/resources/competitor-matrix" },
               { title: "A/B Test Ideas", desc: "Generate prioritized test ideas with ICE scoring.", href: "/resources/ab-test-ideas" },
+              { title: "Content Audit", desc: "Score your content across 30 criteria with radar chart.", href: "/resources/content-audit-scorecard" },
+              { title: "Redesign Planner", desc: "Plan your website redesign with phased roadmap.", href: "/resources/redesign-planner" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

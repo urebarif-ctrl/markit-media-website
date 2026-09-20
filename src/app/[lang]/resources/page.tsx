@@ -492,6 +492,18 @@ const resources = [
     count: "350+ test ideas",
   },
   {
+    title: "Content Audit Scorecard",
+    desc: "Evaluate your content across 30 criteria in 6 categories. Get maturity level, radar chart, quick wins, and prioritized recommendations.",
+    href: "/resources/content-audit-scorecard",
+    count: "30-point audit",
+  },
+  {
+    title: "Website Redesign Planner",
+    desc: "Plan your website redesign with structured assessment, goal setting, scope definition, and a phased improvement roadmap.",
+    href: "/resources/redesign-planner",
+    count: "Interactive planner",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

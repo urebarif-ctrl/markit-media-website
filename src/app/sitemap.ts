@@ -93,6 +93,8 @@ const staticPages = [
   "/resources/email-health-checker",
   "/resources/competitor-matrix",
   "/resources/ab-test-ideas",
+  "/resources/content-audit-scorecard",
+  "/resources/redesign-planner",
   "/tools",
   "/approach",
   "/pricing",
