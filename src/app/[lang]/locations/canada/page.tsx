@@ -159,7 +159,7 @@ export default function CanadaPage() {
             </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/locations/canada.svg" alt="" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/locations/canada.svg" alt="Canada digital marketing" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

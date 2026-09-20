@@ -181,7 +181,7 @@ export default function EcommercePage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/ecommerce.svg" alt="" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/industries/ecommerce.svg" alt="Ecommerce marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

@@ -191,7 +191,7 @@ export default function ConstructionPage() {
           <Animate animation="fade-in" delay={200}>
             <img
               src="/images/industries/construction.svg"
-              alt=""
+              alt="Construction marketing services"
               className="w-full aspect-[4/3] object-cover"
             />
           </Animate>

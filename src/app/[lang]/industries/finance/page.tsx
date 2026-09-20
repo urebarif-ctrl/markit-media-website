@@ -183,7 +183,7 @@ export default function FinancePage() {
           <Animate animation="fade-in" delay={200}>
             <img
               src="/images/industries/finance.svg"
-              alt=""
+              alt="Finance marketing services"
               className="w-full aspect-[4/3] object-cover"
             />
           </Animate>

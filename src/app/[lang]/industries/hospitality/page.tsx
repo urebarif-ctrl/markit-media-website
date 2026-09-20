@@ -190,7 +190,7 @@ export default function HospitalityPage() {
           <Animate animation="fade-in" delay={200}>
             <img
               src="/images/industries/hospitality.svg"
-              alt=""
+              alt="Hospitality marketing services"
               className="w-full aspect-[4/3] object-cover"
             />
           </Animate>

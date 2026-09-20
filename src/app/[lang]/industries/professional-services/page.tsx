@@ -192,7 +192,7 @@ export default function ProfessionalServicesPage() {
           <Animate animation="fade-in" delay={200}>
             <img
               src="/images/industries/professional-services.svg"
-              alt=""
+              alt="Professional Services marketing services"
               className="w-full aspect-[4/3] object-cover"
             />
           </Animate>

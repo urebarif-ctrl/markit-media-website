@@ -55,7 +55,7 @@ export default async function BlogCategoryPage({
     notFound();
   }
 
-  const posts = getPostsByCategory(matchedCategory, 50);
+  const posts = getPostsByCategory(matchedCategory, 200);
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -128,7 +128,7 @@ export default async function BlogCategoryPage({
                   {post.cover_image ? (
                     <img
                       src={post.cover_image}
-                      alt=""
+                      alt={`Cover for ${post.title}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500"
                       loading="lazy"
                     />

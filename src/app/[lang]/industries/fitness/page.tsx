@@ -192,7 +192,7 @@ export default function FitnessPage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/fitness.svg" alt="" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/industries/fitness.svg" alt="Fitness marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

@@ -151,7 +151,7 @@ export default function B2BIndustryPage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/b2b.svg" alt="" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/industries/b2b.svg" alt="B2b marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

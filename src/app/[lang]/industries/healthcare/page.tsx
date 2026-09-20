@@ -167,7 +167,7 @@ export default function HealthcarePage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/healthcare.svg" alt="" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/industries/healthcare.svg" alt="Healthcare marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

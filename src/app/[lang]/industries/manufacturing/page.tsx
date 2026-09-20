@@ -191,7 +191,7 @@ export default function ManufacturingPage() {
           <Animate animation="fade-in" delay={200}>
             <img
               src="/images/industries/manufacturing.svg"
-              alt=""
+              alt="Manufacturing marketing services"
               className="w-full aspect-[4/3] object-cover"
             />
           </Animate>
