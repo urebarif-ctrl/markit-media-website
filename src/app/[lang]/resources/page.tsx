@@ -408,6 +408,24 @@ const resources = [
     count: "Interactive checklist",
   },
   {
+    title: "Buyer Persona Quiz",
+    desc: "Take an 8-question quiz to build a detailed buyer persona with communication strategy, objection handling guide, and content strategy map.",
+    href: "/resources/buyer-persona-quiz",
+    count: "Interactive quiz",
+  },
+  {
+    title: "Content Gap Analyzer",
+    desc: "Evaluate your content across buyer journey stages. Get a maturity score, funnel visualization, priority gaps, and a 3-month content calendar.",
+    href: "/resources/content-gap-analyzer",
+    count: "Interactive worksheet",
+  },
+  {
+    title: "Ad Spend Efficiency Calculator",
+    desc: "Evaluate your ad spend efficiency with CPA, ROAS, and industry benchmarks. Get optimization suggestions and budget reallocation recommendations.",
+    href: "/resources/ad-spend-calculator",
+    count: "Interactive calculator",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
