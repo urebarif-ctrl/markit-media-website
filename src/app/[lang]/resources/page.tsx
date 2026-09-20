@@ -16,7 +16,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "550+ articles",
+    count: "560+ articles",
   },
   {
     title: "FAQ",

@@ -123,20 +123,20 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   ],
   "Social Media": [
     { label: "Social Media Planner", href: "/resources/social-media-planner" },
+    { label: "Hashtag Generator", href: "/resources/hashtag-generator" },
     { label: "Social Share Preview", href: "/resources/og-preview" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
-    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+    { label: "Content Calendar", href: "/resources/content-calendar" },
   ],
   "Content Marketing": [
     { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+    { label: "Content Calendar", href: "/resources/content-calendar" },
     { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
-    { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
-    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "Readability Checker", href: "/resources/readability-checker" },
   ],
   "Email Marketing": [
     { label: "Email ROI Calculator", href: "/resources/email-roi-calculator" },
     { label: "Email Subject Line Tester", href: "/resources/email-subject-tester" },
-    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "Email Campaign Planner", href: "/resources/email-campaign-planner" },
     { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
   ],
   "Web Design": [
@@ -153,8 +153,8 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   ],
   Branding: [
     { label: "Brand Name Generator", href: "/resources/brand-name-generator" },
+    { label: "Color Palette Generator", href: "/resources/color-palette-generator" },
     { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
-    { label: "Social Share Preview", href: "/resources/og-preview" },
     { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
   ],
   "Video Marketing": [
@@ -195,9 +195,9 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   ],
   Strategy: [
     { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+    { label: "Persona Builder", href: "/resources/persona-builder" },
     { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Budget Calculator", href: "/resources/budget-calculator" },
+    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
   ],
   "Local SEO": [
     { label: "SEO Health Check", href: "/resources/seo-checklist" },
@@ -234,9 +234,9 @@ const DEFAULT_SERVICES = [
 
 const DEFAULT_TOOLS = [
   { label: "ROI Calculator", href: "/resources/roi-calculator" },
-  { label: "Budget Calculator", href: "/resources/budget-calculator" },
   { label: "Website Grader", href: "/resources/website-grader" },
   { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+  { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
 ];
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
