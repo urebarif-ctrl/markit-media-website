@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Why Markit Media — What Makes Us Different",
-  description: "Learn what sets Markit Media apart: senior talent, full-stack execution, transparent reporting, and data-driven marketing across 7 countries.",
+  description: "Learn what sets Markit Media apart: senior talent, full-stack execution, transparent reporting, and data-driven marketing across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/why-markit-media" },
 };
 
@@ -48,7 +48,22 @@ const values = [
   { title: "Outcomes Over Activity", desc: "We measure success by business impact, not busywork. Every campaign is tied to KPIs that matter to your bottom line." },
   { title: "Radical Transparency", desc: "You see everything we see. No black boxes, no inflated metrics. Honest reporting and honest assessments." },
   { title: "Speed Without Sacrifice", desc: "We move fast but don't cut corners. Agile processes mean faster execution without compromising quality." },
-  { title: "Global Perspective", desc: "We've run campaigns across 7 countries. We understand how markets differ and tailor strategies accordingly." },
+  { title: "Global Perspective", desc: "We run campaigns across 6 countries. We understand how markets differ and tailor strategies accordingly." },
+];
+
+const whoWeAreNotItems = [
+  { title: "We Are Not a Content Mill", desc: "We do not churn out low-quality blog posts for SEO volume. Every piece of content has a strategic purpose and meets editorial standards." },
+  { title: "We Are Not a Reseller", desc: "Everything is executed in-house by our team. We do not white-label third-party work or outsource deliverables without your knowledge." },
+  { title: "We Are Not a Vendor", desc: "We do not just take orders and execute. We challenge assumptions, recommend against things that will not work, and proactively identify opportunities." },
+  { title: "We Are Not a One-Size-Fits-All Shop", desc: "We do not sell prepackaged tiers. Your strategy is built from your goals, market, and competitive reality." },
+];
+
+const processSteps = [
+  { num: "01", title: "Discovery", desc: "We learn your business, audit your current marketing, and analyze your competitive landscape." },
+  { num: "02", title: "Strategy", desc: "We develop a data-driven plan with clear KPIs, channel selection, and budget allocation." },
+  { num: "03", title: "Execution", desc: "Our team builds and launches campaigns with creative production and technical implementation." },
+  { num: "04", title: "Optimization", desc: "Continuous A/B testing, budget optimization, and creative refinement based on live data." },
+  { num: "05", title: "Reporting", desc: "Transparent dashboards and regular reports focused on revenue metrics, not vanity numbers." },
 ];
 
 export default function WhyMarkitMediaPage() {
@@ -119,6 +134,76 @@ export default function WhyMarkitMediaPage() {
               </div>
             ))}
           </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Who we are not">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Straight Talk</SectionLabel>
+            <SectionTitle>Who We Are Not</SectionTitle>
+            <SectionDesc>
+              Understanding what we do not do is just as important as understanding what we do. Here are some common agency patterns we intentionally avoid.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="space-y-0 mt-12">
+            {whoWeAreNotItems.map((item, i) => (
+              <div key={item.title} className="flex gap-6 py-8 border-b border-gray-200">
+                <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold">{i + 1}</span>
+                <div>
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20" aria-label="Our process overview">
+        <div className="max-w-5xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>How It Works</SectionLabel>
+            <SectionTitle>From Strategy to Results in 5 Steps</SectionTitle>
+            <SectionDesc>
+              Every engagement follows a structured process designed to deliver measurable outcomes.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-12">
+            {processSteps.map((step) => (
+              <div key={step.num} className="text-center p-6 border border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/10 block mb-2">{step.num}</span>
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{step.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up">
+            <div className="text-center mt-8">
+              <Link href="/process" className="inline-flex items-center gap-2 text-base font-bold text-black underline underline-offset-4 hover:no-underline transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                See the full process in detail &rarr;
+              </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Cross links">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: "Our Services", desc: "Full-stack digital marketing across 13 disciplines.", href: "/services" },
+                { title: "Case Studies", desc: "Real results from real campaigns across multiple industries.", href: "/case-studies" },
+                { title: "Our Approach", desc: "The frameworks and methodologies behind our strategy.", href: "/approach" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="group border border-gray-200 bg-white p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </Animate>
         </div>
       </section>
 

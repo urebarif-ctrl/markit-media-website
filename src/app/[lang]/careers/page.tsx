@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Careers",
-  description: "Join Markit Media. We are looking for talented marketers, designers, developers, and strategists to help businesses grow across 7 countries.",
+  description: "Join Markit Media. We are looking for talented marketers, designers, developers, and strategists to help businesses grow across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/careers" },
 };
 
@@ -110,6 +110,35 @@ export default function CareersPage() {
               <div key={item.title} className="bg-white p-8 border border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="How to apply">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Application Process</SectionLabel>
+            <SectionTitle>How Hiring Works</SectionTitle>
+            <SectionDesc>
+              We keep the process straightforward and respectful of your time.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="space-y-0 mt-12">
+            {[
+              { num: "01", title: "Apply", desc: "Send us your resume and a brief note about what excites you about digital marketing. No cover letter template needed." },
+              { num: "02", title: "Initial Conversation", desc: "A 30-minute call to learn about your background, goals, and what kind of work you enjoy. We will share details about the role and team." },
+              { num: "03", title: "Skills Assessment", desc: "A short practical task related to the role. We value real skills over rehearsed answers. You will have time to do your best work." },
+              { num: "04", title: "Team Fit", desc: "Meet the people you would work with. Ask anything. Culture fit goes both ways." },
+              { num: "05", title: "Offer", desc: "If it is a match, we move fast. Clear terms, fair compensation, and a start date that works for both sides." },
+            ].map((step) => (
+              <div key={step.num} className="flex gap-6 py-8 border-b border-gray-200">
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/10 flex-shrink-0 leading-none w-10">{step.num}</span>
+                <div>
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{step.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
+                </div>
               </div>
             ))}
           </Stagger>

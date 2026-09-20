@@ -160,6 +160,47 @@ export default function ResultsPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="What sets our reporting apart">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Differentiators</SectionLabel>
+            <SectionTitle>What Sets Our Reporting Apart</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {[
+              { title: "Attribution Clarity", desc: "We go beyond last-click attribution. Multi-touch models show you the real impact of each channel so budget decisions are based on complete data." },
+              { title: "Business Language", desc: "Reports are written for business owners, not analysts. Jargon is translated into plain language with clear implications for your bottom line." },
+              { title: "Forward-Looking Recommendations", desc: "Every report ends with specific next steps. We do not just tell you what happened — we tell you what to do about it and why." },
+              { title: "Real-Time Access", desc: "You do not wait for the monthly report to know how things are going. Dashboards are always live and accessible to your team." },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-gray-200 p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16" aria-label="Cross links">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: "Our Process", desc: "See the full 5-step framework from discovery to reporting.", href: "/process" },
+                { title: "Case Studies", desc: "Real campaigns with real results across multiple industries.", href: "/case-studies" },
+                { title: "ROI Calculator", desc: "Estimate the potential return on your marketing investment.", href: "/resources/roi-calculator" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">

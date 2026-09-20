@@ -146,6 +146,54 @@ export default function ProcessPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-20" aria-label="Process FAQ">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Common Questions About Our Process</SectionTitle>
+          </Animate>
+          <div className="mt-10">
+            {[
+              { q: "How long does the discovery phase take?", a: "Typically 1-2 weeks depending on the scope of the engagement. We conduct stakeholder interviews, analyze existing data, audit current marketing efforts, and research your competitive landscape. Thorough discovery prevents wasted budget later." },
+              { q: "Do I need to provide access to my existing accounts?", a: "Yes, we will need access to your analytics, ad accounts, and any other marketing platforms you are currently using. This allows us to establish accurate baselines and avoid duplicating existing work." },
+              { q: "How quickly will I see results?", a: "It depends on the channels. Paid advertising can generate results within days of launch. SEO typically takes 3-6 months to show meaningful organic growth. We set realistic expectations during the strategy phase and provide interim metrics so you can track progress." },
+              { q: "What happens if a strategy is not working?", a: "We identify underperformance quickly through continuous monitoring. If a tactic is not delivering, we analyze the data, diagnose the issue, and adjust the approach. This is why the optimization phase is ongoing, not a one-time event." },
+              { q: "How often will we communicate?", a: "You get weekly performance updates, monthly strategy sessions, and direct access to your team for questions in between. We adapt communication frequency to what works best for your schedule." },
+              { q: "Can I change the scope mid-engagement?", a: "Yes. Marketing priorities shift, and our retainer model is built for flexibility. We work with you to adjust scope, reallocate budgets, and pivot strategy as your business evolves." },
+            ].map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <details className="group border-b border-gray-200">
+                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {item.q}
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                </details>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Cross links">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: "Our Services", desc: "Explore the full range of disciplines we execute across.", href: "/services" },
+                { title: "Pricing", desc: "How we structure engagements — retainer, project, or performance-based.", href: "/pricing" },
+                { title: "Case Studies", desc: "See how our process translates into real business results.", href: "/case-studies" },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} className="group border border-gray-200 bg-white p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
