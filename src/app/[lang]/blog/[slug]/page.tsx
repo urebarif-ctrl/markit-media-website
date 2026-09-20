@@ -152,9 +152,9 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Social Share Preview", href: "/resources/og-preview" },
   ],
   Branding: [
+    { label: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
     { label: "Brand Name Generator", href: "/resources/brand-name-generator" },
     { label: "Color Palette Generator", href: "/resources/color-palette-generator" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
     { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
   ],
   "Video Marketing": [

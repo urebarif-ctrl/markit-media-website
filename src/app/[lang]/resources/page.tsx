@@ -301,6 +301,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Brand Voice Generator",
+    desc: "Define your brand voice with personality traits, tone, and audience. Get a complete voice guide with do's and don'ts, sample copy, and a word bank.",
+    href: "/resources/brand-voice-generator",
+    count: "Interactive tool",
+  },
+  {
     title: "Customer Lifetime Value Calculator",
     desc: "Calculate the lifetime value of your customers. Enter order value, purchase frequency, and margins to find your CLV, CLV:CAC ratio, and payback period.",
     href: "/resources/clv-calculator",
