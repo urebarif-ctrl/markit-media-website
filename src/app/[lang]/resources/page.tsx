@@ -277,6 +277,12 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Content Calendar",
+    desc: "Generate a customized content calendar by industry, frequency, and channels. Weekly grid with topic suggestions and content pillars.",
+    href: "/resources/content-calendar",
+    count: "15 industries",
+  },
+  {
     title: "Color Palette Generator",
     desc: "Generate brand color palettes with complementary, analogous, triadic, and monochromatic schemes. WCAG contrast ratios included.",
     href: "/resources/color-palette-generator",

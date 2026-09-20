@@ -59,6 +59,7 @@ const staticPages = [
   "/resources/hashtag-generator",
   "/resources/persona-builder",
   "/resources/color-palette-generator",
+  "/resources/content-calendar",
   "/tools",
   "/approach",
   "/pricing",
