@@ -229,6 +229,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           </div>
 
           <Link href="/work" className={navLinkClass}>{t.nav.work}</Link>
+          <Link href="/case-studies" className={navLinkClass}>{t.nav.caseStudies}</Link>
           <Link href="/blog" className={navLinkClass}>{t.nav.insights}</Link>
           <Link href="/resources" className={navLinkClass}>Resources</Link>
           <Link href="/about" className={navLinkClass}>{t.nav.about}</Link>
@@ -278,6 +279,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           </div>
           {[
             { label: t.nav.work, href: "/work" },
+            { label: t.nav.caseStudies, href: "/case-studies" },
             { label: t.nav.insights, href: "/blog" },
             { label: "Resources", href: "/resources" },
             { label: t.nav.about, href: "/about" },

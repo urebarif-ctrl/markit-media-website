@@ -92,15 +92,26 @@ export default function MarketingTrends2025Page() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Trends 2025" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section className="px-6 lg:px-12 pt-6 pb-4">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
-            <SectionLabel>Guide</SectionLabel>
+            <Link href="/resources/marketing-trends-2026" className="block bg-black text-white px-6 py-4 hover:bg-gray-900 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <span className="text-base font-bold">Looking for the latest?</span>{" "}
+              <span className="text-base text-gray-300">Read our 2026 Marketing Trends &rarr;</span>
+            </Link>
+          </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 pt-16 pb-12">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Guide &middot; 2025 Edition</SectionLabel>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
               10 Digital Marketing Trends for 2025
             </h1>
             <SectionDesc>
-              What is changing, what matters, and what to do about it. Our take on the most important shifts in digital marketing this year.
+              What changed, what mattered, and what to do about it. Our take on the most important shifts in digital marketing for 2025.
             </SectionDesc>
           </Animate>
         </div>

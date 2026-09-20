@@ -186,7 +186,7 @@ export default async function HomePage() {
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all p-6 flex flex-col">
+                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col">
                   <div className="w-12 h-12 bg-black text-white flex items-center justify-center mb-4">
                     <Icon size={22} strokeWidth={2} aria-hidden="true" />
                   </div>
@@ -219,7 +219,7 @@ export default async function HomePage() {
             {industries.map((ind) => {
               const Icon = ind.icon;
               return (
-                <Link key={ind.href} href={ind.href} className="group border border-gray-200 hover:border-black transition-all p-6 text-center">
+                <Link key={ind.href} href={ind.href} className="group border border-gray-200 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 text-center">
                   <div className="w-14 h-14 bg-gray-100 group-hover:bg-black group-hover:text-white text-gray-500 flex items-center justify-center mx-auto mb-4 transition-colors">
                     <Icon size={24} strokeWidth={2} aria-hidden="true" />
                   </div>
@@ -250,7 +250,7 @@ export default async function HomePage() {
               { metric: "Revenue Attribution", desc: "Clear line between marketing spend and revenue generated." },
               { metric: "Brand Visibility", desc: "Increased share of voice in your industry across all digital channels." },
             ].map((item) => (
-              <div key={item.metric} className="p-6 border border-white/10">
+              <div key={item.metric} className="p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-white uppercase tracking-wide mb-3">
                   {item.metric}
                 </h3>
@@ -343,6 +343,39 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Common Engagements */}
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Common engagements">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>How Clients Work With Us</SectionLabel>
+            <SectionTitle>Common Engagements</SectionTitle>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            {[
+              { title: "Full-Stack Marketing", desc: "SEO, paid ads, social, email, and content managed as one integrated program. For businesses that want a single partner handling everything.", budget: "Ongoing retainer" },
+              { title: "Google & Meta Ads Launch", desc: "Campaign setup, creative production, and ongoing optimization for businesses entering paid advertising or scaling existing campaigns.", budget: "Project or retainer" },
+              { title: "Website Redesign + SEO", desc: "A new website built for performance, paired with technical SEO and content strategy to drive organic growth.", budget: "Project-based" },
+              { title: "Brand Identity System", desc: "Logo, visual identity, brand guidelines, and messaging framework for startups or businesses going through a rebrand.", budget: "Project-based" },
+              { title: "E-commerce Growth", desc: "Shopify or WooCommerce optimization, product feed management, Google Shopping, and conversion rate optimization.", budget: "Ongoing retainer" },
+              { title: "Fractional CMO", desc: "Senior marketing leadership for businesses that need strategic direction without a full-time executive hire.", budget: "Monthly advisory" },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-gray-200 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-relaxed mb-3">{item.desc}</p>
+                <span className="text-base font-medium text-gray-400">{item.budget}</span>
+              </div>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up" delay={200}>
+            <div className="mt-10 text-center">
+              <Link href="/pricing" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                View Pricing Models &rarr;
+              </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       {/* Latest Blog */}
       <section className="px-6 lg:px-12 py-20" aria-label="Latest insights">
         <div className="max-w-7xl mx-auto">
@@ -411,7 +444,7 @@ export default async function HomePage() {
               { title: "Brand Name Generator", desc: "Get instant brand name ideas for your business.", href: "/resources/brand-name-generator" },
               { title: "Competitor Analysis", desc: "Map your competitive landscape with our interactive worksheet.", href: "/resources/competitor-analysis" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>
               </Link>

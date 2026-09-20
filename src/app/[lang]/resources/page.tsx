@@ -133,10 +133,22 @@ const resources = [
     count: "Complete guide",
   },
   {
+    title: "Marketing Trends 2026",
+    desc: "The 10 most important shifts in digital marketing this year. Agentic AI, first-party data, video commerce, SGE, brand building — with actionable takeaways.",
+    href: "/resources/marketing-trends-2026",
+    count: "10 trends",
+  },
+  {
     title: "Marketing Trends 2025",
-    desc: "The 10 most important shifts in digital marketing this year. AI, privacy, video, zero-click search, and more — with actionable takeaways.",
+    desc: "The 10 most important shifts in digital marketing for 2025. AI, privacy, video, zero-click search, and more — with actionable takeaways.",
     href: "/resources/marketing-trends-2025",
     count: "10 trends",
+  },
+  {
+    title: "Marketing Statistics 2026",
+    desc: "Updated industry benchmarks across SEO, paid ads, social media, email, content marketing, e-commerce, and AI adoption to inform your 2026 strategy.",
+    href: "/resources/marketing-statistics-2026",
+    count: "35+ data points",
   },
   {
     title: "Marketing Statistics 2025",

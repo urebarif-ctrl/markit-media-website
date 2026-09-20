@@ -92,6 +92,24 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-12 bg-black text-white" aria-label="Trust signals">
+        <div className="max-w-7xl mx-auto">
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { label: "Markets Served", value: "6 Countries" },
+              { label: "Services", value: "12 Disciplines" },
+              { label: "Industries", value: "16 Verticals" },
+              { label: "Response Time", value: "1 Business Day" },
+            ].map((item) => (
+              <div key={item.label}>
+                <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold text-white">{item.value}</p>
+                <p className="text-base text-gray-400 mt-1">{item.label}</p>
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="What happens next">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">

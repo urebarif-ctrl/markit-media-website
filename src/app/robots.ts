@@ -1,13 +1,15 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const isPreview = !process.env.PRODUCTION_DEPLOY;
+
   return {
     rules: [
       {
         userAgent: "*",
-        disallow: ["/admin", "/api/"],
+        disallow: isPreview ? ["/"] : ["/admin", "/api/"],
       },
     ],
-    sitemap: "https://themarkitmedia.com/sitemap.xml",
+    ...(isPreview ? {} : { sitemap: "https://themarkitmedia.com/sitemap.xml" }),
   };
 }

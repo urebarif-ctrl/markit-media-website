@@ -164,7 +164,7 @@ export default function ServicesPage() {
             {serviceCategories.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 transition-all overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
                     <img src={s.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>

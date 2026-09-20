@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { BackToTop } from "@/components/back-to-top";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Analytics } from "@/components/analytics";
+import { StickyCta } from "@/components/sticky-cta";
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
 import "../globals.css";
 
@@ -85,6 +86,7 @@ export default async function LangLayout({
         <main id="main-content" className="flex-1">{children}</main>
         <Footer locale={locale} translations={{ footer: t.footer, nav: t.nav, common: t.common, cta: t.cta, accessibility: t.accessibility }} />
         <BackToTop />
+        <StickyCta />
         <CookieConsent />
         <Analytics />
       </body>
