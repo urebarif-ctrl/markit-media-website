@@ -313,6 +313,18 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "Google Ads Budget Estimator",
+    desc: "Estimate your Google Ads CPC, clicks, and conversions by industry and location. See what your budget gets you with industry benchmarks.",
+    href: "/resources/google-ads-estimator",
+    count: "15 industries",
+  },
+  {
+    title: "Website Migration Checklist",
+    desc: "A 30-point interactive checklist for website migrations. Five phases from planning to post-launch with progress tracking.",
+    href: "/resources/migration-checklist",
+    count: "30-point checklist",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

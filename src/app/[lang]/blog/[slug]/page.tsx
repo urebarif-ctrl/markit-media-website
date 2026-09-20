@@ -116,9 +116,9 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
   ],
   "Performance Marketing": [
+    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
     { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Budget Calculator", href: "/resources/budget-calculator" },
     { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
   ],
   "Social Media": [
@@ -141,15 +141,15 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   ],
   "Web Design": [
     { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Migration Checklist", href: "/resources/migration-checklist" },
     { label: "Website Speed Assessment", href: "/resources/speed-test" },
     { label: "SEO Health Check", href: "/resources/seo-checklist" },
-    { label: "Social Share Preview", href: "/resources/og-preview" },
   ],
   "Web Development": [
     { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Migration Checklist", href: "/resources/migration-checklist" },
     { label: "Website Speed Assessment", href: "/resources/speed-test" },
-    { label: "SEO Health Check", href: "/resources/seo-checklist" },
-    { label: "Social Share Preview", href: "/resources/og-preview" },
+    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
   ],
   Branding: [
     { label: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
@@ -218,10 +218,10 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
   ],
   PPC: [
+    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
     { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
     { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
   ],
 };
 

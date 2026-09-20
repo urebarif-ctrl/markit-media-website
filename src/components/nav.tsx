@@ -150,7 +150,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const dropdownVisible = "opacity-100 scale-100 pointer-events-auto";
   const dropdownHidden = "opacity-0 scale-95 pointer-events-none";
 
-  const navLinkClass = "text-gray-600 text-base font-semibold hover:text-black transition-colors py-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2";
+  const navLinkClass = "text-gray-600 text-base font-semibold hover:text-black transition-colors motion-reduce:transition-none py-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2";
 
   return (
     <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : "bg-transparent"}`}>
@@ -183,7 +183,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             >
               <div className="grid grid-cols-3 gap-0 p-6">
                 {serviceCategories.map((s) => (
-                  <Link key={s.href} href={s.href} className="group px-4 py-3 hover:bg-gray-50 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link key={s.href} href={s.href} className="group px-4 py-3 hover:bg-gray-50 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     <div className="text-base font-semibold text-black group-hover:underline">{s.label}</div>
                     <div className="text-base text-gray-500 mt-0.5">{s.desc}</div>
                   </Link>
@@ -217,7 +217,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             >
               <div className="grid grid-cols-2 gap-0 p-6">
                 {industryList.map((ind) => (
-                  <Link key={ind.href} href={ind.href} className="px-4 py-2.5 text-base font-semibold text-black hover:bg-gray-50 hover:underline transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link key={ind.href} href={ind.href} className="px-4 py-2.5 text-base font-semibold text-black hover:bg-gray-50 hover:underline transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {ind.label}
                   </Link>
                 ))}
@@ -233,7 +233,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           <Link href="/blog" className={navLinkClass}>{t.nav.insights}</Link>
           <Link href="/resources" className={navLinkClass}>Resources</Link>
           <Link href="/about" className={navLinkClass}>{t.nav.about}</Link>
-          <Link href="/contact" className="ml-2 bg-black text-white px-6 py-2.5 text-base font-bold hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+          <Link href="/contact" className="ml-2 bg-black text-white px-6 py-2.5 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
             {t.nav.getQuote}
           </Link>
         </div>
