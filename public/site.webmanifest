@@ -1,0 +1,21 @@
+{
+  "name": "Markit Media",
+  "short_name": "Markit",
+  "description": "Full-stack digital marketing agency",
+  "start_url": "/en",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

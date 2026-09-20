@@ -33,6 +33,10 @@ export async function generateMetadata({
     title: `${displayName} Articles — Markit Media Blog`,
     description: `Read our latest articles on ${displayName.toLowerCase()}. Expert insights and actionable advice from Markit Media.`,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/category/${category}` },
+    openGraph: {
+      title: `${displayName} — Marketing Blog`,
+      description: `Expert articles on ${displayName.toLowerCase()} from Markit Media.`,
+    },
   };
 }
 
