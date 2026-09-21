@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,400+ articles",
+    count: "1,500+ articles",
   },
   {
     title: "FAQ",
@@ -844,6 +844,24 @@ const resources = [
     desc: "Generate professional scopes of work for marketing projects. Define deliverables, timelines, milestones, budget, and terms.",
     href: "/resources/scope-of-work-generator",
     count: "8 project types",
+  },
+  {
+    title: "Marketing Metrics Benchmark",
+    desc: "Compare your marketing metrics against industry benchmarks. 50 metrics across 7 categories with status indicators and optimization tips.",
+    href: "/resources/marketing-metrics-benchmark",
+    count: "50 metrics",
+  },
+  {
+    title: "Brand Guidelines Checklist",
+    desc: "Ensure your brand guidelines are complete. 40-item checklist across 7 categories with priority levels and action plan generation.",
+    href: "/resources/brand-guidelines-checklist",
+    count: "40 items",
+  },
+  {
+    title: "Website Launch Checklist",
+    desc: "Pre-launch checklist covering content, SEO, performance, security, UX, analytics, legal, and launch day. GO/NO-GO indicator included.",
+    href: "/resources/website-launch-checklist",
+    count: "50 items",
   },
   {
     title: "Small Business Guide",
