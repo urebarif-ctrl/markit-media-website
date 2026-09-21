@@ -540,6 +540,24 @@ const resources = [
     count: "Interactive tool",
   },
   {
+    title: "SEO Audit Score",
+    desc: "Check 40 SEO factors across technical, on-page, content, off-page, and UX categories. Get your site health score and prioritized recommendations.",
+    href: "/resources/seo-audit-score",
+    count: "40 checkpoints",
+  },
+  {
+    title: "Social Post Generator",
+    desc: "Generate platform-specific post templates for LinkedIn, Instagram, Twitter/X, Facebook, and TikTok from your topic and key message.",
+    href: "/resources/social-post-generator",
+    count: "5 platforms",
+  },
+  {
+    title: "Marketing Calendar",
+    desc: "Generate a 12-month marketing calendar tailored to your industry with campaign themes, key dates, channel recommendations, and budget allocation.",
+    href: "/resources/marketing-calendar",
+    count: "12 months",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
