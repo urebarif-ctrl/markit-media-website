@@ -738,6 +738,24 @@ const resources = [
     count: "8 platforms",
   },
   {
+    title: "Conversion Funnel Simulator",
+    desc: "Simulate your marketing funnel with custom stages, conversion rates, and revenue projections. Identify bottlenecks and test what-if scenarios.",
+    href: "/resources/conversion-funnel-simulator",
+    count: "6 stages",
+  },
+  {
+    title: "Brand Voice Consistency Checker",
+    desc: "Define your brand voice attributes and evaluate content for consistency. Automatic readability and tone analysis with scoring.",
+    href: "/resources/brand-voice-checker",
+    count: "20 attributes",
+  },
+  {
+    title: "Marketing Meeting Agenda Builder",
+    desc: "Build structured marketing meeting agendas from 7 professional templates. Weekly standups, monthly reviews, and client calls.",
+    href: "/resources/meeting-agenda-builder",
+    count: "7 templates",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
