@@ -542,6 +542,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Proposal Generator", desc: "Build professional marketing proposals in a guided 5-step wizard.", href: "/resources/marketing-proposal-generator" },
               { title: "Name Evaluator", desc: "Score and compare brand names across 8 key criteria.", href: "/resources/brand-name-evaluator" },
               { title: "Warm-Up Planner", desc: "Plan email domain warm-up schedules for better deliverability.", href: "/resources/email-warmup-planner" },
+              { title: "Channel Mix", desc: "Model marketing channel allocation with projected ROI.", href: "/resources/channel-mix-modeller" },
+              { title: "Pillar Planner", desc: "Plan content pillars with topic clusters and publishing queue.", href: "/resources/content-pillar-planner" },
+              { title: "Onboarding Checklist", desc: "Generate tailored client onboarding checklists by service.", href: "/resources/client-onboarding-checklist" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

@@ -702,6 +702,24 @@ const resources = [
     count: "Day-by-day plan",
   },
   {
+    title: "Channel Mix Modeller",
+    desc: "Model your marketing channel mix allocation with budget sliders, projected ROI, scenario comparison, and SVG pie chart breakdown.",
+    href: "/resources/channel-mix-modeller",
+    count: "10 channels",
+  },
+  {
+    title: "Content Pillar Planner",
+    desc: "Plan content pillar strategy with topic clusters, hub-and-spoke visual maps, publishing queue, and completion tracking.",
+    href: "/resources/content-pillar-planner",
+    count: "Pillar + clusters",
+  },
+  {
+    title: "Client Onboarding Checklist",
+    desc: "Generate a tailored marketing client onboarding checklist by service type. Five phases from discovery to launch prep.",
+    href: "/resources/client-onboarding-checklist",
+    count: "5 phases",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
