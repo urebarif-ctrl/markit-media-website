@@ -47,6 +47,11 @@ export default function VideoProductionPage() {
         { title: "Branding & Design", href: "/services/branding" },
         { title: "Content Marketing", href: "/services/content-marketing" },
       ]}
+      tools={[
+        { title: "Content Calendar", desc: "Plan your video content schedule.", href: "/resources/content-calendar" },
+        { title: "Content Brief Generator", desc: "Generate structured briefs for video projects.", href: "/resources/content-brief-generator" },
+        { title: "Social Media Calendar", desc: "Schedule your video posts across platforms.", href: "/resources/social-media-calendar-template" },
+      ]}
     />
   );
 }

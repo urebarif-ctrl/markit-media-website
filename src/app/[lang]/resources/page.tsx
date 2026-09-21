@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,190+ articles",
+    count: "1,300+ articles",
   },
   {
     title: "FAQ",
@@ -790,6 +790,24 @@ const resources = [
     desc: "Build customer feedback surveys from proven templates. NPS, CSAT, CES, post-purchase, and website feedback surveys.",
     href: "/resources/customer-feedback-survey",
     count: "6 templates",
+  },
+  {
+    title: "Marketing Persona Workshop",
+    desc: "Build detailed marketing personas with guided exercises. Define demographics, psychographics, goals, and buying behavior.",
+    href: "/resources/persona-workshop",
+    count: "5 personas",
+  },
+  {
+    title: "Content Gap Finder",
+    desc: "Map your existing content against the buyer journey. Identify gaps and get recommendations for each stage and content type.",
+    href: "/resources/content-gap-finder",
+    count: "Heatmap analysis",
+  },
+  {
+    title: "SEO Content Optimizer",
+    desc: "Analyze your content for SEO. Check keyword usage, readability, heading structure, meta tags, and internal linking.",
+    href: "/resources/seo-content-optimizer",
+    count: "8 categories",
   },
   {
     title: "Small Business Guide",

@@ -46,6 +46,11 @@ export default function AiPage() {
         { title: "Email Marketing", href: "/services/email-marketing" },
         { title: "Performance Marketing", href: "/services/performance-marketing" },
       ]}
+      tools={[
+        { title: "Marketing Audit Scorecard", desc: "Evaluate your marketing across 8 categories.", href: "/resources/marketing-audit-scorecard" },
+        { title: "Channel Recommender", desc: "Find the best channels for your business.", href: "/resources/channel-recommender" },
+        { title: "Tech Stack Advisor", desc: "Get recommendations for your marketing tech stack.", href: "/resources/tech-stack-advisor" },
+      ]}
     />
   );
 }

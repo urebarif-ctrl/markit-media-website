@@ -160,7 +160,7 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
                 x={labelW - 8}
                 y={y + barH / 2 + 5}
                 textAnchor="end"
-                className="text-[13px]"
+                className="text-base"
                 fill="#000"
               >
                 {r.name.length > 14 ? r.name.slice(0, 13) + "…" : r.name}
@@ -180,7 +180,7 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
                 }
                 y={y + barH / 2 + 5}
                 textAnchor={r.roi >= 0 ? "start" : "end"}
-                className="text-[12px] font-bold"
+                className="text-base font-bold"
                 fill="#000"
               >
                 {fmtPct(r.roi)}

@@ -45,6 +45,11 @@ export default function BpoPage() {
         { title: "Digital Marketing", href: "/services/digital-marketing" },
         { title: "E-commerce Marketing", href: "/services/ecommerce-marketing" },
       ]}
+      tools={[
+        { title: "Client Onboarding Checklist", desc: "Streamline your client onboarding process.", href: "/resources/client-onboarding-checklist" },
+        { title: "Meeting Agenda Builder", desc: "Create structured meeting agendas.", href: "/resources/meeting-agenda-builder" },
+        { title: "Marketing Proposal Generator", desc: "Generate professional service proposals.", href: "/resources/marketing-proposal-generator" },
+      ]}
     />
   );
 }
