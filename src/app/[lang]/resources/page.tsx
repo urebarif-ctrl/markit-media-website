@@ -666,6 +666,24 @@ const resources = [
     count: "8 formulas",
   },
   {
+    title: "KPI Dashboard Builder",
+    desc: "Build a custom marketing KPI dashboard from a library of 30+ metrics across 6 functions. Set targets, track status, and export reports.",
+    href: "/resources/kpi-builder",
+    count: "30+ metrics",
+  },
+  {
+    title: "Competitor Pricing Tracker",
+    desc: "Track competitor pricing, features, and positioning across plans and tiers. Market overview with price range analysis.",
+    href: "/resources/competitor-pricing-tracker",
+    count: "Unlimited tiers",
+  },
+  {
+    title: "Social Content Rater",
+    desc: "Rate social media content against platform-specific best practices. Get scores on copy, visuals, discovery, and engagement.",
+    href: "/resources/social-content-rater",
+    count: "5 platforms",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
