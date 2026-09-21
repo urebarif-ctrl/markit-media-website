@@ -810,6 +810,24 @@ const resources = [
     count: "8 categories",
   },
   {
+    title: "Client Reporting Dashboard",
+    desc: "Build professional marketing reports for clients. Add channels, track KPIs, generate executive summaries, and export ready-to-present reports.",
+    href: "/resources/client-reporting-dashboard",
+    count: "8 channels",
+  },
+  {
+    title: "Marketing Campaign Tracker",
+    desc: "Track and manage all your marketing campaigns in one place. Monitor status, budgets, performance, deadlines, and campaign health.",
+    href: "/resources/campaign-tracker",
+    count: "Dashboard + charts",
+  },
+  {
+    title: "Competitor Benchmarking Dashboard",
+    desc: "Benchmark your business against competitors across 6 key dimensions. Visualize gaps with radar charts and identify advantages.",
+    href: "/resources/competitor-benchmarking",
+    count: "6 dimensions",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
