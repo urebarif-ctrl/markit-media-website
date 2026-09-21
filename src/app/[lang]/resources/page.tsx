@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,300+ articles",
+    count: "1,400+ articles",
   },
   {
     title: "FAQ",
@@ -33,7 +33,7 @@ const resources = [
     title: "Glossary",
     desc: "A comprehensive reference for key digital marketing terms, acronyms, and concepts.",
     href: "/glossary",
-    count: "200+ terms",
+    count: "250 terms",
   },
   {
     title: "Checklists",

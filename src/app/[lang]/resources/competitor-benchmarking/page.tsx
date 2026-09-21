@@ -460,7 +460,7 @@ function RadarChart({ companies }: { companies: Company[] }) {
                 key={`scale-${i}`}
                 x={p.x + 6}
                 y={p.y - 4}
-                className="text-[9px] fill-neutral-400"
+                className="text-base fill-neutral-400"
               >
                 {value}
               </text>
