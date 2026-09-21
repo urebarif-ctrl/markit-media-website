@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Animate } from "@/components/animate";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -915,6 +916,17 @@ export default function MarketingRFPTemplatePage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing RFP Template Builder",
+          description: "Build a professional marketing RFP (Request for Proposal) from a structured template. Cover scope, requirements, evaluation criteria, and timeline.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

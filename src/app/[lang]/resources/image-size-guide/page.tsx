@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 interface SizeSpec {
   name: string;
@@ -190,6 +191,17 @@ export default function ImageSizeGuidePage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media Image Size Guide — Every Platform, Every Dimension",
+          description: "Free reference guide with up-to-date social media image dimensions for every platform so your visuals always look sharp.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

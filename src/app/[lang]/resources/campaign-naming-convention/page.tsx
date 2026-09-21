@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 const platformOptions = ["Google Ads", "Meta Ads", "LinkedIn Ads", "TikTok Ads", "Email", "Organic Social", "Display / Programmatic"];
 const objectiveOptions = ["Awareness", "Traffic", "Leads", "Conversions", "Retargeting", "Engagement", "Brand"];
@@ -193,6 +194,17 @@ export default function CampaignNamingConventionPage() {
           </section>
         </div>
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Campaign Naming Convention Generator",
+          description: "Generate consistent campaign naming conventions for Google Ads, Meta Ads, email, and UTM parameters. Keep your marketing data clean and organised.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

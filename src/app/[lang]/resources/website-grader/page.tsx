@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 interface Question {
   id: string;
@@ -251,6 +252,17 @@ export default function WebsiteGraderPage() {
           </div>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Grader — Score Your Site Across 7 Key Areas",
+          description: "Grade your website performance across speed, mobile, SEO, content, UX, trust, and conversions with this free tool. See exactly where you stand and what to fix first.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

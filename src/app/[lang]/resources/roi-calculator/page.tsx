@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 export default function ROICalculatorPage() {
   const [monthlyBudget, setMonthlyBudget] = useState(5000);
@@ -191,6 +192,24 @@ export default function ROICalculatorPage() {
             ))}
           </div>
         </div>
+      </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing ROI Calculator — Project Your Revenue Growth",
+          description: "Calculate your marketing ROI by projecting lead increases and revenue from your investment with this free calculator. Make data-driven budget decisions.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
+    
+      {/* CTA */}
+      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
+        <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
+        <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
       </section>
     </article>
   );

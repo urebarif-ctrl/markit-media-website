@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 const prefixes = [
   "Nova", "Apex", "Velo", "Prism", "Zenith", "Flux", "Aura", "Nexus", "Orbit", "Echo",
@@ -301,6 +302,17 @@ export default function BrandNameGeneratorPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Name Generator — Find the Perfect Business Name",
+          description: "Use our free brand name generator to discover creative business name ideas based on your industry, style, and preferences. Get memorable names with availability insights.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

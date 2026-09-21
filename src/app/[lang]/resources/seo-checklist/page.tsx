@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 interface CheckItem {
   id: string;
@@ -174,6 +175,17 @@ export default function SEOChecklistPage() {
           </div>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SEO Checklist — Cover Every Ranking Factor That Matters",
+          description: "Work through this free comprehensive SEO checklist covering technical SEO, on-page optimization, analytics, content strategy, and local SEO. Nothing slips through the cracks.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

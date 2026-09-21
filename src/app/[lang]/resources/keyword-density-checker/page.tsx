@@ -4,6 +4,7 @@ import { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Stop words — 80+ common English words excluded from analysis       */
@@ -388,6 +389,17 @@ export default function KeywordDensityCheckerPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Keyword Density Checker — Analyze Word Frequency & Content Length",
+          description: "Free keyword density checker that analyzes keyword density, word frequency, and content length to keep your SEO on point.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

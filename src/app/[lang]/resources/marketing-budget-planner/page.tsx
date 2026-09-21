@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 type BusinessStage = "startup" | "growth" | "established" | "enterprise";
 type Goal = "awareness" | "leads" | "sales" | "retention";
@@ -313,6 +314,17 @@ export default function MarketingBudgetPlannerPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Budget Planner — Allocate Spend by Channel & Goal",
+          description: "Free marketing budget planner that builds a monthly channel allocation based on your business stage, goals, and total budget.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

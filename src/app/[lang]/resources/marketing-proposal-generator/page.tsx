@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 /* ─── Types ────────────────────────────────────────────────────── */
 
@@ -1087,6 +1088,17 @@ export default function MarketingProposalGeneratorPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Proposal Generator",
+          description: "Generate professional marketing proposals with scope, deliverables, timeline, and pricing sections. Free tool from Markit Media.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

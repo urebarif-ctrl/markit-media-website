@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 type BusinessType = "B2B" | "B2C" | "E-commerce" | "Local";
 type PrimaryGoal = "Brand Awareness" | "Lead Gen" | "Sales" | "Retention";
@@ -336,6 +337,17 @@ export default function BudgetCalculatorPage() {
           </Link>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Budget Calculator — Plan Your Ad Spend",
+          description: "Use our free marketing budget calculator to get recommended budget allocations across SEO, PPC, social media, content, email, and video based on your business type and goals.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

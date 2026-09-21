@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -974,6 +975,17 @@ export default function CustomerFeedbackSurveyPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Customer Feedback Survey Builder",
+          description: "Build professional customer feedback surveys from proven templates. NPS, CSAT, product feedback, and post-purchase surveys with best-practice questions.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

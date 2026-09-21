@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 const INDUSTRY_BENCHMARKS: Record<string, { avgCpa: number; avgRoas: number }> = {
   "E-commerce": { avgCpa: 45, avgRoas: 4.0 },
@@ -580,6 +581,24 @@ export default function AdSpendCalculatorPage() {
             ))}
           </div>
         </div>
+      </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Ad Spend Calculator — Analyze CPA & ROAS Efficiency",
+          description: "Use our free ad spend calculator to analyze your advertising efficiency across platforms. Calculate CPA, ROAS, and identify where your budget delivers the best returns.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
+    
+      {/* CTA */}
+      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
+        <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
+        <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
       </section>
     </article>
   );

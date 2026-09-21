@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 type Platform = "google" | "facebook" | "linkedin" | "email";
 
@@ -378,6 +379,17 @@ export default function AdCopyGeneratorPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Ad Copy Generator — Create High-Converting Ad Text",
+          description: "Use our free ad copy generator to create compelling ad templates for Google Ads, Facebook, LinkedIn, and email campaigns. Get platform-optimized copy in seconds.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

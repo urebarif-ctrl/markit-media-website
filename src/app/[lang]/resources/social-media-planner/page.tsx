@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 const platforms = [
   {
@@ -189,6 +190,17 @@ export default function SocialMediaPlannerPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media Strategy Planner — Build a Platform-Specific Plan",
+          description: "Plan your social media strategy with platform-specific posting formats, frequencies, and best practices using this free tool. Post with purpose on every channel.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

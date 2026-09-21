@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 interface CheckItem {
   id: string;
@@ -183,6 +184,17 @@ export default function PricingPageAnalyzerPage() {
           </div>
         )}
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Pricing Page Analyser",
+          description: "Analyse your pricing page against proven conversion best practices. Get a score and actionable recommendations to improve your pricing page performance.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

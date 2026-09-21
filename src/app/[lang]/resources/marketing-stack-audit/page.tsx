@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 interface ToolEntry {
   name: string;
@@ -254,6 +255,17 @@ export default function MarketingStackAuditPage() {
           </div>
         )}
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Stack Audit",
+          description: "Audit your marketing technology stack across analytics, CRM, email, ads, social, and content tools. Identify gaps, redundancies, and optimisation opportunities.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

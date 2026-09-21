@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 const sources = ["google", "facebook", "instagram", "linkedin", "twitter", "tiktok", "email", "newsletter", "youtube", "reddit", "bing", "pinterest"];
 const mediums = ["cpc", "cpm", "social", "email", "organic", "referral", "display", "video", "affiliate", "banner", "retargeting", "native"];
@@ -262,6 +263,17 @@ export default function UtmBuilderPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "UTM Builder — Tag Campaign URLs for Accurate Attribution",
+          description: "Build UTM-tagged tracking URLs for campaign attribution across marketing channels with this free tool. Know exactly which campaigns drive results.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

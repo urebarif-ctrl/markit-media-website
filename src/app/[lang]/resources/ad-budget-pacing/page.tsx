@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Animate } from "@/components/animate";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -796,6 +797,17 @@ export default function AdBudgetPacingPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Ad Budget Pacing Calculator",
+          description: "Track your advertising budget pacing across campaigns. Monitor spend rate, forecast end-of-month spend, and identify over/under-pacing campaigns.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

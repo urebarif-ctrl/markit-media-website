@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 const toneDimensions = [
   {
@@ -373,6 +374,17 @@ export default function BrandToneGeneratorPage() {
           </div>
         )}
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Tone of Voice Generator",
+          description: "Define your brand tone of voice with adjective mapping, do/don",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

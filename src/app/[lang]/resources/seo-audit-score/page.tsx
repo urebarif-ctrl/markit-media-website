@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 const categories = [
   {
@@ -217,6 +218,17 @@ export default function SeoAuditScorePage() {
           </div>
         )}
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SEO Audit Score Calculator",
+          description: "Free SEO audit tool with 40 checkpoints across technical, on-page, content, off-page, and UX categories. Get your site",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

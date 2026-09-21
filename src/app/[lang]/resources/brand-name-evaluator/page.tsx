@@ -4,6 +4,7 @@ import { useState, useCallback, useId } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -793,6 +794,17 @@ export default function BrandNameEvaluatorPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Name Evaluator",
+          description: "Score and evaluate brand names across memorability, pronounceability, uniqueness, and more. Free tool from Markit Media.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

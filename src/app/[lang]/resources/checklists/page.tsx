@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 interface ChecklistItem {
   label: string;
@@ -272,6 +273,17 @@ export default function ChecklistsPage() {
           </Link>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Checklists — Launch-Ready Templates",
+          description: "Use our free marketing checklists to stay organized across every campaign. Pre-built templates for website launches, SEO audits, ad campaigns, and more.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

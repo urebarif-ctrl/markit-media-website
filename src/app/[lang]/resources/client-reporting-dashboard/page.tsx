@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -403,9 +404,9 @@ export default function ClientReportingDashboardPage() {
 
             {/* Header */}
             <div className="border-b-2 border-black pb-6 mb-8">
-              <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
+              <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
                 {report.reportTitle || "Marketing Report"}
-              </h1>
+              </h2>
               <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-base text-neutral-600">
                 <span>
                   <strong>Client:</strong> {report.clientName || "-"}
@@ -683,7 +684,18 @@ export default function ClientReportingDashboardPage() {
             </div>
           </div>
         </section>
-      </article>
+            <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Client Reporting Dashboard Builder",
+          description: "Build professional marketing reports for clients. Select KPIs, add channels, include insights and recommendations. Export ready-to-present reports.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
+    </article>
     );
   }
 

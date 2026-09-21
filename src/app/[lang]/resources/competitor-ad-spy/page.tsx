@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 interface CompetitorAd {
   id: string;
@@ -316,6 +317,17 @@ export default function CompetitorAdSpyPage() {
           </div>
         )}
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitor Ad Spy Worksheet",
+          description: "Document and analyse competitor advertising across platforms. Track messaging, offers, CTAs, and creative strategies in a structured format.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

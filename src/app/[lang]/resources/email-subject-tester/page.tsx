@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 const spamWords = [
   "free", "guaranteed", "no obligation", "winner", "congratulations", "act now",
@@ -292,6 +293,17 @@ export default function EmailSubjectTesterPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Email Subject Line Tester — Score Lines for Opens & Deliverability",
+          description: "Free email subject line tester that analyzes and scores your subject lines for deliverability, engagement, and inbox placement.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

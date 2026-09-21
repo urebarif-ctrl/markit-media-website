@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 type Tone = "professional" | "casual" | "humorous" | "inspirational" | "educational";
 type Platform = "linkedin" | "instagram" | "twitter" | "facebook" | "tiktok";
@@ -149,6 +150,17 @@ export default function SocialPostGeneratorPage() {
           </section>
         </div>
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media Post Generator",
+          description: "Generate platform-specific social media posts for LinkedIn, Instagram, Twitter/X, Facebook, and TikTok. Enter your topic and get ready-to-use templates.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

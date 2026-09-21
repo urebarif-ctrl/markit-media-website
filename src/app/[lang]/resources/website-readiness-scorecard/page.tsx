@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 
 interface Question {
   id: string;
@@ -346,6 +347,17 @@ export default function WebsiteReadinessScorecardPage() {
           </div>
         )}
       </div>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Readiness Scorecard",
+          description: "Score your website across mobile experience, page speed, SEO, security, and accessibility. Get a prioritised action plan to improve performance.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

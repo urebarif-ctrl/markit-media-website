@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useId } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Data: Nielsen's 10 Usability Heuristics                           */
@@ -801,6 +802,17 @@ export default function WebsiteHeuristicEvaluatorPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Heuristic Evaluator",
+          description: "Evaluate your website against Nielsen",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }

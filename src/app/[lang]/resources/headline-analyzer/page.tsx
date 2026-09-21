@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { JsonLd } from "@/components/json-ld";
 
 const POWER_WORDS = [
   "free", "new", "proven", "secret", "ultimate", "exclusive", "guaranteed",
@@ -324,6 +325,17 @@ export default function HeadlineAnalyzerPage() {
           </Animate>
         </div>
       </section>
+          <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Headline Analyzer — Score Power Words, Emotion & SEO Impact",
+          description: "Free headline analyzer that scores your headlines for power words, emotional impact, and SEO effectiveness so every title pulls readers in.",
+          applicationCategory: "MarketingApplication",
+          operatingSystem: "Any",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        }}
+      />
     </article>
   );
 }
