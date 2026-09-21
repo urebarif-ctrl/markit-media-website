@@ -612,6 +612,24 @@ const resources = [
     count: "20 checkpoints",
   },
   {
+    title: "Social Media Bio Generator",
+    desc: "Generate optimised bios for LinkedIn, Instagram, Twitter/X, TikTok, and Facebook with tone, keywords, and CTAs.",
+    href: "/resources/social-media-bio-generator",
+    count: "5 platforms",
+  },
+  {
+    title: "Content Brief Generator",
+    desc: "Create detailed content briefs for writers with audience, keywords, outline, tone, word count, and competitive references.",
+    href: "/resources/content-brief-generator",
+    count: "5-step wizard",
+  },
+  {
+    title: "Marketing Expense Tracker",
+    desc: "Track marketing spend by channel, campaign, and month with budget monitoring, charts, and CSV export.",
+    href: "/resources/marketing-expense-tracker",
+    count: "13 channels",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
