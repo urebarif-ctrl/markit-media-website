@@ -84,8 +84,10 @@ const faqItems = [
   { q: "How do I get started?", a: "Contact us for a free consultation. We will discuss your goals and recommend the best approach for your business." },
 ];
 
-export default async function HomePage() {
-  const t = await getDictionary();
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const t = await getDictionary(locale);
 
   const orgSchema = {
     "@context": "https://schema.org",
