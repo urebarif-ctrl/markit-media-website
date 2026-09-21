@@ -51,7 +51,7 @@ export default function OgPreviewPage() {
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Your Page Title"
                   maxLength={120}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
                 <p className="text-base text-gray-400 mt-1">{title.length}/70 characters {title.length > 70 ? "(may be truncated)" : ""}</p>
               </div>
@@ -66,7 +66,7 @@ export default function OgPreviewPage() {
                   placeholder="A brief description of your page content..."
                   rows={3}
                   maxLength={300}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none resize-none"
                 />
                 <p className="text-base text-gray-400 mt-1">{description.length}/200 characters {description.length > 200 ? "(will be truncated)" : ""}</p>
               </div>
@@ -81,7 +81,7 @@ export default function OgPreviewPage() {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder="yourwebsite.com/page"
-                    className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   />
                 </div>
                 <div>
@@ -94,7 +94,7 @@ export default function OgPreviewPage() {
                     value={siteName}
                     onChange={(e) => setSiteName(e.target.value)}
                     placeholder="Your Site Name"
-                    className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   />
                 </div>
               </div>

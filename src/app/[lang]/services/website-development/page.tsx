@@ -44,6 +44,11 @@ export default function WebsiteDevelopmentPage() {
         { q: "Will my website be mobile-friendly?", a: "Every website we build is mobile-first and fully responsive across all screen sizes and devices." },
         { q: "Do you offer ongoing maintenance?", a: "Yes. We offer maintenance packages that include security updates, performance monitoring, content updates, and technical support." },
       ]}
+      tools={[
+        { title: "Website Grader", desc: "Evaluate your site across performance, SEO, and UX.", href: "/resources/website-grader" },
+        { title: "Speed Test", desc: "Measure and optimize your website loading speed.", href: "/resources/speed-test" },
+        { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/resources/website-heuristic-evaluator" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Branding & Design", href: "/services/branding" },

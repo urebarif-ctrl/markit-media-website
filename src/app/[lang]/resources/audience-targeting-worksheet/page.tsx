@@ -74,19 +74,19 @@ export default function AudienceTargetingWorksheetPage() {
         <div className="space-y-5">
           <div>
             <label className="block text-base font-bold text-black mb-2">Persona Name</label>
-            <input type="text" value={profile.name} onChange={(e) => update("name", e.target.value)} placeholder="e.g. Marketing Manager Maria" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+            <input type="text" value={profile.name} onChange={(e) => update("name", e.target.value)} placeholder="e.g. Marketing Manager Maria" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-base font-bold text-black mb-2">Age Range</label>
-              <select value={profile.ageRange} onChange={(e) => update("ageRange", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+              <select value={profile.ageRange} onChange={(e) => update("ageRange", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                 <option value="">Select</option>
                 {ageRanges.map((a) => <option key={a} value={a}>{a}</option>)}
               </select>
             </div>
             <div>
               <label className="block text-base font-bold text-black mb-2">Gender</label>
-              <select value={profile.gender} onChange={(e) => update("gender", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+              <select value={profile.gender} onChange={(e) => update("gender", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                 <option value="">Select</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -96,19 +96,19 @@ export default function AudienceTargetingWorksheetPage() {
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Location</label>
-            <input type="text" value={profile.location} onChange={(e) => update("location", e.target.value)} placeholder="e.g. Urban areas, United States, UK" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+            <input type="text" value={profile.location} onChange={(e) => update("location", e.target.value)} placeholder="e.g. Urban areas, United States, UK" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-base font-bold text-black mb-2">Income Level</label>
-              <select value={profile.income} onChange={(e) => update("income", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+              <select value={profile.income} onChange={(e) => update("income", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                 <option value="">Select</option>
                 {incomeRanges.map((i) => <option key={i} value={i}>{i}</option>)}
               </select>
             </div>
             <div>
               <label className="block text-base font-bold text-black mb-2">Education</label>
-              <select value={profile.education} onChange={(e) => update("education", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+              <select value={profile.education} onChange={(e) => update("education", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                 <option value="">Select</option>
                 {educationOptions.map((ed) => <option key={ed} value={ed}>{ed}</option>)}
               </select>
@@ -116,7 +116,7 @@ export default function AudienceTargetingWorksheetPage() {
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Occupation / Job Title</label>
-            <input type="text" value={profile.occupation} onChange={(e) => update("occupation", e.target.value)} placeholder="e.g. Marketing Director, Small Business Owner" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+            <input type="text" value={profile.occupation} onChange={(e) => update("occupation", e.target.value)} placeholder="e.g. Marketing Director, Small Business Owner" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
           </div>
         </div>
       ),
@@ -128,15 +128,15 @@ export default function AudienceTargetingWorksheetPage() {
         <div className="space-y-5">
           <div>
             <label className="block text-base font-bold text-black mb-2">Interests and Hobbies</label>
-            <textarea value={profile.interests} onChange={(e) => update("interests", e.target.value)} placeholder="e.g. Technology, fitness, entrepreneurship, travel" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.interests} onChange={(e) => update("interests", e.target.value)} placeholder="e.g. Technology, fitness, entrepreneurship, travel" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Core Values</label>
-            <textarea value={profile.values} onChange={(e) => update("values", e.target.value)} placeholder="e.g. Efficiency, innovation, work-life balance, sustainability" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.values} onChange={(e) => update("values", e.target.value)} placeholder="e.g. Efficiency, innovation, work-life balance, sustainability" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Lifestyle Description</label>
-            <textarea value={profile.lifestyle} onChange={(e) => update("lifestyle", e.target.value)} placeholder="e.g. Busy professional, early adopter, health-conscious, budget-minded" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.lifestyle} onChange={(e) => update("lifestyle", e.target.value)} placeholder="e.g. Busy professional, early adopter, health-conscious, budget-minded" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
         </div>
       ),
@@ -148,15 +148,15 @@ export default function AudienceTargetingWorksheetPage() {
         <div className="space-y-5">
           <div>
             <label className="block text-base font-bold text-black mb-2">Top Pain Points</label>
-            <textarea value={profile.painPoints} onChange={(e) => update("painPoints", e.target.value)} placeholder="List 3-5 frustrations or challenges they face" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.painPoints} onChange={(e) => update("painPoints", e.target.value)} placeholder="List 3-5 frustrations or challenges they face" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Goals and Aspirations</label>
-            <textarea value={profile.goals} onChange={(e) => update("goals", e.target.value)} placeholder="What outcomes are they working toward?" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.goals} onChange={(e) => update("goals", e.target.value)} placeholder="What outcomes are they working toward?" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Common Objections</label>
-            <textarea value={profile.objections} onChange={(e) => update("objections", e.target.value)} placeholder="What stops them from buying? e.g. Price, trust, complexity" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.objections} onChange={(e) => update("objections", e.target.value)} placeholder="What stops them from buying? e.g. Price, trust, complexity" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
         </div>
       ),
@@ -176,11 +176,11 @@ export default function AudienceTargetingWorksheetPage() {
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Buying Triggers</label>
-            <textarea value={profile.buyingTriggers} onChange={(e) => update("buyingTriggers", e.target.value)} placeholder="What events or moments trigger a purchase decision? e.g. Quarter-end budget, product launch, competitive pressure" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.buyingTriggers} onChange={(e) => update("buyingTriggers", e.target.value)} placeholder="What events or moments trigger a purchase decision? e.g. Quarter-end budget, product launch, competitive pressure" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Key Decision Factors</label>
-            <textarea value={profile.decisionFactors} onChange={(e) => update("decisionFactors", e.target.value)} placeholder="What matters most when choosing a provider? e.g. Price, reputation, case studies, speed" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.decisionFactors} onChange={(e) => update("decisionFactors", e.target.value)} placeholder="What matters most when choosing a provider? e.g. Price, reputation, case studies, speed" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
         </div>
       ),

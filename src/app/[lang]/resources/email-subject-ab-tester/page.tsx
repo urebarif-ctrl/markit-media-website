@@ -165,7 +165,7 @@ export default function EmailSubjectABTesterPage() {
                   value={subjectA}
                   onChange={(e) => setSubjectA(e.target.value)}
                   placeholder="e.g. Your exclusive offer expires tonight"
-                  className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black"
+                  className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black"
                   maxLength={200}
                 />
                 <span className="text-base text-gray-400 mt-1 block">
@@ -181,7 +181,7 @@ export default function EmailSubjectABTesterPage() {
                   value={subjectB}
                   onChange={(e) => setSubjectB(e.target.value)}
                   placeholder="e.g. Don't miss our biggest sale of the year"
-                  className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black"
+                  className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black"
                   maxLength={200}
                 />
                 <span className="text-base text-gray-400 mt-1 block">

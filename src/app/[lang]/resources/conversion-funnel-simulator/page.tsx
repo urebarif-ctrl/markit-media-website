@@ -425,7 +425,7 @@ export default function ConversionFunnelSimulatorPage() {
                   step={100}
                   value={visitors}
                   onChange={(e) => setVisitors(Math.max(0, Number(e.target.value)))}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
               </div>
               <div>
@@ -442,7 +442,7 @@ export default function ConversionFunnelSimulatorPage() {
                   step={100}
                   value={aov}
                   onChange={(e) => setAov(Math.max(0, Number(e.target.value)))}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
               </div>
               <div>
@@ -459,7 +459,7 @@ export default function ConversionFunnelSimulatorPage() {
                   step={100}
                   value={adSpend}
                   onChange={(e) => setAdSpend(Math.max(0, Number(e.target.value)))}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
               </div>
             </div>
@@ -512,7 +512,7 @@ export default function ConversionFunnelSimulatorPage() {
                           type="text"
                           value={stage.name}
                           onChange={(e) => updateStageName(stage.id, e.target.value)}
-                          className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                          className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                         />
                       </div>
 
@@ -562,7 +562,7 @@ export default function ConversionFunnelSimulatorPage() {
                               value={stage.rate}
                               onChange={(e) => updateStageRate(stage.id, Number(e.target.value))}
                               aria-label={`${stage.name} conversion rate value`}
-                              className="w-20 px-3 py-3 border-2 border-gray-200 text-base text-black text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                              className="w-20 px-3 py-3 border-2 border-gray-200 text-base text-black text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                             />
                           </div>
                         </div>
@@ -750,7 +750,7 @@ export default function ConversionFunnelSimulatorPage() {
                   id={`${formId}-whatif-stage`}
                   value={whatIfStageIdx}
                   onChange={(e) => setWhatIfStageIdx(Number(e.target.value))}
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none min-h-[44px]"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none min-h-[44px]"
                 >
                   {stages.slice(0, -1).map((s, i) => (
                     <option key={s.id} value={i}>

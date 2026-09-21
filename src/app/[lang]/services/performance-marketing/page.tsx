@@ -44,6 +44,11 @@ export default function PerformanceMarketingPage() {
         { q: "How quickly can I see results?", a: "Paid campaigns can generate traffic and leads within days of launch. We typically see meaningful optimization within 2-4 weeks." },
         { q: "Do you create the ad creatives?", a: "Yes, our team handles copywriting, creative design, and video production for your campaigns." },
       ]}
+      tools={[
+        { title: "Ad Spend Calculator", desc: "Estimate costs and projected results for your ad campaigns.", href: "/resources/ad-spend-calculator" },
+        { title: "Ad Budget Pacing", desc: "Track campaign pacing and forecast end-of-month spend.", href: "/resources/ad-budget-pacing" },
+        { title: "ROI Calculator", desc: "Calculate the potential return on your marketing investment.", href: "/resources/roi-calculator" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Social Media", href: "/services/social-media" },

@@ -96,11 +96,11 @@ export default function SocialPostGeneratorPage() {
           <section className="border border-gray-200 p-6 lg:p-8 space-y-6">
             <div>
               <label className="block text-base font-bold text-black mb-2">Topic / Subject</label>
-              <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="e.g., SEO strategy, email marketing" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black transition-colors" />
+              <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="e.g., SEO strategy, email marketing" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black transition-colors" />
             </div>
             <div>
               <label className="block text-base font-bold text-black mb-2">Key Message</label>
-              <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={3} placeholder="The main point you want to communicate..." className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black transition-colors resize-y" />
+              <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={3} placeholder="The main point you want to communicate..." className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black transition-colors resize-y" />
             </div>
             <div>
               <label className="block text-base font-bold text-black mb-2">Tone</label>

@@ -429,9 +429,9 @@ export default function MarketingProposalGeneratorPage() {
   /* ── Shared styling ─────────────────────────────────────────── */
 
   const inputClasses =
-    "w-full border border-neutral-300 bg-white text-black px-4 py-3 text-base focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors motion-reduce:transition-none";
+    "w-full border border-neutral-300 bg-white text-black px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black focus-visible:ring-1 focus-visible:ring-black transition-colors motion-reduce:transition-none";
   const selectClasses =
-    "w-full border border-neutral-300 bg-white text-black px-4 py-3 text-base focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors motion-reduce:transition-none appearance-none";
+    "w-full border border-neutral-300 bg-white text-black px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black focus-visible:ring-1 focus-visible:ring-black transition-colors motion-reduce:transition-none appearance-none";
 
   const completeness = computeCompleteness(form);
 

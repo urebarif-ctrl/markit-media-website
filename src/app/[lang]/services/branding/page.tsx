@@ -42,6 +42,11 @@ export default function BrandingPage() {
         { q: "How many logo concepts will I see?", a: "We typically present 3-5 initial logo concepts based on our strategy work, then refine the chosen direction through multiple revision rounds." },
         { q: "Do you design marketing materials too?", a: "Yes. Once your brand identity is established, we can design business cards, brochures, social media templates, presentations, and any other collateral you need." },
       ]}
+      tools={[
+        { title: "Brand Voice Generator", desc: "Define your brand voice and tone of voice guidelines.", href: "/resources/brand-voice-generator" },
+        { title: "Brand Name Generator", desc: "Generate and evaluate brand name ideas.", href: "/resources/brand-name-generator" },
+        { title: "Color Palette Generator", desc: "Create cohesive brand color palettes.", href: "/resources/color-palette-generator" },
+      ]}
       relatedServices={[
         { title: "Website Development", href: "/services/website-development" },
         { title: "Social Media", href: "/services/social-media" },

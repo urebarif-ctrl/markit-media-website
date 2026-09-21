@@ -416,7 +416,7 @@ export default function ContentRepurposingPage() {
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
                   placeholder="e.g., 10 Ways to Improve Website Conversion Rates"
-                  className="w-full border-2 border-gray-200 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:border-black focus:outline-none transition-colors motion-reduce:transition-none mb-6"
+                  className="w-full border-2 border-gray-200 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none mb-6"
                 />
 
                 <label htmlFor="content-size" className="block text-base font-bold text-black mb-2">
@@ -429,7 +429,7 @@ export default function ContentRepurposingPage() {
                   value={contentSize}
                   onChange={(e) => setContentSize(e.target.value)}
                   placeholder={currentType.sizeUnit === "words" ? "e.g., 2000" : "e.g., 45"}
-                  className="w-full max-w-xs border-2 border-gray-200 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:border-black focus:outline-none transition-colors motion-reduce:transition-none mb-6"
+                  className="w-full max-w-xs border-2 border-gray-200 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none mb-6"
                 />
 
                 <div>
@@ -447,7 +447,7 @@ export default function ContentRepurposingPage() {
                           value={kp.text}
                           onChange={(e) => updateKeyPoint(kp.id, e.target.value)}
                           placeholder={`Key point ${i + 1}`}
-                          className="flex-1 border-2 border-gray-200 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                          className="flex-1 border-2 border-gray-200 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                         />
                         {keyPoints.length > 1 && (
                           <button

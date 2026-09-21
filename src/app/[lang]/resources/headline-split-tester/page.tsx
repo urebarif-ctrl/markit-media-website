@@ -190,7 +190,7 @@ export default function HeadlineSplitTesterPage() {
             type="text"
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            className="max-w-md rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+            className="max-w-md rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
             placeholder="e.g. email marketing, SEO, social media"
           />
         </div>
@@ -223,7 +223,7 @@ export default function HeadlineSplitTesterPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && addVariant()}
-              className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Type or click a formula above to generate"
             />
             <button

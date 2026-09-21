@@ -21,6 +21,7 @@ interface ServicePageProps {
   benefits: string[];
   faq: { q: string; a: string }[];
   relatedServices?: { title: string; href: string }[];
+  tools?: { title: string; desc: string; href: string }[];
   heroImage?: string;
   blogCategory?: string;
 }
@@ -34,6 +35,7 @@ export function ServicePage({
   benefits,
   faq,
   relatedServices,
+  tools,
   heroImage,
   blogCategory,
 }: ServicePageProps) {
@@ -184,6 +186,26 @@ export function ServicePage({
                     <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline mb-2 leading-snug">{post.title}</h3>
                     <p className="text-base text-gray-500 line-clamp-2">{post.excerpt}</p>
                   </div>
+                </Link>
+              ))}
+            </Stagger>
+          </div>
+        </section>
+      )}
+
+      {/* Free Tools */}
+      {tools && tools.length > 0 && (
+        <section className="px-6 lg:px-12 py-16" aria-label="Free tools">
+          <div className="max-w-7xl mx-auto">
+            <Animate animation="fade-up">
+              <SectionLabel>Free Tools</SectionLabel>
+              <SectionTitle>Try These Related Tools</SectionTitle>
+            </Animate>
+            <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+              {tools.map((tool) => (
+                <Link key={tool.href} href={tool.href} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{tool.title}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p>
                 </Link>
               ))}
             </Stagger>

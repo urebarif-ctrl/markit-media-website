@@ -774,6 +774,24 @@ const resources = [
     count: "Multi-campaign",
   },
   {
+    title: "Competitive SWOT Analyzer",
+    desc: "Perform structured SWOT analysis across multiple competitors. Compare strengths, weaknesses, and generate strategic insights.",
+    href: "/resources/competitive-swot-analyzer",
+    count: "Up to 5 competitors",
+  },
+  {
+    title: "Marketing ROI Report Generator",
+    desc: "Generate professional marketing ROI reports. Input channel spend and revenue data for comprehensive performance analysis.",
+    href: "/resources/marketing-roi-report",
+    count: "Multi-channel",
+  },
+  {
+    title: "Customer Feedback Survey Builder",
+    desc: "Build customer feedback surveys from proven templates. NPS, CSAT, CES, post-purchase, and website feedback surveys.",
+    href: "/resources/customer-feedback-survey",
+    count: "6 templates",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

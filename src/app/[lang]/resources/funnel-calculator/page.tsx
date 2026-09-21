@@ -301,7 +301,7 @@ export default function FunnelCalculatorPage() {
                 step={100}
                 value={visitors}
                 onChange={(e) => setVisitors(Math.max(0, Number(e.target.value)))}
-                className="w-full max-w-xs px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                className="w-full max-w-xs px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
               />
             </div>
 
@@ -343,7 +343,7 @@ export default function FunnelCalculatorPage() {
                         )
                       }
                       aria-label={`${stage.label} rate value`}
-                      className="w-20 px-3 py-3 border-2 border-gray-200 text-base text-black text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                      className="w-20 px-3 py-3 border-2 border-gray-200 text-base text-black text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                     />
                   </div>
                 </div>
@@ -371,7 +371,7 @@ export default function FunnelCalculatorPage() {
                   onChange={(e) =>
                     setDealValue(Math.max(0, Number(e.target.value)))
                   }
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
               </div>
               <div>
@@ -393,7 +393,7 @@ export default function FunnelCalculatorPage() {
                   onChange={(e) =>
                     setMarketingSpend(Math.max(0, Number(e.target.value)))
                   }
-                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
               </div>
             </div>

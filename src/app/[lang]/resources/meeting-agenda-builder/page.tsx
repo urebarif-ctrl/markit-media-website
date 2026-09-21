@@ -518,7 +518,7 @@ export default function MeetingAgendaBuilderPage() {
                     type="text"
                     value={details.name}
                     onChange={(e) => setDetails({ ...details, name: e.target.value })}
-                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                     placeholder="e.g. Weekly Marketing Standup"
                   />
                 </div>
@@ -531,7 +531,7 @@ export default function MeetingAgendaBuilderPage() {
                     type="date"
                     value={details.date}
                     onChange={(e) => setDetails({ ...details, date: e.target.value })}
-                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                   />
                 </div>
                 <div>
@@ -543,7 +543,7 @@ export default function MeetingAgendaBuilderPage() {
                     type="time"
                     value={details.time}
                     onChange={(e) => setDetails({ ...details, time: e.target.value })}
-                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                   />
                 </div>
                 <div>
@@ -557,7 +557,7 @@ export default function MeetingAgendaBuilderPage() {
                     max={480}
                     value={details.totalDuration}
                     onChange={(e) => setDetails({ ...details, totalDuration: Math.max(1, parseInt(e.target.value) || 0) })}
-                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                   />
                 </div>
                 <div>
@@ -569,7 +569,7 @@ export default function MeetingAgendaBuilderPage() {
                     type="text"
                     value={details.attendees}
                     onChange={(e) => setDetails({ ...details, attendees: e.target.value })}
-                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                     placeholder="e.g. Sarah, Mike, Jordan"
                   />
                 </div>
@@ -582,7 +582,7 @@ export default function MeetingAgendaBuilderPage() {
                     type="text"
                     value={details.location}
                     onChange={(e) => setDetails({ ...details, location: e.target.value })}
-                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                    className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                     placeholder="e.g. Conference Room A or Zoom link"
                   />
                 </div>
@@ -713,7 +713,7 @@ export default function MeetingAgendaBuilderPage() {
                               type="text"
                               value={item.topic}
                               onChange={(e) => updateItem(item.id, "topic", e.target.value)}
-                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                             />
                           </div>
                           <div>
@@ -727,7 +727,7 @@ export default function MeetingAgendaBuilderPage() {
                               max={240}
                               value={item.duration}
                               onChange={(e) => updateItem(item.id, "duration", Math.max(1, parseInt(e.target.value) || 0))}
-                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                             />
                           </div>
                           <div>
@@ -739,7 +739,7 @@ export default function MeetingAgendaBuilderPage() {
                               type="text"
                               value={item.owner}
                               onChange={(e) => updateItem(item.id, "owner", e.target.value)}
-                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px]"
+                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px]"
                               placeholder="e.g. Sarah"
                             />
                           </div>
@@ -752,7 +752,7 @@ export default function MeetingAgendaBuilderPage() {
                               value={item.notes}
                               onChange={(e) => updateItem(item.id, "notes", e.target.value)}
                               rows={2}
-                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-0 min-h-[44px] resize-y"
+                              className="w-full border border-neutral-200 px-4 py-3 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-0 min-h-[44px] resize-y"
                               placeholder="Any prep notes or talking points"
                             />
                           </div>

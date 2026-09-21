@@ -768,7 +768,7 @@ export default function BrandVoiceCheckerPage() {
                   }}
                   rows={8}
                   placeholder="Paste your content here..."
-                  className="w-full border border-gray-200 p-4 text-base text-black placeholder:text-gray-400 focus:outline-2 focus:outline-black focus:outline-offset-2 resize-y"
+                  className="w-full border border-gray-200 p-4 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 resize-y"
                 />
                 {hasContent && (
                   <p className="text-base text-gray-500 mt-2">

@@ -266,7 +266,7 @@ export default function KPIBuilderPage() {
                                 onChange={(e) =>
                                   updateKPI(kpi.id, "current", e.target.value)
                                 }
-                                className="w-28 rounded border border-neutral-300 px-2 py-1 text-base focus:border-black focus:outline-none"
+                                className="w-28 rounded border border-neutral-300 px-2 py-1 text-base focus-visible:border-black focus-visible:outline-none"
                                 placeholder="0"
                               />
                             </div>
@@ -280,7 +280,7 @@ export default function KPIBuilderPage() {
                                 onChange={(e) =>
                                   updateKPI(kpi.id, "target", e.target.value)
                                 }
-                                className="w-28 rounded border border-neutral-300 px-2 py-1 text-base focus:border-black focus:outline-none"
+                                className="w-28 rounded border border-neutral-300 px-2 py-1 text-base focus-visible:border-black focus-visible:outline-none"
                                 placeholder="0"
                               />
                             </div>
@@ -297,7 +297,7 @@ export default function KPIBuilderPage() {
                                     e.target.value as KPIEntry["status"]
                                   )
                                 }
-                                className="rounded border border-neutral-300 px-2 py-1 text-base focus:border-black focus:outline-none"
+                                className="rounded border border-neutral-300 px-2 py-1 text-base focus-visible:border-black focus-visible:outline-none"
                               >
                                 <option value="on-track">On Track</option>
                                 <option value="at-risk">At Risk</option>

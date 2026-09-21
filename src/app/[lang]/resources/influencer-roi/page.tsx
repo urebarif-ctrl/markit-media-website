@@ -224,10 +224,10 @@ export default function InfluencerRoiPage() {
   }, [budget, numInfluencers, tier, platform, campaignType, price]);
 
   const selectClass =
-    "w-full px-4 py-3 border-2 border-gray-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none min-h-[44px] appearance-none";
+    "w-full px-4 py-3 border-2 border-gray-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none min-h-[44px] appearance-none";
 
   const inputClass =
-    "w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none min-h-[44px]";
+    "w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none min-h-[44px]";
 
   return (
     <article className="min-h-screen">

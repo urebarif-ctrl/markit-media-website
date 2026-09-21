@@ -389,7 +389,7 @@ export default function AdCopyAnalyzerPage() {
               type="text"
               value={headline}
               onChange={(e) => setHeadline(e.target.value)}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Your ad headline"
             />
             <p className="text-base text-neutral-400 mt-1">
@@ -404,7 +404,7 @@ export default function AdCopyAnalyzerPage() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={3}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Your ad description / body text"
             />
             <p className="text-base text-neutral-400 mt-1">
@@ -419,7 +419,7 @@ export default function AdCopyAnalyzerPage() {
               type="text"
               value={cta}
               onChange={(e) => setCta(e.target.value)}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="e.g. Get Started Free, Book Now, Learn More"
             />
           </div>

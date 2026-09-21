@@ -289,7 +289,7 @@ function ChannelRow({
             onChange={(e) =>
               onChange(index, "cpa", Math.max(1, Number(e.target.value)))
             }
-            className="w-full border border-gray-300 px-3 py-2 text-base text-black focus:outline-none focus:border-black"
+            className="w-full border border-gray-300 px-3 py-2 text-base text-black focus-visible:outline-none focus-visible:border-black"
           />
         </div>
         <div>
@@ -313,7 +313,7 @@ function ChannelRow({
                 Math.min(100, Math.max(0, Number(e.target.value))),
               )
             }
-            className="w-full border border-gray-300 px-3 py-2 text-base text-black focus:outline-none focus:border-black"
+            className="w-full border border-gray-300 px-3 py-2 text-base text-black focus-visible:outline-none focus-visible:border-black"
           />
         </div>
       </div>
@@ -832,7 +832,7 @@ export default function ChannelMixModellerPage() {
                 value={scenarioName}
                 onChange={(e) => setScenarioName(e.target.value)}
                 placeholder={`Scenario ${scenarios.length + 1}`}
-                className="w-full border border-gray-300 px-3 py-2 text-base text-black focus:outline-none focus:border-black"
+                className="w-full border border-gray-300 px-3 py-2 text-base text-black focus-visible:outline-none focus-visible:border-black"
                 maxLength={40}
               />
             </div>

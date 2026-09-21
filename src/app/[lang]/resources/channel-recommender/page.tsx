@@ -945,7 +945,7 @@ function StepBusinessDetails({
           id="industry"
           value={data.industry}
           onChange={(e) => onChange({ industry: e.target.value })}
-          className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 bg-white text-black focus:outline-2 focus:outline-black focus:outline-offset-2"
+          className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 bg-white text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
         >
           <option value="">Select your industry</option>
           {industries.map((ind) => (
@@ -1008,7 +1008,7 @@ function StepBusinessDetails({
               id="age-min"
               value={data.audienceAgeMin}
               onChange={(e) => onChange({ audienceAgeMin: e.target.value })}
-              className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 bg-white text-black focus:outline-2 focus:outline-black focus:outline-offset-2"
+              className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 bg-white text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <option value="">Min age</option>
               {ageOptions.map((a) => (
@@ -1027,7 +1027,7 @@ function StepBusinessDetails({
               id="age-max"
               value={data.audienceAgeMax}
               onChange={(e) => onChange({ audienceAgeMax: e.target.value })}
-              className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 bg-white text-black focus:outline-2 focus:outline-black focus:outline-offset-2"
+              className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 bg-white text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <option value="">Max age</option>
               {ageOptions.map((a) => (

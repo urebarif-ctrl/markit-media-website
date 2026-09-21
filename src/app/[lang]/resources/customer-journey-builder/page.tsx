@@ -111,7 +111,7 @@ export default function CustomerJourneyBuilderPage() {
             type="text"
             value={personaName}
             onChange={(e) => setPersonaName(e.target.value)}
-            className="max-w-md rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+            className="max-w-md rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
             placeholder="e.g. Marketing Manager Maria"
           />
         </div>
@@ -125,7 +125,7 @@ export default function CustomerJourneyBuilderPage() {
               <select
                 value={form.stage}
                 onChange={(e) => setForm((f) => ({ ...f, stage: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {STAGES.map((s) => (
                   <option key={s.id} value={s.id}>{s.label}</option>
@@ -138,7 +138,7 @@ export default function CustomerJourneyBuilderPage() {
                 type="text"
                 value={form.channel}
                 onChange={(e) => setForm((f) => ({ ...f, channel: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Google Search, Email, Social"
               />
             </div>
@@ -148,7 +148,7 @@ export default function CustomerJourneyBuilderPage() {
                 type="text"
                 value={form.action}
                 onChange={(e) => setForm((f) => ({ ...f, action: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Searches for solutions"
               />
             </div>
@@ -157,7 +157,7 @@ export default function CustomerJourneyBuilderPage() {
               <select
                 value={form.emotion}
                 onChange={(e) => setForm((f) => ({ ...f, emotion: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {EMOTIONS.map((e) => (
                   <option key={e} value={e}>{e}</option>
@@ -170,7 +170,7 @@ export default function CustomerJourneyBuilderPage() {
                 type="text"
                 value={form.painPoint}
                 onChange={(e) => setForm((f) => ({ ...f, painPoint: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="What frustrates them here?"
               />
             </div>
@@ -180,7 +180,7 @@ export default function CustomerJourneyBuilderPage() {
                 type="text"
                 value={form.opportunity}
                 onChange={(e) => setForm((f) => ({ ...f, opportunity: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="How can you improve this?"
               />
             </div>

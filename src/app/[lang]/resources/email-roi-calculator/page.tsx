@@ -59,34 +59,34 @@ export default function EmailRoiCalculatorPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="list-size" className="block text-base font-bold text-black mb-1">Email List Size</label>
-                <input id="list-size" type="number" value={listSize} onChange={(e) => setListSize(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="list-size" type="number" value={listSize} onChange={(e) => setListSize(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div>
                 <label htmlFor="emails-month" className="block text-base font-bold text-black mb-1">Emails Per Month</label>
-                <input id="emails-month" type="number" value={emailsPerMonth} onChange={(e) => setEmailsPerMonth(Math.max(1, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="emails-month" type="number" value={emailsPerMonth} onChange={(e) => setEmailsPerMonth(Math.max(1, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div>
                 <label htmlFor="open-rate" className="block text-base font-bold text-black mb-1">Open Rate (%)</label>
-                <input id="open-rate" type="number" step="0.1" value={openRate} onChange={(e) => setOpenRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="open-rate" type="number" step="0.1" value={openRate} onChange={(e) => setOpenRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
                 <p className="text-base text-gray-400 mt-1">Industry avg: 21.3%</p>
               </div>
               <div>
                 <label htmlFor="click-rate" className="block text-base font-bold text-black mb-1">Click-Through Rate (%)</label>
-                <input id="click-rate" type="number" step="0.1" value={clickRate} onChange={(e) => setClickRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="click-rate" type="number" step="0.1" value={clickRate} onChange={(e) => setClickRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
                 <p className="text-base text-gray-400 mt-1">Industry avg: 2.6%</p>
               </div>
               <div>
                 <label htmlFor="conv-rate" className="block text-base font-bold text-black mb-1">Conversion Rate (%)</label>
-                <input id="conv-rate" type="number" step="0.1" value={conversionRate} onChange={(e) => setConversionRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="conv-rate" type="number" step="0.1" value={conversionRate} onChange={(e) => setConversionRate(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
                 <p className="text-base text-gray-400 mt-1">From clicks to purchase/signup</p>
               </div>
               <div>
                 <label htmlFor="avg-order" className="block text-base font-bold text-black mb-1">Avg Order Value ($)</label>
-                <input id="avg-order" type="number" value={avgOrderValue} onChange={(e) => setAvgOrderValue(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="avg-order" type="number" value={avgOrderValue} onChange={(e) => setAvgOrderValue(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
               </div>
               <div className="md:col-span-2">
                 <label htmlFor="monthly-cost" className="block text-base font-bold text-black mb-1">Monthly Email Marketing Cost ($)</label>
-                <input id="monthly-cost" type="number" value={monthlyCost} onChange={(e) => setMonthlyCost(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none" />
+                <input id="monthly-cost" type="number" value={monthlyCost} onChange={(e) => setMonthlyCost(Math.max(0, Number(e.target.value)))} className="w-full px-4 py-3 border-2 border-gray-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none" />
                 <p className="text-base text-gray-400 mt-1">Platform fees + management costs</p>
               </div>
             </div>

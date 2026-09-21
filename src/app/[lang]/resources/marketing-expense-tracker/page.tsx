@@ -169,7 +169,7 @@ export default function MarketingExpenseTrackerPage() {
                   onChange={(e) =>
                     setBudget(Math.max(0, parseInt(e.target.value) || 0))
                   }
-                  className="w-40 rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                  className="w-40 rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                   min={0}
                   step={500}
                 />
@@ -220,7 +220,7 @@ export default function MarketingExpenseTrackerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, channel: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {CHANNELS.map((c) => (
                   <option key={c} value={c}>
@@ -239,7 +239,7 @@ export default function MarketingExpenseTrackerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, campaign: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Q3 Brand Campaign"
               />
             </div>
@@ -253,7 +253,7 @@ export default function MarketingExpenseTrackerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, amount: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="0"
                 min={0}
                 step={50}
@@ -268,7 +268,7 @@ export default function MarketingExpenseTrackerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, month: parseInt(e.target.value) }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {MONTHS.map((m, i) => (
                   <option key={m} value={i}>
@@ -287,7 +287,7 @@ export default function MarketingExpenseTrackerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, description: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="Optional description"
               />
             </div>
@@ -307,7 +307,7 @@ export default function MarketingExpenseTrackerPage() {
               <select
                 value={filterChannel}
                 onChange={(e) => setFilterChannel(e.target.value)}
-                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 <option value="All">All Channels</option>
                 {CHANNELS.map((c) => (
@@ -319,7 +319,7 @@ export default function MarketingExpenseTrackerPage() {
               <select
                 value={filterMonth}
                 onChange={(e) => setFilterMonth(parseInt(e.target.value))}
-                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 <option value={-1}>All Months</option>
                 {MONTHS.map((m, i) => (

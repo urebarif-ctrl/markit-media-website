@@ -258,7 +258,7 @@ export default function ContentBriefGeneratorPage() {
                 type="text"
                 value={brief.title}
                 onChange={(e) => set("title", e.target.value)}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Complete Guide to Email Marketing Automation"
               />
             </div>
@@ -290,7 +290,7 @@ export default function ContentBriefGeneratorPage() {
                 value={brief.objective}
                 onChange={(e) => set("objective", e.target.value)}
                 rows={3}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="What should this content achieve? e.g. Drive demo signups from mid-funnel prospects"
               />
             </div>
@@ -302,7 +302,7 @@ export default function ContentBriefGeneratorPage() {
                 <select
                   value={brief.tone}
                   onChange={(e) => set("tone", e.target.value)}
-                  className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                  className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 >
                   {TONE_OPTIONS.map((t) => (
                     <option key={t} value={t}>
@@ -321,7 +321,7 @@ export default function ContentBriefGeneratorPage() {
                   onChange={(e) =>
                     set("wordCount", parseInt(e.target.value) || 0)
                   }
-                  className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                  className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                   min={100}
                   step={100}
                 />
@@ -341,7 +341,7 @@ export default function ContentBriefGeneratorPage() {
                 value={brief.targetAudience}
                 onChange={(e) => set("targetAudience", e.target.value)}
                 rows={3}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="Describe your ideal reader: role, company size, pain points, knowledge level"
               />
             </div>
@@ -373,7 +373,7 @@ export default function ContentBriefGeneratorPage() {
                 type="text"
                 value={brief.primaryKeyword}
                 onChange={(e) => set("primaryKeyword", e.target.value)}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="Main keyword to target"
               />
             </div>
@@ -388,7 +388,7 @@ export default function ContentBriefGeneratorPage() {
                 type="text"
                 value={brief.secondaryKeywords}
                 onChange={(e) => set("secondaryKeywords", e.target.value)}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="related keyword 1, related keyword 2"
               />
             </div>
@@ -400,7 +400,7 @@ export default function ContentBriefGeneratorPage() {
                 value={brief.competitorUrls}
                 onChange={(e) => set("competitorUrls", e.target.value)}
                 rows={3}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="URLs of competing content to beat or reference (one per line)"
               />
             </div>
@@ -435,7 +435,7 @@ export default function ContentBriefGeneratorPage() {
                       onChange={(e) =>
                         updateOutlineItem(item.id, "heading", e.target.value)
                       }
-                      className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-base font-semibold focus:border-black focus:outline-none"
+                      className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-base font-semibold focus-visible:border-black focus-visible:outline-none"
                       placeholder="Section heading"
                     />
                     {brief.outline.length > 2 && (
@@ -454,7 +454,7 @@ export default function ContentBriefGeneratorPage() {
                       updateOutlineItem(item.id, "notes", e.target.value)
                     }
                     rows={2}
-                    className="w-full rounded-md border border-neutral-200 px-3 py-2 text-base focus:border-black focus:outline-none"
+                    className="w-full rounded-md border border-neutral-200 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                     placeholder="Notes for the writer: key points, data to include, angle"
                   />
                 </div>
@@ -474,7 +474,7 @@ export default function ContentBriefGeneratorPage() {
                 type="text"
                 value={brief.cta}
                 onChange={(e) => set("cta", e.target.value)}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="What action should the reader take? e.g. Book a demo, Download the guide"
               />
             </div>
@@ -486,7 +486,7 @@ export default function ContentBriefGeneratorPage() {
                 value={brief.internalLinks}
                 onChange={(e) => set("internalLinks", e.target.value)}
                 rows={3}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="URLs or page names to link within the content (one per line)"
               />
             </div>
@@ -498,7 +498,7 @@ export default function ContentBriefGeneratorPage() {
                 value={brief.additionalNotes}
                 onChange={(e) => set("additionalNotes", e.target.value)}
                 rows={4}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="Any other instructions, brand guidelines, or context for the writer"
               />
             </div>

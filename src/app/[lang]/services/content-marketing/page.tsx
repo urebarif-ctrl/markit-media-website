@@ -42,6 +42,11 @@ export default function ContentMarketingPage() {
         { q: "How do you measure content performance?", a: "We track organic traffic, keyword rankings, time on page, bounce rate, lead generation, and conversions from content. Monthly reporting keeps you informed." },
         { q: "Can you write for technical or niche industries?", a: "Yes. Our writers research thoroughly and collaborate with your subject matter experts to produce accurate content for specialized industries." },
       ]}
+      tools={[
+        { title: "Content Calendar", desc: "Plan and organize your content publishing schedule.", href: "/resources/content-calendar" },
+        { title: "Content Brief Generator", desc: "Create structured content briefs for writers.", href: "/resources/content-brief-generator" },
+        { title: "Headline Analyzer", desc: "Score and optimize your headlines for engagement.", href: "/resources/headline-analyzer" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Social Media", href: "/services/social-media" },

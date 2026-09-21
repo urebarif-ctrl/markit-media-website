@@ -150,7 +150,7 @@ export default function MarketingStackAuditPage() {
                         <select
                           value={entry.status}
                           onChange={(e) => updateEntry(key, "status", e.target.value)}
-                          className={`border border-gray-300 px-3 py-2 text-base focus:outline-none focus:border-black ${getStatusColor(entry.status)}`}
+                          className={`border border-gray-300 px-3 py-2 text-base focus-visible:outline-none focus-visible:border-black ${getStatusColor(entry.status)}`}
                         >
                           <option value="">Not assessed</option>
                           <option value="active">Active</option>

@@ -921,7 +921,7 @@ export default function MarketingAuditScorecardPage() {
                       value={auditName}
                       onChange={(e) => setAuditName(e.target.value)}
                       placeholder="Audit name (optional)"
-                      className="flex-1 min-h-[44px] px-4 py-3 text-base border border-gray-200 text-black placeholder:text-gray-400 focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                      className="flex-1 min-h-[44px] px-4 py-3 text-base border border-gray-200 text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                     />
                     <button
                       onClick={handleSave}
@@ -949,7 +949,7 @@ export default function MarketingAuditScorecardPage() {
                       onChange={(e) =>
                         setCompareId(e.target.value || null)
                       }
-                      className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 text-black bg-white focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                      className="w-full min-h-[44px] px-4 py-3 text-base border border-gray-200 text-black bg-white focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                     >
                       <option value="">Select an audit to compare</option>
                       {savedAudits.map((a) => (

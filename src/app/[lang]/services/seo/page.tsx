@@ -44,6 +44,11 @@ export default function SeoPage() {
         { q: "Can you fix a Google penalty?", a: "Yes. We diagnose manual actions and algorithmic issues, develop recovery plans, and work to restore your rankings." },
         { q: "Do you offer local SEO?", a: "Yes. We optimize Google Business Profiles, build local citations, manage reviews, and create location-specific content." },
       ]}
+      tools={[
+        { title: "SEO Checklist", desc: "Interactive monthly SEO checklist with progress tracking.", href: "/resources/seo-checklist" },
+        { title: "Website Grader", desc: "Evaluate your website across performance, SEO, and accessibility.", href: "/resources/website-grader" },
+        { title: "Keyword Density Checker", desc: "Analyze keyword usage and optimize on-page content.", href: "/resources/keyword-density-checker" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "Website Development", href: "/services/website-development" },

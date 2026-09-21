@@ -146,7 +146,7 @@ export default function MetaDescriptionGeneratorPage() {
                   placeholder="Enter your meta description here..."
                   rows={4}
                   maxLength={300}
-                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none resize-none"
+                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none resize-none"
                 />
                 <div className="flex justify-between items-center">
                   <p className={`text-base ${description.length > 160 ? "text-gray-800 font-bold" : "text-gray-400"}`}>

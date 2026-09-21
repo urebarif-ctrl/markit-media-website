@@ -183,7 +183,7 @@ export default function MarketingTimelinePlannerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, name: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Launch Email Campaign"
               />
             </div>
@@ -196,7 +196,7 @@ export default function MarketingTimelinePlannerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, channel: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {CHANNELS.map((c) => (
                   <option key={c} value={c}>
@@ -215,7 +215,7 @@ export default function MarketingTimelinePlannerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, owner: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="Who's responsible"
               />
             </div>
@@ -229,7 +229,7 @@ export default function MarketingTimelinePlannerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, startDate: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               />
             </div>
             <div>
@@ -242,7 +242,7 @@ export default function MarketingTimelinePlannerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, endDate: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               />
             </div>
             <div>
@@ -254,7 +254,7 @@ export default function MarketingTimelinePlannerPage() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, status: e.target.value }))
                 }
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {STATUS_OPTIONS.map((s) => (
                   <option key={s} value={s}>
@@ -274,7 +274,7 @@ export default function MarketingTimelinePlannerPage() {
               onChange={(e) =>
                 setForm((f) => ({ ...f, notes: e.target.value }))
               }
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Optional notes"
             />
           </div>
@@ -293,7 +293,7 @@ export default function MarketingTimelinePlannerPage() {
               <select
                 value={filterChannel}
                 onChange={(e) => setFilterChannel(e.target.value)}
-                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 <option value="All">All Channels</option>
                 {CHANNELS.map((c) => (
@@ -305,7 +305,7 @@ export default function MarketingTimelinePlannerPage() {
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 <option value="All">All Statuses</option>
                 {STATUS_OPTIONS.map((s) => (
@@ -367,7 +367,7 @@ export default function MarketingTimelinePlannerPage() {
                       <select
                         value={m.status}
                         onChange={(e) => updateStatus(m.id, e.target.value)}
-                        className="rounded-md border border-neutral-300 px-2 py-1 text-base focus:border-black focus:outline-none"
+                        className="rounded-md border border-neutral-300 px-2 py-1 text-base focus-visible:border-black focus-visible:outline-none"
                       >
                         {STATUS_OPTIONS.map((s) => (
                           <option key={s} value={s}>

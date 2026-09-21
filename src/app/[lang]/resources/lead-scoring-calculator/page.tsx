@@ -283,7 +283,7 @@ export default function LeadScoringCalculatorPage() {
               type="text"
               value={leadName}
               onChange={(e) => setLeadName(e.target.value)}
-              className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Lead name (optional)"
             />
             <button
@@ -321,7 +321,7 @@ export default function LeadScoringCalculatorPage() {
                       [key]: parseInt(e.target.value) || 0,
                     }))
                   }
-                  className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                  className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                   min={0}
                   max={100}
                 />

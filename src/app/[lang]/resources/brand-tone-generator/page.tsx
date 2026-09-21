@@ -115,18 +115,18 @@ export default function BrandToneGeneratorPage() {
         <div className="space-y-5">
           <div>
             <label className="block text-base font-bold text-black mb-2">Brand Name</label>
-            <input type="text" value={profile.brandName} onChange={(e) => setProfile((p) => ({ ...p, brandName: e.target.value }))} placeholder="Your brand or company name" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+            <input type="text" value={profile.brandName} onChange={(e) => setProfile((p) => ({ ...p, brandName: e.target.value }))} placeholder="Your brand or company name" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Primary Audience</label>
-            <select value={profile.audience} onChange={(e) => setProfile((p) => ({ ...p, audience: e.target.value }))} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+            <select value={profile.audience} onChange={(e) => setProfile((p) => ({ ...p, audience: e.target.value }))} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
               <option value="">Select primary audience</option>
               {audienceTypes.map((a) => <option key={a} value={a}>{a}</option>)}
             </select>
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Brand Tagline (optional)</label>
-            <input type="text" value={profile.tagline} onChange={(e) => setProfile((p) => ({ ...p, tagline: e.target.value }))} placeholder="e.g. Think Different, Just Do It" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+            <input type="text" value={profile.tagline} onChange={(e) => setProfile((p) => ({ ...p, tagline: e.target.value }))} placeholder="e.g. Think Different, Just Do It" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
           </div>
         </div>
       ),
@@ -199,15 +199,15 @@ export default function BrandToneGeneratorPage() {
         <div className="space-y-5">
           <div>
             <label className="block text-base font-bold text-black mb-2">We DO sound like...</label>
-            <textarea value={profile.doExamples} onChange={(e) => setProfile((p) => ({ ...p, doExamples: e.target.value }))} placeholder="e.g. &quot;Let's figure this out together.&quot; / &quot;Here's what the data shows.&quot; / &quot;Three steps to get started.&quot;" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.doExamples} onChange={(e) => setProfile((p) => ({ ...p, doExamples: e.target.value }))} placeholder="e.g. &quot;Let's figure this out together.&quot; / &quot;Here's what the data shows.&quot; / &quot;Three steps to get started.&quot;" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">We DON'T sound like...</label>
-            <textarea value={profile.dontExamples} onChange={(e) => setProfile((p) => ({ ...p, dontExamples: e.target.value }))} placeholder="e.g. &quot;HURRY! LIMITED TIME OFFER!!!&quot; / &quot;As per the aforementioned documentation...&quot; / &quot;You need us to succeed.&quot;" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.dontExamples} onChange={(e) => setProfile((p) => ({ ...p, dontExamples: e.target.value }))} placeholder="e.g. &quot;HURRY! LIMITED TIME OFFER!!!&quot; / &quot;As per the aforementioned documentation...&quot; / &quot;You need us to succeed.&quot;" rows={4} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
           <div>
             <label className="block text-base font-bold text-black mb-2">Brand Mission (in your voice)</label>
-            <textarea value={profile.missionVoice} onChange={(e) => setProfile((p) => ({ ...p, missionVoice: e.target.value }))} placeholder="Write your brand mission statement in the tone you've defined above" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+            <textarea value={profile.missionVoice} onChange={(e) => setProfile((p) => ({ ...p, missionVoice: e.target.value }))} placeholder="Write your brand mission statement in the tone you've defined above" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
           </div>
         </div>
       ),

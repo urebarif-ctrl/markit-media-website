@@ -211,7 +211,7 @@ export default function SocialMediaBioGeneratorPage() {
               type="text"
               value={config.name}
               onChange={(e) => set("name", e.target.value)}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Jane Smith"
             />
           </div>
@@ -223,7 +223,7 @@ export default function SocialMediaBioGeneratorPage() {
               type="text"
               value={config.role}
               onChange={(e) => set("role", e.target.value)}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Marketing Director"
             />
           </div>
@@ -235,7 +235,7 @@ export default function SocialMediaBioGeneratorPage() {
               type="text"
               value={config.industry}
               onChange={(e) => set("industry", e.target.value)}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="SaaS / E-Commerce / Healthcare"
             />
           </div>
@@ -250,7 +250,7 @@ export default function SocialMediaBioGeneratorPage() {
               type="text"
               value={config.keywords}
               onChange={(e) => set("keywords", e.target.value)}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="SEO, growth, analytics"
             />
           </div>
@@ -304,7 +304,7 @@ export default function SocialMediaBioGeneratorPage() {
             type="text"
             value={config.cta}
             onChange={(e) => set("cta", e.target.value)}
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
             placeholder="Custom CTA or pick one above"
           />
         </div>

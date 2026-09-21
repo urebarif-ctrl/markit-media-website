@@ -379,7 +379,7 @@ export default function ClientOnboardingChecklistPage() {
                   value={clientName}
                   onChange={(e) => setClientName(e.target.value)}
                   placeholder="e.g. Acme Corp"
-                  className="w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:outline-2 focus:outline-black focus:outline-offset-2 min-h-[44px]"
+                  className="w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
                 />
               </div>
               <div>
@@ -395,7 +395,7 @@ export default function ClientOnboardingChecklistPage() {
                   value={projectName}
                   onChange={(e) => setProjectName(e.target.value)}
                   placeholder="e.g. Q4 Campaign Launch"
-                  className="w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:outline-2 focus:outline-black focus:outline-offset-2 min-h-[44px]"
+                  className="w-full border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
                 />
               </div>
             </div>
@@ -595,7 +595,7 @@ export default function ClientOnboardingChecklistPage() {
                           }}
                           placeholder="Describe the task..."
                           autoFocus
-                          className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus:outline-2 focus:outline-black focus:outline-offset-2 min-h-[44px]"
+                          className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
                         />
                         <div className="flex gap-2">
                           <button

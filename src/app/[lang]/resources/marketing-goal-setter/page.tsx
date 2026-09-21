@@ -172,14 +172,14 @@ export default function MarketingGoalSetterPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Goal Category</label>
-                    <select value={goal.category} onChange={(e) => { updateGoal("category", e.target.value); updateGoal("metric", ""); }} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                    <select value={goal.category} onChange={(e) => { updateGoal("category", e.target.value); updateGoal("metric", ""); }} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                       <option value="">Select category</option>
                       {goalCategories.map((c) => <option key={c.name} value={c.name}>{c.name}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Specific Metric</label>
-                    <select value={goal.metric} onChange={(e) => updateGoal("metric", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white" disabled={!selectedCategory}>
+                    <select value={goal.metric} onChange={(e) => updateGoal("metric", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white" disabled={!selectedCategory}>
                       <option value="">Select metric</option>
                       {selectedCategory?.metrics.map((m) => <option key={m} value={m}>{m}</option>)}
                     </select>
@@ -189,36 +189,36 @@ export default function MarketingGoalSetterPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Current Value</label>
-                    <input type="text" value={goal.current} onChange={(e) => updateGoal("current", e.target.value)} placeholder="e.g. 5,000 visitors/month" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                    <input type="text" value={goal.current} onChange={(e) => updateGoal("current", e.target.value)} placeholder="e.g. 5,000 visitors/month" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Target Value</label>
-                    <input type="text" value={goal.target} onChange={(e) => updateGoal("target", e.target.value)} placeholder="e.g. 10,000 visitors/month" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                    <input type="text" value={goal.target} onChange={(e) => updateGoal("target", e.target.value)} placeholder="e.g. 10,000 visitors/month" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Timeframe</label>
-                    <select value={goal.deadline} onChange={(e) => updateGoal("deadline", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                    <select value={goal.deadline} onChange={(e) => updateGoal("deadline", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                       <option value="">Select timeframe</option>
                       {timeframes.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Owner / Responsible</label>
-                    <input type="text" value={goal.owner} onChange={(e) => updateGoal("owner", e.target.value)} placeholder="e.g. Marketing Manager" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                    <input type="text" value={goal.owner} onChange={(e) => updateGoal("owner", e.target.value)} placeholder="e.g. Marketing Manager" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-base font-bold text-black mb-2">Strategy / How to Achieve</label>
-                  <textarea value={goal.strategy} onChange={(e) => updateGoal("strategy", e.target.value)} placeholder="What specific actions will you take to reach this goal?" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+                  <textarea value={goal.strategy} onChange={(e) => updateGoal("strategy", e.target.value)} placeholder="What specific actions will you take to reach this goal?" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
                 </div>
 
                 <div>
                   <label className="block text-base font-bold text-black mb-2">Key Milestones</label>
-                  <textarea value={goal.milestones} onChange={(e) => updateGoal("milestones", e.target.value)} placeholder="e.g. Month 1: 6,000 visitors, Month 2: 8,000 visitors, Month 3: 10,000 visitors" rows={2} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+                  <textarea value={goal.milestones} onChange={(e) => updateGoal("milestones", e.target.value)} placeholder="e.g. Month 1: 6,000 visitors, Month 2: 8,000 visitors, Month 3: 10,000 visitors" rows={2} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
                 </div>
 
                 {goals.length > 1 && (

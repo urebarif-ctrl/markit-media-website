@@ -219,7 +219,7 @@ export default function ReadabilityCheckerPage() {
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Paste your blog post, landing page copy, email, or any marketing content here..."
                 rows={10}
-                className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 resize-y focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 resize-y focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 aria-describedby="readability-hint"
               />
               <p id="readability-hint" className="text-base text-gray-400">

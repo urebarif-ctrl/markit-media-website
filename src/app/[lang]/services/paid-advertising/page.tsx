@@ -41,6 +41,11 @@ export default function PaidAdvertisingPage() {
         { q: "How do you ensure brand safety?", a: "We use brand safety tools, blocklists, and contextual targeting to ensure your ads appear alongside appropriate content. We monitor placements and exclude problematic sites." },
         { q: "What budget do I need for display and programmatic?", a: "Programmatic campaigns can run at various budget levels. We recommend a budget based on your goals, audience size, and the channels you want to reach." },
       ]}
+      tools={[
+        { title: "Google Ads Estimator", desc: "Estimate Google Ads costs and projected performance.", href: "/resources/google-ads-estimator" },
+        { title: "Ad Copy Generator", desc: "Generate high-performing ad copy for multiple platforms.", href: "/resources/ad-copy-generator" },
+        { title: "UTM Builder", desc: "Create UTM parameters for accurate campaign tracking.", href: "/resources/utm-builder" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "Video Production", href: "/services/video-production" },

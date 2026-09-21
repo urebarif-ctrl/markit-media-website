@@ -42,6 +42,11 @@ export default function SocialMediaPage() {
         { q: "How do you measure social media success?", a: "We track engagement rate, reach, follower growth, website traffic from social, and conversions. Metrics are tailored to your specific goals." },
         { q: "Can you manage influencer campaigns?", a: "Yes. We handle influencer identification, outreach, contract negotiation, content coordination, and campaign performance reporting." },
       ]}
+      tools={[
+        { title: "Social Media Calendar", desc: "Plan and schedule your social media content.", href: "/resources/social-media-calendar-template" },
+        { title: "Hashtag Generator", desc: "Generate relevant hashtags for your social posts.", href: "/resources/hashtag-generator" },
+        { title: "Social Media ROI", desc: "Calculate the return on your social media investment.", href: "/resources/social-media-roi" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "Video Production", href: "/services/video-production" },

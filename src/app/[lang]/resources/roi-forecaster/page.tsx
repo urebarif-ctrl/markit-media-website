@@ -181,7 +181,7 @@ export default function ROIForecasterPage() {
               <select
                 value={form.channel}
                 onChange={(e) => handleChannelSelect(e.target.value)}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 {Object.keys(CHANNEL_DEFAULTS).map((c) => (
                   <option key={c} value={c}>{c}</option>
@@ -194,7 +194,7 @@ export default function ROIForecasterPage() {
                 type="number"
                 value={form.monthlyBudget}
                 onChange={(e) => setForm((f) => ({ ...f, monthlyBudget: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="5000"
                 min={0}
               />
@@ -208,7 +208,7 @@ export default function ROIForecasterPage() {
                 type="number"
                 value={form.cpc}
                 onChange={(e) => setForm((f) => ({ ...f, cpc: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="2.50"
                 min={0}
                 step={0.1}
@@ -220,7 +220,7 @@ export default function ROIForecasterPage() {
                 type="number"
                 value={form.conversionRate}
                 onChange={(e) => setForm((f) => ({ ...f, conversionRate: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="3.5"
                 min={0}
                 step={0.1}
@@ -232,7 +232,7 @@ export default function ROIForecasterPage() {
                 type="number"
                 value={form.avgOrderValue}
                 onChange={(e) => setForm((f) => ({ ...f, avgOrderValue: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="100"
                 min={0}
               />

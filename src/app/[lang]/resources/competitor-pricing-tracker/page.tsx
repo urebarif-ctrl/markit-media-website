@@ -145,7 +145,7 @@ export default function CompetitorPricingTrackerPage() {
                 type="text"
                 value={form.competitor}
                 onChange={(e) => setForm((f) => ({ ...f, competitor: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Acme Corp"
                 list="competitor-list"
               />
@@ -161,7 +161,7 @@ export default function CompetitorPricingTrackerPage() {
                 type="text"
                 value={form.planName}
                 onChange={(e) => setForm((f) => ({ ...f, planName: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. Pro, Enterprise"
               />
             </div>
@@ -171,7 +171,7 @@ export default function CompetitorPricingTrackerPage() {
                 type="number"
                 value={form.monthlyPrice}
                 onChange={(e) => setForm((f) => ({ ...f, monthlyPrice: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="99"
                 min={0}
               />
@@ -182,7 +182,7 @@ export default function CompetitorPricingTrackerPage() {
                 type="number"
                 value={form.annualPrice}
                 onChange={(e) => setForm((f) => ({ ...f, annualPrice: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="948"
                 min={0}
               />
@@ -193,7 +193,7 @@ export default function CompetitorPricingTrackerPage() {
                 type="text"
                 value={form.target}
                 onChange={(e) => setForm((f) => ({ ...f, target: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="e.g. SMBs, Enterprise"
               />
             </div>
@@ -203,7 +203,7 @@ export default function CompetitorPricingTrackerPage() {
                 type="text"
                 value={form.features}
                 onChange={(e) => setForm((f) => ({ ...f, features: e.target.value }))}
-                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
                 placeholder="Feature 1, Feature 2"
               />
             </div>
@@ -214,7 +214,7 @@ export default function CompetitorPricingTrackerPage() {
               type="text"
               value={form.notes}
               onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
-              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+              className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               placeholder="Strengths, weaknesses, positioning"
             />
           </div>
@@ -233,7 +233,7 @@ export default function CompetitorPricingTrackerPage() {
               <select
                 value={filterCompetitor}
                 onChange={(e) => setFilterCompetitor(e.target.value)}
-                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+                className="rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
               >
                 <option value="All">All Competitors</option>
                 {competitors.map((c) => (

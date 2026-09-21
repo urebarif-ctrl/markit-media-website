@@ -459,7 +459,7 @@ export default function SocialMediaCalendarTemplatePage() {
                           value={getWeekTheme(w)}
                           onChange={(e) => setWeekTheme(w, e.target.value)}
                           placeholder="Enter theme..."
-                          className="flex-1 border border-neutral-300 px-3 py-2 text-base text-black bg-white placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1"
+                          className="flex-1 border border-neutral-300 px-3 py-2 text-base text-black bg-white placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                         />
                       </div>
                     ))}
@@ -705,7 +705,7 @@ export default function SocialMediaCalendarTemplatePage() {
                   id="post-platform"
                   value={formPlatform}
                   onChange={(e) => setFormPlatform(e.target.value as Platform)}
-                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                 >
                   {PLATFORMS.map((pl) => (
                     <option key={pl} value={pl}>{pl}</option>
@@ -722,7 +722,7 @@ export default function SocialMediaCalendarTemplatePage() {
                   id="post-content-type"
                   value={formContentType}
                   onChange={(e) => setFormContentType(e.target.value as ContentType)}
-                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                 >
                   {CONTENT_TYPES.map((ct) => (
                     <option key={ct} value={ct}>{ct}</option>
@@ -741,7 +741,7 @@ export default function SocialMediaCalendarTemplatePage() {
                   onChange={(e) => setFormCaption(e.target.value)}
                   rows={3}
                   placeholder="What is this post about?"
-                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1 resize-y"
+                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1 resize-y"
                 />
               </div>
 
@@ -754,7 +754,7 @@ export default function SocialMediaCalendarTemplatePage() {
                   id="post-time-slot"
                   value={formTimeSlot}
                   onChange={(e) => setFormTimeSlot(e.target.value as TimeSlot)}
-                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                 >
                   {TIME_SLOTS.map((ts) => (
                     <option key={ts} value={ts}>{ts}</option>
@@ -771,7 +771,7 @@ export default function SocialMediaCalendarTemplatePage() {
                   id="post-status"
                   value={formStatus}
                   onChange={(e) => setFormStatus(e.target.value as PostStatus)}
-                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                  className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                 >
                   {STATUSES.map((st) => (
                     <option key={st} value={st}>{st}</option>

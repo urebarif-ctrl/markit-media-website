@@ -158,11 +158,11 @@ export default function CompetitorAdSpyPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Competitor Name</label>
-                    <input type="text" value={ad.competitor} onChange={(e) => updateAd(activeTab, "competitor", e.target.value)} placeholder="e.g. Acme Marketing" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                    <input type="text" value={ad.competitor} onChange={(e) => updateAd(activeTab, "competitor", e.target.value)} placeholder="e.g. Acme Marketing" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Platform</label>
-                    <select value={ad.platform} onChange={(e) => updateAd(activeTab, "platform", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                    <select value={ad.platform} onChange={(e) => updateAd(activeTab, "platform", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                       <option value="">Select</option>
                       {platforms.map((p) => <option key={p} value={p}>{p}</option>)}
                     </select>
@@ -171,14 +171,14 @@ export default function CompetitorAdSpyPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Ad Type</label>
-                    <select value={ad.adType} onChange={(e) => updateAd(activeTab, "adType", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                    <select value={ad.adType} onChange={(e) => updateAd(activeTab, "adType", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                       <option value="">Select</option>
                       {adTypes.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Tone</label>
-                    <select value={ad.tone} onChange={(e) => updateAd(activeTab, "tone", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                    <select value={ad.tone} onChange={(e) => updateAd(activeTab, "tone", e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                       <option value="">Select</option>
                       {tones.map((t) => <option key={t} value={t}>{t}</option>)}
                     </select>
@@ -186,34 +186,34 @@ export default function CompetitorAdSpyPage() {
                 </div>
                 <div>
                   <label className="block text-base font-bold text-black mb-2">Headline / Hook</label>
-                  <input type="text" value={ad.headline} onChange={(e) => updateAd(activeTab, "headline", e.target.value)} placeholder="What's the main headline or hook?" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                  <input type="text" value={ad.headline} onChange={(e) => updateAd(activeTab, "headline", e.target.value)} placeholder="What's the main headline or hook?" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                 </div>
                 <div>
                   <label className="block text-base font-bold text-black mb-2">Body Copy / Description</label>
-                  <textarea value={ad.bodyCopy} onChange={(e) => updateAd(activeTab, "bodyCopy", e.target.value)} placeholder="Key messaging points" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+                  <textarea value={ad.bodyCopy} onChange={(e) => updateAd(activeTab, "bodyCopy", e.target.value)} placeholder="Key messaging points" rows={3} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Call to Action</label>
-                    <input type="text" value={ad.cta} onChange={(e) => updateAd(activeTab, "cta", e.target.value)} placeholder="e.g. Get Started Free" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                    <input type="text" value={ad.cta} onChange={(e) => updateAd(activeTab, "cta", e.target.value)} placeholder="e.g. Get Started Free" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Offer / Incentive</label>
-                    <input type="text" value={ad.offer} onChange={(e) => updateAd(activeTab, "offer", e.target.value)} placeholder="e.g. 20% off first month" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                    <input type="text" value={ad.offer} onChange={(e) => updateAd(activeTab, "offer", e.target.value)} placeholder="e.g. 20% off first month" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-base font-bold text-black mb-2">Target Audience (estimated)</label>
-                  <input type="text" value={ad.targetAudience} onChange={(e) => updateAd(activeTab, "targetAudience", e.target.value)} placeholder="Who are they targeting?" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                  <input type="text" value={ad.targetAudience} onChange={(e) => updateAd(activeTab, "targetAudience", e.target.value)} placeholder="Who are they targeting?" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Strength</label>
-                    <textarea value={ad.strength} onChange={(e) => updateAd(activeTab, "strength", e.target.value)} placeholder="What's this ad doing well?" rows={2} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+                    <textarea value={ad.strength} onChange={(e) => updateAd(activeTab, "strength", e.target.value)} placeholder="What's this ad doing well?" rows={2} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
                   </div>
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Weakness / Opportunity</label>
-                    <textarea value={ad.weakness} onChange={(e) => updateAd(activeTab, "weakness", e.target.value)} placeholder="Where could you do better?" rows={2} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black resize-y" />
+                    <textarea value={ad.weakness} onChange={(e) => updateAd(activeTab, "weakness", e.target.value)} placeholder="Where could you do better?" rows={2} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black resize-y" />
                   </div>
                 </div>
                 {ads.length > 1 && (

@@ -173,7 +173,7 @@ export default function KeywordDensityCheckerPage() {
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Paste your blog post, landing page copy, or any content here..."
                   rows={10}
-                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 resize-y focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 resize-y focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   aria-describedby="kd-hint"
                 />
                 <p id="kd-hint" className="text-base text-gray-400 mt-1">
@@ -194,7 +194,7 @@ export default function KeywordDensityCheckerPage() {
                   value={targetKeyword}
                   onChange={(e) => setTargetKeyword(e.target.value)}
                   placeholder='e.g., "digital marketing"'
-                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                  className="w-full px-5 py-4 border-2 border-gray-200 text-base text-black placeholder:text-gray-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                 />
               </div>
 

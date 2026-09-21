@@ -81,14 +81,14 @@ export default function CampaignNamingConventionPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Platform</label>
-                <select value={platform} onChange={(e) => setPlatform(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={platform} onChange={(e) => setPlatform(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   <option value="">Select platform</option>
                   {platformOptions.map((p) => <option key={p} value={p}>{p}</option>)}
                 </select>
               </div>
               <div>
                 <label className="block text-base font-bold text-black mb-2">Objective</label>
-                <select value={objective} onChange={(e) => setObjective(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={objective} onChange={(e) => setObjective(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   <option value="">Select objective</option>
                   {objectiveOptions.map((o) => <option key={o} value={o}>{o}</option>)}
                 </select>
@@ -97,14 +97,14 @@ export default function CampaignNamingConventionPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Audience Type</label>
-                <select value={audience} onChange={(e) => setAudience(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={audience} onChange={(e) => setAudience(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   <option value="">Select audience</option>
                   {audienceOptions.map((a) => <option key={a} value={a}>{a}</option>)}
                 </select>
               </div>
               <div>
                 <label className="block text-base font-bold text-black mb-2">Geography</label>
-                <select value={geo} onChange={(e) => setGeo(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={geo} onChange={(e) => setGeo(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   <option value="">Select geography</option>
                   {geoOptions.map((g) => <option key={g} value={g}>{g}</option>)}
                 </select>
@@ -113,17 +113,17 @@ export default function CampaignNamingConventionPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Product / Service</label>
-                <input type="text" value={productService} onChange={(e) => setProductService(e.target.value)} placeholder="e.g. SEO, WebDesign, MetaAds" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                <input type="text" value={productService} onChange={(e) => setProductService(e.target.value)} placeholder="e.g. SEO, WebDesign, MetaAds" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
               </div>
               <div>
                 <label className="block text-base font-bold text-black mb-2">Creative / Variant (optional)</label>
-                <input type="text" value={creativeVariant} onChange={(e) => setCreativeVariant(e.target.value)} placeholder="e.g. v1, VideoA, Testimonial" className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black" />
+                <input type="text" value={creativeVariant} onChange={(e) => setCreativeVariant(e.target.value)} placeholder="e.g. v1, VideoA, Testimonial" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black" />
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Date Format</label>
-                <select value={dateFormat} onChange={(e) => setDateFormat(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={dateFormat} onChange={(e) => setDateFormat(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   <option value="YYYYMM">YYYYMM (e.g. 202609)</option>
                   <option value="YYYYQ">YYYYQ (e.g. 2026Q3)</option>
                   <option value="YYYY">YYYY (e.g. 2026)</option>
@@ -131,7 +131,7 @@ export default function CampaignNamingConventionPage() {
               </div>
               <div>
                 <label className="block text-base font-bold text-black mb-2">Separator</label>
-                <select value={separator} onChange={(e) => setSeparator(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={separator} onChange={(e) => setSeparator(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   {separatorOptions.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
                 </select>
               </div>

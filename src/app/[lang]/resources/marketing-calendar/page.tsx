@@ -127,14 +127,14 @@ export default function MarketingCalendarPage() {
             <section className="border border-gray-200 p-6 lg:p-8 space-y-6">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Industry</label>
-                <select value={industry} onChange={(e) => setIndustry(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={industry} onChange={(e) => setIndustry(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   <option value="">Select your industry</option>
                   {industries.map((ind) => <option key={ind} value={ind}>{ind}</option>)}
                 </select>
               </div>
               <div>
                 <label className="block text-base font-bold text-black mb-2">Fiscal Year Starts</label>
-                <select value={startMonth} onChange={(e) => setStartMonth(Number(e.target.value))} className="w-full border border-gray-300 px-4 py-3 text-base focus:outline-none focus:border-black bg-white">
+                <select value={startMonth} onChange={(e) => setStartMonth(Number(e.target.value))} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
                   {monthNames.map((m, i) => <option key={i} value={i}>{m}</option>)}
                 </select>
               </div>

@@ -491,7 +491,7 @@ export default function ContentPillarPlannerPage() {
                     value={newName}
                     onChange={(e) => setNewName(e.target.value)}
                     placeholder="e.g. SEO for Small Business"
-                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1"
+                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                   />
                 </div>
                 <div>
@@ -504,7 +504,7 @@ export default function ContentPillarPlannerPage() {
                     value={newKeyword}
                     onChange={(e) => setNewKeyword(e.target.value)}
                     placeholder="e.g. small business SEO"
-                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1"
+                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                   />
                 </div>
                 <div>
@@ -517,7 +517,7 @@ export default function ContentPillarPlannerPage() {
                     value={newAudience}
                     onChange={(e) => setNewAudience(e.target.value)}
                     placeholder="e.g. Local business owners, 30-55"
-                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1"
+                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                   />
                 </div>
                 <div>
@@ -528,7 +528,7 @@ export default function ContentPillarPlannerPage() {
                     id="pillar-format"
                     value={newFormat}
                     onChange={(e) => setNewFormat(e.target.value as ContentFormat)}
-                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                    className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                   >
                     {CONTENT_FORMATS.map((f) => (
                       <option key={f} value={f}>
@@ -717,7 +717,7 @@ export default function ContentPillarPlannerPage() {
                             value={ctName}
                             onChange={(e) => setCtName(e.target.value)}
                             placeholder="e.g. Local SEO Checklist"
-                            className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1"
+                            className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                           />
                         </div>
                         <div>
@@ -730,7 +730,7 @@ export default function ContentPillarPlannerPage() {
                             value={ctKeyword}
                             onChange={(e) => setCtKeyword(e.target.value)}
                             placeholder="e.g. local SEO checklist"
-                            className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus:outline-2 focus:outline-black focus:outline-offset-1"
+                            className="w-full border border-neutral-300 px-4 py-3 text-base text-black placeholder:text-neutral-400 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                           />
                         </div>
                         <div>
@@ -743,7 +743,7 @@ export default function ContentPillarPlannerPage() {
                             onChange={(e) =>
                               setCtType(e.target.value as ClusterContentType)
                             }
-                            className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                            className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                           >
                             {CLUSTER_CONTENT_TYPES.map((ct) => (
                               <option key={ct} value={ct}>
@@ -763,7 +763,7 @@ export default function ContentPillarPlannerPage() {
                               onChange={(e) =>
                                 setCtPriority(e.target.value as Priority)
                               }
-                              className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                              className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                             >
                               {PRIORITIES.map((pr) => (
                                 <option key={pr.id} value={pr.id}>
@@ -782,7 +782,7 @@ export default function ContentPillarPlannerPage() {
                               onChange={(e) =>
                                 setCtStatus(e.target.value as Status)
                               }
-                              className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                              className="w-full border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                             >
                               {STATUSES.map((st) => (
                                 <option key={st.id} value={st.id}>
@@ -845,7 +845,7 @@ export default function ContentPillarPlannerPage() {
                                         type="text"
                                         value={editCtName}
                                         onChange={(e) => setEditCtName(e.target.value)}
-                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-1"
+                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                                       />
                                     </td>
                                     <td className="px-4 py-3">
@@ -855,7 +855,7 @@ export default function ContentPillarPlannerPage() {
                                         type="text"
                                         value={editCtKeyword}
                                         onChange={(e) => setEditCtKeyword(e.target.value)}
-                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-1"
+                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                                       />
                                     </td>
                                     <td className="px-4 py-3">
@@ -864,7 +864,7 @@ export default function ContentPillarPlannerPage() {
                                         id={`edit-type-${t.id}`}
                                         value={editCtType}
                                         onChange={(e) => setEditCtType(e.target.value as ClusterContentType)}
-                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                                       >
                                         {CLUSTER_CONTENT_TYPES.map((ct) => (
                                           <option key={ct} value={ct}>{ct}</option>
@@ -877,7 +877,7 @@ export default function ContentPillarPlannerPage() {
                                         id={`edit-pri-${t.id}`}
                                         value={editCtPriority}
                                         onChange={(e) => setEditCtPriority(e.target.value as Priority)}
-                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                                       >
                                         {PRIORITIES.map((pr) => (
                                           <option key={pr.id} value={pr.id}>{pr.label}</option>
@@ -890,7 +890,7 @@ export default function ContentPillarPlannerPage() {
                                         id={`edit-stat-${t.id}`}
                                         value={editCtStatus}
                                         onChange={(e) => setEditCtStatus(e.target.value as Status)}
-                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1"
+                                        className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1"
                                       >
                                         {STATUSES.map((st) => (
                                           <option key={st.id} value={st.id}>{st.label}</option>
@@ -1012,28 +1012,28 @@ export default function ContentPillarPlannerPage() {
                               <div className="border border-neutral-200 p-4 mt-2 space-y-3 bg-neutral-50">
                                 <div>
                                   <label htmlFor={`m-edit-name-${t.id}`} className="block text-base font-bold text-black mb-1">Topic Name</label>
-                                  <input id={`m-edit-name-${t.id}`} type="text" value={editCtName} onChange={(e) => setEditCtName(e.target.value)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-1" />
+                                  <input id={`m-edit-name-${t.id}`} type="text" value={editCtName} onChange={(e) => setEditCtName(e.target.value)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1" />
                                 </div>
                                 <div>
                                   <label htmlFor={`m-edit-kw-${t.id}`} className="block text-base font-bold text-black mb-1">Keyword</label>
-                                  <input id={`m-edit-kw-${t.id}`} type="text" value={editCtKeyword} onChange={(e) => setEditCtKeyword(e.target.value)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus:outline-2 focus:outline-black focus:outline-offset-1" />
+                                  <input id={`m-edit-kw-${t.id}`} type="text" value={editCtKeyword} onChange={(e) => setEditCtKeyword(e.target.value)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1" />
                                 </div>
                                 <div>
                                   <label htmlFor={`m-edit-type-${t.id}`} className="block text-base font-bold text-black mb-1">Type</label>
-                                  <select id={`m-edit-type-${t.id}`} value={editCtType} onChange={(e) => setEditCtType(e.target.value as ClusterContentType)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1">
+                                  <select id={`m-edit-type-${t.id}`} value={editCtType} onChange={(e) => setEditCtType(e.target.value as ClusterContentType)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1">
                                     {CLUSTER_CONTENT_TYPES.map((ct) => (<option key={ct} value={ct}>{ct}</option>))}
                                   </select>
                                 </div>
                                 <div className="flex gap-3">
                                   <div className="flex-1">
                                     <label htmlFor={`m-edit-pri-${t.id}`} className="block text-base font-bold text-black mb-1">Priority</label>
-                                    <select id={`m-edit-pri-${t.id}`} value={editCtPriority} onChange={(e) => setEditCtPriority(e.target.value as Priority)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1">
+                                    <select id={`m-edit-pri-${t.id}`} value={editCtPriority} onChange={(e) => setEditCtPriority(e.target.value as Priority)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1">
                                       {PRIORITIES.map((pr) => (<option key={pr.id} value={pr.id}>{pr.label}</option>))}
                                     </select>
                                   </div>
                                   <div className="flex-1">
                                     <label htmlFor={`m-edit-stat-${t.id}`} className="block text-base font-bold text-black mb-1">Status</label>
-                                    <select id={`m-edit-stat-${t.id}`} value={editCtStatus} onChange={(e) => setEditCtStatus(e.target.value as Status)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1">
+                                    <select id={`m-edit-stat-${t.id}`} value={editCtStatus} onChange={(e) => setEditCtStatus(e.target.value as Status)} className="w-full border border-neutral-300 px-3 py-2 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1">
                                       {STATUSES.map((st) => (<option key={st.id} value={st.id}>{st.label}</option>))}
                                     </select>
                                   </div>
@@ -1079,7 +1079,7 @@ export default function ContentPillarPlannerPage() {
                     id="filter-status"
                     value={filterStatus}
                     onChange={(e) => setFilterStatus(e.target.value as Status | "all")}
-                    className="border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1 min-w-[160px]"
+                    className="border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1 min-w-[160px]"
                   >
                     <option value="all">All Statuses</option>
                     {STATUSES.map((st) => (
@@ -1099,7 +1099,7 @@ export default function ContentPillarPlannerPage() {
                     onChange={(e) =>
                       setFilterPriority(e.target.value as Priority | "all")
                     }
-                    className="border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1 min-w-[160px]"
+                    className="border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1 min-w-[160px]"
                   >
                     <option value="all">All Priorities</option>
                     {PRIORITIES.map((pr) => (
@@ -1117,7 +1117,7 @@ export default function ContentPillarPlannerPage() {
                     id="filter-pillar"
                     value={filterPillar}
                     onChange={(e) => setFilterPillar(e.target.value)}
-                    className="border border-neutral-300 px-4 py-3 text-base text-black bg-white focus:outline-2 focus:outline-black focus:outline-offset-1 min-w-[160px]"
+                    className="border border-neutral-300 px-4 py-3 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1 min-w-[160px]"
                   >
                     <option value="all">All Pillars</option>
                     {pillars.map((p) => (

@@ -123,7 +123,7 @@ export default function SocialContentRaterPage() {
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus:border-black focus:outline-none"
+            className="w-full rounded-md border border-neutral-300 px-3 py-2 text-base focus-visible:border-black focus-visible:outline-none"
             placeholder="Brief description of the post you're rating"
           />
         </div>

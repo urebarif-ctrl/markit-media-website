@@ -498,7 +498,7 @@ export default function RoiDashboardPage() {
                             updateChannel(ch.id, "name", e.target.value)
                           }
                           placeholder="e.g. Google Ads"
-                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                         />
                       </div>
                       <div>
@@ -517,7 +517,7 @@ export default function RoiDashboardPage() {
                             updateChannel(ch.id, "spend", e.target.value)
                           }
                           placeholder="5000"
-                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                         />
                       </div>
                       <div>
@@ -536,7 +536,7 @@ export default function RoiDashboardPage() {
                             updateChannel(ch.id, "revenue", e.target.value)
                           }
                           placeholder="15000"
-                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                         />
                       </div>
                       <div>
@@ -555,7 +555,7 @@ export default function RoiDashboardPage() {
                             updateChannel(ch.id, "leads", e.target.value)
                           }
                           placeholder="50"
-                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                         />
                       </div>
                       <div>
@@ -580,7 +580,7 @@ export default function RoiDashboardPage() {
                             )
                           }
                           placeholder="10"
-                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus:border-black focus:outline-none transition-colors motion-reduce:transition-none"
+                          className="w-full border border-gray-300 px-3 py-3 text-base text-black focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none"
                         />
                       </div>
                     </div>

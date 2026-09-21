@@ -653,7 +653,7 @@ export default function EmailWarmUpPlannerPage() {
                       setProvider(e.target.value as EmailProvider);
                       setGenerated(false);
                     }}
-                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   >
                     {emailProviders.map((p) => (
                       <option key={p.id} value={p.id}>
@@ -678,7 +678,7 @@ export default function EmailWarmUpPlannerPage() {
                       setTargetVolume(Math.max(10, Math.min(100000, Number(e.target.value))));
                       setGenerated(false);
                     }}
-                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   />
                   <p className="text-base text-neutral-400 mt-1">Maximum emails per day you want to reach</p>
                 </div>
@@ -732,7 +732,7 @@ export default function EmailWarmUpPlannerPage() {
                       setDomainAge(e.target.value as DomainAge);
                       setGenerated(false);
                     }}
-                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   >
                     {domainAges.map((d) => (
                       <option key={d.id} value={d.id}>
@@ -754,7 +754,7 @@ export default function EmailWarmUpPlannerPage() {
                       setReputation(e.target.value as Reputation);
                       setGenerated(false);
                     }}
-                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus:border-black transition-colors motion-reduce:transition-none"
+                    className="w-full px-4 py-3 border-2 border-neutral-200 text-base text-black bg-white focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 focus-visible:border-black transition-colors motion-reduce:transition-none"
                   >
                     {reputations.map((r) => (
                       <option key={r.id} value={r.id}>
