@@ -47,6 +47,13 @@ export default function DigitalMarketingPage() {
         { title: "ROI Calculator", desc: "Calculate the potential return on marketing investment.", href: "/resources/roi-calculator" },
         { title: "Marketing Audit Scorecard", desc: "Score your current marketing across 8 key areas.", href: "/resources/marketing-audit-scorecard" },
       ]}
+      industries={[
+        { title: "B2B", href: "/industries/b2b" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "Professional Services", href: "/industries/professional-services" },
+        { title: "Manufacturing", href: "/industries/manufacturing" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "SEO", href: "/services/seo" },

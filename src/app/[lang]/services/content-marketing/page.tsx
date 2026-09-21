@@ -47,6 +47,13 @@ export default function ContentMarketingPage() {
         { title: "Content Brief Generator", desc: "Create structured content briefs for writers.", href: "/resources/content-brief-generator" },
         { title: "Headline Analyzer", desc: "Score and optimize your headlines for engagement.", href: "/resources/headline-analyzer" },
       ]}
+      industries={[
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "B2B", href: "/industries/b2b" },
+        { title: "Healthcare", href: "/industries/healthcare" },
+        { title: "Professional Services", href: "/industries/professional-services" },
+        { title: "Education", href: "/industries/education" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Social Media", href: "/services/social-media" },

@@ -49,6 +49,13 @@ export default function PerformanceMarketingPage() {
         { title: "Ad Budget Pacing", desc: "Track campaign pacing and forecast end-of-month spend.", href: "/resources/ad-budget-pacing" },
         { title: "ROI Calculator", desc: "Calculate the potential return on your marketing investment.", href: "/resources/roi-calculator" },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "Finance", href: "/industries/finance" },
+        { title: "Education", href: "/industries/education" },
+        { title: "B2B", href: "/industries/b2b" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Social Media", href: "/services/social-media" },

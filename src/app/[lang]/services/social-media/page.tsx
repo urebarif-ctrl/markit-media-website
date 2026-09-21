@@ -47,6 +47,13 @@ export default function SocialMediaPage() {
         { title: "Hashtag Generator", desc: "Generate relevant hashtags for your social posts.", href: "/resources/hashtag-generator" },
         { title: "Social Media ROI", desc: "Calculate the return on your social media investment.", href: "/resources/social-media-roi" },
       ]}
+      industries={[
+        { title: "Fashion", href: "/industries/fashion" },
+        { title: "Restaurants", href: "/industries/restaurants" },
+        { title: "Fitness", href: "/industries/fitness" },
+        { title: "Hospitality", href: "/industries/hospitality" },
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "Video Production", href: "/services/video-production" },

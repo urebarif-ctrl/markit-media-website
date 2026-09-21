@@ -46,6 +46,13 @@ export default function PaidAdvertisingPage() {
         { title: "Ad Copy Generator", desc: "Generate high-performing ad copy for multiple platforms.", href: "/resources/ad-copy-generator" },
         { title: "UTM Builder", desc: "Create UTM parameters for accurate campaign tracking.", href: "/resources/utm-builder" },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "Finance", href: "/industries/finance" },
+        { title: "Automotive", href: "/industries/automotive" },
+        { title: "Travel", href: "/industries/travel" },
+        { title: "Home Services", href: "/industries/home-services" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "Video Production", href: "/services/video-production" },

@@ -49,6 +49,13 @@ export default function WebsiteDevelopmentPage() {
         { title: "Speed Test", desc: "Measure and optimize your website loading speed.", href: "/resources/speed-test" },
         { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/resources/website-heuristic-evaluator" },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "Professional Services", href: "/industries/professional-services" },
+        { title: "Healthcare", href: "/industries/healthcare" },
+        { title: "Real Estate", href: "/industries/real-estate" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Branding & Design", href: "/services/branding" },

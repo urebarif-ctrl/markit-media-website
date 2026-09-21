@@ -49,6 +49,13 @@ export default function SeoPage() {
         { title: "Website Grader", desc: "Evaluate your website across performance, SEO, and accessibility.", href: "/resources/website-grader" },
         { title: "Keyword Density Checker", desc: "Analyze keyword usage and optimize on-page content.", href: "/resources/keyword-density-checker" },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "Healthcare", href: "/industries/healthcare" },
+        { title: "Real Estate", href: "/industries/real-estate" },
+        { title: "Legal", href: "/industries/legal" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "Website Development", href: "/services/website-development" },

@@ -47,6 +47,13 @@ export default function EmailMarketingPage() {
         { title: "Email Warm-Up Planner", desc: "Plan your email warm-up schedule for new domains.", href: "/resources/email-warmup-planner" },
         { title: "Email ROI Calculator", desc: "Calculate returns from your email marketing campaigns.", href: "/resources/email-roi-calculator" },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "B2B", href: "/industries/b2b" },
+        { title: "Education", href: "/industries/education" },
+        { title: "Nonprofits", href: "/industries/nonprofits" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "AI Solutions", href: "/services/ai" },

@@ -40,6 +40,13 @@ export default function BpoPage() {
         { q: "What are your working hours?", a: "We offer flexible scheduling to match your time zone and business hours, including coverage during US, UK, and MENA business hours." },
         { q: "How quickly can you get started?", a: "We can onboard dedicated staff within 1-2 weeks depending on role complexity. We handle recruitment, training, and setup so you can focus on your priorities." },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "Healthcare", href: "/industries/healthcare" },
+        { title: "Professional Services", href: "/industries/professional-services" },
+        { title: "Finance", href: "/industries/finance" },
+      ]}
       relatedServices={[
         { title: "AI Solutions", href: "/services/ai" },
         { title: "Digital Marketing", href: "/services/digital-marketing" },

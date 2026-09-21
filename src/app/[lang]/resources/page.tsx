@@ -900,6 +900,24 @@ const resources = [
     count: "8 categories",
   },
   {
+    title: "Agency Pricing Calculator",
+    desc: "Model hourly, retainer, and project-based pricing with team composition, overhead multipliers, and profit margins. Industry benchmarks included.",
+    href: "/resources/agency-pricing-calculator",
+    count: "3 models",
+  },
+  {
+    title: "Stakeholder Report Generator",
+    desc: "Build executive, board, team, and client reports with drag-to-reorder sections, KPI highlight cards, and print-ready preview.",
+    href: "/resources/stakeholder-report",
+    count: "4 templates",
+  },
+  {
+    title: "Risk Assessment Matrix",
+    desc: "Map marketing risks on a 5×5 likelihood-vs-impact matrix with SVG heatmap, mitigation strategies, and category filtering.",
+    href: "/resources/risk-assessment",
+    count: "5×5 matrix",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

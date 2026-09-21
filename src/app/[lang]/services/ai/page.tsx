@@ -41,6 +41,13 @@ export default function AiPage() {
         { q: "Is AI marketing automation different from regular automation?", a: "AI-powered automation goes beyond rule-based triggers. It can adapt to user behavior in real time, optimize send times, personalize content, and improve over time through learning." },
         { q: "What is the ROI of AI solutions?", a: "ROI depends on the application. Chatbots reduce support costs and capture leads 24/7. Automation saves manual hours. Predictive analytics improves targeting and reduces wasted spend." },
       ]}
+      industries={[
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "Finance", href: "/industries/finance" },
+        { title: "Healthcare", href: "/industries/healthcare" },
+        { title: "B2B", href: "/industries/b2b" },
+      ]}
       relatedServices={[
         { title: "Digital Marketing", href: "/services/digital-marketing" },
         { title: "Email Marketing", href: "/services/email-marketing" },

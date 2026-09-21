@@ -46,6 +46,13 @@ export default function EcommerceMarketingPage() {
         { title: "Funnel Calculator", desc: "Model your e-commerce conversion funnel.", href: "/resources/funnel-calculator" },
         { title: "Pricing Calculator", desc: "Optimize your pricing strategy with data-driven analysis.", href: "/resources/pricing-calculator" },
       ]}
+      industries={[
+        { title: "E-Commerce", href: "/industries/ecommerce" },
+        { title: "Fashion", href: "/industries/fashion" },
+        { title: "Home Services", href: "/industries/home-services" },
+        { title: "Automotive", href: "/industries/automotive" },
+        { title: "Travel", href: "/industries/travel" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "Website Development", href: "/services/website-development" },

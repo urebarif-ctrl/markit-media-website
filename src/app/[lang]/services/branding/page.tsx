@@ -47,6 +47,13 @@ export default function BrandingPage() {
         { title: "Brand Name Generator", desc: "Generate and evaluate brand name ideas.", href: "/resources/brand-name-generator" },
         { title: "Color Palette Generator", desc: "Create cohesive brand color palettes.", href: "/resources/color-palette-generator" },
       ]}
+      industries={[
+        { title: "Fashion", href: "/industries/fashion" },
+        { title: "Hospitality", href: "/industries/hospitality" },
+        { title: "SaaS", href: "/industries/saas" },
+        { title: "Professional Services", href: "/industries/professional-services" },
+        { title: "Nonprofits", href: "/industries/nonprofits" },
+      ]}
       relatedServices={[
         { title: "Website Development", href: "/services/website-development" },
         { title: "Social Media", href: "/services/social-media" },

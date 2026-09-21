@@ -22,6 +22,7 @@ interface ServicePageProps {
   faq: { q: string; a: string }[];
   relatedServices?: { title: string; href: string }[];
   tools?: { title: string; desc: string; href: string }[];
+  industries?: { title: string; href: string }[];
   heroImage?: string;
   blogCategory?: string;
 }
@@ -36,6 +37,7 @@ export function ServicePage({
   faq,
   relatedServices,
   tools,
+  industries,
   heroImage,
   blogCategory,
 }: ServicePageProps) {
@@ -223,6 +225,23 @@ export function ServicePage({
                 {relatedServices.map((rs) => (
                   <Link key={rs.href} href={rs.href} className="border border-gray-200 px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {rs.title}
+                  </Link>
+                ))}
+              </div>
+            </Animate>
+          </div>
+        </section>
+      )}
+
+      {industries && industries.length > 0 && (
+        <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Industries we serve">
+          <div className="max-w-4xl mx-auto">
+            <Animate animation="fade-up">
+              <SectionLabel>Industries We Serve</SectionLabel>
+              <div className="flex flex-wrap gap-3 mt-6">
+                {industries.map((ind) => (
+                  <Link key={ind.href} href={ind.href} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {ind.title}
                   </Link>
                 ))}
               </div>
