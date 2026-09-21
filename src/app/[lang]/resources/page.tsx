@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,900+ articles",
+    count: "2,200+ articles",
   },
   {
     title: "FAQ",
@@ -952,6 +952,18 @@ const resources = [
     desc: "Plan your marketing technology stack across 8 categories. Cost tracking, integration matrix, duplicate detection, and star ratings.",
     href: "/resources/martech-stack-planner",
     count: "8 categories",
+  },
+  {
+    title: "SLA Tracker",
+    desc: "Track service level agreements with compliance rates, monthly trends, category filtering, and pre-loaded agency-client SLA templates.",
+    href: "/resources/sla-tracker",
+    count: "15 SLAs",
+  },
+  {
+    title: "Competitive Intel Dashboard",
+    desc: "Track up to 5 competitors across 6 dimensions with threat scores, gap analysis, strength/weakness summary, and side-by-side comparison.",
+    href: "/resources/competitive-intel-dashboard",
+    count: "6 dimensions",
   },
   {
     title: "Small Business Guide",

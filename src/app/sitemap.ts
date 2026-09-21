@@ -170,6 +170,8 @@ const staticPages = [
   "/resources/sprint-planner",
   "/resources/quarterly-review",
   "/resources/martech-stack-planner",
+  "/resources/sla-tracker",
+  "/resources/competitive-intel-dashboard",
   "/tools",
   "/approach",
   "/pricing",
