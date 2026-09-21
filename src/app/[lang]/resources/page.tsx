@@ -630,6 +630,24 @@ const resources = [
     count: "13 channels",
   },
   {
+    title: "Lead Scoring Calculator",
+    desc: "Build a lead scoring model with demographic, firmographic, and behavioural criteria. Test with real leads and define thresholds.",
+    href: "/resources/lead-scoring-calculator",
+    count: "8 criteria",
+  },
+  {
+    title: "Marketing Timeline Planner",
+    desc: "Plan campaigns with milestones, channel assignments, owners, status tracking, and a visual Gantt-style timeline view.",
+    href: "/resources/marketing-timeline-planner",
+    count: "10 channels",
+  },
+  {
+    title: "Ad Copy Analyser",
+    desc: "Score ad copy against best practices for headlines, descriptions, CTAs, and emotional triggers across 5 platforms.",
+    href: "/resources/ad-copy-analyzer",
+    count: "5 platforms",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

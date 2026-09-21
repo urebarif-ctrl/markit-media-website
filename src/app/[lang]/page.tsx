@@ -530,6 +530,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Bio Generator", desc: "Create optimised social media bios for any platform.", href: "/resources/social-media-bio-generator" },
               { title: "Content Brief", desc: "Build detailed briefs for writers with keywords and outline.", href: "/resources/content-brief-generator" },
               { title: "Expense Tracker", desc: "Track marketing spend by channel with budget monitoring.", href: "/resources/marketing-expense-tracker" },
+              { title: "Lead Scoring", desc: "Build a lead scoring model and test with real leads.", href: "/resources/lead-scoring-calculator" },
+              { title: "Timeline Planner", desc: "Plan campaigns with milestones and visual timeline.", href: "/resources/marketing-timeline-planner" },
+              { title: "Ad Copy Analyser", desc: "Score your ad copy against best practices.", href: "/resources/ad-copy-analyzer" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
