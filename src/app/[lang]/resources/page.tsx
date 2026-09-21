@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,700+ articles",
+    count: "1,900+ articles",
   },
   {
     title: "FAQ",
@@ -934,6 +934,24 @@ const resources = [
     desc: "Run structured post-mortems with planned vs actual metrics, variance analysis, A-F grading, lessons learned, and auto-generated summaries.",
     href: "/resources/campaign-debrief",
     count: "8 metrics",
+  },
+  {
+    title: "Sprint Planner",
+    desc: "Plan 2-week marketing sprints with tasks, effort points, kanban board, burndown tracking, and agile marketing best practices.",
+    href: "/resources/sprint-planner",
+    count: "20 tasks",
+  },
+  {
+    title: "Quarterly Review Template",
+    desc: "Build quarterly marketing reviews with channel performance, goal progress, budget review, year-over-year comparison, and print-ready export.",
+    href: "/resources/quarterly-review",
+    count: "5 sections",
+  },
+  {
+    title: "Martech Stack Planner",
+    desc: "Plan your marketing technology stack across 8 categories. Cost tracking, integration matrix, duplicate detection, and star ratings.",
+    href: "/resources/martech-stack-planner",
+    count: "8 categories",
   },
   {
     title: "Small Business Guide",

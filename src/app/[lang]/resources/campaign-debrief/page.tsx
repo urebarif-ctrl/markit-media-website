@@ -1034,6 +1034,18 @@ export default function CampaignDebriefPage() {
         </div>
       </section>
 
+      {/* Related Tools */}
+      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
+          <div className="flex flex-wrap gap-3">
+                <a href="/resources/campaign-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Campaign Tracker</a>
+                <a href="/resources/experiment-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Experiment Tracker</a>
+                <a href="/resources/marketing-audit-scorecard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</a>
+          </div>
+        </div>
+      </section>
+
       {/* ---- CTA Section ---- */}
       <section className="px-6 lg:px-12 py-20 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto text-center">
