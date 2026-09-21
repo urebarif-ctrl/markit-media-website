@@ -196,6 +196,7 @@ export default function ToolsPage() {
                 { label: "Technology Stack", href: "/technology" },
                 { label: "Capabilities", href: "/capabilities" },
                 { label: "Our Process", href: "/process" },
+                { label: "Free Marketing Tools", href: "/resources" },
               ].map((link) => (
                 <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}

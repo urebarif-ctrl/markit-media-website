@@ -228,7 +228,20 @@ export default function HashtagGeneratorPage() {
 
   return (
     <article>
-      <JsonLd
+      
+      {/* Related Tools */}
+      <section className="px-6 lg:px-12 py-12" aria-label="Related tools">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
+          <div className="flex flex-wrap gap-3">
+                <Link href="/resources/social-media-planner" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media Planner</Link>
+                <Link href="/resources/social-media-roi" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media ROI</Link>
+                <Link href="/resources/social-media-audit" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media Audit</Link>
+                <Link href="/resources/social-calendar" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Calendar</Link>
+          </div>
+        </div>
+      </section>
+<JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",

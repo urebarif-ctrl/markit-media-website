@@ -874,7 +874,20 @@ export default function ContentCalendarPage() {
 
   return (
     <article>
-      <JsonLd
+      
+      {/* Related Tools */}
+      <section className="px-6 lg:px-12 py-12" aria-label="Related tools">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
+          <div className="flex flex-wrap gap-3">
+                <Link href="/resources/content-brief-generator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Brief Generator</Link>
+                <Link href="/resources/content-roi-calculator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content ROI Calculator</Link>
+                <Link href="/resources/content-gap-finder" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Gap Finder</Link>
+                <Link href="/resources/content-pillar-planner" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Pillar Planner</Link>
+          </div>
+        </div>
+      </section>
+<JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",

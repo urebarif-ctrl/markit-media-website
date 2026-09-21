@@ -797,7 +797,20 @@ export default function AdBudgetPacingPage() {
           </Animate>
         </div>
       </section>
-          <JsonLd
+          
+      {/* Related Tools */}
+      <section className="px-6 lg:px-12 py-12" aria-label="Related tools">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
+          <div className="flex flex-wrap gap-3">
+                <Link href="/resources/ad-copy-generator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Ad Copy Generator</Link>
+                <Link href="/resources/ad-copy-analyzer" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Ad Copy Analyzer</Link>
+                <Link href="/resources/ad-spend-calculator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Ad Spend Calculator</Link>
+                <Link href="/resources/google-ads-estimator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Google Ads Estimator</Link>
+          </div>
+        </div>
+      </section>
+<JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
