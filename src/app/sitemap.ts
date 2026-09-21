@@ -95,6 +95,7 @@ const staticPages = [
   "/resources/ab-test-ideas",
   "/resources/content-audit-scorecard",
   "/resources/redesign-planner",
+  "/resources/seo-gap-finder",
   "/tools",
   "/approach",
   "/pricing",

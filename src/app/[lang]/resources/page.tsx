@@ -504,6 +504,12 @@ const resources = [
     count: "Interactive planner",
   },
   {
+    title: "SEO Content Gap Finder",
+    desc: "Identify content gaps in your SEO strategy by analyzing topic coverage against competitors and search intent to find untapped ranking opportunities.",
+    href: "/resources/seo-gap-finder",
+    count: "Gap analysis",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
