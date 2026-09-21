@@ -594,6 +594,24 @@ const resources = [
     count: "4-step generator",
   },
   {
+    title: "Campaign Naming Convention",
+    desc: "Generate consistent campaign naming conventions for ads, email, and UTM parameters. Keep your marketing data clean and organised.",
+    href: "/resources/campaign-naming-convention",
+    count: "Name builder",
+  },
+  {
+    title: "Marketing Stack Audit",
+    desc: "Audit your marketing technology stack across analytics, CRM, email, ads, social, and content tools. Identify gaps and optimisation opportunities.",
+    href: "/resources/marketing-stack-audit",
+    count: "30 tools assessed",
+  },
+  {
+    title: "Pricing Page Analyser",
+    desc: "Check your pricing page against 20 conversion best practices across clarity, persuasion, trust, and UX dimensions.",
+    href: "/resources/pricing-page-analyzer",
+    count: "20 checkpoints",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

@@ -32,9 +32,23 @@ export default function ContactPage() {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      { "@type": "Question", name: "Is the initial consultation free?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our discovery call is completely free with no obligation. We use it to understand your goals, assess fit, and outline how we could help." } },
+      { "@type": "Question", name: "How quickly can you start?", acceptedAnswer: { "@type": "Answer", text: "Most projects can kick off within one to two weeks of signing. Urgent projects may start sooner depending on scope and team availability." } },
+      { "@type": "Question", name: "Do you require long-term contracts?", acceptedAnswer: { "@type": "Answer", text: "We offer both project-based and retainer engagements. Retainers typically run on a month-to-month basis after an initial commitment period." } },
+      { "@type": "Question", name: "What industries do you work with?", acceptedAnswer: { "@type": "Answer", text: "We serve over 20 industries including e-commerce, healthcare, real estate, SaaS, professional services, hospitality, and more." } },
+      { "@type": "Question", name: "Can you work with our existing team?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. We frequently collaborate with in-house marketing teams, acting as an extension to fill skill gaps or provide specialist expertise." } },
+      { "@type": "Question", name: "How do you measure success?", acceptedAnswer: { "@type": "Answer", text: "We establish clear KPIs at the start of every engagement and report on them regularly. Metrics are tied to business outcomes, not vanity numbers." } },
+    ],
+  };
+
   return (
     <article>
       <JsonLd data={contactSchema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-20">
@@ -132,6 +146,33 @@ export default function ContactPage() {
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
               </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16" aria-label="Common questions about working with us">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Common Questions</SectionLabel>
+            <SectionTitle>Before You Reach Out</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="mt-10 space-y-4">
+            {[
+              { q: "Is the initial consultation free?", a: "Yes. Our discovery call is completely free with no obligation. We use it to understand your goals, assess fit, and outline how we could help." },
+              { q: "How quickly can you start?", a: "Most projects can kick off within one to two weeks of signing. Urgent projects may start sooner depending on scope and team availability." },
+              { q: "Do you require long-term contracts?", a: "We offer both project-based and retainer engagements. Retainers typically run on a month-to-month basis after an initial commitment period." },
+              { q: "What industries do you work with?", a: "We serve over 20 industries including e-commerce, healthcare, real estate, SaaS, professional services, hospitality, and more. Our strategies are tailored to each vertical." },
+              { q: "Can you work with our existing team?", a: "Absolutely. We frequently collaborate with in-house marketing teams, acting as an extension to fill skill gaps or provide specialist expertise." },
+              { q: "How do you measure success?", a: "We establish clear KPIs at the start of every engagement and report on them regularly. Metrics are tied to business outcomes, not vanity numbers." },
+            ].map((faq) => (
+              <details key={faq.q} className="group border border-gray-200 bg-white">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-bold text-black hover:bg-gray-50 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  {faq.q}
+                  <span className="ml-4 text-gray-400 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+                </summary>
+                <div className="px-6 pb-5 text-base text-gray-600 leading-relaxed">{faq.a}</div>
+              </details>
             ))}
           </Stagger>
         </div>
