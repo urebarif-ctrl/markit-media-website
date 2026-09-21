@@ -224,7 +224,7 @@ function MetricsSummary({ derivatives, originalMinutes }: { derivatives: Derivat
         <div key={m.label} className="bg-white border border-gray-200 p-4 text-center">
           <p className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-black">{m.value}</p>
           <p className="text-base font-bold text-black mt-1">{m.label}</p>
-          <p className="text-sm text-gray-500 mt-0.5">{m.sub}</p>
+          <p className="text-base text-neutral-500 mt-0.5">{m.sub}</p>
         </div>
       ))}
     </div>
@@ -436,7 +436,7 @@ export default function ContentRepurposingPage() {
                   <label className="block text-base font-bold text-black mb-2">
                     Key Points (optional)
                   </label>
-                  <p className="text-sm text-gray-500 mb-3">
+                  <p className="text-base text-neutral-500 mb-3">
                     Add the main takeaways or sections from your content. These help tailor the repurposing plan.
                   </p>
                   <div className="space-y-3">
@@ -525,7 +525,7 @@ export default function ContentRepurposingPage() {
                 Generate Repurposing Plan &rarr;
               </button>
               {!isFormValid && (
-                <p className="text-sm text-gray-500 mt-2">
+                <p className="text-base text-neutral-500 mt-2">
                   Please fill in the topic, {currentType.sizeLabel.toLowerCase()}, and select at least one platform.
                 </p>
               )}
@@ -620,7 +620,7 @@ export default function ContentRepurposingPage() {
                                 <h4 className="font-[family-name:var(--font-display)] text-base font-bold text-black">
                                   {d.format}
                                 </h4>
-                                <span className="inline-flex items-center bg-gray-100 px-3 py-1 text-sm font-bold text-black whitespace-nowrap">
+                                <span className="inline-flex items-center bg-gray-100 px-3 py-1 text-base font-bold text-black whitespace-nowrap">
                                   ~{d.estimatedMinutes < 60
                                     ? `${d.estimatedMinutes} min`
                                     : `${(d.estimatedMinutes / 60).toFixed(1)} hrs`}

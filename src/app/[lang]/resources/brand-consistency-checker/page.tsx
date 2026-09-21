@@ -562,7 +562,7 @@ function ResultsSection({ result }: { result: ScoreResult }) {
                     <p className="text-base font-bold text-black">
                       {d.percentage}%
                     </p>
-                    <p className="text-sm text-gray-500 mt-1">{d.dimension}</p>
+                    <p className="text-base text-neutral-500 mt-1">{d.dimension}</p>
                   </div>
                 ))}
               </div>
@@ -975,7 +975,7 @@ export default function BrandConsistencyCheckerPage() {
                     <span className="inline-flex items-center justify-center w-10 h-10 bg-black text-white text-base font-bold">
                       {item.n}
                     </span>
-                    <p className="text-sm text-gray-500 mt-1">{item.label}</p>
+                    <p className="text-base text-neutral-500 mt-1">{item.label}</p>
                   </div>
                 ))}
               </div>

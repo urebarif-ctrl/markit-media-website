@@ -551,6 +551,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Funnel Simulator", desc: "Simulate your marketing funnel and identify bottlenecks.", href: "/resources/conversion-funnel-simulator" },
               { title: "Voice Checker", desc: "Evaluate content consistency against your brand voice.", href: "/resources/brand-voice-checker" },
               { title: "Agenda Builder", desc: "Build marketing meeting agendas from pro templates.", href: "/resources/meeting-agenda-builder" },
+              { title: "RFP Template", desc: "Build professional marketing RFPs with structured sections.", href: "/resources/marketing-rfp-template" },
+              { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/resources/website-heuristic-evaluator" },
+              { title: "Budget Pacing", desc: "Track ad spend pacing and forecast end-of-month budget.", href: "/resources/ad-budget-pacing" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

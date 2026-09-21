@@ -512,7 +512,7 @@ export default function SocialMediaCalendarTemplatePage() {
                                       e.stopPropagation();
                                       openEditForm(post);
                                     }}
-                                    className={`block w-full text-left px-1.5 py-0.5 text-[13px] leading-tight border-l-2 ${STATUS_BORDER[post.status]} ${PLATFORM_STYLES[post.platform].bg} ${PLATFORM_STYLES[post.platform].text} truncate focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1`}
+                                    className={`block w-full text-left px-1.5 py-0.5 text-base leading-tight border-l-2 ${STATUS_BORDER[post.status]} ${PLATFORM_STYLES[post.platform].bg} ${PLATFORM_STYLES[post.platform].text} truncate focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-1`}
                                     title={`${post.platform} - ${post.contentType} (${post.status})`}
                                   >
                                     {PLATFORM_STYLES[post.platform].label} &middot; {post.status[0]}

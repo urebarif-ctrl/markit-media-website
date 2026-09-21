@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "660+ articles",
+    count: "1,190+ articles",
   },
   {
     title: "FAQ",
@@ -33,7 +33,7 @@ const resources = [
     title: "Glossary",
     desc: "A comprehensive reference for key digital marketing terms, acronyms, and concepts.",
     href: "/glossary",
-    count: "175 terms",
+    count: "200+ terms",
   },
   {
     title: "Checklists",
@@ -754,6 +754,24 @@ const resources = [
     desc: "Build structured marketing meeting agendas from 7 professional templates. Weekly standups, monthly reviews, and client calls.",
     href: "/resources/meeting-agenda-builder",
     count: "7 templates",
+  },
+  {
+    title: "Marketing RFP Template Builder",
+    desc: "Build professional RFPs for marketing engagements. Cover scope, requirements, evaluation criteria, budget, and timeline in a structured template.",
+    href: "/resources/marketing-rfp-template",
+    count: "9 sections",
+  },
+  {
+    title: "Website Heuristic Evaluator",
+    desc: "Evaluate your website against Nielsen's 10 usability heuristics. Score each principle, identify issues, and get improvement recommendations.",
+    href: "/resources/website-heuristic-evaluator",
+    count: "10 heuristics",
+  },
+  {
+    title: "Ad Budget Pacing Calculator",
+    desc: "Track advertising budget pacing across campaigns. Monitor spend rate, forecast end-of-month spend, and identify over or under-pacing campaigns.",
+    href: "/resources/ad-budget-pacing",
+    count: "Multi-campaign",
   },
   {
     title: "Small Business Guide",

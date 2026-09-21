@@ -508,7 +508,7 @@ export default function AdSpendCalculatorPage() {
                               <td className="px-4 py-3 text-black">
                                 {ind}
                                 {isSelected && (
-                                  <span className="ml-2 text-gray-500 font-normal text-sm">
+                                  <span className="ml-2 text-neutral-500 font-normal text-base">
                                     (your industry)
                                   </span>
                                 )}

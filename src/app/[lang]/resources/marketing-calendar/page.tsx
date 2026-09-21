@@ -174,7 +174,7 @@ export default function MarketingCalendarPage() {
                     {m.keyDates.length > 0 && (
                       <div className="mb-3">
                         {m.keyDates.map((d) => (
-                          <span key={d.name} className="inline-block bg-gray-100 text-gray-700 text-sm px-2 py-1 mr-1 mb-1">{d.name}</span>
+                          <span key={d.name} className="inline-block bg-gray-100 text-neutral-700 text-base px-2 py-1 mr-1 mb-1">{d.name}</span>
                         ))}
                       </div>
                     )}
