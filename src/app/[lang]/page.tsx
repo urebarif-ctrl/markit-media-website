@@ -545,6 +545,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Channel Mix", desc: "Model marketing channel allocation with projected ROI.", href: "/resources/channel-mix-modeller" },
               { title: "Pillar Planner", desc: "Plan content pillars with topic clusters and publishing queue.", href: "/resources/content-pillar-planner" },
               { title: "Onboarding Checklist", desc: "Generate tailored client onboarding checklists by service.", href: "/resources/client-onboarding-checklist" },
+              { title: "Audit Scorecard", desc: "Score your marketing across 8 categories with 40 questions.", href: "/resources/marketing-audit-scorecard" },
+              { title: "Content Calendar", desc: "Plan social posts on an interactive monthly calendar.", href: "/resources/social-media-calendar-template" },
+              { title: "Naming Convention", desc: "Generate consistent campaign names across ad platforms.", href: "/resources/campaign-naming-generator" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

@@ -720,6 +720,24 @@ const resources = [
     count: "5 phases",
   },
   {
+    title: "Marketing Audit Scorecard",
+    desc: "Score your marketing across 8 categories with 40 questions. Get grades, priority recommendations, and benchmark comparisons.",
+    href: "/resources/marketing-audit-scorecard",
+    count: "40 questions",
+  },
+  {
+    title: "Social Media Calendar Template",
+    desc: "Plan social content with an interactive monthly calendar. Schedule posts by platform, set weekly themes, and track posting stats.",
+    href: "/resources/social-media-calendar-template",
+    count: "Calendar view",
+  },
+  {
+    title: "Campaign Naming Generator",
+    desc: "Generate consistent campaign naming conventions for Google Ads, Meta, LinkedIn, and more. Customisable segments and platform templates.",
+    href: "/resources/campaign-naming-generator",
+    count: "8 platforms",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
