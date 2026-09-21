@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,500+ articles",
+    count: "1,600+ articles",
   },
   {
     title: "FAQ",
@@ -33,7 +33,7 @@ const resources = [
     title: "Glossary",
     desc: "A comprehensive reference for key digital marketing terms, acronyms, and concepts.",
     href: "/glossary",
-    count: "250 terms",
+    count: "300 terms",
   },
   {
     title: "Checklists",
@@ -862,6 +862,42 @@ const resources = [
     desc: "Pre-launch checklist covering content, SEO, performance, security, UX, analytics, legal, and launch day. GO/NO-GO indicator included.",
     href: "/resources/website-launch-checklist",
     count: "50 items",
+  },
+  {
+    title: "Backlink Profile Analyzer",
+    desc: "Analyze your backlink profile quality. Track DA distribution, anchor text diversity, link types, and get improvement recommendations.",
+    href: "/resources/backlink-analyzer",
+    count: "Full analysis",
+  },
+  {
+    title: "Customer Retention Calculator",
+    desc: "Calculate retention rate, churn rate, and lifetime value. Track monthly cohorts, compare industry benchmarks, and model improvement scenarios.",
+    href: "/resources/retention-calculator",
+    count: "8 industries",
+  },
+  {
+    title: "Marketing Experiment Tracker",
+    desc: "Plan and track marketing experiments with ICE scoring, hypothesis tracking, win/loss analysis, Gantt timeline, and learnings library.",
+    href: "/resources/experiment-tracker",
+    count: "Full tracker",
+  },
+  {
+    title: "Marketing Attribution Calculator",
+    desc: "Compare Last Touch, First Touch, Linear, and Time Decay attribution models side by side. ROI per channel, what-if scenario planning.",
+    href: "/resources/attribution-calculator",
+    count: "4 models",
+  },
+  {
+    title: "Content Performance Scorecard",
+    desc: "Score content across 8 dimensions with customizable weights. Radar chart comparison, performance tiers, and action recommendations.",
+    href: "/resources/content-performance-scorecard",
+    count: "8 dimensions",
+  },
+  {
+    title: "Vendor Evaluation Scorecard",
+    desc: "Compare up to 5 vendors across 8 categories with weighted scoring. Radar chart, decision matrix, winner recommendation.",
+    href: "/resources/vendor-evaluation",
+    count: "8 categories",
   },
   {
     title: "Small Business Guide",
