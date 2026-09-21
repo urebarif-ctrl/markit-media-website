@@ -684,6 +684,24 @@ const resources = [
     count: "5 platforms",
   },
   {
+    title: "Marketing Proposal Generator",
+    desc: "Generate professional marketing proposals with client info, scope, deliverables, timeline, and pricing in a guided 5-step wizard.",
+    href: "/resources/marketing-proposal-generator",
+    count: "5-step wizard",
+  },
+  {
+    title: "Brand Name Evaluator",
+    desc: "Score brand names across 8 criteria including memorability, pronounceability, uniqueness, and domain potential. Compare multiple names side by side.",
+    href: "/resources/brand-name-evaluator",
+    count: "8 criteria",
+  },
+  {
+    title: "Email Warm-Up Planner",
+    desc: "Plan your email domain warm-up schedule with day-by-day volume targets, phase breakdowns, and provider-specific tips for better deliverability.",
+    href: "/resources/email-warmup-planner",
+    count: "Day-by-day plan",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",
