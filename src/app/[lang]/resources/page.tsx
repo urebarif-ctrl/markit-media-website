@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "1,600+ articles",
+    count: "1,700+ articles",
   },
   {
     title: "FAQ",
@@ -916,6 +916,24 @@ const resources = [
     desc: "Map marketing risks on a 5×5 likelihood-vs-impact matrix with SVG heatmap, mitigation strategies, and category filtering.",
     href: "/resources/risk-assessment",
     count: "5×5 matrix",
+  },
+  {
+    title: "OKR Planner",
+    desc: "Plan and track marketing objectives with key results, auto-calculated progress, visual bars, and pre-loaded templates for brand, lead gen, and retention.",
+    href: "/resources/okr-planner",
+    count: "5 objectives",
+  },
+  {
+    title: "Team Capacity Planner",
+    desc: "Plan team workload across roles and projects. Per-role utilization bars, over-allocation alerts, and cost tracking for up to 10 team members.",
+    href: "/resources/team-capacity-planner",
+    count: "10 members",
+  },
+  {
+    title: "Campaign Debrief Generator",
+    desc: "Run structured post-mortems with planned vs actual metrics, variance analysis, A-F grading, lessons learned, and auto-generated summaries.",
+    href: "/resources/campaign-debrief",
+    count: "8 metrics",
   },
   {
     title: "Small Business Guide",

@@ -140,6 +140,33 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-16" aria-label="Our pricing principles">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Our Principles</SectionLabel>
+            <SectionTitle>How We Approach Pricing</SectionTitle>
+          </Animate>
+          <div className="mt-8 space-y-6">
+            {[
+              { title: "No Hidden Fees", desc: "The price we quote is the price you pay. Ad spend, software subscriptions, and any third-party costs are always separate and transparent." },
+              { title: "Right-Sized Recommendations", desc: "We would rather recommend a smaller engagement that you can afford to maintain than a large one that stretches your budget thin. Consistency wins." },
+              { title: "Flexible Month-to-Month", desc: "We earn your business every month. No long-term lock-ins, no penalty fees. If you want to pause or adjust scope, we accommodate." },
+              { title: "Results-Oriented Investment", desc: "We track what matters to your business — revenue, leads, market share — not vanity metrics. Every dollar should be connected to an outcome." },
+            ].map((item, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 50}>
+                <div className="flex items-start gap-4 py-4 border-b border-gray-200">
+                  <span className="w-8 h-8 bg-black text-white flex items-center justify-center flex-shrink-0 text-base font-bold">{i + 1}</span>
+                  <div>
+                    <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-1">{item.title}</h3>
+                    <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </Animate>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-16" aria-label="Pricing FAQ">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">

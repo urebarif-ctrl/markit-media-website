@@ -578,6 +578,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Agency Pricing", desc: "Model hourly, retainer, and project pricing with benchmarks.", href: "/resources/agency-pricing-calculator" },
               { title: "Stakeholder Reports", desc: "Build exec, board, team, and client reports with KPI cards.", href: "/resources/stakeholder-report" },
               { title: "Risk Assessment", desc: "Map risks on a 5×5 matrix with SVG heatmap and mitigations.", href: "/resources/risk-assessment" },
+              { title: "OKR Planner", desc: "Track marketing objectives and key results with progress bars.", href: "/resources/okr-planner" },
+              { title: "Team Capacity", desc: "Plan team workload across roles with utilization tracking.", href: "/resources/team-capacity-planner" },
+              { title: "Campaign Debrief", desc: "Run post-mortems with planned vs actual metrics and grading.", href: "/resources/campaign-debrief" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

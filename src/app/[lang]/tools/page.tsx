@@ -187,6 +187,39 @@ export default function ToolsPage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Free marketing tools">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Free Resources</SectionLabel>
+            <SectionTitle>Try Our Free Marketing Tools</SectionTitle>
+            <SectionDesc>
+              We have built over 140 free interactive tools to help marketers plan, analyze, and optimize campaigns.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={40} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+            {[
+              { title: "ROI Calculator", href: "/resources/roi-calculator" },
+              { title: "SEO Checklist", href: "/resources/seo-checklist" },
+              { title: "Website Grader", href: "/resources/website-grader" },
+              { title: "Budget Calculator", href: "/resources/budget-calculator" },
+              { title: "A/B Test Calculator", href: "/resources/ab-test-calculator" },
+              { title: "Headline Analyzer", href: "/resources/headline-analyzer" },
+              { title: "UTM Builder", href: "/resources/utm-builder" },
+              { title: "Persona Builder", href: "/resources/persona-builder" },
+            ].map((t) => (
+              <Link key={t.href} href={t.href} className="bg-white border border-gray-200 px-6 py-4 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 text-center">
+                {t.title}
+              </Link>
+            ))}
+          </Stagger>
+          <div className="mt-6 text-center">
+            <Link href="/resources" className="inline-flex items-center gap-2 text-base font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              View All 140+ Free Tools &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-12" aria-label="Explore more">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">

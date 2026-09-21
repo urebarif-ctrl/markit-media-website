@@ -57,6 +57,7 @@ export default function BpoPage() {
         { title: "Meeting Agenda Builder", desc: "Create structured meeting agendas.", href: "/resources/meeting-agenda-builder" },
         { title: "Marketing Proposal Generator", desc: "Generate professional service proposals.", href: "/resources/marketing-proposal-generator" },
       ]}
+      blogCategory="Marketing Strategy"
     />
   );
 }
