@@ -138,7 +138,7 @@ function BarChart({
               x={labelW - 8}
               y={y + barH / 2 + 5}
               textAnchor="end"
-              className="text-[13px]"
+              className="text-[14px]"
               fill="#000"
               style={{ fontFamily: "var(--font-body)" }}
             >
@@ -155,7 +155,7 @@ function BarChart({
             <text
               x={labelW + barW + 8}
               y={y + barH / 2 + 5}
-              className="text-[13px] font-bold"
+              className="text-[14px] font-bold"
               fill={isNeg ? "#999" : "#000"}
               style={{ fontFamily: "var(--font-body)" }}
             >

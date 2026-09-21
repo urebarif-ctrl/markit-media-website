@@ -222,7 +222,7 @@ function RadarChart({ dimensionScores }: { dimensionScores: ScoreResult["dimensi
         y={pt.y}
         textAnchor={anchor}
         dominantBaseline="middle"
-        className="text-[11px] fill-gray-600"
+        className="text-[14px] fill-gray-600"
       >
         {d.dimension}
       </text>
@@ -287,7 +287,7 @@ function BarChart({
               y={y + barH / 2}
               textAnchor="end"
               dominantBaseline="middle"
-              className="text-[13px] fill-black font-semibold"
+              className="text-[14px] fill-black font-semibold"
             >
               {item.label}
             </text>
@@ -312,7 +312,7 @@ function BarChart({
               y={y + barH / 2}
               textAnchor="start"
               dominantBaseline="middle"
-              className="text-[13px] fill-gray-600 font-medium"
+              className="text-[14px] fill-gray-600 font-medium"
             >
               {item.percentage}%
             </text>
@@ -373,7 +373,7 @@ function ScoreGauge({ percentage, grade }: { percentage: number; grade: string }
           y={cy + 22}
           textAnchor="middle"
           dominantBaseline="middle"
-          className="text-[0.875rem] fill-gray-500"
+          className="text-[1rem] fill-gray-500"
         >
           {grade}
         </text>

@@ -558,6 +558,24 @@ const resources = [
     count: "12 months",
   },
   {
+    title: "Website Readiness Scorecard",
+    desc: "Assess your website across mobile experience, page speed, SEO, security, and accessibility with weighted scoring and prioritised recommendations.",
+    href: "/resources/website-readiness-scorecard",
+    count: "40 checkpoints",
+  },
+  {
+    title: "Email Subject Line A/B Tester",
+    desc: "Compare two email subject lines side-by-side with scoring on length, power words, personalisation, urgency, and clarity.",
+    href: "/resources/email-subject-ab-tester",
+    count: "5 criteria",
+  },
+  {
+    title: "Audience Targeting Worksheet",
+    desc: "Build a detailed ideal customer profile with demographics, psychographics, pain points, and channel preferences, then export a targeting brief.",
+    href: "/resources/audience-targeting-worksheet",
+    count: "4-step worksheet",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

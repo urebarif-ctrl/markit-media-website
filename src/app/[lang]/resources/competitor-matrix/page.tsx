@@ -452,7 +452,7 @@ function RadarChart({
               key={level}
               x={x + 4}
               y={y}
-              className="text-[10px] fill-gray-400"
+              className="text-[14px] fill-gray-400"
               textAnchor="start"
               dominantBaseline="middle"
             >
@@ -490,7 +490,7 @@ function RadarChart({
               y={y}
               textAnchor={labelAnchor(i)}
               dy={labelDY(i)}
-              className="text-[11px] fill-black font-bold"
+              className="text-[14px] fill-black font-bold"
             >
               {dim.short}
             </text>

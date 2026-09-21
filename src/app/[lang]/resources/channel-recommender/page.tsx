@@ -804,7 +804,7 @@ function ComparisonChart({ results }: { results: ChannelResult[] }) {
                 y={y + barHeight / 2 + 1}
                 textAnchor="end"
                 dominantBaseline="middle"
-                className="text-[13px] font-bold"
+                className="text-[14px] font-bold"
                 fill="#000"
               >
                 {ch.name}
