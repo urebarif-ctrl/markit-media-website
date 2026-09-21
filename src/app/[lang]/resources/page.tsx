@@ -828,6 +828,24 @@ const resources = [
     count: "6 dimensions",
   },
   {
+    title: "Marketing KPI Tracker",
+    desc: "Track your marketing KPIs over time. Set targets, record monthly actuals, visualize trends with sparkline charts, and identify areas needing attention.",
+    href: "/resources/marketing-kpi-tracker",
+    count: "12-month tracking",
+  },
+  {
+    title: "Marketing Budget Allocator",
+    desc: "Allocate your marketing budget across channels using data-driven templates. Compare strategies and optimize for your business goals.",
+    href: "/resources/budget-allocator",
+    count: "10 channels",
+  },
+  {
+    title: "Scope of Work Generator",
+    desc: "Generate professional scopes of work for marketing projects. Define deliverables, timelines, milestones, budget, and terms.",
+    href: "/resources/scope-of-work-generator",
+    count: "8 project types",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

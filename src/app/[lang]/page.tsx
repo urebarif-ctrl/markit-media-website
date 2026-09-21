@@ -563,6 +563,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Client Reporting", desc: "Build professional marketing reports for clients.", href: "/resources/client-reporting-dashboard" },
               { title: "Campaign Tracker", desc: "Track campaigns, budgets, and performance in one place.", href: "/resources/campaign-tracker" },
               { title: "Competitor Benchmarking", desc: "Benchmark your business across 6 key dimensions.", href: "/resources/competitor-benchmarking" },
+              { title: "KPI Tracker", desc: "Track marketing KPIs with targets and trend sparklines.", href: "/resources/marketing-kpi-tracker" },
+              { title: "Budget Allocator", desc: "Allocate marketing budget across channels with templates.", href: "/resources/budget-allocator" },
+              { title: "Scope of Work", desc: "Generate professional SOWs for marketing projects.", href: "/resources/scope-of-work-generator" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>

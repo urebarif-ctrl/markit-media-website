@@ -651,7 +651,7 @@ function SvgHeatmap({ pieces }: { pieces: ContentPiece[] }) {
             x={labelW - 10}
             y={headerH + ri * cellH + cellH / 2 + 5}
             textAnchor="end"
-            className="text-[12px] fill-black"
+            className="text-base fill-black"
           >
             {type}
           </text>
