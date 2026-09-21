@@ -510,6 +510,36 @@ const resources = [
     count: "Gap analysis",
   },
   {
+    title: "Marketing ROI Dashboard",
+    desc: "Compare marketing channel performance side by side. Enter spend and revenue for up to 8 channels to see ROI, cost per lead, charts, and budget optimization suggestions.",
+    href: "/resources/roi-dashboard",
+    count: "Interactive dashboard",
+  },
+  {
+    title: "Brand Consistency Checker",
+    desc: "Rate your brand consistency across up to 5 touchpoints and 6 dimensions. Get an overall score, radar chart, bar chart, and prioritized recommendations.",
+    href: "/resources/brand-consistency-checker",
+    count: "Interactive tool",
+  },
+  {
+    title: "Customer Journey Mapper",
+    desc: "Map your customer experience across 5 stages with touchpoints, emotions, pain points, and opportunities. Visualize the journey with an emotion curve and get recommendations.",
+    href: "/resources/customer-journey-mapper",
+    count: "Interactive tool",
+  },
+  {
+    title: "Content Repurposing Planner",
+    desc: "Turn one piece of content into many. Get a visual repurposing plan with derivative formats, timelines, content tree, and multiplication metrics for any platform mix.",
+    href: "/resources/content-repurposing",
+    count: "Interactive planner",
+  },
+  {
+    title: "Channel Recommender",
+    desc: "Enter your business details, goals, and budget to get a ranked list of recommended marketing channels with match scores, ROI estimates, and key tactics.",
+    href: "/resources/channel-recommender",
+    count: "Interactive tool",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

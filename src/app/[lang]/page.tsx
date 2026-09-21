@@ -510,6 +510,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Content Audit", desc: "Score your content across 30 criteria with radar chart.", href: "/resources/content-audit-scorecard" },
               { title: "Redesign Planner", desc: "Plan your website redesign with phased roadmap.", href: "/resources/redesign-planner" },
               { title: "SEO Gap Finder", desc: "Find untapped ranking opportunities in your content strategy.", href: "/resources/seo-gap-finder" },
+              { title: "ROI Dashboard", desc: "Compare channel ROI, budget allocation, and get optimization tips.", href: "/resources/roi-dashboard" },
+              { title: "Brand Consistency", desc: "Rate your brand across touchpoints and get a consistency score.", href: "/resources/brand-consistency-checker" },
+              { title: "Journey Mapper", desc: "Map your customer experience across 5 stages with an emotion curve.", href: "/resources/customer-journey-mapper" },
+              { title: "Repurposing Planner", desc: "Turn one content piece into many with a visual repurposing plan.", href: "/resources/content-repurposing" },
+              { title: "Channel Recommender", desc: "Get ranked channel recommendations based on your business and goals.", href: "/resources/channel-recommender" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
