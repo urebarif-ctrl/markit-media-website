@@ -648,6 +648,24 @@ const resources = [
     count: "5 platforms",
   },
   {
+    title: "Customer Journey Map Builder",
+    desc: "Map touchpoints across 5 journey stages with channels, emotions, pain points, and opportunities. Visual map and list views.",
+    href: "/resources/customer-journey-builder",
+    count: "5 stages",
+  },
+  {
+    title: "Marketing ROI Forecaster",
+    desc: "Forecast ROI by channel with budget, CPC, conversion rate, and average order value. Compare scenarios over 3-24 months.",
+    href: "/resources/roi-forecaster",
+    count: "7 channels",
+  },
+  {
+    title: "Headline Split Test Generator",
+    desc: "Generate headline variations using 8 proven formulas, score each variant, and create A/B test plans.",
+    href: "/resources/headline-split-tester",
+    count: "8 formulas",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

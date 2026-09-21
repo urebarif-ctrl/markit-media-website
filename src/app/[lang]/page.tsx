@@ -533,6 +533,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Lead Scoring", desc: "Build a lead scoring model and test with real leads.", href: "/resources/lead-scoring-calculator" },
               { title: "Timeline Planner", desc: "Plan campaigns with milestones and visual timeline.", href: "/resources/marketing-timeline-planner" },
               { title: "Ad Copy Analyser", desc: "Score your ad copy against best practices.", href: "/resources/ad-copy-analyzer" },
+              { title: "Journey Builder", desc: "Map customer touchpoints across 5 journey stages.", href: "/resources/customer-journey-builder" },
+              { title: "ROI Forecaster", desc: "Forecast marketing ROI by channel and time period.", href: "/resources/roi-forecaster" },
+              { title: "Headline Tester", desc: "Generate and score headline variations for A/B testing.", href: "/resources/headline-split-tester" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
