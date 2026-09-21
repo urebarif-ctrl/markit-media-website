@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface FooterTranslations {
   footer: Record<string, string>;
@@ -109,7 +110,7 @@ export function Footer({ locale, translations }: { locale: string; translations:
             {/* Brand column */}
             <div>
               <Link href="/" className="inline-block mb-4 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                <span className="font-[family-name:var(--font-display)] text-xl font-extrabold tracking-tight text-white uppercase">Markit Media</span>
+                <Image src="/images/logo-black.png" alt="Markit Media" width={160} height={33} className="h-8 w-auto invert brightness-200" />
               </Link>
               <p className="text-base text-gray-400 leading-relaxed mb-6">{t.footer.tagline}</p>
               <div className="flex items-center gap-4">
