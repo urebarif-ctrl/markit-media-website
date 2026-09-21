@@ -204,6 +204,15 @@ export default function LeadScoringCalculatorPage() {
 
   return (
     <main className="min-h-screen bg-white text-black">
+      <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
+        <ol className="flex items-center gap-2 text-base text-neutral-400">
+          <li><a href="/" className="hover:text-black transition-colors">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/resources" className="hover:text-black transition-colors">Resources</a></li>
+          <li aria-hidden="true">/</li>
+          <li className="text-black" aria-current="page">Lead Scoring Calculator</li>
+        </ol>
+      </nav>
       <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-2">
           Lead Scoring Calculator

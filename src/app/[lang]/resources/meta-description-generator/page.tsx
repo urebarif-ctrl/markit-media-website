@@ -98,6 +98,15 @@ export default function MetaDescriptionGeneratorPage() {
 
   return (
     <article>
+      <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
+        <ol className="flex items-center gap-2 text-base text-neutral-400">
+          <li><a href="/" className="hover:text-black transition-colors">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/resources" className="hover:text-black transition-colors">Resources</a></li>
+          <li aria-hidden="true">/</li>
+          <li className="text-black" aria-current="page">Meta Description Generator</li>
+        </ol>
+      </nav>
       <section className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
