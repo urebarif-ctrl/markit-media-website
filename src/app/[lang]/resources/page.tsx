@@ -576,6 +576,24 @@ const resources = [
     count: "4-step worksheet",
   },
   {
+    title: "Competitor Ad Spy Worksheet",
+    desc: "Document and analyse competitor advertising across platforms. Track messaging, offers, CTAs, and creative strategies with exportable analysis.",
+    href: "/resources/competitor-ad-spy",
+    count: "Multi-ad tracker",
+  },
+  {
+    title: "Marketing Goal Setter",
+    desc: "Set SMART marketing goals with measurable targets, deadlines, strategies, and milestones. Track multiple goals and export your plan.",
+    href: "/resources/marketing-goal-setter",
+    count: "SMART framework",
+  },
+  {
+    title: "Brand Tone of Voice Generator",
+    desc: "Define your brand voice with tone spectrum mapping, adjective selection, do/don't examples, and exportable voice guide for your team.",
+    href: "/resources/brand-tone-generator",
+    count: "4-step generator",
+  },
+  {
     title: "Small Business Guide",
     desc: "A practical guide to digital marketing for small businesses — which channels to prioritize, budget guidance, and common mistakes to avoid.",
     href: "/resources/small-business-guide",

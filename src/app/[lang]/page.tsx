@@ -521,6 +521,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Website Readiness", desc: "Score your site on mobile, speed, SEO, security, and accessibility.", href: "/resources/website-readiness-scorecard" },
               { title: "Subject Line Tester", desc: "A/B test email subject lines before you send.", href: "/resources/email-subject-ab-tester" },
               { title: "Audience Worksheet", desc: "Define your ideal customer profile step by step.", href: "/resources/audience-targeting-worksheet" },
+              { title: "Ad Spy Worksheet", desc: "Document and compare competitor advertising strategies.", href: "/resources/competitor-ad-spy" },
+              { title: "Goal Setter", desc: "Set SMART marketing goals with targets and timelines.", href: "/resources/marketing-goal-setter" },
+              { title: "Tone of Voice", desc: "Define how your brand sounds with an exportable guide.", href: "/resources/brand-tone-generator" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
