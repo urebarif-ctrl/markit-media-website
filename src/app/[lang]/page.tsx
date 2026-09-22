@@ -516,6 +516,77 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      {/* Selected Work / Client Showcase */}
+      <section className="px-6 lg:px-12 py-16" aria-label="Selected work">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Selected Work</SectionLabel>
+            <SectionTitle>Brands We&apos;ve Worked With</SectionTitle>
+          </Animate>
+          <Stagger stagger={40} animation="fade-up" className="flex flex-wrap justify-center gap-4 mt-10">
+            {["NoorShad", "Vuse", "Cambridge Electrical", "HUBCO", "MeezoTech", "One Homes", "Minhaz Couture", "Pur Health", "American Auto Parts", "Yaar Bazaar"].map((name) => (
+              <div key={name} className="bg-white border border-gray-200 px-6 py-4 text-base font-bold text-black/70">
+                {name}
+              </div>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up" delay={100}>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Link href="/work/noorshad" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <span className="text-base text-gray-400">Real Estate</span>
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-1">NoorShad</h3>
+                <p className="text-base text-gray-500 mt-2">Video-first real estate branding with 9+ productions.</p>
+              </Link>
+              <Link href="/work/vuse" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <span className="text-base text-gray-400">Consumer Goods</span>
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-1">Vuse</h3>
+                <p className="text-base text-gray-500 mt-2">Ongoing social media content for a global brand.</p>
+              </Link>
+              <Link href="/work/cambridge-electrical" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <span className="text-base text-gray-400">Consumer Electronics</span>
+                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-1">Cambridge Electrical</h3>
+                <p className="text-base text-gray-500 mt-2">Seasonal campaigns driving engagement.</p>
+              </Link>
+            </div>
+          </Animate>
+          <Animate animation="fade-up" delay={150}>
+            <div className="mt-8 text-center">
+              <Link href="/work" className="inline-flex items-center gap-2 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                View All Projects &rarr;
+              </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      {/* Social / Agency Personality */}
+      <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Follow our work">
+        <div className="max-w-4xl mx-auto text-center">
+          <Animate animation="fade-up">
+            <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">
+              See the Team Behind the Work
+            </h2>
+            <p className="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
+              Follow us on social media for creative work, behind-the-scenes content, and agency life.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Watch on YouTube
+              </a>
+              <a href="https://www.instagram.com/themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Follow on Instagram
+              </a>
+              <a href="https://www.linkedin.com/company/the-markit-media/" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Connect on LinkedIn
+              </a>
+              <a href="https://www.tiktok.com/@themarkitmedia_" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Explore on TikTok
+              </a>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
         <div className="max-w-3xl mx-auto">

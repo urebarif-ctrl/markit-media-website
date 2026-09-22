@@ -24,6 +24,8 @@ const serviceCategories = [
   { label: "Digital Marketing", href: "/services/digital-marketing", desc: "Analytics, CRM, ORM" },
   { label: "Paid Advertising", href: "/services/paid-advertising", desc: "Programmatic, media buying" },
   { label: "E-commerce Marketing", href: "/services/ecommerce-marketing", desc: "Amazon, Shopify, feeds" },
+  { label: "Public Relations", href: "/services/public-relations", desc: "Media, PR, reputation" },
+  { label: "Photography", href: "/services/photography", desc: "Product, corporate, events" },
   { label: "BPO Services", href: "/services/bpo", desc: "Outsourcing, operations" },
 ];
 

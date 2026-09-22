@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import {
   Search, Share2, Code, Palette, Video, Bot, Mail, TrendingUp,
-  BarChart3, Megaphone, FileText, Briefcase, ShoppingCart,
+  BarChart3, Megaphone, FileText, Briefcase, ShoppingCart, Camera,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -116,6 +116,22 @@ const serviceCategories = [
     href: "/services/ecommerce-marketing",
     image: "/images/services/ecommerce-marketing.jpg",
     subServices: ["Amazon Ads", "Shopify Marketing", "Product Feed Optimization", "Marketplace Management"],
+  },
+  {
+    icon: Megaphone,
+    title: "Public Relations",
+    desc: "Media outreach, press releases, reputation management, event PR, and crisis communications.",
+    href: "/services/public-relations",
+    image: "/images/services/pr.jpg",
+    subServices: ["Media Outreach", "Press Releases", "Reputation Management", "Event PR", "Crisis Comms"],
+  },
+  {
+    icon: Camera,
+    title: "Professional Photography",
+    desc: "Product photography, corporate headshots, event coverage, architectural shoots, and lifestyle photography.",
+    href: "/services/photography",
+    image: "/images/services/photography.jpg",
+    subServices: ["Product Photography", "Corporate Photos", "Event Coverage", "Architectural", "Lifestyle"],
   },
   {
     icon: Briefcase,
