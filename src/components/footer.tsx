@@ -127,8 +127,12 @@ export function Footer({ locale, translations }: { locale: string; translations:
             <nav aria-label={t.accessibility.footerNavigation}>
               <FooterLinkCol title={t.footer.services} links={serviceLinks} />
             </nav>
-            <FooterLinkCol title={t.footer.company} links={companyLinks} />
-            <FooterLinkCol title={t.footer.resources} links={resourceLinks} />
+            <nav aria-label="Company links">
+              <FooterLinkCol title={t.footer.company} links={companyLinks} />
+            </nav>
+            <nav aria-label="Resources links">
+              <FooterLinkCol title={t.footer.resources} links={resourceLinks} />
+            </nav>
           </div>
         </div>
       </div>
