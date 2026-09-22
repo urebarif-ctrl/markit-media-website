@@ -53,7 +53,7 @@ export default function ContactPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-20">
+      <section className="px-6 lg:px-12 pt-24 pb-20" aria-label="Contact us">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left — Info */}

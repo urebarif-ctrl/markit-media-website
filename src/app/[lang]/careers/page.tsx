@@ -65,7 +65,7 @@ export default function CareersPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Careers" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-20">
+      <section className="px-6 lg:px-12 pt-24 pb-20" aria-label="Careers at Markit Media">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Careers</SectionLabel>
@@ -279,7 +279,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Apply now">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

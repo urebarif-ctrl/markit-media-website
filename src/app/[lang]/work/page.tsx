@@ -200,7 +200,7 @@ export default function WorkPage() {
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work" }]} />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Our work">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Selected Work</SectionLabel>
@@ -402,7 +402,7 @@ export default function WorkPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center" aria-label="Start a project">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

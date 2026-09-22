@@ -101,7 +101,7 @@ export default function ProcessPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Process" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Our process">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <Animate animation="fade-up">
             <div>
@@ -214,7 +214,7 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

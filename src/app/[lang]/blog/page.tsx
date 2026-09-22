@@ -45,7 +45,7 @@ export default function BlogPage() {
       <JsonLd data={blogSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Blog overview">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Blog</SectionLabel>
@@ -59,7 +59,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-8">
+      <section className="px-6 lg:px-12 pb-8" aria-label="Category filters">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-2">
@@ -241,7 +241,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get in touch">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

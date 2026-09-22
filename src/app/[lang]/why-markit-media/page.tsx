@@ -102,7 +102,7 @@ export default function WhyMarkitMediaPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Why Markit Media" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Why Markit Media">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Why Us</SectionLabel>
@@ -253,7 +253,7 @@ export default function WhyMarkitMediaPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
