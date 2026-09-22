@@ -4,7 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
-import { getPublishedPosts, getAllCategories } from "@/lib/blog";
+import { getPublishedPosts, getPublishedPostCount, getAllCategories } from "@/lib/blog";
 import { NewsletterCta } from "@/components/newsletter-cta";
 
 export const metadata: Metadata = {
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const allPosts = getPublishedPosts(9999);
-  const posts = allPosts.slice(0, 30);
+  const totalCount = getPublishedPostCount();
+  const posts = getPublishedPosts(30);
   const dbCategories = getAllCategories();
   const categories = ["All", ...dbCategories];
 
-  const featured = posts[0];
+  const featured = posts[0] ?? null;
   const remaining = posts.slice(1);
 
   const blogSchema = {
@@ -53,7 +53,7 @@ export default function BlogPage() {
               Digital Marketing Insights
             </h1>
             <SectionDesc>
-              {allPosts.length}+ articles on SEO, advertising, social media, branding, web development, and growth strategy.
+              {totalCount}+ articles on SEO, advertising, social media, branding, web development, and growth strategy.
             </SectionDesc>
           </Animate>
         </div>
@@ -166,7 +166,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {allPosts.length > 30 && (
+      {totalCount > 30 && (
         <section className="px-6 lg:px-12 py-8" aria-label="More pages">
           <div className="max-w-4xl mx-auto text-center">
             <Animate animation="fade-up">
@@ -181,12 +181,12 @@ export default function BlogPage() {
         </section>
       )}
 
-      {allPosts.length > 30 && (
+      {totalCount > 30 && (
         <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Browse by category">
           <div className="max-w-4xl mx-auto text-center">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
-                Browse All {allPosts.length}+ Articles by Category
+                Browse All {totalCount}+ Articles by Category
               </h2>
               <div className="flex flex-wrap gap-3 justify-center">
                 {dbCategories.map((cat) => {

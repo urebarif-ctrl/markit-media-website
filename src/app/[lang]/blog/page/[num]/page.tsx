@@ -3,10 +3,18 @@ import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { getPublishedPosts } from "@/lib/blog";
+import { getPublishedPosts, getPublishedPostCount } from "@/lib/blog";
 import { redirect } from "next/navigation";
 
 const PER_PAGE = 30;
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  const total = getPublishedPostCount();
+  const pages = Math.ceil(total / PER_PAGE);
+  return Array.from({ length: pages - 1 }, (_, i) => ({ num: String(i + 2) }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ num: string }> }): Promise<Metadata> {
   const { num } = await params;
@@ -30,13 +38,13 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
   if (isNaN(page) || page < 1) redirect("/blog");
   if (page === 1) redirect("/blog");
 
-  const allPosts = getPublishedPosts(9999);
-  const totalPages = Math.ceil(allPosts.length / PER_PAGE);
+  const totalCount = getPublishedPostCount();
+  const totalPages = Math.ceil(totalCount / PER_PAGE);
 
   if (page > totalPages) redirect("/blog");
 
-  const start = (page - 1) * PER_PAGE;
-  const posts = allPosts.slice(start, start + PER_PAGE);
+  const offset = (page - 1) * PER_PAGE;
+  const posts = getPublishedPosts(PER_PAGE, offset);
 
   return (
     <article>
@@ -50,7 +58,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
               Digital Marketing Insights
             </h1>
             <SectionDesc>
-              Page {page} of {totalPages} — {allPosts.length}+ articles
+              Page {page} of {totalPages} — {totalCount}+ articles
             </SectionDesc>
           </Animate>
         </div>
