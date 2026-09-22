@@ -333,7 +333,7 @@ export default function BudgetCalculatorPage() {
             This calculator gives you a starting point. Let our team build a detailed media plan based on
             your specific business, audience, and growth targets.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
+          <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
             Get a Custom Strategy &rarr;
           </Link>
         </div>

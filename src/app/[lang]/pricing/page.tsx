@@ -218,7 +218,7 @@ export default function PricingPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Tell us about your business and goals. We will respond within one business day with a tailored recommendation.
             </p>
-            <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
+            <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Request a Quote &rarr;
             </Link>
           </Animate>

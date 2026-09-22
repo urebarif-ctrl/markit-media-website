@@ -390,7 +390,7 @@ export default function LosAngelesPage() {
           <Animate animation="fade-up" delay={300}>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none mt-10"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none mt-10 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get in Touch
               <span aria-hidden="true">&rarr;</span>

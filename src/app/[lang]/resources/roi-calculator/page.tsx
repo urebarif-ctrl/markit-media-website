@@ -169,7 +169,7 @@ export default function ROICalculatorPage() {
             </p>
 
             <div className="mt-8">
-              <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none w-full justify-center">
+              <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none w-full justify-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Get a Custom Projection &rarr;
               </Link>
             </div>

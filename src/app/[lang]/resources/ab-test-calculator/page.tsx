@@ -425,7 +425,7 @@ export default function ABTestCalculatorPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px]"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;
             </Link>

@@ -315,7 +315,7 @@ function ToolForm({ onAdd }: ToolFormProps) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g. HubSpot"
-            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
             required
           />
         </div>
@@ -327,7 +327,7 @@ function ToolForm({ onAdd }: ToolFormProps) {
             id="tool-category"
             value={category}
             onChange={(e) => setCategory(e.target.value as Category)}
-            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base bg-white transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base bg-white transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
           >
             {CATEGORIES.map((c) => (
               <option key={c} value={c}>
@@ -348,7 +348,7 @@ function ToolForm({ onAdd }: ToolFormProps) {
             value={monthlyCost}
             onChange={(e) => setMonthlyCost(e.target.value)}
             placeholder="0"
-            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
           />
         </div>
         <div>
@@ -362,7 +362,7 @@ function ToolForm({ onAdd }: ToolFormProps) {
             value={contractMonths}
             onChange={(e) => setContractMonths(e.target.value)}
             placeholder="12"
-            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+            className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
           />
         </div>
       </div>
@@ -380,7 +380,7 @@ function ToolForm({ onAdd }: ToolFormProps) {
           onChange={(e) => setNotes(e.target.value)}
           rows={2}
           placeholder="What does this tool do for your team?"
-          className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus:border-black outline-none resize-y ${focusClasses}`}
+          className={`w-full border-2 border-neutral-200 px-4 py-2.5 text-base transition-colors hover:border-neutral-400 focus-visible:border-black outline-none resize-y ${focusClasses}`}
         />
       </div>
       <button
@@ -851,7 +851,7 @@ export default function MartechStackPlannerPage() {
                                 onChange={(e) =>
                                   updateTool(tool.id, { name: e.target.value })
                                 }
-                                className={`text-lg font-bold text-black bg-transparent border-b-2 border-transparent hover:border-neutral-300 focus:border-black outline-none transition-colors ${focusClasses}`}
+                                className={`text-lg font-bold text-black bg-transparent border-b-2 border-transparent hover:border-neutral-300 focus-visible:border-black outline-none transition-colors ${focusClasses}`}
                                 aria-label={`Name for ${tool.name}`}
                               />
                               <StarRating
@@ -873,7 +873,7 @@ export default function MartechStackPlannerPage() {
                                       monthlyCost: parseFloat(e.target.value) || 0,
                                     })
                                   }
-                                  className={`w-20 text-base text-black bg-transparent border-b-2 border-transparent hover:border-neutral-300 focus:border-black outline-none transition-colors ${focusClasses}`}
+                                  className={`w-20 text-base text-black bg-transparent border-b-2 border-transparent hover:border-neutral-300 focus-visible:border-black outline-none transition-colors ${focusClasses}`}
                                   aria-label={`Monthly cost for ${tool.name}`}
                                 />
                                 <span className="text-neutral-500">/mo</span>
@@ -888,7 +888,7 @@ export default function MartechStackPlannerPage() {
                                       contractMonths: parseInt(e.target.value, 10) || 0,
                                     })
                                   }
-                                  className={`w-16 text-base text-black bg-transparent border-b-2 border-transparent hover:border-neutral-300 focus:border-black outline-none transition-colors ${focusClasses}`}
+                                  className={`w-16 text-base text-black bg-transparent border-b-2 border-transparent hover:border-neutral-300 focus-visible:border-black outline-none transition-colors ${focusClasses}`}
                                   aria-label={`Contract months for ${tool.name}`}
                                 />
                                 <span className="text-neutral-500"> month contract</span>
@@ -900,7 +900,7 @@ export default function MartechStackPlannerPage() {
                                 updateTool(tool.id, { notes: e.target.value })
                               }
                               rows={2}
-                              className={`w-full text-base text-neutral-600 bg-transparent border-2 border-transparent hover:border-neutral-200 focus:border-black outline-none transition-colors p-2 resize-y ${focusClasses}`}
+                              className={`w-full text-base text-neutral-600 bg-transparent border-2 border-transparent hover:border-neutral-200 focus-visible:border-black outline-none transition-colors p-2 resize-y ${focusClasses}`}
                               aria-label={`Notes for ${tool.name}`}
                             />
                           </div>

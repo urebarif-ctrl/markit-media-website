@@ -313,7 +313,7 @@ export default function FreeToolsPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our team can turn the data from these tools into a growth strategy tailored to your business.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none">
+            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Consultation &rarr;
             </Link>
           </Animate>
