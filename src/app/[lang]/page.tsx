@@ -98,7 +98,15 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     logo: "https://themarkitmedia.com/images/branding/og-image.png",
     description: "Full-stack digital marketing agency serving businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
     email: "ciao@themarkitmedia.com",
-    sameAs: ["https://www.linkedin.com/company/themarkitmedia", "https://www.instagram.com/themarkitmedia"],
+    sameAs: [
+      "https://www.linkedin.com/company/the-markit-media/",
+      "https://www.instagram.com/themarkitmedia",
+      "https://www.youtube.com/@themarkitmedia",
+      "https://www.behance.net/themarkitmedia",
+      "https://www.facebook.com/themarkitmedia/",
+      "https://www.tiktok.com/@themarkitmedia_",
+      "https://x.com/themarkitmedia",
+    ],
     areaServed: markets.map((m) => ({ "@type": "Country", name: m })),
     knowsAbout: [
       "Search Engine Optimization", "Pay-Per-Click Advertising", "Social Media Marketing",
