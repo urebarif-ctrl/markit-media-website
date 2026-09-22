@@ -264,6 +264,41 @@ export default function UnitedStatesPage() {
         </div>
       </section>
 
+      {/* Cities */}
+      <section className="px-6 lg:px-12 py-20" aria-label="US city pages">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Explore by City</SectionLabel>
+            <SectionTitle>Marketing Services Across the US</SectionTitle>
+          </Animate>
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {[
+              { title: "New York", href: "/locations/united-states/new-york", desc: "Performance marketing, SEO, and web development for the NYC market." },
+              { title: "Los Angeles", href: "/locations/united-states/los-angeles", desc: "Digital marketing for LA's entertainment, tech, and consumer brands." },
+              { title: "Chicago", href: "/locations/united-states/chicago", desc: "Full-stack marketing for the Midwest's largest business hub." },
+              { title: "Houston", href: "/locations/united-states/houston", desc: "Marketing for energy, healthcare, and real estate in Houston." },
+              { title: "Miami", href: "/locations/united-states/miami", desc: "Bilingual marketing strategies for South Florida businesses." },
+              { title: "San Francisco", href: "/locations/united-states/san-francisco", desc: "SaaS and startup growth marketing in the Bay Area." },
+              { title: "Dallas", href: "/locations/united-states/dallas", desc: "Digital marketing for the DFW metroplex's diverse economy." },
+              { title: "Atlanta", href: "/locations/united-states/atlanta", desc: "Marketing for logistics, healthcare, and Fortune 500 companies in Atlanta." },
+            ].map((city) => (
+              <Link
+                key={city.href}
+                href={city.href}
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none block focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2">
+                  {city.title}
+                </h3>
+                <p className="text-base text-gray-500 leading-relaxed">
+                  {city.desc}
+                </p>
+              </Link>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
