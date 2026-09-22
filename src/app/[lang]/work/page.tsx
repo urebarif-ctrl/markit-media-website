@@ -85,27 +85,31 @@ const featuredProjects = [
 
 const creativePortfolio = [
   {
-    title: "Fashion",
+    title: "Fashion Feed",
     category: "Fashion & Lifestyle",
     image: "/images/portfolio/behance/fashion.jpg",
+    href: "/work/fashion-feed",
     behanceUrl: "https://www.behance.net/gallery/228648529/Fashion",
   },
   {
     title: "Social Media Designs",
     category: "Social Media",
     image: "/images/portfolio/behance/social-media-designs.jpg",
+    href: "/work/social-media-designs",
     behanceUrl: "https://www.behance.net/gallery/228353933/Social-Media-Designs",
   },
   {
     title: "FoodFolio",
     category: "Food & Beverage",
     image: "/images/portfolio/behance/foodfolio.jpg",
+    href: "/work/foodfolio",
     behanceUrl: "https://www.behance.net/gallery/228262243/FoodFolio",
   },
   {
     title: "LogoFolio",
     category: "Branding & Identity",
     image: "/images/portfolio/behance/logofolio.jpg",
+    href: "/work/logo-folio",
     behanceUrl: "https://www.behance.net/gallery/226405873/LogoFolio",
   },
 ];
@@ -316,7 +320,7 @@ export default function WorkPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {creativePortfolio.map((item) => (
-              <a key={item.title} href={item.behanceUrl} target="_blank" rel="noopener noreferrer" className="group block overflow-hidden border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={item.title} href={item.href} className="group block overflow-hidden border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="relative aspect-[16/10] bg-gray-100">
                   <Image
                     src={item.image}
@@ -329,9 +333,9 @@ export default function WorkPage() {
                 <div className="p-6">
                   <span className="text-base text-gray-400 font-medium">{item.category}</span>
                   <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mt-1">{item.title}</h3>
-                  <span className="text-base text-gray-400 mt-2 inline-block">View on Behance &rarr;</span>
+                  <span className="text-base text-gray-400 mt-2 inline-block">View Project &rarr;</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </Stagger>
           <div className="text-center mt-8">
