@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ContactForm } from "./contact-form";
 import { Mail, MapPin, Clock } from "lucide-react";
-import { SOCIAL_LINKS } from "@/lib/social";
+import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -30,6 +30,7 @@ export default function ContactPage() {
       name: "Markit Media",
       email: "ciao@themarkitmedia.com",
       url: "https://themarkitmedia.com",
+      sameAs: SOCIAL_URLS,
     },
   };
 

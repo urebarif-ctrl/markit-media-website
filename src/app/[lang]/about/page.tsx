@@ -4,7 +4,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import Link from "next/link";
-import { SOCIAL_LINKS } from "@/lib/social";
+import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 import {
   Target,
   Lightbulb,
@@ -91,6 +91,7 @@ export default function AboutPage() {
       name: "Markit Media",
       email: "ciao@themarkitmedia.com",
       url: "https://themarkitmedia.com",
+      sameAs: SOCIAL_URLS,
     },
   };
 
