@@ -83,7 +83,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-base font-bold text-black uppercase tracking-wide">{post.category}</span>
-                    <span className="text-base text-gray-400">{post.reading_time}</span>
+                    <span className="text-base text-gray-400">{post.reading_time} min read</span>
                   </div>
                   <h2 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline mb-3 leading-snug">
                     {post.title}
