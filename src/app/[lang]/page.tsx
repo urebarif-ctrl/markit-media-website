@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
@@ -573,6 +574,35 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="mt-8 text-center">
               <Link href="/work" className="inline-flex items-center gap-2 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All Projects &rarr;
+              </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      {/* Creative Portfolio Preview */}
+      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Creative portfolio">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Creative Work</SectionLabel>
+            <SectionTitle>Design &amp; Branding Portfolio</SectionTitle>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+            {[
+              { src: "/images/portfolio/behance/fashion.jpg", alt: "Fashion social media design", href: "/work/fashion-feed" },
+              { src: "/images/portfolio/behance/social-media-designs.jpg", alt: "Social media designs portfolio", href: "/work/social-media-designs" },
+              { src: "/images/portfolio/behance/foodfolio.jpg", alt: "Food and beverage design portfolio", href: "/work/foodfolio" },
+              { src: "/images/portfolio/behance/logofolio.jpg", alt: "Logo design portfolio", href: "/work/logo-folio" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="group relative aspect-[4/3] overflow-hidden bg-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
+              </Link>
+            ))}
+          </Stagger>
+          <Animate animation="fade-up" delay={100}>
+            <div className="mt-8 text-center">
+              <Link href="/work" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">
+                View Full Portfolio &rarr;
               </Link>
             </div>
           </Animate>
