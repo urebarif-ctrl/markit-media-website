@@ -43,6 +43,22 @@ const nextConfig: NextConfig = {
       { source: "/ur/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/about-us", destination: "/en/about", permanent: true },
+      { source: "/contact-us", destination: "/en/contact", permanent: true },
+      { source: "/our-services", destination: "/en/services", permanent: true },
+      { source: "/our-work", destination: "/en/work", permanent: true },
+      { source: "/portfolio", destination: "/en/work", permanent: true },
+      { source: "/our-team", destination: "/en/about", permanent: true },
+      { source: "/get-quote", destination: "/en/get-a-quote", permanent: true },
+      { source: "/request-quote", destination: "/en/get-a-quote", permanent: true },
+      { source: "/case-study/:slug*", destination: "/en/work", permanent: true },
+      { source: "/wp-content/:path*", destination: "/en", permanent: false },
+      { source: "/wp-admin/:path*", destination: "/en", permanent: false },
+      { source: "/wp-login.php", destination: "/en", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

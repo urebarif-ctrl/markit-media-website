@@ -173,6 +173,7 @@ const staticPages = [
   "/resources/sla-tracker",
   "/resources/competitive-intel-dashboard",
   "/tools",
+  "/free-tools",
   "/approach",
   "/pricing",
   "/blog",
