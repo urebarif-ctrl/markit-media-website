@@ -216,7 +216,7 @@ export default function ToolsPage() {
             ))}
           </Stagger>
           <div className="mt-6 text-center">
-            <Link href="/resources" className="inline-flex items-center gap-2 text-base font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/free-tools" className="inline-flex items-center gap-2 text-base font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               View All 150+ Free Tools &rarr;
             </Link>
           </div>
