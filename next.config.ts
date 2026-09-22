@@ -45,6 +45,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Old page slugs
       { source: "/about-us", destination: "/en/about", permanent: true },
       { source: "/:lang/about-us", destination: "/en/about", permanent: true },
       { source: "/contact-us", destination: "/en/contact", permanent: true },
@@ -61,11 +62,45 @@ const nextConfig: NextConfig = {
       { source: "/:lang/get-quote", destination: "/en/get-a-quote", permanent: true },
       { source: "/request-quote", destination: "/en/get-a-quote", permanent: true },
       { source: "/:lang/request-quote", destination: "/en/get-a-quote", permanent: true },
+      { source: "/home", destination: "/en", permanent: true },
+      { source: "/team", destination: "/en/about", permanent: true },
+      { source: "/sitemap", destination: "/sitemap.xml", permanent: true },
+
+      // Service shorthand URLs
+      { source: "/seo-services", destination: "/en/services/seo", permanent: true },
+      { source: "/ppc-advertising", destination: "/en/services/paid-advertising", permanent: true },
+      { source: "/social-media-marketing", destination: "/en/services/social-media", permanent: true },
+      { source: "/web-development", destination: "/en/services/website-development", permanent: true },
+      { source: "/web-design", destination: "/en/services/website-development", permanent: true },
+      { source: "/digital-marketing", destination: "/en/services/digital-marketing", permanent: true },
+      { source: "/google-ads", destination: "/en/services/performance-marketing/google-ads", permanent: true },
+      { source: "/facebook-ads", destination: "/en/services/performance-marketing/meta-ads", permanent: true },
+      { source: "/branding", destination: "/en/services/branding", permanent: true },
+      { source: "/content-marketing", destination: "/en/services/content-marketing", permanent: true },
+      { source: "/email-marketing", destination: "/en/services/email-marketing", permanent: true },
+      { source: "/video-production", destination: "/en/services/video-production", permanent: true },
+      { source: "/ecommerce", destination: "/en/services/ecommerce-marketing", permanent: true },
+      { source: "/photography", destination: "/en/services/photography", permanent: true },
+      { source: "/public-relations", destination: "/en/services/public-relations", permanent: true },
+
+      // WordPress taxonomy/feed patterns
+      { source: "/category/:slug", destination: "/en/blog", permanent: true },
+      { source: "/tag/:slug", destination: "/en/blog", permanent: true },
+      { source: "/feed", destination: "/en/blog", permanent: true },
+      { source: "/feed/:path*", destination: "/en/blog", permanent: true },
+
+      // WordPress case studies/work
       { source: "/case-study/:slug*", destination: "/en/work", permanent: true },
       { source: "/:lang/case-study/:slug*", destination: "/en/work", permanent: true },
+
+      // WordPress infrastructure
       { source: "/wp-content/:path*", destination: "/en", permanent: false },
       { source: "/wp-admin/:path*", destination: "/en", permanent: false },
       { source: "/wp-login.php", destination: "/en", permanent: false },
+      { source: "/wp-includes/:path*", destination: "/en", permanent: false },
+      { source: "/wp-json/:path*", destination: "/en", permanent: false },
+      { source: "/xmlrpc.php", destination: "/en", permanent: false },
+      { source: "/wp-cron.php", destination: "/en", permanent: false },
     ];
   },
 };
