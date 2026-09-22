@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { HeroStats } from "@/components/hero-stats";
 import { HeroGraphic } from "@/components/hero-graphic";
+import { TypingEffect } from "@/components/typing-effect";
 
 export const metadata: Metadata = {
   title: "Markit Media — Full-Stack Digital Marketing Agency",
@@ -136,39 +137,60 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <JsonLd data={faqSchema} />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 px-6 lg:px-12 overflow-hidden" aria-label="Hero">
-        <div className="hero-bg-dots absolute inset-0" />
-        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-label="Hero">
+        <img
+          src="/images/hero/hero-marketing.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="relative w-full px-6 lg:px-12 py-32 lg:py-40">
+          <div className="max-w-7xl mx-auto">
             <Animate animation="fade-up">
-              <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,5rem)] font-extrabold text-black tracking-tight leading-[1.05]">
+              <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold text-white tracking-tight leading-[1.05] max-w-4xl">
                 {t.home.heroTitle}
               </h1>
             </Animate>
             <Animate animation="fade-up" delay={150}>
-              <p className="text-xl lg:text-2xl text-gray-500 leading-relaxed mt-6 max-w-2xl">
+              <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed mt-6 max-w-2xl">
                 {t.home.heroSubtitle}
               </p>
             </Animate>
-            <Animate animation="fade-up" delay={300}>
-              <div className="flex flex-wrap gap-4 mt-10">
-                <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Animate animation="fade-up" delay={250}>
+              <div className="mt-6 h-12 flex items-center">
+                <span className="text-lg lg:text-xl text-white/80 font-medium">We deliver </span>
+                <TypingEffect
+                  phrases={[
+                    "Performance Marketing",
+                    "SEO That Ranks",
+                    "Websites That Convert",
+                    "Brands That Stand Out",
+                    "Social Media Growth",
+                    "AI-Powered Solutions",
+                    "Video That Engages",
+                    "Email Campaigns That Work",
+                  ]}
+                  className="text-lg lg:text-xl text-white font-bold ml-2"
+                />
+              </div>
+            </Animate>
+            <Animate animation="fade-up" delay={350}>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                   {t.cta.primary} &rarr;
                 </Link>
-                <Link href="/work" className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/work" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                   {t.cta.secondary}
                 </Link>
               </div>
             </Animate>
             <Animate animation="fade-up" delay={450}>
-              <HeroStats />
+              <div className="mt-10">
+                <HeroStats />
+              </div>
             </Animate>
           </div>
-          <Animate animation="fade-in" delay={200}>
-            <div className="hidden lg:block relative">
-              <HeroGraphic className="w-full" />
-            </div>
-          </Animate>
         </div>
       </section>
 
