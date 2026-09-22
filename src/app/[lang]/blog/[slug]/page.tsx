@@ -15,10 +15,10 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
     { label: "Digital Marketing", href: "/services/digital-marketing" },
     { label: "Content Marketing", href: "/services/content-marketing" },
   ],
-  "Performance Marketing": [
-    { label: "Performance Marketing", href: "/services/performance-marketing" },
-    { label: "Paid Advertising", href: "/services/paid-advertising" },
+  "Digital Marketing": [
     { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
   ],
   "Social Media": [
     { label: "Social Media Marketing", href: "/services/social-media" },
@@ -35,12 +35,7 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
     { label: "Performance Marketing", href: "/services/performance-marketing" },
     { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
   ],
-  "Web Design": [
-    { label: "Website Development", href: "/services/website-development" },
-    { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
-    { label: "Branding", href: "/services/branding" },
-  ],
-  "Web Development": [
+  "Website Development": [
     { label: "Website Development", href: "/services/website-development" },
     { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
     { label: "SEO Services", href: "/services/seo" },
@@ -50,17 +45,12 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
     { label: "Content Marketing", href: "/services/content-marketing" },
     { label: "Website Development", href: "/services/website-development" },
   ],
-  "Video Marketing": [
-    { label: "Video Production", href: "/services/video-production" },
-    { label: "Social Media Marketing", href: "/services/social-media" },
-    { label: "Content Marketing", href: "/services/content-marketing" },
-  ],
   "Video Production": [
     { label: "Video Production", href: "/services/video-production" },
     { label: "Social Media Marketing", href: "/services/social-media" },
     { label: "Branding", href: "/services/branding" },
   ],
-  "AI & Automation": [
+  "AI & Technology": [
     { label: "AI & Automation", href: "/services/ai" },
     { label: "Digital Marketing", href: "/services/digital-marketing" },
     { label: "Performance Marketing", href: "/services/performance-marketing" },
@@ -70,40 +60,25 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
     { label: "Performance Marketing", href: "/services/performance-marketing" },
     { label: "SEO Services", href: "/services/seo" },
   ],
-  "E-commerce": [
+  "E-Commerce": [
     { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
     { label: "Paid Advertising", href: "/services/paid-advertising" },
     { label: "Email Marketing", href: "/services/email-marketing" },
   ],
-  Advertising: [
+  "Paid Advertising": [
     { label: "Paid Advertising", href: "/services/paid-advertising" },
     { label: "Performance Marketing", href: "/services/performance-marketing" },
     { label: "Social Media Marketing", href: "/services/social-media" },
   ],
-  Strategy: [
+  "Marketing Strategy": [
     { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
     { label: "Digital Marketing", href: "/services/digital-marketing" },
     { label: "Performance Marketing", href: "/services/performance-marketing" },
   ],
-  "Local SEO": [
-    { label: "Local SEO", href: "/services/seo/local-seo" },
-    { label: "SEO Services", href: "/services/seo" },
+  "Industry Guides": [
     { label: "Digital Marketing", href: "/services/digital-marketing" },
-  ],
-  "Local Marketing": [
-    { label: "Local SEO", href: "/services/seo/local-seo" },
     { label: "SEO Services", href: "/services/seo" },
-    { label: "Performance Marketing", href: "/services/performance-marketing" },
-  ],
-  "Digital Marketing": [
-    { label: "Digital Marketing", href: "/services/digital-marketing" },
-    { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
-    { label: "Performance Marketing", href: "/services/performance-marketing" },
-  ],
-  PPC: [
-    { label: "Performance Marketing", href: "/services/performance-marketing" },
-    { label: "Google Ads", href: "/services/performance-marketing/google-ads" },
-    { label: "PPC Management", href: "/services/performance-marketing/ppc-management" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
   ],
 };
 
@@ -115,11 +90,11 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
     { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
   ],
-  "Performance Marketing": [
-    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
-    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
+  "Digital Marketing": [
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+    { label: "KPI Dashboard Builder", href: "/resources/kpi-dashboard" },
+    { label: "Marketing Maturity Assessment", href: "/resources/marketing-maturity" },
   ],
   "Social Media": [
     { label: "Social Media Audit", href: "/resources/social-media-audit" },
@@ -139,13 +114,7 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Email Subject Line Tester", href: "/resources/email-subject-tester" },
     { label: "Email Campaign Planner", href: "/resources/email-campaign-planner" },
   ],
-  "Web Design": [
-    { label: "CRO Audit", href: "/resources/cro-audit" },
-    { label: "Website Grader", href: "/resources/website-grader" },
-    { label: "Migration Checklist", href: "/resources/migration-checklist" },
-    { label: "Website Speed Assessment", href: "/resources/speed-test" },
-  ],
-  "Web Development": [
+  "Website Development": [
     { label: "CRO Audit", href: "/resources/cro-audit" },
     { label: "Website Grader", href: "/resources/website-grader" },
     { label: "Migration Checklist", href: "/resources/migration-checklist" },
@@ -157,19 +126,13 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Color Palette Generator", href: "/resources/color-palette-generator" },
     { label: "Social Proof Strategy Builder", href: "/resources/social-proof-guide" },
   ],
-  "Video Marketing": [
-    { label: "Social Media Planner", href: "/resources/social-media-planner" },
-    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
-    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
-  ],
   "Video Production": [
     { label: "Social Media Planner", href: "/resources/social-media-planner" },
     { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
     { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
     { label: "Social Share Preview", href: "/resources/og-preview" },
   ],
-  "AI & Automation": [
+  "AI & Technology": [
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
@@ -181,47 +144,29 @@ const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
     { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
     { label: "Website Grader", href: "/resources/website-grader" },
   ],
-  "E-commerce": [
+  "E-Commerce": [
     { label: "CLV Calculator", href: "/resources/clv-calculator" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "Email ROI Calculator", href: "/resources/email-roi-calculator" },
     { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
   ],
-  Advertising: [
+  "Paid Advertising": [
     { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
     { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
   ],
-  Strategy: [
+  "Marketing Strategy": [
     { label: "SWOT Analysis", href: "/resources/swot-analysis" },
     { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
     { label: "Competitive Gap Analyzer", href: "/resources/competitive-gap" },
     { label: "Marketing Maturity Assessment", href: "/resources/marketing-maturity" },
   ],
-  "Local SEO": [
-    { label: "SEO Health Check", href: "/resources/seo-checklist" },
-    { label: "Website Grader", href: "/resources/website-grader" },
-    { label: "Meta Description Generator", href: "/resources/meta-description-generator" },
-    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
-  ],
-  "Local Marketing": [
-    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+  "Industry Guides": [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "Budget Calculator", href: "/resources/budget-calculator" },
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
-  ],
-  "Digital Marketing": [
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
-    { label: "KPI Dashboard Builder", href: "/resources/kpi-dashboard" },
-    { label: "Marketing Maturity Assessment", href: "/resources/marketing-maturity" },
-  ],
-  PPC: [
-    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
-    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
-    { label: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
   ],
 };
 
