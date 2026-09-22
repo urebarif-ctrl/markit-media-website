@@ -442,6 +442,43 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Life at Markit Media */}
+      <section className="px-6 lg:px-12 py-16" aria-label="Life at Markit Media">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Behind the Scenes</SectionLabel>
+            <SectionTitle>Life at Markit Media</SectionTitle>
+            <SectionDesc>
+              We take our work seriously, but not ourselves. Follow our journey on social media for behind-the-scenes content, creative work, and the people behind the projects.
+            </SectionDesc>
+          </Animate>
+          <Animate animation="fade-up" delay={100}>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <p className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline">YouTube</p>
+                <p className="text-base text-gray-500 mt-1">300+ videos</p>
+                <p className="text-base text-gray-400 mt-2">Client work, culture, Shorts</p>
+              </a>
+              <a href="https://www.instagram.com/themarkitmedia" target="_blank" rel="noopener noreferrer" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <p className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline">Instagram</p>
+                <p className="text-base text-gray-500 mt-1">Portfolio & reels</p>
+                <p className="text-base text-gray-400 mt-2">Follow our work</p>
+              </a>
+              <a href="https://www.linkedin.com/company/the-markit-media/" target="_blank" rel="noopener noreferrer" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <p className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline">LinkedIn</p>
+                <p className="text-base text-gray-500 mt-1">2,700+ followers</p>
+                <p className="text-base text-gray-400 mt-2">Industry insights</p>
+              </a>
+              <a href="https://www.tiktok.com/@themarkitmedia_" target="_blank" rel="noopener noreferrer" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <p className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline">TikTok</p>
+                <p className="text-base text-gray-500 mt-1">Creative side</p>
+                <p className="text-base text-gray-400 mt-2">Fun & trending</p>
+              </a>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
