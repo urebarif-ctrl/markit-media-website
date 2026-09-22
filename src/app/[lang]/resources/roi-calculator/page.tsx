@@ -34,7 +34,7 @@ export default function ROICalculatorPage() {
         </ol>
       </nav>
 
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Marketing ROI Calculator" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">Interactive Tools</span>
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
@@ -50,7 +50,7 @@ export default function ROICalculatorPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Your Numbers" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Inputs */}
           <div className="space-y-8">

@@ -351,7 +351,7 @@ export default function WebsiteLaunchChecklistPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -369,7 +369,7 @@ export default function WebsiteLaunchChecklistPage() {
       </section>
 
       {/* Sticky overall progress + go/no-go */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="sticky top-20 z-10 bg-white py-4 border-b border-neutral-200">
@@ -415,7 +415,7 @@ export default function WebsiteLaunchChecklistPage() {
 
       {/* Action bar: Export + Reset */}
       {hydrated && checkedCount > 0 && (
-        <section className="px-6 lg:px-12 pb-6">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
           <div className="max-w-3xl mx-auto flex flex-wrap gap-3">
             <button
               onClick={handleExport}
@@ -434,7 +434,7 @@ export default function WebsiteLaunchChecklistPage() {
       )}
 
       {/* Category checklists */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto space-y-12">
           {categories.map((cat, catIndex) => {
             const score = categoryScores[catIndex];
@@ -535,7 +535,7 @@ export default function WebsiteLaunchChecklistPage() {
 
       {/* Critical items blocker list */}
       {hydrated && criticalBlocked.length > 0 && checkedCount > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Blockers" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border-l-4 border-black pl-6">
@@ -580,7 +580,7 @@ export default function WebsiteLaunchChecklistPage() {
 
       {/* GO confirmation */}
       {hydrated && isGoReady && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="bg-black text-white p-8 text-center">
@@ -598,7 +598,7 @@ export default function WebsiteLaunchChecklistPage() {
       )}
 
       {/* Educational section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Website Launch Best Practices" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black tracking-tight mb-6">
@@ -678,7 +678,7 @@ export default function WebsiteLaunchChecklistPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

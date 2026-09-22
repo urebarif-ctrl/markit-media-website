@@ -556,7 +556,7 @@ export default function MarketingRFPTemplatePage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-28 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-28 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -572,7 +572,7 @@ export default function MarketingRFPTemplatePage() {
       </section>
 
       {/* Completeness indicator */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-in" delay={100}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 bg-neutral-50 border border-neutral-200 px-6 py-4">
@@ -594,7 +594,7 @@ export default function MarketingRFPTemplatePage() {
       </section>
 
       {/* Form sections */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto space-y-3">
           {/* 1. Company Overview */}
           <AccordionSection sectionKey="companyOverview">
@@ -805,7 +805,7 @@ export default function MarketingRFPTemplatePage() {
       </section>
 
       {/* Action buttons */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4">
           <button
             type="button"
@@ -833,7 +833,7 @@ export default function MarketingRFPTemplatePage() {
 
       {/* Preview */}
       {showPreview && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="RFP Preview" className="px-6 lg:px-12 pb-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
               RFP Preview
@@ -848,7 +848,7 @@ export default function MarketingRFPTemplatePage() {
       )}
 
       {/* Educational section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50 border-t border-neutral-200">
+      <section aria-label="Tips for Writing an Effective RFP" className="px-6 lg:px-12 py-16 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionTitle>Tips for Writing an Effective RFP</SectionTitle>
@@ -898,7 +898,7 @@ export default function MarketingRFPTemplatePage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white">
+      <section aria-label="Ready to Find the Right Marketing Partner?" className="px-6 lg:px-12 py-20 bg-black text-white">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight leading-tight">

@@ -377,7 +377,7 @@ export default function OkrPlannerPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-28 pb-16 max-w-7xl mx-auto">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-28 pb-16 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <SectionLabel>Free Tool</SectionLabel>
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-tight mt-2">
@@ -392,7 +392,7 @@ export default function OkrPlannerPage() {
       </section>
 
       {/* Scorecard */}
-      <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
         <Animate animation="fade-up" delay={100}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
@@ -415,7 +415,7 @@ export default function OkrPlannerPage() {
       </section>
 
       {/* Controls bar */}
-      <section className="px-6 lg:px-12 pb-8 max-w-7xl mx-auto">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8 max-w-7xl mx-auto">
         <Animate animation="fade-up" delay={150}>
           <div className="flex flex-wrap items-center gap-4">
             <button
@@ -465,7 +465,7 @@ export default function OkrPlannerPage() {
       </section>
 
       {/* Objectives list */}
-      <section className="px-6 lg:px-12 pb-16 max-w-7xl mx-auto space-y-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-16 max-w-7xl mx-auto space-y-8">
         {sorted.map((obj, objIdx) => {
           const objProgress = calcObjectiveProgress(obj.keyResults);
           const isExpanded = expandedIds.has(obj.id);
@@ -715,7 +715,7 @@ export default function OkrPlannerPage() {
       </section>
 
       {/* Educational section */}
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200 max-w-7xl mx-auto">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-16 border-t border-neutral-200 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <SectionLabel>Learn</SectionLabel>
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight leading-tight mt-2">
@@ -790,7 +790,7 @@ export default function OkrPlannerPage() {
         </div>
       </section>
       {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+      <section aria-label="Related Tools" className="px-6 lg:px-12 py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
@@ -802,7 +802,7 @@ export default function OkrPlannerPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200">
+      <section aria-label="Next Step" className="px-6 lg:px-12 py-16 border-t border-neutral-200">
         <Animate animation="fade-up">
           <div className="max-w-3xl mx-auto text-center">
             <SectionLabel>Next Step</SectionLabel>

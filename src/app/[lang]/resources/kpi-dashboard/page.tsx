@@ -939,7 +939,7 @@ export default function KpiDashboardPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -956,7 +956,7 @@ export default function KpiDashboardPage() {
       </section>
 
       {/* ---- Inputs ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto space-y-10">
           {/* Business goal */}
           <Animate animation="fade-up">
@@ -1110,7 +1110,7 @@ export default function KpiDashboardPage() {
       {showDashboard && (
         <>
           {/* Primary KPIs */}
-          <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+          <section aria-label="North Star Metrics" className="px-6 lg:px-12 py-16 border-t border-gray-200">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <SectionLabel>North Star Metrics</SectionLabel>
@@ -1133,7 +1133,7 @@ export default function KpiDashboardPage() {
 
           {/* Channel-Specific KPIs */}
           {selectedChannelKpis.map(({ channel, kpis }) => (
-            <section
+            <section aria-label="Content section"
               key={channel}
               className="px-6 lg:px-12 py-16 border-t border-gray-200"
             >
@@ -1154,7 +1154,7 @@ export default function KpiDashboardPage() {
           ))}
 
           {/* Reporting Template */}
-          <section className="px-6 lg:px-12 py-16 border-t border-gray-200 bg-gray-50">
+          <section aria-label="Reporting Template" className="px-6 lg:px-12 py-16 border-t border-gray-200 bg-gray-50">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <SectionLabel>Reporting Template</SectionLabel>
@@ -1224,7 +1224,7 @@ export default function KpiDashboardPage() {
       )}
 
       {/* ---- Common KPI Mistakes ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+      <section aria-label="Avoid These" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Avoid These</SectionLabel>
@@ -1251,7 +1251,7 @@ export default function KpiDashboardPage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

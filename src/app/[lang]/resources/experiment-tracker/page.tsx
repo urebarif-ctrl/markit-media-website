@@ -782,7 +782,7 @@ export default function ExperimentTrackerPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -799,7 +799,7 @@ export default function ExperimentTrackerPage() {
       </section>
 
       {/* Tabs */}
-      <section className="px-6 lg:px-12 py-4">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-4">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-2">
           {tabs.map((t) => (
             <button
@@ -822,7 +822,7 @@ export default function ExperimentTrackerPage() {
       {/* ============================================================ */}
 
       {activeTab === "dashboard" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Overview" className="px-6 lg:px-12 py-8">
           <div className="max-w-7xl mx-auto space-y-10">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -879,7 +879,7 @@ export default function ExperimentTrackerPage() {
       {/* ============================================================ */}
 
       {activeTab === "experiments" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 py-8">
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Actions bar */}
             <div className="flex flex-wrap items-center gap-3">
@@ -1119,7 +1119,7 @@ export default function ExperimentTrackerPage() {
       {/* ============================================================ */}
 
       {activeTab === "timeline" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Experiment Timeline" className="px-6 lg:px-12 py-8">
           <div className="max-w-7xl mx-auto space-y-8">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -1162,7 +1162,7 @@ export default function ExperimentTrackerPage() {
       {/* ============================================================ */}
 
       {activeTab === "learnings" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Learnings Library" className="px-6 lg:px-12 py-8">
           <div className="max-w-7xl mx-auto space-y-8">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -1199,7 +1199,7 @@ export default function ExperimentTrackerPage() {
       {/*  EDUCATIONAL SECTION                                          */}
       {/* ============================================================ */}
 
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200 mt-12">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-16 border-t border-neutral-200 mt-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Learn</SectionLabel>
@@ -1233,7 +1233,7 @@ export default function ExperimentTrackerPage() {
       {/*  CTA SECTION                                                  */}
       {/* ============================================================ */}
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white">
+      <section aria-label="Ready to Accelerate Your Experiments?" className="px-6 lg:px-12 py-20 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight leading-tight">

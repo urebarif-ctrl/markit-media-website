@@ -739,7 +739,7 @@ export default function EmailCampaignPlannerPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -754,7 +754,7 @@ export default function EmailCampaignPlannerPage() {
       </section>
 
       {/* ---- Step 1: Campaign Type ---- */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex items-center gap-3 mb-4">
@@ -797,7 +797,7 @@ export default function EmailCampaignPlannerPage() {
       </section>
 
       {/* ---- Step 2: Audience Type ---- */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up" delay={40}>
             <div className="flex items-center gap-3 mb-4">
@@ -833,7 +833,7 @@ export default function EmailCampaignPlannerPage() {
       </section>
 
       {/* ---- Step 3: List Size ---- */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up" delay={80}>
             <div className="flex items-center gap-3 mb-4">
@@ -869,7 +869,7 @@ export default function EmailCampaignPlannerPage() {
       </section>
 
       {/* ---- Generate Button ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up" delay={120}>
             <button
@@ -889,7 +889,7 @@ export default function EmailCampaignPlannerPage() {
 
       {/* ---- Generated Plan ---- */}
       {plan && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Generated campaign plan" className="px-6 lg:px-12 pb-16">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-gray-200 overflow-hidden">
@@ -1006,7 +1006,7 @@ export default function EmailCampaignPlannerPage() {
       )}
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+      <section aria-label="Email Marketing Benchmarks by Industry" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight mb-4">
@@ -1075,7 +1075,7 @@ export default function EmailCampaignPlannerPage() {
       </section>
 
       {/* ---- CTA Section ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

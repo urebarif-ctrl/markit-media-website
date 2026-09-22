@@ -498,7 +498,7 @@ export default function RiskAssessmentPage() {
       </header>
 
       {/* ---- Dashboard Summary ---- */}
-      <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {/* JSON-LD */}
@@ -544,7 +544,7 @@ export default function RiskAssessmentPage() {
       </section>
 
       {/* ---- Risk Matrix Visualization ---- */}
-      <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+      <section aria-label="Risk Heatmap" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight mb-6">
             Risk Heatmap
@@ -573,7 +573,7 @@ export default function RiskAssessmentPage() {
       </section>
 
       {/* ---- Add / Edit Risk Form ---- */}
-      <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight mb-6">
             {editingId ? "Edit Risk" : "Add a Risk"}
@@ -725,7 +725,7 @@ export default function RiskAssessmentPage() {
 
       {/* ---- Top 5 Risks ---- */}
       {topFive.length > 0 && (
-        <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+        <section aria-label="Top 5 Risks by Score" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight mb-6">
               Top 5 Risks by Score
@@ -757,7 +757,7 @@ export default function RiskAssessmentPage() {
       )}
 
       {/* ---- Filter / Sort Controls + Risk List ---- */}
-      <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+      <section aria-label="All Risks ()" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight mb-6">
             All Risks ({risks.length})
@@ -905,7 +905,7 @@ export default function RiskAssessmentPage() {
       </section>
 
       {/* ---- Category Legend ---- */}
-      <section className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
+      <section aria-label="Risk Categories" className="px-6 lg:px-12 pb-12 max-w-7xl mx-auto">
         <Animate animation="fade-up">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight mb-6">
             Risk Categories
@@ -932,7 +932,7 @@ export default function RiskAssessmentPage() {
       </section>
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50 border-t border-neutral-200">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-16 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Learn</SectionLabel>
@@ -1029,7 +1029,7 @@ export default function RiskAssessmentPage() {
       </section>
 
       {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+      <section aria-label="Related Tools" className="px-6 lg:px-12 py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
@@ -1041,7 +1041,7 @@ export default function RiskAssessmentPage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

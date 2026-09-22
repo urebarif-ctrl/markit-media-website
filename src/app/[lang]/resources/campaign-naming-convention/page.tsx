@@ -79,7 +79,7 @@ export default function CampaignNamingConventionPage() {
         </header>
 
         <div className="space-y-8">
-          <section className="border border-gray-200 p-6 lg:p-8 space-y-5">
+          <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8 space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Platform</label>
@@ -140,7 +140,7 @@ export default function CampaignNamingConventionPage() {
             </div>
           </section>
 
-          <section className="border border-gray-200 p-6 lg:p-8">
+          <section aria-label="Generated Campaign Name" className="border border-gray-200 p-6 lg:p-8">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Generated Campaign Name</h2>
             <div className="bg-gray-50 p-4 mb-4 flex items-center justify-between gap-4">
               <code className="text-base text-black font-mono break-all">{campaignName || "Select options above"}</code>
@@ -170,7 +170,7 @@ export default function CampaignNamingConventionPage() {
             </div>
           </section>
 
-          <section className="border border-gray-200 p-6 lg:p-8">
+          <section aria-label="Why Naming Conventions Matter" className="border border-gray-200 p-6 lg:p-8">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Why Naming Conventions Matter</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-base">
               <div>
@@ -188,7 +188,7 @@ export default function CampaignNamingConventionPage() {
             </div>
           </section>
 
-          <section className="bg-black text-white p-8 lg:p-12 text-center">
+          <section aria-label="Need Campaign Management Help?" className="bg-black text-white p-8 lg:p-12 text-center">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Campaign Management Help?</h2>
             <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team manages campaigns across every major platform with disciplined naming, tracking, and reporting.</p>
             <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Campaign Support &rarr;</Link>

@@ -88,7 +88,7 @@ export default function CompetitorAnalysisPage() {
           <li className="text-black" aria-current="page">Competitor Analysis Worksheet</li>
         </ol>
       </nav>
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -102,7 +102,7 @@ export default function CompetitorAnalysisPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Competitor details" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto space-y-8">
           {competitors.map((comp, i) => (
             <Animate key={i} animation="fade-up" delay={i * 60}>
@@ -216,7 +216,7 @@ export default function CompetitorAnalysisPage() {
       </section>
 
       {filled.length >= 2 && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Competitive Landscape Summary" className="px-6 lg:px-12 pb-16">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -296,7 +296,7 @@ export default function CompetitorAnalysisPage() {
         </section>
       )}
 
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="1. Identify your real competitors" className="px-6 lg:px-12 py-16">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -324,7 +324,7 @@ export default function CompetitorAnalysisPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

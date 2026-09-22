@@ -179,7 +179,7 @@ export default function BudgetCalculatorPage() {
         </ol>
       </nav>
 
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Marketing Budget Calculator" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">Interactive Tools</span>
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
@@ -192,7 +192,7 @@ export default function BudgetCalculatorPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Your Inputs" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Inputs */}
           <div className="space-y-8">
@@ -303,7 +303,7 @@ export default function BudgetCalculatorPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="What Each Channel Covers" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">What Each Channel Covers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -324,7 +324,7 @@ export default function BudgetCalculatorPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
             Want a Custom Strategy?

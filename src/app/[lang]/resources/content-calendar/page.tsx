@@ -909,7 +909,7 @@ export default function ContentCalendarPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -925,7 +925,7 @@ export default function ContentCalendarPage() {
       </section>
 
       {/* ---- Step 1: Industry ---- */}
-      <section className="px-6 lg:px-12 pb-10">
+      <section aria-label="1. Select your industry" className="px-6 lg:px-12 pb-10">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -951,7 +951,7 @@ export default function ContentCalendarPage() {
       </section>
 
       {/* ---- Step 2: Frequency ---- */}
-      <section className="px-6 lg:px-12 pb-10">
+      <section aria-label="2. Content frequency" className="px-6 lg:px-12 pb-10">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -977,7 +977,7 @@ export default function ContentCalendarPage() {
       </section>
 
       {/* ---- Step 3: Channels ---- */}
-      <section className="px-6 lg:px-12 pb-10">
+      <section aria-label="3. Select channels" className="px-6 lg:px-12 pb-10">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -1022,7 +1022,7 @@ export default function ContentCalendarPage() {
       </section>
 
       {/* ---- Step 4: Planning Period ---- */}
-      <section className="px-6 lg:px-12 pb-10">
+      <section aria-label="4. Planning period" className="px-6 lg:px-12 pb-10">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -1048,7 +1048,7 @@ export default function ContentCalendarPage() {
       </section>
 
       {/* ---- Generate Button ---- */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <button
@@ -1068,7 +1068,7 @@ export default function ContentCalendarPage() {
 
       {/* ---- Calendar Output ---- */}
       {calendar.length > 0 && (
-        <section className="px-6 lg:px-12 pb-20">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-20">
           <div className="max-w-6xl mx-auto">
             {/* Copy buttons */}
             <Animate animation="fade-up">
@@ -1175,7 +1175,7 @@ export default function ContentCalendarPage() {
       )}
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50">
+      <section aria-label="Content Planning Guide" className="px-6 lg:px-12 py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Content Planning Guide</SectionLabel>
@@ -1260,7 +1260,7 @@ export default function ContentCalendarPage() {
       </section>
 
       {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

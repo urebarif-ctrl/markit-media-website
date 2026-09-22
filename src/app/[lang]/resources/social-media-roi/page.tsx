@@ -96,7 +96,7 @@ export default function SocialMediaRoiPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -111,7 +111,7 @@ export default function SocialMediaRoiPage() {
       </section>
 
       {/* Calculator */}
-      <section className="px-6 lg:px-12 pb-20">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-20">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -448,7 +448,7 @@ export default function SocialMediaRoiPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

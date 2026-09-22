@@ -480,7 +480,7 @@ export default function MarketingMaturityPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -499,7 +499,7 @@ export default function MarketingMaturityPage() {
       {!submitted ? (
         <>
           {/* ---- Progress Indicator ---- */}
-          <section className="px-6 lg:px-12 pb-6">
+          <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
             <div className="max-w-3xl mx-auto">
               <Animate animation="fade-up">
                 <div className="flex items-center justify-between mb-3">
@@ -796,7 +796,7 @@ export default function MarketingMaturityPage() {
       )}
 
       {/* ---- What Each Level Means ---- */}
-      <section className="px-6 lg:px-12 py-20 border-t border-gray-200">
+      <section aria-label="Understanding Your Score" className="px-6 lg:px-12 py-20 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Understanding Your Score</SectionLabel>
@@ -828,7 +828,7 @@ export default function MarketingMaturityPage() {
       </section>
 
       {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

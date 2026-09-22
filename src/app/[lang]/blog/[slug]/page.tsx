@@ -247,7 +247,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <JsonLd data={articleSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -271,18 +271,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </section>
 
       {post.cover_image && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Need Help With Your Strategy?" className="px-6 lg:px-12 pb-8">
           <div className="max-w-4xl mx-auto">
             <img src={post.cover_image} alt={`Cover image for ${post.title}`} className="w-full aspect-[2/1] object-cover" />
           </div>
         </section>
       )}
 
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Need Help With Your Strategy?" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto blog-prose" dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }} />
       </section>
 
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Need Help With Your Strategy?" className="px-6 lg:px-12 pb-16">
         <div className="max-w-3xl mx-auto bg-gray-50 p-8 border border-gray-200">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-3">
             Need Help With Your {post.category} Strategy?
@@ -378,7 +378,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <Link href="/blog" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             &larr; Back to Blog

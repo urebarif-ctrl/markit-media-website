@@ -550,7 +550,7 @@ export default function ChannelMixModellerPage() {
       </nav>
 
       {/* Header */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Marketing Channel Mix Modeller" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-5xl mx-auto">
           <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">
             Interactive Tools
@@ -567,7 +567,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Global Inputs */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-50 border border-gray-200 p-6">
             <div>
@@ -621,7 +621,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Allocation Bar + Warning */}
-      <section className="px-6 lg:px-12 py-4">
+      <section aria-label="Channel Allocation" className="px-6 lg:px-12 py-4">
         <div className="max-w-5xl mx-auto space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black">
@@ -664,7 +664,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Channel Controls */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
           {channels.map((ch, i) => (
             <ChannelRow
@@ -679,7 +679,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Pie Chart */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Allocation Breakdown" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
             Allocation Breakdown
@@ -689,7 +689,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Projected Results Table */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Projected Results by Channel" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
             Projected Results by Channel
@@ -758,7 +758,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Summary Dashboard */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Summary Dashboard" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
             Summary Dashboard
@@ -813,7 +813,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Scenario Comparison */}
-      <section className="px-6 lg:px-12 py-8 bg-gray-50">
+      <section aria-label="Scenario Comparison" className="px-6 lg:px-12 py-8 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
             Scenario Comparison
@@ -963,7 +963,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Export */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-4">
           <button
             type="button"
@@ -982,7 +982,7 @@ export default function ChannelMixModellerPage() {
       </section>
 
       {/* Disclaimer */}
-      <section className="px-6 lg:px-12 py-8 border-t border-gray-200">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8 border-t border-gray-200">
         <div className="max-w-5xl mx-auto">
           <p className="text-base text-gray-400 leading-relaxed">
             Projections are estimates based on the CPA and conversion rate
@@ -1006,7 +1006,7 @@ export default function ChannelMixModellerPage() {
       />
     
       {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+      <section aria-label="Need Expert Help?" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
         <Link href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>

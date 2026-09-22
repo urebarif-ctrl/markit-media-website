@@ -116,7 +116,7 @@ export default function KarachiPage() {
       <JsonLd data={schema} />
 
       {/* Breadcrumb */}
-      <section className="bg-white pt-28 pb-4">
+      <section aria-label="Content section" className="bg-white pt-28 pb-4">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumb
             items={[
@@ -128,7 +128,7 @@ export default function KarachiPage() {
       </section>
 
       {/* Hero */}
-      <section className="bg-white pt-12 pb-20 lg:pb-28">
+      <section aria-label="Karachi, Pakistan" className="bg-white pt-12 pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Karachi, Pakistan</SectionLabel>
@@ -159,7 +159,7 @@ export default function KarachiPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="Our Services" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Our Services</SectionLabel>
@@ -200,7 +200,7 @@ export default function KarachiPage() {
       </section>
 
       {/* Why Markit Media */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Why Markit Media" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Why Markit Media</SectionLabel>
@@ -236,7 +236,7 @@ export default function KarachiPage() {
       </section>
 
       {/* Process / Approach */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="Our Process" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Our Process</SectionLabel>
@@ -273,7 +273,7 @@ export default function KarachiPage() {
       </section>
 
       {/* Karachi Context */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="The Karachi Opportunity" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
           <div>
             <Animate animation="fade-right">
@@ -344,7 +344,7 @@ export default function KarachiPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black py-20 lg:py-28">
+      <section aria-label="Ready to grow your business in Karachi?" className="bg-black py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <Animate animation="scale-in">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight leading-tight">

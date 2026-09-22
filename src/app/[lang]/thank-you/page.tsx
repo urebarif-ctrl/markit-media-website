@@ -23,7 +23,7 @@ const nextSteps = [
 export default function ThankYouPage() {
   return (
     <article className="min-h-[80vh] flex flex-col justify-center">
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Message Received" className="px-6 lg:px-12 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <div className="w-20 h-20 bg-black text-white flex items-center justify-center mx-auto mb-8 text-3xl font-bold">

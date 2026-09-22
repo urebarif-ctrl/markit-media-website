@@ -284,7 +284,7 @@ export default function PricingCalculatorPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -305,7 +305,7 @@ export default function PricingCalculatorPage() {
       </section>
 
       {/* Calculator */}
-      <section className="px-6 lg:px-12 py-12">
+      <section aria-label="Business Size" className="px-6 lg:px-12 py-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Inputs - Left Column */}
           <div className="lg:col-span-2 space-y-10">
@@ -619,7 +619,7 @@ export default function PricingCalculatorPage() {
       </section>
 
       {/* Factors That Affect Pricing */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50">
+      <section aria-label="Good to Know" className="px-6 lg:px-12 py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <Animate animation="fade-up">
             <div className="text-center mb-12">
@@ -666,7 +666,7 @@ export default function PricingCalculatorPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Next Step" className="px-6 lg:px-12 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <SectionLabel>Next Step</SectionLabel>
@@ -704,7 +704,7 @@ export default function PricingCalculatorPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+      <section aria-label="Need Expert Help?" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
         <Link href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>

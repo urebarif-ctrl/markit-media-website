@@ -284,7 +284,7 @@ export default function BrandToneGeneratorPage() {
             </div>
             <div className="text-base text-gray-400">Step {step + 1} of {steps.length}</div>
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-1">{steps[step].title}</h2>
               <p className="text-base text-gray-500 mb-6">{steps[step].subtitle}</p>
               {steps[step].content}
@@ -301,7 +301,7 @@ export default function BrandToneGeneratorPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Tone Spectrum" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-black mb-6">
                 {profile.brandName ? `${profile.brandName} Voice Guide` : "Your Voice Guide"}
               </h2>
@@ -367,7 +367,7 @@ export default function BrandToneGeneratorPage() {
               <button onClick={() => { setShowGuide(false); setStep(0); }} className="border border-gray-300 text-gray-700 px-6 py-3 text-base font-medium hover:border-black hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Edit Voice Profile</button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Need Help Defining Your Brand?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Defining Your Brand?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our branding team creates comprehensive brand identities from voice and messaging to visual design systems.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Start Your Brand Project &rarr;</Link>

@@ -359,7 +359,7 @@ export default function TeamCapacityPlannerPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -378,7 +378,7 @@ export default function TeamCapacityPlannerPage() {
       {/* ============================================================ */}
       {/*  TEAM MEMBERS                                                 */}
       {/* ============================================================ */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Team Members" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -468,7 +468,7 @@ export default function TeamCapacityPlannerPage() {
       {/* ============================================================ */}
       {/*  PROJECTS / CAMPAIGNS                                         */}
       {/* ============================================================ */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Projects / Campaigns" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -603,7 +603,7 @@ export default function TeamCapacityPlannerPage() {
       {/* ============================================================ */}
       {/*  CAPACITY OVERVIEW DASHBOARD                                  */}
       {/* ============================================================ */}
-      <section className="px-6 lg:px-12 py-12 bg-neutral-50">
+      <section aria-label="Capacity Overview" className="px-6 lg:px-12 py-12 bg-neutral-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -712,7 +712,7 @@ export default function TeamCapacityPlannerPage() {
       {/* ============================================================ */}
       {/*  ACTION BUTTONS                                               */}
       {/* ============================================================ */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-4">
           <button type="button" className={btnPrimary} onClick={exportAsTxt}>
             Export as .txt
@@ -726,7 +726,7 @@ export default function TeamCapacityPlannerPage() {
       {/* ============================================================ */}
       {/*  EDUCATIONAL SECTION                                          */}
       {/* ============================================================ */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Learn</SectionLabel>
@@ -802,7 +802,7 @@ export default function TeamCapacityPlannerPage() {
       </section>
 
       {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+      <section aria-label="Related Tools" className="px-6 lg:px-12 py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
@@ -816,7 +816,7 @@ export default function TeamCapacityPlannerPage() {
       {/* ============================================================ */}
       {/*  CTA                                                          */}
       {/* ============================================================ */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+      <section aria-label="Call to action" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <Animate animation="fade-up">
           <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">
             Need Help Scaling Your Team?

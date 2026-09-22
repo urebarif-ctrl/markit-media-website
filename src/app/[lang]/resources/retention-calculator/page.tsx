@@ -431,7 +431,7 @@ export default function RetentionCalculatorPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -449,7 +449,7 @@ export default function RetentionCalculatorPage() {
       </section>
 
       {/* Tabs */}
-      <section className="px-6 lg:px-12 pb-4">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-4">
         <div className="max-w-5xl mx-auto">
           <nav
             className="flex flex-wrap gap-2 border-b border-neutral-200"
@@ -479,7 +479,7 @@ export default function RetentionCalculatorPage() {
 
       {/* Calculator Tab */}
       {activeTab === "calculator" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Your Numbers" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Inputs */}
             <Animate animation="fade-up">
@@ -700,7 +700,7 @@ export default function RetentionCalculatorPage() {
 
       {/* Monthly Tracking Tab */}
       {activeTab === "tracking" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Monthly Retention Tracking" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-2">
@@ -897,7 +897,7 @@ export default function RetentionCalculatorPage() {
 
       {/* Cohort Analysis Tab */}
       {activeTab === "cohorts" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Cohort Analysis" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-2">
@@ -1086,7 +1086,7 @@ export default function RetentionCalculatorPage() {
 
       {/* Benchmarks Tab */}
       {activeTab === "benchmarks" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Industry Benchmarks" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-2">
@@ -1152,7 +1152,7 @@ export default function RetentionCalculatorPage() {
 
       {/* Scenario Planner Tab */}
       {activeTab === "scenario" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Improvement Scenario Planner" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-2">
@@ -1294,7 +1294,7 @@ export default function RetentionCalculatorPage() {
       )}
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Strategy" className="px-6 lg:px-12 py-16">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Strategy</SectionLabel>
@@ -1338,7 +1338,7 @@ export default function RetentionCalculatorPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

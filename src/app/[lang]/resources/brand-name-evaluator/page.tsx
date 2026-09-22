@@ -388,7 +388,7 @@ export default function BrandNameEvaluatorPage() {
         </ol>
       </nav>
       {/* -------------------------------------------------------- Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -403,7 +403,7 @@ export default function BrandNameEvaluatorPage() {
       </section>
 
       {/* ------------------------------------------------- Input Form */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto space-y-6">
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -442,7 +442,7 @@ export default function BrandNameEvaluatorPage() {
       </section>
 
       {/* ---------------------------------------------- Scoring Sliders */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Rate Each Criterion" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up" delay={60}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-2">
@@ -468,7 +468,7 @@ export default function BrandNameEvaluatorPage() {
       </section>
 
       {/* ---------------------------------------- Overall Score Display */}
-      <section className="px-6 lg:px-12 py-12">
+      <section aria-label="Overall Score" className="px-6 lg:px-12 py-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-neutral-200 p-8 sm:p-10">
@@ -564,7 +564,7 @@ export default function BrandNameEvaluatorPage() {
 
       {/* ------------------------------------------- Evaluation History */}
       {evaluations.length > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Evaluation History ()" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-neutral-200 p-6 sm:p-8">
@@ -658,7 +658,7 @@ export default function BrandNameEvaluatorPage() {
 
       {/* ---------------------------------------- Comparison Table */}
       {showCompare && comparedEvals.length >= 2 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Side-by-Side Comparison" className="px-6 lg:px-12 pb-12">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-neutral-200 p-6 sm:p-8">
@@ -734,7 +734,7 @@ export default function BrandNameEvaluatorPage() {
       )}
 
       {/* ----------------------------------- Scoring Guide / Tips */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Be honest with your ratings" className="px-6 lg:px-12 py-16">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -777,7 +777,7 @@ export default function BrandNameEvaluatorPage() {
       </section>
 
       {/* --------------------------------------------------------- CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

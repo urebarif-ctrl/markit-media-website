@@ -388,7 +388,7 @@ export default function ClientReportingDashboardPage() {
           ]}
         />
 
-        <section className="px-6 lg:px-12 pt-16 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pt-16 pb-12">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-10">
               <button
@@ -717,7 +717,7 @@ export default function ClientReportingDashboardPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -733,7 +733,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* Report Setup */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Report Setup" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -809,7 +809,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* Channel Sections */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Channels (/8)" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black">
@@ -987,7 +987,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* KPI Summary */}
-      <section className="px-6 lg:px-12 py-8 bg-neutral-50">
+      <section aria-label="KPI Summary (Auto-Calculated)" className="px-6 lg:px-12 py-8 bg-neutral-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -1017,7 +1017,7 @@ export default function ClientReportingDashboardPage() {
 
       {/* Spend vs Revenue Chart */}
       {report.channels.length > 0 && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Spend vs Revenue by Channel" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -1099,7 +1099,7 @@ export default function ClientReportingDashboardPage() {
       )}
 
       {/* Executive Summary */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Executive Summary (Auto-Generated)" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -1113,7 +1113,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* Insights */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Insights" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1171,7 +1171,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* Recommendations */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Recommendations" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
@@ -1240,7 +1240,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* Actions */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap gap-4 items-center">
             <button type="button" onClick={() => setPreview(true)} className={btnPrimary}>
@@ -1269,7 +1269,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Client Reporting Best Practices" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1332,7 +1332,7 @@ export default function ClientReportingDashboardPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Need professional reporting built into your marketing ret..." className="px-6 lg:px-12 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-4">

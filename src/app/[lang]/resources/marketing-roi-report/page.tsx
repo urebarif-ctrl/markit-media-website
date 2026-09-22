@@ -608,7 +608,7 @@ export default function MarketingRoiReportPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -625,7 +625,7 @@ export default function MarketingRoiReportPage() {
       </section>
 
       {/* Report Setup */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -717,7 +717,7 @@ export default function MarketingRoiReportPage() {
       </section>
 
       {/* Channel Inputs */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Marketing Channels" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up" delay={60}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -896,7 +896,7 @@ export default function MarketingRoiReportPage() {
       </section>
 
       {/* Generate button */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up" delay={120}>
             <button onClick={() => setGenerated(true)} className={btnPrimary}>
@@ -910,7 +910,7 @@ export default function MarketingRoiReportPage() {
       {generated && allChannels.length > 0 && (
         <>
           {/* Summary Dashboard */}
-          <section className="px-6 lg:px-12 pb-16">
+          <section aria-label="ROI Report Summary" className="px-6 lg:px-12 pb-16">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <div className="border-2 border-black">
@@ -990,7 +990,7 @@ export default function MarketingRoiReportPage() {
           </section>
 
           {/* Channel Detail Table */}
-          <section className="px-6 lg:px-12 pb-16">
+          <section aria-label="Channel Performance Breakdown" className="px-6 lg:px-12 pb-16">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1031,7 +1031,7 @@ export default function MarketingRoiReportPage() {
           </section>
 
           {/* Charts */}
-          <section className="px-6 lg:px-12 pb-16">
+          <section aria-label="ROI by Channel" className="px-6 lg:px-12 pb-16">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1050,7 +1050,7 @@ export default function MarketingRoiReportPage() {
           </section>
 
           {/* Recommendations */}
-          <section className="px-6 lg:px-12 pb-16">
+          <section aria-label="Recommendations" className="px-6 lg:px-12 pb-16">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1125,7 +1125,7 @@ export default function MarketingRoiReportPage() {
 
           {/* Period-over-Period Comparison */}
           {periodComparisons.length > 0 && (
-            <section className="px-6 lg:px-12 pb-16">
+            <section aria-label="Period-over-Period Comparison" className="px-6 lg:px-12 pb-16">
               <div className="max-w-4xl mx-auto">
                 <Animate animation="fade-up">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1176,7 +1176,7 @@ export default function MarketingRoiReportPage() {
           )}
 
           {/* Export */}
-          <section className="px-6 lg:px-12 pb-16">
+          <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
             <div className="max-w-4xl mx-auto">
               <Animate animation="fade-up">
                 <button onClick={handleExport} className={btnPrimary}>
@@ -1189,7 +1189,7 @@ export default function MarketingRoiReportPage() {
       )}
 
       {generated && allChannels.length === 0 && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <div className="p-6 border border-neutral-200 bg-neutral-50">
@@ -1204,7 +1204,7 @@ export default function MarketingRoiReportPage() {
       )}
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-20 bg-neutral-50">
+      <section aria-label="What is Marketing ROI?" className="px-6 lg:px-12 py-20 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -1270,7 +1270,7 @@ export default function MarketingRoiReportPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

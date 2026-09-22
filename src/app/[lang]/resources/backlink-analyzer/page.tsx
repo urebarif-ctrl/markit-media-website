@@ -369,7 +369,7 @@ export default function BacklinkAnalyzerPage() {
 
           {/* ---- Add Backlink Form ---- */}
           <Animate animation="fade-up" delay={100}>
-            <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+            <section aria-label="Add a Backlink" className="border border-neutral-200 p-6 lg:p-8 mb-10">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                 Add a Backlink
               </h2>
@@ -466,7 +466,7 @@ export default function BacklinkAnalyzerPage() {
           {/* ---- Backlinks Table ---- */}
           {scoredLinks.length > 0 && (
             <Animate animation="fade-up" delay={150}>
-              <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+              <section aria-label="Your Backlinks ()" className="border border-neutral-200 p-6 lg:p-8 mb-10">
                 <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black">
                     Your Backlinks ({totalLinks})
@@ -542,7 +542,7 @@ export default function BacklinkAnalyzerPage() {
           {totalLinks > 0 && (
             <>
               <Animate animation="fade-up" delay={200}>
-                <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+                <section aria-label="Profile Dashboard" className="border border-neutral-200 p-6 lg:p-8 mb-10">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                     Profile Dashboard
                   </h2>
@@ -580,7 +580,7 @@ export default function BacklinkAnalyzerPage() {
 
               {/* ---- DA Distribution Bar Chart ---- */}
               <Animate animation="fade-up" delay={250}>
-                <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+                <section aria-label="DA Distribution" className="border border-neutral-200 p-6 lg:p-8 mb-10">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                     DA Distribution
                   </h2>
@@ -672,7 +672,7 @@ export default function BacklinkAnalyzerPage() {
 
               {/* ---- Link Type Pie Chart ---- */}
               <Animate animation="fade-up" delay={300}>
-                <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+                <section aria-label="Link Type Distribution" className="border border-neutral-200 p-6 lg:p-8 mb-10">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                     Link Type Distribution
                   </h2>
@@ -745,7 +745,7 @@ export default function BacklinkAnalyzerPage() {
 
               {/* ---- Anchor Text Analysis ---- */}
               <Animate animation="fade-up" delay={350}>
-                <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+                <section aria-label="Anchor Text Analysis" className="border border-neutral-200 p-6 lg:p-8 mb-10">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                     Anchor Text Analysis
                   </h2>
@@ -797,7 +797,7 @@ export default function BacklinkAnalyzerPage() {
 
               {/* ---- Recommendations ---- */}
               <Animate animation="fade-up" delay={400}>
-                <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+                <section aria-label="Quality Improvement Recommendations" className="border border-neutral-200 p-6 lg:p-8 mb-10">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                     Quality Improvement Recommendations
                   </h2>
@@ -836,7 +836,7 @@ export default function BacklinkAnalyzerPage() {
 
           {/* ---- Educational Section ---- */}
           <Animate animation="fade-up" delay={500}>
-            <section className="border border-neutral-200 p-6 lg:p-8 mb-10">
+            <section aria-label="Backlink Best Practices" className="border border-neutral-200 p-6 lg:p-8 mb-10">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                 Backlink Best Practices
               </h2>
@@ -906,7 +906,7 @@ export default function BacklinkAnalyzerPage() {
 
           {/* ---- CTA ---- */}
           <Animate animation="fade-up" delay={550}>
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Call to action" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">
                 Need Professional Link Building?
               </h2>

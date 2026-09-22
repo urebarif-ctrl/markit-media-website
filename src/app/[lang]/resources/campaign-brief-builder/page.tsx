@@ -809,7 +809,7 @@ export default function CampaignBriefBuilderPage() {
       />
 
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -826,7 +826,7 @@ export default function CampaignBriefBuilderPage() {
       </section>
 
       {/* ── Completeness & Actions Bar ────────────────────────── */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -903,7 +903,7 @@ export default function CampaignBriefBuilderPage() {
       </section>
 
       {/* ── Templates ──────────────────────────────────────────── */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Start from a template" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -926,7 +926,7 @@ export default function CampaignBriefBuilderPage() {
       </section>
 
       {/* ── Section Navigation ─────────────────────────────────── */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <nav aria-label="Brief sections">
@@ -972,7 +972,7 @@ export default function CampaignBriefBuilderPage() {
       </section>
 
       {/* ── Form Sections ──────────────────────────────────────── */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Campaign Overview" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto">
 
           {/* ──────────── 1. Campaign Overview ──────────── */}
@@ -1777,7 +1777,7 @@ export default function CampaignBriefBuilderPage() {
       </section>
 
       {/* ── Educational Section ─────────────────────────────────── */}
-      <section className="px-6 lg:px-12 py-20 bg-neutral-50 print:hidden">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-20 bg-neutral-50 print:hidden">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Learn</SectionLabel>
@@ -1848,7 +1848,7 @@ export default function CampaignBriefBuilderPage() {
       </section>
 
       {/* ── CTA Section ────────────────────────────────────────── */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white print:hidden">
+      <section aria-label="Need help executing your campaign?" className="px-6 lg:px-12 py-20 bg-black text-white print:hidden">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight leading-tight">

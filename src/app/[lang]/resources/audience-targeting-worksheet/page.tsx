@@ -264,7 +264,7 @@ export default function AudienceTargetingWorksheetPage() {
             </div>
             <div className="text-base text-gray-400">Step {step + 1} of {steps.length}</div>
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-1">{steps[step].title}</h2>
               <p className="text-base text-gray-500 mb-6">{steps[step].subtitle}</p>
               {steps[step].fields}
@@ -287,7 +287,7 @@ export default function AudienceTargetingWorksheetPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Demographics" className="border border-gray-200 p-6 lg:p-8">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-black">
                   {profile.name || "Your Audience Profile"}
@@ -355,7 +355,7 @@ export default function AudienceTargetingWorksheetPage() {
               </button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Need Help Reaching Your Audience?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Reaching Your Audience?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds targeted campaigns that connect your brand with the right people on the right channels.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">

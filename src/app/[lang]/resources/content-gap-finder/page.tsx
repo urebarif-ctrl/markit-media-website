@@ -935,7 +935,7 @@ export default function ContentGapFinderPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -953,7 +953,7 @@ export default function ContentGapFinderPage() {
       </section>
 
       {/* ---- Content Inventory Input ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content Inventory" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto space-y-6">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black">
@@ -1031,7 +1031,7 @@ export default function ContentGapFinderPage() {
 
       {/* ---- Results ---- */}
       {showResults && validCount >= 1 && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Buyer Journey Matrix" className="px-6 lg:px-12 pb-16">
           <div className="max-w-4xl mx-auto space-y-12">
             {/* Audit Summary */}
             <Animate animation="fade-up">
@@ -1135,7 +1135,7 @@ export default function ContentGapFinderPage() {
       )}
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200">
+      <section aria-label="How Content Mapping Works" className="px-6 lg:px-12 py-16 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-4">
@@ -1175,7 +1175,7 @@ export default function ContentGapFinderPage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

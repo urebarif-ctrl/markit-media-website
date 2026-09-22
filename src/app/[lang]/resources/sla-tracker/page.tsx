@@ -318,7 +318,7 @@ export default function SlaTrackerPage() {
       <Breadcrumb items={[{ label: "Resources", href: "/resources" }, { label: "SLA Tracker" }]} />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-28 pb-12">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-28 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -333,7 +333,7 @@ export default function SlaTrackerPage() {
       </section>
 
       {/* Dashboard */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -359,7 +359,7 @@ export default function SlaTrackerPage() {
       </section>
 
       {/* Controls */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={150}>
             <div className="flex flex-wrap items-center gap-3">
@@ -406,7 +406,7 @@ export default function SlaTrackerPage() {
 
       {/* Add / Edit Form */}
       {showForm && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-5xl mx-auto">
             <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-6">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -491,7 +491,7 @@ export default function SlaTrackerPage() {
       )}
 
       {/* SLA Table */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={200}>
             {filtered.length === 0 ? (
@@ -576,7 +576,7 @@ export default function SlaTrackerPage() {
       </section>
 
       {/* Monthly Tracking */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Monthly Compliance Tracking" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={250}>
             <div className="flex items-center justify-between mb-6">
@@ -690,7 +690,7 @@ export default function SlaTrackerPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Understanding SLAs" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Understanding SLAs</SectionLabel>
@@ -748,7 +748,7 @@ export default function SlaTrackerPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Get Expert Help" className="px-6 lg:px-12 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <SectionLabel>Get Expert Help</SectionLabel>

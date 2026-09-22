@@ -176,7 +176,7 @@ export default function ChecklistsPage() {
         </ol>
       </nav>
 
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Digital Marketing Checklists" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">Interactive Tools</span>
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
@@ -188,7 +188,7 @@ export default function ChecklistsPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap gap-2" role="tablist" aria-label="Checklist categories">
             {tabs.map((tab) => (
@@ -210,7 +210,7 @@ export default function ChecklistsPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-4">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-4">
             <div className="flex-1 bg-gray-100 h-3 overflow-hidden" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label={`${progress}% complete`}>
@@ -260,7 +260,7 @@ export default function ChecklistsPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-16 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
             Need Help Implementing This?

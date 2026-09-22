@@ -720,7 +720,7 @@ export default function MartechStackPlannerPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -737,7 +737,7 @@ export default function MartechStackPlannerPage() {
       </section>
 
       {/* Action Bar */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-3 items-center">
           <button
             onClick={handleSave}
@@ -772,7 +772,7 @@ export default function MartechStackPlannerPage() {
       </section>
 
       {/* Tab Navigation */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
           <nav
             className="flex gap-0 border-b-2 border-neutral-200"
@@ -1291,7 +1291,7 @@ export default function MartechStackPlannerPage() {
       )}
 
       {/* CTA Section */}
-      <section className="px-6 lg:px-12 py-20 border-t-2 border-neutral-200">
+      <section aria-label="Need Help Optimizing Your Martech Stack?" className="px-6 lg:px-12 py-20 border-t-2 border-neutral-200">
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight leading-tight">

@@ -187,7 +187,7 @@ export default function SocialMediaAuditPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -202,7 +202,7 @@ export default function SocialMediaAuditPage() {
       </section>
 
       {/* Sticky Score Bar */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="sticky top-20 z-10 bg-white py-4 border-b border-gray-200">
@@ -232,7 +232,7 @@ export default function SocialMediaAuditPage() {
       </section>
 
       {/* Checklist Categories */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto space-y-10">
           {categories.map((cat, catIdx) => {
             const score = categoryScores[catIdx];
@@ -292,7 +292,7 @@ export default function SocialMediaAuditPage() {
 
       {/* What to Do Next */}
       {actionItems && lowestCategory && (
-        <section className="px-6 lg:px-12 pb-20">
+        <section aria-label="What to Do Next" className="px-6 lg:px-12 pb-20">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black tracking-tight mb-2">
@@ -319,7 +319,7 @@ export default function SocialMediaAuditPage() {
       )}
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

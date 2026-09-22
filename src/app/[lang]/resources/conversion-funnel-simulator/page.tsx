@@ -362,7 +362,7 @@ export default function ConversionFunnelSimulatorPage() {
       />
 
       {/* ===================== HERO ===================== */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -378,7 +378,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== INDUSTRY PRESETS ===================== */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Industry Presets" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -404,7 +404,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== TOP-OF-FUNNEL INPUTS ===================== */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Top-of-Funnel Inputs" className="px-6 lg:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -469,7 +469,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== FUNNEL STAGES CONFIG ===================== */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Funnel Stages" className="px-6 lg:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex items-center justify-between mb-8">
@@ -590,7 +590,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== VISUAL FUNNEL ===================== */}
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="Your Funnel" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -665,7 +665,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== REVENUE & SUMMARY STATS ===================== */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Revenue Projection & Summary" className="px-6 lg:px-12 py-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -732,7 +732,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== WHAT-IF SIMULATOR ===================== */}
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="What-If Simulator" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -810,7 +810,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== SCENARIO COMPARISON ===================== */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Scenario Comparison" className="px-6 lg:px-12 py-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex items-center justify-between mb-8">
@@ -909,7 +909,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== EXPORT ===================== */}
-      <section className="px-6 lg:px-12 py-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -929,7 +929,7 @@ export default function ConversionFunnelSimulatorPage() {
       </section>
 
       {/* ===================== CTA ===================== */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white">
+      <section aria-label="Ready to Fix Your Funnel?" className="px-6 lg:px-12 py-20 bg-black text-white">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

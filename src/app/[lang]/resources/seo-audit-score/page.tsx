@@ -125,7 +125,7 @@ export default function SeoAuditScorePage() {
         {!showResults ? (
           <div className="space-y-10">
             {categories.map((cat) => (
-              <section key={cat.name} className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Content section" key={cat.name} className="border border-gray-200 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">{cat.name}</h2>
                 <div className="space-y-3">
                   {cat.questions.map((q, qi) => {
@@ -149,7 +149,7 @@ export default function SeoAuditScorePage() {
           </div>
         ) : (
           <div className="space-y-10">
-            <section className="border border-gray-200 p-8 text-center">
+            <section aria-label="Content section" className="border border-gray-200 p-8 text-center">
               <p className="text-base font-semibold tracking-widest uppercase text-gray-400 mb-4">Your SEO Health Score</p>
               <div className="inline-flex items-center justify-center w-40 h-40 border-4 border-black rounded-full mb-4">
                 <div>
@@ -163,7 +163,7 @@ export default function SeoAuditScorePage() {
               <p className="text-base text-gray-500 mt-4">{checked} of {totalQ} checkpoints passed</p>
             </section>
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Category Breakdown" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">Category Breakdown</h2>
               <svg viewBox="0 0 400 200" className="w-full max-w-lg mx-auto" aria-label="SEO score chart">
                 {catScores.map((cs, i) => {
@@ -182,7 +182,7 @@ export default function SeoAuditScorePage() {
             </section>
 
             {unchecked.length > 0 && (
-              <section className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Prioritized Recommendations" className="border border-gray-200 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Prioritized Recommendations</h2>
                 <p className="text-base text-gray-500 mb-6">{unchecked.length} items to address.</p>
                 {categories.map((cat) => {
@@ -211,7 +211,7 @@ export default function SeoAuditScorePage() {
               <button onClick={() => { setAnswers({}); setShowResults(false); }} className="border-2 border-gray-300 text-gray-500 px-8 py-4 text-base font-bold hover:border-black hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Start Over</button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center mt-8">
+            <section aria-label="Want a Professional SEO Audit?" className="bg-black text-white p-8 lg:p-12 text-center mt-8">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Want a Professional SEO Audit?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team conducts comprehensive technical and strategic SEO audits with detailed action plans.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get a Professional Audit &rarr;</Link>

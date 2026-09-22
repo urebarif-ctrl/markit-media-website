@@ -176,7 +176,7 @@ export default function LosAngelesPage() {
       <JsonLd data={faqSchema} />
 
       {/* Breadcrumb */}
-      <section className="bg-white pt-28 pb-4">
+      <section aria-label="Content section" className="bg-white pt-28 pb-4">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumb
             items={[
@@ -190,7 +190,7 @@ export default function LosAngelesPage() {
       </section>
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section aria-label="Los Angeles" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Los Angeles</SectionLabel>
@@ -230,7 +230,7 @@ export default function LosAngelesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50">
+      <section aria-label="Services" className="px-6 lg:px-12 py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Services</SectionLabel>
@@ -263,7 +263,7 @@ export default function LosAngelesPage() {
       </section>
 
       {/* Sub-Pages */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Explore" className="px-6 lg:px-12 py-20">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Explore</SectionLabel>
@@ -300,7 +300,7 @@ export default function LosAngelesPage() {
       </section>
 
       {/* Why Markit Media */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Why Markit Media" className="px-6 lg:px-12 py-20">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Why Markit Media</SectionLabel>
@@ -335,7 +335,7 @@ export default function LosAngelesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50">
+      <section aria-label="FAQ" className="px-6 lg:px-12 py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>FAQ</SectionLabel>
@@ -373,7 +373,7 @@ export default function LosAngelesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-7xl mx-auto">
           <Animate animation="scale-in">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight leading-tight">

@@ -530,7 +530,7 @@ export default function MarketingAuditScorecardPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -605,7 +605,7 @@ export default function MarketingAuditScorecardPage() {
       {!submitted ? (
         <>
           {/* ---- Progress Indicator ---- */}
-          <section className="px-6 lg:px-12 pb-6">
+          <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
             <div className="max-w-3xl mx-auto">
               <Animate animation="fade-up">
                 <div className="flex items-center justify-between mb-3">
@@ -1040,7 +1040,7 @@ export default function MarketingAuditScorecardPage() {
       )}
     
       {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+      <section aria-label="Need Expert Help?" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
         <Link href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>

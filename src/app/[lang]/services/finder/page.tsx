@@ -125,7 +125,7 @@ export default function ServiceFinderPage() {
     <article>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Service Finder" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-20">
+      <section aria-label="Service Finder" className="px-6 lg:px-12 pt-24 pb-20">
         <div className="max-w-3xl mx-auto">
           {!showResults ? (
             <>

@@ -15,7 +15,7 @@ export default function TermsPage() {
   return (
     <article>
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Terms of Service" }]} />
-      <section className="px-6 lg:px-12 pt-24 pb-20">
+      <section aria-label="1. Services" className="px-6 lg:px-12 pt-24 pb-20">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold text-black tracking-tight mb-8">
             Terms of Service

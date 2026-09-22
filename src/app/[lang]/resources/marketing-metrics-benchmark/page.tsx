@@ -1052,7 +1052,7 @@ export default function MarketingMetricsBenchmarkPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Free Interactive Tool" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Interactive Tool</SectionLabel>
@@ -1069,7 +1069,7 @@ export default function MarketingMetricsBenchmarkPage() {
       </section>
 
       {/* Scorecard */}
-      <section className="px-6 lg:px-12 py-6">
+      <section aria-label="Your Benchmark Scorecard" className="px-6 lg:px-12 py-6">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <div className="border border-black p-6 md:p-8">
@@ -1130,7 +1130,7 @@ export default function MarketingMetricsBenchmarkPage() {
       </section>
 
       {/* Filters */}
-      <section className="px-6 lg:px-12 py-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-6">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={200}>
             <div className="flex flex-col md:flex-row gap-4 items-start md:items-end">
@@ -1322,7 +1322,7 @@ export default function MarketingMetricsBenchmarkPage() {
       </section>
 
       {/* Methodology */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="About Our Benchmarking Methodology" className="px-6 lg:px-12 py-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="border-t border-neutral-200 pt-12">
@@ -1373,7 +1373,7 @@ export default function MarketingMetricsBenchmarkPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-16 bg-black">
+      <section aria-label="Need Help Improving Your Metrics?" className="px-6 lg:px-12 py-16 bg-black">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.25rem)] font-extrabold text-white tracking-tight mb-4">

@@ -228,7 +228,7 @@ export default function CroAuditPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -245,7 +245,7 @@ export default function CroAuditPage() {
       </section>
 
       {/* Sticky progress bar */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="sticky top-20 z-10 bg-white py-4 border-b border-gray-200">
@@ -277,7 +277,7 @@ export default function CroAuditPage() {
       </section>
 
       {/* Category checklists */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto space-y-12">
           {categories.map((cat, catIndex) => {
             const score = categoryScores[catIndex];
@@ -336,7 +336,7 @@ export default function CroAuditPage() {
 
       {/* Score summary cards */}
       {checkedCount > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Score Breakdown" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -395,7 +395,7 @@ export default function CroAuditPage() {
 
       {/* Priority fixes */}
       {checkedCount > 0 && priorityFixes.length > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Top Priority Fixes" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border-l-4 border-black pl-6">
@@ -426,7 +426,7 @@ export default function CroAuditPage() {
 
       {/* Reset button */}
       {checkedCount > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <button
@@ -441,7 +441,7 @@ export default function CroAuditPage() {
       )}
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

@@ -1004,7 +1004,7 @@ export default function CompetitiveIntelDashboardPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -1089,7 +1089,7 @@ export default function CompetitiveIntelDashboardPage() {
       </section>
 
       {/* ---- Actions ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-3 items-center">

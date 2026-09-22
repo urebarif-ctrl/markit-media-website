@@ -327,7 +327,7 @@ export default function SocialMediaCalendarTemplatePage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-32 pb-16">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-32 pb-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -343,7 +343,7 @@ export default function SocialMediaCalendarTemplatePage() {
       </section>
 
       {/* ---- Month Navigation + Actions ---- */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap items-center justify-between gap-4">
             {/* Month nav */}
@@ -410,7 +410,7 @@ export default function SocialMediaCalendarTemplatePage() {
 
       {/* ---- Clear Confirmation ---- */}
       {showClearConfirm && (
-        <section className="px-6 lg:px-12 pb-6">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
           <div className="max-w-5xl mx-auto">
             <div className="border-2 border-black p-6 flex flex-wrap items-center gap-4">
               <p className="text-base font-bold text-black">
@@ -434,7 +434,7 @@ export default function SocialMediaCalendarTemplatePage() {
       )}
 
       {/* ---- Main content: Calendar/List + Sidebar ---- */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Weekly Themes" className="px-6 lg:px-12 pb-16">
         <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-8">
           {/* Left: Calendar or List */}
           <div className="flex-1 min-w-0">
@@ -809,7 +809,7 @@ export default function SocialMediaCalendarTemplatePage() {
       )}
 
       {/* ---- How to Use ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200">
+      <section aria-label="How to Use This Calendar" className="px-6 lg:px-12 py-16 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-8">
@@ -846,7 +846,7 @@ export default function SocialMediaCalendarTemplatePage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

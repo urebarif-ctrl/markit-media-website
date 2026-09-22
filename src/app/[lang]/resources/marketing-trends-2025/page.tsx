@@ -93,7 +93,7 @@ export default function MarketingTrends2025Page() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Trends 2025" }]} />
 
-      <section className="px-6 lg:px-12 pt-6 pb-4">
+      <section aria-label="Guide &middot; 2025 Edition" className="px-6 lg:px-12 pt-6 pb-4">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <Link href="/resources/marketing-trends-2026" className="block bg-black text-white px-6 py-4 hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
@@ -104,7 +104,7 @@ export default function MarketingTrends2025Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pt-16 pb-12">
+      <section aria-label="Guide &middot; 2025 Edition" className="px-6 lg:px-12 pt-16 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Guide &middot; 2025 Edition</SectionLabel>
@@ -118,7 +118,7 @@ export default function MarketingTrends2025Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-2">
@@ -137,7 +137,7 @@ export default function MarketingTrends2025Page() {
       </section>
 
       {trends.map((trend, i) => (
-        <section
+        <section aria-label="Content section"
           key={trend.num}
           id={`trend-${trend.num}`}
           className={`px-6 lg:px-12 py-16 ${i % 2 === 1 ? "bg-gray-50" : ""}`}
@@ -166,7 +166,7 @@ export default function MarketingTrends2025Page() {
         </section>
       ))}
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

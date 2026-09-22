@@ -110,7 +110,7 @@ export default function KarachiBrandingPage() {
       <JsonLd data={schema} />
 
       {/* Breadcrumb */}
-      <section className="bg-white pt-28 pb-4">
+      <section aria-label="Content section" className="bg-white pt-28 pb-4">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumb
             items={[
@@ -123,7 +123,7 @@ export default function KarachiBrandingPage() {
       </section>
 
       {/* Hero */}
-      <section className="bg-white pt-12 pb-20 lg:pb-28">
+      <section aria-label="Branding in Karachi" className="bg-white pt-12 pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Branding in Karachi</SectionLabel>
@@ -163,7 +163,7 @@ export default function KarachiBrandingPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="Branding Services" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Branding Services</SectionLabel>
@@ -214,7 +214,7 @@ export default function KarachiBrandingPage() {
       </section>
 
       {/* Why Markit Media */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Why Markit Media" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Why Markit Media</SectionLabel>
@@ -250,7 +250,7 @@ export default function KarachiBrandingPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="Our Process" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Our Process</SectionLabel>
@@ -289,7 +289,7 @@ export default function KarachiBrandingPage() {
       </section>
 
       {/* Related Services */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Beyond Branding" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
           <div>
             <Animate animation="fade-right">
@@ -352,7 +352,7 @@ export default function KarachiBrandingPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black py-20 lg:py-28">
+      <section aria-label="Ready to build a brand that stands out in Karachi?" className="bg-black py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <Animate animation="scale-in">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight leading-tight">

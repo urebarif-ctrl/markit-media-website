@@ -1255,7 +1255,7 @@ export default function CompetitiveSwotAnalyzerPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -1274,7 +1274,7 @@ export default function CompetitiveSwotAnalyzerPage() {
 
       {/* ---- Saved Analyses ---- */}
       {savedAnalyses.length > 0 && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <details className="border border-neutral-200">
@@ -1323,7 +1323,7 @@ export default function CompetitiveSwotAnalyzerPage() {
 
       {/* ---- View Tabs ---- */}
       {showResults && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <div className="flex flex-wrap gap-2 border-b border-neutral-200 pb-4">
@@ -1354,7 +1354,7 @@ export default function CompetitiveSwotAnalyzerPage() {
 
       {/* ---- Input View ---- */}
       {activeView === "input" && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-4xl mx-auto space-y-8">
             {/* Your company */}
             <Animate animation="fade-up">
@@ -1449,7 +1449,7 @@ export default function CompetitiveSwotAnalyzerPage() {
 
       {/* ---- Comparison View ---- */}
       {showResults && activeView === "comparison" && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Side-by-Side Comparison" className="px-6 lg:px-12 pb-12">
           <div className="max-w-6xl mx-auto space-y-8">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black">
@@ -1488,7 +1488,7 @@ export default function CompetitiveSwotAnalyzerPage() {
 
       {/* ---- Insights View ---- */}
       {showResults && activeView === "insights" && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Strategic Insights" className="px-6 lg:px-12 pb-12">
           <div className="max-w-4xl mx-auto space-y-8">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black">
@@ -1525,7 +1525,7 @@ export default function CompetitiveSwotAnalyzerPage() {
       )}
 
       {/* ---- SWOT Methodology Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200">
+      <section aria-label="What is SWOT Analysis?" className="px-6 lg:px-12 py-16 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-4">
@@ -1631,7 +1631,7 @@ export default function CompetitiveSwotAnalyzerPage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

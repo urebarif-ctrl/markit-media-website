@@ -157,7 +157,7 @@ export default function EmailSubjectABTesterPage() {
 
         {!showResults ? (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8 space-y-6">
+            <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8 space-y-6">
               <div>
                 <label className="block text-base font-bold text-black mb-2">
                   Subject Line A
@@ -201,7 +201,7 @@ export default function EmailSubjectABTesterPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-8 text-center">
+            <section aria-label="Content section" className="border border-gray-200 p-8 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-black mb-2">
                 {winner === "Tie"
                   ? "It's a Tie!"
@@ -219,7 +219,7 @@ export default function EmailSubjectABTesterPage() {
                 { label: "A", subject: subjectA, score: scoreA },
                 { label: "B", subject: subjectB, score: scoreB },
               ].map(({ label, subject, score }) => (
-                <section
+                <section aria-label="Subject"
                   key={label}
                   className={`border p-6 lg:p-8 ${
                     winner === label
@@ -293,7 +293,7 @@ export default function EmailSubjectABTesterPage() {
               </button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Call to action" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">
                 Want Higher Open Rates?
               </h2>

@@ -126,7 +126,7 @@ export default function MarketingCalendarPage() {
 
         {!showCalendar ? (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8 space-y-6">
+            <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8 space-y-6">
               <div>
                 <label className="block text-base font-bold text-black mb-2">Industry</label>
                 <select value={industry} onChange={(e) => setIndustry(e.target.value)} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black bg-white">
@@ -210,7 +210,7 @@ export default function MarketingCalendarPage() {
               </div>
             )}
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Need Help Executing Your Marketing Plan?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Executing Your Marketing Plan?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds and executes marketing strategies from planning to results.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Start Your Strategy &rarr;</Link>

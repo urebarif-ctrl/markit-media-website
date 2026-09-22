@@ -1029,7 +1029,7 @@ export default function EmailSequencePlannerPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -1046,7 +1046,7 @@ export default function EmailSequencePlannerPage() {
       </section>
 
       {/* ---- Step indicator ---- */}
-      <section className="px-6 lg:px-12 pb-8 print:hidden">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8 print:hidden">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <StepIndicator current={step} labels={STEP_LABELS} />
@@ -1058,7 +1058,7 @@ export default function EmailSequencePlannerPage() {
       {/*  STEP 0 — Configure                                              */}
       {/* ================================================================ */}
       {step === 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Choose Your Sequence Type" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto space-y-10">
             {/* Sequence type selector */}
             <Animate animation="fade-up">
@@ -1208,7 +1208,7 @@ export default function EmailSequencePlannerPage() {
       {/*  STEP 1 — Customize Emails                                       */}
       {/* ================================================================ */}
       {step === 1 && sequenceType && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Customize Your Sequence" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto space-y-8">
             <Animate animation="fade-up">
               <div>
@@ -1421,7 +1421,7 @@ export default function EmailSequencePlannerPage() {
       {/*  STEP 2 — Results                                                */}
       {/* ================================================================ */}
       {step === 2 && sequenceType && emails.length > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto space-y-12">
             {/* ---- Sequence overview ---- */}
             <Animate animation="fade-up">
@@ -1591,7 +1591,7 @@ export default function EmailSequencePlannerPage() {
 
       {/* ---- Subject Line Formulas Reference ---- */}
       {step === 0 && (
-        <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+        <section aria-label="Subject Line Formulas That Work" className="px-6 lg:px-12 py-16 border-t border-gray-200">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
@@ -1669,7 +1669,7 @@ export default function EmailSequencePlannerPage() {
 
       {/* ---- Optimal Send Times Reference ---- */}
       {step === 0 && (
-        <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+        <section aria-label="Optimal Send Timing by Sequence Type" className="px-6 lg:px-12 py-16 border-t border-gray-200">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
@@ -1746,7 +1746,7 @@ export default function EmailSequencePlannerPage() {
       )}
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center print:hidden">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center print:hidden">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

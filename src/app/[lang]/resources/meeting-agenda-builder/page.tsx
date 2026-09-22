@@ -420,7 +420,7 @@ export default function MeetingAgendaBuilderPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -436,7 +436,7 @@ export default function MeetingAgendaBuilderPage() {
       </section>
 
       {/* ---- Step 1: Choose Meeting Type ---- */}
-      <section className="px-6 lg:px-12 pb-10">
+      <section aria-label="1. Choose a meeting type" className="px-6 lg:px-12 pb-10">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -503,7 +503,7 @@ export default function MeetingAgendaBuilderPage() {
 
       {/* ---- Step 2: Meeting Details ---- */}
       {selectedType && (
-        <section className="px-6 lg:px-12 pb-10">
+        <section aria-label="2. Meeting details" className="px-6 lg:px-12 pb-10">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -595,7 +595,7 @@ export default function MeetingAgendaBuilderPage() {
 
       {/* ---- Step 3: Agenda Items ---- */}
       {selectedType && (
-        <section className="px-6 lg:px-12 pb-10">
+        <section aria-label="3. Agenda items" className="px-6 lg:px-12 pb-10">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
@@ -784,7 +784,7 @@ export default function MeetingAgendaBuilderPage() {
 
       {/* ---- Step 4: Export and Save ---- */}
       {selectedType && items.length > 0 && (
-        <section className="px-6 lg:px-12 pb-10">
+        <section aria-label="4. Export your agenda" className="px-6 lg:px-12 pb-10">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -817,7 +817,7 @@ export default function MeetingAgendaBuilderPage() {
 
       {/* ---- Preview ---- */}
       {selectedType && items.length > 0 && (
-        <section className="px-6 lg:px-12 pb-20">
+        <section aria-label="Agenda preview" className="px-6 lg:px-12 pb-20">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -880,7 +880,7 @@ export default function MeetingAgendaBuilderPage() {
       )}
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-neutral-50">
+      <section aria-label="Meeting Best Practices" className="px-6 lg:px-12 py-20 bg-neutral-50">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Meeting Best Practices</SectionLabel>
@@ -962,7 +962,7 @@ export default function MeetingAgendaBuilderPage() {
       </section>
 
       {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

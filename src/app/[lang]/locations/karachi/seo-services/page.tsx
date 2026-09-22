@@ -110,7 +110,7 @@ export default function SeoServicesKarachiPage() {
       <JsonLd data={schema} />
 
       {/* Breadcrumb */}
-      <section className="pt-24 pb-4">
+      <section aria-label="Page header" className="pt-24 pb-4">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumb
             items={[
@@ -123,7 +123,7 @@ export default function SeoServicesKarachiPage() {
       </section>
 
       {/* Hero */}
-      <section className="pb-20 pt-8">
+      <section aria-label="Search Engine Optimization" className="pb-20 pt-8">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up" once>
             <SectionLabel>Search Engine Optimization</SectionLabel>
@@ -163,7 +163,7 @@ export default function SeoServicesKarachiPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="bg-white py-24">
+      <section aria-label="What We Deliver" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up" once>
             <SectionLabel>What We Deliver</SectionLabel>
@@ -192,7 +192,7 @@ export default function SeoServicesKarachiPage() {
       </section>
 
       {/* Why Markit Media */}
-      <section className="bg-black py-24">
+      <section aria-label="Why Karachi businesses choose Markit Media for SEO" className="bg-black py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up" once>
             <span className="text-base font-bold text-white/60 uppercase tracking-[0.15em]">Why Markit Media</span>
@@ -228,7 +228,7 @@ export default function SeoServicesKarachiPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-white py-24">
+      <section aria-label="Our Process" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up" once>
             <SectionLabel>Our Process</SectionLabel>
@@ -257,7 +257,7 @@ export default function SeoServicesKarachiPage() {
       </section>
 
       {/* Karachi Context */}
-      <section className="bg-white py-24 border-t border-black/5">
+      <section aria-label="Karachi&apos;s Digital Landscape" className="bg-white py-24 border-t border-black/5">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 lg:grid-cols-2">
             <Animate animation="fade-right" once>
@@ -336,7 +336,7 @@ export default function SeoServicesKarachiPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black py-24">
+      <section aria-label="Ready to own page one in Karachi?" className="bg-black py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <Animate animation="scale-in" once>
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl font-[family-name:var(--font-display)]">

@@ -359,7 +359,7 @@ export default function AdBudgetPacingPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-28 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-28 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -376,7 +376,7 @@ export default function AdBudgetPacingPage() {
       </section>
 
       {/* Global Settings */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Month Settings" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -450,7 +450,7 @@ export default function AdBudgetPacingPage() {
       </section>
 
       {/* Campaign List */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Campaigns" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black">
@@ -635,7 +635,7 @@ export default function AdBudgetPacingPage() {
 
       {/* Overall Summary */}
       {campaigns.length > 0 && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Overall Summary" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -703,7 +703,7 @@ export default function AdBudgetPacingPage() {
       )}
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Budget Pacing Best Practices" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionTitle>Budget Pacing Best Practices</SectionTitle>
@@ -779,7 +779,7 @@ export default function AdBudgetPacingPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Need Help Managing Your Ad Budget?" className="px-6 lg:px-12 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <Animate animation="fade-up">
             <SectionTitle>Need Help Managing Your Ad Budget?</SectionTitle>

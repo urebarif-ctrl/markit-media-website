@@ -584,7 +584,7 @@ export default function CampaignDebriefPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -602,7 +602,7 @@ export default function CampaignDebriefPage() {
 
       {/* ---- Saved Debriefs Bar ---- */}
       {savedDebriefs.length > 0 && (
-        <section className="px-6 lg:px-12 pb-10">
+        <section aria-label="Saved Debriefs (/)" className="px-6 lg:px-12 pb-10">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-in">
               <div className="border border-neutral-200 p-6">
@@ -656,7 +656,7 @@ export default function CampaignDebriefPage() {
       )}
 
       {/* ---- Campaign Details ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Campaign Details" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto space-y-10">
           <Animate animation="fade-up">
             <div className="border border-neutral-200 p-6 lg:p-8">
@@ -965,7 +965,7 @@ export default function CampaignDebriefPage() {
       </section>
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-20 border-t border-neutral-200">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-20 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Learn</SectionLabel>
@@ -1036,7 +1036,7 @@ export default function CampaignDebriefPage() {
       </section>
 
       {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+      <section aria-label="Related Tools" className="px-6 lg:px-12 py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
@@ -1048,7 +1048,7 @@ export default function CampaignDebriefPage() {
       </section>
 
       {/* ---- CTA Section ---- */}
-      <section className="px-6 lg:px-12 py-20 border-t border-neutral-200">
+      <section aria-label="Need Help Turning Insights Into Results?" className="px-6 lg:px-12 py-20 border-t border-neutral-200">
         <div className="max-w-4xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight leading-tight mb-4">

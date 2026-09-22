@@ -537,7 +537,7 @@ export default function LeadMagnetGeneratorPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -615,7 +615,7 @@ export default function LeadMagnetGeneratorPage() {
           </section>
 
           {/* ---- Best Practices (always visible) ---- */}
-          <section className="px-6 lg:px-12 py-16 bg-gray-50">
+          <section aria-label="Lead Magnet Best Practices" className="px-6 lg:px-12 py-16 bg-gray-50">
             <div className="max-w-3xl mx-auto">
               <Animate animation="fade-up">
                 <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-2">
@@ -814,7 +814,7 @@ export default function LeadMagnetGeneratorPage() {
       )}
 
       {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

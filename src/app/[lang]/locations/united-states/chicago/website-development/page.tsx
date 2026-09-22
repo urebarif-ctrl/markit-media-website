@@ -140,7 +140,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       <JsonLd data={faqSchema} />
 
       {/* Breadcrumb */}
-      <section className="bg-white pt-28 pb-4">
+      <section aria-label="Content section" className="bg-white pt-28 pb-4">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumb
             items={[
@@ -155,7 +155,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       </section>
 
       {/* Hero */}
-      <section className="bg-white pt-12 pb-20 lg:pb-28">
+      <section aria-label="Chicago, Illinois" className="bg-white pt-12 pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Chicago, Illinois</SectionLabel>
@@ -194,7 +194,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       </section>
 
       {/* Service Details */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="What We Build" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>What We Build</SectionLabel>
@@ -233,7 +233,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       </section>
 
       {/* Why Chicago Businesses Choose Us */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Why Markit Media" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Why Markit Media</SectionLabel>
@@ -268,7 +268,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="Our Process" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Our Process</SectionLabel>
@@ -306,7 +306,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       </section>
 
       {/* Related Services */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Related Services" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Related Services</SectionLabel>
@@ -374,7 +374,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black py-20 lg:py-28">
+      <section aria-label="Build a website that works for your Chicago business" className="bg-black py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <Animate animation="scale-in">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight leading-tight">

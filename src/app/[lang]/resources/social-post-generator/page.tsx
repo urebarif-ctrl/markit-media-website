@@ -95,7 +95,7 @@ export default function SocialPostGeneratorPage() {
         </header>
 
         <div className="space-y-8">
-          <section className="border border-gray-200 p-6 lg:p-8 space-y-6">
+          <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8 space-y-6">
             <div>
               <label className="block text-base font-bold text-black mb-2">Topic / Subject</label>
               <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="e.g., SEO strategy, email marketing" className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:outline-none focus-visible:border-black transition-colors" />
@@ -124,7 +124,7 @@ export default function SocialPostGeneratorPage() {
           </section>
 
           {Object.keys(posts).length > 0 && (
-            <section className="space-y-6">
+            <section aria-label="Generated Posts" className="space-y-6">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black">Generated Posts</h2>
               {selectedPlatforms.map((p) => {
                 const post = posts[p];
@@ -144,7 +144,7 @@ export default function SocialPostGeneratorPage() {
             </section>
           )}
 
-          <section className="bg-black text-white p-8 lg:p-12 text-center">
+          <section aria-label="Need a Full Social Media Strategy?" className="bg-black text-white p-8 lg:p-12 text-center">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need a Full Social Media Strategy?</h2>
             <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">From content calendars to community management, our team handles social media end to end.</p>
             <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Social Media Help &rarr;</Link>

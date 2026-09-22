@@ -437,7 +437,7 @@ export default function RoiDashboardPage() {
       />
 
       {/* Header */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -458,7 +458,7 @@ export default function RoiDashboardPage() {
 
       {/* Channel Input Form */}
       {!showDashboard && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Your Channels" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <div className="flex items-center justify-between mb-6">
@@ -625,7 +625,7 @@ export default function RoiDashboardPage() {
       {showDashboard && (
         <>
           {/* Back button */}
-          <section className="px-6 lg:px-12 pt-4 pb-2">
+          <section aria-label="Content section" className="px-6 lg:px-12 pt-4 pb-2">
             <div className="max-w-7xl mx-auto">
               <button
                 onClick={handleReset}
@@ -897,7 +897,7 @@ export default function RoiDashboardPage() {
           )}
 
           {/* How to Use */}
-          <section className="px-6 lg:px-12 py-8">
+          <section aria-label="Understanding Your Metrics" className="px-6 lg:px-12 py-8">
             <div className="max-w-5xl mx-auto">
               <Animate animation="fade-up">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -942,7 +942,7 @@ export default function RoiDashboardPage() {
       )}
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

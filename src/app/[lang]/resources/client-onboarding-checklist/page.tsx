@@ -345,7 +345,7 @@ export default function ClientOnboardingChecklistPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -363,7 +363,7 @@ export default function ClientOnboardingChecklistPage() {
       </section>
 
       {/* Client / Project name */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -405,7 +405,7 @@ export default function ClientOnboardingChecklistPage() {
       </section>
 
       {/* Service selection */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <fieldset>
@@ -439,7 +439,7 @@ export default function ClientOnboardingChecklistPage() {
 
       {/* Prompt when no services selected */}
       {!hasServices && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-gray-200 p-8 text-center">
@@ -454,7 +454,7 @@ export default function ClientOnboardingChecklistPage() {
 
       {/* Overall progress bar (sticky) */}
       {hasServices && (
-        <section className="px-6 lg:px-12 pb-6">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
           <div className="max-w-3xl mx-auto">
             <div className="sticky top-20 z-10 bg-white py-4 border-b border-gray-200">
               <div className="flex items-center justify-between mb-2">
@@ -490,7 +490,7 @@ export default function ClientOnboardingChecklistPage() {
 
       {/* Phase checklists */}
       {hasServices && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto space-y-12">
             {filteredPhases.map((phase) => {
               const progress = phaseProgress(phase);
@@ -637,7 +637,7 @@ export default function ClientOnboardingChecklistPage() {
 
       {/* Export + Reset buttons */}
       {hasServices && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto flex flex-wrap gap-4">
             <Animate animation="fade-up">
               <button
@@ -660,7 +660,7 @@ export default function ClientOnboardingChecklistPage() {
       )}
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

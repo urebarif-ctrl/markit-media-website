@@ -431,7 +431,7 @@ export default function StakeholderReportPage() {
           }
         `}</style>
 
-        <section className="px-6 lg:px-12 pt-16 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pt-16 pb-12">
           <div className="max-w-4xl mx-auto">
       {/* JSON-LD */}
       <script
@@ -607,7 +607,7 @@ export default function StakeholderReportPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -624,7 +624,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* Template Selection */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="1. Choose a Template" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -667,7 +667,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* Report Setup */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="2. Report Details" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -760,7 +760,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* KPI Highlight Cards */}
-      <section className="px-6 lg:px-12 py-8 bg-neutral-50">
+      <section aria-label="3. Key Metrics (/6)" className="px-6 lg:px-12 py-8 bg-neutral-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
@@ -865,7 +865,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* Configurable Sections */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="4. Report Sections" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center justify-between flex-wrap gap-4 mb-4">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black">
@@ -984,7 +984,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* Auto-generated Executive Summary */}
-      <section className="px-6 lg:px-12 py-8 bg-neutral-50">
+      <section aria-label="Executive Summary (Auto-Generated)" className="px-6 lg:px-12 py-8 bg-neutral-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -1000,7 +1000,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* Actions */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap gap-4 items-center">
             <button
@@ -1045,7 +1045,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Stakeholder Reporting Best Practices" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -1128,7 +1128,7 @@ export default function StakeholderReportPage() {
         </div>
       </section>
       {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+      <section aria-label="Related Tools" className="px-6 lg:px-12 py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
@@ -1140,7 +1140,7 @@ export default function StakeholderReportPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Need help building stakeholder reports that drive action?" className="px-6 lg:px-12 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-4">

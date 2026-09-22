@@ -567,7 +567,7 @@ export default function ContentGapAnalyzerPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -585,7 +585,7 @@ export default function ContentGapAnalyzerPage() {
       </section>
 
       {/* ---- Rating Scale Legend ---- */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Rating Scale" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6">
@@ -606,7 +606,7 @@ export default function ContentGapAnalyzerPage() {
       </section>
 
       {/* ---- Scoring Form ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-4xl mx-auto space-y-10">
           {stages.map((stage) => (
             <Animate key={stage.id} animation="fade-up">
@@ -670,7 +670,7 @@ export default function ContentGapAnalyzerPage() {
 
       {/* ---- Results ---- */}
       {results && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-4xl mx-auto space-y-12">
             {/* Overall maturity */}
             <Animate animation="fade-up">
@@ -713,7 +713,7 @@ export default function ContentGapAnalyzerPage() {
       )}
 
       {/* ---- How to Use This Analysis ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+      <section aria-label="How to Use This Analysis" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-black mb-8">
@@ -743,7 +743,7 @@ export default function ContentGapAnalyzerPage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

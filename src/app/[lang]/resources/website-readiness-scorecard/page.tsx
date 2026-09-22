@@ -173,7 +173,7 @@ export default function WebsiteReadinessScorecardPage() {
         {!showResults ? (
           <div className="space-y-10">
             {categories.map((cat) => (
-              <section key={cat.name} className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Content section" key={cat.name} className="border border-gray-200 p-6 lg:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <svg
                     className="w-6 h-6 text-black"
@@ -231,7 +231,7 @@ export default function WebsiteReadinessScorecardPage() {
           </div>
         ) : (
           <div className="space-y-10">
-            <section className="border border-gray-200 p-8 lg:p-12 text-center">
+            <section aria-label="Your Website Readiness Score" className="border border-gray-200 p-8 lg:p-12 text-center">
               <div className="inline-flex items-center justify-center w-32 h-32 rounded-full border-4 mb-6" style={{ borderColor: grade.color }}>
                 <div>
                   <div className="text-5xl font-extrabold" style={{ color: grade.color }}>
@@ -254,7 +254,7 @@ export default function WebsiteReadinessScorecardPage() {
               </p>
             </section>
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Category Breakdown" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                 Category Breakdown
               </h2>
@@ -292,7 +292,7 @@ export default function WebsiteReadinessScorecardPage() {
             </section>
 
             {priorities.length > 0 && (
-              <section className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Priority Recommendations" className="border border-gray-200 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">
                   Priority Recommendations
                 </h2>
@@ -330,7 +330,7 @@ export default function WebsiteReadinessScorecardPage() {
               </button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Call to action" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">
                 Need Help Improving Your Score?
               </h2>

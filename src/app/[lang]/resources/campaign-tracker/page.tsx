@@ -772,7 +772,7 @@ export default function CampaignTrackerPage() {
       </header>
 
       {/* ---- Campaign Form ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <CampaignForm
@@ -788,7 +788,7 @@ export default function CampaignTrackerPage() {
 
       {/* ---- View Tabs & Filters ---- */}
       {campaigns.length > 0 && (
-        <section className="px-6 lg:px-12 pb-4">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-4">
           <div className="max-w-5xl mx-auto space-y-4">
             {/* Tab buttons */}
             <div className="flex flex-wrap gap-2">
@@ -896,7 +896,7 @@ export default function CampaignTrackerPage() {
 
       {/* ---- Dashboard View ---- */}
       {campaigns.length > 0 && view === "dashboard" && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-5xl mx-auto space-y-8">
             <Animate animation="fade-up">
               <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
@@ -957,7 +957,7 @@ export default function CampaignTrackerPage() {
 
       {/* ---- Table View ---- */}
       {campaigns.length > 0 && view === "table" && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-5xl mx-auto overflow-x-auto">
             <Animate animation="fade-up">
               <table className="w-full text-base">
@@ -1061,7 +1061,7 @@ export default function CampaignTrackerPage() {
 
       {/* ---- Charts View ---- */}
       {campaigns.length > 0 && view === "charts" && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Budget Allocation by Channel" className="px-6 lg:px-12 pb-16">
           <div className="max-w-5xl mx-auto space-y-12">
             <Animate animation="fade-up">
               <div className="border border-neutral-200 p-6">
@@ -1086,7 +1086,7 @@ export default function CampaignTrackerPage() {
 
       {/* ---- Empty state ---- */}
       {campaigns.length === 0 && loaded && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-5xl mx-auto">
             <div className="border-2 border-dashed border-neutral-200 p-12 text-center">
               <p className="text-lg text-neutral-500">
@@ -1099,7 +1099,7 @@ export default function CampaignTrackerPage() {
       )}
 
       {/* ---- Best Practices ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-neutral-200">
+      <section aria-label="Best Practices" className="px-6 lg:px-12 py-16 border-t border-neutral-200">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Best Practices</SectionLabel>
@@ -1123,7 +1123,7 @@ export default function CampaignTrackerPage() {
       </section>
 
       {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

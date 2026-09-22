@@ -54,7 +54,7 @@ export default function GetAQuotePage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Get a Quote" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section aria-label="Free Consultation" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <Animate animation="fade-up">

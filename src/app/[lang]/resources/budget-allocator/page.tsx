@@ -455,7 +455,7 @@ export default function BudgetAllocatorPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Free Interactive Tool" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Interactive Tool</SectionLabel>
@@ -471,7 +471,7 @@ export default function BudgetAllocatorPage() {
       </section>
 
       {/* Business Profile */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Business Profile" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-8">
@@ -610,7 +610,7 @@ export default function BudgetAllocatorPage() {
       </section>
 
       {/* Templates */}
-      <section className="px-6 lg:px-12 py-8 bg-neutral-50">
+      <section aria-label="Allocation Templates" className="px-6 lg:px-12 py-8 bg-neutral-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -641,7 +641,7 @@ export default function BudgetAllocatorPage() {
       </section>
 
       {/* View Tabs */}
-      <section className="px-6 lg:px-12 pt-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pt-8">
         <div className="max-w-5xl mx-auto">
           <nav aria-label="Tool views" className="flex gap-1 border-b border-neutral-200">
             {([
@@ -670,7 +670,7 @@ export default function BudgetAllocatorPage() {
 
       {/* Allocator View */}
       {activeView === "allocator" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Channel Allocation" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {/* Channel Sliders */}
@@ -785,7 +785,7 @@ export default function BudgetAllocatorPage() {
 
       {/* Comparison View */}
       {activeView === "comparison" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Current vs. Template Comparison" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -862,7 +862,7 @@ export default function BudgetAllocatorPage() {
 
       {/* Quarterly Breakdown */}
       {activeView === "quarterly" && (
-        <section className="px-6 lg:px-12 py-8">
+        <section aria-label="Quarterly Breakdown" className="px-6 lg:px-12 py-8">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -947,7 +947,7 @@ export default function BudgetAllocatorPage() {
       )}
 
       {/* Actions Bar */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-4">
           <button
             type="button"
@@ -967,7 +967,7 @@ export default function BudgetAllocatorPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Budget Allocation Best Practices" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-8">
@@ -1015,7 +1015,7 @@ export default function BudgetAllocatorPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

@@ -273,7 +273,7 @@ export default function FunnelCalculatorPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -290,7 +290,7 @@ export default function FunnelCalculatorPage() {
       </section>
 
       {/* Inputs */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Your Funnel Metrics" className="px-6 lg:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -416,7 +416,7 @@ export default function FunnelCalculatorPage() {
       </section>
 
       {/* Visual Funnel */}
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="Your Funnel" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -468,7 +468,7 @@ export default function FunnelCalculatorPage() {
       </section>
 
       {/* Results Panel */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Results" className="px-6 lg:px-12 py-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -531,7 +531,7 @@ export default function FunnelCalculatorPage() {
       </section>
 
       {/* What If Scenarios */}
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="What If Scenarios" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -609,7 +609,7 @@ export default function FunnelCalculatorPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Understanding Your Marketing Funnel" className="px-6 lg:px-12 py-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight mb-4">
@@ -734,7 +734,7 @@ export default function FunnelCalculatorPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white">
+      <section aria-label="Fix the Leaks in Your Funnel" className="px-6 lg:px-12 py-20 bg-black text-white">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

@@ -716,7 +716,7 @@ export default function VendorEvaluationPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -781,7 +781,7 @@ export default function VendorEvaluationPage() {
       </section>
 
       {/* Tab navigation */}
-      <section className="px-6 lg:px-12 pb-4">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-4">
         <div className="max-w-5xl mx-auto">
           <nav aria-label="Tool sections" className="flex flex-wrap gap-2">
             {tabs.map((tab) => (
@@ -804,7 +804,7 @@ export default function VendorEvaluationPage() {
       </section>
 
       {/* Tab content */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto">
           {/* ---- SCORING TAB ---- */}
           {activeTab === "scoring" && (
@@ -1230,7 +1230,7 @@ export default function VendorEvaluationPage() {
       </section>
 
       {/* Action buttons */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-3">
           <button
             type="button"
@@ -1277,7 +1277,7 @@ export default function VendorEvaluationPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Next Step" className="px-6 lg:px-12 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">
             <SectionLabel>Next Step</SectionLabel>

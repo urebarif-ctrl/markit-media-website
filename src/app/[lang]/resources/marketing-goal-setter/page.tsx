@@ -157,7 +157,7 @@ export default function MarketingGoalSetterPage() {
             </div>
 
             {goal && (
-              <section className="border border-gray-200 p-6 lg:p-8 space-y-5">
+              <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8 space-y-5">
                 <div className="flex items-center gap-2 mb-2">
                   {["S", "M", "A", "R", "T"].map((letter, i) => {
                     const keys: (keyof typeof smart)[] = ["specific", "measurable", "achievable", "relevant", "timeBound"];
@@ -235,7 +235,7 @@ export default function MarketingGoalSetterPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Your Marketing Goals" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">Your Marketing Goals</h2>
               <div className="space-y-6">
                 {goals.map((g, i) => {
@@ -276,7 +276,7 @@ export default function MarketingGoalSetterPage() {
               <button onClick={() => setShowSummary(false)} className="border border-gray-300 text-gray-700 px-6 py-3 text-base font-medium hover:border-black hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Edit Goals</button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Need Help Hitting Your Goals?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Hitting Your Goals?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds data-driven strategies to help you reach your marketing targets on time and on budget.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Plan Your Strategy &rarr;</Link>

@@ -298,7 +298,7 @@ export default function SprintPlannerPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -314,7 +314,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* Sprint Details */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Sprint Details" className="px-6 lg:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-neutral-200 p-6">
@@ -377,7 +377,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* Dashboard */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Sprint Dashboard" className="px-6 lg:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={60}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -406,7 +406,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* Burndown Indicator */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Burndown Indicator" className="px-6 lg:px-12 pb-8">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={90}>
             <div className="border border-neutral-200 p-6">
@@ -450,7 +450,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* Filters & Actions */}
-      <section className="px-6 lg:px-12 pb-4">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-4">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={120}>
             <div className="flex flex-wrap items-end gap-4">
@@ -514,7 +514,7 @@ export default function SprintPlannerPage() {
 
       {/* Add Task Form */}
       {showForm && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="New Task" className="px-6 lg:px-12 pb-8">
           <div className="max-w-5xl mx-auto">
             <div className="border border-neutral-200 p-6">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -621,7 +621,7 @@ export default function SprintPlannerPage() {
       )}
 
       {/* Kanban Board */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Kanban Board" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up" delay={150}>
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -688,7 +688,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* Save / Load Sprints */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Saved Sprints" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-neutral-200 p-6">
@@ -748,7 +748,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="What is Agile Marketing?" className="px-6 lg:px-12 py-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -823,7 +823,7 @@ export default function SprintPlannerPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

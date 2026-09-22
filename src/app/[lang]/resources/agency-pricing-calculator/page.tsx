@@ -459,7 +459,7 @@ export default function AgencyPricingCalculatorPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
       {/* JSON-LD */}
       <script
@@ -502,7 +502,7 @@ export default function AgencyPricingCalculatorPage() {
       </section>
 
       {/* Model Selector */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-6xl mx-auto">
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -528,7 +528,7 @@ export default function AgencyPricingCalculatorPage() {
       </section>
 
       {/* Calculator Body */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Team Composition" className="px-6 lg:px-12 py-8">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Inputs */}
           <div className="lg:col-span-3 space-y-10">
@@ -1085,7 +1085,7 @@ export default function AgencyPricingCalculatorPage() {
       </section>
 
       {/* Industry Benchmarks */}
-      <section className="px-6 lg:px-12 py-20 bg-neutral-50">
+      <section aria-label="Benchmarks" className="px-6 lg:px-12 py-20 bg-neutral-50">
         <div className="max-w-6xl mx-auto">
           <Animate animation="fade-up">
             <div className="text-center mb-12">
@@ -1153,7 +1153,7 @@ export default function AgencyPricingCalculatorPage() {
       </section>
 
       {/* Pricing Strategy Education */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Strategy Guide" className="px-6 lg:px-12 py-20">
         <div className="max-w-6xl mx-auto">
           <Animate animation="fade-up">
             <div className="text-center mb-12">
@@ -1192,7 +1192,7 @@ export default function AgencyPricingCalculatorPage() {
         </div>
       </section>
       {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50">
+      <section aria-label="Related Tools" className="px-6 lg:px-12 py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
@@ -1204,7 +1204,7 @@ export default function AgencyPricingCalculatorPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+      <section aria-label="Call to action" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <Animate animation="fade-up">
           <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">
             Need Help Setting Your Agency Pricing?

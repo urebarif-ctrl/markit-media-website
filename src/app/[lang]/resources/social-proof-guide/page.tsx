@@ -503,7 +503,7 @@ export default function SocialProofGuidePage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -519,7 +519,7 @@ export default function SocialProofGuidePage() {
 
       {/* Step indicator */}
       {step < 4 && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-in">
               <div className="flex items-center gap-0">
@@ -551,7 +551,7 @@ export default function SocialProofGuidePage() {
 
       {/* Step 1: Business Type */}
       {step === 1 && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-3xl mx-auto space-y-6">
             <Animate animation="fade-up">
               <div>
@@ -603,7 +603,7 @@ export default function SocialProofGuidePage() {
 
       {/* Step 2: Social Proof Assets */}
       {step === 2 && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-3xl mx-auto space-y-6">
             <Animate animation="fade-up">
               <div>
@@ -680,7 +680,7 @@ export default function SocialProofGuidePage() {
 
       {/* Step 3: Strength Ratings */}
       {step === 3 && (
-        <section className="px-6 lg:px-12 pb-8">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
           <div className="max-w-3xl mx-auto space-y-6">
             <Animate animation="fade-up">
               <div>
@@ -744,7 +744,7 @@ export default function SocialProofGuidePage() {
 
       {/* Results */}
       {step === 4 && result && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto space-y-8">
             {/* Actions */}
             <Animate animation="fade-up">
@@ -900,7 +900,7 @@ export default function SocialProofGuidePage() {
       )}
 
       {/* Types of Social Proof That Work */}
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="Types of Social Proof That Work" className="px-6 lg:px-12 py-16">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight mb-8">
@@ -926,7 +926,7 @@ export default function SocialProofGuidePage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

@@ -424,7 +424,7 @@ export default function ContentPillarPlannerPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-32 pb-16">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-32 pb-16">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -441,7 +441,7 @@ export default function ContentPillarPlannerPage() {
 
       {/* ---- Overall Dashboard ---- */}
       {pillars.length > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Overview Dashboard" className="px-6 lg:px-12 pb-12">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-6">
@@ -487,7 +487,7 @@ export default function ContentPillarPlannerPage() {
       )}
 
       {/* ---- Add Pillar Form ---- */}
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -570,7 +570,7 @@ export default function ContentPillarPlannerPage() {
 
       {/* ---- Pillar Tabs / Selector ---- */}
       {pillars.length > 0 && (
-        <section className="px-6 lg:px-12 pb-4">
+        <section aria-label="Your Pillars" className="px-6 lg:px-12 pb-4">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -604,7 +604,7 @@ export default function ContentPillarPlannerPage() {
 
       {/* ---- Active Pillar Detail ---- */}
       {activePillar && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-neutral-200 overflow-hidden">
@@ -1078,7 +1078,7 @@ export default function ContentPillarPlannerPage() {
 
       {/* ---- Filter & All Topics View ---- */}
       {totalTopics > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="All Topics" className="px-6 lg:px-12 pb-12">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">
@@ -1224,7 +1224,7 @@ export default function ContentPillarPlannerPage() {
 
       {/* ---- Publishing Queue ---- */}
       {publishingQueue.length > 0 && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Publishing Queue" className="px-6 lg:px-12 pb-12">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2">
@@ -1267,7 +1267,7 @@ export default function ContentPillarPlannerPage() {
 
       {/* ---- Export ---- */}
       {pillars.length > 0 && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-5xl mx-auto">
             <Animate animation="fade-up">
               <button
@@ -1282,7 +1282,7 @@ export default function ContentPillarPlannerPage() {
       )}
 
       {/* ---- Educational Section ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-neutral-50">
+      <section aria-label="Content Strategy Guide" className="px-6 lg:px-12 py-20 bg-neutral-50">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Content Strategy Guide</SectionLabel>
@@ -1357,7 +1357,7 @@ export default function ContentPillarPlannerPage() {
       </section>
 
       {/* ---- CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

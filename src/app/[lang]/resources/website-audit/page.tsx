@@ -292,7 +292,7 @@ export default function WebsiteAuditPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Audit Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Audit Tool</SectionLabel>
@@ -307,7 +307,7 @@ export default function WebsiteAuditPage() {
       </section>
 
       {/* ---- Progress Bar ---- */}
-      <section className="px-6 lg:px-12 pb-6">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-6">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="sticky top-20 z-10 bg-white py-4 border-b border-gray-200">
@@ -345,7 +345,7 @@ export default function WebsiteAuditPage() {
 
       {/* ---- Questions by Category ---- */}
       {!showResults && (
-        <section className="px-6 lg:px-12 pb-20">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-20">
           <div className="max-w-4xl mx-auto space-y-16">
             {categories.map((cat, catIdx) => {
               const catAnswered = cat.questions.filter((q) => q.id in answers).length;
@@ -410,7 +410,7 @@ export default function WebsiteAuditPage() {
 
       {/* ---- Results Panel ---- */}
       {showResults && (
-        <section className="px-6 lg:px-12 pb-20">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-20">
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               {/* Overall Score */}
@@ -502,7 +502,7 @@ export default function WebsiteAuditPage() {
       )}
 
       {/* ---- What These Scores Mean ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50">
+      <section aria-label="What These Scores Mean" className="px-6 lg:px-12 py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight mb-8">
@@ -545,7 +545,7 @@ export default function WebsiteAuditPage() {
       </section>
 
       {/* ---- CTA Section ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

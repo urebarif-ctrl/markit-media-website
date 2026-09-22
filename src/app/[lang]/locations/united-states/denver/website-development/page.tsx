@@ -156,7 +156,7 @@ export default function DenverWebDevelopmentPage() {
       />
 
       {/* Breadcrumb */}
-      <section className="bg-white pt-28 pb-4">
+      <section aria-label="Content section" className="bg-white pt-28 pb-4">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumb
             items={[
@@ -171,7 +171,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* Hero */}
-      <section className="bg-white pt-12 pb-20 lg:pb-28">
+      <section aria-label="Denver, Colorado" className="bg-white pt-12 pb-20 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Denver, Colorado</SectionLabel>
@@ -210,7 +210,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* Service Details */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="What We Build" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>What We Build</SectionLabel>
@@ -249,7 +249,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* Why Denver Businesses Choose Us */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Why Markit Media" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Why Markit Media</SectionLabel>
@@ -284,7 +284,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-gray-50 py-20 lg:py-28">
+      <section aria-label="Our Process" className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Our Process</SectionLabel>
@@ -322,7 +322,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* Related Services */}
-      <section className="bg-white py-20 lg:py-28">
+      <section aria-label="Related Services" className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <Animate animation="fade-up">
             <SectionLabel>Related Services</SectionLabel>
@@ -370,7 +370,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6">
+      <section aria-label="Frequently Asked Questions" className="py-20 px-6">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
           <div className="space-y-8">
@@ -395,7 +395,7 @@ export default function DenverWebDevelopmentPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black py-20 lg:py-28">
+      <section aria-label="Build a website that works for your Denver business" className="bg-black py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <Animate animation="scale-in">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight leading-tight">

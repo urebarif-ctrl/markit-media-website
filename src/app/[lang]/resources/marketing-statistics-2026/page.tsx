@@ -105,7 +105,7 @@ export default function MarketingStatistics2026Page() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Statistics 2026" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Resources" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Resources</SectionLabel>
@@ -119,7 +119,7 @@ export default function MarketingStatistics2026Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-2">
@@ -164,7 +164,7 @@ export default function MarketingStatistics2026Page() {
         </section>
       ))}
 
-      <section className="px-6 lg:px-12 py-16">
+      <section aria-label="About This Data" className="px-6 lg:px-12 py-16">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="p-8 bg-gray-50 border border-gray-200">
@@ -188,7 +188,7 @@ export default function MarketingStatistics2026Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

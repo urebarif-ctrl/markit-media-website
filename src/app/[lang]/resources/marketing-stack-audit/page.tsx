@@ -139,7 +139,7 @@ export default function MarketingStackAuditPage() {
         {!showResults ? (
           <div className="space-y-8">
             {categories.map((cat) => (
-              <section key={cat.name} className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Content section" key={cat.name} className="border border-gray-200 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-1">{cat.name}</h2>
                 <p className="text-base text-gray-500 mb-6">{cat.description}</p>
                 <div className="space-y-4">
@@ -187,7 +187,7 @@ export default function MarketingStackAuditPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Stack Overview" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">Stack Overview</h2>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
                 <div className="border border-gray-200 p-4">
@@ -209,7 +209,7 @@ export default function MarketingStackAuditPage() {
               </div>
             </section>
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Category Breakdown" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Category Breakdown</h2>
               <div className="space-y-4">
                 {catSummaries.map((cs) => (
@@ -230,7 +230,7 @@ export default function MarketingStackAuditPage() {
             </section>
 
             {underusedTools > 0 && (
-              <section className="border border-yellow-200 bg-yellow-50 p-6 lg:p-8">
+              <section aria-label="Underused Tools (Optimisation Opportunities)" className="border border-yellow-200 bg-yellow-50 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-yellow-900 mb-4">Underused Tools (Optimisation Opportunities)</h2>
                 <div className="space-y-2">
                   {Object.entries(entries).filter(([, e]) => e.status === "underused").map(([key, e]) => (
@@ -248,7 +248,7 @@ export default function MarketingStackAuditPage() {
               <button onClick={() => setShowResults(false)} className="border border-gray-300 text-gray-700 px-6 py-3 text-base font-medium hover:border-black hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Edit Audit</button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Need Help Optimising Your Stack?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Optimising Your Stack?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">We help businesses select, integrate, and optimise their marketing technology for maximum impact.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Stack Optimisation Help &rarr;</Link>

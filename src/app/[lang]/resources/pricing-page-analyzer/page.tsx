@@ -95,7 +95,7 @@ export default function PricingPageAnalyzerPage() {
         {!showResults ? (
           <div className="space-y-8">
             {categoryNames.map((cat) => (
-              <section key={cat} className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Content section" key={cat} className="border border-gray-200 p-6 lg:p-8">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black">{cat}</h2>
                   <span className="text-base text-gray-400">
@@ -121,7 +121,7 @@ export default function PricingPageAnalyzerPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-8 text-center">
+            <section aria-label="Pricing Page Score" className="border border-gray-200 p-8 text-center">
               <div className="inline-flex items-center justify-center w-28 h-28 rounded-full border-4 mb-4" style={{ borderColor: grade.color }}>
                 <div>
                   <div className="text-4xl font-extrabold" style={{ color: grade.color }}>{grade.letter}</div>
@@ -137,7 +137,7 @@ export default function PricingPageAnalyzerPage() {
               </p>
             </section>
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Category Scores" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Category Scores</h2>
               <div className="space-y-3">
                 {catScores.map((cs) => {
@@ -156,7 +156,7 @@ export default function PricingPageAnalyzerPage() {
             </section>
 
             {tips.length > 0 && (
-              <section className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Improvement Recommendations" className="border border-gray-200 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Improvement Recommendations</h2>
                 <div className="space-y-4">
                   {tips.slice(0, 10).map((t, i) => (
@@ -177,7 +177,7 @@ export default function PricingPageAnalyzerPage() {
               <button onClick={() => { setChecked(new Set()); setShowResults(false); }} className="border border-gray-300 text-gray-700 px-6 py-3 text-base font-medium hover:border-black hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Start Over</button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Want a Higher-Converting Pricing Page?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Want a Higher-Converting Pricing Page?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our CRO team designs and tests pricing pages that turn more visitors into customers.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Optimise Your Pricing Page &rarr;</Link>

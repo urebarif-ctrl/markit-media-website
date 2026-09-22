@@ -147,7 +147,7 @@ export default function AtlantaWebsiteDevelopmentPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section aria-label="Atlanta" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Atlanta</SectionLabel>
@@ -367,7 +367,7 @@ export default function AtlantaWebsiteDevelopmentPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

@@ -156,7 +156,7 @@ export default function CompetitorAdSpyPage() {
             </div>
 
             {ad && (
-              <section className="border border-gray-200 p-6 lg:p-8 space-y-5">
+              <section aria-label="Content section" className="border border-gray-200 p-6 lg:p-8 space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-base font-bold text-black mb-2">Competitor Name</label>
@@ -238,7 +238,7 @@ export default function CompetitorAdSpyPage() {
           </div>
         ) : (
           <div className="space-y-8">
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Overview" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-6">Overview</h2>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
                 <div className="border border-gray-200 p-4">
@@ -261,7 +261,7 @@ export default function CompetitorAdSpyPage() {
             </section>
 
             {platformBreakdown.length > 0 && (
-              <section className="border border-gray-200 p-6 lg:p-8">
+              <section aria-label="Platform Distribution" className="border border-gray-200 p-6 lg:p-8">
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Platform Distribution</h2>
                 <div className="space-y-3">
                   {platformBreakdown.map((p) => (
@@ -277,7 +277,7 @@ export default function CompetitorAdSpyPage() {
               </section>
             )}
 
-            <section className="border border-gray-200 p-6 lg:p-8">
+            <section aria-label="Ad Details" className="border border-gray-200 p-6 lg:p-8">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Ad Details</h2>
               <div className="space-y-4">
                 {ads.map((a, i) => (
@@ -308,7 +308,7 @@ export default function CompetitorAdSpyPage() {
               </button>
             </div>
 
-            <section className="bg-black text-white p-8 lg:p-12 text-center">
+            <section aria-label="Want to Outperform Your Competitors?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Want to Outperform Your Competitors?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team analyses competitor strategies and builds campaigns designed to win market share.</p>
               <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">

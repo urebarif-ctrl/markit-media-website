@@ -442,7 +442,7 @@ export default function CampaignNamingGeneratorPage() {
   return (
     <article>
       {/* -------------------------------------------------------- Header */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
@@ -470,7 +470,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* ------------------------------------------ Platform templates */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Quick-Start Templates" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-4">
@@ -495,7 +495,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* ------------------------------------------------ Convention builder */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Build Your Convention" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 lg:p-8 space-y-6">
@@ -681,7 +681,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* ------------------------------------------------ Segment order */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Segment Order" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 lg:p-8">
@@ -751,7 +751,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* --------------------------------------------- Naming rules display */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Naming Pattern" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 lg:p-8">
@@ -777,7 +777,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* -------------------------------------------------- Live preview */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Live Preview" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 overflow-hidden">
@@ -813,7 +813,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* ----------------------------------------------- Batch generation */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Batch Generate" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 lg:p-8 space-y-6">
@@ -903,7 +903,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* --------------------------------------------------- History */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="History" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 lg:p-8">
@@ -949,7 +949,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* ------------------------------------------------- Export */}
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Export Convention Guide" className="px-6 lg:px-12 pb-16">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 lg:p-8">
@@ -968,7 +968,7 @@ export default function CampaignNamingGeneratorPage() {
       </section>
 
       {/* --------------------------------------------------- CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

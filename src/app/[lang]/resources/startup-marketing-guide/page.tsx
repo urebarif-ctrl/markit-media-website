@@ -101,7 +101,7 @@ export default function StartupMarketingGuidePage() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Startup Marketing Guide" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Guide" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Guide</SectionLabel>
@@ -116,7 +116,7 @@ export default function StartupMarketingGuidePage() {
       </section>
 
       {phases.map((p, pi) => (
-        <section key={pi} className={`px-6 lg:px-12 py-16 ${pi % 2 === 1 ? "bg-gray-50" : ""}`}>
+        <section aria-label="Content section" key={pi} className={`px-6 lg:px-12 py-16 ${pi % 2 === 1 ? "bg-gray-50" : ""}`}>
           <div className="max-w-4xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">{p.phase}</h2>
@@ -174,7 +174,7 @@ export default function StartupMarketingGuidePage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

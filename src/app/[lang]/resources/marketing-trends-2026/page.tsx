@@ -91,7 +91,7 @@ export default function MarketingTrends2026Page() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Trends 2026" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="2026 Outlook" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>2026 Outlook</SectionLabel>
@@ -105,7 +105,7 @@ export default function MarketingTrends2026Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-16">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
         <div className="max-w-3xl mx-auto">
           <Stagger stagger={80} animation="fade-up" className="space-y-12">
             {trends.map((trend) => (
@@ -125,7 +125,7 @@ export default function MarketingTrends2026Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="How to Use These Trends" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
@@ -146,7 +146,7 @@ export default function MarketingTrends2026Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-gray-200 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -162,7 +162,7 @@ export default function MarketingTrends2026Page() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

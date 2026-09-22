@@ -362,7 +362,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-4 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-4 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -378,7 +378,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
       </section>
 
       {/* Website URL Input */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="border border-neutral-200 p-6">
@@ -701,7 +701,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
           </section>
 
           {/* Action buttons */}
-          <section className="px-6 lg:px-12 py-8">
+          <section aria-label="Content section" className="px-6 lg:px-12 py-8">
             <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
               <button
                 onClick={handleSave}
@@ -727,7 +727,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
       )}
 
       {/* Educational section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50 mt-12">
+      <section aria-label="About Usability Heuristics" className="px-6 lg:px-12 py-16 bg-neutral-50 mt-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight mb-6">
@@ -776,7 +776,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
       </section>
 
       {/* CTA section */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

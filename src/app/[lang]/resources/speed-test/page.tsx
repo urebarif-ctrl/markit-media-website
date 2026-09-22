@@ -129,7 +129,7 @@ export default function SpeedTestPage() {
           <li className="text-black" aria-current="page">Website Speed Assessment</li>
         </ol>
       </nav>
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -143,7 +143,7 @@ export default function SpeedTestPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-4">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-4">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex items-center gap-3 mb-2">
@@ -159,7 +159,7 @@ export default function SpeedTestPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-12">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto space-y-8">
           {questions.map((q, qi) => (
             <Animate key={q.id} animation="fade-up" delay={qi * 40}>
@@ -205,7 +205,7 @@ export default function SpeedTestPage() {
       </section>
 
       {showResults && (
-        <section className="px-6 lg:px-12 pb-16">
+        <section aria-label="Content section" className="px-6 lg:px-12 pb-16">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-gray-200 overflow-hidden">
@@ -244,7 +244,7 @@ export default function SpeedTestPage() {
         </section>
       )}
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

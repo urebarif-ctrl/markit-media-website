@@ -445,7 +445,7 @@ export default function AttributionCalculatorPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-28 pb-8">
+      <section aria-label="Free Marketing Tool" className="px-6 lg:px-12 pt-28 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Marketing Tool</SectionLabel>
@@ -461,7 +461,7 @@ export default function AttributionCalculatorPage() {
       </section>
 
       {/* Channel Input Section */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Your Channels" className="px-6 lg:px-12 py-8">
         <div className="max-w-6xl mx-auto">
           <Animate animation="fade-up" delay={100}>
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -571,7 +571,7 @@ export default function AttributionCalculatorPage() {
 
       {/* Attribution Comparison Table */}
       {channels.length > 0 && (
-        <section className="px-6 lg:px-12 py-12">
+        <section aria-label="Attribution Model Comparison" className="px-6 lg:px-12 py-12">
           <div className="max-w-6xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -619,7 +619,7 @@ export default function AttributionCalculatorPage() {
 
       {/* Stacked Bar Chart */}
       {channels.length > 0 && (
-        <section className="px-6 lg:px-12 py-12 bg-neutral-50">
+        <section aria-label="Credit Distribution Chart" className="px-6 lg:px-12 py-12 bg-neutral-50">
           <div className="max-w-6xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -641,7 +641,7 @@ export default function AttributionCalculatorPage() {
 
       {/* ROI Per Channel Per Model */}
       {channels.length > 0 && (
-        <section className="px-6 lg:px-12 py-12">
+        <section aria-label="ROI by Channel and Model" className="px-6 lg:px-12 py-12">
           <div className="max-w-6xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -694,7 +694,7 @@ export default function AttributionCalculatorPage() {
 
       {/* Best Channel Recommendations */}
       {channels.length > 0 && (
-        <section className="px-6 lg:px-12 py-12 bg-neutral-50">
+        <section aria-label="Best Channel by Model" className="px-6 lg:px-12 py-12 bg-neutral-50">
           <div className="max-w-6xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-8">
@@ -728,7 +728,7 @@ export default function AttributionCalculatorPage() {
 
       {/* Scenario: What If */}
       {channels.length > 0 && (
-        <section className="px-6 lg:px-12 py-12">
+        <section aria-label="What-If Scenario" className="px-6 lg:px-12 py-12">
           <div className="max-w-6xl mx-auto">
             <Animate animation="fade-up">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-2">
@@ -837,7 +837,7 @@ export default function AttributionCalculatorPage() {
       )}
 
       {/* Export & Actions */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 py-8">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-4">
           <button
             onClick={exportTxt}
@@ -855,7 +855,7 @@ export default function AttributionCalculatorPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-neutral-50">
+      <section aria-label="Learn" className="px-6 lg:px-12 py-16 bg-neutral-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Learn</SectionLabel>
@@ -971,7 +971,7 @@ export default function AttributionCalculatorPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 lg:px-12 py-20">
+      <section aria-label="Next Step" className="px-6 lg:px-12 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <Animate animation="fade-up">
             <SectionLabel>Next Step</SectionLabel>

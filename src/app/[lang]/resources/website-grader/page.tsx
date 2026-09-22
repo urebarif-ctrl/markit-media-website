@@ -124,7 +124,7 @@ export default function WebsiteGraderPage() {
         </ol>
       </nav>
 
-      <section className="px-6 lg:px-12 pt-4 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-4 pb-12">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -235,7 +235,7 @@ export default function WebsiteGraderPage() {
         </section>
       )}
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center mt-12">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center mt-12">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
             Want a Professional Assessment?

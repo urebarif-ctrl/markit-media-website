@@ -1097,7 +1097,7 @@ export default function MarketingKpiTrackerPage() {
 
           {/* ---- CTA ---- */}
           <Animate animation="fade-up">
-            <section className="border border-neutral-200 p-8 md:p-12 text-center">
+            <section aria-label="Need Help Setting Up Your KPIs?" className="border border-neutral-200 p-8 md:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-3">
                 Need Help Setting Up Your KPIs?
               </h2>

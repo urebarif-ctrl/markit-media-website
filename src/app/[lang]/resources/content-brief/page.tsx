@@ -502,7 +502,7 @@ export default function ContentBriefPage() {
       />
 
       {/* ---- Hero ---- */}
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Tool</SectionLabel>
@@ -517,7 +517,7 @@ export default function ContentBriefPage() {
       </section>
 
       {/* ---- Inputs ---- */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section aria-label="Content section" className="px-6 lg:px-12 pb-8">
         <div className="max-w-3xl mx-auto space-y-6">
           <Animate animation="fade-up">
             <div>
@@ -615,7 +615,7 @@ export default function ContentBriefPage() {
 
       {/* ---- Generated Brief ---- */}
       {brief && (
-        <section className="px-6 lg:px-12 pb-12">
+        <section aria-label="Content Brief:" className="px-6 lg:px-12 pb-12">
           <div className="max-w-3xl mx-auto">
             <Animate animation="fade-up">
               <div className="border border-gray-200 overflow-hidden">
@@ -758,7 +758,7 @@ export default function ContentBriefPage() {
       )}
 
       {/* ---- Tips Section ---- */}
-      <section className="px-6 lg:px-12 py-16 border-t border-gray-200">
+      <section aria-label="Tips for Effective Content Briefs" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
@@ -803,7 +803,7 @@ export default function ContentBriefPage() {
       </section>
 
       {/* ---- Bottom CTA ---- */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

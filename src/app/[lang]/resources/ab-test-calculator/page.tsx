@@ -85,7 +85,7 @@ export default function ABTestCalculatorPage() {
       </nav>
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-16 pb-8">
+      <section aria-label="Interactive Tools" className="px-6 lg:px-12 pt-16 pb-8">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
@@ -102,7 +102,7 @@ export default function ABTestCalculatorPage() {
       </section>
 
       {/* Calculator */}
-      <section className="px-6 lg:px-12 py-8">
+      <section aria-label="Your Test Parameters" className="px-6 lg:px-12 py-8">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Inputs */}
           <Animate animation="fade-up" delay={100}>
@@ -297,7 +297,7 @@ export default function ABTestCalculatorPage() {
       </section>
 
       {/* Educational Section */}
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
+      <section aria-label="A/B Testing Fundamentals" className="px-6 lg:px-12 py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight mb-8">
@@ -413,7 +413,7 @@ export default function ABTestCalculatorPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
