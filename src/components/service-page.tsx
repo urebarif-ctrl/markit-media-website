@@ -145,6 +145,47 @@ export function ServicePage({
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section className="px-6 lg:px-12 py-20 bg-black text-white" aria-label="Why Markit Media">
+        <div className="max-w-4xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel><span className="text-gray-400">Compare</span></SectionLabel>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-tight text-white mt-3 mb-10">
+              Markit Media vs. Typical Agencies
+            </h2>
+          </Animate>
+          <Animate animation="fade-up" delay={100}>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/20">
+                    <th className="py-4 pr-6 text-base font-bold text-gray-400 w-1/3">Criteria</th>
+                    <th className="py-4 px-4 text-base font-bold text-white w-1/3">Markit Media</th>
+                    <th className="py-4 pl-4 text-base font-bold text-gray-500 w-1/3">Typical Agency</th>
+                  </tr>
+                </thead>
+                <tbody className="text-base">
+                  {[
+                    ["Dedicated Team", "Senior-level specialists assigned to your account", "Junior staff or rotating freelancers"],
+                    ["Reporting", "Real-time dashboards with full data access", "Monthly PDF summaries with limited detail"],
+                    ["Contracts", "Flexible month-to-month", "6-12 month lock-in contracts"],
+                    ["Strategy", "Custom strategy built around your goals", "Cookie-cutter playbook across all clients"],
+                    ["Communication", "Direct Slack/WhatsApp access to your team", "Emails routed through account managers"],
+                    ["Pricing", "Transparent pricing, no hidden fees", "Opaque pricing with markup on ad spend"],
+                  ].map(([criteria, markit, typical], i) => (
+                    <tr key={i} className="border-b border-white/10">
+                      <td className="py-4 pr-6 text-gray-400 font-medium">{criteria}</td>
+                      <td className="py-4 px-4 text-white font-semibold">{markit}</td>
+                      <td className="py-4 pl-4 text-gray-500">{typical}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="FAQ">
         <div className="max-w-3xl mx-auto">
