@@ -494,7 +494,7 @@ export default function AttributionCalculatorPage() {
                       type="text"
                       value={channel.name}
                       onChange={(e) => updateChannel(channel.id, "name", e.target.value)}
-                      className={`text-lg font-bold text-black bg-transparent border-b-2 border-neutral-200 pb-1 transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                      className={`text-lg font-bold text-black bg-transparent border-b-2 border-neutral-200 pb-1 transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                       aria-label={`Channel ${idx + 1} name`}
                     />
                     {channels.length > 1 && (
@@ -519,7 +519,7 @@ export default function AttributionCalculatorPage() {
                         min={0}
                         value={channel.impressions}
                         onChange={(e) => updateChannel(channel.id, "impressions", Math.max(0, parseInt(e.target.value) || 0))}
-                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                       />
                     </div>
                     <div>
@@ -532,7 +532,7 @@ export default function AttributionCalculatorPage() {
                         min={0}
                         value={channel.clicks}
                         onChange={(e) => updateChannel(channel.id, "clicks", Math.max(0, parseInt(e.target.value) || 0))}
-                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                       />
                     </div>
                     <div>
@@ -545,7 +545,7 @@ export default function AttributionCalculatorPage() {
                         min={0}
                         value={channel.conversions}
                         onChange={(e) => updateChannel(channel.id, "conversions", Math.max(0, parseInt(e.target.value) || 0))}
-                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                       />
                     </div>
                     <div>
@@ -558,7 +558,7 @@ export default function AttributionCalculatorPage() {
                         min={0}
                         value={channel.spend}
                         onChange={(e) => updateChannel(channel.id, "spend", Math.max(0, parseInt(e.target.value) || 0))}
-                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                        className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                       />
                     </div>
                   </div>
@@ -750,7 +750,7 @@ export default function AttributionCalculatorPage() {
                       id="scenario-channel"
                       value={scenario.channelId}
                       onChange={(e) => setScenario((s) => ({ ...s, channelId: e.target.value }))}
-                      className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                      className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                     >
                       <option value="">Select a channel</option>
                       {channels.map((c) => (
@@ -771,7 +771,7 @@ export default function AttributionCalculatorPage() {
                       onChange={(e) =>
                         setScenario((s) => ({ ...s, increasePercent: Math.max(1, parseInt(e.target.value) || 1) }))
                       }
-                      className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus:border-black outline-none ${focusClasses}`}
+                      className={`w-full px-4 py-3 text-base border-2 border-neutral-200 bg-white text-black transition-colors hover:border-neutral-400 focus-visible:border-black outline-none ${focusClasses}`}
                     />
                   </div>
                   <button
