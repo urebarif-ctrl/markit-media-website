@@ -11,18 +11,19 @@ interface YouTubeEmbedProps {
 
 export function YouTubeEmbed({ videoId, title, aspect = "landscape", className = "" }: YouTubeEmbedProps) {
   const [loaded, setLoaded] = useState(false);
-  const aspectClass = aspect === "portrait" ? "aspect-[9/16]" : "aspect-video";
+  const aspectClass = aspect === "portrait" ? "aspect-[9/16] max-h-[500px]" : "aspect-video";
   const thumbUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div className={`relative ${aspectClass} bg-black overflow-hidden group ${className}`}>
+    <div className={`relative ${aspectClass} bg-black overflow-hidden group mx-auto ${className}`}>
       {loaded ? (
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="absolute inset-0 w-full h-full"
+          referrerPolicy="no-referrer-when-downgrade"
         />
       ) : (
         <button
@@ -48,14 +49,6 @@ export function YouTubeEmbed({ videoId, title, aspect = "landscape", className =
           </span>
         </button>
       )}
-      <a
-        href={`https://www.youtube.com/watch?v=${videoId}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute top-3 right-3 text-white/70 hover:text-white text-base underline z-10 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-      >
-        Watch on YouTube
-      </a>
     </div>
   );
 }
@@ -73,7 +66,7 @@ export function YouTubePlaylist({ playlistId, title, className = "" }: YouTubePl
     <div className={`relative aspect-video bg-black overflow-hidden group ${className}`}>
       {loaded ? (
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}&rel=0`}
+          src={`https://www.youtube.com/embed/videoseries?list=${playlistId}&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

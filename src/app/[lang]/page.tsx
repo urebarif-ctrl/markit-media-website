@@ -14,7 +14,6 @@ import {
   Building, Plane, Factory,
 } from "lucide-react";
 import { HeroStats } from "@/components/hero-stats";
-import { HeroGraphic } from "@/components/hero-graphic";
 import { TypingEffect } from "@/components/typing-effect";
 
 export const metadata: Metadata = {
@@ -137,60 +136,79 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <JsonLd data={faqSchema} />
 
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-label="Hero">
-        <img
-          src="/images/hero/hero-marketing.jpg"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="relative w-full px-6 lg:px-12 py-32 lg:py-40">
-          <div className="max-w-7xl mx-auto">
-            <Animate animation="fade-up">
-              <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold text-white tracking-tight leading-[1.05] max-w-4xl">
-                {t.home.heroTitle}
-              </h1>
-            </Animate>
-            <Animate animation="fade-up" delay={150}>
-              <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed mt-6 max-w-2xl">
-                {t.home.heroSubtitle}
-              </p>
-            </Animate>
-            <Animate animation="fade-up" delay={250}>
-              <div className="mt-6 h-12 flex items-center">
-                <span className="text-lg lg:text-xl text-white/80 font-medium">We deliver </span>
-                <TypingEffect
-                  phrases={[
-                    "Performance Marketing",
-                    "SEO That Ranks",
-                    "Websites That Convert",
-                    "Brands That Stand Out",
-                    "Social Media Growth",
-                    "AI-Powered Solutions",
-                    "Video That Engages",
-                    "Email Campaigns That Work",
-                  ]}
-                  className="text-lg lg:text-xl text-white font-bold ml-2"
-                />
-              </div>
-            </Animate>
-            <Animate animation="fade-up" delay={350}>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                  {t.cta.primary} &rarr;
-                </Link>
-                <Link href="/work" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                  {t.cta.secondary}
-                </Link>
-              </div>
-            </Animate>
-            <Animate animation="fade-up" delay={450}>
-              <div className="mt-10">
-                <HeroStats />
-              </div>
-            </Animate>
+      <section className="relative bg-black overflow-hidden" aria-label="Hero">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-28 lg:py-36">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <Animate animation="fade-up">
+                <span className="inline-block text-base font-bold text-white/50 uppercase tracking-[0.2em] mb-6">Full-Stack Digital Agency</span>
+                <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5.5vw,4rem)] font-extrabold text-white tracking-tight leading-[1.08]">
+                  {t.home.heroTitle}
+                </h1>
+              </Animate>
+              <Animate animation="fade-up" delay={150}>
+                <p className="text-xl text-gray-400 leading-relaxed mt-6 max-w-lg">
+                  {t.home.heroSubtitle}
+                </p>
+              </Animate>
+              <Animate animation="fade-up" delay={250}>
+                <div className="mt-5 h-10 flex items-center">
+                  <TypingEffect
+                    phrases={[
+                      "Performance Marketing",
+                      "SEO That Ranks",
+                      "Websites That Convert",
+                      "Brands That Stand Out",
+                      "Video Production",
+                      "AI-Powered Solutions",
+                    ]}
+                    className="text-lg text-white/70 font-medium"
+                  />
+                </div>
+              </Animate>
+              <Animate animation="fade-up" delay={350}>
+                <div className="flex flex-wrap gap-4 mt-8">
+                  <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                    {t.cta.primary} &rarr;
+                  </Link>
+                  <Link href="/work" className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                    {t.cta.secondary}
+                  </Link>
+                </div>
+              </Animate>
+            </div>
+            <div className="hidden lg:block">
+              <Animate animation="fade-up" delay={200}>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <div className="bg-white/5 border border-white/10 p-6">
+                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">300+</div>
+                      <div className="text-base text-gray-500 mt-1">Videos Produced</div>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-6">
+                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">6</div>
+                      <div className="text-base text-gray-500 mt-1">Countries Served</div>
+                    </div>
+                  </div>
+                  <div className="space-y-4 mt-8">
+                    <div className="bg-white/5 border border-white/10 p-6">
+                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">12+</div>
+                      <div className="text-base text-gray-500 mt-1">Services Offered</div>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-6">
+                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">150+</div>
+                      <div className="text-base text-gray-500 mt-1">Free Marketing Tools</div>
+                    </div>
+                  </div>
+                </div>
+              </Animate>
+            </div>
           </div>
+          <Animate animation="fade-up" delay={450}>
+            <div className="mt-14 lg:hidden">
+              <HeroStats />
+            </div>
+          </Animate>
         </div>
       </section>
 
@@ -554,34 +572,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <Link href="/work" className="inline-flex items-center gap-2 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All Projects &rarr;
               </Link>
-            </div>
-          </Animate>
-        </div>
-      </section>
-
-      {/* Social / Agency Personality */}
-      <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Follow our work">
-        <div className="max-w-4xl mx-auto text-center">
-          <Animate animation="fade-up">
-            <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">
-              See the Team Behind the Work
-            </h2>
-            <p className="text-base text-gray-500 mb-8 max-w-2xl mx-auto">
-              Follow us on social media for creative work, behind-the-scenes content, and agency life.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Watch on YouTube
-              </a>
-              <a href="https://www.instagram.com/themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Follow on Instagram
-              </a>
-              <a href="https://www.linkedin.com/company/the-markit-media/" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Connect on LinkedIn
-              </a>
-              <a href="https://www.tiktok.com/@themarkitmedia_" target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Explore on TikTok
-              </a>
             </div>
           </Animate>
         </div>
