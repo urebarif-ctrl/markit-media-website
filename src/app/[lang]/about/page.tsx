@@ -114,7 +114,7 @@ export default function AboutPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-20">
+      <section className="px-6 lg:px-12 pt-24 pb-20" aria-label="About Markit Media">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <Animate animation="fade-up">
             <div>
@@ -490,7 +490,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get in touch">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

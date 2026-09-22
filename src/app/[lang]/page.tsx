@@ -669,7 +669,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold tracking-tight leading-[1.1]">

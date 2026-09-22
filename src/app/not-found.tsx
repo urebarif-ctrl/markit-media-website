@@ -13,7 +13,7 @@ export default function RootNotFound() {
             <p style={{ fontSize: "1.125rem", color: "#6b7280", marginBottom: "2.5rem" }}>
               The page you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
-            <Link href="/en" style={{ display: "inline-block", background: "#000", color: "#fff", padding: "1rem 2.5rem", fontWeight: 700, fontSize: "1rem", textDecoration: "none" }}>
+            <Link href="/" style={{ display: "inline-block", background: "#000", color: "#fff", padding: "1rem 2.5rem", fontWeight: 700, fontSize: "1rem", textDecoration: "none" }}>
               Go Home &rarr;
             </Link>
           </div>
