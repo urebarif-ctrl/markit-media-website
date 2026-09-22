@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Animate, Stagger } from "@/components/animate";
+import { Animate } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
@@ -21,7 +21,7 @@ const resources = [
     title: "Blog",
     desc: "Expert insights on SEO, advertising, social media, branding, web development, and digital marketing strategy.",
     href: "/blog",
-    count: "2,200+ articles",
+    count: "4,000+ articles",
   },
   {
     title: "FAQ",
@@ -1020,7 +1020,7 @@ export default function ResourcesPage() {
 
       <section className="px-6 lg:px-12 py-12" aria-label="Available resources">
         <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <span className="text-base font-medium text-gray-400 mb-2 block">{r.count}</span>
@@ -1028,7 +1028,7 @@ export default function ResourcesPage() {
                 <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>
               </Link>
             ))}
-          </Stagger>
+          </div>
         </div>
       </section>
 

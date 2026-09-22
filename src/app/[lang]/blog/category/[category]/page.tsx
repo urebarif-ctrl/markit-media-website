@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Animate, Stagger } from "@/components/animate";
+import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
@@ -119,7 +119,7 @@ export default async function BlogCategoryPage({
 
       <section className="px-6 lg:px-12 py-8" aria-label="Articles">
         <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
               <Link
                 key={post.slug}
@@ -152,7 +152,7 @@ export default async function BlogCategoryPage({
                 </div>
               </Link>
             ))}
-          </Stagger>
+          </div>
         </div>
       </section>
 
