@@ -49,7 +49,7 @@ const categories = [
       { name: "Looker Studio", what: "Custom dashboards and automated performance reporting." },
       { name: "Hotjar", what: "Heatmaps, session recordings, and user behavior analytics." },
       { name: "Microsoft Clarity", what: "Free heatmaps and session replays for UX analysis." },
-      { name: "Google Optimize", what: "A/B testing and multivariate experiments." },
+      { name: "VWO", what: "A/B testing, multivariate experiments, and conversion optimization." },
     ],
   },
   {
