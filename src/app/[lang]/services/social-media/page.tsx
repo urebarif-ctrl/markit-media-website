@@ -47,6 +47,12 @@ export default function SocialMediaPage() {
         { title: "Hashtag Generator", desc: "Generate relevant hashtags for your social posts.", href: "/resources/hashtag-generator" },
         { title: "Social Media ROI", desc: "Calculate the return on your social media investment.", href: "/resources/social-media-roi" },
       ]}
+      portfolio={[
+        { client: "Vuse", desc: "Ongoing social media content for a global consumer brand.", href: "/work/vuse" },
+        { client: "Minhaz Couture", desc: "Fashion social media and web content production.", href: "/work/minhaz-couture" },
+        { client: "Elite", desc: "Website showcase and social media reels for brand channels.", href: "/work/elite" },
+        { client: "Pur Health", desc: "Healthcare social media and digital presence.", href: "/work/pur-health" },
+      ]}
       industries={[
         { title: "Fashion", href: "/industries/fashion" },
         { title: "Restaurants", href: "/industries/restaurants" },

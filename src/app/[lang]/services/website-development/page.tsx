@@ -49,6 +49,11 @@ export default function WebsiteDevelopmentPage() {
         { title: "Speed Test", desc: "Measure and optimize your website loading speed.", href: "/resources/speed-test" },
         { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/resources/website-heuristic-evaluator" },
       ]}
+      portfolio={[
+        { client: "Elite", desc: "Custom website development with professional design and social integration.", href: "/work/elite" },
+        { client: "Pur Health", desc: "Healthcare website focused on trust, clarity, and accessibility.", href: "/work/pur-health" },
+        { client: "Minhaz Couture", desc: "Fashion e-commerce website with social media content.", href: "/work/minhaz-couture" },
+      ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },
         { title: "SaaS", href: "/industries/saas" },

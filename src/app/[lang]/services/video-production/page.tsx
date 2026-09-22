@@ -42,6 +42,12 @@ export default function VideoProductionPage() {
         { q: "Can you create content for social media platforms?", a: "Yes. We produce vertical and horizontal video content optimized for Instagram, TikTok, YouTube, LinkedIn, and Facebook." },
         { q: "Do you offer ongoing video content packages?", a: "Yes. We offer monthly retainer packages for businesses that need regular video content, including social reels, product videos, and promotional content." },
       ]}
+      portfolio={[
+        { client: "NoorShad", desc: "9+ video productions for real estate: property tours, testimonials, and educational content.", href: "/work/noorshad" },
+        { client: "HUBCO", desc: "Logo animation and commercial production for a leading energy company.", href: "/work/hubco" },
+        { client: "Cambridge Electrical", desc: "Seasonal social media video campaigns driving engagement.", href: "/work/cambridge-electrical" },
+        { client: "Logo Folio", desc: "7 professional logo animations across energy, tech, F&B, and fashion.", href: "/work/logo-folio" },
+      ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },
         { title: "Fashion", href: "/industries/fashion" },

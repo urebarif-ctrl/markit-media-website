@@ -47,6 +47,11 @@ export default function BrandingPage() {
         { title: "Brand Name Generator", desc: "Generate and evaluate brand name ideas.", href: "/resources/brand-name-generator" },
         { title: "Color Palette Generator", desc: "Create cohesive brand color palettes.", href: "/resources/color-palette-generator" },
       ]}
+      portfolio={[
+        { client: "Logo Folio", desc: "7 professional logo animations across energy, tech, F&B, and fashion brands.", href: "/work/logo-folio" },
+        { client: "HUBCO", desc: "Logo animation and brand commercial for a leading energy company.", href: "/work/hubco" },
+        { client: "Minhaz Couture", desc: "Fashion brand identity and digital presence.", href: "/work/minhaz-couture" },
+      ]}
       industries={[
         { title: "Fashion", href: "/industries/fashion" },
         { title: "Hospitality", href: "/industries/hospitality" },

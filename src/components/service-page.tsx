@@ -12,6 +12,12 @@ interface SubService {
   href: string;
 }
 
+interface PortfolioItem {
+  client: string;
+  desc: string;
+  href: string;
+}
+
 interface ServicePageProps {
   icon: LucideIcon;
   title: string;
@@ -23,6 +29,7 @@ interface ServicePageProps {
   relatedServices?: { title: string; href: string }[];
   tools?: { title: string; desc: string; href: string }[];
   industries?: { title: string; href: string }[];
+  portfolio?: PortfolioItem[];
   heroImage?: string;
   blogCategory?: string;
 }
@@ -38,6 +45,7 @@ export function ServicePage({
   relatedServices,
   tools,
   industries,
+  portfolio,
   heroImage,
   blogCategory,
 }: ServicePageProps) {
@@ -162,6 +170,33 @@ export function ServicePage({
           </ul>
         </div>
       </section>
+
+      {/* Portfolio */}
+      {portfolio && portfolio.length > 0 && (
+        <section className="px-6 lg:px-12 py-16" aria-label="Featured work">
+          <div className="max-w-7xl mx-auto">
+            <Animate animation="fade-up">
+              <SectionLabel>Our Work</SectionLabel>
+              <SectionTitle>Featured Projects</SectionTitle>
+            </Animate>
+            <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+              {portfolio.map((p) => (
+                <Link key={p.href} href={p.href} className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{p.client}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed">{p.desc}</p>
+                </Link>
+              ))}
+            </Stagger>
+            <Animate animation="fade-up" delay={100}>
+              <div className="mt-8 text-center">
+                <Link href="/work" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  View All Projects &rarr;
+                </Link>
+              </div>
+            </Animate>
+          </div>
+        </section>
+      )}
 
       {/* Comparison Table */}
       <section className="px-6 lg:px-12 py-20 bg-black text-white" aria-label="Why Markit Media">
