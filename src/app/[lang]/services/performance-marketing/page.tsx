@@ -65,6 +65,10 @@ export default function PerformanceMarketingPage() {
         { title: "San Francisco", href: "/locations/united-states/san-francisco/ppc-ads" },
         { title: "Dallas", href: "/locations/united-states/dallas/ppc-ads" },
         { title: "Atlanta", href: "/locations/united-states/atlanta/ppc-ads" },
+        { title: "Boston", href: "/locations/united-states/boston/ppc-ads" },
+        { title: "Seattle", href: "/locations/united-states/seattle/ppc-ads" },
+        { title: "Denver", href: "/locations/united-states/denver/ppc-ads" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix/ppc-ads" },
         { title: "Karachi", href: "/locations/karachi/ppc-ads" },
       ]}
       relatedServices={[

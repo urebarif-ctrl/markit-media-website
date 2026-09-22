@@ -69,6 +69,10 @@ export default function SocialMediaPage() {
         { title: "San Francisco", href: "/locations/united-states/san-francisco/marketing-agency" },
         { title: "Dallas", href: "/locations/united-states/dallas/marketing-agency" },
         { title: "Atlanta", href: "/locations/united-states/atlanta/marketing-agency" },
+        { title: "Boston", href: "/locations/united-states/boston/marketing-agency" },
+        { title: "Seattle", href: "/locations/united-states/seattle/marketing-agency" },
+        { title: "Denver", href: "/locations/united-states/denver/marketing-agency" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix/marketing-agency" },
         { title: "Karachi", href: "/locations/karachi/marketing-agency" },
       ]}
       relatedServices={[

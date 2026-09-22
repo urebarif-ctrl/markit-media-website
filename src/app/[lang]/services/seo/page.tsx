@@ -65,6 +65,10 @@ export default function SeoPage() {
         { title: "San Francisco", href: "/locations/united-states/san-francisco/seo-services" },
         { title: "Dallas", href: "/locations/united-states/dallas/seo-services" },
         { title: "Atlanta", href: "/locations/united-states/atlanta/seo-services" },
+        { title: "Boston", href: "/locations/united-states/boston/seo-services" },
+        { title: "Seattle", href: "/locations/united-states/seattle/seo-services" },
+        { title: "Denver", href: "/locations/united-states/denver/seo-services" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix/seo-services" },
         { title: "Karachi", href: "/locations/karachi/seo-services" },
       ]}
       relatedServices={[
