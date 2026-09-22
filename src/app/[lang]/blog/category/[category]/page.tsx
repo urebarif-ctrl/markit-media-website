@@ -57,7 +57,7 @@ export default async function BlogCategoryPage({
     notFound();
   }
 
-  const posts = getPostsByCategory(matchedCategory, 200);
+  const posts = getPostsByCategory(matchedCategory, 300);
 
   const blogSchema = {
     "@context": "https://schema.org",
