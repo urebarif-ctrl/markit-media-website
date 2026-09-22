@@ -1,10 +1,19 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { YouTubeEmbed } from "@/components/youtube-embed";
+
+export const metadata: Metadata = {
+  title: "Logo Folio — Branding & Logo Animation Portfolio",
+  description: "A selection of our logo design and animation work across energy, technology, F&B, fashion, and agency brands. Professional motion graphics and brand identity.",
+  alternates: { canonical: "https://themarkitmedia.com/en/work/logo-folio" },
+  openGraph: {
+    title: "Logo Folio — Markit Media",
+    description: "Logo design and animation portfolio showcasing identity work across multiple industries.",
+  },
+};
 
 const logoProjects = [
   { client: "HUBCO", industry: "Energy", videoId: "CIr1dFqvmfM", desc: "Professional logo animation for a leading energy company." },
@@ -29,7 +38,7 @@ export default function LogoFolioPage() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Logo Folio" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Logo Folio overview">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">Branding Portfolio</span>
@@ -86,7 +95,7 @@ export default function LogoFolioPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-16 bg-black text-white text-center" aria-label="Explore more work">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
             See More of Our Work
