@@ -15,6 +15,8 @@ function categoryToSlug(category: string): string {
   return category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   const categories = getAllCategories();
   return categories.map((cat) => ({

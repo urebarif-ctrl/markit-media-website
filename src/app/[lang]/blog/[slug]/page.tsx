@@ -259,6 +259,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllPublishedSlugs().map((slug) => ({ slug }));
 }
