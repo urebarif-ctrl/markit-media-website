@@ -101,6 +101,8 @@ const nextConfig: NextConfig = {
       { source: "/wp-json/:path*", destination: "/en", permanent: false },
       { source: "/xmlrpc.php", destination: "/en", permanent: false },
       { source: "/wp-cron.php", destination: "/en", permanent: false },
+      { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/wp-sitemap-:path*", destination: "/sitemap.xml", permanent: true },
     ];
   },
 };
