@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Digital Marketing Services — SEO, PPC, Web Development & More",
   description: "Explore Markit Media's full-stack digital marketing services: SEO, PPC, social media, web development, branding, video, AI, email, content, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/services" },
   openGraph: {
