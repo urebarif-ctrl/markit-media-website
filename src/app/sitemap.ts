@@ -368,6 +368,9 @@ const staticPages = [
   "/partners",
   "/thank-you",
   "/onboarding",
+  "/services/photography",
+  "/services/public-relations",
+  "/resources/campaign-brief-builder",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
