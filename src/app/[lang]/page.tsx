@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { HeroStats } from "@/components/hero-stats";
 import { TypingEffect } from "@/components/typing-effect";
+import { YouTubeEmbed } from "@/components/youtube-embed";
 
 export const metadata: Metadata = {
   title: "Markit Media — Full-Stack Digital Marketing Agency",
@@ -572,6 +573,42 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <Link href="/work" className="inline-flex items-center gap-2 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All Projects &rarr;
               </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
+
+      {/* Video Showreel */}
+      <section className="px-6 lg:px-12 py-16 bg-black" aria-label="Video showreel">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <span className="text-base font-bold text-white/50 uppercase tracking-[0.15em]">Our Work in Motion</span>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight mt-3">
+              Watch What We Build
+            </h2>
+          </Animate>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <Animate animation="fade-up" delay={100}>
+              <YouTubeEmbed videoId="jHv9-z58krE" title="NoorShad — Real Estate Video" />
+              <p className="text-base text-gray-400 mt-3">NoorShad — Property Tour</p>
+            </Animate>
+            <Animate animation="fade-up" delay={200}>
+              <YouTubeEmbed videoId="CIr1dFqvmfM" title="HUBCO — Logo Animation" />
+              <p className="text-base text-gray-400 mt-3">HUBCO — Logo Animation</p>
+            </Animate>
+            <Animate animation="fade-up" delay={300}>
+              <YouTubeEmbed videoId="TGH1Rgpuzf4" title="HUBCO — Commercial" />
+              <p className="text-base text-gray-400 mt-3">HUBCO — Commercial</p>
+            </Animate>
+          </div>
+          <Animate animation="fade-up" delay={350}>
+            <div className="mt-8 flex flex-wrap gap-4 items-center">
+              <Link href="/work" className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 text-base font-bold hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                View All Projects &rarr;
+              </Link>
+              <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-gray-400 hover:text-white transition-colors">
+                300+ videos on YouTube &rarr;
+              </a>
             </div>
           </Animate>
         </div>
