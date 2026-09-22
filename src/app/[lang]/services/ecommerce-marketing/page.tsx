@@ -53,6 +53,14 @@ export default function EcommerceMarketingPage() {
         { title: "Automotive", href: "/industries/automotive" },
         { title: "Travel", href: "/industries/travel" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles" },
+        { title: "Miami", href: "/locations/united-states/miami" },
+        { title: "Dallas", href: "/locations/united-states/dallas" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix" },
+        { title: "Seattle", href: "/locations/united-states/seattle" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "Website Development", href: "/services/website-development" },

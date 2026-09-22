@@ -59,6 +59,21 @@ export default function BrandingPage() {
         { title: "Professional Services", href: "/industries/professional-services" },
         { title: "Nonprofits", href: "/industries/nonprofits" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles" },
+        { title: "Chicago", href: "/locations/united-states/chicago" },
+        { title: "Houston", href: "/locations/united-states/houston" },
+        { title: "Miami", href: "/locations/united-states/miami" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco" },
+        { title: "Dallas", href: "/locations/united-states/dallas" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta" },
+        { title: "Boston", href: "/locations/united-states/boston" },
+        { title: "Seattle", href: "/locations/united-states/seattle" },
+        { title: "Denver", href: "/locations/united-states/denver" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix" },
+        { title: "Karachi", href: "/locations/karachi" },
+      ]}
       relatedServices={[
         { title: "Website Development", href: "/services/website-development" },
         { title: "Social Media", href: "/services/social-media" },

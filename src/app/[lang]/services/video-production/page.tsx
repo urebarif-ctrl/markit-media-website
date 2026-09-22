@@ -55,6 +55,16 @@ export default function VideoProductionPage() {
         { title: "Real Estate", href: "/industries/real-estate" },
         { title: "Fitness", href: "/industries/fitness" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles" },
+        { title: "Miami", href: "/locations/united-states/miami" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta" },
+        { title: "Dallas", href: "/locations/united-states/dallas" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco" },
+        { title: "Denver", href: "/locations/united-states/denver" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix" },
+      ]}
       relatedServices={[
         { title: "Social Media", href: "/services/social-media" },
         { title: "Branding & Design", href: "/services/branding" },

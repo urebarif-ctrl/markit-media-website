@@ -53,6 +53,17 @@ export default function PaidAdvertisingPage() {
         { title: "Travel", href: "/industries/travel" },
         { title: "Home Services", href: "/industries/home-services" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york/ppc-ads" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles/ppc-ads" },
+        { title: "Chicago", href: "/locations/united-states/chicago/ppc-ads" },
+        { title: "Houston", href: "/locations/united-states/houston/ppc-ads" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco/ppc-ads" },
+        { title: "Boston", href: "/locations/united-states/boston/ppc-ads" },
+        { title: "Seattle", href: "/locations/united-states/seattle/ppc-ads" },
+        { title: "Denver", href: "/locations/united-states/denver/ppc-ads" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix/ppc-ads" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "Video Production", href: "/services/video-production" },

@@ -54,6 +54,20 @@ export default function DigitalMarketingPage() {
         { title: "Professional Services", href: "/industries/professional-services" },
         { title: "Manufacturing", href: "/industries/manufacturing" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles" },
+        { title: "Chicago", href: "/locations/united-states/chicago" },
+        { title: "Houston", href: "/locations/united-states/houston" },
+        { title: "Miami", href: "/locations/united-states/miami" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco" },
+        { title: "Dallas", href: "/locations/united-states/dallas" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta" },
+        { title: "Boston", href: "/locations/united-states/boston" },
+        { title: "Seattle", href: "/locations/united-states/seattle" },
+        { title: "Denver", href: "/locations/united-states/denver" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix" },
+      ]}
       relatedServices={[
         { title: "Performance Marketing", href: "/services/performance-marketing" },
         { title: "SEO", href: "/services/seo" },

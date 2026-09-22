@@ -48,6 +48,14 @@ export default function AiPage() {
         { title: "Healthcare", href: "/industries/healthcare" },
         { title: "B2B", href: "/industries/b2b" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco" },
+        { title: "Boston", href: "/locations/united-states/boston" },
+        { title: "Seattle", href: "/locations/united-states/seattle" },
+        { title: "Chicago", href: "/locations/united-states/chicago" },
+        { title: "Denver", href: "/locations/united-states/denver" },
+      ]}
       relatedServices={[
         { title: "Digital Marketing", href: "/services/digital-marketing" },
         { title: "Email Marketing", href: "/services/email-marketing" },

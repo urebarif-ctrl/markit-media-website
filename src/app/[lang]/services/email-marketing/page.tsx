@@ -54,6 +54,16 @@ export default function EmailMarketingPage() {
         { title: "Education", href: "/industries/education" },
         { title: "Nonprofits", href: "/industries/nonprofits" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles" },
+        { title: "Chicago", href: "/locations/united-states/chicago" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco" },
+        { title: "Boston", href: "/locations/united-states/boston" },
+        { title: "Seattle", href: "/locations/united-states/seattle" },
+        { title: "Denver", href: "/locations/united-states/denver" },
+        { title: "Phoenix", href: "/locations/united-states/phoenix" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "AI Solutions", href: "/services/ai" },
