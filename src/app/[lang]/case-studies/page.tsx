@@ -232,7 +232,7 @@ export default function CaseStudiesPage() {
       />
 
       {/* Hero */}
-      <section className="px-6 lg:px-12 pt-24 pb-20">
+      <section className="px-6 lg:px-12 pt-24 pb-20" aria-label="Case studies overview">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Case Studies</SectionLabel>
@@ -249,7 +249,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Service Category Filters */}
-      <section className="px-6 lg:px-12 pb-8">
+      <section className="px-6 lg:px-12 pb-8" aria-label="Filter by service">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <div
@@ -439,7 +439,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center" aria-label="Start your project">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

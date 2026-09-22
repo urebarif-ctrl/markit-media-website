@@ -1004,7 +1004,7 @@ export default function ResourcesPage() {
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12">
+      <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Free marketing resources">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Resources</SectionLabel>
@@ -1032,7 +1032,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get in touch">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
