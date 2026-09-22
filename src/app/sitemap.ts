@@ -369,7 +369,6 @@ const staticPages = [
   "/capabilities",
   "/technology",
   "/partners",
-  "/thank-you",
   "/onboarding",
   "/services/photography",
   "/services/public-relations",
