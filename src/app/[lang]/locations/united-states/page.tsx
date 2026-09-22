@@ -281,6 +281,10 @@ export default function UnitedStatesPage() {
               { title: "San Francisco", href: "/locations/united-states/san-francisco", desc: "SaaS and startup growth marketing in the Bay Area." },
               { title: "Dallas", href: "/locations/united-states/dallas", desc: "Digital marketing for the DFW metroplex's diverse economy." },
               { title: "Atlanta", href: "/locations/united-states/atlanta", desc: "Marketing for logistics, healthcare, and Fortune 500 companies in Atlanta." },
+              { title: "Boston", href: "/locations/united-states/boston", desc: "Marketing for biotech, education, fintech, and healthcare in Boston." },
+              { title: "Seattle", href: "/locations/united-states/seattle", desc: "Digital marketing for tech, cloud, and e-commerce companies in Seattle." },
+              { title: "Denver", href: "/locations/united-states/denver", desc: "Marketing for Denver's growing tech and outdoor lifestyle brands." },
+              { title: "Phoenix", href: "/locations/united-states/phoenix", desc: "Digital marketing for one of America's fastest-growing metros." },
             ].map((city) => (
               <Link
                 key={city.href}
