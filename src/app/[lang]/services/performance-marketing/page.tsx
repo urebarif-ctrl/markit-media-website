@@ -56,6 +56,17 @@ export default function PerformanceMarketingPage() {
         { title: "Education", href: "/industries/education" },
         { title: "B2B", href: "/industries/b2b" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york/ppc-ads" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles/ppc-ads" },
+        { title: "Chicago", href: "/locations/united-states/chicago/ppc-ads" },
+        { title: "Houston", href: "/locations/united-states/houston/ppc-ads" },
+        { title: "Miami", href: "/locations/united-states/miami/ppc-ads" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco/ppc-ads" },
+        { title: "Dallas", href: "/locations/united-states/dallas/ppc-ads" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta/ppc-ads" },
+        { title: "Karachi", href: "/locations/karachi/ppc-ads" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Social Media", href: "/services/social-media" },

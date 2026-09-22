@@ -60,6 +60,17 @@ export default function SocialMediaPage() {
         { title: "Hospitality", href: "/industries/hospitality" },
         { title: "E-Commerce", href: "/industries/ecommerce" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york/marketing-agency" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles/marketing-agency" },
+        { title: "Chicago", href: "/locations/united-states/chicago/marketing-agency" },
+        { title: "Houston", href: "/locations/united-states/houston/marketing-agency" },
+        { title: "Miami", href: "/locations/united-states/miami/marketing-agency" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco/marketing-agency" },
+        { title: "Dallas", href: "/locations/united-states/dallas/marketing-agency" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta/marketing-agency" },
+        { title: "Karachi", href: "/locations/karachi/marketing-agency" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "Video Production", href: "/services/video-production" },

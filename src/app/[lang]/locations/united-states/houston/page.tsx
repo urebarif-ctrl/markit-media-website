@@ -73,8 +73,8 @@ const reasons = [
     desc: "Houston's real estate market moves fast — from master-planned communities to commercial developments. We build lead generation funnels, landing pages, and paid campaigns that deliver qualified buyer and investor inquiries consistently.",
   },
   {
-    title: "Cost-effective remote team vs. Houston agencies",
-    desc: "Our team operates remotely from Karachi, which means you get senior-level strategy, execution, and reporting at a fraction of what a Houston-based agency charges — with no compromise on output quality or communication responsiveness.",
+    title: "Senior-level execution at a competitive price point",
+    desc: "Our distributed team delivers the same strategic depth and campaign quality as high-overhead agencies at a more competitive price point — so more of your budget goes into actual media spend and content production, not agency margins.",
   },
 ];
 
@@ -106,6 +106,29 @@ const schema = {
   areaServed: { "@type": "City", name: "Houston" },
   url: "https://themarkitmedia.com/en/locations/united-states/houston",
 };
+
+const subPages = [
+  {
+    title: "Marketing Agency",
+    href: "/locations/united-states/houston/marketing-agency",
+    desc: "Full-service marketing strategy and execution for Houston businesses across energy, healthcare, and professional services.",
+  },
+  {
+    title: "PPC & Paid Ads",
+    href: "/locations/united-states/houston/ppc-ads",
+    desc: "Google Ads and Meta Ads management built for Houston's competitive B2B and consumer verticals.",
+  },
+  {
+    title: "Website Development",
+    href: "/locations/united-states/houston/website-development",
+    desc: "Custom web development for businesses serving the Houston metro area.",
+  },
+  {
+    title: "SEO Services",
+    href: "/locations/united-states/houston/seo-services",
+    desc: "Search engine optimization for competitive Houston keywords and local search.",
+  },
+];
 
 export default function HoustonPage() {
   const faqSchema = {
@@ -265,6 +288,32 @@ export default function HoustonPage() {
               </Animate>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Sub-pages */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Houston service pages">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Explore</SectionLabel>
+            <SectionTitle>Houston Service Pages</SectionTitle>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {subPages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none block"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2">
+                  {page.title}
+                </h3>
+                <p className="text-base text-gray-500 leading-relaxed">
+                  {page.desc}
+                </p>
+              </Link>
+            ))}
+          </Stagger>
         </div>
       </section>
 

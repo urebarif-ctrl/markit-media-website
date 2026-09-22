@@ -56,6 +56,17 @@ export default function SeoPage() {
         { title: "Real Estate", href: "/industries/real-estate" },
         { title: "Legal", href: "/industries/legal" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york/seo-services" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles/seo-services" },
+        { title: "Chicago", href: "/locations/united-states/chicago/seo-services" },
+        { title: "Houston", href: "/locations/united-states/houston/seo-services" },
+        { title: "Miami", href: "/locations/united-states/miami/seo-services" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco/seo-services" },
+        { title: "Dallas", href: "/locations/united-states/dallas/seo-services" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta/seo-services" },
+        { title: "Karachi", href: "/locations/karachi/seo-services" },
+      ]}
       relatedServices={[
         { title: "Content Marketing", href: "/services/content-marketing" },
         { title: "Website Development", href: "/services/website-development" },

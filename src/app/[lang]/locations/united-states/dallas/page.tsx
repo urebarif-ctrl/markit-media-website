@@ -106,6 +106,29 @@ const faq = [
   },
 ];
 
+const subPages = [
+  {
+    title: "Marketing Agency",
+    href: "/locations/united-states/dallas/marketing-agency",
+    desc: "Full-service marketing strategy for Dallas businesses across telecom, finance, and corporate sectors.",
+  },
+  {
+    title: "PPC & Paid Ads",
+    href: "/locations/united-states/dallas/ppc-ads",
+    desc: "Google Ads and Meta Ads management built for DFW's competitive corporate and consumer markets.",
+  },
+  {
+    title: "Website Development",
+    href: "/locations/united-states/dallas/website-development",
+    desc: "Custom web development for businesses across the Dallas-Fort Worth metroplex.",
+  },
+  {
+    title: "SEO Services",
+    href: "/locations/united-states/dallas/seo-services",
+    desc: "Search engine optimization for competitive Dallas keywords and local search rankings.",
+  },
+];
+
 export default function DallasPage() {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -261,6 +284,32 @@ export default function DallasPage() {
               </Animate>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Sub-pages */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Dallas service pages">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Explore</SectionLabel>
+            <SectionTitle>Dallas Service Pages</SectionTitle>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {subPages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none block"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2">
+                  {page.title}
+                </h3>
+                <p className="text-base text-gray-500 leading-relaxed">
+                  {page.desc}
+                </p>
+              </Link>
+            ))}
+          </Stagger>
         </div>
       </section>
 

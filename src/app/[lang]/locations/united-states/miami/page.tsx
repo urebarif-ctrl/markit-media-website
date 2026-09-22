@@ -113,6 +113,29 @@ const schema = {
   url: "https://themarkitmedia.com/en/locations/united-states/miami",
 };
 
+const subPages = [
+  {
+    title: "Marketing Agency",
+    href: "/locations/united-states/miami/marketing-agency",
+    desc: "Full-service marketing strategy and execution for Miami businesses across hospitality, real estate, and LATAM-facing industries.",
+  },
+  {
+    title: "PPC & Paid Ads",
+    href: "/locations/united-states/miami/ppc-ads",
+    desc: "Google Ads and Meta Ads management built for Miami's bilingual, tourism-driven market.",
+  },
+  {
+    title: "Website Development",
+    href: "/locations/united-states/miami/website-development",
+    desc: "Custom web development for businesses serving the Miami metro and international audiences.",
+  },
+  {
+    title: "SEO Services",
+    href: "/locations/united-states/miami/seo-services",
+    desc: "Search engine optimization for competitive Miami keywords in English and Spanish.",
+  },
+];
+
 export default function MiamiPage() {
   const faqSchema = {
     "@context": "https://schema.org",
@@ -272,6 +295,32 @@ export default function MiamiPage() {
               </Animate>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Sub-pages */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Miami service pages">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Explore</SectionLabel>
+            <SectionTitle>Miami Service Pages</SectionTitle>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {subPages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="bg-white border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none block"
+              >
+                <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2">
+                  {page.title}
+                </h3>
+                <p className="text-base text-gray-500 leading-relaxed">
+                  {page.desc}
+                </p>
+              </Link>
+            ))}
+          </Stagger>
         </div>
       </section>
 

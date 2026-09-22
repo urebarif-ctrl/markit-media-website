@@ -61,6 +61,17 @@ export default function WebsiteDevelopmentPage() {
         { title: "Healthcare", href: "/industries/healthcare" },
         { title: "Real Estate", href: "/industries/real-estate" },
       ]}
+      locations={[
+        { title: "New York", href: "/locations/united-states/new-york/website-development" },
+        { title: "Los Angeles", href: "/locations/united-states/los-angeles/website-development" },
+        { title: "Chicago", href: "/locations/united-states/chicago/website-development" },
+        { title: "Houston", href: "/locations/united-states/houston/website-development" },
+        { title: "Miami", href: "/locations/united-states/miami/website-development" },
+        { title: "San Francisco", href: "/locations/united-states/san-francisco/website-development" },
+        { title: "Dallas", href: "/locations/united-states/dallas/website-development" },
+        { title: "Atlanta", href: "/locations/united-states/atlanta/website-development" },
+        { title: "Karachi", href: "/locations/karachi/website-development" },
+      ]}
       relatedServices={[
         { title: "SEO", href: "/services/seo" },
         { title: "Branding & Design", href: "/services/branding" },

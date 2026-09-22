@@ -30,6 +30,7 @@ interface ServicePageProps {
   tools?: { title: string; desc: string; href: string }[];
   industries?: { title: string; href: string }[];
   portfolio?: PortfolioItem[];
+  locations?: { title: string; href: string }[];
   heroImage?: string;
   blogCategory?: string;
 }
@@ -46,6 +47,7 @@ export function ServicePage({
   tools,
   industries,
   portfolio,
+  locations,
   heroImage,
   blogCategory,
 }: ServicePageProps) {
@@ -336,6 +338,23 @@ export function ServicePage({
                 {industries.map((ind) => (
                   <Link key={ind.href} href={ind.href} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {ind.title}
+                  </Link>
+                ))}
+              </div>
+            </Animate>
+          </div>
+        </section>
+      )}
+
+      {locations && locations.length > 0 && (
+        <section className="px-6 lg:px-12 py-12" aria-label="Available locations">
+          <div className="max-w-4xl mx-auto">
+            <Animate animation="fade-up">
+              <SectionLabel>Available In</SectionLabel>
+              <div className="flex flex-wrap gap-3 mt-6">
+                {locations.map((loc) => (
+                  <Link key={loc.href} href={loc.href} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                    {loc.title}
                   </Link>
                 ))}
               </div>
