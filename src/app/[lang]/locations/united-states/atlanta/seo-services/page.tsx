@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you handle local SEO for specific Atlanta neighborhoods?",
+    a: "Yes. We optimize Google Business Profiles and local citations for the neighborhoods and submarkets that matter to your business, from Buckhead and Midtown to Decatur, Marietta, and the Perimeter, so you show up in local search and map results where your customers are searching.",
+  },
+  {
+    q: "How do you approach SEO competition across the Southeast region, not just Atlanta?",
+    a: "For businesses that compete beyond the city limits, we build content and technical strategies that account for competitors across the broader Southeast region, not just those within Atlanta proper.",
+  },
+  {
+    q: "What does Google Business Profile optimization involve for Atlanta businesses?",
+    a: "We optimize profile categories, service areas, photos, and posts, and build a review management strategy, all calibrated to how Atlanta consumers search for services across the metro's many distinct neighborhoods and suburbs.",
+  },
+  {
+    q: "How do you create content for Atlanta's diverse market?",
+    a: "Atlanta's population and business community span a wide range of industries and audiences. We research the specific language, questions, and search behavior relevant to your audience segment rather than applying generic content to every business.",
+  },
+];
+
 export default function AtlantaSEOServicesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function AtlantaSEOServicesPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/atlanta/seo-services",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -319,6 +352,26 @@ export default function AtlantaSEOServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About SEO Services in Atlanta</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

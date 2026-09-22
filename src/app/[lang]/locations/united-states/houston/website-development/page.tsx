@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you build websites for energy and oil & gas companies in Houston?",
+    a: "Yes. We build sites for energy sector companies that need to communicate technical services, safety credentials, and project history clearly to both business clients and industry partners.",
+  },
+  {
+    q: "Can you build a website for a medical practice near the Texas Medical Center?",
+    a: "Yes. We design and develop medical practice websites with patient-facing content, appointment pathways, and provider profiles built around the standards patients expect in a market anchored by the Texas Medical Center.",
+  },
+  {
+    q: "Do you build e-commerce sites for Houston businesses?",
+    a: "Yes. We build Shopify and WooCommerce storefronts for Houston retailers and industrial suppliers, including businesses selling to the broader Gulf Coast region.",
+  },
+  {
+    q: "Can you build a bilingual website for Houston's Hispanic audience?",
+    a: "Yes. Given Houston's large Hispanic population, we build bilingual site structures and content workflows so English- and Spanish-speaking visitors both get a fully usable experience.",
+  },
+];
+
 export default function HoustonWebsiteDevelopmentPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function HoustonWebsiteDevelopmentPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/houston/website-development",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -308,6 +341,26 @@ export default function HoustonWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Website Development in Houston</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

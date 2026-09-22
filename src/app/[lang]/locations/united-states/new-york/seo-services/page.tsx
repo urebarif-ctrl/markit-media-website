@@ -103,6 +103,49 @@ export default function NewYorkSEOServicesPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How competitive is local SEO in New York?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Local SEO in New York is intensely competitive, particularly in dense commercial areas like Manhattan, where dozens of businesses in the same category may be competing for the same map pack results. Standing out requires a combination of strong Google Business Profile optimization, consistent citations, and a genuine review strategy.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does SEO take to show results in New York?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "SEO timelines in New York tend to run longer than in less competitive markets because of the volume of established competitors already ranking for valuable terms. We focus on building a strong technical and content foundation early, since sustainable rankings in a market this competitive are earned progressively rather than overnight.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you optimize a Google Business Profile for a Manhattan location?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We optimize category selection, business descriptions, photos, posts, and review management, and make sure listing information is fully consistent across the web. For Manhattan specifically, proximity and relevance signals matter a great deal given how many competing businesses may be within a few blocks of each other.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What does a content strategy for the New York market look like?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "An effective content strategy for New York addresses the specific search intent of local customers, including neighborhood- and borough-level relevance, alongside the broader commercial topics your business competes on. We prioritize content that serves real search demand rather than publishing volume for its own sake.",
+                },
+              },
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -316,6 +359,49 @@ export default function NewYorkSEOServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About SEO Services in New York
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "How competitive is local SEO in New York?",
+                a: "Local SEO in New York is intensely competitive, particularly in dense commercial areas like Manhattan, where dozens of businesses in the same category may be competing for the same map pack results. Standing out requires a combination of strong Google Business Profile optimization, consistent citations, and a genuine review strategy.",
+              },
+              {
+                q: "How long does SEO take to show results in New York?",
+                a: "SEO timelines in New York tend to run longer than in less competitive markets because of the volume of established competitors already ranking for valuable terms. We focus on building a strong technical and content foundation early, since sustainable rankings in a market this competitive are earned progressively rather than overnight.",
+              },
+              {
+                q: "How do you optimize a Google Business Profile for a Manhattan location?",
+                a: "We optimize category selection, business descriptions, photos, posts, and review management, and make sure listing information is fully consistent across the web. For Manhattan specifically, proximity and relevance signals matter a great deal given how many competing businesses may be within a few blocks of each other.",
+              },
+              {
+                q: "What does a content strategy for the New York market look like?",
+                a: "An effective content strategy for New York addresses the specific search intent of local customers, including neighborhood- and borough-level relevance, alongside the broader commercial topics your business competes on. We prioritize content that serves real search demand rather than publishing volume for its own sake.",
+              },
+            ].map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

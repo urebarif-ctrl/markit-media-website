@@ -21,6 +21,35 @@ const schema = {
   url: "https://themarkitmedia.com/en/locations/united-states/chicago/website-development",
 };
 
+const faqs = [
+  {
+    q: "What standards do Chicago businesses expect from a website?",
+    a: "Chicago's corporate and professional services landscape sets a high bar for credibility. Businesses here expect clean design, fast load times, and clear information architecture — a site that reads as trustworthy to corporate buyers and consumers alike.",
+  },
+  {
+    q: "Do you build websites specifically for B2B companies?",
+    a: "Yes. Many of our Chicago clients are B2B companies in manufacturing, professional services, and logistics. We design these sites around lead capture, clear service explanations, and content that speaks to technical or corporate buyers rather than generic marketing copy.",
+  },
+  {
+    q: "Can you build e-commerce sites for businesses serving the Midwest region?",
+    a: "Yes. Whether you're shipping products across the Midwest or nationally from a Chicago-based operation, we build e-commerce storefronts on platforms like Shopify that handle your catalogue size and are optimized for checkout conversion.",
+  },
+  {
+    q: "Why does mobile performance matter so much for a Chicago-based site?",
+    a: "Many Chicago residents rely on the CTA and other public transit for their daily commute, often browsing on mobile devices with inconsistent connectivity. We build with a mobile-first approach so pages load quickly and stay usable on a phone, not just on a desktop screen.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const serviceItems = [
   {
     title: "WordPress Development",
@@ -108,6 +137,7 @@ export default function ChicagoWebsiteDevelopmentPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -320,6 +350,26 @@ export default function ChicagoWebsiteDevelopmentPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Website Development in Chicago</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

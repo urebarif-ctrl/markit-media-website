@@ -21,6 +21,35 @@ const schema = {
   url: "https://themarkitmedia.com/en/locations/united-states/chicago/ppc-ads",
 };
 
+const faqs = [
+  {
+    q: "Can you target ads specifically to the Chicago metro area?",
+    a: "Yes. We build geo-targeted campaigns across Google Ads, Meta, and LinkedIn that focus on the Chicago metro specifically, or narrow further to individual neighborhoods, suburbs, or a defined service radius, depending on where your customers are.",
+  },
+  {
+    q: "How does PPC differ for B2B companies in Chicago versus consumer brands?",
+    a: "Chicago's economy is heavily B2B, with manufacturing, financial services, and logistics companies as major employers. B2B PPC campaigns need to prioritize lead quality and account-level targeting over raw click volume, since these buyers move through longer, multi-stakeholder decision processes.",
+  },
+  {
+    q: "Is advertising in Chicago more affordable than in coastal markets?",
+    a: "Cost-per-click varies by industry and keyword competitiveness rather than by city alone, but Chicago's ad auctions are generally less saturated than markets like New York or San Francisco for many categories, which can affect efficiency. We monitor your actual account data rather than relying on general market comparisons to set expectations.",
+  },
+  {
+    q: "Do you build different PPC strategies for different Chicago industries?",
+    a: "Yes. A campaign for a manufacturing company targeting other businesses looks different from one for a Chicago retailer targeting local consumers. We adjust platform selection, targeting parameters, and creative based on the industry and audience you're trying to reach.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const serviceItems = [
   {
     title: "Google Ads Management",
@@ -108,6 +137,7 @@ export default function ChicagoPpcAdsPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -320,6 +350,26 @@ export default function ChicagoPpcAdsPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About PPC Ads in Chicago</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

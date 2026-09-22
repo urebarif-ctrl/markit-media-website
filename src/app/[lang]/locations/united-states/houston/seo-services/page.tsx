@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "How does local SEO work for a business with customers across Houston?",
+    a: "Houston's metro spans a large geography, from the inner loop to suburbs like The Woodlands, Sugar Land, and Katy. We build local SEO strategy around Google Business Profile optimization, geo-targeted content, and citation building so you show up across the specific neighborhoods your customers search from.",
+  },
+  {
+    q: "Do you target energy sector keywords for Houston clients?",
+    a: "Yes. Energy is one of Houston's largest industries, and we research and target the keywords, terminology, and search intent specific to energy and oil & gas companies operating in this market.",
+  },
+  {
+    q: "How do you set up Google Business Profiles for different Houston neighborhoods?",
+    a: "For businesses serving multiple Houston neighborhoods or locations, we optimize Google Business Profile listings with accurate service areas, location-specific details, and consistent citations so each listing ranks for its relevant part of the metro.",
+  },
+  {
+    q: "Can you create content that speaks to Houston's diverse market?",
+    a: "Yes. Houston has a diverse population across industries, cultures, and languages. We build content strategies that reflect the specific audiences and search behavior relevant to your business within that mix.",
+  },
+];
+
 export default function HoustonSEOServicesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function HoustonSEOServicesPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/houston/seo-services",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +351,26 @@ export default function HoustonSEOServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About SEO Services in Houston</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "Do you work with businesses across the whole DFW metroplex, or just Dallas proper?",
+    a: "We work with businesses throughout the Dallas-Fort Worth metroplex, including Fort Worth, Plano, Frisco, and Arlington, not only Dallas proper. A metroplex-wide strategy accounts for how audiences, competition, and search behavior differ across these areas.",
+  },
+  {
+    q: "We just relocated our headquarters to Dallas — can you help us build local market presence?",
+    a: "Yes. Corporate relocations are common in the DFW market, and we help newly arrived companies establish local visibility, from Texas-focused messaging to the digital presence customers and partners expect from a Dallas business.",
+  },
+  {
+    q: "How do you approach marketing for real estate and property-related businesses in Dallas?",
+    a: "Dallas real estate moves quickly, so we build campaigns and content around timely local demand, including buyer and renter search behavior, neighborhood-level positioning, and messaging suited to the pace of the market.",
+  },
+  {
+    q: "Our industry doesn't fit a typical Dallas marketing mold — can you still help?",
+    a: "Yes. The DFW economy spans telecom, defense, fintech, logistics, and corporate services, among other industries, so we build strategy around your specific audience rather than applying a generic template.",
+  },
+];
+
 export default function DallasMarketingAgencyPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,20 @@ export default function DallasMarketingAgencyPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/dallas/marketing-agency",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +348,33 @@ export default function DallasMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Marketing Agency Services in
+              Dallas
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqItems.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -100,9 +100,45 @@ export default function LosAngelesWebsiteDevelopmentPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/los-angeles/website-development",
   };
 
+  const faqs = [
+    {
+      q: "Why does design quality matter more for websites in Los Angeles?",
+      a: "Los Angeles is a visually driven market, and businesses here often compete against brands with access to top-tier creative talent. A functional site is not enough on its own — we design with the visual standards LA audiences expect while keeping usability and performance intact.",
+    },
+    {
+      q: "Do you build websites for entertainment industry clients?",
+      a: "Yes. We build sites for entertainment and media businesses that need to reflect the visual polish and production values common in the industry, while still performing well on speed and SEO.",
+    },
+    {
+      q: "How do you account for LA's commuter and mobile-heavy audience?",
+      a: "A large share of LA traffic comes from mobile devices, including people browsing on the go. Every site we build starts mobile-first, so navigation, load times, and layout are designed for that behavior rather than adapted to it afterward.",
+    },
+    {
+      q: "Do you build e-commerce websites for LA-based brands?",
+      a: "We build Shopify stores and custom e-commerce platforms for direct-to-consumer and lifestyle brands based in Los Angeles, with attention to checkout flow, page speed, and the visual presentation these brands are judged on.",
+    },
+  ];
+
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -306,6 +342,32 @@ export default function LosAngelesWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Website Development in Los Angeles
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

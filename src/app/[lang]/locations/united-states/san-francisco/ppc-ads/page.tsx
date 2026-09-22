@@ -85,6 +85,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Why are PPC costs so high in San Francisco?",
+    a: "San Francisco’s advertiser pool is dominated by well-funded SaaS and tech companies bidding on the same keywords, which pushes CPCs well above the national average. Winning here depends less on outbidding competitors and more on tighter targeting, stronger ad relevance, and landing pages that convert the traffic you do win.",
+  },
+  {
+    q: "Do you run PPC for SaaS and B2B companies specifically?",
+    a: "Yes. SaaS and B2B PPC in San Francisco requires different account structure than consumer campaigns — longer conversion windows, lead quality scoring, and often a mix of demand generation and direct response rather than pure last-click optimization.",
+  },
+  {
+    q: "How do you target the Bay Area without wasting budget?",
+    a: "We combine geographic targeting with audience signals like job title, company size, and intent data so spend concentrates on the buyers most likely to convert, rather than spreading budget across the entire metro at a flat rate.",
+  },
+  {
+    q: "Should a B2B company in San Francisco run different platforms than a B2C company?",
+    a: "Generally yes. B2B companies here tend to see stronger results from Google Search and LinkedIn Ads where intent and job-role targeting are strongest, while B2C brands often lean more heavily on Meta and Google Shopping. We build the channel mix around your buyer, not a one-size-fits-all template.",
+  },
+];
+
 export default function SanFranciscoPPCAdsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -96,9 +115,23 @@ export default function SanFranciscoPPCAdsPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/san-francisco/ppc-ads",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -310,6 +343,32 @@ export default function SanFranciscoPPCAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About PPC Advertising in San Francisco
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Does Markit Media have experience marketing to Houston's energy and oil & gas sector?",
+    a: "Yes. Houston is the energy capital of the world, and we build marketing strategies that account for the long sales cycles, technical audiences, and compliance considerations common in oil & gas and broader energy marketing.",
+  },
+  {
+    q: "Can you market to healthcare providers around the Texas Medical Center?",
+    a: "Yes. We work with healthcare and medical practice clients navigating the Texas Medical Center's competitive landscape, building campaigns that speak to both referring providers and patients.",
+  },
+  {
+    q: "How does Markit Media handle marketing for a fast-growing metro like Houston?",
+    a: "Houston's rapid growth means shifting neighborhoods, new developments, and an expanding population. We build targeting and messaging strategies that keep pace with the metro's growth rather than relying on static, outdated audience data.",
+  },
+  {
+    q: "Do you offer bilingual marketing for Houston's Hispanic population?",
+    a: "Yes. Houston has a large Hispanic population, and we develop bilingual marketing strategy and content so campaigns reach both English- and Spanish-speaking audiences effectively.",
+  },
+];
+
 export default function HoustonMarketingAgencyPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function HoustonMarketingAgencyPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/houston/marketing-agency",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -316,6 +349,26 @@ export default function HoustonMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Marketing in Houston</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

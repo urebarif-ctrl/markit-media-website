@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "Do you handle local SEO across the whole DFW metroplex, or just Dallas proper?",
+    a: "We handle local SEO across the full DFW metroplex, including cities like Plano, Frisco, Arlington, and Fort Worth, tailoring location pages and citations to each area your business serves.",
+  },
+  {
+    q: "How competitive is ranking in Texas search results compared to other markets?",
+    a: "Competition varies by industry, but Dallas is home to many established businesses with mature SEO programs. We start with a full technical and competitive audit to understand exactly what you're up against before building a strategy.",
+  },
+  {
+    q: "Do you optimize Google Business Profiles for specific Dallas neighborhoods?",
+    a: "Yes. We optimize Google Business Profiles and build geo-targeted content for specific Dallas neighborhoods and surrounding suburbs, since map pack visibility often depends on hyper-local relevance.",
+  },
+  {
+    q: "What kind of content works best for reaching a Texas audience?",
+    a: "Content that reflects local context, such as Dallas-specific industry trends, neighborhood guides, and regional business concerns, tends to perform better than generic national content. We build content strategy around how the Texas market actually searches.",
+  },
+];
+
 export default function DallasSEOServicesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,20 @@ export default function DallasSEOServicesPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/dallas/seo-services",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +348,32 @@ export default function DallasSEOServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About SEO Services in Dallas
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqItems.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

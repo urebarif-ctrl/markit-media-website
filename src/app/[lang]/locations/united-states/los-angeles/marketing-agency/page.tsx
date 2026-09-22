@@ -100,9 +100,45 @@ export default function LosAngelesMarketingAgencyPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/los-angeles/marketing-agency",
   };
 
+  const faqs = [
+    {
+      q: "Do you have experience marketing to the entertainment and media industry in Los Angeles?",
+      a: "Yes. LA's entertainment and media sector has its own visual standards, audience expectations, and campaign cadence. We build marketing programs that reflect those industry norms rather than applying a generic playbook.",
+    },
+    {
+      q: "Can you help lifestyle and consumer brands based in LA?",
+      a: "Lifestyle, fashion, beauty, and wellness brands are a core part of who we work with in Los Angeles. We build campaigns around the visual storytelling and social proof that drive purchasing decisions in these categories.",
+    },
+    {
+      q: "Do you only work with clients physically located in Los Angeles, or across the West Coast?",
+      a: "We serve businesses based in Los Angeles as well as other West Coast markets. Our delivery is remote, so location within the region does not limit the level of strategic or hands-on support you receive.",
+    },
+    {
+      q: "How do you approach marketing to LA's multicultural audiences?",
+      a: "Los Angeles has one of the most diverse populations in the country, and effective marketing here accounts for that diversity in messaging, channel selection, and creative. We factor audience makeup into strategy rather than treating LA as a single homogenous market.",
+    },
+  ];
+
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -315,6 +351,32 @@ export default function LosAngelesMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Marketing Agency Services in Los Angeles
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

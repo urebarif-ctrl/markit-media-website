@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you offer bilingual SEO for Miami businesses?",
+    a: "Yes. We conduct separate keyword research and content strategy for English and Spanish search queries, and structure sites so search engines serve the right language to the right user.",
+  },
+  {
+    q: "How do you handle Miami's competitive local search market?",
+    a: "We build location-specific content and local SEO signals at the neighborhood level — Brickell, Wynwood, Coral Gables, Little Havana, South Beach, Coconut Grove — rather than optimizing only for the broader Miami metro area.",
+  },
+  {
+    q: "Do you optimize Google Business Profiles for Miami neighborhoods?",
+    a: "Yes. We optimize Google Business Profile listings, manage citations, and build the local signals that drive visibility in the local pack for each neighborhood you serve.",
+  },
+  {
+    q: "Do you target tourism-related search keywords?",
+    a: "Yes. We build SEO strategies that capture tourism-intent searches — restaurants, hotels, activities — alongside year-round local demand, so your visibility isn't dependent on a single audience segment.",
+  },
+];
+
 export default function MiamiSEOServicesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function MiamiSEOServicesPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/miami/seo-services",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -324,6 +357,26 @@ export default function MiamiSEOServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About SEO Services in Miami</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

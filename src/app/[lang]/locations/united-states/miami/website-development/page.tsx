@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you build bilingual websites for Miami businesses?",
+    a: "Yes. We build true multilingual architectures with proper hreflang tags and language-specific URL structures, with content written for each language rather than machine-translated.",
+  },
+  {
+    q: "Can you build websites for hospitality and tourism businesses?",
+    a: "Yes. We build reservation and booking flows, property and menu integrations, and the trust signals that international visitors expect before they book or buy.",
+  },
+  {
+    q: "Do you design websites for luxury brands in Miami?",
+    a: "Yes. We design polished, conversion-focused interfaces for luxury real estate, hospitality, and lifestyle brands that need to build trust with international buyers and visitors.",
+  },
+  {
+    q: "Are your websites optimized for tourists browsing on mobile?",
+    a: "Yes. Every site we build starts with the mobile experience and scales up to desktop, since South Florida's tourism-driven traffic is heavily mobile.",
+  },
+];
+
 export default function MiamiWebsiteDevelopmentPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function MiamiWebsiteDevelopmentPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/miami/website-development",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -309,6 +342,26 @@ export default function MiamiWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Website Development in Miami</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

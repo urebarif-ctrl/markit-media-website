@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Does Markit Media specialize in marketing for tech startups?",
+    a: "Yes. Most of our San Francisco clients are SaaS companies, venture-backed startups, or biotech and fintech firms with technical products and technical buyers. We build strategies around how those companies actually sell — long evaluation cycles, multiple stakeholders, and a need for credible, substantive content rather than generic messaging.",
+  },
+  {
+    q: "How is marketing a SaaS company different from other industries?",
+    a: "SaaS buyers research extensively before ever talking to sales, so content, SEO, and product-led messaging carry more weight than they would for a transactional business. We also track pipeline and activation metrics rather than vanity metrics, since that is what growth teams and investors evaluate.",
+  },
+  {
+    q: "Do you understand the Bay Area startup ecosystem?",
+    a: "We work with founders and marketing teams across the Bay Area’s technology sector, so we build campaigns around how this market actually operates — competitive hiring, fast product cycles, and buyers who are often more sophisticated than the average.",
+  },
+  {
+    q: "Can you support a VC-funded company that needs to show growth quickly?",
+    a: "Yes. We prioritize channels and tactics that can show measurable pipeline impact early, then layer in longer-term investments like SEO and content once the immediate growth targets are being met.",
+  },
+];
+
 export default function SanFranciscoMarketingAgencyPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function SanFranciscoMarketingAgencyPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/san-francisco/marketing-agency",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -324,6 +357,32 @@ export default function SanFranciscoMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Marketing in San Francisco
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

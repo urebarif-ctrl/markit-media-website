@@ -85,6 +85,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you run PPC campaigns for Houston's energy and medical sector companies?",
+    a: "Yes. We build search and social campaigns for both energy/oil & gas companies and medical practices, accounting for the specialized keywords, compliance considerations, and longer decision cycles common in these verticals.",
+  },
+  {
+    q: "Can Markit Media handle B2B PPC for Houston companies?",
+    a: "Yes. B2B PPC in Houston typically means targeting specific job titles and industries with longer sales cycles. We structure campaigns around lead quality and qualified pipeline rather than raw click volume.",
+  },
+  {
+    q: "How do you target across Houston's spread-out metro area?",
+    a: "Houston's metro sprawls across a wide geography, from the inner loop to suburbs like Sugar Land, Katy, and The Woodlands. We use geo-targeting and location-based bid adjustments so campaigns reach the specific areas where your customers actually are.",
+  },
+  {
+    q: "Is PPC more expensive in Houston than in coastal markets?",
+    a: "Cost per click in Houston varies by industry and competition level, much like any major metro. We monitor bids and budgets closely so spend is allocated toward the keywords and audiences most likely to convert, regardless of how Houston compares to other markets.",
+  },
+];
+
 export default function HoustonPPCAdsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -96,9 +115,23 @@ export default function HoustonPPCAdsPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/houston/ppc-ads",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -302,6 +335,26 @@ export default function HoustonPPCAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About PPC Ads in Houston</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

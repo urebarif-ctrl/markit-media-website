@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What makes Atlanta's marketing landscape different from other cities?",
+    a: "Atlanta anchors the Southeast as a regional business hub, home to major logistics and transportation networks, a growing film and entertainment industry, and corporate headquarters in the Coca-Cola and CNN corridor, alongside a deep pipeline of talent from the city's HBCUs. A marketing agency working here needs to understand this specific mix of industries and audiences.",
+  },
+  {
+    q: "Does Markit Media work with Atlanta's film and entertainment industry?",
+    a: "Yes. Atlanta's production industry has grown into one of the largest in the country, and marketing for entertainment and production-adjacent businesses requires messaging attuned to that community. We build strategies for entertainment clients alongside our work in logistics, healthcare, and corporate sectors.",
+  },
+  {
+    q: "Can you support logistics and transportation companies based in Atlanta?",
+    a: "Yes. Atlanta's position as a logistics and transportation hub, anchored by Hartsfield-Jackson, means B2B marketing for companies in this sector requires an understanding of long sales cycles and industry-specific buyer behavior. We build campaigns and content around those realities.",
+  },
+  {
+    q: "How does Atlanta's HBCU talent pipeline factor into marketing here?",
+    a: "Atlanta's HBCUs, including Morehouse, Spelman, and Clark Atlanta, produce a steady stream of marketing, communications, and creative talent that shapes the local industry and audience expectations. We factor that context into campaigns aimed at Atlanta's business and consumer audiences.",
+  },
+];
+
 export default function AtlantaMarketingAgencyPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function AtlantaMarketingAgencyPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/atlanta/marketing-agency",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +351,26 @@ export default function AtlantaMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Marketing in Atlanta</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

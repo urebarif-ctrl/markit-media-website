@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you build bilingual marketing campaigns for Miami businesses?",
+    a: "Yes. We run English and Spanish campaigns as separate efforts, each with its own keyword research, creative direction, and messaging — not a single campaign translated after the fact.",
+  },
+  {
+    q: "Do you work with hospitality and tourism brands in Miami?",
+    a: "Yes. We build campaigns that capture travel-intent search traffic, target visitors already in South Florida, and turn seasonal tourists into repeat customers for hotels, restaurants, and entertainment businesses.",
+  },
+  {
+    q: "Can you market luxury real estate and South Beach lifestyle brands?",
+    a: "Yes. We run PPC campaigns for high-intent buyers, build IDX-integrated websites, and develop retargeting sequences for the long consideration cycles typical of luxury condo and waterfront property sales, along with brand strategy for South Beach lifestyle businesses.",
+  },
+  {
+    q: "Can you help my business use Miami as a gateway to Latin America?",
+    a: "Yes. Miami is the primary U.S. hub for Latin American trade. We build Spanish-language paid media, LinkedIn campaigns targeting regional decision-makers, and content strategies aimed at establishing credibility across Central and South American markets.",
+  },
+];
+
 export default function MiamiMarketingAgencyPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function MiamiMarketingAgencyPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/miami/marketing-agency",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -325,6 +358,26 @@ export default function MiamiMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Marketing in Miami</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

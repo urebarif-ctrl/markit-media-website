@@ -85,6 +85,25 @@ const processSteps = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "Do your PPC campaigns target the whole DFW metro or just Dallas city limits?",
+    a: "We structure campaigns to target the DFW metro as a whole, or narrow to specific Dallas neighborhoods and suburbs when that better fits your goals, since customers throughout the metroplex convert.",
+  },
+  {
+    q: "Do you run PPC campaigns for real estate businesses in Dallas?",
+    a: "Yes. We build campaigns for real estate businesses around buyer and renter search intent, with landing pages and messaging tailored to specific Dallas neighborhoods and property types.",
+  },
+  {
+    q: "How is advertising to a Texas audience different from advertising in coastal markets?",
+    a: "Ad costs in Texas markets like Dallas often stretch further than in dense coastal metros, though competition still varies significantly by industry and keyword set. We build budgets and bid strategy around the specific competitive dynamics of DFW rather than assumptions carried over from other markets.",
+  },
+  {
+    q: "What platforms do you manage PPC campaigns on for Texas businesses?",
+    a: "We manage Google Ads, Meta Ads, and LinkedIn Ads, and structure campaigns to reflect how DFW businesses and consumers actually search and browse, rather than running the same setup across every market.",
+  },
+];
+
 export default function DallasPPCAdsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -96,9 +115,20 @@ export default function DallasPPCAdsPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/dallas/ppc-ads",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -302,6 +332,32 @@ export default function DallasPPCAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About PPC Advertising in Dallas
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqItems.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

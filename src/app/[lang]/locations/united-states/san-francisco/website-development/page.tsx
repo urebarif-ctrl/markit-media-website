@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you design sites specifically for SaaS and tech products?",
+    a: "Yes. SaaS product sites need to explain complex functionality quickly, support self-serve trials or demos, and hold up against a technically sophisticated audience. We design and build with that audience in mind rather than adapting a generic template.",
+  },
+  {
+    q: "What design standard do you build to for San Francisco tech companies?",
+    a: "San Francisco’s tech audience expects clean, fast, well-crafted interfaces — the same bar set by the products they use daily. We design accordingly, with attention to typography, motion, and interaction detail rather than a purely template-driven approach.",
+  },
+  {
+    q: "How do you handle site performance for technical audiences?",
+    a: "We build with performance budgets in mind from the start — optimized assets, efficient code, and attention to Core Web Vitals — since a slow site undermines credibility with a technically literate audience faster than almost any other market.",
+  },
+  {
+    q: "Do you build sites that meet accessibility requirements?",
+    a: "Yes. We follow accessibility best practices — semantic markup, keyboard navigation, sufficient color contrast, and screen reader compatibility — as a standard part of every build, not an add-on.",
+  },
+];
+
 export default function SanFranciscoWebsiteDevelopmentPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function SanFranciscoWebsiteDevelopmentPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/san-francisco/website-development",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -314,6 +347,32 @@ export default function SanFranciscoWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Website Development in San Francisco
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

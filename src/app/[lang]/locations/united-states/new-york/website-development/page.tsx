@@ -103,6 +103,49 @@ export default function NewYorkWebsiteDevelopmentPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What web design standards do New York businesses need to meet?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "New York audiences regularly interact with some of the most polished digital brands in the world, which raises expectations for visual design, usability, and professionalism. A dated or generic-looking site can undercut credibility before a visitor even reads your content.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Why does mobile-first design matter so much in New York?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Much of New York's population browses on mobile while commuting on the subway, walking between meetings, or moving through the city, often with inconsistent connectivity. Designing mobile-first ensures your site remains fast and usable under exactly those conditions, not just on a desktop screen in ideal conditions.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What should New York e-commerce businesses prioritize in a website build?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "New York e-commerce businesses should prioritize fast checkout flows, mobile optimization, and clear product presentation, since online shoppers here have plenty of competing options and little patience for friction. Reliable performance under traffic spikes also matters for businesses tied to seasonal or event-driven demand.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How important is website speed for a New York audience?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Very important. New York users tend to be fast-moving and impatient, and a slow-loading site loses visitors before they see your value proposition. We treat speed as a core requirement throughout development, not something addressed only after launch.",
+                },
+              },
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -307,6 +350,49 @@ export default function NewYorkWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Website Development in New York
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "What web design standards do New York businesses need to meet?",
+                a: "New York audiences regularly interact with some of the most polished digital brands in the world, which raises expectations for visual design, usability, and professionalism. A dated or generic-looking site can undercut credibility before a visitor even reads your content.",
+              },
+              {
+                q: "Why does mobile-first design matter so much in New York?",
+                a: "Much of New York's population browses on mobile while commuting on the subway, walking between meetings, or moving through the city, often with inconsistent connectivity. Designing mobile-first ensures your site remains fast and usable under exactly those conditions, not just on a desktop screen in ideal conditions.",
+              },
+              {
+                q: "What should New York e-commerce businesses prioritize in a website build?",
+                a: "New York e-commerce businesses should prioritize fast checkout flows, mobile optimization, and clear product presentation, since online shoppers here have plenty of competing options and little patience for friction. Reliable performance under traffic spikes also matters for businesses tied to seasonal or event-driven demand.",
+              },
+              {
+                q: "How important is website speed for a New York audience?",
+                a: "Very important. New York users tend to be fast-moving and impatient, and a slow-loading site loses visitors before they see your value proposition. We treat speed as a core requirement throughout development, not something addressed only after launch.",
+              },
+            ].map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

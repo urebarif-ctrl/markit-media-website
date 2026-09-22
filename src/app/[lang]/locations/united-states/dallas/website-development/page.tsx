@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "Do you build websites specifically for corporate businesses relocating to or operating in DFW?",
+    a: "Yes. We build corporate websites designed for the scale and professionalism expected in the DFW market, including for companies that have recently relocated their headquarters to Dallas.",
+  },
+  {
+    q: "Can you build a website for a real estate or property business in Dallas?",
+    a: "Yes. We build real estate and property sites with listing displays, neighborhood pages, and lead capture structured around how Dallas buyers, renters, and investors search.",
+  },
+  {
+    q: "Do you build e-commerce sites for Texas businesses?",
+    a: "Yes. We build e-commerce sites on platforms like Shopify and WordPress/WooCommerce for Texas retailers and direct-to-consumer brands, structured for checkout conversion and both local and regional reach.",
+  },
+  {
+    q: "How do you account for mobile users, given how much of Dallas commutes by car?",
+    a: "We build every site mobile-first, since a large share of DFW traffic comes from commuters and mobile searchers checking sites on the go. That means fast load times, thumb-friendly navigation, and click-to-call functionality throughout.",
+  },
+];
+
 export default function DallasWebsiteDevelopmentPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,20 @@ export default function DallasWebsiteDevelopmentPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/dallas/website-development",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -310,6 +340,32 @@ export default function DallasWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Website Development in Dallas
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqItems.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -100,9 +100,45 @@ export default function LosAngelesPpcAdsPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/los-angeles/ppc-ads",
   };
 
+  const faqs = [
+    {
+      q: "Why is PPC advertising more expensive in Los Angeles than other markets?",
+      a: "Los Angeles has some of the highest cost-per-click rates in the country, particularly in verticals like entertainment, legal, real estate, and e-commerce, where competition for the same keywords and audiences is intense. We structure bidding strategies specifically to manage costs in this environment.",
+    },
+    {
+      q: "Can you target specific areas within the LA metro rather than the whole region?",
+      a: "Yes. The LA metro area covers a wide range of neighborhoods and submarkets, so we build geo-targeted campaigns that focus spend on the specific areas relevant to your business rather than the entire metro.",
+    },
+    {
+      q: "Do you adjust PPC campaigns for seasonal trends in LA?",
+      a: "Search behavior and ad costs in Los Angeles shift with seasonal demand across industries like retail, travel, and entertainment. We monitor performance and adjust budgets and targeting as those trends change throughout the year.",
+    },
+    {
+      q: "Which industries in LA do you have the most PPC experience with?",
+      a: "We manage PPC for a range of competitive LA verticals, including e-commerce, entertainment, professional services, and direct-to-consumer brands — categories where cost control and creative quality both matter for performance.",
+    },
+  ];
+
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -308,6 +344,32 @@ export default function LosAngelesPpcAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About PPC Ads in Los Angeles
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -99,6 +99,49 @@ export default function NewYorkPPCAdsPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Why are CPCs so high for New York PPC campaigns?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "New York has one of the highest concentrations of competing businesses bidding on the same keywords and audiences in the country, which drives up cost-per-click across nearly every industry. Careful keyword selection, negative keyword management, and quality score optimization become essential rather than optional.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Should I run Google Ads or Meta Ads for my New York business?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It depends on your business and customer intent. Google Ads tends to work well for capturing existing demand from people actively searching, while Meta Ads is often more effective for building awareness and retargeting across New York's dense, highly connected audience. Most businesses benefit from running both in a coordinated strategy.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What budget do I need to run PPC effectively in New York?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Because New York is an expensive advertising market, budgets generally need to account for higher CPCs to generate meaningful volume. We help determine a realistic budget based on your industry, competition, and goals rather than applying a one-size-fits-all number.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you measure ROI in an expensive market like New York?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We track cost per acquisition, return on ad spend, and downstream conversion data rather than surface-level metrics like clicks or impressions. In a high-CPC market, understanding true customer value is critical to knowing whether a campaign is actually profitable.",
+                },
+              },
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -299,6 +342,49 @@ export default function NewYorkPPCAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About PPC Ads in New York
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "Why are CPCs so high for New York PPC campaigns?",
+                a: "New York has one of the highest concentrations of competing businesses bidding on the same keywords and audiences in the country, which drives up cost-per-click across nearly every industry. Careful keyword selection, negative keyword management, and quality score optimization become essential rather than optional.",
+              },
+              {
+                q: "Should I run Google Ads or Meta Ads for my New York business?",
+                a: "It depends on your business and customer intent. Google Ads tends to work well for capturing existing demand from people actively searching, while Meta Ads is often more effective for building awareness and retargeting across New York's dense, highly connected audience. Most businesses benefit from running both in a coordinated strategy.",
+              },
+              {
+                q: "What budget do I need to run PPC effectively in New York?",
+                a: "Because New York is an expensive advertising market, budgets generally need to account for higher CPCs to generate meaningful volume. We help determine a realistic budget based on your industry, competition, and goals rather than applying a one-size-fits-all number.",
+              },
+              {
+                q: "How do you measure ROI in an expensive market like New York?",
+                a: "We track cost per acquisition, return on ad spend, and downstream conversion data rather than surface-level metrics like clicks or impressions. In a high-CPC market, understanding true customer value is critical to knowing whether a campaign is actually profitable.",
+              },
+            ].map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

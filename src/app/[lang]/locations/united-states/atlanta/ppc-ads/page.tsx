@@ -85,6 +85,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you run PPC campaigns targeted specifically to the Atlanta metro?",
+    a: "Yes. We build geo-targeted campaigns across Google Ads, Meta, and LinkedIn that focus spend on the Atlanta metro, from Buckhead and Midtown to the broader suburban ring, so budget is not wasted on traffic outside your service area.",
+  },
+  {
+    q: "Can PPC campaigns be expanded beyond Atlanta to cover the Southeast region?",
+    a: "Yes. For businesses with a regional footprint, we structure campaigns that scale from Atlanta out to the broader Southeast, adjusting targeting, budget, and messaging by market as needed.",
+  },
+  {
+    q: "Do you advertise for film and entertainment businesses in Atlanta?",
+    a: "Yes. Atlanta's production industry creates demand for advertising among vendors, service providers, and businesses that support film and entertainment work. We build paid campaigns tailored to that audience alongside our broader client base.",
+  },
+  {
+    q: "How do you handle PPC for competitive B2B verticals in Atlanta?",
+    a: "Atlanta's B2B sectors, including logistics, healthcare, and professional services, often have high cost-per-click and long sales cycles. We structure campaigns around buyer intent and lead quality rather than raw click volume, so spend is directed toward prospects likely to convert.",
+  },
+];
+
 export default function AtlantaPPCAdsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -96,9 +115,23 @@ export default function AtlantaPPCAdsPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/atlanta/ppc-ads",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -304,6 +337,26 @@ export default function AtlantaPPCAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About PPC Ads in Atlanta</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

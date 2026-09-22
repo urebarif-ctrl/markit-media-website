@@ -100,9 +100,45 @@ export default function LosAngelesSeoServicesPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/los-angeles/seo-services",
   };
 
+  const faqs = [
+    {
+      q: "What does local SEO look like for a business in Los Angeles?",
+      a: "Local SEO in Los Angeles typically involves Google Business Profile optimization, citation building, and geo-targeted content, often across multiple neighborhoods or service areas given how spread out the metro is.",
+    },
+    {
+      q: "How do you help LA businesses compete against other local agencies and providers?",
+      a: "Los Angeles has a dense field of competitors in nearly every industry. We start with competitor and market analysis to understand what's already ranking, then build a strategy around the gaps and opportunities that analysis surfaces.",
+    },
+    {
+      q: "Do you manage Google Business Profiles for multiple LA neighborhoods or locations?",
+      a: "Yes. Many LA businesses serve several neighborhoods or operate multiple locations across the metro. We manage Google Business Profile setup and optimization for each relevant service area rather than treating LA as one location.",
+    },
+    {
+      q: "How do you create content that resonates with LA audiences specifically?",
+      a: "We research the questions and search behavior specific to the LA market rather than reusing generic content. That means addressing local context, neighborhood-level relevance, and topics that reflect what LA audiences are actually searching for.",
+    },
+  ];
+
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -317,6 +353,32 @@ export default function LosAngelesSeoServicesPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About SEO Services in Los Angeles
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

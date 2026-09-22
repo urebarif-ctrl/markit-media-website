@@ -103,6 +103,49 @@ export default function NewYorkMarketingAgencyPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How competitive is the New York marketing landscape?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "New York is home to some of the most sophisticated and well-funded marketing operations in the country, spanning finance, media, retail, and technology. Businesses here compete not just locally but against national brands headquartered in the city, which raises the bar for creative quality, targeting precision, and execution speed.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you market differently for Manhattan versus the outer boroughs?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Manhattan audiences, foot traffic patterns, and price sensitivity differ meaningfully from Brooklyn, Queens, the Bronx, and Staten Island. We tailor targeting, messaging, and channel mix to where your customers actually are, rather than treating New York as a single undifferentiated market.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How much does marketing cost in New York compared to other cities?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Marketing costs in New York, including media spend and production, tend to run higher than in most other U.S. markets due to competition for attention and ad inventory. We work with businesses to build budgets that reflect this reality while prioritizing efficiency over simply outspending competitors.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to see results from marketing in New York?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Timelines vary by channel and industry. Paid media can show measurable results within weeks, while organic strategies like SEO and content typically take longer to build traction given how saturated the New York market is. We set realistic timelines during the strategy phase, so you know what to expect at each stage.",
+                },
+              },
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -314,6 +357,49 @@ export default function NewYorkMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About Marketing Agency Services in New York
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "How competitive is the New York marketing landscape?",
+                a: "New York is home to some of the most sophisticated and well-funded marketing operations in the country, spanning finance, media, retail, and technology. Businesses here compete not just locally but against national brands headquartered in the city, which raises the bar for creative quality, targeting precision, and execution speed.",
+              },
+              {
+                q: "Do you market differently for Manhattan versus the outer boroughs?",
+                a: "Yes. Manhattan audiences, foot traffic patterns, and price sensitivity differ meaningfully from Brooklyn, Queens, the Bronx, and Staten Island. We tailor targeting, messaging, and channel mix to where your customers actually are, rather than treating New York as a single undifferentiated market.",
+              },
+              {
+                q: "How much does marketing cost in New York compared to other cities?",
+                a: "Marketing costs in New York, including media spend and production, tend to run higher than in most other U.S. markets due to competition for attention and ad inventory. We work with businesses to build budgets that reflect this reality while prioritizing efficiency over simply outspending competitors.",
+              },
+              {
+                q: "How long does it take to see results from marketing in New York?",
+                a: "Timelines vary by channel and industry. Paid media can show measurable results within weeks, while organic strategies like SEO and content typically take longer to build traction given how saturated the New York market is. We set realistic timelines during the strategy phase, so you know what to expect at each stage.",
+              },
+            ].map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

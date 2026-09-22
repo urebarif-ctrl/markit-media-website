@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you build corporate websites for established Atlanta businesses?",
+    a: "Yes. We build corporate sites for Atlanta businesses that need a professional, credible web presence, from vendors serving Fortune 500 companies to established mid-market firms across the metro.",
+  },
+  {
+    q: "Can you build websites for entertainment industry businesses in Atlanta?",
+    a: "Yes. Atlanta's film and entertainment industry includes production companies, vendors, and service providers that need websites built for a visually driven, fast-moving industry. We design and develop sites tailored to that audience.",
+  },
+  {
+    q: "Do you build websites for logistics companies?",
+    a: "Yes. Logistics and supply chain companies in Atlanta often need sites that clearly communicate service capabilities to enterprise buyers, integrate with existing systems, and support lead generation for long B2B sales cycles.",
+  },
+  {
+    q: "Why does mobile performance matter specifically for an Atlanta audience?",
+    a: "Atlanta has significant commuter traffic and a metro area spread across a wide geography, so a large share of visits happen on mobile devices, often on the go. We build with a mobile-first approach so your site loads quickly and functions well regardless of how or where visitors access it.",
+  },
+];
+
 export default function AtlantaWebsiteDevelopmentPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function AtlantaWebsiteDevelopmentPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/atlanta/website-development",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -310,6 +343,26 @@ export default function AtlantaWebsiteDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Website Development in Atlanta</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

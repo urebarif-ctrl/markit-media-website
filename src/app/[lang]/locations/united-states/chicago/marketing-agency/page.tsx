@@ -21,6 +21,35 @@ const schema = {
   url: "https://themarkitmedia.com/en/locations/united-states/chicago/marketing-agency",
 };
 
+const faqs = [
+  {
+    q: "Why does Chicago's role as a Midwest hub matter for marketing strategy?",
+    a: "Chicago sits at the center of Midwest commerce, connecting manufacturing, logistics, and financial services companies across the region. A marketing strategy built for this market accounts for longer B2B sales cycles, multi-stakeholder buying decisions, and audiences that expect substance over hype.",
+  },
+  {
+    q: "Do you have experience marketing to manufacturing and logistics companies?",
+    a: "Yes. These industries are core to the Chicago economy, and they require a different approach than consumer marketing — technical audiences, longer consideration periods, and messaging that speaks to operational and cost concerns rather than emotional triggers.",
+  },
+  {
+    q: "Do you work with businesses in specific Chicago neighborhoods, like the Loop?",
+    a: "Yes. Chicago is a collection of distinct business districts and neighborhoods, from the Loop's corporate core to manufacturing and logistics corridors elsewhere in the city and suburbs. We tailor messaging and channel selection to the specific audience relevant to your business rather than treating Chicago as one uniform market.",
+  },
+  {
+    q: "Does Chicago's seasonal weather affect marketing planning?",
+    a: "For some industries, yes. Businesses tied to seasonal demand — home services, events, retail, and outdoor-facing categories — often need campaign calendars that account for Chicago's harsh winters and the shift in consumer behavior across the year. We factor seasonality into planning where it's relevant to your business.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const serviceItems = [
   {
     title: "Marketing Strategy",
@@ -108,6 +137,7 @@ export default function ChicagoMarketingAgencyPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -325,6 +355,26 @@ export default function ChicagoMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About Marketing Agency Services in Chicago</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

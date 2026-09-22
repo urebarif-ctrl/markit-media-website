@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Do you run bilingual PPC campaigns for Miami businesses?",
+    a: "Yes. We build separate English and Spanish ad sets with independent keyword research, creative, and bid strategies, since each audience converts differently.",
+  },
+  {
+    q: "Can you run ad campaigns for tourism and hospitality businesses?",
+    a: "Yes. We manage budget pacing and bid strategies that scale with Miami's tourism seasons, and build geo-targeted campaigns aimed at visitors already in South Florida.",
+  },
+  {
+    q: "Do you handle PPC for Miami real estate?",
+    a: "Yes. We structure campaigns around high-intent buyer keywords, build retargeting sequences for long consideration cycles, and track leads through to closed deals for condo, waterfront, and investment properties.",
+  },
+  {
+    q: "Do you target both Miami-Dade and Broward County?",
+    a: "Yes. We build geo-targeted campaigns by neighborhood and county, so your ads reach the areas where your customers actually are, whether that's Miami-Dade, Broward, or both.",
+  },
+];
+
 export default function MiamiPPCAdsPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function MiamiPPCAdsPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/miami/ppc-ads",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -315,6 +348,26 @@ export default function MiamiPPCAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About PPC Ads in Miami</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

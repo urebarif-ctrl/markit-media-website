@@ -89,6 +89,25 @@ const processSteps = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Why is SEO more competitive in San Francisco than other cities?",
+    a: "San Francisco is home to a dense concentration of well-resourced tech companies, many of which run dedicated content and SEO teams. That means ranking for competitive terms often requires going up against companies with significant existing domain authority and content libraries, not just local competitors.",
+  },
+  {
+    q: "What does a content strategy look like for a San Francisco startup?",
+    a: "We start with the keywords and questions your actual buyers are searching, then build content that demonstrates real expertise rather than surface-level coverage. For startups without an existing content footprint, this usually means prioritizing a smaller number of high-intent topics before expanding.",
+  },
+  {
+    q: "How do you compete with established tech company blogs?",
+    a: "Rather than trying to out-publish companies with large content teams, we look for topic gaps, more specific long-tail queries, and angles those larger blogs haven’t covered well — areas where a focused, well-executed piece can outrank a broader one.",
+  },
+  {
+    q: "Does local SEO matter for a company based in San Francisco?",
+    a: "It depends on the business. Companies serving specific San Francisco neighborhoods or the broader Bay Area benefit from local SEO fundamentals — Google Business Profile optimization, location-specific content, and citations — alongside their core SEO strategy. Purely SaaS or remote-first companies typically see less value from local tactics.",
+  },
+];
+
 export default function SanFranciscoSEOServicesPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -100,9 +119,23 @@ export default function SanFranciscoSEOServicesPage() {
     url: "https://themarkitmedia.com/en/locations/united-states/san-francisco/seo-services",
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <article>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -324,6 +357,32 @@ export default function SanFranciscoSEOServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>
+              Frequently Asked Questions About SEO Services in San Francisco
+            </SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">
+                    {faq.q}
+                  </h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">
+                    {faq.a}
+                  </p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 

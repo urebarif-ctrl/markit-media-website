@@ -21,6 +21,35 @@ const schema = {
   url: "https://themarkitmedia.com/en/locations/united-states/chicago/seo-services",
 };
 
+const faqs = [
+  {
+    q: "What does local SEO look like for a Chicago business?",
+    a: "Local SEO in Chicago means optimizing for searches tied to the city and its neighborhoods, ensuring your business shows up in local map results and organic listings when nearby customers search for your services.",
+  },
+  {
+    q: "How competitive is ranking for search terms in the Midwest market?",
+    a: "Competition varies by industry and keyword, but Chicago is the largest market in the Midwest, so many categories see meaningful competition from other local and regional businesses. We build technical and content strategies suited to how competitive your specific space is, rather than assuming one level of difficulty applies everywhere.",
+  },
+  {
+    q: "Do you optimize Google Business Profiles for specific Chicago neighborhoods?",
+    a: "Yes. If you serve customers in particular neighborhoods or have multiple locations across the city, we optimize your Google Business Profile and supporting citations to reflect those specific areas, which helps you appear in relevant local searches.",
+  },
+  {
+    q: "What kind of content do you create for Chicago-based businesses?",
+    a: "Content built around the keywords your actual customers search for, informed by your industry and location. That can include service pages, local resource content, and articles that establish authority on the topics that matter to Chicago buyers — not generic content unrelated to your market.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const serviceItems = [
   {
     title: "Technical SEO",
@@ -108,6 +137,7 @@ export default function ChicagoSeoServicesPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <JsonLd data={faqSchema} />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -328,6 +358,26 @@ export default function ChicagoSeoServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Frequently asked questions">
+        <div className="max-w-3xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>FAQ</SectionLabel>
+            <SectionTitle>Frequently Asked Questions About SEO Services in Chicago</SectionTitle>
+          </Animate>
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <Animate key={i} animation="fade-up" delay={i * 60}>
+                <div className="border-b border-gray-200 pb-6">
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black">{faq.q}</h3>
+                  <p className="text-base text-gray-500 leading-relaxed mt-2">{faq.a}</p>
+                </div>
+              </Animate>
+            ))}
+          </div>
         </div>
       </section>
 
