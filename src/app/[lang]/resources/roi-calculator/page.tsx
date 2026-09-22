@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 export default function ROICalculatorPage() {
   const [monthlyBudget, setMonthlyBudget] = useState(5000);
@@ -176,24 +177,7 @@ export default function ROICalculatorPage() {
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">How We Drive These Results</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: "More Qualified Traffic", desc: "SEO and paid campaigns bring people who are actively looking for what you offer.", href: "/services/seo" },
-              { title: "Better Conversion Rates", desc: "Optimized landing pages and messaging turn more visitors into leads and customers.", href: "/services/website-development" },
-              { title: "Lower Cost Per Acquisition", desc: "Continuous optimization reduces wasted spend and improves campaign efficiency.", href: "/services/performance-marketing" },
-            ].map((item) => (
-              <Link key={item.href} href={item.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{item.title}</h3>
-                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-          <JsonLd
+      <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
@@ -204,27 +188,26 @@ export default function ROICalculatorPage() {
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
       />
-    
-      
-      {/* Related Tools */}
-      <section className="px-6 lg:px-12 py-12" aria-label="Related tools">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
-          <div className="flex flex-wrap gap-3">
-                <Link href="/resources/roi-dashboard" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
-                <Link href="/resources/roi-forecaster" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Forecaster</Link>
-                <Link href="/resources/marketing-roi-report" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
-                <Link href="/resources/kpi-builder" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">KPI Builder</Link>
-          </div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
-        <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
-        <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
-      </section>
+      <ToolCTA
+        toolName="ROI Calculator"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize your return on ad spend.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic growth over time.", href: "/services/seo" },
+          { title: "Digital Marketing", desc: "Full-stack marketing strategy, analytics, and optimization to hit your revenue targets.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "ROI Dashboard", href: "/resources/roi-dashboard" },
+          { title: "ROI Forecaster", href: "/resources/roi-forecaster" },
+          { title: "Marketing ROI Report", href: "/resources/marketing-roi-report" },
+          { title: "Budget Calculator", href: "/resources/budget-calculator" },
+        ]}
+        relatedBlog={[
+          { title: "How to Calculate Marketing ROI", href: "/blog" },
+          { title: "PPC vs SEO: Where to Invest", href: "/blog" },
+          { title: "Budget Allocation Best Practices", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

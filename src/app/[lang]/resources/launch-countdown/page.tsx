@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -619,6 +620,25 @@ export default function LaunchCountdownPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Launch Countdown"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Lead Magnet Generator", href: "/resources/lead-magnet-generator" },
+          { title: "Lead Scoring Calculator", href: "/resources/lead-scoring-calculator" },
+          { title: "Influencer Roi", href: "/resources/influencer-roi" },
+          { title: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

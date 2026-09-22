@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const INDUSTRY_BENCHMARKS: Record<string, { avgCpa: number; avgRoas: number }> = {
   "E-commerce": { avgCpa: 45, avgRoas: 4.0 },
@@ -628,6 +629,24 @@ export default function AdSpendCalculatorPage() {
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
         <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
       </section>
+    
+      <ToolCTA
+        toolName="Ad Spend Calculator"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Ad Budget Pacing", href: "/resources/ad-budget-pacing" },
+          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
+          { title: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

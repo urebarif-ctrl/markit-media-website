@@ -3,6 +3,7 @@
 import { useState, useCallback, useMemo, useId } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1010,6 +1011,24 @@ export default function ChannelMixModellerPage() {
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
         <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
       </section>
+    
+      <ToolCTA
+        toolName="Channel Mix Modeller"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Channel Recommender", href: "/resources/channel-recommender" },
+          { title: "Channel Selector", href: "/resources/channel-selector" },
+          { title: "Client Onboarding Checklist", href: "/resources/client-onboarding-checklist" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

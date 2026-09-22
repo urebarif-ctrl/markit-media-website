@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ================================================================== */
 /*  Types                                                              */
@@ -1707,6 +1708,25 @@ export default function ScopeOfWorkGeneratorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Scope Of Work Generator"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Schema Generator", href: "/resources/schema-generator" },
+          { title: "Risk Assessment", href: "/resources/risk-assessment" },
+          { title: "Roi Calculator", href: "/resources/roi-calculator" },
+          { title: "Roi Dashboard", href: "/resources/roi-dashboard" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

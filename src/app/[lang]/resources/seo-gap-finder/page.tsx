@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -886,6 +887,25 @@ export default function SeoGapFinderPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Seo Gap Finder"
+        services={[
+          { title: "SEO", desc: "Data-driven SEO strategies that drive organic traffic and revenue growth.", href: "/services/seo" },
+          { title: "Content Marketing", desc: "Content that ranks, engages, and converts your target audience.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Seo Audit Score", href: "/resources/seo-audit-score" },
+          { title: "Seo Checklist", href: "/resources/seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
+          { title: "Seo Vs Ppc", href: "/resources/seo-vs-ppc" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

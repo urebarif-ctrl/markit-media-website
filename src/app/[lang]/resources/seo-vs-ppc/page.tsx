@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 export const metadata: Metadata = {
   title: "SEO vs PPC: Which Is Right for Your Business?",
@@ -180,6 +181,24 @@ export default function SEOvsPPCPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Seo Vs Ppc"
+        services={[
+          { title: "SEO", desc: "Data-driven SEO strategies that drive organic traffic and revenue growth.", href: "/services/seo" },
+          { title: "Content Marketing", desc: "Content that ranks, engages, and converts your target audience.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Seo Checklist", href: "/resources/seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
+          { title: "Seo Gap Finder", href: "/resources/seo-gap-finder" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

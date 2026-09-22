@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { ToolCTA } from "@/components/tool-cta";
 import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -1063,6 +1064,23 @@ export default function CampaignDebriefPage() {
           </Animate>
         </div>
       </section>
+      <ToolCTA
+        toolName="Campaign Debrief"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "KPI Builder", href: "/resources/kpi-builder" },
+          { title: "ROI Calculator", href: "/resources/roi-calculator" },
+          { title: "Marketing Audit Scorecard", href: "/resources/marketing-audit-scorecard" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </>
   );
 }

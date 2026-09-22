@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface CheckItem {
   id: string;
@@ -312,6 +313,25 @@ export default function MigrationChecklistPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Migration Checklist"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
+          { title: "Meeting Agenda Builder", href: "/resources/meeting-agenda-builder" },
+          { title: "Meta Description Generator", href: "/resources/meta-description-generator" },
+          { title: "Og Preview", href: "/resources/og-preview" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

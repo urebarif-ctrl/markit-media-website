@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface SizeSpec {
   name: string;
@@ -201,6 +202,25 @@ export default function ImageSizeGuidePage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Image Size Guide"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Funnel Visualizer", href: "/resources/funnel-visualizer" },
+          { title: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
+          { title: "Hashtag Generator", href: "/resources/hashtag-generator" },
+          { title: "Headline Analyzer", href: "/resources/headline-analyzer" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

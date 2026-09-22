@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Animate } from "@/components/animate";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -926,6 +927,25 @@ export default function MarketingRFPTemplatePage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Marketing Rfp Template"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Maturity", href: "/resources/marketing-maturity" },
+          { title: "Marketing Proposal Generator", href: "/resources/marketing-proposal-generator" },
+          { title: "Marketing Stack Audit", href: "/resources/marketing-stack-audit" },
+          { title: "Marketing Statistics", href: "/resources/marketing-statistics" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

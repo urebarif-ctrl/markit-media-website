@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -855,6 +856,25 @@ export default function SprintPlannerPage() {
           url: "https://themarkitmedia.com/en/resources/sprint-planner",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Sprint Planner"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
+          { title: "Startup Marketing Guide", href: "/resources/startup-marketing-guide" },
+          { title: "Social Media Planner", href: "/resources/social-media-planner" },
+          { title: "Social Media Roi", href: "/resources/social-media-roi" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

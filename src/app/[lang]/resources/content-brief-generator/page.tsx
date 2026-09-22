@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { useState } from "react";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const CONTENT_TYPES = [
   "Blog Post",
@@ -665,13 +666,25 @@ export default function ContentBriefGeneratorPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
-        <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
-        <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
-      </section>
+    
+      <ToolCTA
+        toolName="Content Brief Generator"
+        services={[
+          { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
+          { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
+          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
+          { title: "Competitor Pricing Tracker", href: "/resources/competitor-pricing-tracker" },
+          { title: "Customer Journey Builder", href: "/resources/customer-journey-builder" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </main>
   );
 }

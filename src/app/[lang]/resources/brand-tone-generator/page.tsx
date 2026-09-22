@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const toneDimensions = [
   {
@@ -397,6 +398,25 @@ export default function BrandToneGeneratorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Brand Tone Generator"
+        services={[
+          { title: "Branding", desc: "Strategic brand identity that differentiates you in your market.", href: "/services/branding" },
+          { title: "Website Development", desc: "Websites that bring your brand to life with exceptional UX.", href: "/services/website-development" },
+          { title: "Digital Marketing", desc: "Amplify your brand across every digital touchpoint.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Brand Name Evaluator", href: "/resources/brand-name-evaluator" },
+          { title: "Brand Name Generator", href: "/resources/brand-name-generator" },
+          { title: "Brand Positioning", href: "/resources/brand-positioning" },
+          { title: "Brand Voice Checker", href: "/resources/brand-voice-checker" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

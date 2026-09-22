@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -1260,6 +1261,25 @@ export default function CompetitiveIntelDashboardPage() {
           </div>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Competitive Intel Dashboard"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Clv Calculator", href: "/resources/clv-calculator" },
+          { title: "Client Onboarding Checklist", href: "/resources/client-onboarding-checklist" },
+          { title: "Client Reporting Dashboard", href: "/resources/client-reporting-dashboard" },
+          { title: "Color Palette Generator", href: "/resources/color-palette-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface CheckItem {
   id: string;
@@ -194,6 +195,25 @@ export default function PricingPageAnalyzerPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Pricing Page Analyzer"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Pricing Calculator", href: "/resources/pricing-calculator" },
+          { title: "Pricing Optimizer", href: "/resources/pricing-optimizer" },
+          { title: "Quarterly Review", href: "/resources/quarterly-review" },
+          { title: "Redesign Planner", href: "/resources/redesign-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

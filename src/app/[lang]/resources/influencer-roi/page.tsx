@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 function fmt(n: number) {
   return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
@@ -663,6 +664,25 @@ export default function InfluencerRoiPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Influencer Roi"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Kpi Builder", href: "/resources/kpi-builder" },
+          { title: "Kpi Dashboard", href: "/resources/kpi-dashboard" },
+          { title: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
+          { title: "Hashtag Generator", href: "/resources/hashtag-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 type BusinessStage = "startup" | "growth" | "established" | "enterprise";
 type Goal = "awareness" | "leads" | "sales" | "retention";
@@ -337,6 +338,25 @@ export default function MarketingBudgetPlannerPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Marketing Budget Planner"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Audit Scorecard", href: "/resources/marketing-audit-scorecard" },
+          { title: "Marketing Goal Setter", href: "/resources/marketing-goal-setter" },
+          { title: "Landing Page Grader", href: "/resources/landing-page-grader" },
+          { title: "Launch Countdown", href: "/resources/launch-countdown" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

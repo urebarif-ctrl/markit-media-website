@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1056,6 +1057,25 @@ export default function BudgetAllocatorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Budget Allocator"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Budget Calculator", href: "/resources/budget-calculator" },
+          { title: "Brand Name Generator", href: "/resources/brand-name-generator" },
+          { title: "Brand Positioning", href: "/resources/brand-positioning" },
+          { title: "Brand Tone Generator", href: "/resources/brand-tone-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

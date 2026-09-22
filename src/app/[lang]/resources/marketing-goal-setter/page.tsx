@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface Goal {
   id: number;
@@ -293,6 +294,24 @@ export default function MarketingGoalSetterPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Marketing Goal Setter"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+          { title: "Marketing Kpi Tracker", href: "/resources/marketing-kpi-tracker" },
+          { title: "Marketing Metrics Benchmark", href: "/resources/marketing-metrics-benchmark" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

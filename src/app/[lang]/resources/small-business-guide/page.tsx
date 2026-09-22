@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 export const metadata: Metadata = {
   title: "Digital Marketing for Small Business — Complete Guide",
@@ -245,6 +246,25 @@ export default function SmallBusinessGuidePage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Small Business Guide"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Sla Tracker", href: "/resources/sla-tracker" },
+          { title: "Seo Checklist", href: "/resources/seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
+          { title: "Seo Gap Finder", href: "/resources/seo-gap-finder" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

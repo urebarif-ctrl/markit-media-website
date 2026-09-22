@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ---------- types ---------- */
 
@@ -1311,6 +1312,25 @@ export default function MarketingRoiReportPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Marketing Roi Report"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Metrics Benchmark", href: "/resources/marketing-metrics-benchmark" },
+          { title: "Marketing Kpi Tracker", href: "/resources/marketing-kpi-tracker" },
+          { title: "Marketing Maturity", href: "/resources/marketing-maturity" },
+          { title: "Marketing Proposal Generator", href: "/resources/marketing-proposal-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

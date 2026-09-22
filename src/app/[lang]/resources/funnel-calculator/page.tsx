@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 function fmt(n: number) {
   return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
@@ -761,6 +762,25 @@ export default function FunnelCalculatorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Funnel Calculator"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Funnel Visualizer", href: "/resources/funnel-visualizer" },
+          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
+          { title: "Email Subject Ab Tester", href: "/resources/email-subject-ab-tester" },
+          { title: "Email Subject Tester", href: "/resources/email-subject-tester" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

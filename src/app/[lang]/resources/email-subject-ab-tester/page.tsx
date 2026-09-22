@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const powerWords = [
   "free", "new", "proven", "secret", "exclusive", "limited", "instant", "guaranteed",
@@ -333,6 +334,25 @@ export default function EmailSubjectABTesterPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Email Subject Ab Tester"
+        services={[
+          { title: "Digital Marketing", desc: "Email marketing integrated with your broader growth strategy.", href: "/services/digital-marketing" },
+          { title: "Content Marketing", desc: "Compelling email content that nurtures leads into customers.", href: "/services/content-marketing" },
+          { title: "Performance Marketing", desc: "Paid campaigns that fill your email funnel with qualified leads.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Email Health Checker", href: "/resources/email-health-checker" },
+          { title: "Email Roi Calculator", href: "/resources/email-roi-calculator" },
+          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
+          { title: "Email Subject Tester", href: "/resources/email-subject-tester" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

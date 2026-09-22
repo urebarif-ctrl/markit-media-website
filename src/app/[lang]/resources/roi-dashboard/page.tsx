@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -961,6 +962,25 @@ export default function RoiDashboardPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Roi Dashboard"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Roi Calculator", href: "/resources/roi-calculator" },
+          { title: "Roi Forecaster", href: "/resources/roi-forecaster" },
+          { title: "Readability Checker", href: "/resources/readability-checker" },
+          { title: "Redesign Planner", href: "/resources/redesign-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

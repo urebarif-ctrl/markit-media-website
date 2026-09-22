@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Statistics 2025 — Key Industry Data",
@@ -205,6 +206,25 @@ export default function MarketingStatisticsPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Marketing Statistics"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Rfp Template", href: "/resources/marketing-rfp-template" },
+          { title: "Marketing Stack Audit", href: "/resources/marketing-stack-audit" },
+          { title: "Marketing Statistics 2026", href: "/resources/marketing-statistics-2026" },
+          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

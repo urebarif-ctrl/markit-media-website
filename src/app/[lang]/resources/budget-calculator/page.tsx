@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 type BusinessType = "B2B" | "B2C" | "E-commerce" | "Local";
 type PrimaryGoal = "Brand Awareness" | "Lead Gen" | "Sales" | "Retention";
@@ -360,6 +361,25 @@ export default function BudgetCalculatorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Budget Calculator"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Budget Allocator", href: "/resources/budget-allocator" },
+          { title: "Brand Positioning", href: "/resources/brand-positioning" },
+          { title: "Brand Tone Generator", href: "/resources/brand-tone-generator" },
+          { title: "Brand Voice Checker", href: "/resources/brand-voice-checker" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

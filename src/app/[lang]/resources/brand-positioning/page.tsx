@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -679,6 +680,25 @@ export default function BrandPositioningPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Brand Positioning"
+        services={[
+          { title: "Branding", desc: "Strategic brand identity that differentiates you in your market.", href: "/services/branding" },
+          { title: "Website Development", desc: "Websites that bring your brand to life with exceptional UX.", href: "/services/website-development" },
+          { title: "Digital Marketing", desc: "Amplify your brand across every digital touchpoint.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Brand Guidelines Checklist", href: "/resources/brand-guidelines-checklist" },
+          { title: "Brand Name Evaluator", href: "/resources/brand-name-evaluator" },
+          { title: "Brand Name Generator", href: "/resources/brand-name-generator" },
+          { title: "Brand Tone Generator", href: "/resources/brand-tone-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

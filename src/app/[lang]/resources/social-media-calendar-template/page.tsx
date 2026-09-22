@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -865,6 +866,25 @@ export default function SocialMediaCalendarTemplatePage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Social Media Calendar Template"
+        services={[
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Social Content Rater", href: "/resources/social-content-rater" },
+          { title: "Social Media Audit", href: "/resources/social-media-audit" },
+          { title: "Social Media Bio Generator", href: "/resources/social-media-bio-generator" },
+          { title: "Social Media Planner", href: "/resources/social-media-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

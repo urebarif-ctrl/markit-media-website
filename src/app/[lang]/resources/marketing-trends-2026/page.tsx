@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Trends 2026 — What to Watch",
@@ -176,6 +177,25 @@ export default function MarketingTrends2026Page() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Marketing Trends 2026"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Statistics 2026", href: "/resources/marketing-statistics-2026" },
+          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
+          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
+          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

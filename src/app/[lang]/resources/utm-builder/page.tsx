@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const sources = ["google", "facebook", "instagram", "linkedin", "twitter", "tiktok", "email", "newsletter", "youtube", "reddit", "bing", "pinterest"];
 const mediums = ["cpc", "cpm", "social", "email", "organic", "referral", "display", "video", "affiliate", "banner", "retargeting", "native"];
@@ -286,6 +287,25 @@ export default function UtmBuilderPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Utm Builder"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Team Capacity Planner", href: "/resources/team-capacity-planner" },
+          { title: "Tech Stack Advisor", href: "/resources/tech-stack-advisor" },
+          { title: "Vendor Evaluation", href: "/resources/vendor-evaluation" },
+          { title: "Web Platform Guide", href: "/resources/web-platform-guide" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

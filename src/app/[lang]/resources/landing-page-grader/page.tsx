@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -647,6 +648,25 @@ export default function LandingPageGraderPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Landing Page Grader"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Image Size Guide", href: "/resources/image-size-guide" },
+          { title: "Influencer Roi", href: "/resources/influencer-roi" },
+          { title: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
+          { title: "Kpi Builder", href: "/resources/kpi-builder" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

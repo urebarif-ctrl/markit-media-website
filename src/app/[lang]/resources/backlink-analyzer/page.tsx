@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -923,7 +924,26 @@ export default function BacklinkAnalyzerPage() {
             </section>
           </Animate>
         </div>
-      </article>
+      
+      <ToolCTA
+        toolName="Backlink Analyzer"
+        services={[
+          { title: "SEO", desc: "Data-driven SEO strategies that drive organic traffic and revenue growth.", href: "/services/seo" },
+          { title: "Content Marketing", desc: "Content that ranks, engages, and converts your target audience.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Ad Spend Calculator", href: "/resources/ad-spend-calculator" },
+          { title: "Agency Comparison", href: "/resources/agency-comparison" },
+          { title: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator" },
+          { title: "Attribution Calculator", href: "/resources/attribution-calculator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
+    </article>
     </>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const prefixes = [
   "Nova", "Apex", "Velo", "Prism", "Zenith", "Flux", "Aura", "Nexus", "Orbit", "Echo",
@@ -325,6 +326,25 @@ export default function BrandNameGeneratorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Brand Name Generator"
+        services={[
+          { title: "Branding", desc: "Strategic brand identity that differentiates you in your market.", href: "/services/branding" },
+          { title: "Website Development", desc: "Websites that bring your brand to life with exceptional UX.", href: "/services/website-development" },
+          { title: "Digital Marketing", desc: "Amplify your brand across every digital touchpoint.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Brand Consistency Checker", href: "/resources/brand-consistency-checker" },
+          { title: "Brand Guidelines Checklist", href: "/resources/brand-guidelines-checklist" },
+          { title: "Brand Name Evaluator", href: "/resources/brand-name-evaluator" },
+          { title: "Brand Positioning", href: "/resources/brand-positioning" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

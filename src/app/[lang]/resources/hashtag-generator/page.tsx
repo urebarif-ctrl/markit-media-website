@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -580,6 +581,25 @@ export default function HashtagGeneratorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Hashtag Generator"
+        services={[
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Email Warmup Planner", href: "/resources/email-warmup-planner" },
+          { title: "Experiment Tracker", href: "/resources/experiment-tracker" },
+          { title: "Funnel Calculator", href: "/resources/funnel-calculator" },
+          { title: "Funnel Visualizer", href: "/resources/funnel-visualizer" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

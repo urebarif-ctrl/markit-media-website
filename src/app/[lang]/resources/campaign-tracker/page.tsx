@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1144,6 +1145,24 @@ export default function CampaignTrackerPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Campaign Tracker"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
+          { title: "Campaign Naming Convention", href: "/resources/campaign-naming-convention" },
+          { title: "Campaign Naming Generator", href: "/resources/campaign-naming-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

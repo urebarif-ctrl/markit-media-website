@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 function fmt(n: number) { return n.toLocaleString("en-US", { maximumFractionDigits: 0 }); }
 function fmtMoney(n: number) { return "$" + fmt(n); }
@@ -204,6 +205,24 @@ export default function ContentRoiCalculatorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Content Roi Calculator"
+        services={[
+          { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
+          { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Content Performance Scorecard", href: "/resources/content-performance-scorecard" },
+          { title: "Content Pillar Planner", href: "/resources/content-pillar-planner" },
+          { title: "Content Repurposing", href: "/resources/content-repurposing" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

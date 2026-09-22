@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1659,6 +1660,25 @@ export default function CompetitiveSwotAnalyzerPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Competitive Swot Analyzer"
+        services={[
+          { title: "Digital Marketing", desc: "Competitive intelligence turned into actionable growth strategy.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Outrank competitors with data-backed SEO strategies.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Win market share with smarter paid media campaigns.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Competitive Gap", href: "/resources/competitive-gap" },
+          { title: "Competitive Swot", href: "/resources/competitive-swot" },
+          { title: "Competitor Ad Spy", href: "/resources/competitor-ad-spy" },
+          { title: "Competitor Analysis", href: "/resources/competitor-analysis" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Color utilities                                                    */
@@ -583,6 +584,25 @@ export default function ColorPaletteGeneratorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Color Palette Generator"
+        services={[
+          { title: "Branding", desc: "Strategic brand identity that differentiates you in your market.", href: "/services/branding" },
+          { title: "Website Development", desc: "Websites that bring your brand to life with exceptional UX.", href: "/services/website-development" },
+          { title: "Digital Marketing", desc: "Amplify your brand across every digital touchpoint.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Channel Recommender", href: "/resources/channel-recommender" },
+          { title: "Channel Selector", href: "/resources/channel-selector" },
+          { title: "Client Onboarding Checklist", href: "/resources/client-onboarding-checklist" },
+          { title: "Client Reporting Dashboard", href: "/resources/client-reporting-dashboard" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 type Tone = "professional" | "casual" | "humorous" | "inspirational" | "educational";
 type Platform = "linkedin" | "instagram" | "twitter" | "facebook" | "tiktok";
@@ -173,6 +174,25 @@ export default function SocialPostGeneratorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Social Post Generator"
+        services={[
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Social Media Calendar Template", href: "/resources/social-media-calendar-template" },
+          { title: "Social Media Planner", href: "/resources/social-media-planner" },
+          { title: "Social Media Roi", href: "/resources/social-media-roi" },
+          { title: "Social Proof Guide", href: "/resources/social-proof-guide" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

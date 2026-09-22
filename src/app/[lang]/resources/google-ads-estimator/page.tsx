@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -498,6 +499,25 @@ export default function GoogleAdsEstimatorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Google Ads Estimator"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Email Subject Tester", href: "/resources/email-subject-tester" },
+          { title: "Email Warmup Planner", href: "/resources/email-warmup-planner" },
+          { title: "Experiment Tracker", href: "/resources/experiment-tracker" },
+          { title: "Funnel Calculator", href: "/resources/funnel-calculator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

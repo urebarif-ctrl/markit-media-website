@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const sections = [
   {
@@ -223,6 +224,25 @@ export default function PpcAuditChecklistPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Ppc Audit Checklist"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Migration Checklist", href: "/resources/migration-checklist" },
+          { title: "Og Preview", href: "/resources/og-preview" },
+          { title: "Okr Planner", href: "/resources/okr-planner" },
+          { title: "Persona Builder", href: "/resources/persona-builder" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

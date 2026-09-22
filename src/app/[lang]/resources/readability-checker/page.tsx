@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Abbreviation patterns to ignore during sentence splitting          */
@@ -566,6 +567,25 @@ export default function ReadabilityCheckerPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Readability Checker"
+        services={[
+          { title: "Website Development", desc: "Fast, accessible websites built for conversion and growth.", href: "/services/website-development" },
+          { title: "SEO", desc: "Technical SEO baked in from day one for maximum visibility.", href: "/services/seo" },
+          { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Ppc Audit Checklist", href: "/resources/ppc-audit-checklist" },
+          { title: "Pricing Calculator", href: "/resources/pricing-calculator" },
+          { title: "Pricing Optimizer", href: "/resources/pricing-optimizer" },
+          { title: "Pricing Page Analyzer", href: "/resources/pricing-page-analyzer" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Stop words — 80+ common English words excluded from analysis       */
@@ -412,6 +413,25 @@ export default function KeywordDensityCheckerPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Keyword Density Checker"
+        services={[
+          { title: "SEO", desc: "Data-driven SEO strategies that drive organic traffic and revenue growth.", href: "/services/seo" },
+          { title: "Content Marketing", desc: "Content that ranks, engages, and converts your target audience.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Hashtag Generator", href: "/resources/hashtag-generator" },
+          { title: "Headline Analyzer", href: "/resources/headline-analyzer" },
+          { title: "Headline Split Tester", href: "/resources/headline-split-tester" },
+          { title: "Image Size Guide", href: "/resources/image-size-guide" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

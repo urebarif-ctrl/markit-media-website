@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface CheckItem {
   id: string;
@@ -198,6 +199,25 @@ export default function SEOChecklistPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Seo Checklist"
+        services={[
+          { title: "SEO", desc: "Data-driven SEO strategies that drive organic traffic and revenue growth.", href: "/services/seo" },
+          { title: "Content Marketing", desc: "Content that ranks, engages, and converts your target audience.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Seo Audit Score", href: "/resources/seo-audit-score" },
+          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
+          { title: "Seo Gap Finder", href: "/resources/seo-gap-finder" },
+          { title: "Seo Vs Ppc", href: "/resources/seo-vs-ppc" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

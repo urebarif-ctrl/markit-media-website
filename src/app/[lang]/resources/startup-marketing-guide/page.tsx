@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 export const metadata: Metadata = {
   title: "Digital Marketing for Startups — A Practical Guide",
@@ -188,6 +189,25 @@ export default function StartupMarketingGuidePage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Startup Marketing Guide"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Sprint Planner", href: "/resources/sprint-planner" },
+          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
+          { title: "Team Capacity Planner", href: "/resources/team-capacity-planner" },
+          { title: "Tech Stack Advisor", href: "/resources/tech-stack-advisor" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

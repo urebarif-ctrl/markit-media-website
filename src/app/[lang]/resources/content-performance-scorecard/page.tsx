@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1275,6 +1276,25 @@ export default function ContentPerformanceScorecardPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Content Performance Scorecard"
+        services={[
+          { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
+          { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Content Calendar", href: "/resources/content-calendar" },
+          { title: "Content Gap Analyzer", href: "/resources/content-gap-analyzer" },
+          { title: "Content Gap Finder", href: "/resources/content-gap-finder" },
+          { title: "Content Pillar Planner", href: "/resources/content-pillar-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

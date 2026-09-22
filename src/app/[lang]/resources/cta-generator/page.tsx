@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1089,6 +1090,25 @@ export default function CtaGeneratorPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Cta Generator"
+        services={[
+          { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
+          { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Content Roi Calculator", href: "/resources/content-roi-calculator" },
+          { title: "Contrast Checker", href: "/resources/contrast-checker" },
+          { title: "Conversion Checklist", href: "/resources/conversion-checklist" },
+          { title: "Conversion Funnel Simulator", href: "/resources/conversion-funnel-simulator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

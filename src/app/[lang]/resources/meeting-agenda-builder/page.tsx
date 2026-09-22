@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -980,6 +981,25 @@ export default function MeetingAgendaBuilderPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Meeting Agenda Builder"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
+          { title: "Marketing Trends 2026", href: "/resources/marketing-trends-2026" },
+          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
+          { title: "Meta Description Generator", href: "/resources/meta-description-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

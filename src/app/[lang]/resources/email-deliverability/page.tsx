@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface CheckItem {
   id: string;
@@ -431,6 +432,25 @@ export default function EmailDeliverabilityPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Email Deliverability"
+        services={[
+          { title: "Digital Marketing", desc: "Email marketing integrated with your broader growth strategy.", href: "/services/digital-marketing" },
+          { title: "Content Marketing", desc: "Compelling email content that nurtures leads into customers.", href: "/services/content-marketing" },
+          { title: "Performance Marketing", desc: "Paid campaigns that fill your email funnel with qualified leads.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Email Campaign Planner", href: "/resources/email-campaign-planner" },
+          { title: "Email Health Checker", href: "/resources/email-health-checker" },
+          { title: "Email Roi Calculator", href: "/resources/email-roi-calculator" },
+          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

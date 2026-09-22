@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface Question {
   id: string;
@@ -370,6 +371,24 @@ export default function WebsiteReadinessScorecardPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Website Readiness Scorecard"
+        services={[
+          { title: "Website Development", desc: "Fast, accessible websites built for conversion and growth.", href: "/services/website-development" },
+          { title: "SEO", desc: "Technical SEO baked in from day one for maximum visibility.", href: "/services/seo" },
+          { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Website Grader", href: "/resources/website-grader" },
+          { title: "Website Heuristic Evaluator", href: "/resources/website-heuristic-evaluator" },
+          { title: "Website Launch Checklist", href: "/resources/website-launch-checklist" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

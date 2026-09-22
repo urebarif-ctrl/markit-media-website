@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -1026,6 +1027,25 @@ export default function CustomerJourneyMapperPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Customer Journey Mapper"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Customer Feedback Survey", href: "/resources/customer-feedback-survey" },
+          { title: "Customer Journey Builder", href: "/resources/customer-journey-builder" },
+          { title: "Conversion Funnel Simulator", href: "/resources/conversion-funnel-simulator" },
+          { title: "Cro Audit", href: "/resources/cro-audit" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

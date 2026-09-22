@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
@@ -1311,6 +1312,25 @@ export default function MartechStackPlannerPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Martech Stack Planner"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
+          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
+          { title: "Marketing Trends 2026", href: "/resources/marketing-trends-2026" },
+          { title: "Meeting Agenda Builder", href: "/resources/meeting-agenda-builder" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

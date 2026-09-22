@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ---------- types ---------- */
 
@@ -740,6 +741,25 @@ export default function SchemaGeneratorPage() {
           </div>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Schema Generator"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Scope Of Work Generator", href: "/resources/scope-of-work-generator" },
+          { title: "Retention Calculator", href: "/resources/retention-calculator" },
+          { title: "Risk Assessment", href: "/resources/risk-assessment" },
+          { title: "Roi Calculator", href: "/resources/roi-calculator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

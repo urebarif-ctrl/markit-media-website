@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 interface CompetitorAd {
   id: string;
@@ -340,6 +341,25 @@ export default function CompetitorAdSpyPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Competitor Ad Spy"
+        services={[
+          { title: "Digital Marketing", desc: "Competitive intelligence turned into actionable growth strategy.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Outrank competitors with data-backed SEO strategies.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Win market share with smarter paid media campaigns.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Competitive Swot", href: "/resources/competitive-swot" },
+          { title: "Competitive Swot Analyzer", href: "/resources/competitive-swot-analyzer" },
+          { title: "Competitor Analysis", href: "/resources/competitor-analysis" },
+          { title: "Competitor Benchmarking", href: "/resources/competitor-benchmarking" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

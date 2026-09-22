@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 function fmt(n: number) {
   return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
@@ -465,6 +466,25 @@ export default function SocialMediaRoiPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Social Media Roi"
+        services={[
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Social Media Bio Generator", href: "/resources/social-media-bio-generator" },
+          { title: "Social Media Calendar Template", href: "/resources/social-media-calendar-template" },
+          { title: "Social Media Planner", href: "/resources/social-media-planner" },
+          { title: "Social Post Generator", href: "/resources/social-post-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

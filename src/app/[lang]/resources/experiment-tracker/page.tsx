@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1251,6 +1252,25 @@ export default function ExperimentTrackerPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Experiment Tracker"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Email Roi Calculator", href: "/resources/email-roi-calculator" },
+          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
+          { title: "Email Subject Ab Tester", href: "/resources/email-subject-ab-tester" },
+          { title: "Email Subject Tester", href: "/resources/email-subject-tester" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

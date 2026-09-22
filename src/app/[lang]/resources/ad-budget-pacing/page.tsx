@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Animate } from "@/components/animate";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -820,6 +821,24 @@ export default function AdBudgetPacingPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Ad Budget Pacing"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
+          { title: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+          { title: "Ad Spend Calculator", href: "/resources/ad-spend-calculator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const spamWords = [
   "free", "guaranteed", "no obligation", "winner", "congratulations", "act now",
@@ -316,6 +317,25 @@ export default function EmailSubjectTesterPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Email Subject Tester"
+        services={[
+          { title: "Digital Marketing", desc: "Email marketing integrated with your broader growth strategy.", href: "/services/digital-marketing" },
+          { title: "Content Marketing", desc: "Compelling email content that nurtures leads into customers.", href: "/services/content-marketing" },
+          { title: "Performance Marketing", desc: "Paid campaigns that fill your email funnel with qualified leads.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Email Roi Calculator", href: "/resources/email-roi-calculator" },
+          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
+          { title: "Email Subject Ab Tester", href: "/resources/email-subject-ab-tester" },
+          { title: "Email Warmup Planner", href: "/resources/email-warmup-planner" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

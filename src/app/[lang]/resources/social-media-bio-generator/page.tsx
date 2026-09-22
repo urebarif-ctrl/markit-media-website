@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { useState } from "react";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const PLATFORMS = [
   { id: "linkedin", name: "LinkedIn", maxLength: 2000, label: "Professional headline + summary" },
@@ -461,13 +462,25 @@ export default function SocialMediaBioGeneratorPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
-        <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
-        <a href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</a>
-      </section>
+    
+      <ToolCTA
+        toolName="Social Media Bio Generator"
+        services={[
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
+          { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
+          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
+          { title: "Competitor Pricing Tracker", href: "/resources/competitor-pricing-tracker" },
+          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </main>
   );
 }

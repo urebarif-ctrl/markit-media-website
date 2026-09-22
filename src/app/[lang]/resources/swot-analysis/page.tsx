@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -927,6 +928,25 @@ export default function SwotAnalysisPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Swot Analysis"
+        services={[
+          { title: "Digital Marketing", desc: "Competitive intelligence turned into actionable growth strategy.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Outrank competitors with data-backed SEO strategies.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Win market share with smarter paid media campaigns.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Social Proof Guide", href: "/resources/social-proof-guide" },
+          { title: "Speed Test", href: "/resources/speed-test" },
+          { title: "Sprint Planner", href: "/resources/sprint-planner" },
+          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

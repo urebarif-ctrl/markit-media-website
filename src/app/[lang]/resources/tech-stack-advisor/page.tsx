@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1887,6 +1888,25 @@ export default function TechStackAdvisorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Tech Stack Advisor"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Startup Marketing Guide", href: "/resources/startup-marketing-guide" },
+          { title: "Team Capacity Planner", href: "/resources/team-capacity-planner" },
+          { title: "Utm Builder", href: "/resources/utm-builder" },
+          { title: "Vendor Evaluation", href: "/resources/vendor-evaluation" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

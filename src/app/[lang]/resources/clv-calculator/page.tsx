@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 function fmt(n: number) {
   return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
@@ -540,6 +541,25 @@ export default function ClvCalculatorPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Clv Calculator"
+        services={[
+          { title: "Digital Marketing", desc: "Data-driven strategy with transparent reporting and insights.", href: "/services/digital-marketing" },
+          { title: "Performance Marketing", desc: "Campaign optimization based on real performance data.", href: "/services/performance-marketing" },
+          { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Client Reporting Dashboard", href: "/resources/client-reporting-dashboard" },
+          { title: "Competitive Intel Dashboard", href: "/resources/competitive-intel-dashboard" },
+          { title: "Channel Mix Modeller", href: "/resources/channel-mix-modeller" },
+          { title: "Channel Recommender", href: "/resources/channel-recommender" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

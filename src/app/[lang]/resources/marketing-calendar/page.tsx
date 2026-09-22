@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const industries = [
   "E-Commerce / Retail", "SaaS / Technology", "Healthcare", "Real Estate",
@@ -227,6 +228,25 @@ export default function MarketingCalendarPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Marketing Calendar"
+        services={[
+          { title: "Digital Marketing", desc: "Full-service digital marketing strategy for measurable business growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Organic search strategies that deliver compounding traffic over time.", href: "/services/seo" },
+          { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Lead Scoring Calculator", href: "/resources/lead-scoring-calculator" },
+          { title: "Marketing Expense Tracker", href: "/resources/marketing-expense-tracker" },
+          { title: "Launch Countdown", href: "/resources/launch-countdown" },
+          { title: "Lead Magnet Generator", href: "/resources/lead-magnet-generator" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

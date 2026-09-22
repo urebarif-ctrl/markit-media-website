@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -1376,6 +1377,25 @@ export default function ContentPillarPlannerPage() {
           </Animate>
         </div>
       </section>
+    
+      <ToolCTA
+        toolName="Content Pillar Planner"
+        services={[
+          { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
+          { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+        ]}
+        relatedTools={[
+          { title: "Content Gap Analyzer", href: "/resources/content-gap-analyzer" },
+          { title: "Content Gap Finder", href: "/resources/content-gap-finder" },
+          { title: "Content Performance Scorecard", href: "/resources/content-performance-scorecard" },
+          { title: "Content Repurposing", href: "/resources/content-repurposing" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
+      />
     </article>
   );
 }

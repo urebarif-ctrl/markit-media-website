@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
+import { ToolCTA } from "@/components/tool-cta";
 
 const platformOptions = ["Google Ads", "Meta Ads", "LinkedIn Ads", "TikTok Ads", "Email", "Organic Social", "Display / Programmatic"];
 const objectiveOptions = ["Awareness", "Traffic", "Leads", "Conversions", "Retargeting", "Engagement", "Brand"];
@@ -204,6 +205,25 @@ export default function CampaignNamingConventionPage() {
           operatingSystem: "Any",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
+      />
+    
+      <ToolCTA
+        toolName="Campaign Naming Convention"
+        services={[
+          { title: "Performance Marketing", desc: "Google Ads, Meta Ads, and PPC campaigns that maximize ROAS.", href: "/services/performance-marketing" },
+          { title: "Digital Marketing", desc: "Integrated strategy across all channels for measurable growth.", href: "/services/digital-marketing" },
+          { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
+        ]}
+        relatedTools={[
+          { title: "Campaign Brief Builder", href: "/resources/campaign-brief-builder" },
+          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
+          { title: "Campaign Naming Generator", href: "/resources/campaign-naming-generator" },
+          { title: "Campaign Tracker", href: "/resources/campaign-tracker" },
+        ]}
+        relatedBlog={[
+          { title: "Digital Marketing Strategy Guide", href: "/blog" },
+          { title: "How to Measure Marketing ROI", href: "/blog" },
+        ]}
       />
     </article>
   );

@@ -76,9 +76,12 @@ export function Stagger({ children, stagger = 100, animation = "fade-up", classN
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.querySelectorAll(".stagger-child").forEach((child, i) => {
+          const items = el.querySelectorAll(".stagger-child");
+          const count = items.length;
+          const effectiveStagger = count * stagger > 1500 ? Math.floor(1500 / count) : stagger;
+          items.forEach((child, i) => {
             const htmlChild = child as HTMLElement;
-            htmlChild.style.setProperty("--anim-delay", `${i * stagger}ms`);
+            htmlChild.style.setProperty("--anim-delay", `${i * effectiveStagger}ms`);
             htmlChild.classList.add("animate-visible");
           });
           observer.unobserve(el);
