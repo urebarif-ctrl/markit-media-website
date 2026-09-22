@@ -50,6 +50,7 @@ export default function BrandingPage() {
       portfolio={[
         { client: "Logo Folio", desc: "7 professional logo animations across energy, tech, F&B, and fashion brands.", href: "/work/logo-folio" },
         { client: "HUBCO", desc: "Logo animation and brand commercial for a leading energy company.", href: "/work/hubco" },
+        { client: "FoodFolio", desc: "Brand design and social media for food and beverage clients.", href: "/work/foodfolio" },
         { client: "Minhaz Couture", desc: "Fashion brand identity and digital presence.", href: "/work/minhaz-couture" },
       ]}
       industries={[

@@ -50,6 +50,8 @@ export default function SocialMediaPage() {
       portfolio={[
         { client: "Vuse", desc: "Ongoing social media content for a global consumer brand.", href: "/work/vuse" },
         { client: "Minhaz Couture", desc: "Fashion social media and web content production.", href: "/work/minhaz-couture" },
+        { client: "Fashion Feed", desc: "Social media designs for fashion and lifestyle brands.", href: "/work/fashion-feed" },
+        { client: "Social Media Designs", desc: "Creative portfolio across technology and consumer brands.", href: "/work/social-media-designs" },
         { client: "Elite", desc: "Website showcase and social media reels for brand channels.", href: "/work/elite" },
         { client: "Pur Health", desc: "Healthcare social media and digital presence.", href: "/work/pur-health" },
       ]}
