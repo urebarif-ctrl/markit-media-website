@@ -40,7 +40,7 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: parentTitle, href: parentHref }, { label: title }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-16">
+      <section className="px-6 lg:px-12 pt-24 pb-16" aria-label={title}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <Animate animation="fade-up">
@@ -112,7 +112,7 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
       </section>
 
       {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center">
+      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">

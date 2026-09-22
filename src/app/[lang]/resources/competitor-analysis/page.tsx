@@ -81,9 +81,9 @@ export default function CompetitorAnalysisPage() {
     <article>
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><a href="/" className="hover:text-black transition-colors">Home</a></li>
+          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><a href="/resources" className="hover:text-black transition-colors">Resources</a></li>
+          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Competitor Analysis Worksheet</li>
         </ol>

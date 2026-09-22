@@ -1196,9 +1196,9 @@ export default function AgencyPricingCalculatorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <a href="/resources/pricing-calculator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Pricing Calculator</a>
-                <a href="/resources/budget-calculator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Budget Calculator</a>
-                <a href="/resources/marketing-proposal-generator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Proposal Generator</a>
+                <Link href="/resources/pricing-calculator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Pricing Calculator</Link>
+                <Link href="/resources/budget-calculator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Budget Calculator</Link>
+                <Link href="/resources/marketing-proposal-generator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Proposal Generator</Link>
           </div>
         </div>
       </section>

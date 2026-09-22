@@ -806,9 +806,9 @@ export default function TeamCapacityPlannerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <a href="/resources/meeting-agenda-builder" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Meeting Agenda Builder</a>
-                <a href="/resources/marketing-timeline-planner" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Timeline Planner</a>
-                <a href="/resources/scope-of-work-generator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Scope of Work Generator</a>
+                <Link href="/resources/meeting-agenda-builder" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Meeting Agenda Builder</Link>
+                <Link href="/resources/marketing-timeline-planner" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Timeline Planner</Link>
+                <Link href="/resources/scope-of-work-generator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Scope of Work Generator</Link>
           </div>
         </div>
       </section>
