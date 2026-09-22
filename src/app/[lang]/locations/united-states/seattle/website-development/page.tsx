@@ -103,6 +103,49 @@ export default function SeattleWebDevelopmentPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Which platform should a Seattle business choose — WordPress, Shopify, or Next.js?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It depends on your business needs. WordPress is ideal for content-heavy marketing sites and lead generation. Shopify is the best fit for e-commerce and direct-to-consumer brands. Next.js is suited for custom web applications, complex integrations, and companies that need server-side rendering and high performance. We recommend the platform that matches your goals and growth trajectory, not a one-size-fits-all solution.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does a website build typically take for Seattle businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most projects take between 6 and 12 weeks from kickoff to launch, depending on the platform, the number of page templates, and the complexity of integrations. Custom Next.js builds or sites with extensive CRM and third-party integrations may take longer. We provide a detailed timeline during the discovery phase so expectations are clear before development begins.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you build websites that integrate with CRM and marketing tools?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We regularly integrate with CRM platforms, marketing automation tools, analytics suites, and other third-party systems that Seattle businesses rely on. Whether you need form submissions flowing into your CRM, event tracking for ad platforms, or API connections to internal tools, we build those integrations into the site architecture from the start.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Will our Seattle team be able to manage the website after launch?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Absolutely. Every site we build includes CMS training and documentation so your team can handle day-to-day content updates, blog posts, and page edits independently. We build on open platforms with clean code — you own your site and your codebase, with no vendor lock-in or ongoing developer dependency required to keep it running.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -319,6 +362,31 @@ export default function SeattleWebDevelopmentPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Which platform should a Seattle business choose &mdash; WordPress, Shopify, or Next.js?</h3>
+              <p className="text-base text-neutral-600">It depends on your business needs. WordPress is ideal for content-heavy marketing sites and lead generation. Shopify is the best fit for e-commerce and direct-to-consumer brands. Next.js is suited for custom web applications, complex integrations, and companies that need server-side rendering and high performance. We recommend the platform that matches your goals and growth trajectory, not a one-size-fits-all solution.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does a website build typically take for Seattle businesses?</h3>
+              <p className="text-base text-neutral-600">Most projects take between 6 and 12 weeks from kickoff to launch, depending on the platform, the number of page templates, and the complexity of integrations. Custom Next.js builds or sites with extensive CRM and third-party integrations may take longer. We provide a detailed timeline during the discovery phase so expectations are clear before development begins.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you build websites that integrate with CRM and marketing tools?</h3>
+              <p className="text-base text-neutral-600">Yes. We regularly integrate with CRM platforms, marketing automation tools, analytics suites, and other third-party systems that Seattle businesses rely on. Whether you need form submissions flowing into your CRM, event tracking for ad platforms, or API connections to internal tools, we build those integrations into the site architecture from the start.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Will our Seattle team be able to manage the website after launch?</h3>
+              <p className="text-base text-neutral-600">Absolutely. Every site we build includes CMS training and documentation so your team can handle day-to-day content updates, blog posts, and page edits independently. We build on open platforms with clean code &mdash; you own your site and your codebase, with no vendor lock-in or ongoing developer dependency required to keep it running.</p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -103,6 +103,49 @@ export default function PhoenixSeoServicesPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does SEO take to produce results in the Phoenix market?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most Phoenix businesses begin to see meaningful improvements in organic rankings and traffic within three to six months of sustained effort. Competitive industries like real estate, healthcare, and solar energy may take longer due to the number of established competitors already investing in SEO across the Valley. We set realistic timelines during the strategy phase and report progress monthly so you can track momentum.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Why is local SEO important for Phoenix businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Phoenix is a sprawling metro made up of distinct cities and submarkets — Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, and more. Customers search by specific city and neighborhood, not just the Phoenix metro label. Local SEO ensures your business appears in Google's local pack and map results for the specific communities you serve, which is where a significant share of high-intent local searches convert.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How does Phoenix's bilingual population affect SEO strategy?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Over 30 percent of the Phoenix metro population is Hispanic or Latino, and a meaningful volume of local searches happen in Spanish. For many businesses, Spanish-language keyword targeting and properly structured bilingual content can open up organic traffic that English-only competitors are missing entirely. We analyze your audience data to determine where bilingual SEO will deliver the strongest returns.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What industries do you serve with SEO in Phoenix?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We work with Phoenix businesses across real estate, healthcare, solar energy, home services, financial services, professional services, and the growing semiconductor and tech sectors driven by major investments like TSMC's Arizona facilities. Each industry has its own competitive landscape and keyword economics in the Valley, and we build SEO strategies tailored to those specific conditions.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -328,6 +371,31 @@ export default function PhoenixSeoServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does SEO take to produce results in the Phoenix market?</h3>
+              <p className="text-base text-neutral-600">Most Phoenix businesses begin to see meaningful improvements in organic rankings and traffic within three to six months of sustained effort. Competitive industries like real estate, healthcare, and solar energy may take longer due to the number of established competitors already investing in SEO across the Valley. We set realistic timelines during the strategy phase and report progress monthly so you can track momentum.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why is local SEO important for Phoenix businesses?</h3>
+              <p className="text-base text-neutral-600">Phoenix is a sprawling metro made up of distinct cities and submarkets — Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, and more. Customers search by specific city and neighborhood, not just the Phoenix metro label. Local SEO ensures your business appears in Google&apos;s local pack and map results for the specific communities you serve, which is where a significant share of high-intent local searches convert.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How does Phoenix&apos;s bilingual population affect SEO strategy?</h3>
+              <p className="text-base text-neutral-600">Over 30 percent of the Phoenix metro population is Hispanic or Latino, and a meaningful volume of local searches happen in Spanish. For many businesses, Spanish-language keyword targeting and properly structured bilingual content can open up organic traffic that English-only competitors are missing entirely. We analyze your audience data to determine where bilingual SEO will deliver the strongest returns.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What industries do you serve with SEO in Phoenix?</h3>
+              <p className="text-base text-neutral-600">We work with Phoenix businesses across real estate, healthcare, solar energy, home services, financial services, professional services, and the growing semiconductor and tech sectors driven by major investments like TSMC&apos;s Arizona facilities. Each industry has its own competitive landscape and keyword economics in the Valley, and we build SEO strategies tailored to those specific conditions.</p>
+            </div>
+          </div>
         </div>
       </section>
 

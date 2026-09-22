@@ -103,6 +103,49 @@ export default function SeattleSeoServicesPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does SEO take to show results in a competitive market like Seattle?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "In Seattle's competitive landscape, most businesses begin seeing meaningful improvements in organic traffic and keyword rankings within three to six months. The timeline depends on your starting position, the competitiveness of your target keywords, and the strength of your existing domain authority. Technical fixes and on-page optimization can produce quicker wins, while content-driven authority building compounds over a longer horizon.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you offer local SEO for Seattle businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Our local SEO services include Google Business Profile optimization, local citation building, geo-targeted content strategy, and review management. We optimize for visibility across the Seattle metro — including downtown, Capitol Hill, South Lake Union, Bellevue, Redmond, and the broader Eastside — so your business appears when local customers search for your services.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How is SEO for Seattle tech companies different from other industries?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Seattle tech companies often run on modern web stacks — headless CMS platforms, single-page applications, and complex JavaScript frameworks — that create unique crawlability and indexing challenges. Their audiences are also highly technical and expect authoritative, in-depth content. SEO for this segment requires both deep technical expertise and the ability to produce content that meets the knowledge standards of engineers, developers, and technical decision-makers.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can SEO and PPC work together for Seattle businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes, and they should. PPC captures immediate demand while SEO builds long-term organic visibility. Running both together allows Seattle businesses to dominate search results for high-value keywords, use PPC data to inform SEO content priorities, and reduce overall cost per acquisition as organic rankings mature and paid spend can be reallocated to new opportunities.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +361,31 @@ export default function SeattleSeoServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does SEO take to show results in a competitive market like Seattle?</h3>
+              <p className="text-base text-neutral-600">In Seattle&apos;s competitive landscape, most businesses begin seeing meaningful improvements in organic traffic and keyword rankings within three to six months. The timeline depends on your starting position, the competitiveness of your target keywords, and the strength of your existing domain authority. Technical fixes and on-page optimization can produce quicker wins, while content-driven authority building compounds over a longer horizon.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you offer local SEO for Seattle businesses?</h3>
+              <p className="text-base text-neutral-600">Yes. Our local SEO services include Google Business Profile optimization, local citation building, geo-targeted content strategy, and review management. We optimize for visibility across the Seattle metro &mdash; including downtown, Capitol Hill, South Lake Union, Bellevue, Redmond, and the broader Eastside &mdash; so your business appears when local customers search for your services.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How is SEO for Seattle tech companies different from other industries?</h3>
+              <p className="text-base text-neutral-600">Seattle tech companies often run on modern web stacks &mdash; headless CMS platforms, single-page applications, and complex JavaScript frameworks &mdash; that create unique crawlability and indexing challenges. Their audiences are also highly technical and expect authoritative, in-depth content. SEO for this segment requires both deep technical expertise and the ability to produce content that meets the knowledge standards of engineers, developers, and technical decision-makers.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can SEO and PPC work together for Seattle businesses?</h3>
+              <p className="text-base text-neutral-600">Yes, and they should. PPC captures immediate demand while SEO builds long-term organic visibility. Running both together allows Seattle businesses to dominate search results for high-value keywords, use PPC data to inform SEO content priorities, and reduce overall cost per acquisition as organic rankings mature and paid spend can be reallocated to new opportunities.</p>
+            </div>
+          </div>
         </div>
       </section>
 

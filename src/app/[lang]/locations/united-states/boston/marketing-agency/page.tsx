@@ -103,6 +103,49 @@ export default function BostonMarketingAgencyPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What industries does your Boston marketing agency specialize in?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We work primarily with biotech and life sciences companies along the Kendall Square corridor, healthcare organizations, fintech firms, enterprise technology companies on Route 128, higher education institutions, and professional services providers across Greater Boston. Each industry has distinct buyer behaviors, sales cycles, and regulatory considerations that shape our marketing approach.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How is marketing different for B2B companies in Boston?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Boston's B2B market is characterized by long sales cycles, technically sophisticated buyers, and multiple decision-makers involved in purchasing. Marketing strategies here need to account for high advertising costs in competitive verticals like biotech and healthcare, content expectations from audiences connected to world-class research institutions, and the account-based approach required to reach buying committees at enterprise organizations.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to see results from a marketing program in Boston?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Paid media campaigns typically generate measurable lead activity within the first 30 to 60 days. SEO and content marketing require a longer runway — generally three to six months before organic traffic gains become consistent. For Boston's B2B sectors where sales cycles run several months, we track leading indicators like qualified lead volume and pipeline contribution alongside lagging indicators like closed revenue.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you work with startups in the Kendall Square and Route 128 corridors?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We work with both early-stage startups building their first marketing infrastructure and established companies scaling existing programs. For startups in Kendall Square, the Seaport Innovation District, and along Route 128, we typically start with foundational positioning, a conversion-ready website, and targeted paid campaigns to generate early pipeline while longer-term content and SEO programs ramp up.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -317,6 +360,31 @@ export default function BostonMarketingAgencyPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What industries does your Boston marketing agency specialize in?</h3>
+              <p className="text-base text-neutral-600">We work primarily with biotech and life sciences companies along the Kendall Square corridor, healthcare organizations, fintech firms, enterprise technology companies on Route 128, higher education institutions, and professional services providers across Greater Boston. Each industry has distinct buyer behaviors, sales cycles, and regulatory considerations that shape our marketing approach.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How is marketing different for B2B companies in Boston?</h3>
+              <p className="text-base text-neutral-600">Boston&apos;s B2B market is characterized by long sales cycles, technically sophisticated buyers, and multiple decision-makers involved in purchasing. Marketing strategies here need to account for high advertising costs in competitive verticals like biotech and healthcare, content expectations from audiences connected to world-class research institutions, and the account-based approach required to reach buying committees at enterprise organizations.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does it take to see results from a marketing program in Boston?</h3>
+              <p className="text-base text-neutral-600">Paid media campaigns typically generate measurable lead activity within the first 30 to 60 days. SEO and content marketing require a longer runway — generally three to six months before organic traffic gains become consistent. For Boston&apos;s B2B sectors where sales cycles run several months, we track leading indicators like qualified lead volume and pipeline contribution alongside lagging indicators like closed revenue.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you work with startups in the Kendall Square and Route 128 corridors?</h3>
+              <p className="text-base text-neutral-600">Yes. We work with both early-stage startups building their first marketing infrastructure and established companies scaling existing programs. For startups in Kendall Square, the Seaport Innovation District, and along Route 128, we typically start with foundational positioning, a conversion-ready website, and targeted paid campaigns to generate early pipeline while longer-term content and SEO programs ramp up.</p>
+            </div>
+          </div>
         </div>
       </section>
 

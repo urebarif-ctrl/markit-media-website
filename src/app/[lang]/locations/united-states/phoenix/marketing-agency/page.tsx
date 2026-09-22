@@ -103,6 +103,49 @@ export default function PhoenixMarketingAgencyPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What does a full-service marketing agency do for Phoenix businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "A full-service marketing agency handles strategy, paid media, SEO, website development, branding, and analytics as a single integrated team. For Phoenix businesses, this means campaigns built around local market realities — seasonal demand from snowbird traffic, bilingual audience targeting, and competition from the rapid influx of new businesses entering the Valley each year.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to see results from a marketing agency in Phoenix?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Paid media campaigns typically generate leads within the first few weeks of launch. SEO and content marketing take longer — usually three to six months before organic rankings and traffic show meaningful improvement. The timeline depends on your industry, competition level, and starting position in the Phoenix market.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you work with businesses outside of central Phoenix?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We serve businesses across the entire Phoenix metro, including Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, and Peoria. Many of our campaigns are structured with geo-targeting at the submarket level so your marketing reaches the specific communities where your customers are located across the Valley.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Why should a Phoenix business hire a marketing agency instead of building an in-house team?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "An agency gives you access to specialists across paid media, SEO, web development, and branding without the cost and time of hiring multiple full-time roles. In a fast-moving market like Phoenix — where real estate, healthcare, solar, and semiconductor industries are all growing simultaneously — an integrated team that can execute across channels from day one is often more efficient than building internally.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -320,6 +363,31 @@ export default function PhoenixMarketingAgencyPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What does a full-service marketing agency do for Phoenix businesses?</h3>
+              <p className="text-base text-neutral-600">A full-service marketing agency handles strategy, paid media, SEO, website development, branding, and analytics as a single integrated team. For Phoenix businesses, this means campaigns built around local market realities — seasonal demand from snowbird traffic, bilingual audience targeting, and competition from the rapid influx of new businesses entering the Valley each year.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does it take to see results from a marketing agency in Phoenix?</h3>
+              <p className="text-base text-neutral-600">Paid media campaigns typically generate leads within the first few weeks of launch. SEO and content marketing take longer — usually three to six months before organic rankings and traffic show meaningful improvement. The timeline depends on your industry, competition level, and starting position in the Phoenix market.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you work with businesses outside of central Phoenix?</h3>
+              <p className="text-base text-neutral-600">Yes. We serve businesses across the entire Phoenix metro, including Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, and Peoria. Many of our campaigns are structured with geo-targeting at the submarket level so your marketing reaches the specific communities where your customers are located across the Valley.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why should a Phoenix business hire a marketing agency instead of building an in-house team?</h3>
+              <p className="text-base text-neutral-600">An agency gives you access to specialists across paid media, SEO, web development, and branding without the cost and time of hiring multiple full-time roles. In a fast-moving market like Phoenix — where real estate, healthcare, solar, and semiconductor industries are all growing simultaneously — an integrated team that can execute across channels from day one is often more efficient than building internally.</p>
+            </div>
+          </div>
         </div>
       </section>
 

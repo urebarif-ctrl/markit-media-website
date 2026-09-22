@@ -103,6 +103,49 @@ export default function PhoenixPpcAdsPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How much should a Phoenix business spend on PPC advertising?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "PPC budgets in Phoenix vary by industry and competition level. Real estate and healthcare tend to have higher cost-per-click rates due to intense competition across the Valley, while home services and local retail can often start with smaller budgets. We recommend starting with a budget that allows enough data collection to optimize effectively, then scaling based on performance and return on ad spend.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do seasonal trends in Phoenix affect PPC campaign performance?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Phoenix has distinct seasonal patterns that directly impact paid advertising. Winter brings snowbird arrivals that spike demand in real estate, healthcare, and hospitality. Summer heat slows foot traffic in some sectors but increases demand for home services, HVAC, and indoor activities. We adjust bid strategies, budgets, and targeting throughout the year to match these demand cycles instead of running flat budgets that waste spend during low-intent periods.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Which PPC platforms work best for Phoenix businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Google Ads is the primary platform for most Phoenix businesses because it captures high-intent search traffic. Meta Ads (Facebook and Instagram) are effective for brand awareness, retargeting, and reaching Phoenix's large consumer audience. LinkedIn Ads work well for B2B companies targeting decision-makers in the Valley's growing semiconductor, tech, and financial services sectors. The right platform mix depends on your industry and where your customers spend their attention.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How quickly can PPC ads generate leads in the Phoenix market?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "PPC campaigns can start generating leads within days of launch, which is one of the key advantages over organic channels. However, the first two to four weeks are typically an optimization period where we gather performance data, refine targeting, and improve ad creative. Most Phoenix businesses see their campaigns reach steady-state performance within 30 to 60 days of active management.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -319,6 +362,31 @@ export default function PhoenixPpcAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How much should a Phoenix business spend on PPC advertising?</h3>
+              <p className="text-base text-neutral-600">PPC budgets in Phoenix vary by industry and competition level. Real estate and healthcare tend to have higher cost-per-click rates due to intense competition across the Valley, while home services and local retail can often start with smaller budgets. We recommend starting with a budget that allows enough data collection to optimize effectively, then scaling based on performance and return on ad spend.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do seasonal trends in Phoenix affect PPC campaign performance?</h3>
+              <p className="text-base text-neutral-600">Phoenix has distinct seasonal patterns that directly impact paid advertising. Winter brings snowbird arrivals that spike demand in real estate, healthcare, and hospitality. Summer heat slows foot traffic in some sectors but increases demand for home services, HVAC, and indoor activities. We adjust bid strategies, budgets, and targeting throughout the year to match these demand cycles instead of running flat budgets that waste spend during low-intent periods.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Which PPC platforms work best for Phoenix businesses?</h3>
+              <p className="text-base text-neutral-600">Google Ads is the primary platform for most Phoenix businesses because it captures high-intent search traffic. Meta Ads (Facebook and Instagram) are effective for brand awareness, retargeting, and reaching Phoenix&apos;s large consumer audience. LinkedIn Ads work well for B2B companies targeting decision-makers in the Valley&apos;s growing semiconductor, tech, and financial services sectors. The right platform mix depends on your industry and where your customers spend their attention.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How quickly can PPC ads generate leads in the Phoenix market?</h3>
+              <p className="text-base text-neutral-600">PPC campaigns can start generating leads within days of launch, which is one of the key advantages over organic channels. However, the first two to four weeks are typically an optimization period where we gather performance data, refine targeting, and improve ad creative. Most Phoenix businesses see their campaigns reach steady-state performance within 30 to 60 days of active management.</p>
+            </div>
+          </div>
         </div>
       </section>
 

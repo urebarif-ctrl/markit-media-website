@@ -111,6 +111,49 @@ export default function DenverMarketingAgencyPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What industries does Markit Media serve in Denver?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We work with businesses across Denver’s core sectors, including technology companies along the Front Range corridor, outdoor recreation and lifestyle brands, aerospace and defence contractors, legal cannabis operators, real estate developers, and craft food and beverage companies. Each industry has distinct marketing requirements, and we tailor strategy, messaging, and channel selection accordingly.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do I need to hire a Denver-based agency for marketing?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Not necessarily. What matters is whether your agency understands your local market. Markit Media operates as a remote team with deep familiarity with Denver’s competitive landscape — its migration-driven growth, the sustainability values that shape consumer behaviour, and the practical expectations of Front Range businesses. A remote model also means lower overhead costs passed directly to you.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to see results from a full-service marketing engagement in Denver?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Timelines depend on the channels involved. Paid media campaigns can generate leads within the first few weeks. SEO and content marketing typically take three to six months to produce meaningful organic traffic growth. Brand-building initiatives compound over longer periods. We set clear expectations during the strategy phase so you know what to expect and when.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What makes marketing in Denver different from other U.S. markets?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Denver’s market is shaped by rapid population growth from coastal migration, a strong sustainability and outdoor culture, a competitive tech corridor, and regulated industries like cannabis that require specialised advertising approaches. Consumers and businesses along the Front Range tend to value authenticity, quality, and directness — which influences everything from ad copy tone to content strategy.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -326,6 +369,31 @@ export default function DenverMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What industries does Markit Media serve in Denver?</h3>
+              <p className="text-base text-neutral-600">We work with businesses across Denver&apos;s core sectors, including technology companies along the Front Range corridor, outdoor recreation and lifestyle brands, aerospace and defence contractors, legal cannabis operators, real estate developers, and craft food and beverage companies. Each industry has distinct marketing requirements, and we tailor strategy, messaging, and channel selection accordingly.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do I need to hire a Denver-based agency for marketing?</h3>
+              <p className="text-base text-neutral-600">Not necessarily. What matters is whether your agency understands your local market. Markit Media operates as a remote team with deep familiarity with Denver&apos;s competitive landscape — its migration-driven growth, the sustainability values that shape consumer behaviour, and the practical expectations of Front Range businesses. A remote model also means lower overhead costs passed directly to you.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does it take to see results from a full-service marketing engagement in Denver?</h3>
+              <p className="text-base text-neutral-600">Timelines depend on the channels involved. Paid media campaigns can generate leads within the first few weeks. SEO and content marketing typically take three to six months to produce meaningful organic traffic growth. Brand-building initiatives compound over longer periods. We set clear expectations during the strategy phase so you know what to expect and when.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What makes marketing in Denver different from other U.S. markets?</h3>
+              <p className="text-base text-neutral-600">Denver&apos;s market is shaped by rapid population growth from coastal migration, a strong sustainability and outdoor culture, a competitive tech corridor, and regulated industries like cannabis that require specialised advertising approaches. Consumers and businesses along the Front Range tend to value authenticity, quality, and directness — which influences everything from ad copy tone to content strategy.</p>
+            </div>
+          </div>
         </div>
       </section>
 

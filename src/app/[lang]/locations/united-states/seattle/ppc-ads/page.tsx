@@ -103,6 +103,49 @@ export default function SeattlePpcAdsPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Why is PPC advertising so expensive in Seattle?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Seattle's ad market is driven up by competition from major tech companies, well-funded SaaS startups, and large enterprise vendors — all bidding on the same high-intent keywords. Industries like cloud computing, aerospace, and B2B software create especially high cost-per-click environments. Winning here requires precise targeting, strong ad creative, and disciplined bid management to maintain profitability.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Which PPC platforms work best for Seattle B2B companies?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "For most Seattle B2B companies, Google Ads captures high-intent search demand, LinkedIn reaches decision-makers at tech and enterprise organizations, and Meta is effective for retargeting and awareness campaigns. The right mix depends on your sales cycle, average deal size, and whether you are targeting technical buyers, executives, or both.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How quickly can PPC campaigns generate leads in Seattle?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Paid media can generate qualified leads within the first few weeks of launch. However, reaching optimal cost efficiency in Seattle's competitive market typically takes 60 to 90 days of active optimization — testing ad copy, refining audience targeting, and improving landing page conversion rates based on real performance data.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can you manage PPC for Seattle companies targeting national audiences?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Many of our Seattle clients sell nationally or globally. We build campaigns that serve both local demand in the Puget Sound region and broader geographic targets, with separate budgets and bidding strategies for each so local and national efforts do not compete against each other.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -317,6 +360,31 @@ export default function SeattlePpcAdsPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why is PPC advertising so expensive in Seattle?</h3>
+              <p className="text-base text-neutral-600">Seattle&apos;s ad market is driven up by competition from major tech companies, well-funded SaaS startups, and large enterprise vendors &mdash; all bidding on the same high-intent keywords. Industries like cloud computing, aerospace, and B2B software create especially high cost-per-click environments. Winning here requires precise targeting, strong ad creative, and disciplined bid management to maintain profitability.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Which PPC platforms work best for Seattle B2B companies?</h3>
+              <p className="text-base text-neutral-600">For most Seattle B2B companies, Google Ads captures high-intent search demand, LinkedIn reaches decision-makers at tech and enterprise organizations, and Meta is effective for retargeting and awareness campaigns. The right mix depends on your sales cycle, average deal size, and whether you are targeting technical buyers, executives, or both.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How quickly can PPC campaigns generate leads in Seattle?</h3>
+              <p className="text-base text-neutral-600">Paid media can generate qualified leads within the first few weeks of launch. However, reaching optimal cost efficiency in Seattle&apos;s competitive market typically takes 60 to 90 days of active optimization &mdash; testing ad copy, refining audience targeting, and improving landing page conversion rates based on real performance data.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can you manage PPC for Seattle companies targeting national audiences?</h3>
+              <p className="text-base text-neutral-600">Yes. Many of our Seattle clients sell nationally or globally. We build campaigns that serve both local demand in the Puget Sound region and broader geographic targets, with separate budgets and bidding strategies for each so local and national efforts do not compete against each other.</p>
+            </div>
+          </div>
         </div>
       </section>
 

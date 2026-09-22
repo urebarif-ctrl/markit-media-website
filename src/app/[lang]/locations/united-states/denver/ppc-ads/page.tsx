@@ -111,6 +111,49 @@ export default function DenverPpcAdsPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How much should a Denver business budget for PPC advertising?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Budget depends on your industry, competition level, and growth targets. Denver’s growing market means CPCs are rising in competitive sectors like real estate, legal cannabis, and tech. We typically recommend starting with a budget that allows enough data collection to optimise effectively, then scaling into the campaigns that deliver the best return on ad spend. We’ll provide specific recommendations after reviewing your market and goals.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can you run PPC campaigns for cannabis businesses in Denver?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Cannabis advertising faces significant platform restrictions. Google and Meta prohibit direct promotion of cannabis products. However, there are compliant strategies available — including educational content promotion, ancillary product advertising, and programmatic display through cannabis-friendly ad networks. We help Denver cannabis operators navigate these restrictions while still generating measurable traffic and leads.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Which PPC platform works best for B2B companies in Denver?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "For B2B companies along the Front Range tech corridor, Google Ads captures high-intent search traffic from prospects actively looking for solutions. LinkedIn Ads is effective for account-based targeting by job title, company size, and industry — particularly useful for reaching decision-makers in Denver’s aerospace, tech, and professional services sectors. We often recommend a combination of both, with budget weighted toward whichever platform delivers the lower cost per qualified lead.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How quickly can PPC campaigns generate leads in the Denver market?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "PPC can generate leads within the first week of launch if targeting and landing pages are properly set up. The initial two to four weeks are a learning period where we gather data, refine targeting, and optimise bids. Most campaigns reach stable, optimised performance within 60 to 90 days. We provide transparent reporting throughout so you see exactly how performance is trending.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -323,6 +366,31 @@ export default function DenverPpcAdsPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How much should a Denver business budget for PPC advertising?</h3>
+              <p className="text-base text-neutral-600">Budget depends on your industry, competition level, and growth targets. Denver&apos;s growing market means CPCs are rising in competitive sectors like real estate, legal cannabis, and tech. We typically recommend starting with a budget that allows enough data collection to optimise effectively, then scaling into the campaigns that deliver the best return on ad spend. We&apos;ll provide specific recommendations after reviewing your market and goals.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can you run PPC campaigns for cannabis businesses in Denver?</h3>
+              <p className="text-base text-neutral-600">Cannabis advertising faces significant platform restrictions. Google and Meta prohibit direct promotion of cannabis products. However, there are compliant strategies available — including educational content promotion, ancillary product advertising, and programmatic display through cannabis-friendly ad networks. We help Denver cannabis operators navigate these restrictions while still generating measurable traffic and leads.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Which PPC platform works best for B2B companies in Denver?</h3>
+              <p className="text-base text-neutral-600">For B2B companies along the Front Range tech corridor, Google Ads captures high-intent search traffic from prospects actively looking for solutions. LinkedIn Ads is effective for account-based targeting by job title, company size, and industry — particularly useful for reaching decision-makers in Denver&apos;s aerospace, tech, and professional services sectors. We often recommend a combination of both, with budget weighted toward whichever platform delivers the lower cost per qualified lead.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How quickly can PPC campaigns generate leads in the Denver market?</h3>
+              <p className="text-base text-neutral-600">PPC can generate leads within the first week of launch if targeting and landing pages are properly set up. The initial two to four weeks are a learning period where we gather data, refine targeting, and optimise bids. Most campaigns reach stable, optimised performance within 60 to 90 days. We provide transparent reporting throughout so you see exactly how performance is trending.</p>
+            </div>
+          </div>
         </div>
       </section>
 

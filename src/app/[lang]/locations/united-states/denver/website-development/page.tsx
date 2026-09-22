@@ -111,6 +111,49 @@ export default function DenverWebDevelopmentPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does a typical website project take for a Denver business?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most projects take between 6 and 12 weeks from kickoff to launch, depending on scope and complexity. A straightforward WordPress or Shopify build lands on the shorter end, while a custom Next.js application with complex integrations takes longer. We provide a detailed timeline during the planning phase so you know exactly what to expect before development begins.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Should I choose WordPress, Shopify, or Next.js for my Denver business website?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It depends on your business needs. WordPress is ideal for content-driven sites and businesses that need frequent updates without developer involvement. Shopify is the strongest option for e-commerce — especially for Denver’s outdoor gear retailers, craft beverage brands, and DTC companies. Next.js suits tech companies, SaaS platforms, and high-traffic sites that need top-tier performance and flexibility. We recommend the platform that fits your requirements, not the one that is easiest to build.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you build websites for Denver cannabis companies?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. We build websites for cannabis operators across the Denver metro, including dispensaries, cultivators, and ancillary businesses. Cannabis websites have specific compliance considerations around age gating, product claims, and payment processing. We build with those requirements in mind from the start so your site is both effective and compliant.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What does website maintenance include after launch?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our maintenance plans cover security updates, plugin and dependency management, uptime monitoring, performance checks, and technical support. For Denver businesses that rely on their website for lead generation or e-commerce, ongoing maintenance protects your investment and ensures the site continues to perform well as traffic grows and technology evolves.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -323,6 +366,31 @@ export default function DenverWebDevelopmentPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does a typical website project take for a Denver business?</h3>
+              <p className="text-base text-neutral-600">Most projects take between 6 and 12 weeks from kickoff to launch, depending on scope and complexity. A straightforward WordPress or Shopify build lands on the shorter end, while a custom Next.js application with complex integrations takes longer. We provide a detailed timeline during the planning phase so you know exactly what to expect before development begins.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Should I choose WordPress, Shopify, or Next.js for my Denver business website?</h3>
+              <p className="text-base text-neutral-600">It depends on your business needs. WordPress is ideal for content-driven sites and businesses that need frequent updates without developer involvement. Shopify is the strongest option for e-commerce — especially for Denver&apos;s outdoor gear retailers, craft beverage brands, and DTC companies. Next.js suits tech companies, SaaS platforms, and high-traffic sites that need top-tier performance and flexibility. We recommend the platform that fits your requirements, not the one that is easiest to build.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you build websites for Denver cannabis companies?</h3>
+              <p className="text-base text-neutral-600">Yes. We build websites for cannabis operators across the Denver metro, including dispensaries, cultivators, and ancillary businesses. Cannabis websites have specific compliance considerations around age gating, product claims, and payment processing. We build with those requirements in mind from the start so your site is both effective and compliant.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What does website maintenance include after launch?</h3>
+              <p className="text-base text-neutral-600">Our maintenance plans cover security updates, plugin and dependency management, uptime monitoring, performance checks, and technical support. For Denver businesses that rely on their website for lead generation or e-commerce, ongoing maintenance protects your investment and ensures the site continues to perform well as traffic grows and technology evolves.</p>
+            </div>
+          </div>
         </div>
       </section>
 

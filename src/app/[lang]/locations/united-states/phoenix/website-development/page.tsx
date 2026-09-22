@@ -103,6 +103,49 @@ export default function PhoenixWebDevelopmentPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does it take to build a website for a Phoenix business?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most business websites take four to eight weeks from kickoff to launch, depending on scope and complexity. A straightforward WordPress site for a local Phoenix service business is typically on the shorter end, while custom Next.js applications or e-commerce builds with complex integrations take longer. We define the timeline during the discovery phase so expectations are clear before any work begins.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Should my Phoenix business use WordPress, Shopify, or Next.js?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "WordPress is the best fit for most Phoenix businesses that need a content-managed site with flexibility — real estate firms, healthcare practices, and professional services. Shopify is ideal if you sell products online. Next.js is suited for businesses that need fast page loads, strong SEO performance, and custom functionality — common for companies in the Valley's tech and semiconductor sectors or high-traffic sites serving the broader Arizona market.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How important is mobile performance for Phoenix websites?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Extremely important. Phoenix's population skews younger and more mobile-connected than the national average, with a large commuter workforce spread across the Valley from Scottsdale to Mesa to Gilbert. The majority of local searches happen on mobile devices. A site that loads slowly or is difficult to navigate on a phone will lose visitors before they ever reach your contact form.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you build bilingual websites for Phoenix businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. With over 30 percent of the Phoenix metro population being Hispanic or Latino, bilingual websites can significantly expand your reach. We build bilingual sites with proper URL structures and content strategy — not machine translations, but properly localized content that performs well in both English and Spanish search results.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +361,31 @@ export default function PhoenixWebDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does it take to build a website for a Phoenix business?</h3>
+              <p className="text-base text-neutral-600">Most business websites take four to eight weeks from kickoff to launch, depending on scope and complexity. A straightforward WordPress site for a local Phoenix service business is typically on the shorter end, while custom Next.js applications or e-commerce builds with complex integrations take longer. We define the timeline during the discovery phase so expectations are clear before any work begins.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Should my Phoenix business use WordPress, Shopify, or Next.js?</h3>
+              <p className="text-base text-neutral-600">WordPress is the best fit for most Phoenix businesses that need a content-managed site with flexibility — real estate firms, healthcare practices, and professional services. Shopify is ideal if you sell products online. Next.js is suited for businesses that need fast page loads, strong SEO performance, and custom functionality — common for companies in the Valley&apos;s tech and semiconductor sectors or high-traffic sites serving the broader Arizona market.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How important is mobile performance for Phoenix websites?</h3>
+              <p className="text-base text-neutral-600">Extremely important. Phoenix&apos;s population skews younger and more mobile-connected than the national average, with a large commuter workforce spread across the Valley from Scottsdale to Mesa to Gilbert. The majority of local searches happen on mobile devices. A site that loads slowly or is difficult to navigate on a phone will lose visitors before they ever reach your contact form.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you build bilingual websites for Phoenix businesses?</h3>
+              <p className="text-base text-neutral-600">Yes. With over 30 percent of the Phoenix metro population being Hispanic or Latino, bilingual websites can significantly expand your reach. We build bilingual sites with proper URL structures and content strategy — not machine translations, but properly localized content that performs well in both English and Spanish search results.</p>
+            </div>
+          </div>
         </div>
       </section>
 

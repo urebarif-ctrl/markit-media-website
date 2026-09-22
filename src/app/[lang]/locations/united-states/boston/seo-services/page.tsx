@@ -103,6 +103,49 @@ export default function BostonSeoServicesPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does SEO take to produce results in Boston's competitive market?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most Boston businesses begin seeing measurable improvements in rankings and organic traffic within three to six months of sustained SEO work. Technical fixes and on-page optimization often produce early gains, while content programs and link building compound over a longer horizon. In highly competitive verticals like biotech, healthcare, and fintech — where established organizations dominate the search results — building meaningful organic visibility can take six to twelve months of consistent execution.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you offer local SEO for Boston businesses with a physical location?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Local SEO is a core part of our program for Boston businesses that serve a geographic area — healthcare practices, law firms, financial advisors, and service providers across Back Bay, Cambridge, the Seaport, and surrounding neighborhoods. We optimize your Google Business Profile, build consistent local citations, manage review generation, and create geo-targeted content to improve your visibility in the local map pack and localized search results.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What makes SEO different for biotech and healthcare companies in Boston?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Biotech and healthcare audiences search using specialized terminology and evaluate content with a high level of technical scrutiny. Ranking in these verticals requires content that demonstrates genuine subject-matter expertise — not keyword-stuffed pages. Additionally, healthcare content falls under Google's stricter quality standards for YMYL (Your Money or Your Life) topics, meaning E-E-A-T signals like author credentials, citations, and institutional authority carry more weight in rankings.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you measure SEO success for Boston businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We track keyword rankings, organic traffic growth, and conversion metrics — but tie everything back to business outcomes like qualified leads, consultation requests, and pipeline contribution. Monthly reports show which pages and keywords are driving results, what changed in the competitive landscape, and what we are prioritizing next. For Boston's B2B sectors, we also monitor lead quality to ensure organic traffic is attracting the right audience, not just more visitors.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +361,31 @@ export default function BostonSeoServicesPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does SEO take to produce results in Boston&apos;s competitive market?</h3>
+              <p className="text-base text-neutral-600">Most Boston businesses begin seeing measurable improvements in rankings and organic traffic within three to six months of sustained SEO work. Technical fixes and on-page optimization often produce early gains, while content programs and link building compound over a longer horizon. In highly competitive verticals like biotech, healthcare, and fintech — where established organizations dominate the search results — building meaningful organic visibility can take six to twelve months of consistent execution.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you offer local SEO for Boston businesses with a physical location?</h3>
+              <p className="text-base text-neutral-600">Yes. Local SEO is a core part of our program for Boston businesses that serve a geographic area — healthcare practices, law firms, financial advisors, and service providers across Back Bay, Cambridge, the Seaport, and surrounding neighborhoods. We optimize your Google Business Profile, build consistent local citations, manage review generation, and create geo-targeted content to improve your visibility in the local map pack and localized search results.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What makes SEO different for biotech and healthcare companies in Boston?</h3>
+              <p className="text-base text-neutral-600">Biotech and healthcare audiences search using specialized terminology and evaluate content with a high level of technical scrutiny. Ranking in these verticals requires content that demonstrates genuine subject-matter expertise — not keyword-stuffed pages. Additionally, healthcare content falls under Google&apos;s stricter quality standards for YMYL (Your Money or Your Life) topics, meaning E-E-A-T signals like author credentials, citations, and institutional authority carry more weight in rankings.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do you measure SEO success for Boston businesses?</h3>
+              <p className="text-base text-neutral-600">We track keyword rankings, organic traffic growth, and conversion metrics — but tie everything back to business outcomes like qualified leads, consultation requests, and pipeline contribution. Monthly reports show which pages and keywords are driving results, what changed in the competitive landscape, and what we are prioritizing next. For Boston&apos;s B2B sectors, we also monitor lead quality to ensure organic traffic is attracting the right audience, not just more visitors.</p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -103,6 +103,49 @@ export default function BostonPpcAdsPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Why are PPC costs so high in Boston?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Boston's dominant industries — biotech, healthcare, fintech, legal, and enterprise software — are among the most expensive keyword categories in paid search nationally. High competition from well-funded companies along the Kendall Square corridor and Route 128, combined with strong commercial intent behind these searches, drives cost-per-click well above national averages. Effective campaign structure, precise audience targeting, and disciplined bid management are essential to maintaining a viable cost per acquisition.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Which advertising platforms work best for Boston B2B companies?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "LinkedIn is typically the highest-performing platform for Boston's B2B sectors because it allows targeting by job title, company, industry, and seniority — critical for reaching buying committees at biotech firms, healthcare organizations, and enterprise tech companies. Google Ads captures high-intent search traffic from prospects actively looking for solutions. Meta Ads supports retargeting and awareness campaigns. Most Boston B2B programs benefit from a multi-platform approach with LinkedIn as the primary lead generation channel.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you handle compliance for healthcare and biotech PPC ads in Boston?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Healthcare and life sciences advertising requires careful attention to regulatory guidelines and ad platform policies. We build campaigns with compliant messaging — no misleading claims, proper disclaimers where required, and ad creative designed to pass platform review without sacrificing marketing effectiveness. For biotech companies near Kendall Square and healthcare systems across Greater Boston, this compliance-aware approach prevents ad disapprovals and account suspensions that can disrupt lead generation.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you measure PPC success for Boston businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We measure success through cost per qualified lead, cost per acquisition, and return on ad spend — not impressions or clicks alone. For Boston's B2B market where sales cycles often span months, we implement multi-touch attribution that tracks prospects from first ad click through to closed revenue. Weekly performance reports and monthly deep-dive analyses show exactly which campaigns, audiences, and platforms are generating pipeline.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -316,6 +359,31 @@ export default function BostonPpcAdsPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Why are PPC costs so high in Boston?</h3>
+              <p className="text-base text-neutral-600">Boston&apos;s dominant industries — biotech, healthcare, fintech, legal, and enterprise software — are among the most expensive keyword categories in paid search nationally. High competition from well-funded companies along the Kendall Square corridor and Route 128, combined with strong commercial intent behind these searches, drives cost-per-click well above national averages. Effective campaign structure, precise audience targeting, and disciplined bid management are essential to maintaining a viable cost per acquisition.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Which advertising platforms work best for Boston B2B companies?</h3>
+              <p className="text-base text-neutral-600">LinkedIn is typically the highest-performing platform for Boston&apos;s B2B sectors because it allows targeting by job title, company, industry, and seniority — critical for reaching buying committees at biotech firms, healthcare organizations, and enterprise tech companies. Google Ads captures high-intent search traffic from prospects actively looking for solutions. Meta Ads supports retargeting and awareness campaigns. Most Boston B2B programs benefit from a multi-platform approach with LinkedIn as the primary lead generation channel.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do you handle compliance for healthcare and biotech PPC ads in Boston?</h3>
+              <p className="text-base text-neutral-600">Healthcare and life sciences advertising requires careful attention to regulatory guidelines and ad platform policies. We build campaigns with compliant messaging — no misleading claims, proper disclaimers where required, and ad creative designed to pass platform review without sacrificing marketing effectiveness. For biotech companies near Kendall Square and healthcare systems across Greater Boston, this compliance-aware approach prevents ad disapprovals and account suspensions that can disrupt lead generation.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do you measure PPC success for Boston businesses?</h3>
+              <p className="text-base text-neutral-600">We measure success through cost per qualified lead, cost per acquisition, and return on ad spend — not impressions or clicks alone. For Boston&apos;s B2B market where sales cycles often span months, we implement multi-touch attribution that tracks prospects from first ad click through to closed revenue. Weekly performance reports and monthly deep-dive analyses show exactly which campaigns, audiences, and platforms are generating pipeline.</p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -103,6 +103,49 @@ export default function SeattleMarketingAgencyPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "What industries does Markit Media serve in Seattle?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We work with Seattle businesses across cloud computing, enterprise SaaS, aerospace and defense, clean energy, gaming, outdoor lifestyle brands, and professional services. Our strategies are built around the buyer personas, sales cycles, and competitive dynamics specific to each of these industries in the Puget Sound region.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How is marketing in Seattle different from other U.S. cities?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Seattle has one of the most educated workforces in the country, some of the highest digital ad costs, and a concentration of tech companies that raises the bar for marketing quality. Audiences here are technically literate, ad-savvy, and expect a higher standard of content and creative than most markets. Campaigns that work in less competitive metros often underperform here without significant adaptation.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you work with Seattle startups or only large enterprises?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We work with both. Our clients in Seattle range from early-stage SaaS companies and funded startups in South Lake Union to established enterprise organizations across the Eastside. We scale our services and engagement model to match each company's stage, budget, and growth objectives.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you measure marketing success for Seattle businesses?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We measure success by pipeline generated and revenue influenced, not vanity metrics like impressions or follower counts. Every campaign includes conversion tracking, attribution modeling, and monthly reporting that ties marketing spend directly to business outcomes.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -318,6 +361,31 @@ export default function SeattleMarketingAgencyPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What industries does Markit Media serve in Seattle?</h3>
+              <p className="text-base text-neutral-600">We work with Seattle businesses across cloud computing, enterprise SaaS, aerospace and defense, clean energy, gaming, outdoor lifestyle brands, and professional services. Our strategies are built around the buyer personas, sales cycles, and competitive dynamics specific to each of these industries in the Puget Sound region.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How is marketing in Seattle different from other U.S. cities?</h3>
+              <p className="text-base text-neutral-600">Seattle has one of the most educated workforces in the country, some of the highest digital ad costs, and a concentration of tech companies that raises the bar for marketing quality. Audiences here are technically literate, ad-savvy, and expect a higher standard of content and creative than most markets. Campaigns that work in less competitive metros often underperform here without significant adaptation.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you work with Seattle startups or only large enterprises?</h3>
+              <p className="text-base text-neutral-600">We work with both. Our clients in Seattle range from early-stage SaaS companies and funded startups in South Lake Union to established enterprise organizations across the Eastside. We scale our services and engagement model to match each company&apos;s stage, budget, and growth objectives.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How do you measure marketing success for Seattle businesses?</h3>
+              <p className="text-base text-neutral-600">We measure success by pipeline generated and revenue influenced, not vanity metrics like impressions or follower counts. Every campaign includes conversion tracking, attribution modeling, and monthly reporting that ties marketing spend directly to business outcomes.</p>
+            </div>
+          </div>
         </div>
       </section>
 

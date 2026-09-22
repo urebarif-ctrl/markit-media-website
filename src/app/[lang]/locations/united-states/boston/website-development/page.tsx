@@ -103,6 +103,49 @@ export default function BostonWebDevelopmentPage() {
   return (
     <article>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Which platform is best for a Boston B2B website — WordPress, Shopify, or Next.js?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It depends on your business requirements. WordPress is ideal for content-driven sites common among Boston healthcare practices, professional services firms, and institutional organizations that need structured content management. Shopify handles e-commerce well for direct-to-consumer and university-adjacent brands. Next.js is the best fit for performance-critical applications — SaaS product sites, biotech research portals, and investor-facing platforms where speed and flexibility matter most. We recommend the platform that matches your goals and your team's ability to maintain it.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does a website build take for a Boston business?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "A typical brochure or professional services site takes four to eight weeks from discovery through launch. More complex builds — custom web applications, e-commerce stores with large catalogs, or sites requiring integrations with CRM and marketing automation platforms — generally take eight to twelve weeks. For Boston's B2B and healthcare sectors, we build in additional time for compliance review and stakeholder approval cycles that are standard in regulated industries.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you build HIPAA-compliant websites for Boston healthcare organizations?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We build websites with HIPAA-conscious infrastructure for healthcare practices and organizations across Greater Boston. This includes secure hosting environments, encrypted form submissions, proper access controls, and compliant contact and appointment request workflows. We work with hosting providers that offer Business Associate Agreements and configure sites to meet the technical safeguard requirements relevant to healthcare web properties.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What does ongoing website maintenance include after launch?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Our maintenance plans cover security updates, plugin and dependency management, uptime monitoring, performance optimization, content updates, and technical support. For Boston businesses running WordPress, this includes regular core and plugin updates to prevent vulnerabilities. For custom Next.js builds, it includes dependency audits and deployment pipeline maintenance. The goal is to keep your site fast, secure, and current so your team can focus on running the business.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -310,6 +353,31 @@ export default function BostonWebDevelopmentPage() {
               </p>
             </Link>
           </Stagger>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Which platform is best for a Boston B2B website — WordPress, Shopify, or Next.js?</h3>
+              <p className="text-base text-neutral-600">It depends on your business requirements. WordPress is ideal for content-driven sites common among Boston healthcare practices, professional services firms, and institutional organizations that need structured content management. Shopify handles e-commerce well for direct-to-consumer and university-adjacent brands. Next.js is the best fit for performance-critical applications — SaaS product sites, biotech research portals, and investor-facing platforms where speed and flexibility matter most. We recommend the platform that matches your goals and your team&apos;s ability to maintain it.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does a website build take for a Boston business?</h3>
+              <p className="text-base text-neutral-600">A typical brochure or professional services site takes four to eight weeks from discovery through launch. More complex builds — custom web applications, e-commerce stores with large catalogs, or sites requiring integrations with CRM and marketing automation platforms — generally take eight to twelve weeks. For Boston&apos;s B2B and healthcare sectors, we build in additional time for compliance review and stakeholder approval cycles that are standard in regulated industries.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Do you build HIPAA-compliant websites for Boston healthcare organizations?</h3>
+              <p className="text-base text-neutral-600">We build websites with HIPAA-conscious infrastructure for healthcare practices and organizations across Greater Boston. This includes secure hosting environments, encrypted form submissions, proper access controls, and compliant contact and appointment request workflows. We work with hosting providers that offer Business Associate Agreements and configure sites to meet the technical safeguard requirements relevant to healthcare web properties.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What does ongoing website maintenance include after launch?</h3>
+              <p className="text-base text-neutral-600">Our maintenance plans cover security updates, plugin and dependency management, uptime monitoring, performance optimization, content updates, and technical support. For Boston businesses running WordPress, this includes regular core and plugin updates to prevent vulnerabilities. For custom Next.js builds, it includes dependency audits and deployment pipeline maintenance. The goal is to keep your site fast, secure, and current so your team can focus on running the business.</p>
+            </div>
+          </div>
         </div>
       </section>
 

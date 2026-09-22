@@ -111,6 +111,49 @@ export default function DenverSeoServicesPage() {
   return (
     <>
       <JsonLd data={schema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How long does SEO take to show results in the Denver market?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most businesses see measurable improvements in rankings and organic traffic within three to six months. Technical fixes and on-page optimisation often produce quicker wins, while content and link-building initiatives compound over time. Denver’s competitive landscape — especially in sectors like tech, real estate, and outdoor recreation — means timelines can vary based on your starting position and the strength of competitors already ranking for your target keywords.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is local SEO important for businesses that serve all of Denver?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Even if you serve the entire Denver metro, local SEO signals — including your Google Business Profile, local citations, and geo-targeted content — influence how prominently you appear in map results and localised search queries. With Denver’s population growth and the number of new residents searching for local services, strong local SEO is a significant competitive advantage whether you operate in RiNo, the Denver Tech Center, LoDo, or across the Front Range.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can SEO work for Denver cannabis businesses with advertising restrictions?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "SEO is one of the most effective channels for cannabis businesses precisely because paid advertising options are so limited. Google and Meta restrict cannabis ads, which means organic search becomes the primary way to attract qualified traffic. We help Denver cannabis operators build visibility through compliant content strategies, technical SEO, and local search optimisation — without relying on platforms that restrict the industry.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is the difference between technical SEO and content SEO?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Technical SEO focuses on your website’s infrastructure — site speed, crawlability, structured data, mobile performance, and indexation. Content SEO involves creating and optimising pages that target specific search queries your audience is using. Both are necessary. Technical SEO ensures search engines can access and understand your site; content SEO ensures you have pages worth ranking. We address both in every engagement for Denver businesses.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       {/* Breadcrumb */}
       <section className="bg-white pt-28 pb-4">
@@ -325,6 +368,31 @@ export default function DenverSeoServicesPage() {
               </Link>
             </div>
           </Animate>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">How long does SEO take to show results in the Denver market?</h3>
+              <p className="text-base text-neutral-600">Most businesses see measurable improvements in rankings and organic traffic within three to six months. Technical fixes and on-page optimisation often produce quicker wins, while content and link-building initiatives compound over time. Denver&apos;s competitive landscape — especially in sectors like tech, real estate, and outdoor recreation — means timelines can vary based on your starting position and the strength of competitors already ranking for your target keywords.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Is local SEO important for businesses that serve all of Denver?</h3>
+              <p className="text-base text-neutral-600">Yes. Even if you serve the entire Denver metro, local SEO signals — including your Google Business Profile, local citations, and geo-targeted content — influence how prominently you appear in map results and localised search queries. With Denver&apos;s population growth and the number of new residents searching for local services, strong local SEO is a significant competitive advantage whether you operate in RiNo, the Denver Tech Center, LoDo, or across the Front Range.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Can SEO work for Denver cannabis businesses with advertising restrictions?</h3>
+              <p className="text-base text-neutral-600">SEO is one of the most effective channels for cannabis businesses precisely because paid advertising options are so limited. Google and Meta restrict cannabis ads, which means organic search becomes the primary way to attract qualified traffic. We help Denver cannabis operators build visibility through compliant content strategies, technical SEO, and local search optimisation — without relying on platforms that restrict the industry.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">What is the difference between technical SEO and content SEO?</h3>
+              <p className="text-base text-neutral-600">Technical SEO focuses on your website&apos;s infrastructure — site speed, crawlability, structured data, mobile performance, and indexation. Content SEO involves creating and optimising pages that target specific search queries your audience is using. Both are necessary. Technical SEO ensures search engines can access and understand your site; content SEO ensures you have pages worth ranking. We address both in every engagement for Denver businesses.</p>
+            </div>
+          </div>
         </div>
       </section>
 
