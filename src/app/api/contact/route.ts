@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
@@ -82,6 +83,32 @@ export async function POST(request: NextRequest) {
       );
     } catch {
       console.error("Failed to save lead to database");
+    }
+
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        await resend.emails.send({
+          from: "Markit Media Website <onboarding@resend.dev>",
+          to: "ciao@themarkitmedia.com",
+          subject: `New Lead: ${sanitizedData.name} — ${sanitizedData.service || "General Inquiry"}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <table style="border-collapse:collapse;width:100%;max-width:600px">
+              <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Name</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.name}</td></tr>
+              <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Email</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.email}</td></tr>
+              ${sanitizedData.company ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Company</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.company}</td></tr>` : ""}
+              ${sanitizedData.phone ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Phone</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.phone}</td></tr>` : ""}
+              ${sanitizedData.service ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Service</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.service}</td></tr>` : ""}
+              ${sanitizedData.budget ? `<tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Budget</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.budget}</td></tr>` : ""}
+              <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Message</td><td style="padding:8px;border-bottom:1px solid #eee">${sanitizedData.message}</td></tr>
+              <tr><td style="padding:8px;font-weight:bold">Submitted</td><td style="padding:8px">${sanitizedData.submittedAt}</td></tr>
+            </table>
+          `,
+        });
+      } catch {
+        console.error("Failed to send email notification");
+      }
     }
 
     return NextResponse.json({ success: true });

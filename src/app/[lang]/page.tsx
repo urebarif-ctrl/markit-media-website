@@ -172,16 +172,27 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="border-y border-gray-200 py-6 overflow-hidden" aria-label="Capabilities">
+      {/* Platform Logos */}
+      <section className="border-y border-gray-200 py-8 bg-white" aria-label="Platforms we manage">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-8 text-base font-bold text-gray-400 uppercase tracking-widest whitespace-nowrap overflow-hidden">
-            {["SEO", "Performance Marketing", "Social Media", "Web Development", "Branding", "Video Production", "AI Solutions", "Email Marketing", "Content Strategy", "Paid Advertising", "Analytics", "BPO"].map((item, i) => (
-              <span key={i} className="flex items-center gap-8">
-                <span>{item}</span>
-                <span className="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0" aria-hidden="true" />
-              </span>
-            ))}
+          <p className="text-base font-bold text-gray-400 uppercase tracking-widest text-center mb-6">Platforms We Manage</p>
+          <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
+            {/* Google */}
+            <svg className="h-8 text-gray-400 hover:text-black transition-colors" viewBox="0 0 272 92" fill="currentColor" aria-label="Google"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/><path d="M225 3v65h-9.5V3h9.5z"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/><path d="M35.29 41.19V32H68c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C17.57 69.36 2 54.21 2 35.68S17.57 2 36.3 2c10.41 0 17.81 4.07 23.36 9.37l-6.57 6.57c-3.95-3.7-9.33-6.57-16.79-6.57-13.69 0-24.4 11.04-24.4 24.68 0 13.65 10.71 24.68 24.4 24.68 8.91 0 13.94-3.58 17.22-6.86 2.64-2.64 4.37-6.43 5.06-11.59H35.29z"/></svg>
+            {/* Meta */}
+            <svg className="h-7 text-gray-400 hover:text-black transition-colors" viewBox="0 0 120 24" fill="currentColor" aria-label="Meta"><path d="M6.57 5.27c1.42 0 2.87.92 4.17 2.71 1.68 2.33 3.14 5.63 3.85 7.72.86-2.63 2.14-5.67 3.54-7.56 1.21-1.63 2.51-2.87 4.14-2.87 3.39 0 5.72 5.65 5.72 12.73S25.66 30.73 22.27 30.73c-1.63 0-2.93-1.24-4.14-2.87-1.4-1.89-2.68-4.93-3.54-7.56-.71 2.09-2.17 5.39-3.85 7.72-1.3 1.79-2.75 2.71-4.17 2.71C2.95 30.73 0 25.08 0 18 0 10.92 2.95 5.27 6.57 5.27z" transform="scale(.8) translate(0,0)"/><text x="30" y="19" fontFamily="Helvetica,Arial,sans-serif" fontSize="19" fontWeight="700">meta</text></svg>
+            {/* Instagram */}
+            <svg className="h-7 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            {/* LinkedIn */}
+            <svg className="h-7 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            {/* TikTok */}
+            <svg className="h-7 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="TikTok"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+            {/* Shopify */}
+            <svg className="h-8 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="Shopify"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104zm-1.332-17.22c0-.136-.012-.26-.033-.381-.592-.304-1.248-.473-1.941-.473-.154 0-.32.017-.467.025.252-.544.685-.972 1.217-1.178.133-.052.271-.092.422-.11.14-.017.281-.017.403.009.275.059.533.199.748.401l-.349 1.707zm-1.699-.122c-.074.005-.146.015-.216.032-.66.152-1.168.673-1.375 1.37l-.467 2.272c-.645-.166-1.326-.266-2.037-.266-2.264 0-3.816 1.143-3.816 2.879 0 1.614 1.502 2.346 2.734 2.768.182.063.352.12.507.177 1.399.515 1.945.876 1.945 1.449 0 .723-.581 1.135-1.512 1.135-.914 0-1.802-.37-2.482-.838l-.607 2.108c.762.467 1.7.743 2.677.743 2.454 0 3.935-1.195 3.935-2.952 0-1.7-1.46-2.403-2.913-2.916-.159-.055-.313-.108-.458-.163-1.019-.387-1.53-.679-1.53-1.226 0-.535.476-.883 1.263-.883.655 0 1.295.176 1.889.415l.651-2.174c-.387-.167-.82-.304-1.29-.387l.143-1.584z"/></svg>
+            {/* HubSpot */}
+            <svg className="h-7 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="HubSpot"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984v-.066A2.198 2.198 0 0017.235.838h-.066a2.198 2.198 0 00-2.196 2.196v.066c0 .87.51 1.617 1.244 1.974v2.862a6.175 6.175 0 00-2.926 1.49l-7.85-6.1A2.605 2.605 0 005.44.87a2.614 2.614 0 00-2.611 2.611c0 1.107.69 2.05 1.664 2.428l.086 8.736a6.224 6.224 0 002.866 11.759c1.744 0 3.318-.722 4.445-1.88l3.527 2.64a2.352 2.352 0 00-.105.691 2.384 2.384 0 002.384 2.383 2.384 2.384 0 002.384-2.383 2.384 2.384 0 00-2.384-2.383c-.42 0-.812.112-1.153.305l-3.407-2.55a6.19 6.19 0 001.094-3.263h.003c0-1.946-.9-3.68-2.305-4.813l2.156-2.637a6.132 6.132 0 001.984.332z"/></svg>
+            {/* WordPress */}
+            <svg className="h-7 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="WordPress"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.027-.78-.07-1.109m-7.981.105c.647-.034 1.233-.105 1.233-.105.58-.07.512-.921-.07-.892 0 0-1.744.14-2.87.14-1.058 0-2.835-.14-2.835-.14-.58-.029-.647.858-.068.892 0 0 .549.07 1.128.105l1.674 4.591-2.35 7.06L6.574 6.93c.648-.034 1.234-.105 1.234-.105.581-.07.513-.921-.069-.892 0 0-1.745.14-2.87.14-.202 0-.44-.006-.693-.015C5.88 3.528 8.739 2 12 2c2.426 0 4.636.885 6.332 2.349-.04-.003-.078-.01-.12-.01-1.057 0-1.807.921-1.807 1.91 0 .892.512 1.643 1.057 2.534.41.717.888 1.636.888 2.962 0 .921-.352 1.986-.82 3.473l-1.073 3.586-3.892-11.574m-3.726 1.31L7.18 16.66c-.07.172-.13.36-.172.557a7.96 7.96 0 01-4.008-6.9c0-1.37.347-2.66.955-3.787l4.795 11.61zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10"/></svg>
           </div>
         </div>
       </section>
@@ -441,151 +452,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Resources</SectionLabel>
-            <SectionTitle>Tools to Help You Grow</SectionTitle>
+            <SectionTitle>150+ Free Marketing Tools</SectionTitle>
+            <p className="text-lg text-gray-500 mt-4 max-w-2xl">Interactive calculators, audit scorecards, generators, and planners to help you grow.</p>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             {[
-              { title: "Service Finder", desc: "Take a quick quiz and get personalized service recommendations.", href: "/services/finder" },
-              { title: "Headline Analyzer", desc: "Test your blog titles, ad copy, and email subjects for impact.", href: "/resources/headline-analyzer" },
               { title: "ROI Calculator", desc: "Estimate your digital marketing return on investment.", href: "/resources/roi-calculator" },
               { title: "Website Grader", desc: "Score your website across performance, SEO, and UX.", href: "/resources/website-grader" },
-              { title: "Marketing Stats 2026", desc: "35+ benchmarks across SEO, PPC, social, email, and AI.", href: "/resources/marketing-statistics-2026" },
-              { title: "Meta Description Tool", desc: "Write and optimize meta descriptions for better CTR.", href: "/resources/meta-description-generator" },
-              { title: "Social Share Preview", desc: "See how your links look on Facebook, Twitter, and LinkedIn.", href: "/resources/og-preview" },
+              { title: "Headline Analyzer", desc: "Test your blog titles, ad copy, and email subjects.", href: "/resources/headline-analyzer" },
               { title: "Budget Calculator", desc: "Get a recommended channel allocation for your budget.", href: "/resources/budget-calculator" },
-              { title: "Ad Copy Generator", desc: "Generate ad copy for Google, Facebook, LinkedIn, and email.", href: "/resources/ad-copy-generator" },
-              { title: "Email Subject Tester", desc: "Test your subject lines for deliverability and engagement.", href: "/resources/email-subject-tester" },
-              { title: "Brand Name Generator", desc: "Get instant brand name ideas for your business.", href: "/resources/brand-name-generator" },
-              { title: "Competitor Analysis", desc: "Map your competitive landscape with our interactive worksheet.", href: "/resources/competitor-analysis" },
-              { title: "UTM Link Builder", desc: "Generate tracked URLs for your marketing campaigns.", href: "/resources/utm-builder" },
-              { title: "Contrast Checker", desc: "Test color combinations for WCAG accessibility compliance.", href: "/resources/contrast-checker" },
-              { title: "Marketing Trends 2026", desc: "10 shifts shaping digital marketing this year.", href: "/resources/marketing-trends-2026" },
-              { title: "Speed Assessment", desc: "Score your website speed with prioritized recommendations.", href: "/resources/speed-test" },
-              { title: "A/B Test Calculator", desc: "Calculate sample size and duration for statistically valid tests.", href: "/resources/ab-test-calculator" },
-              { title: "Keyword Density", desc: "Analyze keyword frequency and density in your content.", href: "/resources/keyword-density-checker" },
-              { title: "Readability Checker", desc: "Score your content's readability with Flesch Reading Ease.", href: "/resources/readability-checker" },
-              { title: "CTA Generator", desc: "Generate call-to-action copy by business type, goal, and tone.", href: "/resources/cta-generator" },
-              { title: "Schema Generator", desc: "Build JSON-LD structured data for 6 schema types.", href: "/resources/schema-generator" },
-              { title: "Website Audit", desc: "25-point audit across 5 categories with instant scoring.", href: "/resources/website-audit" },
-              { title: "Funnel Calculator", desc: "Find where you're losing revenue in your marketing funnel.", href: "/resources/funnel-calculator" },
-              { title: "Landing Page Grader", desc: "Grade your landing page across 20 conversion factors.", href: "/resources/landing-page-grader" },
-              { title: "Email Planner", desc: "Build complete email campaign sequences with templates.", href: "/resources/email-campaign-planner" },
-              { title: "Hashtag Generator", desc: "Optimized hashtags for Instagram, TikTok, LinkedIn, and more.", href: "/resources/hashtag-generator" },
-              { title: "Persona Builder", desc: "Build detailed buyer personas for your marketing strategy.", href: "/resources/persona-builder" },
-              { title: "Color Palette", desc: "Generate brand color palettes with WCAG contrast ratios.", href: "/resources/color-palette-generator" },
-              { title: "Content Calendar", desc: "Generate a weekly content calendar by industry and channels.", href: "/resources/content-calendar" },
-              { title: "Social Media ROI", desc: "Calculate the ROI of your social media marketing investment.", href: "/resources/social-media-roi" },
-              { title: "SWOT Analysis", desc: "Build a SWOT analysis with strategy recommendations.", href: "/resources/swot-analysis" },
-              { title: "CLV Calculator", desc: "Calculate customer lifetime value and CLV:CAC ratio.", href: "/resources/clv-calculator" },
-              { title: "Brand Voice", desc: "Generate a brand voice guide with tone, samples, and word bank.", href: "/resources/brand-voice-generator" },
-              { title: "Google Ads Estimator", desc: "Estimate CPC, clicks, and conversions by industry.", href: "/resources/google-ads-estimator" },
-              { title: "Migration Checklist", desc: "30-point checklist for website migrations.", href: "/resources/migration-checklist" },
-              { title: "Social Media Audit", desc: "25-point social media audit with grading.", href: "/resources/social-media-audit" },
-              { title: "Pricing Calculator", desc: "Estimate marketing costs by service, business size, and goals.", href: "/resources/pricing-calculator" },
-              { title: "CRO Audit", desc: "20-point conversion rate optimization checklist.", href: "/resources/cro-audit" },
-              { title: "Email Deliverability", desc: "Check your email deliverability across 20 key factors.", href: "/resources/email-deliverability" },
-              { title: "Influencer ROI", desc: "Estimate influencer marketing campaign ROI.", href: "/resources/influencer-roi" },
-              { title: "Competitive Gap", desc: "Analyze gaps vs your competitors across 10 dimensions.", href: "/resources/competitive-gap" },
-              { title: "Marketing Maturity", desc: "24-question assessment of your marketing maturity.", href: "/resources/marketing-maturity" },
-              { title: "Content Brief Generator", desc: "Generate SEO content briefs with heading structure and outlines.", href: "/resources/content-brief" },
-              { title: "Social Proof Builder", desc: "Build a social proof strategy by business type.", href: "/resources/social-proof-guide" },
-              { title: "KPI Dashboard Builder", desc: "Define the right KPIs for your marketing dashboard.", href: "/resources/kpi-dashboard" },
-              { title: "Brand Positioning Canvas", desc: "Define positioning and generate a messaging framework.", href: "/resources/brand-positioning" },
-              { title: "Channel Selector Quiz", desc: "Find the best marketing channels for your business.", href: "/resources/channel-selector" },
-              { title: "Conversion Checklist", desc: "Score your website's conversion readiness across 30 items.", href: "/resources/conversion-checklist" },
-              { title: "Buyer Persona Quiz", desc: "Build a detailed buyer persona with communication strategy.", href: "/resources/buyer-persona-quiz" },
-              { title: "Content Gap Analyzer", desc: "Evaluate content across buyer journey stages.", href: "/resources/content-gap-analyzer" },
-              { title: "Ad Spend Calculator", desc: "Evaluate your ad spend efficiency with ROAS benchmarks.", href: "/resources/ad-spend-calculator" },
-              { title: "Email Sequence Planner", desc: "Plan email sequences with timing and subject line templates.", href: "/resources/email-sequence-planner" },
-              { title: "Tech Stack Advisor", desc: "Find the right platform and tools for your website project.", href: "/resources/tech-stack-advisor" },
-              { title: "Competitive SWOT", desc: "Compare your SWOT against competitors with strategic analysis.", href: "/resources/competitive-swot" },
-              { title: "Social Calendar", desc: "Generate a 4-week social content calendar for your industry.", href: "/resources/social-calendar" },
-              { title: "Funnel Visualizer", desc: "Analyze your marketing funnel with conversion rate insights.", href: "/resources/funnel-visualizer" },
-              { title: "Launch Checklist", desc: "44-item pre-launch checklist with countdown and tracking.", href: "/resources/launch-countdown" },
-              { title: "Lead Magnet Generator", desc: "Get lead magnet ideas tailored to your industry and funnel stage.", href: "/resources/lead-magnet-generator" },
-              { title: "Pricing Page Optimizer", desc: "Audit your pricing page across 32 conversion factors.", href: "/resources/pricing-optimizer" },
-              { title: "Email Health Checker", desc: "25-point audit of your email marketing practices.", href: "/resources/email-health-checker" },
-              { title: "Competitor Matrix", desc: "Rate and compare against competitors across 10 dimensions.", href: "/resources/competitor-matrix" },
-              { title: "A/B Test Ideas", desc: "Generate prioritized test ideas with ICE scoring.", href: "/resources/ab-test-ideas" },
-              { title: "Content Audit", desc: "Score your content across 30 criteria with radar chart.", href: "/resources/content-audit-scorecard" },
-              { title: "Redesign Planner", desc: "Plan your website redesign with phased roadmap.", href: "/resources/redesign-planner" },
-              { title: "SEO Gap Finder", desc: "Find untapped ranking opportunities in your content strategy.", href: "/resources/seo-gap-finder" },
-              { title: "ROI Dashboard", desc: "Compare channel ROI, budget allocation, and get optimization tips.", href: "/resources/roi-dashboard" },
-              { title: "Brand Consistency", desc: "Rate your brand across touchpoints and get a consistency score.", href: "/resources/brand-consistency-checker" },
-              { title: "Journey Mapper", desc: "Map your customer experience across 5 stages with an emotion curve.", href: "/resources/customer-journey-mapper" },
-              { title: "Repurposing Planner", desc: "Turn one content piece into many with a visual repurposing plan.", href: "/resources/content-repurposing" },
-              { title: "Channel Recommender", desc: "Get ranked channel recommendations based on your business and goals.", href: "/resources/channel-recommender" },
               { title: "SEO Audit Score", desc: "Check 40 SEO factors and get your site health score.", href: "/resources/seo-audit-score" },
-              { title: "Post Generator", desc: "Generate platform-specific social media posts instantly.", href: "/resources/social-post-generator" },
-              { title: "Marketing Calendar", desc: "Build a 12-month marketing calendar for your industry.", href: "/resources/marketing-calendar" },
-              { title: "Website Readiness", desc: "Score your site on mobile, speed, SEO, security, and accessibility.", href: "/resources/website-readiness-scorecard" },
-              { title: "Subject Line Tester", desc: "A/B test email subject lines before you send.", href: "/resources/email-subject-ab-tester" },
-              { title: "Audience Worksheet", desc: "Define your ideal customer profile step by step.", href: "/resources/audience-targeting-worksheet" },
-              { title: "Ad Spy Worksheet", desc: "Document and compare competitor advertising strategies.", href: "/resources/competitor-ad-spy" },
-              { title: "Goal Setter", desc: "Set SMART marketing goals with targets and timelines.", href: "/resources/marketing-goal-setter" },
-              { title: "Tone of Voice", desc: "Define how your brand sounds with an exportable guide.", href: "/resources/brand-tone-generator" },
-              { title: "Campaign Naming", desc: "Generate structured campaign names for any platform.", href: "/resources/campaign-naming-convention" },
-              { title: "Stack Audit", desc: "Audit your marketing tech stack for gaps and waste.", href: "/resources/marketing-stack-audit" },
-              { title: "Pricing Analyser", desc: "Score your pricing page against 20 best practices.", href: "/resources/pricing-page-analyzer" },
-              { title: "Bio Generator", desc: "Create optimised social media bios for any platform.", href: "/resources/social-media-bio-generator" },
-              { title: "Content Brief", desc: "Build detailed briefs for writers with keywords and outline.", href: "/resources/content-brief-generator" },
-              { title: "Expense Tracker", desc: "Track marketing spend by channel with budget monitoring.", href: "/resources/marketing-expense-tracker" },
-              { title: "Lead Scoring", desc: "Build a lead scoring model and test with real leads.", href: "/resources/lead-scoring-calculator" },
-              { title: "Timeline Planner", desc: "Plan campaigns with milestones and visual timeline.", href: "/resources/marketing-timeline-planner" },
-              { title: "Ad Copy Analyser", desc: "Score your ad copy against best practices.", href: "/resources/ad-copy-analyzer" },
-              { title: "Journey Builder", desc: "Map customer touchpoints across 5 journey stages.", href: "/resources/customer-journey-builder" },
-              { title: "ROI Forecaster", desc: "Forecast marketing ROI by channel and time period.", href: "/resources/roi-forecaster" },
-              { title: "Headline Tester", desc: "Generate and score headline variations for A/B testing.", href: "/resources/headline-split-tester" },
-              { title: "KPI Dashboard", desc: "Build a custom KPI dashboard from 30+ marketing metrics.", href: "/resources/kpi-builder" },
-              { title: "Pricing Tracker", desc: "Track competitor pricing, features, and positioning.", href: "/resources/competitor-pricing-tracker" },
-              { title: "Content Rater", desc: "Rate social content against platform best practices.", href: "/resources/social-content-rater" },
-              { title: "Proposal Generator", desc: "Build professional marketing proposals in a guided 5-step wizard.", href: "/resources/marketing-proposal-generator" },
-              { title: "Name Evaluator", desc: "Score and compare brand names across 8 key criteria.", href: "/resources/brand-name-evaluator" },
-              { title: "Warm-Up Planner", desc: "Plan email domain warm-up schedules for better deliverability.", href: "/resources/email-warmup-planner" },
-              { title: "Channel Mix", desc: "Model marketing channel allocation with projected ROI.", href: "/resources/channel-mix-modeller" },
-              { title: "Pillar Planner", desc: "Plan content pillars with topic clusters and publishing queue.", href: "/resources/content-pillar-planner" },
-              { title: "Onboarding Checklist", desc: "Generate tailored client onboarding checklists by service.", href: "/resources/client-onboarding-checklist" },
-              { title: "Audit Scorecard", desc: "Score your marketing across 8 categories with 40 questions.", href: "/resources/marketing-audit-scorecard" },
-              { title: "Content Calendar", desc: "Plan social posts on an interactive monthly calendar.", href: "/resources/social-media-calendar-template" },
-              { title: "Naming Convention", desc: "Generate consistent campaign names across ad platforms.", href: "/resources/campaign-naming-generator" },
-              { title: "Funnel Simulator", desc: "Simulate your marketing funnel and identify bottlenecks.", href: "/resources/conversion-funnel-simulator" },
-              { title: "Voice Checker", desc: "Evaluate content consistency against your brand voice.", href: "/resources/brand-voice-checker" },
-              { title: "Agenda Builder", desc: "Build marketing meeting agendas from pro templates.", href: "/resources/meeting-agenda-builder" },
-              { title: "RFP Template", desc: "Build professional marketing RFPs with structured sections.", href: "/resources/marketing-rfp-template" },
-              { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/resources/website-heuristic-evaluator" },
-              { title: "Budget Pacing", desc: "Track ad spend pacing and forecast end-of-month budget.", href: "/resources/ad-budget-pacing" },
-              { title: "SWOT Analyzer", desc: "Compare your strengths and weaknesses against competitors.", href: "/resources/competitive-swot-analyzer" },
-              { title: "ROI Report", desc: "Generate professional marketing ROI performance reports.", href: "/resources/marketing-roi-report" },
-              { title: "Survey Builder", desc: "Build customer feedback surveys from proven templates.", href: "/resources/customer-feedback-survey" },
-              { title: "Persona Workshop", desc: "Build detailed marketing personas with guided exercises.", href: "/resources/persona-workshop" },
-              { title: "Content Gap Finder", desc: "Map content against the buyer journey and find gaps.", href: "/resources/content-gap-finder" },
-              { title: "SEO Content Optimizer", desc: "Analyze content for keyword usage, readability, and structure.", href: "/resources/seo-content-optimizer" },
-              { title: "Client Reporting", desc: "Build professional marketing reports for clients.", href: "/resources/client-reporting-dashboard" },
-              { title: "Campaign Tracker", desc: "Track campaigns, budgets, and performance in one place.", href: "/resources/campaign-tracker" },
-              { title: "Competitor Benchmarking", desc: "Benchmark your business across 6 key dimensions.", href: "/resources/competitor-benchmarking" },
-              { title: "KPI Tracker", desc: "Track marketing KPIs with targets and trend sparklines.", href: "/resources/marketing-kpi-tracker" },
-              { title: "Budget Allocator", desc: "Allocate marketing budget across channels with templates.", href: "/resources/budget-allocator" },
-              { title: "Scope of Work", desc: "Generate professional SOWs for marketing projects.", href: "/resources/scope-of-work-generator" },
-              { title: "Metrics Benchmark", desc: "Compare your metrics against industry benchmarks.", href: "/resources/marketing-metrics-benchmark" },
-              { title: "Brand Checklist", desc: "40-item brand guidelines completeness checklist.", href: "/resources/brand-guidelines-checklist" },
-              { title: "Launch Checklist", desc: "50-item website pre-launch checklist with GO/NO-GO.", href: "/resources/website-launch-checklist" },
-              { title: "Backlink Analyzer", desc: "Analyze backlink profile quality and get recommendations.", href: "/resources/backlink-analyzer" },
-              { title: "Retention Calculator", desc: "Calculate retention, churn, and model improvement scenarios.", href: "/resources/retention-calculator" },
-              { title: "Experiment Tracker", desc: "Plan and track marketing experiments with ICE scoring.", href: "/resources/experiment-tracker" },
-              { title: "Attribution Calculator", desc: "Compare 4 attribution models side by side.", href: "/resources/attribution-calculator" },
-              { title: "Content Scorecard", desc: "Score content across 8 dimensions with radar comparison.", href: "/resources/content-performance-scorecard" },
-              { title: "Vendor Evaluation", desc: "Compare vendors with weighted scoring and radar chart.", href: "/resources/vendor-evaluation" },
-              { title: "Agency Pricing", desc: "Model hourly, retainer, and project pricing with benchmarks.", href: "/resources/agency-pricing-calculator" },
-              { title: "Stakeholder Reports", desc: "Build exec, board, team, and client reports with KPI cards.", href: "/resources/stakeholder-report" },
-              { title: "Risk Assessment", desc: "Map risks on a 5×5 matrix with SVG heatmap and mitigations.", href: "/resources/risk-assessment" },
-              { title: "OKR Planner", desc: "Track marketing objectives and key results with progress bars.", href: "/resources/okr-planner" },
-              { title: "Team Capacity", desc: "Plan team workload across roles with utilization tracking.", href: "/resources/team-capacity-planner" },
-              { title: "Campaign Debrief", desc: "Run post-mortems with planned vs actual metrics and grading.", href: "/resources/campaign-debrief" },
-              { title: "Sprint Planner", desc: "Plan agile marketing sprints with kanban board and burndown.", href: "/resources/sprint-planner" },
-              { title: "Quarterly Review", desc: "Build quarterly reviews with channel performance and goals.", href: "/resources/quarterly-review" },
-              { title: "Martech Stack", desc: "Plan your tech stack with cost tracking and integrations.", href: "/resources/martech-stack-planner" },
-              { title: "SLA Tracker", desc: "Track service level agreements with compliance rates.", href: "/resources/sla-tracker" },
-              { title: "Competitive Intel", desc: "Track competitors across 6 dimensions with threat scoring.", href: "/resources/competitive-intel-dashboard" },
+              { title: "Persona Builder", desc: "Build detailed buyer personas for your strategy.", href: "/resources/persona-builder" },
+              { title: "Competitor Analysis", desc: "Map your competitive landscape interactively.", href: "/resources/competitor-analysis" },
+              { title: "Service Finder Quiz", desc: "Answer 5 questions, get personalized recommendations.", href: "/services/finder" },
             ].map((r) => (
               <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
@@ -593,6 +472,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </Link>
             ))}
           </Stagger>
+          <Animate animation="fade-up" delay={200}>
+            <div className="mt-8 text-center">
+              <Link href="/resources" className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                View All 150+ Free Tools &rarr;
+              </Link>
+            </div>
+          </Animate>
         </div>
       </section>
 
