@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { SOCIAL_URLS } from "@/lib/social";
 import {
   Search, Share2, Code, Palette, Video, Bot, Mail, TrendingUp,
   BarChart3, Megaphone, FileText, Briefcase, ShoppingCart, Camera,
@@ -157,6 +158,12 @@ export default function ServicesPage() {
     "@type": "CollectionPage",
     name: "Markit Media Services",
     description: "Full-stack digital marketing services.",
+    provider: {
+      "@type": "Organization",
+      name: "Markit Media",
+      url: "https://themarkitmedia.com",
+      sameAs: SOCIAL_URLS,
+    },
     mainEntity: {
       "@type": "ItemList",
       itemListElement: serviceCategories.map((s, i) => ({

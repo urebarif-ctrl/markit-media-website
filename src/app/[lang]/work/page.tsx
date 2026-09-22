@@ -5,7 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
-import { SOCIAL_LINKS } from "@/lib/social";
+import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "Our Work — Selected Projects & Portfolio",
@@ -171,6 +171,12 @@ export default function WorkPage() {
     "@type": "CollectionPage",
     name: "Markit Media — Selected Work",
     description: "Portfolio of video production, website development, branding, and social media work by Markit Media.",
+    provider: {
+      "@type": "Organization",
+      name: "Markit Media",
+      url: "https://themarkitmedia.com",
+      sameAs: SOCIAL_URLS,
+    },
   };
 
   const faqSchema = {
