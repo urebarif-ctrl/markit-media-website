@@ -284,18 +284,18 @@ const nextConfig: NextConfig = {
       { source: "/atlanta", destination: "/en/locations/united-states/atlanta", permanent: true },
 
       // === Portfolio/case study redirects ===
-      { source: "/portfolio/:slug*", destination: "/en/work", permanent: true },
-      { source: "/portfolio_tag/:slug*", destination: "/en/work", permanent: true },
-      { source: "/case-study/:slug*", destination: "/en/work", permanent: true },
+      { source: "/portfolio/:slug", destination: "/en/work", permanent: true },
+      { source: "/portfolio_tag/:slug", destination: "/en/work", permanent: true },
+      { source: "/case-study/:slug", destination: "/en/work", permanent: true },
 
       // === WordPress taxonomy/feed/archive patterns ===
       { source: "/category/:slug", destination: "/en/blog", permanent: true },
       { source: "/tag/:slug", destination: "/en/blog", permanent: true },
-      { source: "/author/:slug*", destination: "/en/blog", permanent: true },
+      { source: "/author/:slug", destination: "/en/blog", permanent: true },
       { source: "/feed", destination: "/en/blog", permanent: true },
       { source: "/feed/:path*", destination: "/en/blog", permanent: true },
-      { source: "/blogs/page/:num*", destination: "/en/blog", permanent: true },
-      { source: "/blogs/:slug*", destination: "/en/blog", permanent: true },
+      { source: "/blogs/page/:num", destination: "/en/blog", permanent: true },
+      { source: "/blogs/:slug", destination: "/en/blog", permanent: true },
       { source: "/:year(\\d{4})/:month(\\d{2})", destination: "/en/blog", permanent: true },
 
       // === WordPress infrastructure ===
@@ -307,7 +307,10 @@ const nextConfig: NextConfig = {
       { source: "/xmlrpc.php", destination: "/en", permanent: false },
       { source: "/wp-cron.php", destination: "/en", permanent: false },
       { source: "/wp-sitemap.xml", destination: "/sitemap.xml", permanent: true },
-      { source: "/wp-sitemap-:path*", destination: "/sitemap.xml", permanent: true },
+      { source: "/wp-sitemap-posts-post-1.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/wp-sitemap-posts-page-1.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/wp-sitemap-taxonomies-category-1.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/wp-sitemap-users-1.xml", destination: "/sitemap.xml", permanent: true },
     ];
   },
 };
