@@ -44,8 +44,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Name is required." }, { status: 400 });
     }
 
-    if (!message || String(message).trim().length < 10) {
-      return NextResponse.json({ error: "Message must be at least 10 characters." }, { status: 400 });
+    if (!message || String(message).trim().length < 5) {
+      return NextResponse.json({ error: "Please enter a message." }, { status: 400 });
     }
 
     if (body.website) {
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
           from: "Markit Media Website <onboarding@resend.dev>",
-          to: "ciao@themarkitmedia.com",
+          to: ["ciao@themarkitmedia.com", "ureb.arif@themarkitmedia.com", "urebarif@gmail.com"],
           subject: `New Lead: ${sanitizedData.name} — ${sanitizedData.service || "General Inquiry"}`,
           html: `
             <h2>New Contact Form Submission</h2>
