@@ -3,7 +3,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
-import { getPublishedPosts } from "@/lib/blog";
+import { getPostsByCategory } from "@/lib/blog";
 import type { LucideIcon } from "lucide-react";
 
 interface SubService {
@@ -52,9 +52,7 @@ export function ServicePage({
   blogCategory,
 }: ServicePageProps) {
   const relatedPosts = blogCategory
-    ? getPublishedPosts(50).filter(
-        (p) => p.category.toLowerCase().includes(blogCategory.toLowerCase())
-      ).slice(0, 3)
+    ? getPostsByCategory(blogCategory, 3)
     : [];
   const serviceSchema = {
     "@context": "https://schema.org",
