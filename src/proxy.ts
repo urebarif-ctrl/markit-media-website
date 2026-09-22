@@ -4,6 +4,18 @@ import type { NextRequest } from "next/server";
 const locales = ["en", "ar", "ur"];
 const defaultLocale = "en";
 
+const CATEGORY_REDIRECTS: Record<string, string> = {
+  "social-media-marketing": "social-media",
+  "ppc-and-paid-advertising": "paid-advertising",
+  "analytics-and-data": "analytics",
+  "e-commerce-marketing": "e-commerce",
+  "web-development": "website-development",
+  "performance-marketing": "digital-marketing",
+  "video-marketing": "video-production",
+  "ai-in-marketing": "ai-and-technology",
+  "advertising": "paid-advertising",
+};
+
 const KNOWN_ROUTES = new Set([
   "about", "approach", "blog", "capabilities", "careers", "case-studies",
   "contact", "faq", "free-tools", "get-a-quote", "glossary", "industries",
@@ -19,7 +31,19 @@ export function proxy(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameHasLocale) return NextResponse.next();
+  if (pathnameHasLocale) {
+    const categoryMatch = pathname.match(/^\/[a-z]{2}\/blog\/category\/([^/]+)$/);
+    if (categoryMatch) {
+      const oldSlug = categoryMatch[1];
+      const newSlug = CATEGORY_REDIRECTS[oldSlug];
+      if (newSlug) {
+        const url = request.nextUrl.clone();
+        url.pathname = pathname.replace(oldSlug, newSlug);
+        return NextResponse.redirect(url, 301);
+      }
+    }
+    return NextResponse.next();
+  }
 
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length === 0) {
