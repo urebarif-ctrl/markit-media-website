@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { JsonLd } from "@/components/json-ld";
+
 import { BackToTop } from "@/components/back-to-top";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Analytics } from "@/components/analytics";
@@ -83,26 +83,7 @@ export default async function LangLayout({
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       <body className="min-h-full flex flex-col">
-        <JsonLd data={{
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Markit Media",
-          url: "https://themarkitmedia.com",
-          logo: "https://themarkitmedia.com/images/branding/og-image.png",
-          sameAs: [],
-          contactPoint: { "@type": "ContactPoint", email: "ciao@themarkitmedia.com", contactType: "customer service" },
-        }} />
-        <JsonLd data={{
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "Markit Media",
-          url: "https://themarkitmedia.com",
-          potentialAction: {
-            "@type": "SearchAction",
-            target: { "@type": "EntryPoint", urlTemplate: "https://themarkitmedia.com/en/blog?q={search_term_string}" },
-            "query-input": "required name=search_term_string",
-          },
-        }} />
+        {/* Organization + WebSite schemas live on homepage page.tsx only */}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">
           {t.common.skipToMainContent}
         </a>

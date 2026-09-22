@@ -115,7 +115,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     url: "https://themarkitmedia.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: { "@type": "EntryPoint", urlTemplate: "https://themarkitmedia.com/blog?q={search_term_string}" },
+      target: { "@type": "EntryPoint", urlTemplate: "https://themarkitmedia.com/en/blog?q={search_term_string}" },
       "query-input": "required name=search_term_string",
     },
   };
