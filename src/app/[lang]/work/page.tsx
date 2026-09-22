@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -78,6 +79,33 @@ const featuredProjects = [
     services: "Video Production",
     desc: "Long-standing creative partnership producing professional video content for the automotive aftermarket.",
     href: "/work/american-auto-parts",
+  },
+];
+
+const creativePortfolio = [
+  {
+    title: "Fashion",
+    category: "Fashion & Lifestyle",
+    image: "/images/portfolio/behance/fashion.jpg",
+    behanceUrl: "https://www.behance.net/gallery/228648529/Fashion",
+  },
+  {
+    title: "Social Media Designs",
+    category: "Social Media",
+    image: "/images/portfolio/behance/social-media-designs.jpg",
+    behanceUrl: "https://www.behance.net/gallery/228353933/Social-Media-Designs",
+  },
+  {
+    title: "FoodFolio",
+    category: "Food & Beverage",
+    image: "/images/portfolio/behance/foodfolio.jpg",
+    behanceUrl: "https://www.behance.net/gallery/228262243/FoodFolio",
+  },
+  {
+    title: "LogoFolio",
+    category: "Branding & Identity",
+    image: "/images/portfolio/behance/logofolio.jpg",
+    behanceUrl: "https://www.behance.net/gallery/226405873/LogoFolio",
   },
 ];
 
@@ -269,6 +297,44 @@ export default function WorkPage() {
         </div>
       </section>
 
+      {/* Creative Portfolio from Behance */}
+      <section className="px-6 lg:px-12 py-20" aria-label="Creative portfolio">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Creative Portfolio</SectionLabel>
+            <SectionTitle>Design &amp; Creative Work</SectionTitle>
+            <SectionDesc>
+              A selection of our graphic design, branding, and creative work across industries.
+            </SectionDesc>
+          </Animate>
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {creativePortfolio.map((item) => (
+              <a key={item.title} href={item.behanceUrl} target="_blank" rel="noopener noreferrer" className="group block overflow-hidden border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <div className="relative aspect-[16/10] bg-gray-100">
+                  <Image
+                    src={item.image}
+                    alt={`${item.title} — ${item.category}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500 motion-reduce:transition-none"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="text-base text-gray-400 font-medium">{item.category}</span>
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mt-1">{item.title}</h3>
+                  <span className="text-base text-gray-400 mt-2 inline-block">View on Behance &rarr;</span>
+                </div>
+              </a>
+            ))}
+          </Stagger>
+          <div className="text-center mt-8">
+            <a href="https://www.behance.net/themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-block border border-gray-200 px-8 py-4 text-base font-bold text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              View Full Portfolio on Behance &rarr;
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Logo Folio Preview */}
       <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Logo folio">
         <div className="max-w-4xl mx-auto text-center">
@@ -316,6 +382,9 @@ export default function WorkPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               YouTube
+            </a>
+            <a href="https://www.behance.net/themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              Behance
             </a>
             <a href="https://www.instagram.com/themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Instagram
