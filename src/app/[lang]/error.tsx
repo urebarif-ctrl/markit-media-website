@@ -2,7 +2,7 @@
 
 export default function Error({ reset }: { error: Error; reset: () => void }) {
   return (
-    <section className="px-6 lg:px-12 py-32 text-center">
+    <section className="px-6 lg:px-12 py-32 text-center" aria-label="Error">
       <div className="max-w-xl mx-auto">
         <div className="font-[family-name:var(--font-display)] text-8xl font-extrabold text-black/10 mb-6">500</div>
         <h1 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mb-4">

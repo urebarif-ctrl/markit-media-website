@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="px-6 lg:px-12 py-32 text-center">
+    <section className="px-6 lg:px-12 py-32 text-center" aria-label="Page not found">
       <div className="max-w-2xl mx-auto">
         <div className="font-[family-name:var(--font-display)] text-[clamp(6rem,15vw,10rem)] font-extrabold text-black/10 leading-none mb-6">404</div>
         <h1 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,4vw,2.5rem)] font-extrabold text-black mb-4">
