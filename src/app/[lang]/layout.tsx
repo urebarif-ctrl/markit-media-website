@@ -31,7 +31,9 @@ export const metadata: Metadata = {
   },
   description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
   metadataBase: new URL("https://themarkitmedia.com"),
-  robots: { index: false, follow: false },
+  robots: process.env.PRODUCTION_DEPLOY === "true"
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },
