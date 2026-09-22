@@ -5,6 +5,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getPublishedPosts } from "@/lib/blog";
+import { SOCIAL_URLS } from "@/lib/social";
 import {
   Search, Share2, Code, Palette, Video, Bot, Mail, TrendingUp,
   BarChart3, ShoppingCart, Megaphone, FileText, Briefcase,
@@ -98,15 +99,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     logo: "https://themarkitmedia.com/images/branding/og-image.png",
     description: "Full-stack digital marketing agency serving businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
     email: "ciao@themarkitmedia.com",
-    sameAs: [
-      "https://www.linkedin.com/company/the-markit-media/",
-      "https://www.instagram.com/themarkitmedia",
-      "https://www.youtube.com/@themarkitmedia",
-      "https://www.behance.net/themarkitmedia",
-      "https://www.facebook.com/themarkitmedia/",
-      "https://www.tiktok.com/@themarkitmedia_",
-      "https://x.com/themarkitmedia",
-    ],
+    sameAs: SOCIAL_URLS,
     areaServed: markets.map((m) => ({ "@type": "Country", name: m })),
     knowsAbout: [
       "Search Engine Optimization", "Pay-Per-Click Advertising", "Social Media Marketing",

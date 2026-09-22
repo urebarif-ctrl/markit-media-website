@@ -5,6 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "Our Work — Selected Projects & Portfolio",
@@ -377,24 +378,15 @@ export default function WorkPage() {
       {/* Social CTA */}
       <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Follow our work">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Watch Our Projects on YouTube</h2>
-          <p className="text-base text-gray-500 mb-6">See the full library of client showcases, behind-the-scenes content, and creative work.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              YouTube
-            </a>
-            <a href="https://www.behance.net/themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              Behance
-            </a>
-            <a href="https://www.instagram.com/themarkitmedia" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              Instagram
-            </a>
-            <a href="https://www.linkedin.com/company/the-markit-media/" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              LinkedIn
-            </a>
-            <a href="https://www.tiktok.com/@themarkitmedia_" target="_blank" rel="noopener noreferrer" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              TikTok
-            </a>
+          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Follow Our Work</h2>
+          <p className="text-base text-gray-500 mb-6">See the full library of client showcases, behind-the-scenes content, and creative work across platforms.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {SOCIAL_LINKS.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-gray-200 px-4 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />
+                {s.label}
+              </a>
+            ))}
           </div>
         </div>
       </section>

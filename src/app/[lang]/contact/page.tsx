@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ContactForm } from "./contact-form";
 import { Mail, MapPin, Clock } from "lucide-react";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -182,16 +183,10 @@ export default function ContactPage() {
       <section className="px-6 lg:px-12 py-10 bg-gray-50" aria-label="Social channels">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Connect With Us</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              { label: "YouTube", href: "https://www.youtube.com/@themarkitmedia" },
-              { label: "Instagram", href: "https://www.instagram.com/themarkitmedia" },
-              { label: "LinkedIn", href: "https://www.linkedin.com/company/the-markit-media/" },
-              { label: "TikTok", href: "https://www.tiktok.com/@themarkitmedia_" },
-              { label: "X", href: "https://x.com/themarkitmedia" },
-              { label: "Facebook", href: "https://www.facebook.com/themarkitmedia/" },
-            ].map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <div className="flex flex-wrap justify-center gap-3">
+            {SOCIAL_LINKS.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-gray-200 bg-white px-4 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />
                 {s.label}
               </a>
             ))}

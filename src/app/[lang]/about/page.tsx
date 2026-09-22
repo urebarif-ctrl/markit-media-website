@@ -4,6 +4,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import Link from "next/link";
+import { SOCIAL_LINKS } from "@/lib/social";
 import {
   Target,
   Lightbulb,
@@ -474,6 +475,14 @@ export default function AboutPage() {
                 <p className="text-base text-gray-500 mt-1">Creative side</p>
                 <p className="text-base text-gray-400 mt-2">Fun & trending</p>
               </a>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              {SOCIAL_LINKS.filter((s) => !["YouTube", "Instagram", "LinkedIn", "TikTok"].includes(s.label)).map((s) => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-gray-200 px-4 py-2.5 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />
+                  {s.label}
+                </a>
+              ))}
             </div>
           </Animate>
         </div>
