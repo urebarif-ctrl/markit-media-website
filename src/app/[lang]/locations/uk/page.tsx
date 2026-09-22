@@ -163,7 +163,7 @@ export default function UKPage() {
             </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/locations/uk.svg" alt="Uk digital marketing" className="w-full aspect-[4/3] object-cover" />
+            <img loading="lazy" src="/images/locations/uk.svg" alt="Uk digital marketing" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

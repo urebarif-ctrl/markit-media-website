@@ -177,7 +177,7 @@ export default function RestaurantsPage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/restaurant.svg" alt="Restaurants marketing services" className="w-full aspect-[4/3] object-cover" />
+            <img loading="lazy" src="/images/industries/restaurant.svg" alt="Restaurants marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

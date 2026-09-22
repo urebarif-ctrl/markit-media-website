@@ -163,7 +163,7 @@ export default function UAEPage() {
             </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/locations/uae.svg" alt="Uae digital marketing" className="w-full aspect-[4/3] object-cover" />
+            <img loading="lazy" src="/images/locations/uae.svg" alt="Uae digital marketing" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

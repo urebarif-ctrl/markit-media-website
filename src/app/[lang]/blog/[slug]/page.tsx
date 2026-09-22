@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.cover_image && (
         <section aria-label="Need Help With Your Strategy?" className="px-6 lg:px-12 pb-8">
           <div className="max-w-4xl mx-auto">
-            <img src={post.cover_image} alt={`Cover image for ${post.title}`} className="w-full aspect-[2/1] object-cover" />
+            <img loading="lazy" src={post.cover_image} alt={`Cover image for ${post.title}`} className="w-full aspect-[2/1] object-cover" />
           </div>
         </section>
       )}
@@ -309,7 +309,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 >
                   {r.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
-                      <img src={r.cover_image} alt={`Cover for ${r.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                      <img loading="lazy" src={r.cover_image} alt={`Cover for ${r.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                     </div>
                   )}
                   <div className="p-6">

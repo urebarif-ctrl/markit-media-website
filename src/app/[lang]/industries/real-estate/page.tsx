@@ -167,7 +167,7 @@ export default function RealEstatePage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/real-estate.svg" alt="Real Estate marketing services" className="w-full aspect-[4/3] object-cover" />
+            <img loading="lazy" src="/images/industries/real-estate.svg" alt="Real Estate marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

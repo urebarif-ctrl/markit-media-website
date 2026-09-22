@@ -177,7 +177,7 @@ export default function FashionPage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img src="/images/industries/fashion.svg" alt="Fashion marketing services" className="w-full aspect-[4/3] object-cover" />
+            <img loading="lazy" src="/images/industries/fashion.svg" alt="Fashion marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>
