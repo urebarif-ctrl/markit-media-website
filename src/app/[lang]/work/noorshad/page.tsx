@@ -25,7 +25,11 @@ export default function NoorShadPage() {
         "Dedicated YouTube playlist organizing all NoorShad content",
         "Video content formatted for social media distribution",
       ]}
-      videos={[]}
+      videos={[
+        { id: "jHv9-z58krE", title: "Noor Shad Video" },
+        { id: "276ppothTQE", title: "Home Final" },
+        { id: "fVidOL-n8SE", title: "Noor Shad Trophy Home" },
+      ]}
       relatedServices={[
         { title: "Video Production", href: "/services/video-production" },
         { title: "Social Media", href: "/services/social-media" },

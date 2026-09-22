@@ -25,7 +25,11 @@ export default function CambridgeElectricalPage() {
         "6+ professionally produced social media reels",
         "Campaign content calendar with staggered release schedule",
       ]}
-      videos={[]}
+      videos={[
+        { id: "dTvA7rF_jOk", title: "Cambridge Fan Heater – Winter Campaign", aspect: "portrait" as const },
+        { id: "0xc6RcRJ-L8", title: "Cambridge Summer Campaign Reel", aspect: "portrait" as const },
+        { id: "8Rfo4poWXzA", title: "Cambridge Summer Campaign Reel 2", aspect: "portrait" as const },
+      ]}
       relatedServices={[
         { title: "Social Media", href: "/services/social-media" },
         { title: "Video Production", href: "/services/video-production" },

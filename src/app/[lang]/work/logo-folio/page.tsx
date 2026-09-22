@@ -7,12 +7,13 @@ import { JsonLd } from "@/components/json-ld";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 
 const logoProjects = [
-  { client: "My Fresh Fruits", industry: "F&B / Retail", videoId: "", desc: "Animated logo design for a fresh produce retail brand." },
-  { client: "HUBCO", industry: "Energy", videoId: "", desc: "Professional logo animation for a leading energy company." },
-  { client: "MeezoTech", industry: "Technology", videoId: "", desc: "Animated logo and showreel for a technology company." },
-  { client: "Pakhlanze", industry: "Various", videoId: "", desc: "Logo animation showcasing brand identity in motion." },
-  { client: "Chefiality", industry: "F&B", videoId: "", desc: "Animated logo design for a food and beverage brand." },
-  { client: "Easy Wear", industry: "Fashion / Retail", videoId: "", desc: "Logo animation for a fashion and retail brand." },
+  { client: "HUBCO", industry: "Energy", videoId: "CIr1dFqvmfM", desc: "Professional logo animation for a leading energy company." },
+  { client: "MeezoTech", industry: "Technology", videoId: "OK4E1x-e6m8", desc: "Animated logo and showreel for a technology company." },
+  { client: "Chefiality", industry: "F&B", videoId: "ouEaX5ysSuM", desc: "Animated logo design for a food and beverage brand." },
+  { client: "Easy Wear", industry: "Fashion / Retail", videoId: "hpYLSo3kDNQ", desc: "Logo animation for a fashion and retail brand." },
+  { client: "Pakhlanze", industry: "F&B", videoId: "T_Bmg4FVmSo", desc: "Bringing sweetness to life — brand animation." },
+  { client: "My Fresh Fruits", industry: "F&B / Retail", videoId: "MLFuqpqidHQ", desc: "Animated logo design for a fresh produce retail brand." },
+  { client: "MAXUM Agency", industry: "Agency", videoId: "NEsjHsAu9Xs", desc: "Fast animated video for a creative agency." },
 ];
 
 export default function LogoFolioPage() {

@@ -24,7 +24,9 @@ export default function VusePage() {
         "Ongoing content production as part of a continuing partnership",
         "Digital content assets for brand campaigns",
       ]}
-      videos={[]}
+      videos={[
+        { id: "3a9vbqiNmAM", title: "Vuse Reel", aspect: "portrait" as const },
+      ]}
       relatedServices={[
         { title: "Social Media", href: "/services/social-media" },
         { title: "Video Production", href: "/services/video-production" },

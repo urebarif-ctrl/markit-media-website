@@ -23,7 +23,10 @@ export default function HubcoPage() {
         "Commercial video content for brand communication",
         "Multiple format exports for different platforms and use cases",
       ]}
-      videos={[]}
+      videos={[
+        { id: "CIr1dFqvmfM", title: "HUBCO Logo Animation" },
+        { id: "TGH1Rgpuzf4", title: "HUBCO – Powering Progress" },
+      ]}
       relatedServices={[
         { title: "Branding", href: "/services/branding" },
         { title: "Video Production", href: "/services/video-production" },

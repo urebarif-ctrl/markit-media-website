@@ -27,7 +27,9 @@ export default function AmericanAutoPartsPage() {
         "Long-term creative partnership spanning multiple production cycles",
         "Comprehensive video content library for the brand",
       ]}
-      videos={[]}
+      videos={[
+        { id: "Ru2gorqwe9Y", title: "Markit Media x American AutoParts" },
+      ]}
       relatedServices={[
         { title: "Video Production", href: "/services/video-production" },
         { title: "Digital Marketing", href: "/services/digital-marketing" },

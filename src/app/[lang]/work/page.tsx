@@ -52,6 +52,27 @@ const featuredProjects = [
     href: "/work/hubco",
   },
   {
+    client: "One Homes",
+    industry: "Real Estate",
+    services: "Video Production",
+    desc: "Cinematic property walkthrough for the premium Amaya Residences development.",
+    href: "/work/one-homes",
+  },
+  {
+    client: "Elite",
+    industry: "Various",
+    services: "Website Development, Social Media",
+    desc: "Website development and social media content as a cohesive digital package.",
+    href: "/work/elite",
+  },
+  {
+    client: "Pur Health",
+    industry: "Healthcare",
+    services: "Website Development, Social Media",
+    desc: "Professional digital presence for a healthcare and wellness brand.",
+    href: "/work/pur-health",
+  },
+  {
     client: "American Auto Parts",
     industry: "Automotive",
     services: "Video Production",

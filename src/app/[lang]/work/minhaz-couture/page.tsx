@@ -24,7 +24,10 @@ export default function MinhazCouturePage() {
         "Cohesive visual identity across web and social touchpoints",
         "Platform-optimized content for Instagram and social distribution",
       ]}
-      videos={[]}
+      videos={[
+        { id: "I07B52LpjYg", title: "Social Media Reel for Minhaz Couture", aspect: "portrait" as const },
+        { id: "XlzRKdF0Ssg", title: "Minhaz Couture Baroque Collection", aspect: "portrait" as const },
+      ]}
       relatedServices={[
         { title: "Website Development", href: "/services/website-development" },
         { title: "Social Media", href: "/services/social-media" },
