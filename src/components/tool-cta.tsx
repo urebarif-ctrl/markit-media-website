@@ -70,7 +70,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
               <button
                 type="submit"
                 disabled={sending}
-                className="bg-black text-white px-6 py-3 font-bold text-base hover:bg-gray-800 transition-colors min-h-[44px] disabled:opacity-50"
+                className="bg-black text-white px-6 py-3 font-bold text-base hover:bg-gray-800 transition-colors min-h-[44px] disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 {sending ? "Sending..." : "Email My Results"}
               </button>

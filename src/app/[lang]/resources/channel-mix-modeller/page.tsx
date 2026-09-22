@@ -842,7 +842,7 @@ export default function ChannelMixModellerPage() {
               type="button"
               onClick={saveScenario}
               disabled={scenarios.length >= 3}
-              className="bg-black text-white px-8 py-2 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="bg-black text-white px-8 py-2 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:bg-gray-300 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               {scenarios.length >= 3
                 ? "Max 3 Scenarios"
@@ -968,13 +968,13 @@ export default function ChannelMixModellerPage() {
           <button
             type="button"
             onClick={exportTxt}
-            className="bg-black text-white px-10 py-4 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none"
+            className="bg-black text-white px-10 py-4 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
             Export as .txt
           </button>
           <Link
             href="/get-a-quote"
-            className="inline-flex items-center justify-center gap-3 border-2 border-black text-black px-10 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none"
+            className="inline-flex items-center justify-center gap-3 border-2 border-black text-black px-10 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
             Get a Custom Strategy &rarr;
           </Link>

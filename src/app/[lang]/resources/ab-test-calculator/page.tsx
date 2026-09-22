@@ -193,14 +193,14 @@ export default function ABTestCalculatorPage() {
                 <button
                   type="submit"
                   disabled={!isValid}
-                  className="bg-black text-white px-10 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:bg-gray-300 disabled:cursor-not-allowed min-h-[44px] min-w-[44px]"
+                  className="bg-black text-white px-10 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:bg-gray-300 disabled:cursor-not-allowed min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   Calculate
                 </button>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="border border-gray-300 text-black px-8 py-4 font-bold text-base hover:border-black transition-colors motion-reduce:transition-none min-h-[44px] min-w-[44px]"
+                  className="border border-gray-300 text-black px-8 py-4 font-bold text-base hover:border-black transition-colors motion-reduce:transition-none min-h-[44px] min-w-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   Reset
                 </button>
