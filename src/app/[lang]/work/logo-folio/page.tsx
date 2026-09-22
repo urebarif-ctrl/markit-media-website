@@ -89,14 +89,22 @@ export default function LogoFolioPage() {
       <section className="px-6 lg:px-12 py-16 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
-            Watch Our Projects on YouTube
+            See More of Our Work
           </h2>
           <p className="text-lg text-gray-400 mt-4 mb-8">
-            See more of our work on our YouTube channel, including client showcases, behind-the-scenes content, and agency life.
+            Explore our full portfolio across platforms — client showcases, behind-the-scenes content, and design work.
           </p>
-          <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-            Visit Our YouTube Channel &rarr;
-          </a>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              YouTube Channel &rarr;
+            </a>
+            <a href="https://www.behance.net/themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              Behance Portfolio &rarr;
+            </a>
+            <a href="https://dribbble.com/themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              Dribbble &rarr;
+            </a>
+          </div>
         </div>
       </section>
     </article>
