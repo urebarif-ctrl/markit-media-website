@@ -31,7 +31,8 @@ export async function generateMetadata({
   params: Promise<{ category: string }>;
 }): Promise<Metadata> {
   const { category } = await params;
-  const displayName = slugToCategory(category);
+  const allCategories = getAllCategories();
+  const displayName = allCategories.find((c) => categoryToSlug(c) === category) || slugToCategory(category);
   return {
     title: `${displayName} Articles — Markit Media Blog`,
     description: `Read our latest articles on ${displayName.toLowerCase()}. Expert insights and actionable advice from Markit Media.`,
