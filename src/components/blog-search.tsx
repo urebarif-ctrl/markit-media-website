@@ -100,10 +100,10 @@ export function BlogSearch() {
               className="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-[-2px]"
             >
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
+                <span className="text-base font-bold text-gray-500 uppercase tracking-wide">
                   {r.category}
                 </span>
-                <span className="text-xs text-gray-400">{r.reading_time} min</span>
+                <span className="text-base text-gray-400">{r.reading_time} min</span>
               </div>
               <p className="text-base font-semibold text-black leading-snug">{r.title}</p>
             </Link>
