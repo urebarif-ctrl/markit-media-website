@@ -199,7 +199,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       <div className="text-base text-gray-500 mt-1">Services Offered</div>
                     </div>
                     <div className="bg-white/5 border border-white/10 p-6">
-                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">150+</div>
+                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">155+</div>
                       <div className="text-base text-gray-500 mt-1">Free Marketing Tools</div>
                     </div>
                   </div>
@@ -507,7 +507,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Resources</SectionLabel>
-            <SectionTitle>150+ Free Marketing Tools</SectionTitle>
+            <SectionTitle>155+ Free Marketing Tools</SectionTitle>
             <p className="text-lg text-gray-500 mt-4 max-w-2xl">Interactive calculators, audit scorecards, generators, and planners to help you grow.</p>
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
@@ -530,7 +530,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <Animate animation="fade-up" delay={200}>
             <div className="mt-8 text-center">
               <Link href="/free-tools" className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                View All 150+ Free Tools &rarr;
+                View All 155+ Free Tools &rarr;
               </Link>
             </div>
           </Animate>

@@ -196,7 +196,7 @@ export default function ToolsPage() {
             <SectionLabel>Free Resources</SectionLabel>
             <SectionTitle>Try Our Free Marketing Tools</SectionTitle>
             <SectionDesc>
-              We have built over 150 free interactive tools to help marketers plan, analyze, and optimize campaigns.
+              We have built over 155 free interactive tools to help marketers plan, analyze, and optimize campaigns.
             </SectionDesc>
           </Animate>
           <Stagger stagger={40} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
@@ -217,7 +217,7 @@ export default function ToolsPage() {
           </Stagger>
           <div className="mt-6 text-center">
             <Link href="/free-tools" className="inline-flex items-center gap-2 text-base font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              View All 150+ Free Tools &rarr;
+              View All 155+ Free Tools &rarr;
             </Link>
           </div>
         </div>

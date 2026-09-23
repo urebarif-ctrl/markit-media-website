@@ -6,11 +6,11 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "150+ Free Marketing Tools — Calculators, Audits, Generators & Planners",
+  title: "155+ Free Marketing Tools — Calculators, Audits, Generators & Planners",
   description: "Free interactive marketing tools: ROI calculators, SEO audits, content generators, budget planners, competitor analysis, and more. No signup required.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools" },
   openGraph: {
-    title: "150+ Free Marketing Tools",
+    title: "155+ Free Marketing Tools",
     description: "Interactive calculators, audit scorecards, generators, and planners — all free, no signup required.",
   },
 };
