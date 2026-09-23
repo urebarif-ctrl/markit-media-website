@@ -200,7 +200,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                 ))}
               </div>
               <div className="border-t border-gray-100 px-6 py-3">
-                <Link href="/services" className="text-base font-bold text-black hover:underline">View All Services &rarr;</Link>
+                <Link href="/services" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">View All Services &rarr;</Link>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                 ))}
               </div>
               <div className="border-t border-gray-100 px-6 py-3">
-                <Link href="/industries" className="text-base font-bold text-black hover:underline">View All Industries &rarr;</Link>
+                <Link href="/industries" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">View All Industries &rarr;</Link>
               </div>
             </div>
           </div>
@@ -297,7 +297,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           ].map((link) => (
             <Link key={link.href} href={link.href} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">{link.label}</Link>
           ))}
-          <Link href="/contact" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none">{t.nav.getQuote}</Link>
+          <Link href="/contact" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
     </nav>

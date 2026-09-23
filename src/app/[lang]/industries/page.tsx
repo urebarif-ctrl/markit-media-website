@@ -51,7 +51,7 @@ export default function IndustriesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Industries Served by Markit Media",
-    description: "Specialized digital marketing for multiple industries.",
+    description: "Specialized digital marketing for 20 industries: home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, and more.",
   };
 
   const faqSchema = {

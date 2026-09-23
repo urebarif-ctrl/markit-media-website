@@ -20,6 +20,7 @@ export function CookieConsent() {
 
   const dismiss = useCallback((value: "accepted" | "dismissed") => {
     localStorage.setItem(STORAGE_KEY, value);
+    window.dispatchEvent(new Event("cookie-consent-update"));
     setIsVisible(false);
     setTimeout(() => setShouldShow(false), 400);
   }, []);

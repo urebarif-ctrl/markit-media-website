@@ -16,8 +16,11 @@ export function Analytics() {
     }
     checkConsent();
     window.addEventListener("storage", checkConsent);
-    const interval = setInterval(checkConsent, 2000);
-    return () => { window.removeEventListener("storage", checkConsent); clearInterval(interval); };
+    window.addEventListener("cookie-consent-update", checkConsent);
+    return () => {
+      window.removeEventListener("storage", checkConsent);
+      window.removeEventListener("cookie-consent-update", checkConsent);
+    };
   }, []);
 
   if (!GTM_ID || !consentGiven) return null;

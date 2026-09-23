@@ -158,7 +158,7 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Markit Media Services",
-    description: "Full-stack digital marketing services.",
+    description: "Explore Markit Media's full-stack digital marketing services: SEO, PPC, social media, web development, branding, video, AI, email, content, and more.",
     provider: {
       "@type": "Organization",
       name: "Markit Media",
