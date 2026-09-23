@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { getPublishedPosts, getPublishedPostCount, getAllCategories } from "@/lib/blog";
 import { NewsletterCta } from "@/components/newsletter-cta";
+import { BlogSearch } from "@/components/blog-search";
 
 export const metadata: Metadata = {
   title: "Blog — Digital Marketing Insights",
@@ -55,6 +56,9 @@ export default function BlogPage() {
             <SectionDesc>
               {totalCount}+ articles on SEO, advertising, social media, branding, web development, and growth strategy.
             </SectionDesc>
+            <div className="mt-6">
+              <BlogSearch />
+            </div>
           </Animate>
         </div>
       </section>
