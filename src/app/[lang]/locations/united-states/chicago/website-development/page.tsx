@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Website Development Agency in Chicago — Markit Media",
   description:
     "Markit Media builds high-performance websites for businesses in Chicago — WordPress, Shopify, and Next.js development focused on speed, conversion, and scalability for B2B and e-commerce.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/united-states/chicago/website-development" },
 };
 
 const schema = {

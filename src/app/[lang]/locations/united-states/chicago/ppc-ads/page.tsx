@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "PPC Ads Agency in Chicago — Markit Media",
   description:
     "Markit Media manages Google Ads, Meta Ads, and LinkedIn campaigns for businesses in Chicago. B2B lead generation, e-commerce, and ROI-focused paid media for the Midwest market.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/united-states/chicago/ppc-ads" },
 };
 
 const schema = {

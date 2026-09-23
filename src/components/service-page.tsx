@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -105,7 +106,7 @@ export function ServicePage({
           </Animate>
           {heroImage && (
             <Animate animation="fade-in" delay={200}>
-              <img src={heroImage} alt={`${title} illustration`} className="w-full aspect-[4/3] object-cover" />
+              <Image src={heroImage} alt={`${title} illustration`} width={800} height={600} className="w-full aspect-[4/3] object-cover" priority />
             </Animate>
           )}
         </div>

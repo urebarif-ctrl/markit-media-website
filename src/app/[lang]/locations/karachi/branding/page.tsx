@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Branding Agency in Karachi — Markit Media",
   description:
     "Markit Media is a branding agency in Karachi offering brand strategy, visual identity design, logo creation, and brand guidelines for businesses looking to stand out in a competitive market.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/karachi/branding" },
 };
 
 const schema = {

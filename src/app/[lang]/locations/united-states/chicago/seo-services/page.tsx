@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "SEO Services in Chicago — Markit Media",
   description:
     "Markit Media provides technical SEO, local SEO, and content strategy for businesses in Chicago. Organic growth for B2B, manufacturing, professional services, and multi-location companies.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/united-states/chicago/seo-services" },
 };
 
 const schema = {

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Marketing Agency in Chicago — Markit Media",
   description:
     "Markit Media serves businesses in Chicago with full-service marketing — strategy, paid media, SEO, web development, and branding built for measurable growth in the Midwest&apos;s largest business hub.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/united-states/chicago/marketing-agency" },
 };
 
 const schema = {

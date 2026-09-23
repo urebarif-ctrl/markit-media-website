@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "SEO Services in Karachi — Markit Media",
   description:
     "Markit Media offers SEO services in Karachi — technical SEO audits, local SEO, content optimization, and keyword research for businesses competing in Pakistan’s largest city.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/karachi/seo-services" },
 };
 
 const schema = {

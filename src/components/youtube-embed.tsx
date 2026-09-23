@@ -33,7 +33,7 @@ export function YouTubeEmbed({ videoId, title, aspect = "landscape", className =
         >
           <img
             src={thumbUrl}
-            alt=""
+            alt={`Video thumbnail: ${title}`}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />

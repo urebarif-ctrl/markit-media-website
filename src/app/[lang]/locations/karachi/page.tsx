@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Digital Marketing Agency in Karachi — Markit Media",
   description:
     "Markit Media is a full-service digital marketing agency based in Karachi. We offer SEO, PPC advertising, web development, branding, and social media marketing to businesses across Pakistan and beyond.",
+  alternates: { canonical: "https://themarkitmedia.com/en/locations/karachi" },
 };
 
 const schema = {
