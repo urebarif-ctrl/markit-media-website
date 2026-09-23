@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPublishedSlugs, getAllCategories } from "@/lib/blog";
+import { getAllPublishedSlugs, getAllPublishedSlugsWithDates, getAllCategories } from "@/lib/blog";
 
 const BASE_URL = "https://themarkitmedia.com";
 
@@ -396,17 +396,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    const blogSlugs = getAllPublishedSlugs();
-    for (const slug of blogSlugs) {
+    const blogPosts = getAllPublishedSlugsWithDates();
+    for (const post of blogPosts) {
       entries.push({
-        url: `${BASE_URL}/${locale}/blog/${slug}`,
-        lastModified: new Date(),
+        url: `${BASE_URL}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.updated_at || post.published_at || Date.now()),
         changeFrequency: "monthly",
         priority: 0.6,
       });
     }
 
-    const totalBlogPages = Math.ceil(blogSlugs.length / 30);
+    const totalBlogPages = Math.ceil(blogPosts.length / 30);
     for (let p = 2; p <= totalBlogPages; p++) {
       entries.push({
         url: `${BASE_URL}/${locale}/blog/page/${p}`,
