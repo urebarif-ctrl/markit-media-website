@@ -107,6 +107,20 @@ export default function CompetitorPricingTrackerPage() {
 
   return (
     <main className="min-h-screen bg-white text-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitor Pricing Tracker",
+          description: "Track competitor pricing, features, and positioning across products and tiers. Compare plans and identify market gaps.",
+          url: "https://themarkitmedia.com/en/resources/competitor-pricing-tracker",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

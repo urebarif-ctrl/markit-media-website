@@ -232,6 +232,20 @@ export default function InfluencerRoiPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Influencer Marketing ROI Calculator",
+          description: "Estimate the ROI of influencer marketing campaigns. Calculate projected reach, engagement, conversions, and return based on influencer tier, platform, and campaign type.",
+          url: "https://themarkitmedia.com/en/resources/influencer-roi",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

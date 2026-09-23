@@ -62,6 +62,20 @@ export default function SocialMediaRoiPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media ROI Calculator",
+          description: "Calculate the return on your social media marketing investment. Measure cost per follower, cost per click, revenue per dollar spent, and overall ROI.",
+          url: "https://themarkitmedia.com/en/resources/social-media-roi",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

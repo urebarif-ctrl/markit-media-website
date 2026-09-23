@@ -250,6 +250,20 @@ export default function FunnelCalculatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing",
+          description: "Monthly website visitors",
+          url: "https://themarkitmedia.com/en/resources/funnel-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

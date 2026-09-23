@@ -224,6 +224,20 @@ export default function EmailDeliverabilityPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Email Deliverability Checker",
+          description: "Your email infrastructure is well-configured. Keep monitoring and maintaining these practices.",
+          url: "https://themarkitmedia.com/en/resources/email-deliverability",
+          applicationCategory: "Email Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

@@ -572,6 +572,20 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
       aria-label="Copy to clipboard"
       className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border border-gray-300 text-black hover:border-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "A/B Test Ideas Generator",
+          description: "Free A/B test ideas generator. Select your page type and conversion goal to get a prioritized list of test ideas with hypotheses, ICE scores, and sample size recommendations.",
+          url: "https://themarkitmedia.com/en/resources/ab-test-ideas",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {copied ? "Copied" : label || "Copy to Clipboard"}
     </button>
   );

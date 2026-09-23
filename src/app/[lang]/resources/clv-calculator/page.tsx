@@ -125,6 +125,20 @@ export default function ClvCalculatorPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Customer Lifetime Value Calculator",
+          description: "You are recovering your acquisition cost but making no profit. Growth at this ratio is unsustainable long-term.",
+          url: "https://themarkitmedia.com/en/resources/clv-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

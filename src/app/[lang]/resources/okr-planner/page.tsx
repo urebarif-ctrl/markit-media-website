@@ -366,6 +366,20 @@ export default function OkrPlannerPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Increase Brand Awareness",
+          description: "Grow organic website traffic",
+          url: "https://themarkitmedia.com/en/resources/okr-planner",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={jsonLd} />
 
       <Breadcrumb

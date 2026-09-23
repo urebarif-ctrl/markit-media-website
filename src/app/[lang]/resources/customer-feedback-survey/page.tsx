@@ -77,7 +77,7 @@ function estimateMinutes(questions: SurveyQuestion[]): number {
 const TEMPLATES: SurveyTemplate[] = [
   {
     id: "nps",
-    name: "Net Promoter Score (NPS)",
+    name: "Customer Feedback Survey Builder",
     description: "The gold-standard loyalty metric. One scored question plus a follow-up.",
     questions: [
       { id: uid(), type: "nps", text: "How likely are you to recommend us to a friend or colleague?", required: true, sectionHeader: "Loyalty" },
@@ -248,6 +248,20 @@ function TemplateCard({
         active ? "border-black bg-black text-white" : "border-neutral-300 bg-white text-black hover:border-black"
       }`}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing",
+          description: "The gold-standard loyalty metric. One scored question plus a follow-up.",
+          url: "https://themarkitmedia.com/en/resources/customer-feedback-survey",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <span className="block font-[family-name:var(--font-display)] text-lg font-extrabold">{template.name}</span>
       <span className={`block text-base mt-2 leading-relaxed ${active ? "text-neutral-300" : "text-neutral-500"}`}>
         {template.description}

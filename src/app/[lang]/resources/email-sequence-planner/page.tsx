@@ -797,6 +797,20 @@ function StepIndicator({
 }) {
   return (
     <div className="flex items-center gap-0 w-full print:hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Email Sequence Planner",
+          description: "Introduce new subscribers to your brand and guide them toward their first action.",
+          url: "https://themarkitmedia.com/en/resources/email-sequence-planner",
+          applicationCategory: "Email Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {labels.map((label, i) => {
         const isActive = i === current;
         const isComplete = i < current;

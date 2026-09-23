@@ -169,6 +169,20 @@ export default function BudgetCalculatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Budget Calculator",
+          description: "Use our free marketing budget calculator to get recommended budget allocations across SEO, PPC, social media, content, email, and video based on your business type and goals.",
+          url: "https://themarkitmedia.com/en/resources/budget-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>

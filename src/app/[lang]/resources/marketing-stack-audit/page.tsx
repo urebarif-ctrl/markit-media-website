@@ -20,7 +20,7 @@ interface StackCategory {
 
 const categories: StackCategory[] = [
   {
-    name: "Analytics & Tracking",
+    name: "Marketing Stack Audit",
     description: "Tools for measuring website and marketing performance",
     tools: ["Google Analytics 4", "Google Tag Manager", "Hotjar / Clarity", "Mixpanel / Amplitude", "Google Search Console"],
   },
@@ -119,6 +119,20 @@ export default function MarketingStackAuditPage() {
 
   return (
     <article className="px-6 lg:px-12 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing",
+          description: "Tools for measuring website and marketing performance",
+          url: "https://themarkitmedia.com/en/resources/marketing-stack-audit",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

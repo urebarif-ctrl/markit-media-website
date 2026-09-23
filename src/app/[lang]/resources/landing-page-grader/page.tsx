@@ -284,6 +284,20 @@ export default function LandingPageGraderPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Landing Page Grader",
+          description: "Grade your landing page across 20 criteria and get instant improvement recommendations.",
+          url: "https://themarkitmedia.com/en/resources/landing-page-grader",
+          applicationCategory: "Advertising Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

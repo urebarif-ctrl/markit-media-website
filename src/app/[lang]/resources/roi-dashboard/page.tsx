@@ -129,6 +129,20 @@ function BarChart({
       role="img"
       aria-label="Bar chart comparing ROI by channel"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing ROI Dashboard",
+          description: "Compare marketing channel performance with ROI calculations, budget allocation charts, and optimization suggestions.",
+          url: "https://themarkitmedia.com/en/resources/roi-dashboard",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {data.map((d, i) => {
         const y = gap + i * (barH + gap);
         const barW = Math.abs(d.value) / max * (chartW - 20);

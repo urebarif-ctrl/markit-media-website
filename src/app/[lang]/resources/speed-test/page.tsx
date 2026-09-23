@@ -120,6 +120,20 @@ export default function SpeedTestPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Speed Assessment",
+          description: "Assess your website speed with this free quiz evaluating hosting, images, scripts, caching, and mobile performance. Get a prioritized list of fixes to load faster.",
+          url: "https://themarkitmedia.com/en/resources/speed-test",
+          applicationCategory: "Web Development Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

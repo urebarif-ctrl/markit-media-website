@@ -67,7 +67,7 @@ function uid(): string {
 function defaultRisks(): MarketingRisk[] {
   const templates: Omit<MarketingRisk, "id" | "score">[] = [
     {
-      name: "Negative brand coverage",
+      name: "Marketing Risk Assessment Matrix",
       description: "Unfavorable media coverage or viral social media backlash damages brand perception.",
       category: "Brand",
       likelihood: 3,

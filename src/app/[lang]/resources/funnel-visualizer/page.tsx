@@ -28,7 +28,7 @@ interface FunnelStage {
 
 const STAGES: FunnelStage[] = [
   {
-    name: "Awareness",
+    name: "Marketing Funnel Visualizer",
     description: "People who first learn about your brand or product.",
     channelOptions: [
       "Social Media",
@@ -341,6 +341,20 @@ function NumberInput({
 }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Enter Your Data",
+          description: "People who first learn about your brand or product.",
+          url: "https://themarkitmedia.com/en/resources/funnel-visualizer",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <label
         htmlFor={id}
         className="block text-base font-bold text-black mb-2"

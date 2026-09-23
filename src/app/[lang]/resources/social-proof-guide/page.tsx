@@ -481,6 +481,20 @@ export default function SocialProofGuidePage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Proof Strategy Builder",
+          description: "Endorsements, certifications, or recommendations from recognized authorities in your industry. Expert approval signals that your product or service meets professional standards.",
+          url: "https://themarkitmedia.com/en/resources/social-proof-guide",
+          applicationCategory: "Social Media Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

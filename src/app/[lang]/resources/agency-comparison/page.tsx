@@ -89,6 +89,20 @@ export default function AgencyComparisonPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "How to Choose a Digital Marketing Agency",
+          description: "A practical guide to evaluating and choosing a digital marketing agency. Red flags to watch for, questions to ask, and what to expect from a good partnership.",
+          url: "https://themarkitmedia.com/en/resources/agency-comparison",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Choosing an Agency" }]} />
 

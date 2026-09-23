@@ -163,6 +163,20 @@ function TextInput({
 }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Positioning Canvas",
+          description: "Ensure your homepage, about page, and landing pages reflect the positioning statement and brand personality.",
+          url: "https://themarkitmedia.com/en/resources/brand-positioning",
+          applicationCategory: "Branding Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}
       </label>

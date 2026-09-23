@@ -97,6 +97,20 @@ export default function SmallBusinessGuidePage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing for Small Business",
+          description: "A comprehensive guide to digital marketing for small businesses. Learn which channels to prioritize, how to allocate your budget, and when to hire an agency.",
+          url: "https://themarkitmedia.com/en/resources/small-business-guide",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Small Business Guide" }]} />
 

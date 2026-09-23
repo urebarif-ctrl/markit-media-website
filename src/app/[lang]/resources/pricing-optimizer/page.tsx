@@ -484,6 +484,20 @@ export default function PricingOptimizerPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Pricing Page Optimizer",
+          description: "How clearly your pricing tiers, features, and comparisons are presented to visitors.",
+          url: "https://themarkitmedia.com/en/resources/pricing-optimizer",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

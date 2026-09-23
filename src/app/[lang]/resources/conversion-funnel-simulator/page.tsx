@@ -352,6 +352,20 @@ export default function ConversionFunnelSimulatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Development",
+          description: "Simulate your marketing funnel with custom stages, conversion rates, and revenue projections. Identify bottlenecks and optimisation opportunities.",
+          url: "https://themarkitmedia.com/en/resources/conversion-funnel-simulator",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
 
       <Breadcrumb

@@ -229,6 +229,20 @@ export default function HashtagGeneratorPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media Hashtag Generator",
+          description: "Generate curated hashtag suggestions organized by reach for Instagram, TikTok, LinkedIn, Twitter/X, YouTube, and more.",
+          url: "https://themarkitmedia.com/en/resources/hashtag-generator",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

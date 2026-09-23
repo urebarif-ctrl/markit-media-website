@@ -820,6 +820,20 @@ function HealthBadge({ zone, label }: { zone: HealthZone; label: string }) {
   };
   return (
     <div className="flex items-start gap-3">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing KPI Dashboard Builder",
+          description: "Follower counts, page views, and impressions feel good but rarely correlate to revenue. Pair every vanity metric with a conversion metric that ties back to business outcomes.",
+          url: "https://themarkitmedia.com/en/resources/kpi-dashboard",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <span
         className={`inline-flex items-center justify-center px-3 py-1 text-base font-bold ${colors[zone]} min-w-[80px] text-center`}
       >

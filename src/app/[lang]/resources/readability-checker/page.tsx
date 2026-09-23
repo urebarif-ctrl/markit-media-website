@@ -187,6 +187,20 @@ export default function ReadabilityCheckerPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Readability Score Checker",
+          description: "Analyze your content readability using Flesch-Kincaid, Gunning Fog, and other scoring methods with this free tool. Write content your audience actually reads and understands.",
+          url: "https://themarkitmedia.com/en/resources/readability-checker",
+          applicationCategory: "Advertising Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

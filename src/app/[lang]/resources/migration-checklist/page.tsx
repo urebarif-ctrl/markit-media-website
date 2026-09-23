@@ -136,6 +136,20 @@ export default function MigrationChecklistPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Pre-Migration Planning",
+          description: "An interactive 30-point checklist to ensure a smooth website migration without losing SEO rankings or breaking functionality.",
+          url: "https://themarkitmedia.com/en/resources/migration-checklist",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={webAppSchema} />
 
       <Breadcrumb

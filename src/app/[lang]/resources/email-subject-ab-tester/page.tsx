@@ -105,6 +105,20 @@ function ScoreBar({ label, value, max }: { label: string; value: number; max: nu
   const pct = Math.round((value / max) * 100);
   return (
     <div className="flex items-center gap-4 text-base">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Email Subject Line A/B Tester",
+          description: "Compare two email subject lines side-by-side. Get scored analysis on length, power words, personalisation, urgency, and clarity to pick the winner.",
+          url: "https://themarkitmedia.com/en/resources/email-subject-ab-tester",
+          applicationCategory: "Email Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <span className="w-36 text-gray-600 shrink-0">{label}</span>
       <div className="flex-1 h-5 bg-gray-100 relative">
         <div

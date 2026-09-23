@@ -947,6 +947,20 @@ function SelectInput({
 }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media Content Calendar",
+          description: "Select the industry that best matches your business so the content ideas are relevant and practical for your audience.",
+          url: "https://themarkitmedia.com/en/resources/social-calendar",
+          applicationCategory: "Social Media Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}
       </label>

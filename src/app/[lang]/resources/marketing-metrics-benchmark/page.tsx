@@ -1043,6 +1043,20 @@ export default function MarketingMetricsBenchmarkPage() {
 
   return (
     <article className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Metrics Benchmark Tool",
+          description: "Compare your marketing metrics against industry benchmarks. Explore 50+ metrics with definitions, formulas, benchmarks, and optimization tips.",
+          url: "https://themarkitmedia.com/en/resources/marketing-metrics-benchmark",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {/* Breadcrumb */}
       <Breadcrumb
         items={[

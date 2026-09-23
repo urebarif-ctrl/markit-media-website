@@ -65,6 +65,20 @@ export default function ABTestCalculatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "A/B Testing Calculator",
+          description: "Use our free A/B test sample size calculator to determine how many visitors you need for statistically significant results. Set confidence level, power, and minimum detectable effect.",
+          url: "https://themarkitmedia.com/en/resources/ab-test-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {/* Breadcrumb */}
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">

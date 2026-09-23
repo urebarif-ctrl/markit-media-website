@@ -539,6 +539,20 @@ function SwotQuadrant({
 
   return (
     <div className="border border-neutral-200">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitive SWOT Analyzer",
+          description: "Enter your company name and populate each SWOT quadrant. Be honest about weaknesses and threats. The analysis is only as good as your objectivity.",
+          url: "https://themarkitmedia.com/en/resources/competitive-swot-analyzer",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <div
         className={`px-4 py-3 ${quadrant.headerBg} ${quadrant.headerText}`}
       >

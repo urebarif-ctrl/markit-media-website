@@ -875,6 +875,20 @@ export default function ContentCalendarPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Content Calendar Generator",
+          description: "Generate a customized content calendar with topic suggestions, content types, and posting schedules tailored to your industry and channels.",
+          url: "https://themarkitmedia.com/en/resources/content-calendar",
+          applicationCategory: "Content Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

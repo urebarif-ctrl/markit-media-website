@@ -125,8 +125,8 @@ function buildLocalBusiness(data: Record<string, string>) {
   return strip({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: data.name,
-    description: data.description,
+    name: "Schema Markup Generator",
+          description: data.description,
     url: data.url,
     telephone: data.phone,
     email: data.email,

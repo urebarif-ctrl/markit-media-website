@@ -295,6 +295,20 @@ function DownloadButton({
       aria-label="Download results as text file"
       className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold bg-black text-white hover:bg-neutral-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Content Performance Scorecard",
+          description: "Volume and quality of visitors this content attracts through organic search, social, referral, and direct channels.",
+          url: "https://themarkitmedia.com/en/resources/content-performance-scorecard",
+          applicationCategory: "Content Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       Export as .txt
     </button>
   );

@@ -114,6 +114,20 @@ export default function WebsiteGraderPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Performance Grader",
+          description: "Grade your website performance across speed, mobile, SEO, content, UX, trust, and conversions with this free tool. See exactly where you stand and what to fix first.",
+          url: "https://themarkitmedia.com/en/resources/website-grader",
+          applicationCategory: "Advertising Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400">
           <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>

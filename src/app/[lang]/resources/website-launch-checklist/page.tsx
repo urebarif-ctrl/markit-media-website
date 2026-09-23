@@ -317,6 +317,20 @@ export default function WebsiteLaunchChecklistPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Launch Checklist",
+          description: "A 50-item interactive checklist covering content, SEO, performance, security, design, analytics, legal, and launch-day tasks for launching a website.",
+          url: "https://themarkitmedia.com/en/resources/website-launch-checklist",
+          applicationCategory: "Web Development Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

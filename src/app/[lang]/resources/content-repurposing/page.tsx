@@ -140,6 +140,20 @@ function ContentTree({ originalLabel, derivatives }: { originalLabel: string; de
 
   return (
     <div className="w-full overflow-x-auto -mx-6 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Content Repurposing Planner",
+          description: "Plan how to repurpose one piece of content into multiple formats across platforms.",
+          url: "https://themarkitmedia.com/en/resources/content-repurposing",
+          applicationCategory: "Content Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <svg
         viewBox={`0 0 ${totalWidth} ${totalHeight}`}
         className="w-full min-w-[700px]"

@@ -179,6 +179,20 @@ function StackedBarChart({ channels, allAttributions }: {
       aria-label="Stacked bar chart comparing attribution credit across models"
       className="block max-w-full"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Attribution Calculator",
+          description: "Compare Last Touch, First Touch, Linear, and Time Decay attribution models side by side.",
+          url: "https://themarkitmedia.com/en/resources/attribution-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {MODEL_KEYS.map((model, mi) => {
         const y = mi * (barHeight + gap) + 10;
         const attributions = allAttributions[model];

@@ -111,6 +111,20 @@ export default function MarketingStatisticsPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing Statistics 2025",
+          description: "Essential digital marketing statistics for 2025. Data on SEO, PPC, social media, email marketing, content marketing, and e-commerce to inform your strategy.",
+          url: "https://themarkitmedia.com/en/resources/marketing-statistics",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Statistics" }]} />
 

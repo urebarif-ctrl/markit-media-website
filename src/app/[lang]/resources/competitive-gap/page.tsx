@@ -185,6 +185,20 @@ function ScoreSelector({
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitive Gap Analyzer",
+          description: "Search rankings, organic traffic volume, keyword coverage, and domain authority",
+          url: "https://themarkitmedia.com/en/resources/competitive-gap",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <label htmlFor={id} className="sr-only">
         {sideLabel} for {dimensionLabel}
       </label>

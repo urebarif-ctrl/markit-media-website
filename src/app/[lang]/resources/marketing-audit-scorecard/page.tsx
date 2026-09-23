@@ -314,6 +314,20 @@ function StarRating({
 }) {
   return (
     <fieldset className="flex gap-2" aria-label={`Rating for ${label}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Audit Scorecard",
+          description: "How well your website performs, converts, and serves visitors.",
+          url: "https://themarkitmedia.com/en/resources/marketing-audit-scorecard",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <legend className="sr-only">Rate {label} from 1 to 5</legend>
       {[1, 2, 3, 4, 5].map((star) => (
         <button

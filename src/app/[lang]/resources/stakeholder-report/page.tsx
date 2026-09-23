@@ -441,7 +441,7 @@ export default function StakeholderReportPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Stakeholder Report Generator",
+            name: "Marketing Stakeholder Report Generator",
             description: "Build executive, board, team, and client reports with drag-to-reorder sections and KPI highlights",
             url: "https://themarkitmedia.com/en/resources/stakeholder-report",
             applicationCategory: "BusinessApplication",

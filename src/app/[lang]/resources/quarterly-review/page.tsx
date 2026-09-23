@@ -460,6 +460,20 @@ export default function QuarterlyReviewPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Quarterly Review Template",
+          description: "Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards.",
+          url: "https://themarkitmedia.com/en/resources/quarterly-review",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

@@ -129,6 +129,20 @@ export default function WebPlatformGuidePage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "WordPress vs Shopify vs Next.js: Which Platform Is Right for You?",
+          description: "A comprehensive comparison of WordPress, Shopify, and Next.js to help you choose the right web platform for your business based on cost, speed, SEO, and scalability.",
+          url: "https://themarkitmedia.com/en/resources/web-platform-guide",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Web Platform Guide" }]} />
 

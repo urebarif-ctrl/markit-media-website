@@ -253,6 +253,20 @@ export default function PricingCalculatorPage() {
 
   return (
     <article className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Pricing Calculator",
+          description: "Search engine optimization and organic growth",
+          url: "https://themarkitmedia.com/en/resources/pricing-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {/* JSON-LD */}
       <JsonLd
         data={{

@@ -784,6 +784,20 @@ function ComparisonChart({ results }: { results: ChannelResult[] }) {
 
   return (
     <div className="border border-gray-200 p-6 overflow-x-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Channel Recommender",
+          description: "Free interactive tool that recommends and ranks the best marketing channels based on your business details, goals, budget, and team size.",
+          url: "https://themarkitmedia.com/en/resources/channel-recommender",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <svg
         viewBox={`0 0 ${labelWidth + chartWidth + 70} ${totalHeight + 10}`}
         className="w-full"

@@ -98,6 +98,20 @@ export default function StartupMarketingGuidePage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing for Startups",
+          description: "A practical digital marketing guide for startups. How to prioritize channels, allocate budget, build brand awareness, and generate leads on a limited budget.",
+          url: "https://themarkitmedia.com/en/resources/startup-marketing-guide",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Startup Marketing Guide" }]} />
 

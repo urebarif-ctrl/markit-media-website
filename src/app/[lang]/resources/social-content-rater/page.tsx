@@ -85,6 +85,20 @@ export default function SocialContentRaterPage() {
 
   return (
     <main className="min-h-screen bg-white text-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Social Media Content Rater",
+          description: "Rate your social media content against best practices for each platform. Get scores on visuals, copy, hashtags, timing, and engagement potential.",
+          url: "https://themarkitmedia.com/en/resources/social-content-rater",
+          applicationCategory: "Social Media Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

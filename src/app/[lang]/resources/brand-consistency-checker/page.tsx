@@ -898,7 +898,21 @@ export default function BrandConsistencyCheckerPage() {
 
   return (
     <article className="min-h-screen">
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Consistency Checker",
+          description: "Audit your brand consistency across touchpoints with scoring and actionable recommendations.",
+          url: "https://themarkitmedia.com/en/resources/brand-consistency-checker",
+          applicationCategory: "Branding Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
+
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">
         <div className="max-w-4xl mx-auto">

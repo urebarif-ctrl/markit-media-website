@@ -135,6 +135,20 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
 
   return (
     <div className="overflow-x-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing ROI Report Generator",
+          description: "Generate a professional marketing ROI report. Input channel spend and revenue data to create a comprehensive performance analysis.",
+          url: "https://themarkitmedia.com/en/resources/marketing-roi-report",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <svg
         viewBox={`0 0 ${totalW} ${totalH}`}
         className="w-full max-w-[700px]"

@@ -399,6 +399,20 @@ export default function MeetingAgendaBuilderPage() {
   /* ---- Render ---- */
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Meeting Agenda Builder",
+          description: "15-minute sync on wins, blockers, and priorities",
+          url: "https://themarkitmedia.com/en/resources/meeting-agenda-builder",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

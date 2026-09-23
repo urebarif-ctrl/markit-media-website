@@ -705,6 +705,20 @@ export default function EmailCampaignPlannerPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Email Campaign Planner",
+          description: "Plan your email campaign with recommended sequences, subject lines, send timing, and success metrics for any campaign type and audience.",
+          url: "https://themarkitmedia.com/en/resources/email-campaign-planner",
+          applicationCategory: "Email Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

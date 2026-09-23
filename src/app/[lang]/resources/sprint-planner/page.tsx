@@ -289,6 +289,20 @@ export default function SprintPlannerPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Sprint Planner",
+          description: "Free 2-week marketing sprint planner with Kanban board, burndown tracking, and effort estimation.",
+          url: "https://themarkitmedia.com/en/resources/sprint-planner",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },

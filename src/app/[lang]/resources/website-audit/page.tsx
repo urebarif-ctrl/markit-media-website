@@ -269,6 +269,20 @@ export default function WebsiteAuditPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Development",
+          description: "Your website has a strong foundation across all key areas. Focus on maintaining these standards and pursuing advanced optimizations.",
+          url: "https://themarkitmedia.com/en/resources/website-audit",
+          applicationCategory: "Web Development Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

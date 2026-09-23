@@ -123,6 +123,20 @@ function statusBadgeClass(s: Status): string {
 function SummaryCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
     <div className="border border-neutral-200 p-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Campaign Tracker",
+          description: "Every campaign needs a measurable goal tied to a business outcome. Define what success looks like in numbers before spending a dollar. Vague objectives like",
+          url: "https://themarkitmedia.com/en/resources/campaign-tracker",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <p className="text-base text-neutral-500 mb-1">{label}</p>
       <p className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">
         {value}

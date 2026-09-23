@@ -179,6 +179,20 @@ export default function GoogleAdsEstimatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Google Ads Budget Estimator",
+          description: "Estimate your Google Ads performance based on industry, location, budget, and campaign goal. See projected CPC, clicks, conversions, and cost per conversion.",
+          url: "https://themarkitmedia.com/en/resources/google-ads-estimator",
+          applicationCategory: "Advertising Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

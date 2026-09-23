@@ -276,6 +276,20 @@ function AttributeChip({
             : "bg-white text-black border border-gray-200 hover:bg-gray-100"
       }`}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Voice Consistency Checker",
+          description: "Select 3 to 5 voice attributes that describe how your brand communicates. Review the Do and Do Not examples for each.",
+          url: "https://themarkitmedia.com/en/resources/brand-voice-checker",
+          applicationCategory: "Branding Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {attr.name}
     </button>
   );

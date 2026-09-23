@@ -412,6 +412,20 @@ function RadarChart({
 }) {
   return (
     <div className="w-full max-w-lg mx-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitor Analysis Matrix",
+          description: "Market recognition, recall, and perceived authority",
+          url: "https://themarkitmedia.com/en/resources/competitor-matrix",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <svg
         viewBox="0 0 400 400"
         className="w-full h-auto"

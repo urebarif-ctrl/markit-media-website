@@ -264,6 +264,20 @@ function CoverageBarChart({ checked, industry }: { checked: Checked; industry: I
   const emphasis = industryEmphasis[industry];
   return (
     <div className="space-y-5" role="img" aria-label="Bar chart showing content coverage by category">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SEO Content Gap Finder",
+          description: "Choose the business type that best matches yours. This customizes the analysis to weight content types that matter most in your space.",
+          url: "https://themarkitmedia.com/en/resources/seo-gap-finder",
+          applicationCategory: "SEO Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {categories.map((cat) => {
         const pct = getCategoryCoverage(checked, cat);
         const weight = emphasis[cat.id] || 1;

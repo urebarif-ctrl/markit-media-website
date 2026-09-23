@@ -109,6 +109,20 @@ function DensityBar({ entry, maxDensity }: { entry: WordEntry; maxDensity: numbe
   const pct = maxDensity > 0 ? (entry.density / maxDensity) * 100 : 0;
   return (
     <div className="flex items-center gap-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Keyword Density Checker",
+          description: "Free keyword density checker that analyzes keyword density, word frequency, and content length to keep your SEO on point.",
+          url: "https://themarkitmedia.com/en/resources/keyword-density-checker",
+          applicationCategory: "SEO Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <span className="w-28 truncate text-base font-bold text-black flex-shrink-0">{entry.word}</span>
       <div className="flex-1 h-6 bg-gray-100 relative">
         <div

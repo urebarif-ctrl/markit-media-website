@@ -249,6 +249,20 @@ function StarRating({
 }) {
   return (
     <div className="flex gap-1" role="radiogroup" aria-label={`Rating for ${toolName}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Martech Stack Planner",
+          description: "Plan, budget, and optimize your marketing technology stack. Compare tools across 8 categories, track costs, map integrations, and detect overlaps.",
+          url: "https://themarkitmedia.com/en/resources/martech-stack-planner",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {[1, 2, 3, 4, 5].map((star) => (
         <button
           key={star}

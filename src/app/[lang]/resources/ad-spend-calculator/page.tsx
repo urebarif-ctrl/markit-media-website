@@ -96,6 +96,20 @@ export default function AdSpendCalculatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Ad Spend Efficiency Calculator",
+          description: "Use our free ad spend calculator to analyze your advertising efficiency across platforms. Calculate CPA, ROAS, and identify where your budget delivers the best returns.",
+          url: "https://themarkitmedia.com/en/resources/ad-spend-calculator",
+          applicationCategory: "Business Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li>

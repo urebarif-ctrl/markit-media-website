@@ -134,6 +134,20 @@ function CircularScore({ score, size = 160 }: { score: number; size?: number }) 
 
   return (
     <div className="flex flex-col items-center gap-3">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Brand Name Evaluator",
+          description: "How easy is it to remember?",
+          url: "https://themarkitmedia.com/en/resources/brand-name-evaluator",
+          applicationCategory: "Branding Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <svg
         width={size}
         height={size}

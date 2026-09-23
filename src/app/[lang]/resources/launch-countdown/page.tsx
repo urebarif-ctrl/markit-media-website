@@ -200,6 +200,20 @@ function CountdownDisplay({ launchDate }: { launchDate: string }) {
 
   return (
     <div className="border border-gray-200 p-6 text-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Launch Checklist &amp; Countdown",
+          description: "Enter your target launch date to start the countdown. This helps you track how much time remains to complete all checklist items.",
+          url: "https://themarkitmedia.com/en/resources/launch-countdown",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <p className="text-base text-gray-500 mb-2">Countdown</p>
       <p className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black leading-none">
         {days > 0 ? days : 0}

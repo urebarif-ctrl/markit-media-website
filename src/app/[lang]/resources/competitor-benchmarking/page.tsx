@@ -369,6 +369,20 @@ function RadarChart({ companies }: { companies: Company[] }) {
 
   return (
     <div className="w-full overflow-x-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitor Benchmarking Dashboard",
+          description: "Enter your company name and add up to four competitors you want to benchmark against. Focus on direct competitors in your market.",
+          url: "https://themarkitmedia.com/en/resources/competitor-benchmarking",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <div className="min-w-[320px] mx-auto" style={{ maxWidth: CHART_SIZE + 60 }}>
         <svg
           viewBox={`-30 -10 ${CHART_SIZE + 60} ${CHART_SIZE + 40}`}

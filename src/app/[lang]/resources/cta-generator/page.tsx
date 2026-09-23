@@ -808,6 +808,20 @@ function CopyButton({ text }: { text: string }) {
       aria-label="Copy to clipboard"
       className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-3 py-2 text-base font-bold border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "CTA Copy Generator",
+          description: "Free CTA generator that creates compelling button text, headlines, and subheadlines tailored to your business type and audience.",
+          url: "https://themarkitmedia.com/en/resources/cta-generator",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {copied ? "Copied" : "Copy"}
     </button>
   );

@@ -380,6 +380,20 @@ export default function ClientReportingDashboardPage() {
   if (preview) {
     return (
       <article className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Client Reporting Dashboard Builder",
+          description: "Build professional marketing reports for clients. Select KPIs, add channels, include insights and recommendations. Export ready-to-present reports.",
+          url: "https://themarkitmedia.com/en/resources/client-reporting-dashboard",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
         <Breadcrumb
           items={[
             { label: "Resources", href: "/resources" },

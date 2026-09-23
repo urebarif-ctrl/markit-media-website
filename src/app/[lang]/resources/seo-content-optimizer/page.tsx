@@ -477,6 +477,20 @@ function formatExportText(input: AnalysisInput, result: AnalysisResult): string 
 function ScoreBar({ score, label }: { score: number; label: string }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SEO Content Optimizer",
+          description: "Each page should focus on one primary keyword and a handful of closely related secondary keywords. This helps search engines understand the page",
+          url: "https://themarkitmedia.com/en/resources/seo-content-optimizer",
+          applicationCategory: "SEO Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <div className="flex justify-between mb-2">
         <span className="text-base font-bold text-black">{label}</span>
         <span className="text-base text-neutral-500">{score}/100</span>

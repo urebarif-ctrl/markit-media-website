@@ -552,6 +552,20 @@ export default function CampaignDebriefPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Campaign Debrief Generator",
+          description: "Generate structured post-mortem debriefs for marketing campaigns with planned vs actual metrics, lessons learned, and action items.",
+          url: "https://themarkitmedia.com/en/resources/campaign-debrief",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",

@@ -103,6 +103,20 @@ function PieChart({
         role="img"
         aria-label="Allocation pie chart - no channels allocated"
       >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Channel Mix Modeller",
+          description: "Model your marketing channel mix allocation. Set budgets across channels, see projected ROI, and find the optimal spend distribution.",
+          url: "https://themarkitmedia.com/en/resources/channel-mix-modeller",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
         <circle
           cx={size / 2}
           cy={size / 2}

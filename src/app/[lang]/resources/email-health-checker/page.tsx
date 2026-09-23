@@ -261,6 +261,20 @@ function AnswerButtons({
 
   return (
     <fieldset className="flex gap-0 border border-gray-200" aria-label={`Answer for: ${questionText}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Email Marketing Health Checker",
+          description: "For each question, select Yes (fully implemented), Partial (partially implemented), or No (not implemented). Accurate answers produce actionable results.",
+          url: "https://themarkitmedia.com/en/resources/email-health-checker",
+          applicationCategory: "Email Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <legend className="sr-only">Answer for: {questionText}</legend>
       {options.map((opt, i) => {
         const isSelected = value === opt.value;

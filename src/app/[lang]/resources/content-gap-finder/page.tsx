@@ -381,6 +381,20 @@ function ContentForm({
 }) {
   return (
     <div className="border border-neutral-200 p-6 space-y-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Content Gap Finder",
+          description: "Start by adding every piece of content you currently have. Include blog posts, videos, case studies, emails, and anything else your audience interacts with. Be thorough because gaps are only visible when you have a complete picture.",
+          url: "https://themarkitmedia.com/en/resources/content-gap-finder",
+          applicationCategory: "Content Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {/* Title */}
       <div>
         <label

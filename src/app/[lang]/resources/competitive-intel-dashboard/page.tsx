@@ -345,6 +345,20 @@ function ScoreSlider({
 }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitive Intelligence Dashboard",
+          description: "Organic search presence, keyword rankings, and domain authority",
+          url: "https://themarkitmedia.com/en/resources/competitive-intel-dashboard",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <div className="flex items-center justify-between mb-1">
         <label htmlFor={id} className="text-base font-bold text-black">
           {label}

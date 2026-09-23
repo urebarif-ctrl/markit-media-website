@@ -223,6 +223,20 @@ function SelectField({
 }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Buyer Persona Builder",
+          description: "Build detailed buyer personas for your marketing strategy. Fill in demographics, psychographics, and buying behavior to generate a formatted persona document.",
+          url: "https://themarkitmedia.com/en/resources/persona-builder",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}
       </label>

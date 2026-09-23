@@ -350,6 +350,20 @@ export default function TeamCapacityPlannerPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Team Capacity Planner",
+          description: "Plan your marketing team workload with our free capacity planner. Add team members and projects, visualize utilization per role, spot over-allocation, and export your plan.",
+          url: "https://themarkitmedia.com/en/resources/team-capacity-planner",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },

@@ -361,6 +361,20 @@ function SwotItemInput({
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Competitive SWOT Matrix",
+          description: "Internal advantages and capabilities",
+          url: "https://themarkitmedia.com/en/resources/competitive-swot",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <label
         htmlFor={inputId}
         className="block text-base font-bold text-black mb-1"

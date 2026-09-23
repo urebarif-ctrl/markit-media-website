@@ -244,6 +244,20 @@ function RatingButtons({
 }) {
   return (
     <fieldset className="flex gap-0 border border-gray-200" aria-label={`Rating for ${itemLabel}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Content Gap Analyzer",
+          description: "Score each content type from 0 (None) to 3 (Comprehensive). Be objective about what you actually have, not what you plan to create.",
+          url: "https://themarkitmedia.com/en/resources/content-gap-analyzer",
+          applicationCategory: "Content Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <legend className="sr-only">Rating for {itemLabel}</legend>
       {[0, 1, 2, 3].map((n) => {
         const isSelected = value === n;

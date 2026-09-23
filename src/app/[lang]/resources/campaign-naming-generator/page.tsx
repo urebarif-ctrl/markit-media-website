@@ -441,6 +441,20 @@ export default function CampaignNamingGeneratorPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Campaign Naming Convention Generator",
+          description: "Generate consistent campaign naming conventions for Google Ads, Meta Ads, LinkedIn, and more. Keep your ad accounts organised.",
+          url: "https://themarkitmedia.com/en/resources/campaign-naming-generator",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {/* -------------------------------------------------------- Header */}
       <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">

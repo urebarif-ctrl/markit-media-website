@@ -132,6 +132,20 @@ function StatusBadge({ status }: { status: PacingStatus }) {
   const s = map[status];
   return (
     <span className={`inline-block px-3 py-1 text-base font-bold ${s.bg} ${s.text}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Ad Budget Pacing Calculator",
+          description: "Track your advertising budget pacing across campaigns. Monitor spend rate, forecast end-of-month spend, and identify over/under-pacing campaigns.",
+          url: "https://themarkitmedia.com/en/resources/ad-budget-pacing",
+          applicationCategory: "Advertising Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {s.label}
     </span>
   );

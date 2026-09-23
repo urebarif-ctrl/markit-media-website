@@ -280,6 +280,20 @@ function QuadrantInput({
 
   return (
     <div className={`border ${quadrant.color}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SWOT Analysis Generator",
+          description: "Use strengths to take advantage of opportunities",
+          url: "https://themarkitmedia.com/en/resources/swot-analysis",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <div className={`${quadrant.headerBg} ${quadrant.headerText} px-5 py-4`}>
         <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold">
           {quadrant.label}

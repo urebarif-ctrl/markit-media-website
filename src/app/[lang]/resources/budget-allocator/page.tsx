@@ -188,6 +188,20 @@ function PieChart({ channels, budget }: { channels: ChannelData[]; budget: numbe
 
   return (
     <svg viewBox="0 0 100 100" className="w-full max-w-xs mx-auto" role="img" aria-label="Budget allocation pie chart">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Budget Allocator",
+          description: "Allocate your marketing budget across channels using data-driven templates. Compare allocation strategies and optimize for your goals.",
+          url: "https://themarkitmedia.com/en/resources/budget-allocator",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <title>Budget allocation pie chart</title>
       {slices.length === 1 ? (
         <circle cx="50" cy="50" r="40" fill={slices[0].color} />

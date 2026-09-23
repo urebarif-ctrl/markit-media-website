@@ -88,6 +88,20 @@ export default function MarketingTrends2026Page() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "10 Digital Marketing Trends Shaping 2026",
+          description: "The most important digital marketing trends for 2026: agentic AI, first-party data, video commerce, search generative experience, and more.",
+          url: "https://themarkitmedia.com/en/resources/marketing-trends-2026",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Trends 2026" }]} />
 

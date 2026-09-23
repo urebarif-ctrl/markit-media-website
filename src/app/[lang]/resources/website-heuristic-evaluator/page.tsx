@@ -26,7 +26,7 @@ interface Heuristic {
 const HEURISTICS: Heuristic[] = [
   {
     id: "h1",
-    name: "Visibility of System Status",
+    name: "Website Heuristic Evaluator",
     description:
       "The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.",
     questions: [
@@ -340,6 +340,20 @@ export default function WebsiteHeuristicEvaluatorPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Website Development",
+          description: "The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.",
+          url: "https://themarkitmedia.com/en/resources/website-heuristic-evaluator",
+          applicationCategory: "Web Development Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {/* Breadcrumb */}
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-1.5 text-base text-gray-500 max-w-7xl mx-auto">

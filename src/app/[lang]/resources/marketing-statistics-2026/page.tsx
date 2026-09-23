@@ -102,6 +102,20 @@ export default function MarketingStatistics2026Page() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Digital Marketing Statistics 2026",
+          description: "Essential digital marketing statistics and industry benchmarks for 2026. Data on SEO, paid ads, social media, email, content marketing, e-commerce, and AI adoption to inform your strategy.",
+          url: "https://themarkitmedia.com/en/resources/marketing-statistics-2026",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={schema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Marketing Statistics 2026" }]} />
 

@@ -351,6 +351,20 @@ function CopyButton({ text }: { text: string }) {
       aria-label="Copy brief to clipboard"
       className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center px-5 py-3 text-base font-bold border border-gray-200 text-gray-600 hover:border-black hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SEO Content Brief Generator",
+          description: "Create SEO-optimized content briefs for blog posts, landing pages, service pages, and more. Get heading structures, content outlines, and SEO checklists.",
+          url: "https://themarkitmedia.com/en/resources/content-brief",
+          applicationCategory: "Content Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );

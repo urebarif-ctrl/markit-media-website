@@ -322,6 +322,20 @@ function ChevronIcon({ open }: { open: boolean }) {
       strokeLinejoin="round"
       className={`shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing RFP Template Builder",
+          description: "Build a professional marketing RFP (Request for Proposal) from a structured template. Cover scope, requirements, evaluation criteria, and timeline.",
+          url: "https://themarkitmedia.com/en/resources/marketing-rfp-template",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <path d="M5 7.5L10 12.5L15 7.5" />
     </svg>
   );

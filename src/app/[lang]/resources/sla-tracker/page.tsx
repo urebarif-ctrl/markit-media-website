@@ -312,6 +312,20 @@ export default function SlaTrackerPage() {
 
   return (
     <article className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing SLA Tracker",
+          description: "Track and manage marketing service level agreements. Monitor compliance rates, identify at-risk deliverables, and maintain accountability across agency-client relationships.",
+          url: "https://themarkitmedia.com/en/resources/sla-tracker",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={jsonLd} />
 
       {/* Breadcrumb */}

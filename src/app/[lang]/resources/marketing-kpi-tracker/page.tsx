@@ -211,6 +211,20 @@ function Sparkline({ data, width = 120, height = 36 }: { data: (number | null)[]
   if (values.length < 2) {
     return (
       <svg width={width} height={height} role="img" aria-label="Not enough data for sparkline">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing KPI Tracker",
+          description: "Track your marketing KPIs over time. Set targets, record monthly actuals, visualize trends, and identify areas that need attention.",
+          url: "https://themarkitmedia.com/en/resources/marketing-kpi-tracker",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
         <line x1={0} y1={height / 2} x2={width} y2={height / 2} stroke="#d4d4d4" strokeWidth={1} strokeDasharray="4 2" />
       </svg>
     );

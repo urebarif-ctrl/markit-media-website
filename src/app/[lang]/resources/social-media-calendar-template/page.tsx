@@ -317,6 +317,20 @@ export default function SocialMediaCalendarTemplatePage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Navigate months",
+          description: "Plan your social media content with this interactive calendar. Schedule posts, set themes, track progress across platforms.",
+          url: "https://themarkitmedia.com/en/resources/social-media-calendar-template",
+          applicationCategory: "Social Media Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={jsonLd} />
 
       <Breadcrumb

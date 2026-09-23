@@ -64,6 +64,20 @@ export default function SEOvsPPCPage() {
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "SEO vs PPC: Which Is Right for Your Business?",
+          description: "A detailed comparison of SEO and PPC marketing. Understand the costs, timelines, pros, and cons of each channel to make the right investment for your business.",
+          url: "https://themarkitmedia.com/en/resources/seo-vs-ppc",
+          applicationCategory: "SEO Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "SEO vs PPC" }]} />
 

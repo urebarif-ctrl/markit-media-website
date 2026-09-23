@@ -404,6 +404,20 @@ function RadarChart({
 
   return (
     <div className="w-full max-w-lg mx-auto">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Vendor Evaluation Scorecard",
+          description: "Range of services offered relative to your needs",
+          url: "https://themarkitmedia.com/en/resources/vendor-evaluation",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <svg
         viewBox="0 0 440 440"
         className="w-full h-auto"

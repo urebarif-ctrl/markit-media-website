@@ -207,6 +207,20 @@ export default function CroAuditPage() {
 
   return (
     <article className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Conversion Rate Optimization Audit",
+          description: "A 20-point conversion rate optimization audit checklist. Evaluate your website across page speed, above-the-fold design, content, and CTAs to identify conversion-killing issues.",
+          url: "https://themarkitmedia.com/en/resources/cro-audit",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <JsonLd
         data={{
           "@context": "https://schema.org",
