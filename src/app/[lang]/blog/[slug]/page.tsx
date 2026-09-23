@@ -187,6 +187,15 @@ const DEFAULT_TOOLS = [
   { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
 ];
 
+function parseTags(tags: string): string[] {
+  if (!tags) return [];
+  try {
+    const parsed = JSON.parse(tags);
+    if (Array.isArray(parsed)) return parsed;
+  } catch {}
+  return tags.split(",").map((t) => t.trim()).filter(Boolean);
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -196,6 +205,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.meta_title || post.title,
     description: post.meta_description || post.excerpt,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/${slug}` },
+    keywords: parseTags(post.tags).join(", ") || post.category,
     openGraph: {
       title: post.meta_title || post.title,
       description: post.meta_description || post.excerpt,
@@ -204,7 +214,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       modifiedTime: post.updated_at || post.published_at || undefined,
       section: post.category,
       authors: [post.author],
-      tags: [post.category],
+      tags: parseTags(post.tags).length > 0 ? parseTags(post.tags) : [post.category],
       images: [{ url: post.og_image || "https://themarkitmedia.com/images/branding/og-image.png", width: 1200, height: 630 }],
     },
     twitter: {
@@ -241,6 +251,13 @@ function addHeadingIds(html: string): string {
   });
 }
 
+function addExternalLinkAttrs(html: string): string {
+  return html.replace(/<a\s+href="(https?:\/\/[^"]+)"/g, (match, url) => {
+    if (url.includes("themarkitmedia.com")) return match;
+    return `<a href="${url}" rel="nofollow noopener" target="_blank"`;
+  });
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -266,10 +283,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     mainEntityOfPage: `https://themarkitmedia.com/en/blog/${slug}`,
     articleSection: post.category,
     wordCount: Math.round(post.content.replace(/<[^>]+>/g, "").split(/\s+/).length),
+    keywords: parseTags(post.tags),
     ...(post.cover_image ? { image: post.cover_image } : {}),
   };
 
-  const processedContent = addHeadingIds(markdownToHtml(post.content));
+  const processedContent = addExternalLinkAttrs(addHeadingIds(markdownToHtml(post.content)));
 
   return (
     <article>
@@ -314,6 +332,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="blog-prose" dangerouslySetInnerHTML={{ __html: processedContent }} />
         </div>
       </section>
+
+      {parseTags(post.tags).length > 0 && (
+        <section aria-label="Tags" className="px-6 lg:px-12 pb-8">
+          <div className="max-w-3xl mx-auto flex flex-wrap gap-2">
+            {parseTags(post.tags).map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1.5 text-base font-medium text-gray-600 bg-gray-100 border border-gray-200"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section aria-label="About the author" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto flex gap-5 items-start border-t border-b border-gray-200 py-8">

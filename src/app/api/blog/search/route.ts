@@ -15,13 +15,13 @@ export async function GET(request: NextRequest) {
       .prepare(
         `SELECT slug, title, excerpt, category, reading_time, published_at
          FROM blog_posts
-         WHERE status = 'published' AND (title LIKE ? OR excerpt LIKE ? OR category LIKE ?)
+         WHERE status = 'published' AND (title LIKE ? OR excerpt LIKE ? OR category LIKE ? OR tags LIKE ?)
          ORDER BY
            CASE WHEN title LIKE ? THEN 0 ELSE 1 END,
            published_at DESC
          LIMIT 12`,
       )
-      .all(searchTerm, searchTerm, searchTerm, searchTerm);
+      .all(searchTerm, searchTerm, searchTerm, searchTerm, searchTerm);
 
     return NextResponse.json(
       { results },
