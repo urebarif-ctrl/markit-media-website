@@ -204,12 +204,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       modifiedTime: post.updated_at || post.published_at || undefined,
       section: post.category,
       authors: [post.author],
+      tags: [post.category],
       images: [{ url: post.og_image || "https://themarkitmedia.com/images/branding/og-image.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.meta_title || post.title,
       description: post.meta_description || post.excerpt,
+      images: [post.og_image || "https://themarkitmedia.com/images/branding/og-image.png"],
     },
   };
 }
