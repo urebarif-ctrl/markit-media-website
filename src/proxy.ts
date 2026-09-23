@@ -37,6 +37,13 @@ export function proxy(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
+  if (request.nextUrl.searchParams.has("p") && /^\/?$/.test(pathname)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/${defaultLocale}/blog`;
+    url.search = "";
+    return NextResponse.redirect(url, 301);
+  }
+
   if (pathnameHasLocale) {
     const categoryMatch = pathname.match(/^\/[a-z]{2}\/blog\/category\/([^/]+)$/);
     if (categoryMatch) {
