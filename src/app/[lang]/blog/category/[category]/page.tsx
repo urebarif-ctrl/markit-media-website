@@ -5,8 +5,128 @@ import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { Stagger } from "@/components/animate";
 import { getPostsByCategory, getAllCategories, getCategoryPostCount } from "@/lib/blog";
 import { notFound } from "next/navigation";
+
+const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
+  SEO: [
+    { label: "SEO Services", href: "/services/seo" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
+  ],
+  "Digital Marketing": [
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  "Social Media": [
+    { label: "Social Media Marketing", href: "/services/social-media" },
+    { label: "Content Marketing", href: "/services/content-marketing" },
+  ],
+  "Content Marketing": [
+    { label: "Content Marketing", href: "/services/content-marketing" },
+    { label: "SEO Services", href: "/services/seo" },
+  ],
+  "Email Marketing": [
+    { label: "Email Marketing", href: "/services/email-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  "Website Development": [
+    { label: "Website Development", href: "/services/website-development" },
+    { label: "SEO Services", href: "/services/seo" },
+  ],
+  Branding: [
+    { label: "Branding", href: "/services/branding" },
+    { label: "Website Development", href: "/services/website-development" },
+  ],
+  "Video Production": [
+    { label: "Video Production", href: "/services/video-production" },
+    { label: "Social Media Marketing", href: "/services/social-media" },
+  ],
+  "AI & Technology": [
+    { label: "AI & Automation", href: "/services/ai" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+  ],
+  Analytics: [
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  "E-Commerce": [
+    { label: "E-Commerce Marketing", href: "/services/ecommerce-marketing" },
+    { label: "Email Marketing", href: "/services/email-marketing" },
+  ],
+  "Paid Advertising": [
+    { label: "Paid Advertising", href: "/services/paid-advertising" },
+    { label: "Performance Marketing", href: "/services/performance-marketing" },
+  ],
+  "Marketing Strategy": [
+    { label: "Marketing Strategy", href: "/services/digital-marketing/marketing-strategy" },
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+  ],
+  "Industry Guides": [
+    { label: "Digital Marketing", href: "/services/digital-marketing" },
+    { label: "SEO Services", href: "/services/seo" },
+  ],
+};
+
+const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
+  SEO: [
+    { label: "SEO Health Check", href: "/resources/seo-checklist" },
+    { label: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
+  ],
+  "Digital Marketing": [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+  ],
+  "Social Media": [
+    { label: "Social Media Audit", href: "/resources/social-media-audit" },
+    { label: "Hashtag Generator", href: "/resources/hashtag-generator" },
+  ],
+  "Content Marketing": [
+    { label: "Content Brief Generator", href: "/resources/content-brief" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+  ],
+  "Email Marketing": [
+    { label: "Email Deliverability Checker", href: "/resources/email-deliverability" },
+    { label: "Email Subject Line Tester", href: "/resources/email-subject-tester" },
+  ],
+  "Website Development": [
+    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
+  ],
+  Branding: [
+    { label: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
+    { label: "Color Palette Generator", href: "/resources/color-palette-generator" },
+  ],
+  "Video Production": [
+    { label: "Social Media Planner", href: "/resources/social-media-planner" },
+    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+  ],
+  "AI & Technology": [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+  ],
+  Analytics: [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
+  ],
+  "E-Commerce": [
+    { label: "CLV Calculator", href: "/resources/clv-calculator" },
+    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
+  ],
+  "Paid Advertising": [
+    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
+    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
+  ],
+  "Marketing Strategy": [
+    { label: "SWOT Analysis", href: "/resources/swot-analysis" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+  ],
+  "Industry Guides": [
+    { label: "ROI Calculator", href: "/resources/roi-calculator" },
+    { label: "Website Grader", href: "/resources/website-grader" },
+  ],
+};
 
 function slugToCategory(slug: string): string {
   return decodeURIComponent(slug).replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -175,6 +295,40 @@ export default async function BlogCategoryPage({
                 Browse All Articles &rarr;
               </Link>
             </Animate>
+          </div>
+        </section>
+      )}
+
+      {(CATEGORY_SERVICES[matchedCategory] || CATEGORY_TOOLS[matchedCategory]) && (
+        <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Related resources">
+          <div className="max-w-4xl mx-auto">
+            <Animate animation="fade-up">
+              <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">
+                {matchedCategory} Resources
+              </h2>
+            </Animate>
+            <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {CATEGORY_SERVICES[matchedCategory]?.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="flex items-center gap-3 bg-white border border-gray-200 p-4 hover:border-black/30 hover:shadow-md transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  <span className="text-base text-gray-400 font-bold uppercase tracking-wide shrink-0">Service</span>
+                  <span className="text-base font-bold text-black">{s.label}</span>
+                </Link>
+              ))}
+              {CATEGORY_TOOLS[matchedCategory]?.map((t) => (
+                <Link
+                  key={t.href}
+                  href={t.href}
+                  className="flex items-center gap-3 bg-white border border-gray-200 p-4 hover:border-black/30 hover:shadow-md transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  <span className="text-base text-gray-400 font-bold uppercase tracking-wide shrink-0">Tool</span>
+                  <span className="text-base font-bold text-black">{t.label}</span>
+                </Link>
+              ))}
+            </Stagger>
           </div>
         </section>
       )}
