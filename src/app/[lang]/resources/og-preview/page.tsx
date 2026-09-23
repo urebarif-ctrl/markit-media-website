@@ -11,6 +11,8 @@ function truncate(str: string, max: number) {
   return str.length > max ? str.slice(0, max - 1) + "…" : str;
 }
 
+
+
 export default function OgPreviewPage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -38,6 +40,8 @@ export default function OgPreviewPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Share Preview | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Preview how your links appear on Facebook, Twitter/X, and LinkedIn before sharing. Free tool to optimize Open Graph tags and maximize social media engagement." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

@@ -51,6 +51,8 @@ function formatDate(d: string): string {
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
+
+
 export default function MarketingTimelinePlannerPage() {
   const [milestones, setMilestones] = useState<Milestone[]>([]);
   const [form, setForm] = useState({
@@ -157,6 +159,8 @@ export default function MarketingTimelinePlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Timeline Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan marketing campaigns with a visual timeline. Add milestones, set dependencies, assign channels, and export your campaign schedule." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

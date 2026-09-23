@@ -128,6 +128,8 @@ function getGrade(score: number) {
   return { label: "Unqualified", color: "bg-neutral-200 text-black" };
 }
 
+
+
 export default function LeadScoringCalculatorPage() {
   const [criteria] = useState<Criterion[]>(DEFAULT_CRITERIA);
   const [selections, setSelections] = useState<Record<string, number>>({});
@@ -221,6 +223,8 @@ export default function LeadScoringCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Lead Scoring Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Build a lead scoring model with demographic, firmographic, and behavioural criteria. Assign weights, test scores, and define qualification thresholds." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

@@ -491,6 +491,8 @@ function ScoreBar({ score, label }: { score: number; label: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>SEO Content Optimizer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Each page should focus on one primary keyword and a handful of closely related secondary keywords. This helps search engines understand the page" />
       <div className="flex justify-between mb-2">
         <span className="text-base font-bold text-black">{label}</span>
         <span className="text-base text-neutral-500">{score}/100</span>
@@ -645,6 +647,8 @@ const bestPractices = [
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function SEOContentOptimizerPage() {
   const [input, setInput] = useState<AnalysisInput>({

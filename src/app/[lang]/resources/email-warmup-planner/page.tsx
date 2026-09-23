@@ -466,6 +466,8 @@ function VolumeChart({ schedule }: { schedule: ScheduleDay[] }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Email Warm-Up Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Build initial trust with mailbox providers by sending to your most engaged contacts only." />
       {/* Grid lines */}
       {yLabels.map((label) => (
         <line
@@ -571,6 +573,8 @@ function fmt(n: number): string {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function EmailWarmUpPlannerPage() {
   const [provider, setProvider] = useState<EmailProvider>("gmail");

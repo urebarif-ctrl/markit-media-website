@@ -225,6 +225,8 @@ function Sparkline({ data, width = 120, height = 36 }: { data: (number | null)[]
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing KPI Tracker | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Track your marketing KPIs over time. Set targets, record monthly actuals, visualize trends, and identify areas that need attention." />
         <line x1={0} y1={height / 2} x2={width} y2={height / 2} stroke="#d4d4d4" strokeWidth={1} strokeDasharray="4 2" />
       </svg>
     );
@@ -275,6 +277,8 @@ function SummaryCard({ label, value, sub }: { label: string; value: string; sub?
 /* ------------------------------------------------------------------ */
 /*  Main component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function MarketingKpiTrackerPage() {
   const [kpis, setKpis] = useState<KpiDefinition[]>([]);

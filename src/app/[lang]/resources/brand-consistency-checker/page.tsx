@@ -836,6 +836,8 @@ const howToSteps = [
 /*  Page Component                                                     */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function BrandConsistencyCheckerPage() {
   const [brandName, setBrandName] = useState("");
   const [touchpoints, setTouchpoints] = useState<TouchpointRatings[]>(
@@ -912,6 +914,8 @@ export default function BrandConsistencyCheckerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Brand Consistency Checker | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Enter your brand name and enable the touchpoints you want to evaluate. You can customize touchpoint names to match your specific channels." />
 
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

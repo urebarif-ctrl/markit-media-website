@@ -355,6 +355,8 @@ function NumberInput({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Funnel Visualizer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="People who first learn about your brand or product." />
       <label
         htmlFor={id}
         className="block text-base font-bold text-black mb-2"
@@ -746,6 +748,8 @@ function OptimizationPanel({ result }: { result: ConversionResult }) {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function FunnelVisualizerPage() {
   const [stagesData, setStagesData] = useState<StageData[]>(emptyStageData);

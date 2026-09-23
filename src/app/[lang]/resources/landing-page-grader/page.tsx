@@ -242,6 +242,8 @@ function getCategoryScore(
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function LandingPageGraderPage() {
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -298,6 +300,8 @@ export default function LandingPageGraderPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Landing Page Grader | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Grade your landing page across 20 criteria and get instant improvement recommendations." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

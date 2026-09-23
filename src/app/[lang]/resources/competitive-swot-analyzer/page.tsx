@@ -553,6 +553,8 @@ function SwotQuadrant({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitive SWOT Analyzer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Enter your company name and populate each SWOT quadrant. Be honest about weaknesses and threats. The analysis is only as good as your objectivity." />
       <div
         className={`px-4 py-3 ${quadrant.headerBg} ${quadrant.headerText}`}
       >
@@ -988,6 +990,8 @@ function DownloadButton({
 /* ------------------------------------------------------------------ */
 /*  Page Component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function CompetitiveSwotAnalyzerPage() {
   const [yourCompany, setYourCompany] = useState<CompanySwot>(

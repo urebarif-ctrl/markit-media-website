@@ -45,6 +45,8 @@ function emptyAd(): CompetitorAd {
   };
 }
 
+
+
 export default function CompetitorAdSpyPage() {
   const [ads, setAds] = useState<CompetitorAd[]>([emptyAd()]);
   const [activeTab, setActiveTab] = useState(0);
@@ -133,6 +135,8 @@ export default function CompetitorAdSpyPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitor Ad Spy Worksheet | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Document and analyse competitor advertising across platforms. Track messaging, offers, CTAs, and creative strategies in a structured format." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

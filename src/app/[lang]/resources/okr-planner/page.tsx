@@ -169,6 +169,8 @@ function StatusBadge({ status }: { status: ObjectiveStatus }) {
 /*  Main component                                                     */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function OkrPlannerPage() {
   const [objectives, setObjectives] = useState<Objective[]>(defaultObjectives);
   const [loaded, setLoaded] = useState(false);
@@ -380,6 +382,8 @@ export default function OkrPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing OKR Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Grow organic website traffic" />
       <JsonLd data={jsonLd} />
 
       <Breadcrumb

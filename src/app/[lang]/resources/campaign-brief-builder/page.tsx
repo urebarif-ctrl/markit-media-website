@@ -527,6 +527,8 @@ function computeCompleteness(data: BriefData): number {
 /*  Component                                                          */
 /* ================================================================== */
 
+
+
 export default function CampaignBriefBuilderPage() {
   const [data, setData] = useState<BriefData>(createInitialData);
   const [activeSection, setActiveSection] = useState<SectionName>("Overview");
@@ -802,6 +804,8 @@ export default function CampaignBriefBuilderPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Campaign Brief Builder | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Pre-launch buzz, launch day activation, and post-launch nurture" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

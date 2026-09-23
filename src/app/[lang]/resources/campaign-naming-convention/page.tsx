@@ -15,6 +15,8 @@ const separatorOptions = [
   { label: "Pipe (|)", value: "|" },
 ];
 
+
+
 export default function CampaignNamingConventionPage() {
   const [platform, setPlatform] = useState("");
   const [objective, setObjective] = useState("");
@@ -75,6 +77,8 @@ export default function CampaignNamingConventionPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Campaign Naming Convention Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate consistent campaign naming conventions for Google Ads, Meta Ads, email, and UTM parameters. Keep your marketing data clean and organised." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

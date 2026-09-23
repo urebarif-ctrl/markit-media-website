@@ -142,6 +142,8 @@ function analyzeHeadline(headline: string) {
   return { score, grade, gradeColor, feedback, wordCount, charCount };
 }
 
+
+
 export default function HeadlineAnalyzerPage() {
   const [headline, setHeadline] = useState("");
   const [result, setResult] = useState<ReturnType<typeof analyzeHeadline> | null>(null);
@@ -167,6 +169,8 @@ export default function HeadlineAnalyzerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Headline Analyzer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Free headline analyzer that scores your headlines for power words, emotional impact, and SEO effectiveness so every title pulls readers in." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

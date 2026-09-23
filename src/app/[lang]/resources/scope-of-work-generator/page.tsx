@@ -433,6 +433,8 @@ type SectionName = (typeof SECTIONS)[number];
 /*  Component                                                          */
 /* ================================================================== */
 
+
+
 export default function ScopeOfWorkGeneratorPage() {
   const [data, setData] = useState<SOWData>(createInitialData);
   const [activeSection, setActiveSection] = useState<SectionName>("Setup");
@@ -650,6 +652,8 @@ export default function ScopeOfWorkGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Scope of Work Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Stakeholder interviews, competitive analysis, and project requirements" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

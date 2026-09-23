@@ -147,6 +147,8 @@ const checklists: Record<string, ChecklistCategory[]> = {
   ],
 };
 
+
+
 export default function ChecklistsPage() {
   const tabs = Object.keys(checklists);
   const [activeTab, setActiveTab] = useState(tabs[0]);
@@ -180,6 +182,8 @@ export default function ChecklistsPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Digital Marketing Checklists | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Use our free marketing checklists to stay organized across every campaign. Pre-built templates for website launches, SEO audits, ad campaigns, and more." />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>

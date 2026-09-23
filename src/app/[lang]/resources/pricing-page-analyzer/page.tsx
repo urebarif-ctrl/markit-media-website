@@ -48,6 +48,8 @@ function getGrade(pct: number): { letter: string; color: string } {
   return { letter: "F", color: "#dc2626" };
 }
 
+
+
 export default function PricingPageAnalyzerPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [showResults, setShowResults] = useState(false);
@@ -89,6 +91,8 @@ export default function PricingPageAnalyzerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Pricing Page Analyser | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Analyse your pricing page against proven conversion best practices. Get a score and actionable recommendations to improve your pricing page performance." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

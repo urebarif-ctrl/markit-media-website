@@ -338,6 +338,8 @@ const TOTAL_QUESTIONS = sections.reduce((sum, s) => sum + s.questions.length, 0)
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function PricingOptimizerPage() {
   const [answers, setAnswers] = useState<Record<string, AnswerValue>>({});
   const [copied, setCopied] = useState(false);
@@ -498,6 +500,8 @@ export default function PricingOptimizerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Pricing Page Optimizer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="How clearly your pricing tiers, features, and comparisons are presented to visitors." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

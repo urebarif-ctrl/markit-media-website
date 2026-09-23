@@ -450,6 +450,8 @@ interface VoiceGuide {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function BrandVoiceGeneratorPage() {
   const [industry, setIndustry] = useState<Industry | "">("");
   const [selectedTraits, setSelectedTraits] = useState<Trait[]>([]);
@@ -564,6 +566,8 @@ export default function BrandVoiceGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Brand Voice Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate a complete brand voice guide including tone, do" />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

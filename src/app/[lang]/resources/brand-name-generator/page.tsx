@@ -63,6 +63,8 @@ const styleConfig: Record<Style, { prefixPool: number[]; suffixPool: number[]; p
   },
 };
 
+
+
 export default function BrandNameGeneratorPage() {
   const [keyword, setKeyword] = useState("");
   const [style, setStyle] = useState<Style>("modern");
@@ -137,6 +139,8 @@ export default function BrandNameGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Brand Name Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Use our free brand name generator to discover creative business name ideas based on your industry, style, and preferences. Get memorable names with availabil..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

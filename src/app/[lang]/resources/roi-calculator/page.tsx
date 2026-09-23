@@ -5,6 +5,8 @@ import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+
+
 export default function ROICalculatorPage() {
   const [monthlyBudget, setMonthlyBudget] = useState(5000);
   const [avgDealValue, setAvgDealValue] = useState(2000);
@@ -38,6 +40,8 @@ export default function ROICalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Calculate your marketing ROI by projecting lead increases and revenue from your investment with this free calculator. Make data-driven budget decisions." />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>

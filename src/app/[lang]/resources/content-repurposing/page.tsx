@@ -154,6 +154,8 @@ function ContentTree({ originalLabel, derivatives }: { originalLabel: string; de
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Content Repurposing Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan how to repurpose one piece of content into multiple formats across platforms." />
       <svg
         viewBox={`0 0 ${totalWidth} ${totalHeight}`}
         className="w-full min-w-[700px]"
@@ -292,6 +294,8 @@ function TimeSavingsChart({ derivatives, originalMinutes }: { derivatives: Deriv
 /* ------------------------------------------------------------------ */
 /*  Page Component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function ContentRepurposingPage() {
   const [contentType, setContentType] = useState<ContentType>("blog-post");

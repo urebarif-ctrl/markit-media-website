@@ -374,6 +374,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Maturity Assessment | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="How well-defined and executed is your marketing strategy?" />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );
@@ -416,6 +418,8 @@ function ProgressBar({ score, max }: { score: number; max: number }) {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function MarketingMaturityPage() {
   const [answers, setAnswers] = useState<AnswerMap>({});

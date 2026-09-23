@@ -143,6 +143,8 @@ function BarChart({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing ROI Dashboard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Compare marketing channel performance with ROI calculations, budget allocation charts, and optimization suggestions." />
       {data.map((d, i) => {
         const y = gap + i * (barH + gap);
         const barW = Math.abs(d.value) / max * (chartW - 20);
@@ -253,6 +255,8 @@ function PieChart({
 /* ------------------------------------------------------------------ */
 /*  Main Component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function RoiDashboardPage() {
   const [channels, setChannels] = useState<Channel[]>([

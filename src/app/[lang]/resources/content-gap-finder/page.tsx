@@ -837,6 +837,8 @@ function AuditSummary({ pieces }: { pieces: ContentPiece[] }) {
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ContentGapFinderPage() {
   const [pieces, setPieces] = useState<ContentPiece[]>([]);
   const [showResults, setShowResults] = useState(false);

@@ -242,6 +242,8 @@ function formatAgendaText(details: MeetingDetails, items: AgendaItem[]): string 
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function MeetingAgendaBuilderPage() {
   /* ---- State ---- */
   const [selectedType, setSelectedType] = useState<MeetingTypeId | null>(null);
@@ -413,6 +415,8 @@ export default function MeetingAgendaBuilderPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Meeting Agenda Builder | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="15-minute sync on wins, blockers, and priorities" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

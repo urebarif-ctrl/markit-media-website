@@ -39,6 +39,8 @@ const checks: CheckItem[] = [
 
 const categories = [...new Set(checks.map((c) => c.category))];
 
+
+
 export default function SEOChecklistPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [showTips, setShowTips] = useState<Set<string>>(new Set());
@@ -84,6 +86,8 @@ export default function SEOChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>SEO Health Check | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Work through this free comprehensive SEO checklist covering technical SEO, on-page optimization, analytics, content strategy, and local SEO. Nothing slips th..." />
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400">
           <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>

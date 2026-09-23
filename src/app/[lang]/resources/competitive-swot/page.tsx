@@ -375,6 +375,8 @@ function SwotItemInput({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitive SWOT Matrix | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Internal advantages and capabilities" />
       <label
         htmlFor={inputId}
         className="block text-base font-bold text-black mb-1"
@@ -723,6 +725,8 @@ function DownloadButton({
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function CompetitiveSwotPage() {
   const [yourCompany, setYourCompany] = useState<CompanySwot>({

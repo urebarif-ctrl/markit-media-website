@@ -382,6 +382,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Lead Magnet Idea Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Free interactive tool that generates lead magnet ideas tailored to your industry, funnel stage, and preferred format." />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );
@@ -496,6 +498,8 @@ function SelectionStep({
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function LeadMagnetGeneratorPage() {
   const [industry, setIndustry] = useState("");

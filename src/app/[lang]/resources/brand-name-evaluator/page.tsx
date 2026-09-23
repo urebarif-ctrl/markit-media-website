@@ -148,6 +148,8 @@ function CircularScore({ score, size = 160 }: { score: number; size?: number }) 
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Brand Name Evaluator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="How easy is it to remember?" />
       <svg
         width={size}
         height={size}
@@ -258,6 +260,8 @@ function StaticBar({ value }: { value: number }) {
 /* ------------------------------------------------------------------ */
 /*  Main Page Component                                                */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function BrandNameEvaluatorPage() {
   const uid = useId();

@@ -116,6 +116,8 @@ function clamp(val: number, min: number, max: number): number {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function RetentionCalculatorPage() {
   /* ---- basic inputs ---- */
   const [startCustomers, setStartCustomers] = useState("1000");
@@ -436,6 +438,8 @@ export default function RetentionCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Customer Retention Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="A structured onboarding sequence in the first 30 days reduces early churn by up to 50%. Map every touchpoint and automate where possible." />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

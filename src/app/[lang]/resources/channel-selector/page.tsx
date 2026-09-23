@@ -746,6 +746,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Channel Selector | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Free interactive tool that recommends the best marketing channels based on your business type, goals, budget, and audience." />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );
@@ -782,6 +784,8 @@ function DownloadButton({
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function ChannelSelectorPage() {
   const [answers, setAnswers] = useState<AnswerMap>({});

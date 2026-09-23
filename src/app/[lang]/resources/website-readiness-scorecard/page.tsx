@@ -103,6 +103,8 @@ function getGrade(pct: number): { letter: string; color: string } {
   return { letter: "F", color: "#dc2626" };
 }
 
+
+
 export default function WebsiteReadinessScorecardPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [showResults, setShowResults] = useState(false);
@@ -159,6 +161,8 @@ export default function WebsiteReadinessScorecardPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Website Readiness Scorecard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Score your website across mobile experience, page speed, SEO, security, and accessibility. Get a prioritised action plan to improve performance." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link

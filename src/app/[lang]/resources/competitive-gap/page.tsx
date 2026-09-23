@@ -199,6 +199,8 @@ function ScoreSelector({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitive Gap Analyzer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Search rankings, organic traffic volume, keyword coverage, and domain authority" />
       <label htmlFor={id} className="sr-only">
         {sideLabel} for {dimensionLabel}
       </label>
@@ -527,6 +529,8 @@ function formatAnalysisText(scores: Scores, gaps: GapItem[]): string {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function CompetitiveGapPage() {
   const [scores, setScores] = useState<Scores>(createEmptyScores());

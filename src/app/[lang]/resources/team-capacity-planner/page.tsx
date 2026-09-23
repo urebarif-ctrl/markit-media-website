@@ -122,6 +122,8 @@ function defaultProjects(): Project[] {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function TeamCapacityPlannerPage() {
   const [members, setMembers] = useState<TeamMember[]>(defaultMembers);
   const [projects, setProjects] = useState<Project[]>(defaultProjects);
@@ -364,6 +366,8 @@ export default function TeamCapacityPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Team Capacity Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan your marketing team workload with our free capacity planner. Add team members and projects, visualize utilization per role, spot over-allocation, and ex..." />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },

@@ -25,6 +25,8 @@ function fmtMonths(n: number) {
   return n.toFixed(1) + " mo";
 }
 
+
+
 export default function ClvCalculatorPage() {
   const [avgOrderValue, setAvgOrderValue] = useState("120");
   const [purchaseFrequency, setPurchaseFrequency] = useState("4");
@@ -139,6 +141,8 @@ export default function ClvCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Customer Lifetime Value Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="You are recovering your acquisition cost but making no profit. Growth at this ratio is unsustainable long-term." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

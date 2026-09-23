@@ -375,6 +375,8 @@ function SelectField({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Persona Workshop | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Build detailed marketing personas with guided exercises. Define demographics, psychographics, goals, pain points, and content preferences." />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}
       </label>
@@ -1155,6 +1157,8 @@ function CompareRow({
 /* ------------------------------------------------------------------ */
 
 type View = "builder" | "preview" | "compare";
+
+
 
 export default function PersonaWorkshopPage() {
   const [personas, setPersonas] = useState<PersonaData[]>(() => [createEmptyPersona()]);

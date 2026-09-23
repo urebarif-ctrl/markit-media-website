@@ -313,6 +313,8 @@ function analyseAd(
 
 const PLATFORMS = ["google", "meta", "linkedin", "twitter", "tiktok"] as const;
 
+
+
 export default function AdCopyAnalyzerPage() {
   const [headline, setHeadline] = useState("");
   const [description, setDescription] = useState("");
@@ -365,6 +367,8 @@ export default function AdCopyAnalyzerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Ad Copy Analyser | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Analyse your ad copy against best practices for headlines, descriptions, CTAs, and emotional triggers. Get a score and specific improvement suggestions." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

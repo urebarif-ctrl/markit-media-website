@@ -305,6 +305,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Customer Journey Mapper | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="The customer first discovers your brand or realizes they have a need." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );
@@ -769,6 +771,8 @@ function SummaryStats({ stages }: { stages: StageData[] }) {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function CustomerJourneyMapperPage() {
   const [businessType, setBusinessType] = useState("");

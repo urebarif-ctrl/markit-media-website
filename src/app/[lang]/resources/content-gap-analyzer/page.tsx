@@ -258,6 +258,8 @@ function RatingButtons({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Content Gap Analyzer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Score each content type from 0 (None) to 3 (Comprehensive). Be objective about what you actually have, not what you plan to create." />
       <legend className="sr-only">Rating for {itemLabel}</legend>
       {[0, 1, 2, 3].map((n) => {
         const isSelected = value === n;
@@ -535,6 +537,8 @@ function formatAnalysisText(scores: Scores): string {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function ContentGapAnalyzerPage() {
   const [scores, setScores] = useState<Scores>(createEmptyScores());

@@ -535,6 +535,8 @@ const educationalContent = [
 /*  Main Page Component                                                */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ExperimentTrackerPage() {
   const [experiments, setExperiments] = useState<Experiment[]>([]);
   const [form, setForm] = useState<Omit<Experiment, "id">>({ ...EMPTY_FORM });
@@ -787,6 +789,8 @@ export default function ExperimentTrackerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Experiment Tracker | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Track A/B tests and marketing experiments with hypothesis logging, variant tracking, statistical significance calculations, and win/loss analysis." />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

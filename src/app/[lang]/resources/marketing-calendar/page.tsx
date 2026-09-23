@@ -49,6 +49,8 @@ const budgetSplit: Record<number, number> = {
   0: 7, 1: 7, 2: 8, 3: 8, 4: 8, 5: 8, 6: 7, 7: 8, 8: 9, 9: 9, 10: 12, 11: 9,
 };
 
+
+
 export default function MarketingCalendarPage() {
   const [industry, setIndustry] = useState("");
   const [selectedChannels, setSelectedChannels] = useState<string[]>(["SEO", "Google Ads", "Email", "Social Media"]);
@@ -123,6 +125,8 @@ export default function MarketingCalendarPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Calendar Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate a 12-month marketing calendar tailored to your industry with campaign themes, key dates, channel recommendations, and budget allocation guidance." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

@@ -365,6 +365,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>SEO Content Brief Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Create SEO-optimized content briefs for blog posts, landing pages, service pages, and more. Get heading structures, content outlines, and SEO checklists." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );
@@ -455,6 +457,8 @@ function briefToText(brief: GeneratedBrief, inputs: { keyword: string; contentTy
 /* ------------------------------------------------------------------ */
 /*  Page Component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function ContentBriefPage() {
   const [keyword, setKeyword] = useState("");

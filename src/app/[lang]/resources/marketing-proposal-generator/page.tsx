@@ -344,6 +344,8 @@ function generateProposalText(form: FormData): string {
 
 /* ─── Component ────────────────────────────────────────────────── */
 
+
+
 export default function MarketingProposalGeneratorPage() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
@@ -457,6 +459,8 @@ export default function MarketingProposalGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Proposal Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate professional marketing proposals with scope, deliverables, timeline, and pricing sections. Free tool from Markit Media." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

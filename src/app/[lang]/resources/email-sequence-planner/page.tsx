@@ -811,6 +811,8 @@ function StepIndicator({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Email Sequence Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Introduce new subscribers to your brand and guide them toward their first action." />
       {labels.map((label, i) => {
         const isActive = i === current;
         const isComplete = i < current;
@@ -926,6 +928,8 @@ function PrintButton() {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function EmailSequencePlannerPage() {
   const [step, setStep] = useState(0);

@@ -58,6 +58,8 @@ function getStatusColor(status: string): string {
   return "bg-white text-gray-400";
 }
 
+
+
 export default function MarketingStackAuditPage() {
   const [entries, setEntries] = useState<Record<string, ToolEntry>>(() => {
     const init: Record<string, ToolEntry> = {};
@@ -133,6 +135,8 @@ export default function MarketingStackAuditPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Stack Audit | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Tools for measuring website and marketing performance" />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

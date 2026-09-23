@@ -81,6 +81,8 @@ function getGrade(score: number) {
   return { grade: "F", label: "Critical" };
 }
 
+
+
 export default function SeoAuditScorePage() {
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
   const [showResults, setShowResults] = useState(false);
@@ -119,6 +121,8 @@ export default function SeoAuditScorePage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>SEO Audit Score Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Free SEO audit tool with 40 checkpoints across technical, on-page, content, off-page, and UX categories. Get your site" />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

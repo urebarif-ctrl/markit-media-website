@@ -117,6 +117,8 @@ function PieChart({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Channel Mix Modeller | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Model your marketing channel mix allocation. Set budgets across channels, see projected ROI, and find the optimal spend distribution." />
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -346,6 +348,8 @@ function ChannelRow({
 /* ------------------------------------------------------------------ */
 /*  Main Page                                                          */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function ChannelMixModellerPage() {
   const [totalBudget, setTotalBudget] = useState(10000);

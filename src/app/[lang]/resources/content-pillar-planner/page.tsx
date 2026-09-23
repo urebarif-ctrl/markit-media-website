@@ -121,6 +121,8 @@ const priorityStyle: Record<Priority, string> = {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ContentPillarPlannerPage() {
   /* --- Pillar state --- */
   const [pillars, setPillars] = useState<Pillar[]>([]);
@@ -416,6 +418,8 @@ export default function ContentPillarPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Content Pillar Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan your content pillar strategy with topic clusters, supporting content, and a publishing calendar." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

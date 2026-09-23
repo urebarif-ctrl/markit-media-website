@@ -164,6 +164,8 @@ function saveState(checked: Set<string>, notes: Record<string, string>) {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function WebsiteLaunchChecklistPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [notes, setNotes] = useState<Record<string, string>>({});
@@ -331,6 +333,8 @@ export default function WebsiteLaunchChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Website Launch Checklist | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="A 50-item interactive checklist covering content, SEO, performance, security, design, analytics, legal, and launch-day tasks for launching a website." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

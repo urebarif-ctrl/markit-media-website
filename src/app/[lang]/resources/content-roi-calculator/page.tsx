@@ -10,6 +10,8 @@ import { ToolCTA } from "@/components/tool-cta";
 function fmt(n: number) { return n.toLocaleString("en-US", { maximumFractionDigits: 0 }); }
 function fmtMoney(n: number) { return "$" + fmt(n); }
 
+
+
 export default function ContentRoiCalculatorPage() {
   const [articlesPerMonth, setArticlesPerMonth] = useState(4);
   const [costPerArticle, setCostPerArticle] = useState(500);
@@ -58,6 +60,8 @@ export default function ContentRoiCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Content Marketing ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Use our free content ROI calculator to project your content marketing returns over time. Factor in traffic growth, conversion rates, and production costs to ..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

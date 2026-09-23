@@ -58,6 +58,8 @@ const platforms = [
   },
 ];
 
+
+
 export default function SocialMediaPlannerPage() {
   const [selected, setSelected] = useState<string[]>(["Instagram", "LinkedIn"]);
 
@@ -85,6 +87,8 @@ export default function SocialMediaPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Content Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan your social media strategy with platform-specific posting formats, frequencies, and best practices using this free tool. Post with purpose on every chan..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

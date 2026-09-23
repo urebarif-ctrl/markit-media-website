@@ -52,6 +52,8 @@ const ageRanges = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"];
 const incomeRanges = ["Under $30k", "$30k-$50k", "$50k-$75k", "$75k-$100k", "$100k-$150k", "$150k+"];
 const educationOptions = ["High School", "Some College", "Bachelor's Degree", "Master's Degree", "Doctorate", "Trade/Vocational"];
 
+
+
 export default function AudienceTargetingWorksheetPage() {
   const [profile, setProfile] = useState<AudienceProfile>(emptyProfile);
   const [step, setStep] = useState(0);
@@ -252,6 +254,8 @@ export default function AudienceTargetingWorksheetPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Audience Targeting Worksheet | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Define your ideal customer with this interactive worksheet. Map demographics, psychographics, pain points, and preferred channels, then export your targeting..." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

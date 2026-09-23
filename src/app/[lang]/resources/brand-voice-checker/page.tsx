@@ -290,6 +290,8 @@ function AttributeChip({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Brand Voice Consistency Checker | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Select 3 to 5 voice attributes that describe how your brand communicates. Review the Do and Do Not examples for each." />
       {attr.name}
     </button>
   );
@@ -437,6 +439,8 @@ const howToSteps = [
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function BrandVoiceCheckerPage() {
   const textareaId = useId();

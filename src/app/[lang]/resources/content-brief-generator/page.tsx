@@ -79,6 +79,8 @@ const EMPTY_BRIEF: Brief = {
 
 let nextId = 10;
 
+
+
 export default function ContentBriefGeneratorPage() {
   const [brief, setBrief] = useState<Brief>({ ...EMPTY_BRIEF });
   const [step, setStep] = useState(0);
@@ -217,6 +219,8 @@ export default function ContentBriefGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Content Brief Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Create detailed content briefs for writers with target audience, keywords, outline, tone, word count, and competitive references." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

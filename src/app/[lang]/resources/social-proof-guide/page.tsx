@@ -373,6 +373,8 @@ interface StrategyResult {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function SocialProofGuidePage() {
   const [step, setStep] = useState(1);
   const [businessType, setBusinessType] = useState<BusinessType | "">("");
@@ -495,6 +497,8 @@ export default function SocialProofGuidePage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Proof Strategy Builder | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Endorsements, certifications, or recommendations from recognized authorities in your industry. Expert approval signals that your product or service meets pro..." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

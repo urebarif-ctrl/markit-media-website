@@ -75,6 +75,8 @@ const platformSizes: Record<string, SizeSpec[]> = {
 
 const platforms = Object.keys(platformSizes);
 
+
+
 export default function ImageSizeGuidePage() {
   const [activePlatform, setActivePlatform] = useState(platforms[0]);
   const sizes = platformSizes[activePlatform] || [];
@@ -95,6 +97,8 @@ export default function ImageSizeGuidePage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Image Size Guide | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Free reference guide with up-to-date social media image dimensions for every platform so your visuals always look sharp." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

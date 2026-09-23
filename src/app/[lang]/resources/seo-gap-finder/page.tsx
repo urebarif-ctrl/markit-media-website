@@ -278,6 +278,8 @@ function CoverageBarChart({ checked, industry }: { checked: Checked; industry: I
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>SEO Content Gap Finder | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Choose the business type that best matches yours. This customizes the analysis to weight content types that matter most in your space." />
       {categories.map((cat) => {
         const pct = getCategoryCoverage(checked, cat);
         const weight = emphasis[cat.id] || 1;
@@ -604,6 +606,8 @@ function formatAnalysisText(checked: Checked, industry: Industry): string {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function SeoGapFinderPage() {
   const [industry, setIndustry] = useState<Industry | "">("");

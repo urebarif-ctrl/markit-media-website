@@ -28,6 +28,8 @@ const PLATFORM_OPTIONS = [
 
 const INDUSTRY_OPTIONS = Object.keys(INDUSTRY_BENCHMARKS);
 
+
+
 export default function AdSpendCalculatorPage() {
   const [monthlySpend, setMonthlySpend] = useState("");
   const [monthlyConversions, setMonthlyConversions] = useState("");
@@ -110,6 +112,8 @@ export default function AdSpendCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Ad Spend Efficiency Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Use our free ad spend calculator to analyze your advertising efficiency across platforms. Calculate CPA, ROAS, and identify where your budget delivers the be..." />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li>

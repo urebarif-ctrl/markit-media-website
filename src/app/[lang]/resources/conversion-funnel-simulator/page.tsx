@@ -228,6 +228,8 @@ function buildExportText(
 /*  Page Component                                                     */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ConversionFunnelSimulatorPage() {
   /* ---- primary state ---- */
   const [visitors, setVisitors] = useState(10000);
@@ -366,6 +368,8 @@ export default function ConversionFunnelSimulatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Conversion Funnel Simulator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Simulate your marketing funnel with custom stages, conversion rates, and revenue projections. Identify bottlenecks and optimisation opportunities." />
       <JsonLd data={schema} />
 
       <Breadcrumb

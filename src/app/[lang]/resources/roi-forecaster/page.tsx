@@ -32,6 +32,8 @@ function fmtCurrency(n: number): string {
   return `$${n.toFixed(0)}`;
 }
 
+
+
 export default function ROIForecasterPage() {
   const [channels, setChannels] = useState<ChannelForecast[]>([]);
   const [form, setForm] = useState({
@@ -158,6 +160,8 @@ export default function ROIForecasterPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing ROI Forecaster | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Forecast marketing ROI by channel with traffic, conversion rate, average order value, and cost inputs. Compare scenarios and project annual returns." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

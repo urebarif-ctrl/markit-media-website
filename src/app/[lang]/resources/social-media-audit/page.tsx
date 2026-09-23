@@ -111,6 +111,8 @@ function getGradeInfo(pct: number): { letter: string; label: string } {
   return { letter: "D", label: "Needs Work" };
 }
 
+
+
 export default function SocialMediaAuditPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
@@ -167,6 +169,8 @@ export default function SocialMediaAuditPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Audit Checklist | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="A free 25-item interactive checklist to audit your social media presence across profile optimization, content strategy, engagement, analytics, and growth." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

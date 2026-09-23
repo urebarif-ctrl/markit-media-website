@@ -584,6 +584,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Website Redesign Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="How modern, professional, and visually consistent is your current website design?" />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );
@@ -620,6 +622,8 @@ function DownloadButton({
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function RedesignPlannerPage() {
   const [currentStep, setCurrentStep] = useState(0);

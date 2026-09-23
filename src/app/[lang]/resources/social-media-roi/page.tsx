@@ -24,6 +24,8 @@ function fmtRatio(n: number) {
   return "$" + n.toFixed(2);
 }
 
+
+
 export default function SocialMediaRoiPage() {
   const [monthlySpend, setMonthlySpend] = useState("2000");
   const [followerGrowth, setFollowerGrowth] = useState("500");
@@ -76,6 +78,8 @@ export default function SocialMediaRoiPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Calculate the return on your social media marketing investment. Measure cost per follower, cost per click, revenue per dollar spent, and overall ROI." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

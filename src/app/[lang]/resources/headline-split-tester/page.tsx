@@ -97,6 +97,8 @@ function scoreHeadline(text: string): { score: number; feedback: string[] } {
   return { score: Math.min(score, 100), feedback };
 }
 
+
+
 export default function HeadlineSplitTesterPage() {
   const [variants, setVariants] = useState<HeadlineVariant[]>([]);
   const [input, setInput] = useState("");
@@ -189,6 +191,8 @@ export default function HeadlineSplitTesterPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Headline Split Test Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate headline variations for A/B testing using proven formulas. Score each variant and export test plans for blogs, ads, and emails." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

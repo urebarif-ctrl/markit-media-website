@@ -177,6 +177,8 @@ const CROSS_LINKS = [
   },
 ];
 
+
+
 export default function InfluencerRoiPage() {
   const [budget, setBudget] = useState(5000);
   const [numInfluencers, setNumInfluencers] = useState(5);
@@ -246,6 +248,8 @@ export default function InfluencerRoiPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Influencer Marketing ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Estimate the ROI of influencer marketing campaigns. Calculate projected reach, engagement, conversions, and return based on influencer tier, platform, and ca..." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

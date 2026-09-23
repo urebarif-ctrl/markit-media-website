@@ -276,6 +276,8 @@ function getImpactOrder(impact: "high" | "medium" | "low"): number {
   return 2;
 }
 
+
+
 export default function ConversionChecklistPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
@@ -357,6 +359,8 @@ export default function ConversionChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Website Conversion Optimization Checklist | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="A 30-point interactive checklist that scores your website" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

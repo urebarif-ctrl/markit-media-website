@@ -939,6 +939,8 @@ function formatUnit(value: number, unit: Metric["unit"]): string {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function MarketingMetricsBenchmarkPage() {
   const [values, setValues] = useState<Record<string, string>>({});
   const [activeCategory, setActiveCategory] = useState<Category | "All">("All");
@@ -1057,6 +1059,8 @@ export default function MarketingMetricsBenchmarkPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Metrics Benchmark Tool | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Compare your marketing metrics against industry benchmarks. Explore 50+ metrics with definitions, formulas, benchmarks, and optimization tips." />
       {/* Breadcrumb */}
       <Breadcrumb
         items={[

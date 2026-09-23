@@ -32,6 +32,8 @@ const CHECKS: ContentCheck[] = [
   { id: "conversation", label: "Asks a question or invites discussion", category: "Engagement", weight: 5, platforms: ["LinkedIn", "Twitter / X", "Facebook"] },
 ];
 
+
+
 export default function SocialContentRaterPage() {
   const [platform, setPlatform] = useState("Instagram");
   const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -99,6 +101,8 @@ export default function SocialContentRaterPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Content Rater | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Rate your social media content against best practices for each platform. Get scores on visuals, copy, hashtags, timing, and engagement potential." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

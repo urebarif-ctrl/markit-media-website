@@ -333,6 +333,8 @@ function FieldLabel({ children, htmlFor }: { children: React.ReactNode; htmlFor?
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function CampaignDebriefPage() {
   /* ---- State: campaign details ---- */
   const sample = sampleDebrief();
@@ -566,6 +568,8 @@ export default function CampaignDebriefPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Campaign Debrief Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate structured post-mortem debriefs for marketing campaigns with planned vs actual metrics, lessons learned, and action items." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

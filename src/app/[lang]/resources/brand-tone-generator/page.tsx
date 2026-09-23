@@ -85,6 +85,8 @@ function getToneSummary(dimensions: number[]): string {
   return labels.join(", ");
 }
 
+
+
 export default function BrandToneGeneratorPage() {
   const [profile, setProfile] = useState<ToneProfile>(initialProfile);
   const [step, setStep] = useState(0);
@@ -272,6 +274,8 @@ export default function BrandToneGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Brand Tone of Voice Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="How formally does your brand communicate?" />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
           <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>

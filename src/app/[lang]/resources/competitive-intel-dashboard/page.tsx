@@ -359,6 +359,8 @@ function ScoreSlider({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitive Intelligence Dashboard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Organic search presence, keyword rankings, and domain authority" />
       <div className="flex items-center justify-between mb-1">
         <label htmlFor={id} className="text-base font-bold text-black">
           {label}
@@ -896,6 +898,8 @@ const educationalContent = [
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function CompetitiveIntelDashboardPage() {
   const [yourProfile, setYourProfile] = useState<YourProfile>({

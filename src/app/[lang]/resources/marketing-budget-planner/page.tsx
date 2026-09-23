@@ -111,6 +111,8 @@ function getAllocation(budget: number, stage: BusinessStage, goal: Goal): Alloca
     }));
 }
 
+
+
 export default function MarketingBudgetPlannerPage() {
   const [budget, setBudget] = useState(5000);
   const [stage, setStage] = useState<BusinessStage>("growth");
@@ -135,6 +137,8 @@ export default function MarketingBudgetPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Budget Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Free marketing budget planner that builds a monthly channel allocation based on your business stage, goals, and total budget." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

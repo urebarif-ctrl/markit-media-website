@@ -501,6 +501,8 @@ const SCHEMA_TYPES: { key: SchemaType; label: string }[] = [
 
 /* ---------- main page ---------- */
 
+
+
 export default function SchemaGeneratorPage() {
   const [activeType, setActiveType] = useState<SchemaType>("LocalBusiness");
   const [copied, setCopied] = useState(false);
@@ -545,6 +547,8 @@ export default function SchemaGeneratorPage() {
 
   return (
     <article>
+      <title>Schema Markup Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate structured data markup (JSON-LD) for LocalBusiness, Organization, Product, FAQ, Article, and Breadcrumb schemas." />
       {/* --- Hero --- */}
       <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">

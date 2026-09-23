@@ -383,6 +383,8 @@ function RadarChart({ companies }: { companies: Company[] }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitor Benchmarking Dashboard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Enter your company name and add up to four competitors you want to benchmark against. Focus on direct competitors in your market." />
       <div className="min-w-[320px] mx-auto" style={{ maxWidth: CHART_SIZE + 60 }}>
         <svg
           viewBox={`-30 -10 ${CHART_SIZE + 60} ${CHART_SIZE + 40}`}
@@ -886,6 +888,8 @@ function DownloadButton({
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function CompetitorBenchmarkingPage() {
   const [yourCompany, setYourCompany] = useState<Company>(createCompany(""));

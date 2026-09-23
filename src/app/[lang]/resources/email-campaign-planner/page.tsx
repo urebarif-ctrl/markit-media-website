@@ -616,6 +616,8 @@ function getPlanData(
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function EmailCampaignPlannerPage() {
   const [campaignType, setCampaignType] = useState<CampaignType | null>(null);
   const [audienceType, setAudienceType] = useState<AudienceType | null>(null);
@@ -719,6 +721,8 @@ export default function EmailCampaignPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Email Campaign Planner | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan your email campaign with recommended sequences, subject lines, send timing, and success metrics for any campaign type and audience." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

@@ -217,6 +217,8 @@ function getRecommendedEngagement(
 }
 
 /* ─── Component ─── */
+
+
 export default function PricingCalculatorPage() {
   const [businessSize, setBusinessSize] = useState<BusinessSize>("small");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -267,6 +269,8 @@ export default function PricingCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Pricing Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Search engine optimization and organic growth" />
       {/* JSON-LD */}
       <JsonLd
         data={{

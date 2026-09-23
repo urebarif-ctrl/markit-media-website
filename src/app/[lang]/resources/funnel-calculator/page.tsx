@@ -104,6 +104,8 @@ const BENCHMARKS: { stage: string; low: string; avg: string; high: string }[] =
     },
   ];
 
+
+
 export default function FunnelCalculatorPage() {
   const [visitors, setVisitors] = useState(10000);
   const [rates, setRates] = useState<Record<string, number>>({
@@ -264,6 +266,8 @@ export default function FunnelCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Funnel Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Monthly website visitors" />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

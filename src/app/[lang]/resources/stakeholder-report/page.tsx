@@ -178,6 +178,8 @@ function buildExecSummary(report: ReportState): string {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function StakeholderReportPage() {
   const formId = useId();
   const [report, setReport] = useState<ReportState>(() => defaultState());
@@ -455,6 +457,8 @@ export default function StakeholderReportPage() {
           }),
         }}
       />
+      <title>Marketing Stakeholder Report Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Build executive, board, team, and client reports with drag-to-reorder sections and KPI highlights" />
             <div className="flex items-center justify-between flex-wrap gap-4 mb-10 no-print">
               <button
                 type="button"

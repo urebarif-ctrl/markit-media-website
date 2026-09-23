@@ -306,6 +306,8 @@ function PieLegend({ channels }: { channels: ChannelData[] }) {
 /*  Page Component                                                     */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function BudgetAllocatorPage() {
   const uid = useId();
 

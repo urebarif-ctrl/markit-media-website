@@ -180,6 +180,8 @@ const bestPractices: Record<Platform, { optimal: string; tip: string }> = {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function HashtagGeneratorPage() {
   const [selectedNiche, setSelectedNiche] = useState<Niche | "">("");
   const [selectedPlatform, setSelectedPlatform] = useState<Platform>("instagram");
@@ -243,6 +245,8 @@ export default function HashtagGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Hashtag Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Generate curated hashtag suggestions organized by reach for Instagram, TikTok, LinkedIn, Twitter/X, YouTube, and more." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

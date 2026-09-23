@@ -328,6 +328,8 @@ function StarRating({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Audit Scorecard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="How well your website performs, converts, and serves visitors." />
       <legend className="sr-only">Rate {label} from 1 to 5</legend>
       {[1, 2, 3, 4, 5].map((star) => (
         <button
@@ -427,6 +429,8 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function MarketingAuditScorecardPage() {
   const [scores, setScores] = useState<ScoreMap>({});

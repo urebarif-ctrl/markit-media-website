@@ -97,6 +97,8 @@ const questions: Question[] = [
   },
 ];
 
+
+
 export default function SpeedTestPage() {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [showResults, setShowResults] = useState(false);
@@ -134,6 +136,8 @@ export default function SpeedTestPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Website Speed Assessment | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Assess your website speed with this free quiz evaluating hosting, images, scripts, caching, and mobile performance. Get a prioritized list of fixes to load f..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

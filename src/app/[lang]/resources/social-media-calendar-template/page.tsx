@@ -87,6 +87,8 @@ function uid(): string {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function SocialMediaCalendarTemplatePage() {
   const now = new Date();
   const [year, setYear] = useState(now.getFullYear());
@@ -331,6 +333,8 @@ export default function SocialMediaCalendarTemplatePage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Calendar Template | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Plan your social media content with this interactive calendar. Schedule posts, set themes, track progress across platforms." />
       <JsonLd data={jsonLd} />
 
       <Breadcrumb

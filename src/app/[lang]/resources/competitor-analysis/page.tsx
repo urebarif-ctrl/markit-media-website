@@ -42,6 +42,8 @@ const emptyCompetitor: Competitor = {
   channels: [],
 };
 
+
+
 export default function CompetitorAnalysisPage() {
   const [competitors, setCompetitors] = useState<Competitor[]>([
     { ...emptyCompetitor },
@@ -93,6 +95,8 @@ export default function CompetitorAnalysisPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitor Analysis Worksheet | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Use our free competitor analysis framework to systematically evaluate your competition. Map their channels, positioning, and strategies to find your competit..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

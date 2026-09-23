@@ -95,6 +95,8 @@ function qualityLabel(score: number): { label: string; tier: "high" | "medium" |
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function BacklinkAnalyzerPage() {
   const [links, setLinks] = useState<Backlink[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -357,6 +359,8 @@ export default function BacklinkAnalyzerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Backlink Profile Analyzer | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Analyze and score your backlink profile quality with domain authority tracking, link type distribution, and exportable audit reports." />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

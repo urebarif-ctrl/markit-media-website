@@ -120,6 +120,8 @@ function channelMetrics(ch: ChannelData) {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ClientReportingDashboardPage() {
   const formId = useId();
   const [report, setReport] = useState<ReportState>(defaultState);
@@ -394,6 +396,8 @@ export default function ClientReportingDashboardPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Client Reporting Dashboard Builder | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Build professional marketing reports for clients. Select KPIs, add channels, include insights and recommendations. Export ready-to-present reports." />
         <Breadcrumb
           items={[
             { label: "Resources", href: "/resources" },

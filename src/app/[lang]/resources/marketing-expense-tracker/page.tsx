@@ -41,6 +41,8 @@ function fmtCurrency(n: number): string {
   return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 }
 
+
+
 export default function MarketingExpenseTrackerPage() {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [budget, setBudget] = useState<number>(10000);
@@ -162,6 +164,8 @@ export default function MarketingExpenseTrackerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Expense Tracker | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Track marketing expenses by channel, campaign, and month. Visualise spend distribution, monitor budgets, and export reports." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>

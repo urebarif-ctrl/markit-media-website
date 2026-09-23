@@ -961,6 +961,8 @@ function SelectInput({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Social Media Content Calendar | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Select the industry that best matches your business so the content ideas are relevant and practical for your audience." />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}
       </label>
@@ -1194,6 +1196,8 @@ function CalendarView({ weeks }: { weeks: CalendarWeek[] }) {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function SocialCalendarPage() {
   const [industry, setIndustry] = useState("");

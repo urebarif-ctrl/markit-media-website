@@ -418,6 +418,8 @@ function RadarChart({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Vendor Evaluation Scorecard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Range of services offered relative to your needs" />
       <svg
         viewBox="0 0 440 440"
         className="w-full h-auto"
@@ -564,6 +566,8 @@ function ScoreInput({
 /* ------------------------------------------------------------------ */
 /*  Main component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function VendorEvaluationPage() {
   const [vendors, setVendors] = useState<Vendor[]>(() => [

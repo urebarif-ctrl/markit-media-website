@@ -186,6 +186,8 @@ function clamp(val: number, min: number, max: number): number {
 }
 
 /* ─── Component ─── */
+
+
 export default function AgencyPricingCalculatorPage() {
   /* Model selection */
   const [activeModel, setActiveModel] = useState<PricingModel>("hourly");
@@ -483,6 +485,8 @@ export default function AgencyPricingCalculatorPage() {
           }),
         }}
       />
+      <title>Agency Pricing Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Start with your costs (salaries, overhead, tools) and add a profit margin. This is the most straightforward approach and ensures you cover expenses while mai..." />
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">

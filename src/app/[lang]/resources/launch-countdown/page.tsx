@@ -214,6 +214,8 @@ function CountdownDisplay({ launchDate }: { launchDate: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Website Launch Checklist &amp; Countdown | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Enter your target launch date to start the countdown. This helps you track how much time remains to complete all checklist items." />
       <p className="text-base text-gray-500 mb-2">Countdown</p>
       <p className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black leading-none">
         {days > 0 ? days : 0}
@@ -406,6 +408,8 @@ const howToSteps = [
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function LaunchCountdownPage() {
   const [launchDate, setLaunchDate] = useState("");

@@ -145,6 +145,8 @@ function fmtNumber(n: number) {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function GoogleAdsEstimatorPage() {
   const [industry, setIndustry] = useState<Industry>("E-commerce");
   const [location, setLocation] = useState<Location>("US");
@@ -193,6 +195,8 @@ export default function GoogleAdsEstimatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Google Ads Budget Estimator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Estimate your Google Ads performance based on industry, location, budget, and campaign goal. See projected CPC, clicks, conversions, and cost per conversion." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

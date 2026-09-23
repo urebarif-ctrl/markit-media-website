@@ -175,6 +175,8 @@ function getFilteredPhases(selected: Set<ServiceKey>): Phase[] {
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ClientOnboardingChecklistPage() {
   // Inputs
   const [clientName, setClientName] = useState("");
@@ -338,6 +340,8 @@ export default function ClientOnboardingChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Client Onboarding Checklist Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Gather foundational materials and align on objectives before any work begins." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

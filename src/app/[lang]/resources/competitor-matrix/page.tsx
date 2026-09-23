@@ -426,6 +426,8 @@ function RadarChart({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Competitor Analysis Matrix | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Market recognition, recall, and perceived authority" />
       <svg
         viewBox="0 0 400 400"
         className="w-full h-auto"
@@ -924,6 +926,8 @@ function ScoreCard({
 function createEmptyCompany(): CompanyData {
   return { name: "", scores: new Array(DIM_COUNT).fill(0) };
 }
+
+
 
 export default function CompetitorMatrixPage() {
   const [yourCompany, setYourCompany] = useState<CompanyData>(createEmptyCompany());

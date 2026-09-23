@@ -133,6 +133,8 @@ const btnDanger =
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function SlaTrackerPage() {
   /* State */
   const [slas, setSlas] = useState<Sla[]>([]);
@@ -326,6 +328,8 @@ export default function SlaTrackerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing SLA Tracker | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Track and manage marketing service level agreements. Monitor compliance rates, identify at-risk deliverables, and maintain accountability across agency-clien..." />
       <JsonLd data={jsonLd} />
 
       {/* Breadcrumb */}

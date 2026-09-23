@@ -338,6 +338,8 @@ function RiskMatrix({ risks }: { risks: MarketingRisk[] }) {
 /*  Main Page Component                                                */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function RiskAssessmentPage() {
   const [risks, setRisks] = useState<MarketingRisk[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -523,6 +525,8 @@ export default function RiskAssessmentPage() {
           }),
         }}
       />
+      <title>Marketing Risk Assessment Matrix | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Unfavorable media coverage or viral social media backlash damages brand perception." />
             {[
               { label: "Total Risks", value: totalRisks },
               { label: "Critical", value: criticalCount },

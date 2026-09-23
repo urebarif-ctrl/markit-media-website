@@ -155,6 +155,8 @@ const allocations: Record<BusinessType, Record<PrimaryGoal, ChannelAllocation[]>
 const businessTypes: BusinessType[] = ["B2B", "B2C", "E-commerce", "Local"];
 const goals: PrimaryGoal[] = ["Brand Awareness", "Lead Gen", "Sales", "Retention"];
 
+
+
 export default function BudgetCalculatorPage() {
   const [budget, setBudget] = useState(5000);
   const [businessType, setBusinessType] = useState<BusinessType>("B2B");
@@ -183,6 +185,8 @@ export default function BudgetCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing Budget Calculator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Use our free marketing budget calculator to get recommended budget allocations across SEO, PPC, social media, content, email, and video based on your busines..." />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li><Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>

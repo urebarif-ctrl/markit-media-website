@@ -273,6 +273,8 @@ const colorPsychology = [
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
+
+
 export default function ColorPaletteGeneratorPage() {
   const [primaryHex, setPrimaryHex] = useState("#2563EB");
   const [inputValue, setInputValue] = useState("#2563EB");
@@ -335,6 +337,8 @@ export default function ColorPaletteGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Color Palette Generator | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Opposite on the color wheel. High contrast, great for CTAs and emphasis." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

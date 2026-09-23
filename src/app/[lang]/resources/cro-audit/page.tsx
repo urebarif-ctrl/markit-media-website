@@ -150,6 +150,8 @@ function getLetterGrade(pct: number): { letter: string; label: string } {
   return { letter: "F", label: "Needs Significant Work" };
 }
 
+
+
 export default function CroAuditPage() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
@@ -221,6 +223,8 @@ export default function CroAuditPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Conversion Rate Optimization Audit | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="A 20-point conversion rate optimization audit checklist. Evaluate your website across page speed, above-the-fold design, content, and CTAs to identify conver..." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

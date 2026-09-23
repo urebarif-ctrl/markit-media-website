@@ -327,6 +327,8 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Content Audit Scorecard | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Evaluate the substance and value of your content." />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );
@@ -466,6 +468,8 @@ function RadarChart({ ratings }: { ratings: RatingMap }) {
 /* ------------------------------------------------------------------ */
 /*  Page component                                                     */
 /* ------------------------------------------------------------------ */
+
+
 
 export default function ContentAuditScorecardPage() {
   const [ratings, setRatings] = useState<RatingMap>({});

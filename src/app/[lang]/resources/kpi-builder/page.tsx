@@ -81,6 +81,8 @@ interface KPIEntry {
 
 let nextId = 1;
 
+
+
 export default function KPIBuilderPage() {
   const [kpis, setKpis] = useState<KPIEntry[]>([]);
   const [showLibrary, setShowLibrary] = useState(true);
@@ -174,6 +176,8 @@ export default function KPIBuilderPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
+      <title>Marketing KPI Dashboard Builder | Free Marketing Tool — Markit Media</title>
+      <meta name="description" content="Build a custom KPI dashboard for your marketing team. Select metrics by function, set targets, track progress, and export reports." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
