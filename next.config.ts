@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   poweredByHeader: false,
+  serverExternalPackages: ["better-sqlite3"],
+  outputFileTracingIncludes: {
+    "/api/**": ["./data/**"],
+    "/feed.xml": ["./data/**"],
+  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
