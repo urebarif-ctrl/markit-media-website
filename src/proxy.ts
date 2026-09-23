@@ -27,6 +27,12 @@ const KNOWN_ROUTES = new Set([
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  if (pathname !== "/" && pathname.endsWith("/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(0, -1);
+    return NextResponse.redirect(url, 301);
+  }
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
@@ -73,6 +79,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|images|fonts|.*\\..*).*)",
+    "/((?!api|_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|feed\\.xml|site\\.webmanifest|images|fonts|.*\\..*).*)",
   ],
 };
