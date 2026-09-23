@@ -2,15 +2,26 @@
 
 import { useState, type FormEvent } from "react";
 
-export function NewsletterCta() {
+export function NewsletterCta({ source = "footer" }: { source?: string }) {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!email) return;
-    setStatus("success");
-    setEmail("");
+    if (!email || status === "loading") return;
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source }),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -36,10 +47,14 @@ export function NewsletterCta() {
       />
       <button
         type="submit"
-        className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 whitespace-nowrap min-h-[44px]"
+        disabled={status === "loading"}
+        className="bg-black text-white px-8 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 whitespace-nowrap min-h-[44px] disabled:opacity-60"
       >
-        Subscribe
+        {status === "loading" ? "Subscribing..." : "Subscribe"}
       </button>
+      {status === "error" && (
+        <p className="text-base text-red-600 sm:col-span-2">Something went wrong. Please try again.</p>
+      )}
     </form>
   );
 }

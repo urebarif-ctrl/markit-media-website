@@ -94,8 +94,19 @@ export function getDb(): Database.Database {
     CREATE INDEX IF NOT EXISTS idx_blog_status ON blog_posts(status);
     CREATE INDEX IF NOT EXISTS idx_blog_published ON blog_posts(published_at);
     CREATE INDEX IF NOT EXISTS idx_media_folder ON media(folder);
+    CREATE TABLE IF NOT EXISTS subscribers (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT NOT NULL UNIQUE,
+      source TEXT DEFAULT 'website',
+      subscribed_at TEXT NOT NULL DEFAULT (datetime('now')),
+      ip TEXT DEFAULT '',
+      status TEXT NOT NULL DEFAULT 'active'
+    );
+
     CREATE INDEX IF NOT EXISTS idx_analytics_type ON analytics_events(event_type);
     CREATE INDEX IF NOT EXISTS idx_analytics_created ON analytics_events(created_at);
+    CREATE INDEX IF NOT EXISTS idx_subscribers_email ON subscribers(email);
+    CREATE INDEX IF NOT EXISTS idx_subscribers_status ON subscribers(status);
   `);
 
   return db;

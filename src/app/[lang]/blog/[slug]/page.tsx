@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { TableOfContents } from "@/components/table-of-contents";
 import { getPostBySlug, getRelatedPosts, getAllPublishedSlugs } from "@/lib/blog";
 import { ShareControls } from "./share-controls";
 import { ReadingProgress } from "@/components/reading-progress";
@@ -224,6 +225,13 @@ function markdownToHtml(md: string): string {
     .replace(/$/, "</p>");
 }
 
+function addHeadingIds(html: string): string {
+  return html.replace(/<h([23])([^>]*)>([^<]+)<\/h[23]>/g, (_match, level, attrs, text) => {
+    const id = text.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    return `<h${level}${attrs} id="${id}">${text}</h${level}>`;
+  });
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -251,6 +259,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     wordCount: Math.round(post.content.replace(/<[^>]+>/g, "").split(/\s+/).length),
     ...(post.cover_image ? { image: post.cover_image } : {}),
   };
+
+  const processedContent = addHeadingIds(markdownToHtml(post.content));
 
   return (
     <article>
@@ -290,7 +300,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       )}
 
       <section aria-label="Article content" className="px-6 lg:px-12 pb-12">
-        <div className="max-w-3xl mx-auto blog-prose" dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }} />
+        <div className="max-w-3xl mx-auto">
+          <TableOfContents html={processedContent} />
+          <div className="blog-prose" dangerouslySetInnerHTML={{ __html: processedContent }} />
+        </div>
       </section>
 
       <section aria-label="Need help with your strategy" className="px-6 lg:px-12 pb-16">
