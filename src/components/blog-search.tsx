@@ -80,8 +80,14 @@ export function BlogSearch() {
           value={query}
           onChange={(e) => handleChange(e.target.value)}
           onFocus={() => results.length > 0 && setIsOpen(true)}
+          onKeyDown={(e) => { if (e.key === "Escape") setIsOpen(false); }}
           placeholder="Search 4,000+ articles..."
           className="w-full pl-10 pr-4 py-3 text-base border border-gray-300 text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none min-h-[44px]"
+          role="combobox"
+          aria-expanded={isOpen}
+          aria-haspopup="listbox"
+          aria-controls="blog-search-results"
+          autoComplete="off"
         />
         {loading && (
           <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -91,12 +97,13 @@ export function BlogSearch() {
       </div>
 
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 shadow-xl z-50 max-h-96 overflow-y-auto">
+        <div id="blog-search-results" role="listbox" className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 shadow-xl z-50 max-h-96 overflow-y-auto">
           {results.map((r) => (
             <Link
               key={r.slug}
               href={`/blog/${r.slug}`}
               onClick={() => setIsOpen(false)}
+              role="option"
               className="block px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-[-2px]"
             >
               <div className="flex items-center gap-2 mb-1">

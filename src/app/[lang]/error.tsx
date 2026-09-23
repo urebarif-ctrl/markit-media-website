@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Error({ reset }: { error: Error; reset: () => void }) {
   return (
     <section className="px-6 lg:px-12 py-32 text-center" aria-label="Error">
@@ -11,12 +13,20 @@ export default function Error({ reset }: { error: Error; reset: () => void }) {
         <p className="text-base text-gray-500 mb-8">
           An unexpected error occurred. Please try again.
         </p>
-        <button
-          onClick={reset}
-          className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
-        >
-          Try Again
-        </button>
+        <div className="flex flex-wrap justify-center gap-4">
+          <button
+            onClick={reset}
+            className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+          >
+            Try Again
+          </button>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+          >
+            Go Home
+          </Link>
+        </div>
       </div>
     </section>
   );
