@@ -46,6 +46,14 @@ export function getPostsByCategory(category: string, limit = 50): BlogPost[] {
     .all(category, limit) as BlogPost[];
 }
 
+export function getCategoryPostCount(category: string): number {
+  const db = getDb();
+  const row = db
+    .prepare(`SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published' AND category = ?`)
+    .get(category) as { count: number };
+  return row.count;
+}
+
 export function getRelatedPosts(slug: string, category: string, limit = 3): BlogPost[] {
   const db = getDb();
   return db

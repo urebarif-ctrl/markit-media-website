@@ -5,7 +5,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
-import { getPostsByCategory, getAllCategories } from "@/lib/blog";
+import { getPostsByCategory, getAllCategories, getCategoryPostCount } from "@/lib/blog";
 import { notFound } from "next/navigation";
 
 function slugToCategory(slug: string): string {
@@ -58,7 +58,8 @@ export default async function BlogCategoryPage({
     notFound();
   }
 
-  const posts = getPostsByCategory(matchedCategory, 500);
+  const posts = getPostsByCategory(matchedCategory, 48);
+  const totalCount = getCategoryPostCount(matchedCategory);
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -86,7 +87,8 @@ export default async function BlogCategoryPage({
               {matchedCategory} Articles
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mt-4">
-              {posts.length} article{posts.length !== 1 ? "s" : ""} on {matchedCategory.toLowerCase()}.
+              {totalCount} article{totalCount !== 1 ? "s" : ""} on {matchedCategory.toLowerCase()}.
+              {totalCount > posts.length && ` Showing the latest ${posts.length}.`}
             </p>
           </Animate>
         </div>
@@ -157,6 +159,24 @@ export default async function BlogCategoryPage({
           </div>
         </div>
       </section>
+
+      {totalCount > posts.length && (
+        <section className="px-6 lg:px-12 py-8" aria-label="Browse all">
+          <div className="max-w-4xl mx-auto text-center">
+            <Animate animation="fade-up">
+              <p className="text-base text-gray-500 mb-4">
+                Showing {posts.length} of {totalCount} articles
+              </p>
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                Browse All Articles &rarr;
+              </Link>
+            </Animate>
+          </div>
+        </section>
+      )}
 
       <section aria-label="Call to action" className="px-6 lg:px-12 py-16 bg-black text-white text-center">
         <div className="max-w-3xl mx-auto">
