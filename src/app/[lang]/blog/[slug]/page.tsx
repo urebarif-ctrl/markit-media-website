@@ -306,6 +306,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
+      <section aria-label="About the author" className="px-6 lg:px-12 pb-12">
+        <div className="max-w-3xl mx-auto flex gap-5 items-start border-t border-b border-gray-200 py-8">
+          <div className="w-14 h-14 bg-black flex items-center justify-center shrink-0">
+            <span className="text-white font-bold text-xl font-[family-name:var(--font-display)]">M</span>
+          </div>
+          <div>
+            <p className="text-base font-bold text-black">{post.author}</p>
+            <p className="text-base text-gray-500 leading-relaxed mt-1">
+              Full-stack digital marketing agency specializing in performance marketing, SEO, branding, and web development for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section aria-label="Need help with your strategy" className="px-6 lg:px-12 pb-16">
         <div className="max-w-3xl mx-auto bg-gray-50 p-8 border border-gray-200">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-3">
