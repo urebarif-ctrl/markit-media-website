@@ -360,6 +360,7 @@ export default function ConversionChecklistPage() {
         }) }}
       />
       <title>Website Conversion Optimization Checklist | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/conversion-checklist" />
       <meta name="description" content="A 30-point interactive checklist that scores your website" />
       <JsonLd
         data={{

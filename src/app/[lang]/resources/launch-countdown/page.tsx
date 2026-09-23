@@ -215,6 +215,7 @@ function CountdownDisplay({ launchDate }: { launchDate: string }) {
         }) }}
       />
       <title>Website Launch Checklist &amp; Countdown | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/launch-countdown" />
       <meta name="description" content="Enter your target launch date to start the countdown. This helps you track how much time remains to complete all checklist items." />
       <p className="text-base text-gray-500 mb-2">Countdown</p>
       <p className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black leading-none">

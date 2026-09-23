@@ -458,6 +458,7 @@ export default function StakeholderReportPage() {
         }}
       />
       <title>Marketing Stakeholder Report Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/stakeholder-report" />
       <meta name="description" content="Build executive, board, team, and client reports with drag-to-reorder sections and KPI highlights" />
             <div className="flex items-center justify-between flex-wrap gap-4 mb-10 no-print">
               <button

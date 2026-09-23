@@ -136,6 +136,7 @@ export default function CompetitorAdSpyPage() {
         }) }}
       />
       <title>Competitor Ad Spy Worksheet | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitor-ad-spy" />
       <meta name="description" content="Document and analyse competitor advertising across platforms. Track messaging, offers, CTAs, and creative strategies in a structured format." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

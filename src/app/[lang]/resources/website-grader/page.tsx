@@ -131,6 +131,7 @@ export default function WebsiteGraderPage() {
         }) }}
       />
       <title>Website Performance Grader | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/website-grader" />
       <meta name="description" content="Grade your website performance across speed, mobile, SEO, content, UX, trust, and conversions with this free tool. See exactly where you stand and what to fi..." />
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400">

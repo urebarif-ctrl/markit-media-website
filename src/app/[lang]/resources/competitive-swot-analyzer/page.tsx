@@ -554,6 +554,7 @@ function SwotQuadrant({
         }) }}
       />
       <title>Competitive SWOT Analyzer | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitive-swot-analyzer" />
       <meta name="description" content="Enter your company name and populate each SWOT quadrant. Be honest about weaknesses and threats. The analysis is only as good as your objectivity." />
       <div
         className={`px-4 py-3 ${quadrant.headerBg} ${quadrant.headerText}`}

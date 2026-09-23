@@ -383,6 +383,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Lead Magnet Idea Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/lead-magnet-generator" />
       <meta name="description" content="Free interactive tool that generates lead magnet ideas tailored to your industry, funnel stage, and preferred format." />
       {copied ? "Copied" : "Copy Results"}
     </button>

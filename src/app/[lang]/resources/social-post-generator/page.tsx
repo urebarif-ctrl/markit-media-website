@@ -96,6 +96,7 @@ export default function SocialPostGeneratorPage() {
         }) }}
       />
       <title>Social Media Post Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-post-generator" />
       <meta name="description" content="Generate platform-specific social media posts for LinkedIn, Instagram, Twitter/X, Facebook, and TikTok. Enter your topic and get ready-to-use templates." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

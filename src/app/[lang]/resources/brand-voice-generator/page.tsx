@@ -567,6 +567,7 @@ export default function BrandVoiceGeneratorPage() {
         }) }}
       />
       <title>Brand Voice Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-voice-generator" />
       <meta name="description" content="Generate a complete brand voice guide including tone, do" />
       
       {/* Related Tools */}

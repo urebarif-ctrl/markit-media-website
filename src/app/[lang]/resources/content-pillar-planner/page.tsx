@@ -419,6 +419,7 @@ export default function ContentPillarPlannerPage() {
         }) }}
       />
       <title>Content Pillar Planner | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-pillar-planner" />
       <meta name="description" content="Plan your content pillar strategy with topic clusters, supporting content, and a publishing calendar." />
       
       {/* Related Tools */}

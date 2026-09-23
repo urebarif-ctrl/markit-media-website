@@ -835,6 +835,7 @@ function HealthBadge({ zone, label }: { zone: HealthZone; label: string }) {
         }) }}
       />
       <title>Marketing KPI Dashboard Builder | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/kpi-dashboard" />
       <meta name="description" content="Follower counts, page views, and impressions feel good but rarely correlate to revenue. Pair every vanity metric with a conversion metric that ties back to b..." />
       <span
         className={`inline-flex items-center justify-center px-3 py-1 text-base font-bold ${colors[zone]} min-w-[80px] text-center`}

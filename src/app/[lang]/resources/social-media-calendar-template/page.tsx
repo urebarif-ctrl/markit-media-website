@@ -334,6 +334,7 @@ export default function SocialMediaCalendarTemplatePage() {
         }) }}
       />
       <title>Social Media Calendar Template | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-media-calendar-template" />
       <meta name="description" content="Plan your social media content with this interactive calendar. Schedule posts, set themes, track progress across platforms." />
       <JsonLd data={jsonLd} />
 

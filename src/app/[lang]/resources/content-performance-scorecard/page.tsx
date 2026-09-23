@@ -310,6 +310,7 @@ function DownloadButton({
         }) }}
       />
       <title>Content Performance Scorecard | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-performance-scorecard" />
       <meta name="description" content="Volume and quality of visitors this content attracts through organic search, social, referral, and direct channels." />
       Export as .txt
     </button>

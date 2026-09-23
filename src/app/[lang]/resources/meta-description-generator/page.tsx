@@ -117,6 +117,7 @@ export default function MetaDescriptionGeneratorPage() {
         }) }}
       />
       <title>Meta Description Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/meta-description-generator" />
       <meta name="description" content="Generate optimized meta descriptions for blog posts, service pages, and product pages with this free template-based tool. Improve CTR and search visibility i..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

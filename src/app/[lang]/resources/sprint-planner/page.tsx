@@ -306,6 +306,7 @@ export default function SprintPlannerPage() {
         }) }}
       />
       <title>Marketing Sprint Planner | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/sprint-planner" />
       <meta name="description" content="Free 2-week marketing sprint planner with Kanban board, burndown tracking, and effort estimation." />
       <Breadcrumb
         items={[

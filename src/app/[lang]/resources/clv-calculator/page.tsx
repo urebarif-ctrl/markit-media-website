@@ -142,6 +142,7 @@ export default function ClvCalculatorPage() {
         }) }}
       />
       <title>Customer Lifetime Value Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/clv-calculator" />
       <meta name="description" content="You are recovering your acquisition cost but making no profit. Growth at this ratio is unsustainable long-term." />
       
       {/* Related Tools */}

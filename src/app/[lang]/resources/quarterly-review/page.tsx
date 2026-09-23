@@ -477,6 +477,7 @@ export default function QuarterlyReviewPage() {
         }) }}
       />
       <title>Marketing Quarterly Review Template | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/quarterly-review" />
       <meta name="description" content="Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards." />
       <JsonLd
         data={{

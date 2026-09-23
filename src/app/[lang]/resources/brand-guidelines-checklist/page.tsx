@@ -156,6 +156,7 @@ function CategoryProgress({
         }) }}
       />
       <title>Brand Guidelines Checklist | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-guidelines-checklist" />
       <meta name="description" content="40-item interactive checklist to ensure your brand guidelines document covers logo, color, typography, imagery, voice, and digital standards." />
       <div className="flex items-center justify-between mb-1">
         <span className="text-base font-medium text-black">{category}</span>

@@ -41,6 +41,7 @@ export default function ROICalculatorPage() {
         }) }}
       />
       <title>Marketing ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/roi-calculator" />
       <meta name="description" content="Calculate your marketing ROI by projecting lead increases and revenue from your investment with this free calculator. Make data-driven budget decisions." />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">

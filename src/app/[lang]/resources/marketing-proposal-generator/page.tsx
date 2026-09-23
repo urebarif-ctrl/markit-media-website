@@ -460,6 +460,7 @@ export default function MarketingProposalGeneratorPage() {
         }) }}
       />
       <title>Marketing Proposal Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-proposal-generator" />
       <meta name="description" content="Generate professional marketing proposals with scope, deliverables, timeline, and pricing sections. Free tool from Markit Media." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

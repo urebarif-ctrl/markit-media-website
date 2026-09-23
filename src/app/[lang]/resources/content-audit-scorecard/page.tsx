@@ -328,6 +328,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Content Audit Scorecard | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-audit-scorecard" />
       <meta name="description" content="Evaluate the substance and value of your content." />
       {copied ? "Copied" : "Copy Results"}
     </button>

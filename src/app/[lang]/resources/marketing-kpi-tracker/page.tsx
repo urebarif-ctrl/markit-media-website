@@ -226,6 +226,7 @@ function Sparkline({ data, width = 120, height = 36 }: { data: (number | null)[]
         }) }}
       />
       <title>Marketing KPI Tracker | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-kpi-tracker" />
       <meta name="description" content="Track your marketing KPIs over time. Set targets, record monthly actuals, visualize trends, and identify areas that need attention." />
         <line x1={0} y1={height / 2} x2={width} y2={height / 2} stroke="#d4d4d4" strokeWidth={1} strokeDasharray="4 2" />
       </svg>

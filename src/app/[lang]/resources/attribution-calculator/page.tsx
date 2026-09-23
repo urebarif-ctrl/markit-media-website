@@ -194,6 +194,7 @@ function StackedBarChart({ channels, allAttributions }: {
         }) }}
       />
       <title>Marketing Attribution Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/attribution-calculator" />
       <meta name="description" content="Compare Last Touch, First Touch, Linear, and Time Decay attribution models side by side." />
       {MODEL_KEYS.map((model, mi) => {
         const y = mi * (barHeight + gap) + 10;

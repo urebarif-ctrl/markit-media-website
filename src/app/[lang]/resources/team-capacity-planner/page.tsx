@@ -367,6 +367,7 @@ export default function TeamCapacityPlannerPage() {
         }) }}
       />
       <title>Marketing Team Capacity Planner | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/team-capacity-planner" />
       <meta name="description" content="Plan your marketing team workload with our free capacity planner. Add team members and projects, visualize utilization per role, spot over-allocation, and ex..." />
       <Breadcrumb
         items={[

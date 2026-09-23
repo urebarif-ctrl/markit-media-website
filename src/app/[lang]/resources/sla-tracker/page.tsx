@@ -329,6 +329,7 @@ export default function SlaTrackerPage() {
         }) }}
       />
       <title>Marketing SLA Tracker | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/sla-tracker" />
       <meta name="description" content="Track and manage marketing service level agreements. Monitor compliance rates, identify at-risk deliverables, and maintain accountability across agency-clien..." />
       <JsonLd data={jsonLd} />
 

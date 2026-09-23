@@ -492,6 +492,7 @@ function ScoreBar({ score, label }: { score: number; label: string }) {
         }) }}
       />
       <title>SEO Content Optimizer | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/seo-content-optimizer" />
       <meta name="description" content="Each page should focus on one primary keyword and a handful of closely related secondary keywords. This helps search engines understand the page" />
       <div className="flex justify-between mb-2">
         <span className="text-base font-bold text-black">{label}</span>

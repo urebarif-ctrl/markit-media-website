@@ -270,6 +270,7 @@ export default function PricingCalculatorPage() {
         }) }}
       />
       <title>Marketing Pricing Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/pricing-calculator" />
       <meta name="description" content="Search engine optimization and organic growth" />
       {/* JSON-LD */}
       <JsonLd

@@ -123,6 +123,7 @@ export default function PpcAuditChecklistPage() {
         }) }}
       />
       <title>PPC Audit Checklist | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/ppc-audit-checklist" />
       <meta name="description" content="Audit your PPC campaigns with this free checklist covering account structure, keywords, ad copy, bidding strategy, and conversion tracking. Stop wasting budg..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

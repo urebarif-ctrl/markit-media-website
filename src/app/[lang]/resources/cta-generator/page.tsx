@@ -823,6 +823,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>CTA Copy Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/cta-generator" />
       <meta name="description" content="Free CTA generator that creates compelling button text, headlines, and subheadlines tailored to your business type and audience." />
       {copied ? "Copied" : "Copy"}
     </button>

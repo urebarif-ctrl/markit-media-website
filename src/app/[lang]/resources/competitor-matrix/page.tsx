@@ -427,6 +427,7 @@ function RadarChart({
         }) }}
       />
       <title>Competitor Analysis Matrix | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitor-matrix" />
       <meta name="description" content="Market recognition, recall, and perceived authority" />
       <svg
         viewBox="0 0 400 400"

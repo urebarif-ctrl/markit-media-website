@@ -376,6 +376,7 @@ function SwotItemInput({
         }) }}
       />
       <title>Competitive SWOT Matrix | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitive-swot" />
       <meta name="description" content="Internal advantages and capabilities" />
       <label
         htmlFor={inputId}

@@ -203,6 +203,7 @@ function PieChart({ channels, budget }: { channels: ChannelData[]; budget: numbe
         }) }}
       />
       <title>Budget allocation pie chart</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/budget-allocator" />
       {slices.length === 1 ? (
         <circle cx="50" cy="50" r="40" fill={slices[0].color} />
       ) : (

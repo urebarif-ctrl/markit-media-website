@@ -338,6 +338,7 @@ export default function ColorPaletteGeneratorPage() {
         }) }}
       />
       <title>Color Palette Generator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/color-palette-generator" />
       <meta name="description" content="Opposite on the color wheel. High contrast, great for CTAs and emphasis." />
       
       {/* Related Tools */}

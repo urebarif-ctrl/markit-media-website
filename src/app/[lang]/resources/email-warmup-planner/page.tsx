@@ -467,6 +467,7 @@ function VolumeChart({ schedule }: { schedule: ScheduleDay[] }) {
         }) }}
       />
       <title>Email Warm-Up Planner | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-warmup-planner" />
       <meta name="description" content="Build initial trust with mailbox providers by sending to your most engaged contacts only." />
       {/* Grid lines */}
       {yLabels.map((label) => (

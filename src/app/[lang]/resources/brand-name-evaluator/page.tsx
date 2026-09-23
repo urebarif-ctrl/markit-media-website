@@ -149,6 +149,7 @@ function CircularScore({ score, size = 160 }: { score: number; size?: number }) 
         }) }}
       />
       <title>Brand Name Evaluator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-name-evaluator" />
       <meta name="description" content="How easy is it to remember?" />
       <svg
         width={size}

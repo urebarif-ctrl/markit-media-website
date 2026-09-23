@@ -177,6 +177,7 @@ export default function KPIBuilderPage() {
         }) }}
       />
       <title>Marketing KPI Dashboard Builder | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/kpi-builder" />
       <meta name="description" content="Build a custom KPI dashboard for your marketing team. Select metrics by function, set targets, track progress, and export reports." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

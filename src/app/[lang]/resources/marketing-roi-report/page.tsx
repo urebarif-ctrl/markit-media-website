@@ -156,6 +156,7 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
         aria-label="Bar chart showing ROI percentage by channel"
       >
         <title>ROI by Channel</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-roi-report" />
         {/* zero line */}
         <line
           x1={midX}

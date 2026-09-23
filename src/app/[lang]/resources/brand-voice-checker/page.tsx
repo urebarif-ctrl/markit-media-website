@@ -291,6 +291,7 @@ function AttributeChip({
         }) }}
       />
       <title>Brand Voice Consistency Checker | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-voice-checker" />
       <meta name="description" content="Select 3 to 5 voice attributes that describe how your brand communicates. Review the Do and Do Not examples for each." />
       {attr.name}
     </button>

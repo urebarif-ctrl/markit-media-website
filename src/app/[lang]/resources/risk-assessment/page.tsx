@@ -526,6 +526,7 @@ export default function RiskAssessmentPage() {
         }}
       />
       <title>Marketing Risk Assessment Matrix | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/risk-assessment" />
       <meta name="description" content="Unfavorable media coverage or viral social media backlash damages brand perception." />
             {[
               { label: "Total Risks", value: totalRisks },

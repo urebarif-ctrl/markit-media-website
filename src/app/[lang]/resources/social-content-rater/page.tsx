@@ -102,6 +102,7 @@ export default function SocialContentRaterPage() {
         }) }}
       />
       <title>Social Media Content Rater | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-content-rater" />
       <meta name="description" content="Rate your social media content against best practices for each platform. Get scores on visuals, copy, hashtags, timing, and engagement potential." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

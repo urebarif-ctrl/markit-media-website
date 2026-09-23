@@ -259,6 +259,7 @@ function RatingButtons({
         }) }}
       />
       <title>Content Gap Analyzer | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-gap-analyzer" />
       <meta name="description" content="Score each content type from 0 (None) to 3 (Comprehensive). Be objective about what you actually have, not what you plan to create." />
       <legend className="sr-only">Rating for {itemLabel}</legend>
       {[0, 1, 2, 3].map((n) => {

@@ -255,6 +255,7 @@ export default function AudienceTargetingWorksheetPage() {
         }) }}
       />
       <title>Audience Targeting Worksheet | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/audience-targeting-worksheet" />
       <meta name="description" content="Define your ideal customer with this interactive worksheet. Map demographics, psychographics, pain points, and preferred channels, then export your targeting..." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

@@ -376,6 +376,7 @@ function SelectField({
         }) }}
       />
       <title>Marketing Persona Workshop | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/persona-workshop" />
       <meta name="description" content="Build detailed marketing personas with guided exercises. Define demographics, psychographics, goals, pain points, and content preferences." />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}

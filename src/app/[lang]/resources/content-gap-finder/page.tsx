@@ -646,6 +646,7 @@ function SvgHeatmap({ pieces }: { pieces: ContentPiece[] }) {
       aria-label="Content coverage heatmap showing content types across buyer journey stages"
     >
       <title>Content Coverage Heatmap</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-gap-finder" />
       {/* Column headers */}
       {BUYER_STAGES.map((stage, i) => (
         <text

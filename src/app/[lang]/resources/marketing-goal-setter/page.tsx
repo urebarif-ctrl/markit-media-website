@@ -145,6 +145,7 @@ export default function MarketingGoalSetterPage() {
         }) }}
       />
       <title>Marketing Goal Setter | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-goal-setter" />
       <meta name="description" content="Set SMART marketing goals with structured templates for traffic, leads, revenue, brand awareness, and engagement. Track progress and export your goal plan." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

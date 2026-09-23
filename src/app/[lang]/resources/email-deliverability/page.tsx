@@ -241,6 +241,7 @@ export default function EmailDeliverabilityPage() {
         }) }}
       />
       <title>Email Deliverability Checker | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-deliverability" />
       <meta name="description" content="Your email infrastructure is well-configured. Keep monitoring and maintaining these practices." />
       
       {/* Related Tools */}

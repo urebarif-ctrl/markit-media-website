@@ -162,6 +162,7 @@ export default function WebsiteReadinessScorecardPage() {
         }) }}
       />
       <title>Website Readiness Scorecard | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/website-readiness-scorecard" />
       <meta name="description" content="Score your website across mobile experience, page speed, SEO, security, and accessibility. Get a prioritised action plan to improve performance." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

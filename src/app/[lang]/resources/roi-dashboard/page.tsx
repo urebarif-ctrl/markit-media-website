@@ -144,6 +144,7 @@ function BarChart({
         }) }}
       />
       <title>Marketing ROI Dashboard | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/roi-dashboard" />
       <meta name="description" content="Compare marketing channel performance with ROI calculations, budget allocation charts, and optimization suggestions." />
       {data.map((d, i) => {
         const y = gap + i * (barH + gap);

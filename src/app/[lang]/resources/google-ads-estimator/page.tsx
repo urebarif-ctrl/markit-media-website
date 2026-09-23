@@ -196,6 +196,7 @@ export default function GoogleAdsEstimatorPage() {
         }) }}
       />
       <title>Google Ads Budget Estimator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/google-ads-estimator" />
       <meta name="description" content="Estimate your Google Ads performance based on industry, location, budget, and campaign goal. See projected CPC, clicks, conversions, and cost per conversion." />
       
       {/* Related Tools */}

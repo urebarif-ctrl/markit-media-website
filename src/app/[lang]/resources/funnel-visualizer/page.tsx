@@ -356,6 +356,7 @@ function NumberInput({
         }) }}
       />
       <title>Marketing Funnel Visualizer | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/funnel-visualizer" />
       <meta name="description" content="People who first learn about your brand or product." />
       <label
         htmlFor={id}

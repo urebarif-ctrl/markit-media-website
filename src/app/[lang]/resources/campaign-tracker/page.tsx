@@ -138,6 +138,7 @@ function SummaryCard({ label, value, sub }: { label: string; value: string; sub?
         }) }}
       />
       <title>Marketing Campaign Tracker | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/campaign-tracker" />
       <meta name="description" content="Every campaign needs a measurable goal tied to a business outcome. Define what success looks like in numbers before spending a dollar. Vague objectives like" />
       <p className="text-base text-neutral-500 mb-1">{label}</p>
       <p className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">

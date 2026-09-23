@@ -805,6 +805,7 @@ export default function CampaignBriefBuilderPage() {
         }) }}
       />
       <title>Campaign Brief Builder | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/campaign-brief-builder" />
       <meta name="description" content="Pre-launch buzz, launch day activation, and post-launch nurture" />
       <JsonLd
         data={{

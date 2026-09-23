@@ -267,6 +267,7 @@ export default function FunnelCalculatorPage() {
         }) }}
       />
       <title>Marketing Funnel Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/funnel-calculator" />
       <meta name="description" content="Monthly website visitors" />
       
       {/* Related Tools */}

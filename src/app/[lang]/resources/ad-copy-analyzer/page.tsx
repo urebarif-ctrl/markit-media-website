@@ -368,6 +368,7 @@ export default function AdCopyAnalyzerPage() {
         }) }}
       />
       <title>Ad Copy Analyser | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/ad-copy-analyzer" />
       <meta name="description" content="Analyse your ad copy against best practices for headlines, descriptions, CTAs, and emotional triggers. Get a score and specific improvement suggestions." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

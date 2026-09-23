@@ -1220,6 +1220,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Website Tech Stack Advisor | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/tech-stack-advisor" />
       <meta name="description" content="Free interactive tool that recommends the right website platform and tech stack based on your business requirements, budget, and technical expertise." />
       {copied ? "Copied" : "Copy Results"}
     </button>

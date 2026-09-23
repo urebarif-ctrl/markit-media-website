@@ -123,6 +123,9 @@ export default function ServiceFinderPage() {
 
   return (
     <article>
+      <title>Service Finder Quiz — Find the Right Marketing Services | Markit Media</title>
+      <meta name="description" content="Answer a few quick questions and get personalised marketing service recommendations based on your industry, goals, and budget." />
+      <link rel="canonical" href="https://themarkitmedia.com/en/services/finder" />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Service Finder" }]} />
 
       <section aria-label="Service Finder" className="px-6 lg:px-12 pt-24 pb-20">

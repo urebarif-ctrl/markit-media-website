@@ -301,6 +301,7 @@ export default function LandingPageGraderPage() {
         }) }}
       />
       <title>Landing Page Grader | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/landing-page-grader" />
       <meta name="description" content="Grade your landing page across 20 criteria and get instant improvement recommendations." />
       
       {/* Related Tools */}

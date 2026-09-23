@@ -416,6 +416,7 @@ export default function MeetingAgendaBuilderPage() {
         }) }}
       />
       <title>Marketing Meeting Agenda Builder | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/meeting-agenda-builder" />
       <meta name="description" content="15-minute sync on wins, blockers, and priorities" />
       <JsonLd
         data={{

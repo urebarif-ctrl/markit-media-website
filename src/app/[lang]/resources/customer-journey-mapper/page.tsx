@@ -306,6 +306,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Customer Journey Mapper | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/customer-journey-mapper" />
       <meta name="description" content="The customer first discovers your brand or realizes they have a need." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>

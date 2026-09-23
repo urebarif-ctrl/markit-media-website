@@ -486,6 +486,7 @@ export default function AgencyPricingCalculatorPage() {
         }}
       />
       <title>Agency Pricing Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/agency-pricing-calculator" />
       <meta name="description" content="Start with your costs (salaries, overhead, tools) and add a profit margin. This is the most straightforward approach and ensures you cover expenses while mai..." />
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>

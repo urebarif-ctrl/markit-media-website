@@ -224,6 +224,7 @@ export default function LeadScoringCalculatorPage() {
         }) }}
       />
       <title>Lead Scoring Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/lead-scoring-calculator" />
       <meta name="description" content="Build a lead scoring model with demographic, firmographic, and behavioural criteria. Assign weights, test scores, and define qualification thresholds." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

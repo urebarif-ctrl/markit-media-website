@@ -498,6 +498,7 @@ export default function SocialProofGuidePage() {
         }) }}
       />
       <title>Social Proof Strategy Builder | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-proof-guide" />
       <meta name="description" content="Endorsements, certifications, or recommendations from recognized authorities in your industry. Expert approval signals that your product or service meets pro..." />
       <JsonLd
         data={{

@@ -360,6 +360,7 @@ function ScoreSlider({
         }) }}
       />
       <title>Competitive Intelligence Dashboard | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitive-intel-dashboard" />
       <meta name="description" content="Organic search presence, keyword rankings, and domain authority" />
       <div className="flex items-center justify-between mb-1">
         <label htmlFor={id} className="text-base font-bold text-black">

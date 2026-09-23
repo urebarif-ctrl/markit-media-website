@@ -79,6 +79,7 @@ export default function SocialMediaRoiPage() {
         }) }}
       />
       <title>Social Media ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-media-roi" />
       <meta name="description" content="Calculate the return on your social media marketing investment. Measure cost per follower, cost per click, revenue per dollar spent, and overall ROI." />
       
       {/* Related Tools */}

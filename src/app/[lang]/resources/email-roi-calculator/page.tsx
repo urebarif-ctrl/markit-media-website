@@ -58,6 +58,7 @@ export default function EmailRoiCalculatorPage() {
         }) }}
       />
       <title>Email Marketing ROI Calculator | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-roi-calculator" />
       <meta name="description" content="Free email ROI calculator that computes your email marketing return from list size, open rates, and conversion metrics." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

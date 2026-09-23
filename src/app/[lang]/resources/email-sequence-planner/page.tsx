@@ -812,6 +812,7 @@ function StepIndicator({
         }) }}
       />
       <title>Email Sequence Planner | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-sequence-planner" />
       <meta name="description" content="Introduce new subscribers to your brand and guide them toward their first action." />
       {labels.map((label, i) => {
         const isActive = i === current;

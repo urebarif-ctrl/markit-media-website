@@ -585,6 +585,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Website Redesign Planner | Free Marketing Tool — Markit Media</title>
+      <link rel="canonical" href="https://themarkitmedia.com/en/resources/redesign-planner" />
       <meta name="description" content="How modern, professional, and visually consistent is your current website design?" />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
