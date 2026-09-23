@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -300,7 +301,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.cover_image && (
         <section aria-label="Cover image" className="px-6 lg:px-12 pb-8">
           <div className="max-w-4xl mx-auto">
-            <img loading="lazy" src={post.cover_image} alt={`Cover image for ${post.title}`} className="w-full aspect-[2/1] object-cover" />
+            <Image src={post.cover_image} alt={`Cover image for ${post.title}`} width={1200} height={600} className="w-full aspect-[2/1] object-cover" priority />
           </div>
         </section>
       )}
@@ -365,7 +366,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 >
                   {r.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
-                      <img loading="lazy" src={r.cover_image} alt={`Cover for ${r.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                      <Image src={r.cover_image} alt={`Cover for ${r.title}`} width={640} height={360} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                     </div>
                   )}
                   <div className="p-6">

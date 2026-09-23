@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -75,7 +76,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
               >
                 <div className="aspect-[16/9] bg-gray-100 flex items-center justify-center overflow-hidden">
                   {post.cover_image ? (
-                    <img loading="lazy" src={post.cover_image} alt={`Cover for ${post.title}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                    <Image src={post.cover_image} alt={`Cover for ${post.title}`} width={640} height={360} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
                   ) : (
                     <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
                   )}
