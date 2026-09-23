@@ -43,6 +43,11 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   alternates: {
+    canonical: "https://themarkitmedia.com/en",
+    languages: {
+      "en": "https://themarkitmedia.com/en",
+      "x-default": "https://themarkitmedia.com/en",
+    },
     types: { "application/rss+xml": "/feed.xml" },
   },
   openGraph: {

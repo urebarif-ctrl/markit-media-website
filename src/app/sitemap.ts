@@ -378,6 +378,7 @@ const staticPages = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en"];
   const entries: MetadataRoute.Sitemap = [];
+  const buildDate = new Date("2026-09-23");
 
   for (const locale of locales) {
     for (const page of staticPages) {
@@ -390,7 +391,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url: `${BASE_URL}/${locale}${page}`,
-        lastModified: new Date(),
+        lastModified: buildDate,
         changeFrequency: page === "" || page === "/blog" ? "weekly" : "monthly",
         priority,
       });
