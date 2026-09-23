@@ -181,7 +181,7 @@ export default function EducationPage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img loading="lazy" src="/images/industries/education.svg" alt="Education marketing services" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/industries/education.svg" alt="Education marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>

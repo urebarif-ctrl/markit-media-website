@@ -151,7 +151,7 @@ export default function EVChargersIndustryPage() {
           </Animate>
           </div>
           <Animate animation="fade-in" delay={200}>
-            <img loading="lazy" src="/images/industries/ev-chargers.svg" alt="Ev Chargers marketing services" className="w-full aspect-[4/3] object-cover" />
+            <img src="/images/industries/ev-chargers.svg" alt="Ev Chargers marketing services" className="w-full aspect-[4/3] object-cover" />
           </Animate>
         </div>
       </section>
