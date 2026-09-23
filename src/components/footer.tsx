@@ -89,7 +89,7 @@ export function Footer({ locale, translations }: { locale: string; translations:
   return (
     <footer className="bg-black text-white">
       {/* CTA band */}
-      <section className="px-6 lg:px-12 py-20 text-center border-b border-white/10">
+      <section aria-label="Call to action" className="px-6 lg:px-12 py-20 text-center border-b border-white/10">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight mb-5">
             {t.cta.title}

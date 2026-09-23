@@ -81,6 +81,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+.blog-prose a:hover {
+  color: #444;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-prose a { transition: none; }
 }
 
 .blog-prose blockquote {

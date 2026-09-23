@@ -150,7 +150,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
       )}
 
       {/* Final CTA */}
-      <section className="bg-black text-white px-6 lg:px-12 py-16 text-center">
+      <section aria-label="Get expert help" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">
           Ready for Expert Help?
         </h2>
