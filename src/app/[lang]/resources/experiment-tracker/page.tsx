@@ -773,7 +773,20 @@ export default function ExperimentTrackerPage() {
 
   return (
     <article className="min-h-screen">
-      {/* Breadcrumb */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Experiment Tracker",
+          description: "Track A/B tests and marketing experiments with hypothesis logging, variant tracking, statistical significance calculations, and win/loss analysis.",
+          url: "https://themarkitmedia.com/en/resources/experiment-tracker",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

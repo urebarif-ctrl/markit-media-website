@@ -422,7 +422,20 @@ export default function RetentionCalculatorPage() {
 
   return (
     <article className="min-h-screen">
-      {/* Breadcrumb */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Customer Retention Calculator",
+          description: "Calculate customer retention rates, churn metrics, lifetime value, and revenue impact with monthly tracking, cohort analysis, and industry benchmarks.",
+          url: "https://themarkitmedia.com/en/resources/retention-calculator",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }) }}
+      />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

@@ -8,6 +8,7 @@ import { TableOfContents } from "@/components/table-of-contents";
 import { getPostBySlug, getRelatedPosts, getAllPublishedSlugs } from "@/lib/blog";
 import { ShareControls } from "./share-controls";
 import { ReadingProgress } from "@/components/reading-progress";
+import { NewsletterCta } from "@/components/newsletter-cta";
 
 /* ── Category-to-service mapping ─────────────────────────── */
 const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
@@ -317,6 +318,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               Full-stack digital marketing agency specializing in performance marketing, SEO, branding, and web development for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section aria-label="Newsletter" className="px-6 lg:px-12 pb-12">
+        <div className="max-w-3xl mx-auto text-center py-10 px-6 border border-gray-200 bg-gray-50">
+          <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-2">
+            Get Marketing Insights Delivered
+          </h2>
+          <p className="text-base text-gray-500 leading-relaxed mb-6">
+            Join marketers who get actionable {post.category.toLowerCase()} tips and strategies in their inbox.
+          </p>
+          <NewsletterCta source={`blog-${post.category.toLowerCase().replace(/\s+/g, "-")}`} />
         </div>
       </section>
 
