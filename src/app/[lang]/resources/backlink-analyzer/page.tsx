@@ -6,6 +6,7 @@ import { Animate } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { ToolCTA } from "@/components/tool-cta";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
@@ -345,9 +346,8 @@ export default function BacklinkAnalyzerPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      <JsonLd
+        data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
           name: "Backlink Profile Analyzer",
@@ -357,7 +357,7 @@ export default function BacklinkAnalyzerPage() {
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
-        }) }}
+        }}
       />
       <title>Backlink Profile Analyzer | Free Marketing Tool — Markit Media</title>
       <link rel="canonical" href="https://themarkitmedia.com/en/resources/backlink-analyzer" />

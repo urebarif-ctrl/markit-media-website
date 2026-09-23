@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { ToolCTA } from "@/components/tool-cta";
+import { JsonLd } from "@/components/json-ld";
 
 /* ---------- types ---------- */
 
@@ -547,6 +548,19 @@ export default function SchemaGeneratorPage() {
 
   return (
     <article>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Schema Markup Generator",
+          description: "Generate structured data markup (JSON-LD) for LocalBusiness, Organization, Product, FAQ, Article, and Breadcrumb schemas.",
+          url: "https://themarkitmedia.com/en/resources/schema-generator",
+          applicationCategory: "SEO Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }}
+      />
       <title>Schema Markup Generator | Free Marketing Tool — Markit Media</title>
       <link rel="canonical" href="https://themarkitmedia.com/en/resources/schema-generator" />
       <meta name="description" content="Generate structured data markup (JSON-LD) for LocalBusiness, Organization, Product, FAQ, Article, and Breadcrumb schemas." />

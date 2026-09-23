@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { ToolCTA } from "@/components/tool-cta";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -424,9 +425,8 @@ export default function RetentionCalculatorPage() {
 
   return (
     <article className="min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      <JsonLd
+        data={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
           name: "Customer Retention Calculator",
@@ -436,7 +436,7 @@ export default function RetentionCalculatorPage() {
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
-        }) }}
+        }}
       />
       <title>Customer Retention Calculator | Free Marketing Tool — Markit Media</title>
       <link rel="canonical" href="https://themarkitmedia.com/en/resources/retention-calculator" />

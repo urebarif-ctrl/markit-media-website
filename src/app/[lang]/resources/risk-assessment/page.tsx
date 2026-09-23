@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { ToolCTA } from "@/components/tool-cta";
+import { JsonLd } from "@/components/json-ld";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -477,6 +478,19 @@ export default function RiskAssessmentPage() {
 
   return (
     <article className="min-h-screen bg-white text-black">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Marketing Risk Assessment Matrix",
+          description: "Identify, score, and mitigate marketing risks with a visual heat map, category breakdown, and exportable risk register.",
+          url: "https://themarkitmedia.com/en/resources/risk-assessment",
+          applicationCategory: "Marketing Tool",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
+        }}
+      />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },
