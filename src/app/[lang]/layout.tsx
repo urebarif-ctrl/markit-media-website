@@ -14,14 +14,14 @@ const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -86,10 +86,6 @@ export default async function LangLayout({
 
   return (
     <html lang={locale} dir={dir} className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}>
-      <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-      </head>
       <body className="min-h-full flex flex-col">
         {/* Organization + WebSite schemas live on homepage page.tsx only */}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">
