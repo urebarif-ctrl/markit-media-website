@@ -235,12 +235,34 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         ].map(item=><Link key={item.href} href={item.href} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"><div className="relative aspect-[4/3]"><Image src={item.src} alt={item.title+" project by Markit Media"} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover"/></div><div className="p-5 flex justify-between"><span className="font-bold">{item.title}</span><span>&rarr;</span></div></Link>)}</div>
         <div className="mt-8"><Link href="/case-studies" className="font-bold hover:underline">Explore case studies &rarr;</Link></div>
       </div></section>
-      {/* Platform Logos */}
-      <section className="border-y border-gray-200 py-8 bg-white" aria-label="Platform we work with">
+      {/* Platform ecosystem */}
+      <section className="border-y border-gray-200 py-12 bg-white" aria-label="Platforms and services we work with">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="text-base font-bold text-gray-400 uppercase tracking-widest text-center mb-6">Platform we work with</p>
-          <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-14">
-            {/* Facebook */}
+          <Animate animation="fade-up">
+            <p className="text-sm font-bold text-gray-500 uppercase tracking-[0.18em] text-center">Platforms & services we work with</p>
+            <p className="text-base text-gray-500 text-center mt-2 mb-7">Explore the specialist service behind each platform.</p>
+          </Animate>
+          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
+            {[
+              ["Meta Ads","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/meta/0866FF"],
+              ["Google Ads","/services/performance-marketing/google-ads","https://cdn.simpleicons.org/googleads/4285F4"],
+              ["Facebook","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/facebook/1877F2"],
+              ["Instagram","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/instagram/E4405F"],
+              ["Microsoft Ads","/services/performance-marketing/microsoft-ads","https://cdn.simpleicons.org/microsoft/5E5E5E"],
+              ["YouTube","/services/performance-marketing/youtube-ads","https://cdn.simpleicons.org/youtube/FF0000"],
+              ["TikTok","/services/performance-marketing/tiktok-ads","https://cdn.simpleicons.org/tiktok/000000"],
+              ["LinkedIn","/services/performance-marketing/linkedin-ads","https://cdn.simpleicons.org/linkedin/0A66C2"],
+              ["Shopify","/services/website-development/shopify","https://cdn.simpleicons.org/shopify/7AB55C"],
+              ["WordPress","/services/website-development/wordpress","https://cdn.simpleicons.org/wordpress/21759B"],
+            ].map(([label,href,src])=><Link key={label} href={href} aria-label={`Explore ${label} services`} className="group min-h-24 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all">
+              <img src={src} alt={`${label} logo`} width="34" height="34" loading="lazy" className="h-8 w-8 object-contain"/>
+              <span className="text-[11px] font-bold text-gray-600 group-hover:text-black text-center">{label}</span>
+            </Link>)}
+          </div>
+        </div>
+      </section>
+
+      {/* Facebook */}
             <svg className="h-10 lg:h-11 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="Facebook"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             {/* Instagram */}
             <svg className="h-10 lg:h-11 text-gray-400 hover:text-black transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-label="Instagram"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
