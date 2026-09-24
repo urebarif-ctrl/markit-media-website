@@ -88,8 +88,8 @@ export async function POST(request: NextRequest) {
     if (process.env.RESEND_API_KEY) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
-        await resend.emails.send({
-          from: "Markit Media Website <onboarding@resend.dev>",
+        const { data, error } = await resend.emails.send({
+          from: process.env.RESEND_FROM_EMAIL || "Markit Media Website <contact@themarkitmedia.com>",
           to: ["ciao@themarkitmedia.com", "ureb.arif@themarkitmedia.com", "urebarif@gmail.com"],
           subject: `New Lead: ${sanitizedData.name} — ${sanitizedData.service || "General Inquiry"}`,
           html: `
@@ -106,9 +106,17 @@ export async function POST(request: NextRequest) {
             </table>
           `,
         });
-      } catch {
-        console.error("Failed to send email notification");
+        if (error || !data?.id) {
+          console.error("Failed to send email notification", error);
+          return NextResponse.json({ error: "We could not send your message. Please email ciao@themarkitmedia.com directly." }, { status: 502 });
+        }
+      } catch (error) {
+        console.error("Failed to send email notification", error);
+        return NextResponse.json({ error: "We could not send your message. Please email ciao@themarkitmedia.com directly." }, { status: 502 });
       }
+    } else {
+      console.error("RESEND_API_KEY is missing; contact submission was not emailed");
+      return NextResponse.json({ error: "We could not send your message. Please email ciao@themarkitmedia.com directly." }, { status: 503 });
     }
 
     return NextResponse.json({ success: true });
