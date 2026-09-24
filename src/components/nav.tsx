@@ -69,6 +69,7 @@ function moveFocusInPanel(panelId: string, direction: "next" | "prev" | "first" 
 export function Nav({ locale, translations }: { locale: string; translations: NavTranslations }) {
   const t = translations;
   const pathname = usePathname();
+  const isHome = /^\/(en|ar|ur)\/?$/.test(pathname);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -166,7 +167,14 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
     <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : "bg-transparent"}`}>
       <div className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
         <Link href="/" className="flex items-center gap-2 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-          <Image src="/images/logo-black.png" alt="Markit Media" width={160} height={33} priority className="h-8 w-auto" />
+          <Image
+            src="/images/logo-black.png"
+            alt="Markit Media"
+            width={160}
+            height={33}
+            priority
+            className={`h-8 w-auto transition-[filter] duration-300 ${isHome && !scrolled ? "brightness-0 invert" : ""}`}
+          />
         </Link>
 
         {/* Desktop nav */}
