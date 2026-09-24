@@ -195,8 +195,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </div>
                   <div className="space-y-4 mt-8">
                     <div className="bg-white/5 border border-white/10 p-6">
-                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">15</div>
-                      <div className="text-base text-gray-500 mt-1">Service Categories</div>
+                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">12+</div>
+                      <div className="text-base text-gray-500 mt-1">Services Offered</div>
                     </div>
                     <div className="bg-white/5 border border-white/10 p-6">
                       <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">155+</div>
