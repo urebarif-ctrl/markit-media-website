@@ -143,12 +143,28 @@ export function Footer({ locale, translations }: { locale: string; translations:
                 <Image src="/images/logo-black.png" alt="Markit Media" width={160} height={33} className="h-8 w-auto invert brightness-200" />
               </Link>
               <p className="text-base text-gray-400 leading-relaxed mb-6">{t.footer.tagline}</p>
-              <div className="flex items-center gap-2 flex-wrap">
-                {SOCIAL_LINKS.map((s) => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors motion-reduce:transition-none min-w-[44px] min-h-[44px] inline-flex items-center justify-center focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2" aria-label={s.label}>
-                    <svg width={s.iconWidth || 18} height={s.iconWidth || 18} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />
+              <div className="flex items-center gap-2 flex-wrap" aria-label="Follow Markit Media">
+                {SOCIAL_LINKS.map((s) => {
+                  const primary = ["YouTube","Instagram","LinkedIn","Facebook"].includes(s.label);
+                  const brandClass: Record<string,string> = {
+                    YouTube:"bg-[#FF0000] text-white", Instagram:"bg-[#E4405F] text-white", LinkedIn:"bg-[#0A66C2] text-white",
+                    Facebook:"bg-[#1877F2] text-white", Behance:"bg-[#1769FF] text-white", TikTok:"bg-white text-black",
+                    Pinterest:"bg-[#BD081C] text-white", WhatsApp:"bg-[#25D366] text-white",
+                  };
+                  return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                    className={`${primary ? "w-12 h-12" : "w-10 h-10"} ${brandClass[s.label] ?? "bg-white/10 text-white"} rounded-full inline-flex items-center justify-center hover:scale-105 transition-transform motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2`}
+                    aria-label={`Follow Markit Media on ${s.label}`} title={s.label}>
+                    <svg width={primary ? 23 : 18} height={primary ? 23 : 18} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />
                   </a>
-                ))}
+                })}
+              </div>
+              <div className="flex flex-wrap gap-3 mt-5">
+                <a href="mailto:ciao@themarkitmedia.com" className="inline-flex items-center gap-2 min-h-11 px-4 border border-white/15 text-white hover:bg-white hover:text-black transition-colors" aria-label="Email Markit Media">
+                  <span className="text-xl" aria-hidden="true">✉</span><span className="text-sm font-semibold">Email</span>
+                </a>
+                <a href="https://wa.me/923002086081" className="inline-flex items-center gap-2 min-h-11 px-4 border border-white/15 text-white hover:bg-white hover:text-black transition-colors" aria-label="Contact Markit Media on WhatsApp">
+                  <span className="text-xl" aria-hidden="true">☎</span><span className="text-sm font-semibold">WhatsApp / Phone</span>
+                </a>
               </div>
             </div>
             <nav aria-label="Growth services">
