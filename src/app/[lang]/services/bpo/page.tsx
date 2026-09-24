@@ -26,6 +26,19 @@ export default function BpoPage() {
         { title: "Customer Support", desc: "Trained support agents for email, chat, and phone across your preferred tools.", href: "/services/bpo/customer-support" },
         { title: "Operations", desc: "Process management, order fulfillment support, and back-office operations.", href: "/services/bpo/operations" },
       ]}
+      comparison={{
+        title: "Managed BPO Team vs. Building the Function In-House",
+        leftLabel: "Markit Media BPO",
+        rightLabel: "In-House Setup",
+        rows: [
+          ["Hiring & Ramp-Up", "Recruiting, onboarding and workflow setup managed as part of the engagement", "Business recruits, hires, trains and manages each role internally"],
+          ["Coverage", "Flexible staffing across call center, customer service, outbound sales and back-office roles", "Coverage depends on internal headcount and shift planning"],
+          ["Quality Control", "Defined scripts, QA reviews, coaching and escalation workflows", "Business must create and operate its own QA process"],
+          ["Technology", "Team can work inside approved CRM, dialer, helpdesk and collaboration tools", "Business owns setup, access, training and administration"],
+          ["Scaling", "Capacity can be adjusted as requirements change", "Scaling normally requires additional recruitment and management"],
+          ["Management", "Operational oversight and reporting can be included", "Internal managers remain responsible for day-to-day staffing and performance"],
+        ],
+      }}
       benefits={[
         "Reduce operational costs while maintaining quality",
         "Trained staff who integrate with your tools and workflows",
