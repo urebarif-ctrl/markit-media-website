@@ -108,11 +108,6 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const industriesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
-  const searchItems = [...serviceCategories.map((item) => ({ ...item, category: "Services" })), ...industryList.map((item) => ({ ...item, desc: "Industry expertise", category: "Industries" })), { label: "Case Studies", href: "/case-studies", desc: "Results and client work", category: "Work" }, { label: "Portfolio", href: "/work", desc: "Selected creative and digital work", category: "Work" }, { label: "Blog & Insights", href: "/blog", desc: "Marketing articles and insights", category: "Resources" }, { label: "Resources", href: "/resources", desc: "Guides, calculators and tools", category: "Resources" }, { label: "About Markit Media", href: "/about", desc: "About the agency", category: "Company" }, { label: "Contact", href: "/contact", desc: "Talk to our team", category: "Company" }, { label: "Request a Quote", href: "/get-a-quote", desc: "Start a project", category: "Company" }];
-  const normalizedQuery = searchQuery.trim().toLowerCase();
-  const searchResults = (normalizedQuery ? searchItems.filter((item) => `${item.label} ${item.desc} ${item.category}`.toLowerCase().includes(normalizedQuery)) : searchItems).slice(0, 10);
-
-  const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
   const searchItems = [
     ...serviceCategories.map((item) => ({ ...item, category: "Services" })),
     ...industryList.map((item) => ({ ...item, desc: "Industry expertise", category: "Industries" })),
