@@ -38,7 +38,7 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      { "@type": "Question", name: "Is the initial consultation free?", acceptedAnswer: { "@type": "Answer", text: "Yes. Our discovery call is completely free with no obligation. We use it to understand your goals, assess fit, and outline how we could help." } },
+      { "@type": "Question", name: "Is the initial consultation free?", acceptedAnswer: { "@type": "Answer", text: "Yes. We can review your initial requirements by email or chat at no cost and outline how we could help." } },
       { "@type": "Question", name: "How quickly can you start?", acceptedAnswer: { "@type": "Answer", text: "Most projects can kick off within one to two weeks of signing. Urgent projects may start sooner depending on scope and team availability." } },
       { "@type": "Question", name: "Do you require long-term contracts?", acceptedAnswer: { "@type": "Answer", text: "We offer both project-based and retainer engagements. Retainers typically run on a month-to-month basis after an initial commitment period." } },
       { "@type": "Question", name: "What industries do you work with?", acceptedAnswer: { "@type": "Answer", text: "We serve over 20 industries including e-commerce, healthcare, real estate, SaaS, professional services, hospitality, and more." } },
@@ -140,7 +140,7 @@ export default function ContactPage() {
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             {[
               { step: "1", title: "We Review Your Inquiry", desc: "Within one business day, a senior team member reviews your message and prepares for a productive conversation." },
-              { step: "2", title: "Discovery Call", desc: "We schedule a call to understand your business, goals, competitive landscape, and current marketing efforts." },
+              { step: "2", title: "Email or Chat Follow-Up", desc: "We continue by email or WhatsApp to understand your business, goals, timeline, and current marketing efforts." },
               { step: "3", title: "Custom Proposal", desc: "You receive a tailored strategy recommendation with clear deliverables, timelines, and investment options." },
             ].map((item) => (
               <div key={item.step} className="bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
@@ -161,7 +161,7 @@ export default function ContactPage() {
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="mt-10 space-y-4">
             {[
-              { q: "Is the initial consultation free?", a: "Yes. Our discovery call is completely free with no obligation. We use it to understand your goals, assess fit, and outline how we could help." },
+              { q: "Is the initial consultation free?", a: "Yes. We can review your initial requirements by email or chat at no cost and outline how we could help." },
               { q: "How quickly can you start?", a: "Most projects can kick off within one to two weeks of signing. Urgent projects may start sooner depending on scope and team availability." },
               { q: "Do you require long-term contracts?", a: "We offer both project-based and retainer engagements. Retainers typically run on a month-to-month basis after an initial commitment period." },
               { q: "What industries do you work with?", a: "We serve over 20 industries including e-commerce, healthcare, real estate, SaaS, professional services, hospitality, and more. Our strategies are tailored to each vertical." },

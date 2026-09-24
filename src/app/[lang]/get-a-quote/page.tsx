@@ -23,7 +23,7 @@ const steps = [
 ];
 
 const quoteFaqItems = [
-  { q: "Is the consultation really free?", a: "Yes. The initial discovery call and strategy recommendation come at no cost and with no obligation." },
+  { q: "Is the consultation really free?", a: "Yes. The initial review and strategy recommendation by email or chat come at no cost and with no obligation." },
   { q: "How detailed is the proposal?", a: "Our proposals include recommended channels, estimated timelines, specific deliverables, and transparent pricing. Not a generic template." },
   { q: "What information do you need from me?", a: "At minimum: your industry, business goals, approximate budget range, and timeline. The more context you share, the better our recommendation." },
   { q: "Do you require long-term contracts?", a: "We offer flexible engagement models including monthly retainers, project-based work, and performance-based pricing. No lock-in required." },

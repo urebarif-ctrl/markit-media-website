@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const nextSteps = [
   { step: "1", title: "We review your inquiry", desc: "A team member reads your message and matches you with the right specialist." },
-  { step: "2", title: "We reach out within one business day", desc: "Expect an email or call to discuss your goals, timeline, and next steps." },
+  { step: "2", title: "We reach out within one business day", desc: "Expect a reply by email or WhatsApp to discuss your goals, timeline, and next steps." },
   { step: "3", title: "We share a tailored recommendation", desc: "Based on your needs, we'll outline a clear approach and scope." },
 ];
 

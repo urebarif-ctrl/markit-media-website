@@ -34,7 +34,15 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
       phone: String(data.get("phone") || "").trim(),
       service: String(data.get("service") || "").trim(),
       budget: String(data.get("budget") || "").trim(),
+      timeline: String(data.get("timeline") || "").trim(),
       message: String(data.get("message") || "").trim(),
+      marketingConsent: data.get("marketingConsent") === "on",
+      source: isQuote ? "Request a Quote" : "Contact",
+      landingPage: window.location.pathname,
+      referrer: document.referrer,
+      utmSource: new URLSearchParams(window.location.search).get("utm_source") || "",
+      utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "",
+      utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
     };
 
     if (!body.name || !body.email || !body.message) {
@@ -142,6 +150,11 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
             <label htmlFor="message" className={labelClass}>{isQuote ? "Goals & Project Details *" : "Message *"}</label>
             <textarea id="message" name="message" rows={5} required className={inputClass + " resize-y"} placeholder={isQuote ? "What are you trying to achieve? Tell us about your goals, current marketing, timeline, or anything else we should know..." : "Tell us about your project and goals..."} />
           </div>
+
+          <label className="mt-5 flex items-start gap-3 text-sm text-gray-500">
+            <input type="checkbox" name="marketingConsent" className="mt-1" />
+            <span>Send me occasional marketing insights and updates from Markit Media. Optional.</span>
+          </label>
 
           {state.status === "error" && (
             <div className="mt-4 p-3 bg-red-50 border border-red-200 text-red-700 text-base" role="alert">
