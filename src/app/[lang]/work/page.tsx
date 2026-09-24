@@ -229,9 +229,6 @@ export default function WorkPage() {
               </div>
             ))}
           </Stagger>
-          <p className="text-base text-gray-400 text-center mt-6">
-            Original client logos available on request. Placeholders shown.
-          </p>
         </div>
       </section>
 
