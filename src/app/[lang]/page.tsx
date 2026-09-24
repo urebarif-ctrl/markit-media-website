@@ -52,8 +52,8 @@ const services = [
 ];
 
 const industries = [
-  { icon: Home, title: "Exterior Cleaning", href: "/industries/exterior-cleaning" },
-  { icon: HeartHandshake, title: "Rehab & Recovery", href: "/industries/rehab-recovery" },
+  { icon: Home, title: "Exterior Cleaning Marketing", href: "/industries/exterior-cleaning", featured: true, desc: "Lead generation for window cleaning, pressure washing, soft washing, roof and gutter cleaning." },
+  { icon: HeartHandshake, title: "Rehab & Recovery Center Marketing", href: "/industries/rehab-recovery", featured: true, desc: "Search, paid media, content and digital growth for treatment and recovery organizations." },
   { icon: Briefcase, title: "Personal Branding", href: "/industries/personal-branding" },
   { icon: ShoppingCart, title: "Food Ingredients E-commerce", href: "/industries/food-ingredients-ecommerce" },
   { icon: Home, title: "Home Services", href: "/industries/home-services" },
@@ -337,19 +337,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <SectionLabel>{t.home.industriesSubtitle}</SectionLabel>
             <SectionTitle>{t.home.industriesTitle}</SectionTitle>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
-            {industries.map((ind) => {
+          <div className="grid lg:grid-cols-2 gap-4 mt-10 mb-5">
+            {industries.filter((ind) => "featured" in ind && ind.featured).map((ind) => {
               const Icon = ind.icon;
-              return (
-                <Link key={ind.href} href={ind.href} className="group border border-gray-200 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  <div className="w-14 h-14 bg-gray-100 group-hover:bg-black group-hover:text-white text-gray-500 flex items-center justify-center mx-auto mb-4 transition-colors motion-reduce:transition-none">
-                    <Icon size={24} strokeWidth={2} aria-hidden="true" />
-                  </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline">{ind.title}</h3>
-                </Link>
-              );
+              return <Link key={ind.href} href={ind.href} className="group relative overflow-hidden bg-black text-white p-7 sm:p-8 min-h-56 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <div className="flex items-start justify-between"><div className="w-14 h-14 bg-white text-black flex items-center justify-center"><Icon size={27} strokeWidth={2} aria-hidden="true"/></div><span className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">Specialist Industry</span></div>
+                <div className="mt-8"><h3 className="font-[family-name:var(--font-display)] text-2xl font-extrabold max-w-md">{ind.title}</h3><p className="text-gray-400 mt-3 max-w-xl leading-relaxed">{"desc" in ind ? ind.desc : ""}</p><span className="inline-block mt-5 font-bold">Explore industry expertise ↗</span></div>
+              </Link>;
+            })}
+          </div>
+          <Stagger stagger={45} animation="fade-up" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            {industries.filter((ind) => !("featured" in ind && ind.featured)).slice(0,14).map((ind) => {
+              const Icon = ind.icon;
+              return <Link key={ind.href} href={ind.href} className="group bg-gray-50 border border-gray-200 hover:bg-white hover:border-black hover:shadow-md transition-all p-5 min-h-32 flex flex-col justify-between focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <div className="w-10 h-10 bg-white border border-gray-200 text-gray-600 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors"><Icon size={20} strokeWidth={2} aria-hidden="true"/></div>
+                <div className="flex items-end justify-between gap-3 mt-5"><h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base font-bold text-black">{ind.title}</h3><span className="text-gray-400 group-hover:text-black">↗</span></div>
+              </Link>;
             })}
           </Stagger>
+          <div className="mt-8 text-center"><Link href="/industries" className="inline-flex items-center gap-2 font-bold border border-black px-6 py-3 hover:bg-black hover:text-white transition-colors">Explore All Industries →</Link></div>
         </div>
       </section>
 
@@ -563,20 +569,20 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <SectionTitle>155+ Free Marketing Tools</SectionTitle>
             <p className="text-lg text-gray-500 mt-4 max-w-2xl">Interactive calculators, audit scorecards, generators, and planners to help you grow.</p>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="resource-grid grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-8">
+          <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
             {[
-              { title: "ROI Calculator", desc: "Estimate your digital marketing return on investment.", href: "/resources/roi-calculator" },
-              { title: "Website Grader", desc: "Score your website across performance, SEO, and UX.", href: "/resources/website-grader" },
-              { title: "Headline Analyzer", desc: "Test your blog titles, ad copy, and email subjects.", href: "/resources/headline-analyzer" },
-              { title: "Budget Calculator", desc: "Get a recommended channel allocation for your budget.", href: "/resources/budget-calculator" },
-              { title: "SEO Audit Score", desc: "Check 40 SEO factors and get your site health score.", href: "/resources/seo-audit-score" },
-              { title: "Persona Builder", desc: "Build detailed buyer personas for your strategy.", href: "/resources/persona-builder" },
-              { title: "Competitor Analysis", desc: "Map your competitive landscape interactively.", href: "/resources/competitor-analysis" },
-              { title: "Service Finder Quiz", desc: "Answer 5 questions, get personalized recommendations.", href: "/services/finder" },
+              { title: "ROI Calculator", tag:"Performance", icon:"↗", desc: "Estimate marketing return from spend, revenue and campaign economics.", href: "/resources/roi-calculator" },
+              { title: "Website Grader", tag:"Website", icon:"◎", desc: "Review performance, SEO and UX signals in one practical scorecard.", href: "/resources/website-grader" },
+              { title: "Headline Analyzer", tag:"Content", icon:"Aa", desc: "Pressure-test headlines for ads, landing pages, blogs and email.", href: "/resources/headline-analyzer" },
+              { title: "Budget Calculator", tag:"Media Planning", icon:"$", desc: "Build a starting channel allocation around your available marketing budget.", href: "/resources/budget-calculator" },
+              { title: "SEO Audit Score", tag:"SEO", icon:"⌕", desc: "Check key technical and on-page factors and identify optimization priorities.", href: "/resources/seo-audit-score" },
+              { title: "Persona Builder", tag:"Strategy", icon:"◉", desc: "Turn audience assumptions into a more structured buyer-persona brief.", href: "/resources/persona-builder" },
+              { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", href: "/resources/competitor-analysis" },
+              { title: "Service Finder Quiz", tag:"Start Here", icon:"→", desc: "Answer a few questions and find the Markit Media services most relevant to you.", href: "/services/finder" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="resource-card group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none p-4 sm:p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
-                <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>
+              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black hover:-translate-y-1 hover:shadow-lg transition-all p-6 min-h-56 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <div className="flex items-start justify-between gap-3"><span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">{r.tag}</span><span className="w-10 h-10 bg-black text-white flex items-center justify-center font-extrabold text-lg">{r.icon}</span></div>
+                <div className="mt-auto pt-8"><h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline">{r.title}</h3><p className="text-sm text-gray-500 leading-relaxed mt-3">{r.desc}</p><span className="inline-block mt-5 text-sm font-bold">Open free tool →</span></div>
               </Link>
             ))}
           </Stagger>
