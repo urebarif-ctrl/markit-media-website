@@ -87,6 +87,10 @@ const faqItems = [
   { q: "Can you manage both Google Ads and Meta Ads?", a: "Yes. We plan and manage Google Ads and Meta campaigns, then connect paid acquisition with landing pages, creative, CRM follow-up, and reporting where the client stack allows it." },
   { q: "Do you work with Shopify stores?", a: "Yes. Our e-commerce work includes Shopify strategy, store development, product and feed optimization, paid acquisition, conversion improvement, and retention-oriented marketing." },
   { q: "Where are your clients based?", a: "We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia." },
+  { q: "Do you provide digital marketing services for businesses in the USA?", a: "Yes. We support U.S. businesses with Google Ads, Meta Ads, SEO, local SEO, website development, creative, analytics, and growth strategy, with scopes tailored to the market, industry, and acquisition goals." },
+  { q: "How much does a digital marketing agency cost in the USA?", a: "Agency pricing in the USA varies by channels, media spend, competition, creative requirements, and reporting needs. We scope engagements around the services and operating requirements rather than using one package for every business." },
+  { q: "Can you manage Google Ads and PPC for multi-location U.S. businesses?", a: "Yes. We can structure paid search and local acquisition around multiple locations, including location-specific campaigns, landing pages, conversion tracking, budget allocation, and reporting." },
+  { q: "Do you provide white-label PPC services for U.S. agencies?", a: "Yes. Our white-label model can support agencies with Google Ads, Meta Ads, SEO, development, creative, and fulfillment while the partner agency retains its client relationship." },
   { q: "How do you measure results?", a: "We use data-driven metrics including ROI, conversion rates, traffic growth, and engagement to measure and optimize campaign performance." },
   { q: "What makes Markit Media different from other agencies?", a: "We combine strategic thinking with hands-on execution. You work directly with senior marketers, not junior account managers." },
   { q: "How long does it take to see results?", a: "Paid campaigns can show results within weeks. SEO and organic strategies typically show meaningful growth within 3-6 months." },
@@ -695,27 +699,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 lg:px-12 py-24 bg-black text-white text-center" aria-label="Get started">
-        <div className="max-w-3xl mx-auto">
-          <Animate animation="fade-up">
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold tracking-tight leading-[1.1]">
-              Ready to Grow Your Business?
-            </h2>
-            <p className="text-lg text-gray-400 mt-4 mb-10 leading-relaxed">
-              Talk to our team about a strategy built around your goals. No pitch decks, no fluff — just a straightforward conversation about what will work.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                Start Your Project &rarr;
-              </Link>
-              <Link href="/work" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                View Our Work
-              </Link>
-            </div>
-          </Animate>
-        </div>
-      </section>
     </article>
   );
 }
