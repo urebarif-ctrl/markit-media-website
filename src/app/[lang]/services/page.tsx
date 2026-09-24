@@ -218,7 +218,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "15", label: "Service Categories" },
+              { value: "13", label: "Service Categories" },
               { value: "60+", label: "Individual Services" },
               { value: "20", label: "Industries Served" },
               { value: "6", label: "Countries" },
