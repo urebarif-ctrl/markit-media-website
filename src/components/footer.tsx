@@ -14,7 +14,7 @@ interface FooterTranslations {
 const SOCIAL_BRANDS: Record<string,{bg:string;logo:string}> = {
   YouTube:{bg:"bg-[#FF0000]",logo:"https://cdn.simpleicons.org/youtube/FFFFFF"},
   Instagram:{bg:"bg-[#E4405F]",logo:"https://cdn.simpleicons.org/instagram/FFFFFF"},
-  LinkedIn:{bg:"bg-[#0A66C2]",logo:"https://cdn.simpleicons.org/linkedin/FFFFFF"},
+  LinkedIn:{bg:"bg-[#0A66C2]",logo:"/brand/linkedin.svg"},
   Facebook:{bg:"bg-[#1877F2]",logo:"https://cdn.simpleicons.org/facebook/FFFFFF"},
   Behance:{bg:"bg-[#1769FF]",logo:"https://cdn.simpleicons.org/behance/FFFFFF"},
   TikTok:{bg:"bg-white",logo:"https://cdn.simpleicons.org/tiktok/000000"},
