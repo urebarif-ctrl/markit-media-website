@@ -237,7 +237,8 @@ export default function WorkPage() {
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Featured Projects</SectionLabel>
-            <SectionTitle>Selected Case Studies</SectionTitle>
+            <SectionTitle>Selected Client Work</SectionTitle>
+            <SectionDesc>These featured projects are also indexed in our Case Studies collection, where work is organized by industry and service.</SectionDesc>
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {featuredProjects.map((project) => (
@@ -256,6 +257,12 @@ export default function WorkPage() {
               </Link>
             ))}
           </Stagger>
+          <Animate animation="fade-up" delay={100}>
+            <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-8">
+              <p className="text-gray-500 max-w-2xl">Want the project context rather than only the visual portfolio? Browse the connected case-study collection.</p>
+              <Link href="/case-studies" className="inline-flex items-center bg-black text-white px-6 py-3 font-bold hover:bg-gray-800">Explore Case Studies →</Link>
+            </div>
+          </Animate>
         </div>
       </section>
 
