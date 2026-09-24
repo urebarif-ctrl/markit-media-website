@@ -8,18 +8,18 @@ import { ContactForm } from "@/app/[lang]/contact/contact-form";
 
 export const metadata: Metadata = {
   title: "Get a Free Quote",
-  description: "Request a free digital marketing quote. Tell us about your business and goals, and we'll build a custom proposal within 2 business days.",
+  description: "Request a free digital marketing quote. Tell us about your business and goals, and our team will respond within one business day.",
   alternates: { canonical: "https://themarkitmedia.com/en/get-a-quote" },
   openGraph: {
     title: "Get a Free Marketing Quote",
-    description: "Tell us your goals and get a custom digital marketing proposal within 2 business days.",
+    description: "Tell us your goals and our team will respond within one business day with the next steps.",
   },
 };
 
 const steps = [
   { num: "1", title: "Tell Us About Your Business", desc: "Fill out the form with your goals, budget, and timeline." },
   { num: "2", title: "We Review & Research", desc: "Our team analyzes your market, competitors, and opportunities." },
-  { num: "3", title: "Receive Your Custom Proposal", desc: "A tailored strategy and quote delivered within 2 business days." },
+  { num: "3", title: "Receive Your Custom Proposal", desc: "A tailored strategy and transparent quote built around your goals."" },
 ];
 
 const quoteFaqItems = [
@@ -63,7 +63,7 @@ export default function GetAQuotePage() {
                 Get Your Custom Marketing Quote
               </h1>
               <p className="text-lg text-gray-500 leading-relaxed mt-6">
-                Tell us about your business and goals. We&apos;ll respond within 2 business days with a custom strategy and transparent pricing.
+                Tell us about your business and goals. We&apos;ll respond within one business day to discuss your goals, next steps, and proposal.
               </p>
             </Animate>
 
@@ -115,10 +115,10 @@ export default function GetAQuotePage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "13", label: "Service Disciplines" },
+              { value: "15", label: "Service Categories" },
               { value: "20", label: "Industries Served" },
               { value: "6", label: "Countries" },
-              { value: "2 Days", label: "Proposal Turnaround" },
+              { value: "1 Business Day", label: "Response Time" },
             ].map((item) => (
               <div key={item.label}>
                 <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold text-white">{item.value}</p>
