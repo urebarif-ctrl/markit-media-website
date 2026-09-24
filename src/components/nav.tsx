@@ -17,6 +17,11 @@ const serviceCategories = [
   { label: "Social Media", href: "/services/social-media", desc: "Strategy, content, management" },
   { label: "Website Development", href: "/services/website-development", desc: "WordPress, Shopify, Next.js" },
   { label: "App Development", href: "/services/app-development", desc: "Web apps, MVPs, portals, dashboards" },
+  { label: "White Label Services", href: "/services/white-label", desc: "PPC, SEO, web and agency fulfillment" },
+  { label: "Freelance Developers", href: "/services/website-development/freelance-developers", desc: "Flexible WordPress, Shopify and Next.js capacity" },
+  { label: "Marketing Analytics", href: "/services/marketing-analytics", desc: "Measurement, dashboards and attribution" },
+  { label: "Media Planning & Buying", href: "/services/media-planning-buying", desc: "Cross-channel media strategy and activation" },
+  { label: "WhatsApp Business", href: "/services/whatsapp-business", desc: "Messaging, automation and CRM workflows" },
   { label: "Next.js Websites", href: "/services/website-development/nextjs-websites", desc: "Fast, SEO-ready Next.js websites" },
   { label: "Branding", href: "/services/branding", desc: "Brand strategy, logo, identity" },
   { label: "Video Production", href: "/services/video-production", desc: "Production, editing, motion" },
@@ -31,7 +36,9 @@ const serviceCategories = [
   { label: "E-commerce Marketing", href: "/services/ecommerce-marketing", desc: "Amazon, Shopify, feeds" },
   { label: "Public Relations", href: "/services/public-relations", desc: "Media, PR, reputation" },
   { label: "Photography", href: "/services/photography", desc: "Product, corporate, events" },
-  { label: "BPO Services", href: "/services/bpo", desc: "Call center, sales, support, operations" },\n  { label: "Upwork Growth", href: "/services/upwork-growth", desc: "Profile, agency bidding, client acquisition" },
+  { label: "BPO Services", href: "/services/bpo", desc: "Call center, sales, support, operations" },
+  { label: "Appointment Setting", href: "/services/bpo/appointment-setting", desc: "Qualification, scheduling and CRM handoff" },
+  { label: "Staff Augmentation", href: "/services/bpo/staff-augmentation", desc: "Flexible digital and operations capacity" },\n  { label: "Upwork Growth", href: "/services/upwork-growth", desc: "Profile, agency bidding, client acquisition" },
 ];
 
 const industryList = [
