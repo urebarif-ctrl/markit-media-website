@@ -36,12 +36,12 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg?v=2", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon.ico?v=2", sizes: "32x32" },
     ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/site.webmanifest?v=2",
   alternates: {
     canonical: "https://themarkitmedia.com/en",
     languages: {
