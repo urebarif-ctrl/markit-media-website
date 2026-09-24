@@ -314,7 +314,7 @@ export default function CaseStudiesPage() {
                     {study.description}
                   </p>
                   <Link
-                    href={"href" in study ? study.href : "/get-a-quote"}
+                    href={("href" in study && study.href) || "/get-a-quote"}
                     className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     Read Case Study

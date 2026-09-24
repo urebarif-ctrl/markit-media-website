@@ -505,7 +505,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
                   {post.cover_image ? (
-                    <Image src={post.cover_image} alt={post.title} width={640} height={360} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
+                    <Image src={post.cover_image} alt={post.title} width={640} height={360} sizes="(max-width: 768px) 100vw, 33vw" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
