@@ -118,7 +118,7 @@ export default function ContactPage() {
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { label: "Markets Served", value: "6 Countries" },
-              { label: "Services", value: "15 Categories" },
+              { label: "Services", value: "13 Disciplines" },
               { label: "Industries", value: "20 Verticals" },
               { label: "Response Time", value: "1 Business Day" },
             ].map((item) => (
