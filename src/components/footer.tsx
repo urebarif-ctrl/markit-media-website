@@ -48,6 +48,33 @@ export function Footer({ locale, translations }: { locale: string; translations:
     { label: "BPO Services", href: "/services/bpo" },
   ];
 
+  const growthLinks = [
+    { label: "Google Ads Management", href: "/services/performance-marketing/google-ads" },
+    { label: "Meta Ads Management", href: "/services/performance-marketing/meta-ads" },
+    { label: "PPC Management", href: "/services/performance-marketing/ppc-management" },
+    { label: "SEO Services", href: "/services/seo" },
+    { label: "Local SEO", href: "/services/seo/local-seo" },
+    { label: "AI SEO", href: "/services/seo/ai-seo" },
+    { label: "White Label PPC", href: "/services/white-label/ppc" },
+    { label: "White Label Web Development", href: "/services/white-label/web-development" },
+    { label: "Next.js Development", href: "/services/website-development/nextjs-websites" },
+    { label: "Shopify Development", href: "/services/website-development/shopify" },
+    { label: "Marketing Analytics", href: "/services/marketing-analytics" },
+    { label: "Appointment Setting", href: "/services/bpo/appointment-setting" },
+  ];
+
+  const usaLinks = [
+    { label: "Digital Marketing USA", href: "/locations/united-states" },
+    { label: "New York", href: "/locations/united-states/new-york" },
+    { label: "Los Angeles", href: "/locations/united-states/los-angeles" },
+    { label: "Chicago", href: "/locations/united-states/chicago" },
+    { label: "Houston", href: "/locations/united-states/houston" },
+    { label: "Dallas", href: "/locations/united-states/dallas" },
+    { label: "Miami", href: "/locations/united-states/miami" },
+    { label: "Atlanta", href: "/locations/united-states/atlanta" },
+    { label: "San Francisco", href: "/locations/united-states/san-francisco" },
+  ];
+
   const companyLinks = [
     { label: t.nav.about, href: "/about" },
     { label: t.nav.work, href: "/work" },
@@ -109,9 +136,9 @@ export function Footer({ locale, translations }: { locale: string; translations:
       {/* Links grid */}
       <div className="px-6 lg:px-12 py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
             {/* Brand column */}
-            <div>
+            <div className="col-span-2 lg:col-span-2">
               <Link href="/" className="inline-block mb-4 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 <Image src="/images/logo-black.png" alt="Markit Media" width={160} height={33} className="h-8 w-auto invert brightness-200" />
               </Link>
@@ -124,6 +151,12 @@ export function Footer({ locale, translations }: { locale: string; translations:
                 ))}
               </div>
             </div>
+            <nav aria-label="Growth services">
+              <FooterLinkCol title="Growth Services" links={growthLinks} />
+            </nav>
+            <nav aria-label="United States locations">
+              <FooterLinkCol title="USA Markets" links={usaLinks} />
+            </nav>
             <nav aria-label={t.accessibility.footerNavigation}>
               <FooterLinkCol title={t.footer.services} links={serviceLinks} />
             </nav>
@@ -137,9 +170,20 @@ export function Footer({ locale, translations }: { locale: string; translations:
         </div>
       </div>
 
+      <div className="px-6 lg:px-12 pb-10">
+        <div className="max-w-7xl mx-auto border-t border-white/10 pt-10">
+          <p className="font-[family-name:var(--font-display)] text-[clamp(2rem,8vw,5.5rem)] font-extrabold tracking-[-0.05em] leading-none text-white">
+            Strategy. Search.<br className="sm:hidden" /> Creative. Technology.
+          </p>
+          <p className="mt-5 max-w-2xl text-base text-gray-400 leading-relaxed">
+            Built for businesses that want more than impressions — connected marketing, technology and creative work designed around measurable growth.
+          </p>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-white/10 px-6 lg:px-12 py-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <p className="text-base text-gray-500">{t.footer.copyright}</p>
           <p className="text-base text-gray-500">
             <a href="mailto:ciao@themarkitmedia.com" className="hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">ciao@themarkitmedia.com</a>
