@@ -239,7 +239,7 @@ export default function WhyMarkitMediaPage() {
           <Animate animation="fade-up">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { title: "Our Services", desc: "Full-stack digital marketing across 15 service categories.", href: "/services" },
+                { title: "Our Services", desc: "Full-stack digital marketing across 13 disciplines.", href: "/services" },
                 { title: "Case Studies", desc: "Real results from real campaigns across multiple industries.", href: "/case-studies" },
                 { title: "Our Approach", desc: "The frameworks and methodologies behind our strategy.", href: "/approach" },
               ].map((link) => (
