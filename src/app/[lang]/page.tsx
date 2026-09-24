@@ -248,10 +248,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               ["Google Ads","/services/performance-marketing/google-ads","https://cdn.simpleicons.org/googleads/4285F4"],
               ["Facebook","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/facebook/1877F2"],
               ["Instagram","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/instagram/E4405F"],
-              ["Microsoft Ads","/services/performance-marketing/microsoft-ads","https://cdn.simpleicons.org/microsoft/5E5E5E"],
+              ["Microsoft Ads","/services/performance-marketing/microsoft-ads","/brand/microsoft-ads.svg"],
               ["YouTube","/services/performance-marketing/youtube-ads","https://cdn.simpleicons.org/youtube/FF0000"],
               ["TikTok","/services/performance-marketing/tiktok-ads","https://cdn.simpleicons.org/tiktok/000000"],
-              ["LinkedIn","/services/performance-marketing/linkedin-ads","https://cdn.simpleicons.org/linkedin/0A66C2"],
+              ["LinkedIn","/services/performance-marketing/linkedin-ads","/brand/linkedin.svg"],
               ["Shopify","/services/website-development/shopify","https://cdn.simpleicons.org/shopify/7AB55C"],
               ["WordPress","/services/website-development/wordpress","https://cdn.simpleicons.org/wordpress/21759B"],
             ].map(([label,href,src])=><Link key={label} href={href} aria-label={`Explore ${label} services`} className="group min-h-24 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all">

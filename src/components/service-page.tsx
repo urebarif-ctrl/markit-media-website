@@ -131,10 +131,10 @@ export function ServicePage({
               { label: "Google Ads", href: "/services/performance-marketing/google-ads", src: "https://cdn.simpleicons.org/googleads/4285F4" },
               { label: "Facebook Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/facebook/1877F2" },
               { label: "Instagram Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/instagram/E4405F" },
-              { label: "Microsoft Ads", href: "/services/performance-marketing/microsoft-ads", src: "https://cdn.simpleicons.org/microsoftbing/258FFA" },
+              { label: "Microsoft Ads", href: "/services/performance-marketing/microsoft-ads", src: "/brand/microsoft-ads.svg" },
               { label: "YouTube Ads", href: "/services/performance-marketing/youtube-ads", src: "https://cdn.simpleicons.org/youtube/FF0000" },
               { label: "TikTok Ads", href: "/services/performance-marketing/tiktok-ads", src: "https://cdn.simpleicons.org/tiktok/000000" },
-              { label: "LinkedIn Ads", href: "/services/performance-marketing/linkedin-ads", src: "https://cdn.simpleicons.org/linkedin/0A66C2" },
+              { label: "LinkedIn Ads", href: "/services/performance-marketing/linkedin-ads", src: "/brand/linkedin.svg" },
               { label: "Shopify", href: "/services/website-development/shopify", src: "https://cdn.simpleicons.org/shopify/7AB55C" },
               { label: "WordPress", href: "/services/website-development/wordpress", src: "https://cdn.simpleicons.org/wordpress/21759B" },
             ].map((platform) => (
