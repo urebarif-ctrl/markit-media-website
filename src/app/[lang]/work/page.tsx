@@ -5,6 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { YouTubeEmbed } from "@/components/youtube-embed";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 
 export const metadata: Metadata = {
@@ -212,6 +213,22 @@ export default function WorkPage() {
               We help businesses grow through strategic digital marketing, compelling creative, and data-driven execution. Explore our selected projects below.
             </SectionDesc>
           </Animate>
+        </div>
+      </section>
+
+      {/* Agency showreels */}
+      <section className="px-6 lg:px-12 py-16 bg-black text-white" aria-label="Markit Media showreels">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Agency Showreels</SectionLabel>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">A Look at What We&apos;ve Built</h2>
+            <p className="text-gray-400 mt-4 max-w-3xl leading-relaxed">Two snapshots of Markit Media&apos;s work across 2024 and 2025 — bringing together selected creative, production, branding and digital projects in one place.</p>
+          </Animate>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+            <Animate animation="fade-up"><YouTubeEmbed videoId="gP17pGzj85c" title="Markit Media — 2024–2025 Agency Showreel" /></Animate>
+            <Animate animation="fade-up" delay={80}><YouTubeEmbed videoId="E_qCzSPRe6I" title="Markit Media — Selected Work 2024–2025" /></Animate>
+          </div>
+          <p className="text-sm text-gray-500 mt-5">Press play for a broader view of the work, then explore individual projects and case studies below.</p>
         </div>
       </section>
 
