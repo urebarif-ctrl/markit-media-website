@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const steps = [
   { num: "1", title: "Tell Us About Your Business", desc: "Fill out the form with your goals, budget, and timeline." },
   { num: "2", title: "We Review & Research", desc: "Our team analyzes your market, competitors, and opportunities." },
-  { num: "3", title: "Receive Your Custom Proposal", desc: "A tailored strategy and transparent quote built around your goals."" },
+  { num: "3", title: "Receive Your Custom Proposal", desc: "A tailored strategy and transparent quote built around your goals." },
 ];
 
 const quoteFaqItems = [
