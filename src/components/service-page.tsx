@@ -19,7 +19,14 @@ interface PortfolioItem {
   href: string;
 }
 
-interface ComparisonTable {\n  title?: string;\n  leftLabel?: string;\n  rightLabel?: string;\n  rows: [string, string, string][];\n}\n\ninterface ServicePageProps {
+interface ComparisonTable {
+  title?: string;
+  leftLabel?: string;
+  rightLabel?: string;
+  rows: [string, string, string][];
+}
+
+interface ServicePageProps {
   icon: LucideIcon;
   title: string;
   description: string;
@@ -34,6 +41,7 @@ interface ComparisonTable {\n  title?: string;\n  leftLabel?: string;\n  rightLa
   locations?: { title: string; href: string }[];
   heroImage?: string;
   blogCategory?: string;
+  comparison?: ComparisonTable;
 }
 
 export function ServicePage({
@@ -51,6 +59,7 @@ export function ServicePage({
   locations,
   heroImage,
   blogCategory,
+  comparison,
 }: ServicePageProps) {
   const relatedPosts = blogCategory
     ? getPostsByCategory(blogCategory, 3)
@@ -214,8 +223,8 @@ export function ServicePage({
                 <thead>
                   <tr className="border-b border-white/20">
                     <th className="py-4 pr-6 text-base font-bold text-gray-400 w-1/3">Criteria</th>
-                    <th className="py-4 px-4 text-base font-bold text-white w-1/3">Markit Media</th>
-                    <th className="py-4 pl-4 text-base font-bold text-gray-500 w-1/3">Typical Agency</th>
+                    <th className="py-4 px-4 text-base font-bold text-white w-1/3">{comparison?.leftLabel ?? "Markit Media"}</th>
+                    <th className="py-4 pl-4 text-base font-bold text-gray-500 w-1/3">{comparison?.rightLabel ?? "Typical Agency"}</th>
                   </tr>
                 </thead>
                 <tbody className="text-base">

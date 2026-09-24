@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { Children, useEffect, useRef, type ReactNode } from "react";
 
 type Animation = "fade-up" | "fade-in" | "fade-left" | "fade-right" | "scale-in" | "slide-up";
-
-const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 interface AnimateProps {
   children: ReactNode;
@@ -15,45 +13,27 @@ interface AnimateProps {
   once?: boolean;
 }
 
-export function Animate({
-  children,
-  animation = "fade-up",
-  delay = 0,
-  duration = 700,
-  className = "",
-  once = true,
-}: AnimateProps) {
+export function Animate({ children, animation = "fade-up", delay = 0, duration = 650, className = "", once = true }: AnimateProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
-
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     const el = ref.current;
-    if (!el) return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches) return;
-    setReady(true);
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !('IntersectionObserver' in window)) return;
     el.style.setProperty("--anim-delay", `${delay}ms`);
     el.style.setProperty("--anim-duration", `${duration}ms`);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("animate-visible");
-          if (once) observer.unobserve(el);
-        } else if (!once) {
-          el.classList.remove("animate-visible");
-        }
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-    );
+    el.classList.add("animate-on-scroll", `animate-${animation}`);
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add("animate-visible");
+        if (once) observer.unobserve(el);
+      } else if (!once) el.classList.remove("animate-visible");
+    }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
     observer.observe(el);
-    return () => observer.disconnect();
-  }, [delay, duration, once]);
-
-  return (
-    <div ref={ref} className={`${ready ? `animate-on-scroll animate-${animation}` : ""} ${className}`}>
-      {children}
-    </div>
-  );
+    return () => {
+      observer.disconnect();
+      el.classList.remove("animate-on-scroll", `animate-${animation}`, "animate-visible");
+    };
+  }, [animation, delay, duration, once]);
+  return <div ref={ref} className={className}>{children}</div>;
 }
 
 interface StaggerProps {
@@ -63,45 +43,29 @@ interface StaggerProps {
   className?: string;
 }
 
-export function Stagger({ children, stagger = 100, animation = "fade-up", className = "" }: StaggerProps) {
+export function Stagger({ children, stagger = 80, animation = "fade-up", className = "" }: StaggerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
-
-  useIsomorphicLayoutEffect(() => {
+  useEffect(() => {
     const el = ref.current;
-    if (!el) return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches) return;
-    setReady(true);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const items = el.querySelectorAll(".stagger-child");
-          const count = items.length;
-          const effectiveStagger = count * stagger > 1500 ? Math.floor(1500 / count) : stagger;
-          items.forEach((child, i) => {
-            const htmlChild = child as HTMLElement;
-            htmlChild.style.setProperty("--anim-delay", `${i * effectiveStagger}ms`);
-            htmlChild.classList.add("animate-visible");
-          });
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [stagger]);
-
-  return (
-    <div ref={ref} className={className}>
-      {Array.isArray(children)
-        ? children.map((child, i) => (
-            <div key={i} className={ready ? `stagger-child animate-on-scroll animate-${animation}` : ""}>
-              {child}
-            </div>
-          ))
-        : children}
-    </div>
-  );
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !('IntersectionObserver' in window)) return;
+    const items = Array.from(el.children) as HTMLElement[];
+    const observer = new IntersectionObserver(entries => {
+      // Reveal each card as it enters the viewport, including long mobile grids.
+      entries.filter(entry => entry.isIntersecting).forEach((entry, index) => {
+        const card = entry.target as HTMLElement;
+        card.style.setProperty("--anim-delay", `${Math.min(index * stagger, 240)}ms`);
+        card.classList.add("animate-visible");
+        observer.unobserve(card);
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+    items.forEach(card => {
+      card.classList.add("animate-on-scroll", `animate-${animation}`);
+      observer.observe(card);
+    });
+    return () => {
+      observer.disconnect();
+      items.forEach(card => card.classList.remove("animate-on-scroll", `animate-${animation}`, "animate-visible"));
+    };
+  }, [stagger, animation, children]);
+  return <div ref={ref} className={className}>{Children.map(children, child => <div className="stagger-child">{child}</div>)}</div>;
 }

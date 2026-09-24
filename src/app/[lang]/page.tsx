@@ -140,14 +140,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   };
 
   return (
-    <article>
+    <article className="home-page">
       <JsonLd data={orgSchema} />
       <JsonLd data={websiteSchema} />
       <JsonLd data={faqSchema} />
 
       {/* Hero */}
-      <section className="relative bg-black overflow-hidden" aria-label="Hero">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-28 lg:py-36">
+      <section className="home-hero relative bg-black overflow-hidden" aria-label="Hero">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 sm:py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <Animate animation="fade-up">
@@ -222,16 +222,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-white border-b border-gray-200" aria-label="Credentials and proof">
-        <div className="max-w-7xl mx-auto">
-          <Animate animation="fade-up"><SectionLabel>Experience & Credentials</SectionLabel><SectionTitle>Platform Expertise Backed by Hands-On Execution</SectionTitle><SectionDesc>Strategy that works inside real ad accounts, stores, websites, creative workflows, CRMs, and reporting.</SectionDesc></Animate>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">{[
-            { title: "Google Ads Certified", desc: "Search, paid acquisition, conversion strategy, measurement, and account optimization." },
-            { title: "Meta Ads Certified", desc: "Facebook and Instagram strategy, creative testing, lead generation, and performance optimization." },
-            { title: "Shopify Expertise", desc: "E-commerce strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
-          ].map(item=><div key={item.title} className="border border-gray-200 p-7 bg-gray-50"><div className="text-base font-bold uppercase tracking-[0.12em] text-gray-400">Platform credential</div><h2 className="text-xl font-extrabold mt-3">{item.title}</h2><p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p></div>)}</div>
-        </div>
-      </section>
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Selected project proof"><div className="max-w-7xl mx-auto">
         <Animate animation="fade-up"><SectionLabel>Selected Work</SectionLabel><SectionTitle>Real Creative Work, Not Stock Case Studies</SectionTitle><SectionDesc>Selected portfolio assets already produced across fashion, food and beverage, social media, branding, and campaign creative.</SectionDesc></Animate>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">{[
@@ -288,18 +278,18 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               From strategy to execution, we handle every channel so you can focus on running your business.
             </SectionDesc>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
+          <Stagger stagger={60} animation="fade-up" className="service-mosaic mt-10">
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-6 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  <div className="w-12 h-12 bg-black text-white flex items-center justify-center mb-4">
+                <Link key={s.href} href={s.href} className="service-tile group focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4">
+                  <div className="service-tile-icon">
                     <Icon size={22} strokeWidth={2} aria-hidden="true" />
                   </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2 group-hover:underline">
+                  <h3 className="service-tile-title">
                     {s.title}
                   </h3>
-                  <p className="text-base text-gray-500 leading-relaxed flex-1">{s.desc}</p>
+                  <p className="service-tile-desc">{s.desc}</p><span className="service-tile-arrow" aria-hidden="true">↗</span>
                 </Link>
               );
             })}
@@ -482,6 +472,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-16 bg-white border-b border-gray-200" aria-label="Credentials and proof">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up"><SectionLabel>Experience & Credentials</SectionLabel><SectionTitle>Platform Expertise Backed by Hands-On Execution</SectionTitle><SectionDesc>Strategy that works inside real ad accounts, stores, websites, creative workflows, CRMs, and reporting.</SectionDesc></Animate>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">{[
+            { title: "Google Ads Certified", desc: "Search, paid acquisition, conversion strategy, measurement, and account optimization." },
+            { title: "Meta Ads Certified", desc: "Facebook and Instagram strategy, creative testing, lead generation, and performance optimization." },
+            { title: "Shopify Expertise", desc: "E-commerce strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+          ].map(item=><div key={item.title} className="border border-gray-200 p-7 bg-gray-50"><div className="text-base font-bold uppercase tracking-[0.12em] text-gray-400">Platform credential</div><h2 className="text-xl font-extrabold mt-3">{item.title}</h2><p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p></div>)}</div>
+        </div>
+      </section>
+
       {/* Latest Blog */}
       <section className="px-6 lg:px-12 py-20" aria-label="Latest insights">
         <div className="max-w-7xl mx-auto">
@@ -536,7 +537,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <SectionTitle>155+ Free Marketing Tools</SectionTitle>
             <p className="text-lg text-gray-500 mt-4 max-w-2xl">Interactive calculators, audit scorecards, generators, and planners to help you grow.</p>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+          <Stagger stagger={60} animation="fade-up" className="resource-grid grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-8">
             {[
               { title: "ROI Calculator", desc: "Estimate your digital marketing return on investment.", href: "/resources/roi-calculator" },
               { title: "Website Grader", desc: "Score your website across performance, SEO, and UX.", href: "/resources/website-grader" },
@@ -547,7 +548,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Competitor Analysis", desc: "Map your competitive landscape interactively.", href: "/resources/competitor-analysis" },
               { title: "Service Finder Quiz", desc: "Answer 5 questions, get personalized recommendations.", href: "/services/finder" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={r.href} href={r.href} className="resource-card group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none p-4 sm:p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{r.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{r.desc}</p>
               </Link>
