@@ -31,6 +31,114 @@ const serviceCategories = [
   { label: "E-commerce Marketing", href: "/services/ecommerce-marketing", desc: "Amazon, Shopify, feeds" },
   { label: "Public Relations", href: "/services/public-relations", desc: "Media, PR, reputation" },
   { label: "Photography", href: "/services/photography", desc: "Product, corporate, events" },
+  { label: "BPO Services", href: "/services/bpo", desc: "Call center, sales, support, operations" },\n  { label: "Upwork Growth", href: "/services/upwork-growth", desc: "Profile, agency bidding, client acquisition" },
+];
+
+const industryList = [
+  { label: "Home Services", href: "/industries/home-services" },
+  { label: "Exterior Cleaning", href: "/industries/exterior-cleaning" },
+  { label: "Rehab & Recovery", href: "/industries/rehab-recovery" },
+  { label: "Personal Branding", href: "/industries/personal-branding" },
+  { label: "Food Ingredients E-commerce", href: "/industries/food-ingredients-ecommerce" },
+  { label: "E-commerce", href: "/industries/ecommerce" },
+  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Restaurants", href: "/industries/restaurants" },
+  { label: "Fashion", href: "/industries/fashion" },
+  { label: "B2B", href: "/industries/b2b" },
+  { label: "EV Chargers", href: "/industries/ev-chargers" },
+  { label: "Education", href: "/industries/education" },
+  { label: "Legal", href: "/industries/legal" },
+  { label: "SaaS", href: "/industries/saas" },
+  { label: "Finance", href: "/industries/finance" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Fitness", href: "/industries/fitness" },
+  { label: "Automotive", href: "/industries/automotive" },
+  { label: "Nonprofits", href: "/industries/nonprofits" },
+  { label: "Construction", href: "/industries/construction" },
+  { label: "Travel", href: "/industries/travel" },
+  { label: "Professional Services", href: "/industries/professional-services" },\n  { label: "Freelancers & Agencies", href: "/industries/freelancers-agencies" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+];
+
+function moveFocusInPanel(panelId: string, direction: "next" | "prev" | "first" | "last") {
+  const panel = document.getElementById(panelId);
+  if (!panel) return;
+  const items = Array.from(panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'));
+  if (items.length === 0) return;
+  const currentIdx = items.indexOf(document.activeElement as HTMLElement);
+  let target: HTMLElement;
+  if (direction === "first") target = items[0];
+  else if (direction === "last") target = items[items.length - 1];
+  else if (direction === "next") target = items[(currentIdx + 1) % items.length];
+  else target = items[(currentIdx - 1 + items.length) % items.length];
+  target.focus();
+}
+
+export function Nav({ locale, translations }: { locale: string; translations: NavTranslations }) {
+  const t = translations;
+  const pathname = usePathname();
+  const isHome = /^\/(en|ar|ur)\/?$/.test(pathname);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [languageOpen, setLanguageOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const industriesRef = useRef<HTMLDivElement>(null);
+  const servicesTriggerRef = useRef<HTMLAnchorElement>(null);
+  const industriesTriggerRef = useRef<HTMLAnchorElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
+  const servicesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const industriesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
+  const searchItems = [...serviceCategories.map((item) => ({ ...item, category: "Services" })), ...industryList.map((item) => ({ ...item, desc: "Industry expertise", category: "Industries" })), { label: "Case Studies", href: "/case-studies", desc: "Results and client work", category: "Work" }, { label: "Portfolio", href: "/work", desc: "Selected creative and digital work", category: "Work" }, { label: "Blog & Insights", href: "/blog", desc: "Marketing articles and insights", category: "Resources" }, { label: "Resources", href: "/resources", desc: "Guides, calculators and tools", category: "Resources" }, { label: "About Markit Media", href: "/about", desc: "About the agency", category: "Company" }, { label: "Contact", href: "/contact", desc: "Talk to our team", category: "Company" }, { label: "Request a Quote", href: "/get-a-quote", desc: "Start a project", category: "Company" }];
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const searchResults = (normalizedQuery ? searchItems.filter((item) => `${item.label} ${item.desc} ${item.category}`.toLowerCase().includes(normalizedQuery)) : searchItems).slice(0, 10);
+
+use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
+
+interface NavTranslations {
+  nav: Record<string, string>;
+  common: Record<string, string>;
+  accessibility: Record<string, string>;
+}
+
+const serviceCategories = [
+  { label: "Performance Marketing", href: "/services/performance-marketing", desc: "Meta Ads, Google Ads, PPC" },
+  { label: "SEO", href: "/services/seo", desc: "Technical, local, and content SEO" },
+  { label: "Social Media", href: "/services/social-media", desc: "Strategy, content, management" },
+  { label: "Website Development", href: "/services/website-development", desc: "WordPress, Shopify, Next.js" },
+  { label: "App Development", href: "/services/app-development", desc: "Web apps, MVPs, portals, dashboards" },
+  { label: "Next.js Websites", href: "/services/website-development/nextjs-websites", desc: "Fast, SEO-ready Next.js websites" },
+  { label: "Branding", href: "/services/branding", desc: "Brand strategy, logo, identity" },
+  { label: "Video Production", href: "/services/video-production", desc: "Production, editing, motion" },
+  { label: "AI Solutions", href: "/services/ai", desc: "Chatbots, automation, consulting" },
+  { label: "Chatbot Building", href: "/services/ai/chatbots", desc: "Website, WhatsApp and lead bots" },
+  { label: "AI Marketing", href: "/services/ai/ai-marketing", desc: "AI-assisted marketing workflows" },
+  { label: "AI SEO", href: "/services/seo/ai-seo", desc: "Search and AI discovery visibility" },
+  { label: "Content Marketing", href: "/services/content-marketing", desc: "Copywriting, strategy" },
+  { label: "Email Marketing", href: "/services/email-marketing", desc: "Campaigns, automation" },
+  { label: "Digital Marketing", href: "/services/digital-marketing", desc: "Analytics, CRM, ORM" },
+  { label: "Paid Advertising", href: "/services/paid-advertising", desc: "Programmatic, media buying" },
+  { label: "E-commerce Marketing", href: "/services/ecommerce-marketing", desc: "Amazon, Shopify, feeds" },
+  { label: "Public Relations", href: "/services/public-relations", desc: "Media, PR, reputation" },
+  { label: "Photography", href: "/services/photography", desc: "Product, corporate, events" },
   { label: "BPO Services", href: "/services/bpo", desc: "Outsourcing, operations" },
 ];
 
