@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 const featuredProjects = [
+  { client: "MeezoTech", industry: "Technology", services: "Branding, Motion Design", desc: "Technology brand identity and animated logo work.", href: "/work/meezotech" },
   {
     client: "NoorShad",
     industry: "Real Estate",

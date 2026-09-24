@@ -26,6 +26,7 @@ export default function CambridgeElectricalPage() {
         "Campaign content calendar with staggered release schedule",
       ]}
       videos={[
+        { id: "zJw91k5LwwM", title: "Cambridge Electrical Appliances — Portfolio / Case Study Reel" },
         { id: "dTvA7rF_jOk", title: "Cambridge Fan Heater – Winter Campaign", aspect: "portrait" as const },
         { id: "0xc6RcRJ-L8", title: "Cambridge Summer Campaign Reel", aspect: "portrait" as const },
         { id: "8Rfo4poWXzA", title: "Cambridge Summer Campaign Reel 2", aspect: "portrait" as const },

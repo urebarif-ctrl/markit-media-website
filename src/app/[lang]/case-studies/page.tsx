@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 const studies = [
+  {client:"MeezoTech",industry:"Technology",service:"Branding & Motion",desc:"Technology brand identity work brought to life through logo animation and motion design.",href:"/work/meezotech",image:"/images/work/branding-design.svg"},
   {client:"NoorShad",industry:"Real Estate",service:"Video Production & Content",desc:"Property tours, testimonials and home-buying content delivered as a multi-video production engagement.",href:"/work/noorshad",image:"/images/work/video-production.svg"},
   {client:"Vuse",industry:"Consumer Goods",service:"Social Media & Video",desc:"Ongoing social content production combining short-form creative and video execution.",href:"/work/vuse",image:"/images/work/social-media.svg"},
   {client:"Cambridge Electrical Appliances",industry:"Consumer Electronics",service:"Social Media Campaigns",desc:"Seasonal social campaigns and product-focused creative for summer and winter ranges.",href:"/work/cambridge-electrical",image:"/images/work/social-media.svg"},

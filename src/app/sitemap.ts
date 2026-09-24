@@ -400,6 +400,7 @@ const staticPages = [
   "/locations/united-states/phoenix/website-development",
   "/locations/united-states/phoenix/seo-services",
   "/work/noorshad",
+  "/work/meezotech",
   "/work/hubco",
   "/work/vuse",
   "/work/minhaz-couture",
