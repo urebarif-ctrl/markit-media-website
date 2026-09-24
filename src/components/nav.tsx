@@ -251,7 +251,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           <Link href="/blog" className={navLinkClass}>{t.nav.insights}</Link>
           <Link href="/resources" className={navLinkClass}>Resources</Link>
           <Link href="/about" className={navLinkClass}>{t.nav.about}</Link>
-          <Link href="/contact" className="ml-2 bg-black text-white px-6 py-2.5 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+          <Link href="/get-a-quote" className="ml-2 bg-black text-white px-6 py-2.5 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
             {t.nav.getQuote}
           </Link>
         </div>
@@ -305,7 +305,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           ].map((link) => (
             <Link key={link.href} href={link.href} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">{link.label}</Link>
           ))}
-          <Link href="/contact" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
+          <Link href="/get-a-quote" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
     </nav>

@@ -58,12 +58,12 @@ export default function GetAQuotePage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <Animate animation="fade-up">
-              <SectionLabel>Free Consultation</SectionLabel>
+              <SectionLabel>Request a Quote</SectionLabel>
               <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
-                Get Your Custom Marketing Quote
+                Tell Us What You Want to Grow
               </h1>
               <p className="text-lg text-gray-500 leading-relaxed mt-6">
-                Tell us about your business and goals. We&apos;ll respond within one business day to discuss your goals, next steps, and proposal.
+                Share your goals, priorities, and budget. We&apos;ll review the details and respond within one business day with the clearest next step for your project.
               </p>
             </Animate>
 
@@ -86,11 +86,11 @@ export default function GetAQuotePage() {
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">What You&apos;ll Get</h3>
                 <ul className="space-y-2">
                   {[
-                    "Custom strategy tailored to your business goals",
-                    "Transparent pricing with no hidden fees",
-                    "Channel recommendations based on your audience",
-                    "Projected timelines and expected milestones",
-                    "No obligation — the consultation is free",
+                    "A recommendation built around your goals and current position",
+                    "Clear scope, deliverables, and transparent pricing",
+                    "The right channel mix — not a one-size-fits-all package",
+                    "Practical timelines and the next steps to get moving",
+                    "No-obligation initial consultation",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-base text-gray-600">
                       <span className="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0 mt-2" aria-hidden="true" />
@@ -103,9 +103,19 @@ export default function GetAQuotePage() {
           </div>
 
           <Animate animation="fade-up" delay={200}>
-            <div className="bg-gray-50 p-8 lg:p-10 border border-gray-200">
-              <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">Request Your Quote</h2>
-              <ContactForm />
+            <div>
+              <ContactForm variant="quote" />
+              <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-base text-gray-500">
+                <span>Prefer a quick conversation?</span>
+                <a
+                  href="https://wa.me/923002086081"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  Chat on WhatsApp &rarr;
+                </a>
+              </div>
             </div>
           </Animate>
         </div>
@@ -150,7 +160,7 @@ export default function GetAQuotePage() {
           </div>
           <Animate animation="fade-up">
             <p className="mt-8 text-base text-gray-500">
-              More questions? Check our <Link href="/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link> or <Link href="/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>.
+              More questions? Check our <Link href="/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link>, <Link href="/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>, or message us on WhatsApp.
             </p>
           </Animate>
         </div>

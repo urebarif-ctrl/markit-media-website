@@ -8,11 +8,12 @@ interface FormState {
   message: string;
 }
 
-export function ContactForm() {
+export function ContactForm({ variant = "contact" }: { variant?: "contact" | "quote" }) {
   const [state, setState] = useState<FormState>({ status: "idle", message: "" });
   const formRef = useRef<HTMLFormElement>(null);
   const loadedAt = useRef(Date.now());
   const router = useRouter();
+  const isQuote = variant === "quote";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,7 +74,7 @@ export function ContactForm() {
   return (
     <div className="bg-gray-50 p-8 lg:p-10">
       <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-8">
-        Request a Free Consultation
+        {isQuote ? "Tell Us About Your Project" : "Request a Free Consultation"}
       </h2>
 
       {state.status === "sent" ? (
@@ -125,7 +126,7 @@ export function ContactForm() {
               </select>
             </div>
             <div>
-              <label htmlFor="budget" className={labelClass}>Monthly Budget</label>
+              <label htmlFor="budget" className={labelClass}>{isQuote ? "Monthly Marketing Budget" : "Monthly Budget"}</label>
               <select id="budget" name="budget" className={inputClass + " appearance-none bg-white"} defaultValue="">
                 <option value="" disabled>Select range</option>
                 <option value="under-2k">Under $2,000</option>
@@ -138,8 +139,8 @@ export function ContactForm() {
           </div>
 
           <div className="mt-6">
-            <label htmlFor="message" className={labelClass}>Message *</label>
-            <textarea id="message" name="message" rows={5} required className={inputClass + " resize-y"} placeholder="Tell us about your project and goals..." />
+            <label htmlFor="message" className={labelClass}>{isQuote ? "Goals & Project Details *" : "Message *"}</label>
+            <textarea id="message" name="message" rows={5} required className={inputClass + " resize-y"} placeholder={isQuote ? "What are you trying to achieve? Tell us about your goals, current marketing, timeline, or anything else we should know..." : "Tell us about your project and goals..."} />
           </div>
 
           {state.status === "error" && (
@@ -153,11 +154,11 @@ export function ContactForm() {
             disabled={state.status === "sending"}
             className="mt-6 w-full bg-black text-white px-8 py-4 font-bold text-base min-h-[44px] hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
-            {state.status === "sending" ? "Sending..." : "Send Message"}
+            {state.status === "sending" ? "Sending..." : isQuote ? "Request My Quote" : "Send Message"}
           </button>
 
           <p className="text-base text-gray-400 mt-4">
-            By submitting this form, you agree to our privacy policy.
+            {isQuote ? "No obligation. We’ll review your request and respond within one business day." : "By submitting this form, you agree to our privacy policy."}
           </p>
         </form>
       )}

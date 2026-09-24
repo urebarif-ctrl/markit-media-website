@@ -31,16 +31,16 @@ export default function ThankYouPage() {
             </div>
             <SectionLabel>Message Received</SectionLabel>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
-              Thank You for Reaching Out
+              Your Request Is In
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mt-6 max-w-xl mx-auto">
-              A member of our team will review your inquiry and get back to you within one business day.
+              Thanks for sharing the details. Our team will review your request and get back to you within one business day with the most relevant next step.
             </p>
           </Animate>
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-16" aria-label="What happens next">
+      <section className="px-6 lg:px-12 pb-8" aria-label="What happens next">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6 text-center">What Happens Next</h2>
@@ -54,6 +54,22 @@ export default function ThankYouPage() {
               </div>
             ))}
           </Stagger>
+          <Animate animation="fade-up" delay={250}>
+            <div className="mt-10 bg-black text-white p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+              <div>
+                <p className="text-base font-bold text-white">Need to move faster?</p>
+                <p className="text-base text-gray-400 mt-1">For a time-sensitive project, message us directly on WhatsApp.</p>
+              </div>
+              <a
+                href="https://wa.me/923002086081"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white text-black px-6 py-3 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+              >
+                WhatsApp Us &rarr;
+              </a>
+            </div>
+          </Animate>
         </div>
       </section>
 
@@ -63,13 +79,13 @@ export default function ThankYouPage() {
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6 text-center">While You Wait</h2>
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/blog" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Read Our Blog</h3>
-              <p className="text-base text-gray-500">Expert insights on digital marketing strategy and execution.</p>
+            <Link href="/case-studies" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Case Studies</h3>
+              <p className="text-base text-gray-500">See selected work, approaches, and client outcomes.</p>
             </Link>
-            <Link href="/resources" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Free Tools</h3>
-              <p className="text-base text-gray-500">Interactive calculators, generators, and planners for marketers.</p>
+            <Link href="/services" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Explore Services</h3>
+              <p className="text-base text-gray-500">Review the services we can combine around your goals.</p>
             </Link>
             <Link href="/process" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Our Process</h3>
