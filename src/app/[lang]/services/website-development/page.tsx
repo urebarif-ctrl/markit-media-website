@@ -4,7 +4,7 @@ import { Code } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Website Development",
-  description: "Custom website development: WordPress, Shopify, Next.js, web apps, landing pages, and e-commerce. Fast, responsive, SEO-optimized websites built for results.",
+  description: "Website development across WordPress, Shopify, Next.js, Webflow, Squarespace and custom stacks, including redesigns, migrations, redirects and SEO-safe launches.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development" },
   openGraph: {
     title: "Website Development",
@@ -20,14 +20,18 @@ export default function WebsiteDevelopmentPage() {
       blogCategory="Web"
       title="Website Development"
       description="Get a fast, responsive, and conversion-focused website. We build on WordPress, Shopify, Next.js, and custom frameworks, delivering sites that look great and perform even better."
-      longDescription="Your website is the foundation of your digital presence. Our development team builds fast, responsive, and SEO-optimized websites tailored to your business. Whether you need a WordPress site, Shopify store, custom Next.js application, or a high-converting landing page, we handle everything from design to deployment and ongoing maintenance."
+      longDescription="A website project is more than a visual redesign. We plan information architecture, content hierarchy, responsive UX, CMS ownership, performance, analytics, technical SEO and launch requirements together. Our team works across managed CMS platforms and modern application stacks, and can also migrate an existing site without casually discarding valuable URLs, content or search signals. For migrations with URL changes, we map old URLs to relevant new destinations, implement permanent redirects, update internal links and canonicals, and validate the launch rather than treating migration as a simple copy-and-paste exercise."
       subServices={[
         { title: "WordPress Development", desc: "Custom WordPress themes, plugins, and headless CMS setups for flexible content management.", href: "/services/website-development/wordpress" },
         { title: "Shopify Development", desc: "Custom Shopify storefronts, theme customization, and app integrations.", href: "/services/website-development/shopify" },
+        { title: "Webflow Development", desc: "Responsive Webflow builds, CMS implementation, component systems, and site improvements.", href: "/services/website-development/webflow" },
+        { title: "Squarespace Development", desc: "Polished Squarespace websites for service businesses, portfolios, and content-led brands.", href: "/services/website-development/squarespace" },
         { title: "Next.js Development", desc: "High-performance React applications with server-side rendering and static generation.", href: "/services/website-development/nextjs" },
         { title: "Custom Web Apps", desc: "Full-stack web applications built to solve specific business problems.", href: "/services/website-development/custom-web-apps" },
         { title: "Landing Pages", desc: "High-converting landing pages designed for campaigns, launches, and lead generation.", href: "/services/website-development/landing-pages" },
         { title: "E-commerce Solutions", desc: "Online stores with payment integration, inventory management, and order processing.", href: "/services/website-development/ecommerce" },
+        { title: "Website Migration", desc: "Platform, hosting, CMS, or domain migrations planned for continuity, QA, analytics, and minimal disruption.", href: "/services/website-development/website-migration" },
+        { title: "SEO Migration & Redirects", desc: "URL inventories, redirect maps, canonical and internal-link updates, sitemap checks, and post-launch monitoring.", href: "/services/website-development/seo-migration-redirects" },
       ]}
       benefits={[
         "Mobile-first responsive design across all devices",
