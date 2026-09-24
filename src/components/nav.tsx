@@ -199,7 +199,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const dropdownVisible = "opacity-100 scale-100 pointer-events-auto";
   const dropdownHidden = "opacity-0 scale-95 pointer-events-none";
 
-  const navLinkClass = "text-gray-600 text-base font-semibold hover:text-black transition-colors motion-reduce:transition-none py-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2";
+  const navLinkClass = `text-sm xl:text-[15px] font-semibold transition-colors motion-reduce:transition-none py-5 focus-visible:outline-2 focus-visible:outline-offset-2 ${isHome && !scrolled ? "text-white/90 hover:text-white focus-visible:outline-white" : "text-gray-700 hover:text-black focus-visible:outline-black"}`;
 
   return (
     <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-white/95"}`}>
@@ -215,97 +215,60 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-6">
-          {/* Services dropdown */}
+        {/* Desktop nav — deliberately compact; depth lives in the mega menus */}
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
           <div ref={servicesRef} className="relative"
             onMouseEnter={() => { clearTimeout(servicesTimeout.current); setServicesOpen(true); setIndustriesOpen(false); }}
-            onMouseLeave={() => { servicesTimeout.current = setTimeout(() => setServicesOpen(false), 200); }}
-          >
-            <Link ref={servicesTriggerRef} href="/services" className={`${navLinkClass} flex items-center gap-1`}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setServicesOpen(!servicesOpen); }
-                else if (e.key === "ArrowDown") { e.preventDefault(); setServicesOpen(true); if (servicesOpen) moveFocusInPanel("services-dropdown", "first"); }
-              }}
+            onMouseLeave={() => { servicesTimeout.current = setTimeout(() => setServicesOpen(false), 180); }}>
+            <Link ref={servicesTriggerRef} href="/services" className={`${navLinkClass} flex items-center gap-1.5 px-3`}
               onFocus={() => { clearTimeout(servicesTimeout.current); setServicesOpen(true); }}
-              aria-expanded={servicesOpen} aria-haspopup="true" aria-controls="services-dropdown"
-            >
-              {t.nav.services}
-              <svg className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              aria-expanded={servicesOpen} aria-haspopup="true" aria-controls="services-dropdown">
+              Services <span aria-hidden="true" className="text-xs">⌄</span>
             </Link>
-            <div id="services-dropdown" role="region" aria-label="Services menu"
-              className={`${dropdownPanelBase} w-[900px] ${servicesOpen ? dropdownVisible : dropdownHidden}`}
-              onKeyDown={(e) => handlePanelKeyDown(e, "services-dropdown", () => setServicesOpen(false), servicesTriggerRef)}
-            >
-              <div className="grid grid-cols-3 gap-0 p-6">
-                {serviceCategories.map((s) => (
-                  <Link key={s.href} href={s.href} className="group px-4 py-3 hover:bg-gray-50 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                    <div className="text-base font-semibold text-black group-hover:underline">{s.label}</div>
-                    <div className="text-base text-gray-500 mt-0.5">{s.desc}</div>
-                  </Link>
-                ))}
+            <div id="services-dropdown" className={`${dropdownPanelBase} w-[min(920px,90vw)] ${servicesOpen ? dropdownVisible : dropdownHidden}`}>
+              <div className="p-6 border-b border-gray-100 flex items-end justify-between gap-8">
+                <div><span className="text-xs font-bold uppercase tracking-[.18em] text-gray-400">What we do</span><h2 className="text-2xl font-extrabold mt-1">Growth, creative & technology.</h2></div>
+                <Link href="/services" className="text-sm font-bold whitespace-nowrap hover:underline">Explore all services →</Link>
               </div>
-              <div className="border-t border-gray-100 px-6 py-3">
-                <Link href="/services" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">View All Services &rarr;</Link>
+              <div className="grid grid-cols-3 gap-1 p-4 max-h-[62vh] overflow-y-auto">
+                {serviceCategories.map((s) => <Link key={s.href} href={s.href} className="group p-3.5 hover:bg-gray-50 rounded-sm"><span className="block text-sm font-bold text-black">{s.label}</span><span className="block text-xs leading-relaxed text-gray-500 mt-1">{s.desc}</span></Link>)}
               </div>
             </div>
           </div>
 
-          {/* Industries dropdown */}
           <div ref={industriesRef} className="relative"
             onMouseEnter={() => { clearTimeout(industriesTimeout.current); setIndustriesOpen(true); setServicesOpen(false); }}
-            onMouseLeave={() => { industriesTimeout.current = setTimeout(() => setIndustriesOpen(false), 200); }}
-          >
-            <Link ref={industriesTriggerRef} href="/industries" className={`${navLinkClass} flex items-center gap-1`}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setIndustriesOpen(!industriesOpen); }
-                else if (e.key === "ArrowDown") { e.preventDefault(); setIndustriesOpen(true); if (industriesOpen) moveFocusInPanel("industries-dropdown", "first"); }
-              }}
+            onMouseLeave={() => { industriesTimeout.current = setTimeout(() => setIndustriesOpen(false), 180); }}>
+            <Link ref={industriesTriggerRef} href="/industries" className={`${navLinkClass} flex items-center gap-1.5 px-3`}
               onFocus={() => { clearTimeout(industriesTimeout.current); setIndustriesOpen(true); }}
-              aria-expanded={industriesOpen} aria-haspopup="true" aria-controls="industries-dropdown"
-            >
-              {t.nav.industries}
-              <svg className={`w-3.5 h-3.5 transition-transform ${industriesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              aria-expanded={industriesOpen} aria-haspopup="true" aria-controls="industries-dropdown">
+              Industries <span aria-hidden="true" className="text-xs">⌄</span>
             </Link>
-            <div id="industries-dropdown" role="region" aria-label="Industries menu"
-              className={`${dropdownPanelBase} w-[720px] ${industriesOpen ? dropdownVisible : dropdownHidden}`}
-              onKeyDown={(e) => handlePanelKeyDown(e, "industries-dropdown", () => setIndustriesOpen(false), industriesTriggerRef)}
-            >
-              <div className="grid grid-cols-3 gap-0 p-6">
-                {industryList.map((ind) => (
-                  <Link key={ind.href} href={ind.href} className="px-4 py-2.5 text-base font-semibold text-black hover:bg-gray-50 hover:underline transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                    {ind.label}
-                  </Link>
-                ))}
-              </div>
-              <div className="border-t border-gray-100 px-6 py-3">
-                <Link href="/industries" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">View All Industries &rarr;</Link>
+            <div id="industries-dropdown" className={`${dropdownPanelBase} w-[min(780px,88vw)] ${industriesOpen ? dropdownVisible : dropdownHidden}`}>
+              <div className="p-6 border-b border-gray-100"><span className="text-xs font-bold uppercase tracking-[.18em] text-gray-400">Industry experience</span><h2 className="text-2xl font-extrabold mt-1">Built around how your market buys.</h2></div>
+              <div className="grid grid-cols-3 gap-1 p-4 max-h-[58vh] overflow-y-auto">
+                {industryList.map((ind) => <Link key={ind.href} href={ind.href} className="px-3 py-2.5 text-sm font-semibold text-black hover:bg-gray-50 rounded-sm">{ind.label}</Link>)}
               </div>
             </div>
           </div>
 
-          <Link href="/work" className={navLinkClass}>{t.nav.work}</Link>
-          <Link href="/case-studies" className={navLinkClass}>{t.nav.caseStudies}</Link>
-          <Link href="/blog" className={navLinkClass}>{t.nav.insights}</Link>
-          <Link href="/resources" className={navLinkClass}>Resources</Link>
-          <Link href="/about" className={navLinkClass}>{t.nav.about}</Link>
+          <Link href="/work" className={`${navLinkClass} px-3`}>Work</Link>
+          <Link href="/case-studies" className={`${navLinkClass} px-3`}>Case Studies</Link>
+          <Link href="/blog" className={`${navLinkClass} px-3`}>Insights</Link>
+          <Link href="/about" className={`${navLinkClass} px-3`}>About</Link>
+
+          <div className="h-6 w-px bg-current opacity-15 mx-1" aria-hidden="true" />
           <div className="relative">
-            <button onClick={() => { setSearchOpen(!searchOpen); setLanguageOpen(false); }} className={`${navLinkClass} px-2`} aria-label="Search website" aria-expanded={searchOpen}>⌕</button>
-            {searchOpen && <div className="absolute top-full right-0 w-[420px] bg-white text-black shadow-2xl border border-gray-100 p-4">
-              <label htmlFor="site-search" className="sr-only">Search the website</label>
-              <input id="site-search" autoFocus value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search services, industries, resources..." className="w-full border border-gray-300 px-4 py-3 text-base outline-none focus:border-black" />
-              <div className="mt-3 max-h-[420px] overflow-y-auto">
-                {searchResults.length ? searchResults.map((item) => <Link key={`${item.category}-${item.href}`} href={item.href} className="block p-3 hover:bg-gray-50 focus:bg-gray-50" onClick={() => setSearchOpen(false)}><span className="block text-xs font-bold uppercase tracking-wide text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span><span className="block text-sm text-gray-500">{item.desc}</span></Link>) : <p className="p-3 text-sm text-gray-500">No matching pages found.</p>}
-              </div>
-            </div>}
+            <button onClick={() => { setSearchOpen(!searchOpen); setLanguageOpen(false); }} className={`${navLinkClass} px-3`} aria-label="Search website" aria-expanded={searchOpen}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </button>
+            {searchOpen && <div className="absolute top-full right-0 w-[420px] bg-white text-black shadow-2xl border border-gray-100 p-4"><label htmlFor="site-search" className="sr-only">Search the website</label><input id="site-search" autoFocus value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search services, industries, resources..." className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-black" /><div className="mt-3 max-h-[420px] overflow-y-auto">{searchResults.length ? searchResults.map((item) => <Link key={`${item.category}-${item.href}`} href={item.href} className="block p-3 hover:bg-gray-50" onClick={() => setSearchOpen(false)}><span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">{item.category}</span><span className="block text-sm font-bold">{item.label}</span><span className="block text-xs text-gray-500">{item.desc}</span></Link>) : <p className="p-3 text-sm text-gray-500">No matching pages found.</p>}</div></div>}
           </div>
           <div className="relative">
-            <button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>
-            {languageOpen && <div className="absolute top-full right-0 min-w-44 bg-white text-black shadow-2xl border border-gray-100 py-2">{[["en","English"],["ar","العربية"],["ur","اردو"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`block px-4 py-3 hover:bg-gray-50 ${locale === code ? "font-extrabold" : "font-semibold"}`} onClick={() => setLanguageOpen(false)}>{label}{locale === code ? " ✓" : ""}</Link>)}</div>}
+            <button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase text-sm`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>
+            {languageOpen && <div className="absolute top-full right-0 min-w-40 bg-white text-black shadow-2xl border border-gray-100 py-2">{[["en","English"],["ar","العربية"],["ur","اردو"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`block px-4 py-3 text-sm hover:bg-gray-50 ${locale === code ? "font-extrabold" : "font-semibold"}`} onClick={() => setLanguageOpen(false)}>{label}{locale === code ? " ✓" : ""}</Link>)}</div>}
           </div>
-          <div className="relative"><button onClick={() => { setSearchOpen(!searchOpen); setLanguageOpen(false); }} className={`${navLinkClass} px-2`} aria-label="Search website" aria-expanded={searchOpen}>⌕</button>{searchOpen && <div className="absolute top-full right-0 w-[420px] bg-white text-black shadow-2xl border border-gray-100 p-4"><label htmlFor="site-search" className="sr-only">Search the website</label><input id="site-search" autoFocus value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search services, industries, resources..." className="w-full border border-gray-300 px-4 py-3 text-base outline-none focus:border-black" /><div className="mt-3 max-h-[420px] overflow-y-auto">{searchResults.length ? searchResults.map((item) => <Link key={`${item.category}-${item.href}`} href={item.href} className="block p-3 hover:bg-gray-50 focus:bg-gray-50" onClick={() => setSearchOpen(false)}><span className="block text-xs font-bold uppercase tracking-wide text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span><span className="block text-sm text-gray-500">{item.desc}</span></Link>) : <p className="p-3 text-sm text-gray-500">No matching pages found.</p>}</div></div>}</div><div className="relative"><button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>{languageOpen && <div className="absolute top-full right-0 min-w-44 bg-white text-black shadow-2xl border border-gray-100 py-2">{[["en","English"],["ar","العربية"],["ur","اردو"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`block px-4 py-3 hover:bg-gray-50 ${locale === code ? "font-extrabold" : "font-semibold"}`} onClick={() => setLanguageOpen(false)}>{label}{locale === code ? " ✓" : ""}</Link>)}</div>}</div><Link href="/get-a-quote" className="ml-2 bg-black text-white px-6 py-2.5 text-base font-bold hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-            {t.nav.getQuote}
-          </Link>
+          <Link href="/get-a-quote" className={`ml-1 px-5 py-3 text-sm font-extrabold transition-colors ${isHome && !scrolled ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"}`}>Request a Quote</Link>
         </div>
 
         {/* Mobile toggle */}
