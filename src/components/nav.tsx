@@ -202,7 +202,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const navLinkClass = "text-gray-600 text-base font-semibold hover:text-black transition-colors motion-reduce:transition-none py-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2";
 
   return (
-    <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : "bg-transparent"}`}>
+    <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-white/95"}`}>
       <div className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
         <Link href="/" className="flex items-center gap-2 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
           <Image
@@ -309,11 +309,11 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
         </div>
 
         {/* Mobile toggle */}
-        <button ref={mobileToggleRef} onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden w-10 h-10 flex items-center justify-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" aria-expanded={mobileOpen} aria-label="Toggle menu">
+        <button ref={mobileToggleRef} onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden w-11 h-11 flex items-center justify-center rounded-sm ${isHome && !scrolled && !mobileOpen ? "bg-white text-black" : "bg-black text-white"} focus-visible:outline-2 focus-visible:outline-offset-2`} aria-expanded={mobileOpen} aria-label="Toggle menu">
           <div className="w-6 flex flex-col gap-1.5">
-            <span className={`block h-0.5 bg-black transition-all ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 bg-black transition-all ${mobileOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 bg-black transition-all ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block h-0.5 bg-current transition-all ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block h-0.5 bg-current transition-all ${mobileOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-0.5 bg-current transition-all ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </div>
         </button>
       </div>
