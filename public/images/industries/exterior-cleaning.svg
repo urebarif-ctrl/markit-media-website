@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#fff"/>
+  <defs>
+    <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.5" fill="#000" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <path d="M155 275L340 130L525 275" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="195" y="275" width="290" height="205" stroke="#000" stroke-width="3"/>
+  <rect x="250" y="320" width="90" height="85" stroke="#000" stroke-width="3"/>
+  <line x1="295" y1="320" x2="295" y2="405" stroke="#000" stroke-width="2"/>
+  <line x1="250" y1="362.5" x2="340" y2="362.5" stroke="#000" stroke-width="2"/>
+  <rect x="382" y="320" width="65" height="160" stroke="#000" stroke-width="3"/>
+  <circle cx="432" cy="401" r="4" fill="#000"/>
+  <path d="M585 150C585 150 535 216 535 252C535 285 557 308 585 308C613 308 635 285 635 252C635 216 585 150 585 150Z" fill="none" stroke="#000" stroke-width="4"/>
+  <path d="M616 346C616 346 584 389 584 412C584 433 598 448 616 448C634 448 648 433 648 412C648 389 616 346 616 346Z" fill="#000"/>
+  <path d="M120 465C190 425 245 430 305 450" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <path d="M112 472L85 490" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+  <path d="M318 455C357 464 388 479 416 502" stroke="#000" stroke-width="3" stroke-dasharray="8 10"/>
+  <path d="M690 190L620 260" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <path d="M681 181L704 170" stroke="#000" stroke-width="7" stroke-linecap="round"/>
+  <path d="M617 264L585 296" stroke="#000" stroke-width="3" stroke-dasharray="7 8"/>
+  <circle cx="560" cy="320" r="5" fill="#000"/>
+  <circle cx="535" cy="345" r="3.5" fill="#000"/>
+  <circle cx="520" cy="374" r="2.5" fill="#000"/>
+  <text x="72" y="95" fill="#000" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="3">EXTERIOR CLEANING</text>
+  <text x="72" y="125" fill="#000" opacity="0.45" font-family="Arial,Helvetica,sans-serif" font-size="14" letter-spacing="2">SEARCH • ADS • LOCAL • CRM</text>
+</svg>

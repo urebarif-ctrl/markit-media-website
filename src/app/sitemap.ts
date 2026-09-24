@@ -259,6 +259,7 @@ const staticPages = [
   "/services/bpo/operations",
   "/industries",
   "/industries/home-services",
+  "/industries/exterior-cleaning",
   "/industries/ecommerce",
   "/industries/healthcare",
   "/industries/real-estate",

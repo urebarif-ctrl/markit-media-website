@@ -31,6 +31,7 @@ const serviceCategories = [
 
 const industryList = [
   { label: "Home Services", href: "/industries/home-services" },
+  { label: "Exterior Cleaning", href: "/industries/exterior-cleaning" },
   { label: "E-commerce", href: "/industries/ecommerce" },
   { label: "Healthcare", href: "/industries/healthcare" },
   { label: "Real Estate", href: "/industries/real-estate" },

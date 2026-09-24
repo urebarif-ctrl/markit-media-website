@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
-  description: "Specialized digital marketing for 20 industries: home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, and more.",
+  description: "Specialized digital marketing for 20+ industries, including exterior cleaning, home services, e-commerce, healthcare, real estate, restaurants, B2B, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries" },
   openGraph: {
     title: "Industries We Serve",
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 
 const industries = [
   { title: "Home Services", desc: "HVAC, plumbing, roofing, landscaping, and home improvement businesses. We help local service providers generate qualified leads and build trust in their communities.", href: "/industries/home-services", image: "/images/industries/home-services.svg" },
+  { title: "Exterior Cleaning", desc: "Window cleaning, pressure washing, soft washing, roof cleaning, gutter cleaning, and commercial exterior services. Local SEO, paid media, conversion-focused websites, and follow-up systems built around booked jobs.", href: "/industries/exterior-cleaning", image: "/images/industries/exterior-cleaning.svg" },
   { title: "E-commerce", desc: "Online stores, DTC brands, and marketplace sellers. From product feed optimization to conversion rate optimization, we drive profitable online sales.", href: "/industries/ecommerce", image: "/images/industries/ecommerce.svg" },
   { title: "Healthcare", desc: "Medical practices, dental clinics, wellness brands, and health tech. HIPAA-aware marketing that builds patient trust and drives appointments.", href: "/industries/healthcare", image: "/images/industries/healthcare.svg" },
   { title: "Real Estate", desc: "Developers, brokers, property managers, and real estate agencies. High-intent lead generation and brand building in competitive local markets.", href: "/industries/real-estate", image: "/images/industries/real-estate.svg" },
