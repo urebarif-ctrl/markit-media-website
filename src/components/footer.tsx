@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SOCIAL_LINKS } from "@/lib/social";
+import { Mail, Phone } from "lucide-react";
 
 interface FooterTranslations {
   footer: Record<string, string>;
@@ -160,10 +161,10 @@ export function Footer({ locale, translations }: { locale: string; translations:
               </div>
               <div className="flex flex-wrap gap-3 mt-5">
                 <a href="mailto:ciao@themarkitmedia.com" className="inline-flex items-center gap-2 min-h-11 px-4 border border-white/15 text-white hover:bg-white hover:text-black transition-colors" aria-label="Email Markit Media">
-                  <span className="text-xl" aria-hidden="true">✉</span><span className="text-sm font-semibold">Email</span>
+                  <Mail size={20} strokeWidth={2} aria-hidden="true" /><span className="text-sm font-semibold">Email</span>
                 </a>
                 <a href="https://wa.me/923002086081" className="inline-flex items-center gap-2 min-h-11 px-4 border border-white/15 text-white hover:bg-white hover:text-black transition-colors" aria-label="Contact Markit Media on WhatsApp">
-                  <span className="text-xl" aria-hidden="true">☎</span><span className="text-sm font-semibold">WhatsApp / Phone</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: SOCIAL_LINKS.find((s) => s.label === "WhatsApp")?.icon ?? "" }} /><span className="text-sm font-semibold">WhatsApp</span>
                 </a>
               </div>
             </div>
