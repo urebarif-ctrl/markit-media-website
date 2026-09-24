@@ -10,7 +10,6 @@ import {
   MousePointerClick,
   Phone,
   Search,
-  Star,
 } from "lucide-react";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
@@ -379,7 +378,7 @@ export default function ExteriorCleaningPage() {
       <section className="px-6 lg:px-12 py-20 bg-black text-white" aria-label="Marketing services for exterior cleaning companies">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
-            <SectionLabel className="text-gray-400">Growth System</SectionLabel>
+            <SectionLabel><span className="text-gray-400">Growth System</span></SectionLabel>
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight max-w-3xl">
               From Search to Scheduled Job
             </h2>
@@ -533,7 +532,7 @@ export default function ExteriorCleaningPage() {
               <div className="w-14 h-14 border border-white/20 flex items-center justify-center mb-6">
                 <BarChart3 size={24} strokeWidth={2} aria-hidden="true" />
               </div>
-              <SectionLabel className="text-gray-400">Measurement</SectionLabel>
+              <SectionLabel><span className="text-gray-400">Measurement</span></SectionLabel>
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-tight">
                 Leads Are Not the Final KPI
               </h2>
