@@ -115,7 +115,7 @@ export default function GetAQuotePage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "15", label: "Service Categories" },
+              { value: "13", label: "Service Disciplines" },
               { value: "20", label: "Industries Served" },
               { value: "6", label: "Countries" },
               { value: "1 Business Day", label: "Response Time" },
