@@ -66,7 +66,7 @@ const nextConfig: NextConfig = {
       { source: "/home", destination: "/en", permanent: true },
       { source: "/team", destination: "/en/about", permanent: true },
       { source: "/our-clients", destination: "/en/work", permanent: true },
-      { source: "/cases", destination: "/en/work", permanent: true },
+      { source: "/cases", destination: "/en/case-studies", permanent: true },
       { source: "/career", destination: "/en/careers", permanent: true },
       { source: "/jobs", destination: "/en/careers", permanent: true },
       { source: "/internship", destination: "/en/careers", permanent: true },
@@ -291,7 +291,8 @@ const nextConfig: NextConfig = {
       // === Portfolio/case study redirects ===
       { source: "/portfolio/:slug", destination: "/en/work", permanent: true },
       { source: "/portfolio_tag/:slug", destination: "/en/work", permanent: true },
-      { source: "/case-study/:slug", destination: "/en/work", permanent: true },
+      { source: "/case-study/:slug", destination: "/en/case-studies", permanent: true },
+      { source: "/cases/:slug", destination: "/en/case-studies", permanent: true },
 
       // === WordPress taxonomy/feed/archive patterns ===
       { source: "/category/:slug", destination: "/en/blog", permanent: true },
