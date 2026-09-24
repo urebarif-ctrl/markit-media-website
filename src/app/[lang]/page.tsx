@@ -52,6 +52,10 @@ const services = [
 ];
 
 const industries = [
+  { icon: Home, title: "Exterior Cleaning", href: "/industries/exterior-cleaning" },
+  { icon: HeartHandshake, title: "Rehab & Recovery", href: "/industries/rehab-recovery" },
+  { icon: Briefcase, title: "Personal Branding", href: "/industries/personal-branding" },
+  { icon: ShoppingCart, title: "Food Ingredients E-commerce", href: "/industries/food-ingredients-ecommerce" },
   { icon: Home, title: "Home Services", href: "/industries/home-services" },
   { icon: ShoppingCart, title: "E-commerce", href: "/industries/ecommerce" },
   { icon: Heart, title: "Healthcare", href: "/industries/healthcare" },
@@ -78,7 +82,10 @@ const markets = ["United States", "Canada", "United Arab Emirates", "United King
 
 const faqItems = [
   { q: "What services does Markit Media offer?", a: "We offer full-stack digital marketing including SEO, paid advertising, social media, website development, branding, video production, AI solutions, content marketing, and email marketing." },
-  { q: "Which industries do you work with?", a: "We work with businesses across home services, e-commerce, healthcare, real estate, restaurants, fashion, B2B, and more." },
+  { q: "Which industries do you work with?", a: "We work across exterior cleaning, rehab and recovery, EV charging, restaurants, e-commerce, food ingredients, fashion, executive personal branding, home services, healthcare, real estate, B2B, and more." },
+  { q: "Do you have specialist experience in exterior cleaning?", a: "Yes. Exterior cleaning is a specialist vertical for us, including window cleaning, pressure washing, soft washing, roof cleaning, gutter cleaning, commercial exterior cleaning, and related local-service growth systems." },
+  { q: "Can you manage both Google Ads and Meta Ads?", a: "Yes. We plan and manage Google Ads and Meta campaigns, then connect paid acquisition with landing pages, creative, CRM follow-up, and reporting where the client stack allows it." },
+  { q: "Do you work with Shopify stores?", a: "Yes. Our e-commerce work includes Shopify strategy, store development, product and feed optimization, paid acquisition, conversion improvement, and retention-oriented marketing." },
   { q: "Where are your clients based?", a: "We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia." },
   { q: "How do you measure results?", a: "We use data-driven metrics including ROI, conversion rates, traffic growth, and engagement to measure and optimize campaign performance." },
   { q: "What makes Markit Media different from other agencies?", a: "We combine strategic thinking with hands-on execution. You work directly with senior marketers, not junior account managers." },
@@ -171,8 +178,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </Animate>
               <Animate animation="fade-up" delay={350}>
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                    {t.cta.primary} &rarr;
+                  <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                    Request a Quote &rarr;
                   </Link>
                   <Link href="/work" className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                     {t.cta.secondary}
@@ -215,6 +222,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-16 bg-white border-b border-gray-200" aria-label="Credentials and proof">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up"><SectionLabel>Experience & Credentials</SectionLabel><SectionTitle>Platform Expertise Backed by Hands-On Execution</SectionTitle><SectionDesc>Strategy that works inside real ad accounts, stores, websites, creative workflows, CRMs, and reporting.</SectionDesc></Animate>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">{[
+            { title: "Google Ads Certified", desc: "Search, paid acquisition, conversion strategy, measurement, and account optimization." },
+            { title: "Meta Ads Certified", desc: "Facebook and Instagram strategy, creative testing, lead generation, and performance optimization." },
+            { title: "Shopify Expertise", desc: "E-commerce strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+          ].map(item=><div key={item.title} className="border border-gray-200 p-7 bg-gray-50"><div className="text-base font-bold uppercase tracking-[0.12em] text-gray-400">Platform credential</div><h2 className="text-xl font-extrabold mt-3">{item.title}</h2><p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p></div>)}</div>
+        </div>
+      </section>
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Selected project proof"><div className="max-w-7xl mx-auto">
+        <Animate animation="fade-up"><SectionLabel>Selected Work</SectionLabel><SectionTitle>Real Creative Work, Not Stock Case Studies</SectionTitle><SectionDesc>Selected portfolio assets already produced across fashion, food and beverage, social media, branding, and campaign creative.</SectionDesc></Animate>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">{[
+          {src:"/images/portfolio/fashion-feed-hero.jpg",title:"Fashion & E-commerce",href:"/work/fashion-feed"},
+          {src:"/images/portfolio/foodfolio-hero.jpg",title:"Food & Beverage",href:"/work/foodfolio"},
+          {src:"/images/portfolio/social-media-hero.jpg",title:"Social Media Creative",href:"/work/social-media-designs"},
+        ].map(item=><Link key={item.href} href={item.href} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"><div className="relative aspect-[4/3]"><Image src={item.src} alt={item.title+" project by Markit Media"} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover"/></div><div className="p-5 flex justify-between"><span className="font-bold">{item.title}</span><span>&rarr;</span></div></Link>)}</div>
+        <div className="mt-8"><Link href="/case-studies" className="font-bold hover:underline">Explore case studies &rarr;</Link></div>
+      </div></section>
       {/* Platform Logos */}
       <section className="border-y border-gray-200 py-8 bg-white" aria-label="Platform we work with">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">

@@ -10,7 +10,7 @@ interface CounterProps {
 }
 
 export function Counter({ end, suffix = "", prefix = "", duration = 2000 }: CounterProps) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
@@ -28,6 +28,7 @@ export function Counter({ end, suffix = "", prefix = "", duration = 2000 }: Coun
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
+          setCount(0);
           const startTime = performance.now();
           const step = (now: number) => {
             const elapsed = now - startTime;

@@ -32,6 +32,9 @@ const serviceCategories = [
 const industryList = [
   { label: "Home Services", href: "/industries/home-services" },
   { label: "Exterior Cleaning", href: "/industries/exterior-cleaning" },
+  { label: "Rehab & Recovery", href: "/industries/rehab-recovery" },
+  { label: "Personal Branding", href: "/industries/personal-branding" },
+  { label: "Food Ingredients E-commerce", href: "/industries/food-ingredients-ecommerce" },
   { label: "E-commerce", href: "/industries/ecommerce" },
   { label: "Healthcare", href: "/industries/healthcare" },
   { label: "Real Estate", href: "/industries/real-estate" },

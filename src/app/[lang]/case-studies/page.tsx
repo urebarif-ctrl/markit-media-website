@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -121,6 +122,7 @@ const caseStudies = [
     description:
       "Technical SEO audit, content strategy, and link building campaign to drive organic traffic growth.",
     Pattern: PatternA,
+    image: "/images/portfolio/fashion-feed-hero.jpg", readTime: "6 min read", href: "/work/fashion-feed",
   },
   {
     industry: "Healthcare",
@@ -129,6 +131,7 @@ const caseStudies = [
     description:
       "Multi-channel paid advertising strategy across Google Ads and Meta Ads to increase patient acquisition.",
     Pattern: PatternB,
+    image: "/images/work/performance-marketing.svg", readTime: "7 min read", href: "/work/pur-health",
   },
   {
     industry: "B2B SaaS",
@@ -145,6 +148,7 @@ const caseStudies = [
     description:
       "Complete brand identity redesign and high-performance website build to establish market positioning.",
     Pattern: PatternD,
+    image: "/images/work/website-development.svg", readTime: "5 min read", href: "/work/one-homes",
   },
   {
     industry: "Education",
@@ -153,6 +157,7 @@ const caseStudies = [
     description:
       "Social media strategy and video content production to build brand awareness and drive enrollment.",
     Pattern: PatternE,
+    image: "/images/portfolio/social-media-hero.jpg", readTime: "5 min read", href: "/work/social-media-designs",
   },
   {
     industry: "Hospitality",
@@ -291,17 +296,17 @@ export default function CaseStudiesPage() {
                 className="bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none overflow-hidden group"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-gray-100">
-                  <study.Pattern />
+                  {"image" in study && study.image ? <Image src={study.image} alt={study.title} width={800} height={500} className="w-full h-full object-cover" /> : <study.Pattern />}
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-center justify-between gap-3 mb-3"><div className="flex items-center gap-3">
                     <span className="text-base font-semibold text-gray-500 uppercase tracking-wider bg-gray-100 px-2.5 py-1">
                       {study.industry}
                     </span>
                     <span className="text-base font-semibold text-black uppercase tracking-wider bg-gray-100 px-2.5 py-1">
                       {study.service}
                     </span>
-                  </div>
+                  </div><span className="text-base text-gray-400">{"readTime" in study ? study.readTime : "5 min read"}</span></div>
                   <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-black leading-snug mb-2">
                     {study.title}
                   </h3>
@@ -309,10 +314,10 @@ export default function CaseStudiesPage() {
                     {study.description}
                   </p>
                   <Link
-                    href="/contact"
+                    href={"href" in study ? study.href : "/get-a-quote"}
                     className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
-                    Request Details
+                    Read Case Study
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -450,10 +455,10 @@ export default function CaseStudiesPage() {
               your business.
             </p>
             <Link
-              href="/contact"
+              href="/get-a-quote"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
-              Start a Conversation &rarr;
+              Request a Quote &rarr;
             </Link>
           </Animate>
         </div>
