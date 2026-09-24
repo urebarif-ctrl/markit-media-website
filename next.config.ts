@@ -292,6 +292,20 @@ const nextConfig: NextConfig = {
       { source: "/dallas", destination: "/en/locations/united-states/dallas", permanent: true },
       { source: "/atlanta", destination: "/en/locations/united-states/atlanta", permanent: true },
 
+      // === GSC-proven portfolio URLs: preserve case-study intent ===
+      { source: "/portfolio/appliances-marketing-case-study-cambridge-electric-appliances", destination: "/en/work/cambridge-electrical", permanent: true },
+      { source: "/portfolio/cambridge-electric-appliances", destination: "/en/work/cambridge-electrical", permanent: true },
+      { source: "/portfolio/hubco-hub-power-ltd-company", destination: "/en/work/hubco", permanent: true },
+      { source: "/portfolio/energy-power-generation-marketing-hubco-power", destination: "/en/work/hubco", permanent: true },
+      { source: "/portfolio/elite-indo-pak-restaurant-marketing-case-study", destination: "/en/work/elite", permanent: true },
+      { source: "/portfolio/elite-indo-pak-restaurant", destination: "/en/work/elite", permanent: true },
+      { source: "/portfolio/velo", destination: "/en/work/vuse", permanent: true },
+      { source: "/portfolio/chefiality-complete-chef-specialty-store", destination: "/en/case-studies", permanent: true },
+      { source: "/portfolio/food-brand-marketing-agency-case-stydy-chefiality-store", destination: "/en/case-studies", permanent: true },
+      { source: "/portfolio/my-fresh-fruits", destination: "/en/case-studies", permanent: true },
+      { source: "/portfolio/jason-for-georgia", destination: "/en/case-studies", permanent: true },
+      { source: "/portfolio/healthcare-marketing-case-study-jason-for-georgia", destination: "/en/case-studies", permanent: true },
+
       // === Portfolio/case study redirects ===
       { source: "/portfolio/:slug", destination: "/en/work", permanent: true },
       { source: "/portfolio_tag/:slug", destination: "/en/work", permanent: true },
