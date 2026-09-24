@@ -3,8 +3,8 @@ import { ServicePage } from "@/components/service-page";
 import { Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "BPO Services",
-  description: "Business process outsourcing: virtual assistants, data entry, customer support, and operations management. Scale your team with reliable offshore support.",
+  title: "BPO & Call Center Outsourcing Services",
+  description: "BPO and call center outsourcing for inbound customer service, outbound sales, cold calling, appointment setting, virtual assistants and back-office operations.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/bpo" },
   openGraph: {
     title: "BPO Services",
@@ -21,7 +21,7 @@ export default function BpoPage() {
       description="Scale your team with reliable business process outsourcing. We provide virtual assistants, data entry specialists, customer support agents, and operations staff to handle your day-to-day tasks."
       longDescription="Growing businesses need reliable support for the operational tasks that keep things running. Our BPO team provides trained professionals who integrate with your workflows and tools to handle virtual assistance, data entry, customer support, and operations management. We recruit, train, and manage dedicated staff so you can focus on growth while we handle execution."
       subServices={[
-        { title: "Virtual Assistants", desc: "Dedicated assistants for scheduling, email management, research, and administrative tasks.", href: "/services/bpo/virtual-assistants" },
+        { title: "Call Center Services", desc: "Inbound and outbound call center teams for support, sales, qualification and appointment setting.", href: "/services/bpo/call-center" },\n        { title: "Cold Calling & Outbound Sales", desc: "Structured outbound prospecting, lead qualification, appointment setting and CRM handoff.", href: "/services/bpo/cold-calling" },\n        { title: "Customer Service Representatives", desc: "Dedicated customer care representatives across phone, email, chat and ticketing.", href: "/services/bpo/customer-service-representatives" },\n        { title: "Virtual Assistants", desc: "Dedicated assistants for scheduling, email management, research, and administrative tasks.", href: "/services/bpo/virtual-assistants" },
         { title: "Data Entry", desc: "Accurate, high-volume data entry, data cleaning, and database management.", href: "/services/bpo/data-entry" },
         { title: "Customer Support", desc: "Trained support agents for email, chat, and phone across your preferred tools.", href: "/services/bpo/customer-support" },
         { title: "Operations", desc: "Process management, order fulfillment support, and back-office operations.", href: "/services/bpo/operations" },
