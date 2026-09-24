@@ -150,8 +150,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <JsonLd data={faqSchema} />
 
       {/* Hero */}
-      <section className="home-hero relative bg-black overflow-hidden" aria-label="Hero">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 sm:py-24 lg:py-32">
+      <section className="home-hero relative bg-black overflow-hidden pt-20" aria-label="Hero">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14 sm:py-20 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <Animate animation="fade-up">
@@ -191,25 +191,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 </div>
               </Animate>
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:block relative">
               <Animate animation="fade-up" delay={200}>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="relative grid grid-cols-2 gap-3 p-3 border border-white/10 bg-white/[0.025]">
                   <div className="space-y-4">
-                    <div className="bg-white/5 border border-white/10 p-6">
+                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
                       <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">300+</div>
                       <div className="text-base text-gray-500 mt-1">Videos Produced</div>
                     </div>
-                    <div className="bg-white/5 border border-white/10 p-6">
+                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
                       <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">6</div>
                       <div className="text-base text-gray-500 mt-1">Countries Served</div>
                     </div>
                   </div>
                   <div className="space-y-4 mt-8">
-                    <div className="bg-white/5 border border-white/10 p-6">
+                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
                       <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">12+</div>
                       <div className="text-base text-gray-500 mt-1">Services Offered</div>
                     </div>
-                    <div className="bg-white/5 border border-white/10 p-6">
+                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
                       <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">155+</div>
                       <div className="text-base text-gray-500 mt-1">Free Marketing Tools</div>
                     </div>
