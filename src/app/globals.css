@@ -249,6 +249,8 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
   .service-mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
+  /* Avoid continuous paint work on mobile; preserve the static hero treatment. */
+  .home-hero::before { animation: none; background-position: 50% 30%; }
   .home-page > section:not([aria-label="Hero"]) { padding-top: 44px; padding-bottom: 44px; }
   .home-page [aria-label="Platform we work with"] svg { width: 28px; height: 28px; }
   .home-page [aria-label="Platform we work with"] .flex { gap: 22px; }
