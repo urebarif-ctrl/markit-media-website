@@ -180,7 +180,11 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
         searchItems.find((item) => item.label === "Contact"),
       ].filter(Boolean) as SearchItem[];
 
-  const searchResults = [...staticMatches, ...blogSearchResults]
+  const combinedResults = normalizedQuery
+    ? [...staticMatches.slice(0, 10), ...blogSearchResults.slice(0, 6)]
+    : staticMatches;
+
+  const searchResults = combinedResults
     .filter((item, index, items) => items.findIndex((candidate) => candidate.href === item.href) === index)
     .slice(0, 16);
 
