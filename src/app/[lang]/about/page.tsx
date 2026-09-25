@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us — Full-Stack Digital Marketing Agency",
+  title: "About Us ,  Full-Stack Digital Marketing Agency",
   description:
     "Markit Media is a full-stack digital marketing agency serving clients across 6 countries. Learn about our approach, values, and the team behind the work.",
   alternates: { canonical: "https://themarkitmedia.com/en/about" },
@@ -43,7 +43,7 @@ const values = [
   {
     icon: Lightbulb,
     title: "Own the Outcome",
-    desc: "We take full accountability for what we deliver. Your success is our success — no finger-pointing, no excuses.",
+    desc: "We take full accountability for what we deliver. Your success is our success ,  no finger-pointing, no excuses.",
   },
   {
     icon: BookOpen,
