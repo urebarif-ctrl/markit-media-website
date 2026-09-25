@@ -8,6 +8,17 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   poweredByHeader: false,
+
+  // Preserve selected legacy URLs that already have search visibility while
+  // serving the rebuilt page through the modern localized application shell.
+  async rewrites() {
+    return [
+      {
+        source: "/home-decor-interior-design-online-digital-marketing-agency",
+        destination: "/en/industries/interior-design",
+      },
+    ];
+  },
   serverExternalPackages: ["better-sqlite3"],
   outputFileTracingIncludes: {
     "/api/**": ["./data/**"],
@@ -266,7 +277,6 @@ const nextConfig: NextConfig = {
       { source: "/financial-services-online-digital-marketing-agency", destination: "/en/industries/finance", permanent: true },
       { source: "/financial-technology-fintech-online-digital-marketing-agency", destination: "/en/industries/finance", permanent: true },
       { source: "/food-brands-online-digital-marketing-agency", destination: "/en/industries/restaurants", permanent: true },
-      { source: "/home-decor-interior-design-online-digital-marketing-agency", destination: "/en/industries/home-services", permanent: true },
       { source: "/kitchen-home-appliances-online-digital-marketing-agency", destination: "/en/industries/ecommerce", permanent: true },
       { source: "/medical-health-online-digital-marketing-agency", destination: "/en/industries/healthcare", permanent: true },
       { source: "/non-profit-organizations-online-digital-marketing-agency", destination: "/en/industries/nonprofits", permanent: true },
