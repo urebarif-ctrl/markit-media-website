@@ -1,3 +1,4 @@
+import { saveFormSubmission } from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -46,13 +47,14 @@ export async function POST(request: NextRequest) {
       .slice(0, 50);
 
     try {
-      const { getDb } = await import("@/lib/db");
-      const db = getDb();
-      db.prepare(
-        `INSERT OR IGNORE INTO subscribers (email, source, ip) VALUES (?, ?, ?)`,
-      ).run(sanitizedEmail, sanitizedSource, ip);
-    } catch {
-      // Silently fail DB write — still show success to user
+      await saveFormSubmission("newsletter", {
+        email: sanitizedEmail,
+        source: sanitizedSource,
+        ip,
+        consentedAt: new Date(),
+      });
+    } catch (error) {
+      console.error("Failed to save newsletter subscriber to MongoDB", error);
     }
 
     return NextResponse.json({ success: true });
