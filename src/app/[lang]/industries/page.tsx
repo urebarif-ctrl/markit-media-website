@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -82,7 +83,7 @@ export default function IndustriesPage() {
               Marketing Built for Your Industry
             </h1>
             <SectionDesc>
-              Cookie-cutter strategies don&apos;t work. Every industry has unique buyer journeys, compliance needs, and competitive dynamics. We bring deep expertise and tailored strategies to each sector we serve.
+              Different markets demand different growth strategies. Explore sector-specific marketing built around how your customers search, compare, decide, and buy.
             </SectionDesc>
           </Animate>
         </div>
@@ -90,20 +91,25 @@ export default function IndustriesPage() {
 
       <section className="px-6 lg:px-12 py-12" aria-label="Industries">
         <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {industries.map((ind) => (
-              <Link key={ind.href} href={ind.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={ind.image}
-                    alt={`${ind.title} marketing`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none"
-                    loading="lazy"
-                  />
+          <Stagger stagger={50} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {industries.map((ind, index) => (
+              <Link key={ind.href} href={ind.href} className="group relative min-h-[390px] overflow-hidden bg-black border border-black/10 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Image
+                  src={ind.image}
+                  alt={`${ind.title} digital marketing`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transition-none"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/5" />
+                <div className="absolute inset-x-0 top-0 p-6 flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-[0.16em] uppercase text-white/65">{String(index + 1).padStart(2, "0")}</span>
+                  <span aria-hidden="true" className="w-10 h-10 rounded-full border border-white/35 bg-black/15 backdrop-blur-sm text-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                 </div>
-                <div className="p-6">
-                  <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">{ind.title}</h2>
-                  <p className="text-base text-gray-500 leading-relaxed">{ind.desc}</p>
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
+                  <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-white tracking-tight">{ind.title}</h2>
+                  <p className="text-sm md:text-base text-white/70 leading-relaxed mt-3 line-clamp-3">{ind.desc}</p>
+                  <div className="mt-5 pt-4 border-t border-white/20 text-sm font-bold text-white">Explore industry strategy <span aria-hidden="true">&rarr;</span></div>
                 </div>
               </Link>
             ))}
