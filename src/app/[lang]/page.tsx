@@ -278,8 +278,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
             {[
-              ["Meta Ads","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/meta"],
-              ["Google Ads","/services/performance-marketing/google-ads","https://cdn.simpleicons.org/googleads"],
+              ["Meta Ads","/services/performance-marketing/meta-ads","/brand/meta.svg"],
+              ["Google Ads","/services/performance-marketing/google-ads","/brand/google-ads.svg"],
               ["Facebook","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/facebook"],
               ["Instagram","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/instagram"],
               ["Microsoft Ads","/services/performance-marketing/microsoft-ads","/brand/microsoft-ads.svg"],
@@ -524,8 +524,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up"><SectionLabel>Platform Experience</SectionLabel><SectionTitle>Built Inside the Platforms That Drive Growth</SectionTitle><SectionDesc>Hands-on strategy and execution across paid media and commerce — from campaign structure and creative testing to storefronts, measurement, and optimization.</SectionDesc></Animate>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">{[
-            { label: "Paid Search", title: "Google Ads", logo: "https://cdn.simpleicons.org/googleads", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
-            { label: "Paid Social", title: "Meta", logo: "https://cdn.simpleicons.org/meta", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
+            { label: "Paid Search", title: "Google Ads", logo: "/brand/google-ads.svg", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
+            { label: "Paid Social", title: "Meta", logo: "/brand/meta.svg", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
             { label: "E-commerce", title: "Shopify", logo: "https://cdn.simpleicons.org/shopify", href: "/services/website-development/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
           ].map(item=><Link key={item.title} href={item.href} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
             <div className="flex items-start justify-between gap-5">
