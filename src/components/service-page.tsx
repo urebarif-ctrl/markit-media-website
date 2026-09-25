@@ -127,8 +127,8 @@ export function ServicePage({
           <p className="text-sm font-bold text-gray-500 uppercase tracking-[0.18em] text-center mb-6">Platforms & services we work with</p>
           <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
             {[
-              { label: "Meta Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/meta/0866FF" },
-              { label: "Google Ads", href: "/services/performance-marketing/google-ads", src: "https://cdn.simpleicons.org/googleads/4285F4" },
+              { label: "Meta Ads", href: "/services/performance-marketing/meta-ads", src: "/brand/meta.svg/0866FF" },
+              { label: "Google Ads", href: "/services/performance-marketing/google-ads", src: "/brand/google-ads.svg/4285F4" },
               { label: "Facebook Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/facebook/1877F2" },
               { label: "Instagram Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/instagram/E4405F" },
               { label: "Microsoft Ads", href: "/services/performance-marketing/microsoft-ads", src: "/brand/microsoft-ads.svg" },
