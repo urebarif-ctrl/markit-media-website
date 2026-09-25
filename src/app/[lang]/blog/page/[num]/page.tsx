@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ num: stri
   const { num } = await params;
   const page = parseInt(num, 10);
   return {
-    title: `Blog — Page ${page} — Digital Marketing Insights`,
+    title: `Blog ,  Page ${page} ,  Digital Marketing Insights`,
     description: `Page ${page} of the Markit Media blog. Expert insights on SEO, paid advertising, social media, branding, and digital marketing strategy.`,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/page/${page}` },
     robots: page > 1 ? { index: true, follow: true } : undefined,
     openGraph: {
-      title: `Blog — Page ${page}`,
+      title: `Blog ,  Page ${page}`,
       description: "Expert insights on digital marketing strategy and execution.",
     },
   };
@@ -59,7 +59,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
               Digital Marketing Insights
             </h1>
             <SectionDesc>
-              Page {page} of {totalPages} — {totalCount}+ articles
+              Page {page} of {totalPages} ,  {totalCount}+ articles
             </SectionDesc>
           </Animate>
         </div>
