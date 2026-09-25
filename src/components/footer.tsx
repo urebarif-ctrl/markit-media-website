@@ -50,7 +50,7 @@ export function Footer({ translations:t }: { locale:string; translations:FooterT
   ];
   const primarySocial=SOCIAL_LINKS.filter(s=>SOCIAL_BRANDS[s.label]);
 
-  return <footer className="bg-black text-white">
+  return <footer className="bg-black text-white" data-nosnippet>
     <section className="px-6 lg:px-12 py-14 border-b border-white/10">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8">
         <div className="max-w-2xl">
