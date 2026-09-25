@@ -501,12 +501,23 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <section className="px-6 lg:px-12 py-16 bg-white border-b border-gray-200" aria-label="Credentials and proof">
         <div className="max-w-7xl mx-auto">
-          <Animate animation="fade-up"><SectionLabel>Experience & Credentials</SectionLabel><SectionTitle>Platform Expertise Backed by Hands-On Execution</SectionTitle><SectionDesc>Strategy that works inside real ad accounts, stores, websites, creative workflows, CRMs, and reporting.</SectionDesc></Animate>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">{[
-            { label: "Paid Search", title: "Google Ads Experience", desc: "Hands-on work across Search, paid acquisition, conversion strategy, measurement, and account optimization." },
-            { label: "Paid Social", title: "Meta Ads Experience", desc: "Hands-on Facebook and Instagram strategy, creative testing, lead generation, and performance optimization." },
-            { label: "E-commerce", title: "Shopify Experience", desc: "E-commerce strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
-          ].map(item=><div key={item.title} className="border border-gray-200 p-7 bg-gray-50"><div className="text-base font-bold uppercase tracking-[0.12em] text-gray-400">{item.label}</div><h2 className="text-xl font-extrabold mt-3">{item.title}</h2><p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p></div>)}</div>
+          <Animate animation="fade-up"><SectionLabel>Platform Experience</SectionLabel><SectionTitle>Built Inside the Platforms That Drive Growth</SectionTitle><SectionDesc>Hands-on strategy and execution across paid media and commerce — from campaign structure and creative testing to storefronts, measurement, and optimization.</SectionDesc></Animate>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">{[
+            { label: "Paid Search", title: "Google Ads", logo: "https://cdn.simpleicons.org/googleads/4285F4", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
+            { label: "Paid Social", title: "Meta", logo: "https://cdn.simpleicons.org/meta/0866FF", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
+            { label: "E-commerce", title: "Shopify", logo: "https://cdn.simpleicons.org/shopify/7AB55C", href: "/services/website-development/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+          ].map(item=><Link key={item.title} href={item.href} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+            <div className="flex items-start justify-between gap-5">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-white border border-gray-200 flex items-center justify-center shadow-sm">
+                <Image src={item.logo} alt="" width={36} height={36} className="w-9 h-9 object-contain"/>
+              </div>
+              <span className="text-sm font-bold text-gray-400 group-hover:text-black transition-colors">&rarr;</span>
+            </div>
+            <div className="mt-8 text-sm font-bold uppercase tracking-[0.14em] text-gray-400">{item.label}</div>
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mt-2">{item.title}</h2>
+            <p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p>
+            <div className="mt-6 pt-5 border-t border-gray-200 text-sm font-bold">Explore our {item.title} work <span aria-hidden="true">&rarr;</span></div>
+          </Link>)}</div>
         </div>
       </section>
 
