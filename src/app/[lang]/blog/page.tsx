@@ -10,7 +10,7 @@ import { NewsletterCta } from "@/components/newsletter-cta";
 import { BlogSearch } from "@/components/blog-search";
 
 export const metadata: Metadata = {
-  title: "Blog — Digital Marketing Insights",
+  title: "Blog ,  Digital Marketing Insights",
   description: "Expert insights on SEO, paid advertising, social media, branding, web development, and digital marketing strategy from Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/blog" },
   openGraph: {
