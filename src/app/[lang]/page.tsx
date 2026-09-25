@@ -78,7 +78,14 @@ const industries = [
   { icon: Factory, title: "Manufacturing", href: "/industries/manufacturing" },
 ];
 
-const markets = ["United States", "Canada", "United Arab Emirates", "United Kingdom", "Australia", "Saudi Arabia"];
+const markets = [
+  { name: "United States", flag: "🇺🇸", href: "/locations/united-states" },
+  { name: "Canada", flag: "🇨🇦", href: "/locations/canada" },
+  { name: "United Arab Emirates", flag: "🇦🇪", href: "/locations/uae" },
+  { name: "United Kingdom", flag: "🇬🇧", href: "/locations/uk" },
+  { name: "Australia", flag: "🇦🇺", href: "/locations/australia" },
+  { name: "Saudi Arabia", flag: "🇸🇦", href: "/locations/saudi-arabia" },
+];
 
 const faqItems = [
   { q: "What services does Markit Media offer?", a: "We offer full-stack digital marketing including SEO, paid advertising, social media, website development, branding, video production, AI solutions, content marketing, and email marketing." },
@@ -470,9 +477,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <Stagger stagger={100} animation="fade-up" className="flex flex-wrap justify-center gap-4 mt-12">
             {markets.map((m) => (
-              <span key={m} className="px-6 py-3 border border-white/20 text-base font-medium text-gray-300 hover:border-white hover:text-white transition-colors motion-reduce:transition-none">
-                {m}
-              </span>
+              <Link key={m.name} href={m.href} className="group flex items-center gap-3 px-5 py-3.5 border border-white/20 text-base font-medium text-gray-300 hover:border-white/70 hover:bg-white hover:text-black transition-all motion-reduce:transition-none">
+                <span className="text-2xl leading-none" aria-hidden="true">{m.flag}</span>
+                <span>{m.name}</span>
+                <span className="text-white/35 group-hover:text-black/50" aria-hidden="true">&rarr;</span>
+              </Link>
             ))}
           </Stagger>
         </div>
