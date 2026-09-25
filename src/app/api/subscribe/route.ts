@@ -1,4 +1,26 @@
 import { saveFormSubmission } from "@/lib/mongodb";
+
+async function syncSubscriberToKit(email: string, source: string) {
+  const apiKey = process.env.KIT_API_KEY;
+  if (!apiKey) return;
+
+  const response = await fetch("https://api.kit.com/v4/subscribers", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Kit-Api-Key": apiKey,
+    },
+    body: JSON.stringify({
+      email_address: email,
+      fields: { website_source: source },
+    }),
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Kit subscriber sync failed: ${response.status}`);
+  }
+}
 import { NextRequest, NextResponse } from "next/server";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -38,7 +60,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (body.website) {
-      return NextResponse.json({ success: true });
+      try {
+      await syncSubscriberToKit(sanitizedEmail, sanitizedSource);
+    } catch (error) {
+      console.error("Failed to sync newsletter subscriber to Kit", error);
+    }
+
+    return NextResponse.json({ success: true });
     }
 
     const sanitizedEmail = String(email).trim().toLowerCase();
