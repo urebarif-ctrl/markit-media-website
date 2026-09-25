@@ -177,6 +177,8 @@ const staticPages = [
   "/approach",
   "/pricing",
   "/blog",
+  "/write-for-us",
+  "/partners/publishers",
   "/terms",
   "/privacy-policy",
   "/services",
