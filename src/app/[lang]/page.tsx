@@ -476,10 +476,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up"><SectionLabel>Experience & Credentials</SectionLabel><SectionTitle>Platform Expertise Backed by Hands-On Execution</SectionTitle><SectionDesc>Strategy that works inside real ad accounts, stores, websites, creative workflows, CRMs, and reporting.</SectionDesc></Animate>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">{[
-            { title: "Google Ads Certified", desc: "Search, paid acquisition, conversion strategy, measurement, and account optimization." },
-            { title: "Meta Ads Certified", desc: "Facebook and Instagram strategy, creative testing, lead generation, and performance optimization." },
-            { title: "Shopify Expertise", desc: "E-commerce strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
-          ].map(item=><div key={item.title} className="border border-gray-200 p-7 bg-gray-50"><div className="text-base font-bold uppercase tracking-[0.12em] text-gray-400">Platform credential</div><h2 className="text-xl font-extrabold mt-3">{item.title}</h2><p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p></div>)}</div>
+            { label: "Paid Search", title: "Google Ads Experience", desc: "Hands-on work across Search, paid acquisition, conversion strategy, measurement, and account optimization." },
+            { label: "Paid Social", title: "Meta Ads Experience", desc: "Hands-on Facebook and Instagram strategy, creative testing, lead generation, and performance optimization." },
+            { label: "E-commerce", title: "Shopify Experience", desc: "E-commerce strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+          ].map(item=><div key={item.title} className="border border-gray-200 p-7 bg-gray-50"><div className="text-base font-bold uppercase tracking-[0.12em] text-gray-400">{item.label}</div><h2 className="text-xl font-extrabold mt-3">{item.title}</h2><p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p></div>)}</div>
         </div>
       </section>
 
