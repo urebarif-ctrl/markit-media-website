@@ -12,12 +12,16 @@ const nextConfig: NextConfig = {
   // Preserve selected legacy URLs that already have search visibility while
   // serving the rebuilt page through the modern localized application shell.
   async rewrites() {
-    return [
-      {
-        source: "/home-decor-interior-design-online-digital-marketing-agency",
-        destination: "/en/industries/interior-design",
-      },
-    ];
+    return {
+      beforeFiles: [
+        {
+          source: "/home-decor-interior-design-online-digital-marketing-agency",
+          destination: "/en/industries/interior-design",
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   serverExternalPackages: ["better-sqlite3"],
   outputFileTracingIncludes: {
