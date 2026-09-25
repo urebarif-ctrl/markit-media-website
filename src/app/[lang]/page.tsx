@@ -226,15 +226,42 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Selected project proof"><div className="max-w-7xl mx-auto">
-        <Animate animation="fade-up"><SectionLabel>Selected Work</SectionLabel><SectionTitle>Real Creative Work, Not Stock Case Studies</SectionTitle><SectionDesc>Selected portfolio assets already produced across fashion, food and beverage, social media, branding, and campaign creative.</SectionDesc></Animate>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">{[
-          {src:"/images/portfolio/fashion-feed-hero.jpg",title:"Fashion & E-commerce",href:"/work/fashion-feed"},
-          {src:"/images/portfolio/foodfolio-hero.jpg",title:"Food & Beverage",href:"/work/foodfolio"},
-          {src:"/images/portfolio/social-media-hero.jpg",title:"Social Media Creative",href:"/work/social-media-designs"},
-        ].map(item=><Link key={item.href} href={item.href} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"><div className="relative aspect-[4/3]"><Image src={item.src} alt={item.title+" project by Markit Media"} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover"/></div><div className="p-5 flex justify-between"><span className="font-bold">{item.title}</span><span>&rarr;</span></div></Link>)}</div>
-        <div className="mt-8"><Link href="/case-studies" className="font-bold hover:underline">Explore case studies &rarr;</Link></div>
-      </div></section>
+      <section className="px-6 lg:px-12 py-24 bg-gray-50" aria-label="Selected client work">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Selected Client Work</SectionLabel>
+            <SectionTitle>Work You Can See. Craft You Can Judge.</SectionTitle>
+            <SectionDesc>From brand systems and social campaigns to food, fashion and digital experiences — explore real work created by Markit Media for real client briefs.</SectionDesc>
+          </Animate>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-12">
+            {[
+              {src:"/images/portfolio/fashion-feed-hero.jpg",eyebrow:"Fashion · E-commerce",title:"Fashion Feed",desc:"Campaign-ready visual direction and social creative built for a fast-moving fashion audience.",href:"/work/fashion-feed",span:"lg:col-span-7"},
+              {src:"/images/portfolio/foodfolio-hero.jpg",eyebrow:"Food · Brand Creative",title:"FoodFolio",desc:"Food-focused creative spanning brand presentation, product storytelling and social content.",href:"/work/foodfolio",span:"lg:col-span-5"},
+              {src:"/images/portfolio/social-media-hero.jpg",eyebrow:"Social · Campaigns",title:"Social Media Designs",desc:"A cross-industry selection of social creative designed to make brands look sharper in the feed.",href:"/work/social-media-designs",span:"lg:col-span-5"},
+              {src:"/images/portfolio/logo-folio-hero.jpg",eyebrow:"Branding · Identity",title:"LogoFolio",desc:"Identity and logo work across technology, food, energy, retail and emerging brands.",href:"/work/logo-folio",span:"lg:col-span-7"},
+            ].map((item,idx)=><Link key={item.href} href={item.href} className={`group relative overflow-hidden bg-black min-h-[360px] md:min-h-[430px] ${item.span}`}>
+              <Image src={item.src} alt={item.title+" — selected work by Markit Media"} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none"/>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"/>
+              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
+                <div className="flex items-end justify-between gap-6">
+                  <div className="max-w-xl">
+                    <p className="text-xs md:text-sm font-bold uppercase tracking-[0.16em] text-white/70">{item.eyebrow}</p>
+                    <h3 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mt-2">{item.title}</h3>
+                    <p className="text-sm md:text-base text-white/75 leading-relaxed mt-2 max-w-lg">{item.desc}</p>
+                  </div>
+                  <span aria-hidden="true" className="shrink-0 w-11 h-11 rounded-full border border-white/40 flex items-center justify-center text-xl transition-transform group-hover:translate-x-1 motion-reduce:transition-none">&rarr;</span>
+                </div>
+              </div>
+            </Link>)}
+          </div>
+
+          <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <Link href="/work" className="inline-flex items-center gap-2 font-bold hover:underline">Explore all work &rarr;</Link>
+            <Link href="/case-studies" className="inline-flex items-center gap-2 text-gray-500 font-semibold hover:text-black transition-colors">View client case studies &rarr;</Link>
+          </div>
+        </div>
+      </section>
       {/* Platform ecosystem */}
       <section className="border-y border-gray-200 py-12 bg-white" aria-label="Platforms and services we work with">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
