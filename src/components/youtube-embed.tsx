@@ -36,6 +36,8 @@ export function YouTubeEmbed({ videoId, title, aspect = "landscape", className =
             alt={`Video thumbnail: ${title}`}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            fetchPriority="low"
           />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
           <div className="absolute inset-0 flex items-center justify-center">
