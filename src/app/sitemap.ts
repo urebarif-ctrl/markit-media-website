@@ -427,7 +427,14 @@ const staticPages = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en"];
-  const entries: MetadataRoute.Sitemap = [];
+  const entries: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/home-decor-interior-design-online-digital-marketing-agency/`,
+      lastModified: new Date("2026-09-26"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
   const buildDate = new Date("2026-09-23");
 
   for (const locale of locales) {
