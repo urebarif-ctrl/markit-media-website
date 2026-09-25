@@ -315,10 +315,10 @@ export default function InteriorDesignMarketingPage() {
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="SEO continuity">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
-            <SectionLabel>Search Visibility</SectionLabel>
-            <SectionTitle>Preserving the Search Intent This Page Already Serves</SectionTitle>
+            <SectionLabel>Search Strategy</SectionLabel>
+            <SectionTitle>Built Around How Interior Customers Search and Decide</SectionTitle>
             <SectionDesc>
-              This page keeps its established URL and expands the topic with stronger service depth, clearer conversion paths and more useful information for people searching for home decor and interior design marketing support.
+              People search by room, style, product, service, location and project need. We build content and campaigns around those real decision paths so your brand can be discovered earlier and convert interest more effectively.
             </SectionDesc>
           </Animate>
           <div className="grid md:grid-cols-3 gap-4 mt-10">
