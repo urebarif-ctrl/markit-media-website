@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { GrowthChart } from "@/components/animated-infographic";
 
 export const metadata: Metadata = {
-  title: "Our Approach — How We Drive Marketing Results",
+  title: "Our Approach ,  How We Drive Marketing Results",
   description: "Learn how Markit Media approaches digital marketing: our methodology, frameworks, and the principles behind every campaign we run.",
   alternates: { canonical: "https://themarkitmedia.com/en/approach" },
   openGraph: {
@@ -21,7 +21,7 @@ const pillars = [
   {
     num: "01",
     title: "Start with Business Goals, Not Channel Tactics",
-    desc: "Most agencies jump straight to tactics — running ads, posting content, building pages. We start by understanding what success looks like for your business. Revenue targets, market position, customer acquisition costs, lifetime value. Those numbers shape every decision that follows.",
+    desc: "Most agencies jump straight to tactics ,  running ads, posting content, building pages. We start by understanding what success looks like for your business. Revenue targets, market position, customer acquisition costs, lifetime value. Those numbers shape every decision that follows.",
     detail: "This means we sometimes recommend against services. If your funnel has a conversion problem, more traffic won't fix it. If your brand positioning is unclear, running ads will burn budget. We tell you what you need to hear, not what's easiest to sell.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10" aria-hidden="true">
@@ -66,7 +66,7 @@ const pillars = [
   {
     num: "04",
     title: "Continuous Optimization, Not Set-and-Forget",
-    desc: "Launching a campaign is the beginning, not the end. Markets shift, competitors adjust, algorithms update. Static campaigns decay. We run structured testing cycles — adjusting targeting, creative, messaging, and budgets based on live performance data.",
+    desc: "Launching a campaign is the beginning, not the end. Markets shift, competitors adjust, algorithms update. Static campaigns decay. We run structured testing cycles ,  adjusting targeting, creative, messaging, and budgets based on live performance data.",
     detail: "Our optimization cadence depends on the channel: paid media gets weekly adjustments, SEO gets monthly strategy reviews, and creative gets refreshed based on engagement decay curves.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10" aria-hidden="true">
@@ -99,10 +99,10 @@ const discoveryQuestions = [
   "Who is your ideal customer, and how do they find you today?",
   "What marketing have you tried before, and what worked?",
   "What is your competitive advantage that customers care about?",
-  "What are your unit economics — cost per lead, close rate, customer value?",
+  "What are your unit economics ,  cost per lead, close rate, customer value?",
   "Where do deals stall or fall apart in your funnel?",
   "What internal resources and capabilities do you have?",
-  "What constraints should we know about — budget, timeline, compliance?",
+  "What constraints should we know about ,  budget, timeline, compliance?",
 ];
 
 const engagementModels = [
@@ -154,7 +154,7 @@ const operatingPrinciples = [
 ];
 
 const approachFaqItems = [
-  { q: "How is your approach different from other agencies?", a: "We start with your business goals — revenue targets, market position, unit economics — before choosing any channels or tactics. Most agencies lead with what they sell. We lead with what you need." },
+  { q: "How is your approach different from other agencies?", a: "We start with your business goals ,  revenue targets, market position, unit economics ,  before choosing any channels or tactics. Most agencies lead with what they sell. We lead with what you need." },
   { q: "What if I have already tried marketing and it did not work?", a: "That actually helps us. Knowing what has been tried and what failed is valuable data. We audit previous efforts, identify what went wrong, and build a strategy that avoids those same mistakes." },
   { q: "How do you decide which marketing channels to recommend?", a: "Channel selection follows from your goals, audience, budget, and timeline. We map your buyer journey, identify where the biggest opportunities are, and recommend the channels that will move your most important metrics." },
   { q: "How long before I see results from your approach?", a: "Timelines depend on the channel mix. Paid advertising can show results within weeks. SEO and content typically need three to six months to build momentum. We set realistic expectations and share progress data from day one." },
@@ -343,7 +343,7 @@ export default function ApproachPage() {
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>FAQ</SectionLabel>
-            <SectionTitle>Our Approach — Common Questions</SectionTitle>
+            <SectionTitle>Our Approach ,  Common Questions</SectionTitle>
           </Animate>
           <div className="mt-10">
             {approachFaqItems.map((item, i) => (
