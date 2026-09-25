@@ -195,7 +195,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
     }
   }, []);
 
-  const dropdownPanelBase = "absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-2xl border border-gray-100 transition-all duration-200 origin-top";
+  const dropdownPanelBase = "absolute top-full left-1/2 -translate-x-1/2 overflow-hidden rounded-[24px] bg-white/98 text-black shadow-[0_28px_80px_rgba(0,0,0,.18)] ring-1 ring-black/5 transition-all duration-200 origin-top";
   const dropdownVisible = "opacity-100 scale-100 pointer-events-auto";
   const dropdownHidden = "opacity-0 scale-95 pointer-events-none";
 
@@ -226,13 +226,21 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               Services <span aria-hidden="true" className="text-xs">⌄</span>
             </Link>
             <div id="services-dropdown" className={`${dropdownPanelBase} w-[min(920px,90vw)] ${servicesOpen ? dropdownVisible : dropdownHidden}`}>
-              <div className="p-6 border-b border-gray-100 flex items-end justify-between gap-8">
-                <div><span className="text-xs font-bold uppercase tracking-[.18em] text-gray-400">What we do</span><h2 className="text-2xl font-extrabold mt-1">Growth, creative & technology.</h2></div>
-                <Link href="/services" className="text-sm font-bold whitespace-nowrap hover:underline">Explore all services →</Link>
+              <div className="grid grid-cols-[1.15fr_.85fr] border-b border-gray-100">
+                <div className="p-7 bg-gradient-to-br from-[#f5f2ff] via-white to-[#eef7ff]">
+                  <span className="inline-flex rounded-full bg-[#6C4CF1]/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">What we do</span>
+                  <h2 className="text-[28px] leading-tight font-extrabold mt-3">Growth, creative & technology that work together.</h2>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">Start with your goal. We will help you find the right mix of media, search, creative and technology.</p>
+                </div>
+                <div className="p-7 bg-[#101010] text-white flex flex-col justify-between">
+                  <span className="text-xs font-bold uppercase tracking-[.18em] text-white/50">Not sure where to start?</span>
+                  <div><p className="text-lg font-bold">Tell us what you want to grow.</p><Link href="/get-a-quote" className="mt-4 inline-flex rounded-full bg-white px-4 py-2.5 text-sm font-extrabold text-black hover:bg-[#EEE9FF]">Get a recommendation →</Link></div>
+                </div>
               </div>
-              <div className="grid grid-cols-3 gap-1 p-4 max-h-[62vh] overflow-y-auto">
-                {serviceCategories.map((s) => <Link key={s.href} href={s.href} className="group p-3.5 hover:bg-gray-50 rounded-sm"><span className="block text-sm font-bold text-black">{s.label}</span><span className="block text-xs leading-relaxed text-gray-500 mt-1">{s.desc}</span></Link>)}
+              <div className="grid grid-cols-3 gap-1 p-4 max-h-[58vh] overflow-y-auto">
+                {serviceCategories.map((s, index) => <Link key={s.href} href={s.href} className="group p-3.5 hover:bg-[#F5F2FF] rounded-xl transition-colors"><span className="flex items-center gap-2 text-sm font-bold text-black"><span className={`h-2 w-2 rounded-full ${index < 4 ? "bg-[#6C4CF1]" : "bg-gray-200 group-hover:bg-[#6C4CF1]"}`} />{s.label}</span><span className="block text-xs leading-relaxed text-gray-500 mt-1 pl-4">{s.desc}</span></Link>)}
               </div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/services" className="text-sm font-extrabold text-[#5A3ED6]">All services →</Link></div>
             </div>
           </div>
 
@@ -245,10 +253,11 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               Industries <span aria-hidden="true" className="text-xs">⌄</span>
             </Link>
             <div id="industries-dropdown" className={`${dropdownPanelBase} w-[min(780px,88vw)] ${industriesOpen ? dropdownVisible : dropdownHidden}`}>
-              <div className="p-6 border-b border-gray-100"><span className="text-xs font-bold uppercase tracking-[.18em] text-gray-400">Industry experience</span><h2 className="text-2xl font-extrabold mt-1">Built around how your market buys.</h2></div>
-              <div className="grid grid-cols-3 gap-1 p-4 max-h-[58vh] overflow-y-auto">
-                {industryList.map((ind) => <Link key={ind.href} href={ind.href} className="px-3 py-2.5 text-sm font-semibold text-black hover:bg-gray-50 rounded-sm">{ind.label}</Link>)}
+              <div className="p-7 border-b border-gray-100 bg-gradient-to-r from-[#fff4ed] via-white to-[#f5f2ff]"><span className="inline-flex rounded-full bg-[#FF7A45]/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-[#D95C2A]">Industry experience</span><h2 className="text-[28px] leading-tight font-extrabold mt-3">Strategies shaped around how your customers buy.</h2><p className="mt-2 text-sm text-gray-600">Pick your market to see relevant services, thinking and proof.</p></div>
+              <div className="grid grid-cols-3 gap-2 p-4 max-h-[55vh] overflow-y-auto">
+                {industryList.map((ind, index) => <Link key={ind.href} href={ind.href} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-[#FFF7F2] hover:bg-[#FFEADF]" : "hover:bg-[#F5F2FF]"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
               </div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/industries" className="text-sm font-extrabold text-[#5A3ED6]">Explore all industries →</Link></div>
             </div>
           </div>
 
