@@ -11,6 +11,20 @@ interface NavTranslations {
   accessibility: Record<string, string>;
 }
 
+interface SearchItem {
+  label: string;
+  href: string;
+  desc: string;
+  category: "Services" | "Industries" | "Work" | "Insights" | "Tools" | "Resources" | "Company";
+}
+
+interface BlogSearchResult {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+}
+
 const serviceCategories = [
   { label: "Performance Marketing", href: "/services/performance-marketing", desc: "Meta Ads, Google Ads, PPC" },
   { label: "SEO", href: "/services/seo", desc: "Technical, local, and content SEO" },
@@ -97,6 +111,8 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const [languageOpen, setLanguageOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [blogSearchResults, setBlogSearchResults] = useState<SearchItem[]>([]);
+  const [searchLoading, setSearchLoading] = useState(false);
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const industriesRef = useRef<HTMLDivElement>(null);
@@ -108,21 +124,102 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const industriesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
-  const searchItems = [
-    ...serviceCategories.map((item) => ({ ...item, category: "Services" })),
-    ...industryList.map((item) => ({ ...item, desc: "Industry expertise", category: "Industries" })),
+
+  const utilityPages: SearchItem[] = [
+    { label: "Pricing", href: "/pricing", desc: "Engagement models, example budgets and pricing guidance", category: "Company" },
+    { label: "Our Process", href: "/process", desc: "How we discover, plan, launch and optimize", category: "Company" },
+    { label: "FAQ", href: "/faq", desc: "Common questions about working with Markit Media", category: "Company" },
+    { label: "Careers", href: "/careers", desc: "Open roles and opportunities", category: "Company" },
+    { label: "Locations", href: "/locations", desc: "Markets and locations we serve", category: "Company" },
+    { label: "Technology", href: "/technology", desc: "Platforms, tools and technology we work with", category: "Company" },
+    { label: "Write for Markit Media", href: "/write-for-us", desc: "Guest contributor and editorial guidelines", category: "Company" },
+    { label: "Publisher Partnerships", href: "/partners/publishers", desc: "Join our publisher partner network", category: "Company" },
+    { label: "Glossary", href: "/glossary", desc: "Marketing, advertising and technology terms", category: "Resources" },
+    { label: "Free Tools", href: "/free-tools", desc: "Browse all free marketing tools", category: "Tools" },
+    { label: "Tools", href: "/tools", desc: "Platforms and tools used by our team", category: "Tools" },
+    { label: "Marketing Pricing Calculator", href: "/resources/pricing-calculator", desc: "Estimate marketing service investment", category: "Tools" },
+    { label: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator", desc: "Compare agency pricing models", category: "Tools" },
+    { label: "ROI Calculator", href: "/resources/roi-calculator", desc: "Estimate marketing return on investment", category: "Tools" },
+    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner", desc: "Plan channel and campaign budgets", category: "Tools" },
+    { label: "Website Grader", href: "/resources/website-grader", desc: "Review website readiness and performance", category: "Tools" },
+    { label: "Website Audit", href: "/resources/website-audit", desc: "Run a structured website audit", category: "Tools" },
+    { label: "SEO Audit Score", href: "/resources/seo-audit-score", desc: "Check key SEO readiness signals", category: "Tools" },
+    { label: "Backlink Analyzer", href: "/resources/backlink-analyzer", desc: "Review backlink opportunities and signals", category: "Tools" },
+    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator", desc: "Estimate Google Ads budget and outcomes", category: "Tools" },
+    { label: "UTM Builder", href: "/resources/utm-builder", desc: "Build campaign tracking URLs", category: "Tools" },
+    { label: "Headline Analyzer", href: "/resources/headline-analyzer", desc: "Review and improve marketing headlines", category: "Tools" },
+    { label: "Meta Description Generator", href: "/resources/meta-description-generator", desc: "Create search-friendly meta descriptions", category: "Tools" },
+    { label: "Content Brief Generator", href: "/resources/content-brief-generator", desc: "Build a structured content brief", category: "Tools" },
+    { label: "Social Media Planner", href: "/resources/social-media-planner", desc: "Plan social content and campaigns", category: "Tools" },
+  ];
+
+  const searchItems: SearchItem[] = [
+    ...serviceCategories.map((item) => ({ ...item, category: "Services" as const })),
+    ...industryList.map((item) => ({ ...item, desc: "Industry expertise", category: "Industries" as const })),
     { label: "Case Studies", href: "/case-studies", desc: "Results and client work", category: "Work" },
     { label: "Portfolio", href: "/work", desc: "Selected creative and digital work", category: "Work" },
-    { label: "Blog & Insights", href: "/blog", desc: "Marketing articles and insights", category: "Resources" },
-    { label: "Resources", href: "/resources", desc: "Guides, calculators and tools", category: "Resources" },
+    { label: "Blog & Insights", href: "/blog", desc: "Marketing articles and insights", category: "Insights" },
+    { label: "Resources", href: "/resources", desc: "Guides, calculators and practical resources", category: "Resources" },
+    ...utilityPages,
     { label: "About Markit Media", href: "/about", desc: "About the agency", category: "Company" },
     { label: "Contact", href: "/contact", desc: "Talk to our team", category: "Company" },
     { label: "Request a Quote", href: "/get-a-quote", desc: "Start a project", category: "Company" },
   ];
+
   const normalizedQuery = searchQuery.trim().toLowerCase();
-  const searchResults = normalizedQuery
-    ? searchItems.filter((item) => `${item.label} ${item.desc} ${item.category}`.toLowerCase().includes(normalizedQuery)).slice(0, 10)
-    : searchItems.slice(0, 8);
+  const staticMatches = normalizedQuery
+    ? searchItems.filter((item) => `${item.label} ${item.desc} ${item.category}`.toLowerCase().includes(normalizedQuery))
+    : [
+        searchItems.find((item) => item.label === "Blog & Insights"),
+        searchItems.find((item) => item.label === "Marketing Pricing Calculator"),
+        searchItems.find((item) => item.label === "ROI Calculator"),
+        searchItems.find((item) => item.label === "Case Studies"),
+        searchItems.find((item) => item.label === "Services"),
+        searchItems.find((item) => item.label === "Resources"),
+        searchItems.find((item) => item.label === "Pricing"),
+        searchItems.find((item) => item.label === "Contact"),
+      ].filter(Boolean) as SearchItem[];
+
+  const searchResults = [...staticMatches, ...blogSearchResults]
+    .filter((item, index, items) => items.findIndex((candidate) => candidate.href === item.href) === index)
+    .slice(0, 16);
+
+  useEffect(() => {
+    if (normalizedQuery.length < 2) {
+      setBlogSearchResults([]);
+      setSearchLoading(false);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      setSearchLoading(true);
+      try {
+        const response = await fetch(`/api/blog/search?q=${encodeURIComponent(searchQuery.trim())}`, {
+          signal: controller.signal,
+        });
+        const data = (await response.json()) as { results?: BlogSearchResult[] };
+        const blogItems: SearchItem[] = (data.results ?? []).map((post) => ({
+          label: post.title,
+          href: `/blog/${post.slug}`,
+          desc: post.excerpt || post.category || "Marketing insight",
+          category: "Insights",
+        }));
+        setBlogSearchResults(blogItems);
+      } catch (error) {
+        if (!(error instanceof DOMException && error.name === "AbortError")) {
+          setBlogSearchResults([]);
+        }
+      } finally {
+        if (!controller.signal.aborted) setSearchLoading(false);
+      }
+    }, 180);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [searchQuery, normalizedQuery]);
 
   useEffect(() => {
     function handleScroll() { setScrolled(window.scrollY > 20); }
@@ -262,7 +359,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => { setSearchOpen(!searchOpen); setLanguageOpen(false); }} className={`${navLinkClass} px-3`} aria-label="Search website" aria-expanded={searchOpen}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
-            {searchOpen && <div className="absolute top-full right-0 w-[420px] bg-white text-black shadow-2xl border border-gray-100 p-4"><label htmlFor="site-search" className="sr-only">Search the website</label><input id="site-search" autoFocus value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search services, industries, resources..." className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-black" /><div className="mt-3 max-h-[420px] overflow-y-auto">{searchResults.length ? searchResults.map((item) => <Link key={`${item.category}-${item.href}`} href={item.href} className="block p-3 hover:bg-gray-50" onClick={() => setSearchOpen(false)}><span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">{item.category}</span><span className="block text-sm font-bold">{item.label}</span><span className="block text-xs text-gray-500">{item.desc}</span></Link>) : <p className="p-3 text-sm text-gray-500">No matching pages found.</p>}</div></div>}
+            {searchOpen && <div className="absolute top-full right-0 w-[520px] max-w-[90vw] bg-white text-black shadow-2xl border border-gray-100 p-4"><label htmlFor="site-search" className="sr-only">Search the website</label><input id="site-search" autoFocus value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, services, tools, industries, pages..." className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-black" /><div className="flex items-center justify-between px-1 pt-3"><span className="text-[11px] font-bold uppercase tracking-[.14em] text-gray-400">{normalizedQuery ? "Search results" : "Quick access"}</span>{searchLoading && <span className="text-xs text-gray-400">Searching insights...</span>}</div><div className="mt-2 max-h-[460px] overflow-y-auto">{searchResults.length ? searchResults.map((item) => <Link key={`${item.category}-${item.href}`} href={item.href} className="block p-3 hover:bg-gray-50 border-b border-gray-50 last:border-b-0" onClick={() => setSearchOpen(false)}><span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">{item.category}</span><span className="block text-sm font-bold">{item.label}</span><span className="block text-xs text-gray-500 line-clamp-2 mt-0.5">{item.desc}</span></Link>) : <p className="p-3 text-sm text-gray-500">No matching pages or articles found.</p>}</div></div>}
           </div>
           <div className="relative">
             <button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase text-sm`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>
@@ -324,8 +421,8 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
-          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search the whole website..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100"><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}
-          <div className="grid grid-cols-2 gap-3 pt-4"><button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button><div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div></div>{searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search the whole website..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100"><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}<Link href="/get-a-quote" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
+          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100"><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}
+          <div className="grid grid-cols-2 gap-3 pt-4"><button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button><div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div></div>{searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100"><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}<Link href="/get-a-quote" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
     </nav>
