@@ -417,31 +417,43 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* How It Works */}
-      <section className="px-6 lg:px-12 py-20" aria-label="How it works">
+      <section className="px-6 lg:px-12 py-24 bg-white" aria-label="How we work">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
-            <SectionLabel>How It Works</SectionLabel>
-            <SectionTitle>From Discovery to Results in 4 Steps</SectionTitle>
+            <SectionLabel>How We Work</SectionLabel>
+            <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+              <div className="lg:col-span-8">
+                <SectionTitle>Less Guesswork. More Forward Motion.</SectionTitle>
+              </div>
+              <p className="lg:col-span-4 text-base md:text-lg text-gray-500 leading-relaxed lg:pb-2">A clear operating rhythm from the first conversation to ongoing growth — with decisions grounded in your goals, real performance data, and what customers actually do.</p>
+            </div>
           </Animate>
-          <Stagger stagger={100} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mt-12">
+
+          <Stagger stagger={90} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
             {[
-              { num: "01", title: "Discovery", desc: "We learn your business, audience, competitors, and goals through a thorough discovery process." },
-              { num: "02", title: "Strategy", desc: "We build a custom strategy with clear KPIs, channel recommendations, and a realistic timeline." },
-              { num: "03", title: "Execution", desc: "Our specialists launch and manage campaigns across every channel in your plan." },
-              { num: "04", title: "Optimization", desc: "We analyze performance data, optimize continuously, and scale what works." },
-            ].map((step, i) => (
-              <div key={step.num} className={`p-8 ${i < 3 ? "border-b lg:border-b-0 lg:border-r border-gray-200" : ""}`}>
-                <div className="font-[family-name:var(--font-display)] text-4xl font-extrabold text-gray-200 mb-4">{step.num}</div>
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black uppercase tracking-wide mb-3">{step.title}</h3>
-                <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
+              { num: "01", eyebrow: "Understand", title: "Find the Real Opportunity", desc: "We unpack your goals, audience, offer, competition, existing performance, and constraints before recommending a channel or tactic.", mark: "↘" },
+              { num: "02", eyebrow: "Plan", title: "Turn Insight Into a Roadmap", desc: "We prioritize the channels, creative, journeys, KPIs, and experiments most likely to move the business forward.", mark: "◎" },
+              { num: "03", eyebrow: "Build & Launch", title: "Put the Strategy to Work", desc: "Specialists turn the plan into campaigns, content, experiences, and systems — then launch with measurement in place.", mark: "→" },
+              { num: "04", eyebrow: "Learn & Scale", title: "Improve What the Data Proves", desc: "We review signals, test deliberately, cut waste, strengthen what performs, and keep the next move tied to evidence.", mark: "↗" },
+            ].map((step) => (
+              <div key={step.num} className="group relative min-h-[370px] bg-gray-50 border border-gray-200 p-7 md:p-8 overflow-hidden hover:bg-black hover:border-black transition-colors duration-300 motion-reduce:transition-none">
+                <div className="flex items-start justify-between">
+                  <span className="font-[family-name:var(--font-display)] text-sm font-extrabold tracking-[0.18em] text-gray-400 group-hover:text-white/45">{step.num}</span>
+                  <span aria-hidden="true" className="font-[family-name:var(--font-display)] text-4xl font-light text-gray-300 group-hover:text-white/70">{step.mark}</span>
+                </div>
+                <div className="mt-20">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400 group-hover:text-white/55">{step.eyebrow}</p>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-extrabold text-black group-hover:text-white tracking-tight leading-tight mt-3">{step.title}</h3>
+                  <p className="text-sm md:text-base text-gray-500 group-hover:text-white/65 leading-relaxed mt-4">{step.desc}</p>
+                </div>
               </div>
             ))}
           </Stagger>
-          <Animate animation="fade-up" delay={200}>
-            <div className="mt-10 text-center">
-              <Link href="/process" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Learn More About Our Process &rarr;
-              </Link>
+
+          <Animate animation="fade-up" delay={180}>
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 border-t border-gray-200 pt-7">
+              <p className="text-sm text-gray-500">No black-box process. You know what we&apos;re doing, why we&apos;re doing it, and what we&apos;re learning.</p>
+              <Link href="/process" className="inline-flex items-center gap-3 font-bold text-black whitespace-nowrap group">See our full process <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">&rarr;</span></Link>
             </div>
           </Animate>
         </div>
