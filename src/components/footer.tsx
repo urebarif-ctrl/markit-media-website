@@ -77,7 +77,7 @@ export function Footer({ translations:t }: { locale:string; translations:FooterT
               <a href="https://wa.me/923002086081" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-gray-200 hover:text-white"><span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><Phone size={17}/></span>+92 300 2086081</a>
             </div>
             <div className="flex gap-2.5 mt-7" aria-label="Follow Markit Media">
-              {primarySocial.map(s=>{const b=SOCIAL_BRANDS[s.label];return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label} aria-label={s.label} className={`w-10 h-10 rounded-full ${b.bg} flex items-center justify-center hover:-translate-y-0.5 transition-transform`}><img src={b.logo} alt="" width="19" height="19" className="w-[19px] h-[19px] object-contain"/></a>})}
+              {primarySocial.map(s=>{const b=SOCIAL_BRANDS[s.label];return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label} aria-label={s.label} className={`w-10 h-10 rounded-full ${b.bg} flex items-center justify-center hover:-translate-y-0.5 transition-transform`}><img src={b.logo} alt="" width="19" height="19" loading="lazy" decoding="async" fetchPriority="low" className="w-[19px] h-[19px] object-contain"/></a>})}
             </div>
           </div>
 
