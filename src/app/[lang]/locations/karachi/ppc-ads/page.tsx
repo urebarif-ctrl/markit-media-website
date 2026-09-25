@@ -52,8 +52,8 @@ const reasons = [
     desc: "Ad costs in Karachi vary significantly by industry and season. We track local cost-per-click benchmarks across verticals — from real estate and education to e-commerce and healthcare — so your bids reflect what the market actually demands, not generic national averages.",
   },
   {
-    title: "Platform-Certified Team",
-    desc: "Our team maintains active certifications across Google Ads and Meta Blueprint. This means we stay current on platform changes, new ad formats, and best practices — and you get campaigns built on up-to-date knowledge rather than outdated playbooks.",
+    title: "Hands-On Platform Experience",
+    desc: "Our team works hands-on across Google Ads and Meta advertising, staying current on platform changes, new ad formats, measurement, and campaign best practices.",
   },
   {
     title: "Transparent Budget Management",
