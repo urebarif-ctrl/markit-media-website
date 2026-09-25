@@ -271,3 +271,14 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll { opacity: 1 !important; transform: none !important; }
 }
+
+
+/* ========================================
+   Performance: defer below-the-fold rendering
+   ======================================== */
+@supports (content-visibility: auto) {
+  .home-page > section:not(:first-of-type) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 760px;
+  }
+}
