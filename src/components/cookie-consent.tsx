@@ -29,6 +29,7 @@ export function CookieConsent() {
 
   return (
     <div
+      data-nosnippet
       role="dialog"
       aria-label="Cookie consent"
       className="fixed bottom-0 left-0 right-0 z-[9999] p-4 sm:p-6"
