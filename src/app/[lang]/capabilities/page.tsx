@@ -118,7 +118,7 @@ export default function CapabilitiesPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Capabilities — Markit Media",
+    name: "Capabilities ,  Markit Media",
     description: "Full-service digital marketing capabilities.",
   };
 
