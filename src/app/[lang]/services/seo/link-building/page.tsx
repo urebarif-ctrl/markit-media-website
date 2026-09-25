@@ -2,15 +2,12 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Link Building Services",
-  description:
-    "Build high-quality backlinks through digital PR, guest posting, outreach, and broken link building. Markit Media earns authoritative links that improve your domain authority and rankings.",
-  alternates: {
-    canonical: "https://themarkitmedia.com/en/services/seo/link-building",
-  },
+  title: "Link Building Services | Digital PR & Outreach",
+  description: "Earn relevant backlinks through digital PR, guest contributor outreach, publisher relationships, broken-link campaigns and link-worthy content.",
+  alternates: { canonical: "https://themarkitmedia.com/en/services/seo/link-building" },
   openGraph: {
-    title: "Link Building Services",
-    description: "Build high-quality backlinks through digital PR, guest posting, outreach, and broken link building. Markit Media earns authoritative links that improve ...",
+    title: "Link Building Services | Digital PR & Outreach",
+    description: "Earn relevant editorial links through digital PR, contributor outreach, publisher relationships and content-led campaigns.",
   },
 };
 
@@ -20,39 +17,40 @@ export default function LinkBuildingPage() {
       parentTitle="SEO"
       parentHref="/services/seo"
       title="Link Building"
-      description="Earn the backlinks that move rankings. We use ethical, white-hat link building strategies — digital PR, targeted outreach, and content-led campaigns — to acquire authoritative links that strengthen your domain and improve organic visibility."
+      description="Build authority through relevant editorial outreach. We combine digital PR, guest contributor outreach, publisher relationships, competitor research and link-worthy content to earn credible mentions and referral opportunities."
       details={[
-        "Digital PR campaigns — create newsworthy content, data studies, and expert commentary that earn editorial backlinks from industry publications and news outlets.",
-        "Guest posting and contributor outreach — secure placements on relevant, authoritative websites with valuable content that includes contextual links back to your site.",
-        "Broken link building — identify broken outbound links on relevant websites and offer your content as a replacement, turning dead links into new backlink opportunities.",
-        "Competitor backlink analysis — reverse-engineer the link profiles of your top-ranking competitors to find proven link sources and identify gaps in your own backlink strategy.",
-        "Link-worthy content development — produce original research, comprehensive guides, tools, and visual assets designed to attract natural links from other websites.",
-        "Outreach and relationship management — build genuine relationships with publishers, bloggers, and industry contacts who can provide ongoing link opportunities.",
+        "Digital PR campaigns — create useful research, expert commentary and stories that give journalists and publishers a genuine reason to reference your brand.",
+        "Guest contributor outreach — pitch useful, original articles to relevant publications. Placements depend on each publisher's editorial approval and linking policy.",
+        "Publisher outreach — qualify websites by topical relevance, audience, organic visibility, content quality and editorial standards rather than relying on a single authority score.",
+        "Broken link building — identify relevant broken references and suggest genuinely useful replacement resources when your content is a fit.",
+        "Competitor backlink analysis — study competing link profiles to find relevant publications, resource pages and content opportunities.",
+        "Link-worthy content development — create research, guides, tools and visual assets designed to earn citations naturally.",
+        "Outreach and relationship management — build durable relationships with editors, bloggers and industry publishers instead of one-off spam campaigns.",
       ]}
       benefits={[
-        "Higher domain authority from relevant, high-quality backlinks",
-        "Improved rankings for competitive keywords that require strong link signals",
-        "Referral traffic from links placed on websites your target audience reads",
-        "A diversified backlink profile that withstands algorithm updates",
-        "Insights into competitor link strategies that reveal untapped opportunities",
-        "Sustainable link acquisition through relationship-based outreach",
+        "A stronger, more relevant backlink profile built around real publications",
+        "Editorial visibility around commercially important topics",
+        "Referral traffic from websites your target audience already reads",
+        "A diversified authority strategy that does not depend on one tactic",
+        "Competitive backlink intelligence and new publisher opportunities",
+        "Clear reporting on outreach, placements, destination URLs and status",
       ]}
       faq={[
         {
-          q: "Why is link building important for SEO?",
-          a: "Backlinks remain one of the strongest ranking factors in Google's algorithm. Links from authoritative, relevant websites act as endorsements that signal trust and authority to search engines, directly influencing where your pages rank in search results.",
+          q: "Can you guarantee rankings or a specific number of dofollow links?",
+          a: "No. Rankings and independent editorial decisions cannot be guaranteed. We set campaign targets, qualify opportunities carefully and report transparently on outreach and confirmed placements.",
         },
         {
-          q: "What makes a backlink high quality?",
-          a: "A high-quality backlink comes from a relevant, authoritative website, is placed within editorial content, uses natural anchor text, and sends referral traffic. Domain authority, topical relevance, and the linking page's own link profile all contribute to link quality.",
+          q: "What makes a backlink worth pursuing?",
+          a: "We look at topical relevance, real audience and organic visibility, editorial quality, placement context, outbound-link behavior and potential referral value. Third-party authority metrics are useful diagnostics, not guarantees.",
         },
         {
-          q: "Do you use any black-hat link building tactics?",
-          a: "No. We strictly follow white-hat practices. We do not buy links, use private blog networks, or engage in link schemes. Every link we acquire is earned through genuine outreach, quality content, and real editorial decisions.",
+          q: "Do you use private blog networks or automated link spam?",
+          a: "No. We do not use private blog networks, automated link spam or disguised paid ranking endorsements. Sponsored placements, where used, must be transparent and appropriately qualified by the publisher.",
         },
         {
-          q: "How many backlinks does my site need?",
-          a: "The number of links needed depends on your industry, competition level, and current domain authority. We analyze your top competitors to set realistic link acquisition targets and focus on quality over quantity — a few strong links often outweigh dozens of weak ones.",
+          q: "Do you offer guest posting?",
+          a: "Yes. We offer contributor outreach as part of broader authority campaigns. We develop useful content, pitch relevant publications and respect each publisher's editorial and link policies.",
         },
       ]}
     />
