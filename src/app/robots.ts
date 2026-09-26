@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const isPreview = !process.env.PRODUCTION_DEPLOY;
+  const isProduction = process.env.VERCEL_ENV === "production" || process.env.PRODUCTION_DEPLOY === "true";
 
-  if (isPreview) {
+  if (!isProduction) {
     return {
       rules: [{ userAgent: "*", disallow: ["/"] }],
     };
