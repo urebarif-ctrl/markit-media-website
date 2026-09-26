@@ -275,8 +275,8 @@ export const legacySeoPages: LegacySeoPage[] = [
     "kind": "article",
     "relatedHref": "/services/website-development",
     "clicks": 6,
-    "impressions": 23980,
-    "position": 30.0129
+    "impressions": 24079,
+    "position": 30.0479
   },
   {
     "id": "best-practices-for-choosing-a-domain-name-in-2025",
@@ -2246,6 +2246,61 @@ export const legacySeoPages: LegacySeoPage[] = [
     "clicks": 0,
     "impressions": 100,
     "position": 27.64
+  },
+  {
+    "id": "service-call-center",
+    "path": "/service-call-center",
+    "slug": "service-call-center",
+    "title": "Call Center Services",
+    "kind": "service",
+    "relatedHref": "/services/bpo/customer-support",
+    "clicks": 1,
+    "impressions": 120,
+    "position": 18.7
+  },
+  {
+    "id": "service-manpower-outsourcing-recruitment",
+    "path": "/service-manpower-outsourcing-recruitment",
+    "slug": "service-manpower-outsourcing-recruitment",
+    "title": "Manpower Outsourcing & Recruitment",
+    "kind": "service",
+    "relatedHref": "/services/bpo/operations",
+    "clicks": 0,
+    "impressions": 138,
+    "position": 25.3261
+  },
+  {
+    "id": "ssshhhh-secrets-of-writing-creative-copies",
+    "path": "/ssshhhh-secrets-of-writing-creative-copies",
+    "slug": "ssshhhh-secrets-of-writing-creative-copies",
+    "title": "Secrets of Writing Creative Copies",
+    "kind": "article",
+    "relatedHref": "/services/content-marketing",
+    "clicks": 1,
+    "impressions": 22,
+    "position": 20.8182
+  },
+  {
+    "id": "custom-website-vs-wordpress-making-the-right-choice",
+    "path": "/custom-website-vs-wordpress-making-the-right-choice",
+    "slug": "custom-website-vs-wordpress-making-the-right-choice",
+    "title": "Custom Website vs WordPress: Making the Right Choice",
+    "kind": "article",
+    "relatedHref": "/services/website-development",
+    "clicks": 0,
+    "impressions": 189,
+    "position": 41.9365
+  },
+  {
+    "id": "ai-chatbots-customer-engagement-redefined",
+    "path": "/ai-chatbots-customer-engagement-redefined",
+    "slug": "ai-chatbots-customer-engagement-redefined",
+    "title": "AI Chatbots: Customer Engagement Redefined",
+    "kind": "article",
+    "relatedHref": "/services/ai/chatbots",
+    "clicks": 0,
+    "impressions": 122,
+    "position": 73.9672
   }
 ];
 
@@ -2312,5 +2367,13 @@ export const legacySeoAliases = [
   {
     "source": "/blogs/linkedin-summary-examples-to-attract-more-leads",
     "destination": "/linkedin-summary-examples-to-attract-more-leads"
+  },
+  {
+    "source": "/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough",
+    "destination": "/en/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough"
+  },
+  {
+    "source": "/blog/marketing-mix-modeling-explained-simply",
+    "destination": "/en/blog/marketing-mix-modeling-explained-simply"
   }
 ] as const;
