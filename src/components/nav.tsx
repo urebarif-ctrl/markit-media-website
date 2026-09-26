@@ -203,7 +203,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
 
   return (
     <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-white/95"}`}>
-      <div className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
+      <div className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-16 lg:h-20"}`}>
         <Link href="/" className="flex items-center gap-2 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
           <Image
             src="/images/logo-black.png"
@@ -272,7 +272,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
         </div>
 
         {/* Mobile toggle */}
-        <button ref={mobileToggleRef} onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden w-11 h-11 flex items-center justify-center rounded-sm ${isHome && !scrolled && !mobileOpen ? "bg-white text-black" : "bg-black text-white"} focus-visible:outline-2 focus-visible:outline-offset-2`} aria-expanded={mobileOpen} aria-label="Toggle menu">
+        <button ref={mobileToggleRef} onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden w-11 h-11 flex items-center justify-center rounded-sm ${isHome && !scrolled && !mobileOpen ? "bg-white text-black" : "bg-black text-white"} focus-visible:outline-2 focus-visible:outline-offset-2`} aria-expanded={mobileOpen} aria-controls="mobile-navigation" aria-label={mobileOpen ? "Close menu" : "Open menu"}>
           <div className="w-6 flex flex-col gap-1.5">
             <span className={`block h-0.5 bg-current transition-all ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
             <span className={`block h-0.5 bg-current transition-all ${mobileOpen ? "opacity-0" : ""}`} />
@@ -282,7 +282,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
       </div>
 
       {/* Mobile menu */}
-      <div ref={mobileMenuRef} className={`lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto transition-all duration-300 ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+      <div id="mobile-navigation" ref={mobileMenuRef} className={`lg:hidden absolute top-full left-0 right-0 h-[calc(100dvh-4rem)] bg-white z-40 overflow-y-auto overscroll-contain shadow-2xl border-t border-gray-100 transition-[opacity,transform] duration-200 ${mobileOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"}`}>
         <div className="px-6 py-8 space-y-1">
           <div>
             <button onClick={() => setMobileServicesOpen(!mobileServicesOpen)} className="w-full flex justify-between items-center py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" aria-expanded={mobileServicesOpen}>
@@ -292,7 +292,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             {mobileServicesOpen && (
               <div className="pl-4 py-2 space-y-1">
                 {serviceCategories.map((s) => (
-                  <Link key={s.href} href={s.href} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">{s.label}</Link>
+                  <Link key={s.href} href={s.href} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{s.label}</Link>
                 ))}
               </div>
             )}
@@ -305,7 +305,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             {mobileIndustriesOpen && (
               <div className="pl-4 py-2 space-y-1">
                 {industryList.map((ind) => (
-                  <Link key={ind.href} href={ind.href} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">{ind.label}</Link>
+                  <Link key={ind.href} href={ind.href} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{ind.label}</Link>
                 ))}
               </div>
             )}
@@ -318,14 +318,14 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             { label: t.nav.about, href: "/about" },
             { label: t.nav.contact, href: "/contact" },
           ].map((link) => (
-            <Link key={link.href} href={link.href} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">{link.label}</Link>
+            <Link key={link.href} href={link.href} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{link.label}</Link>
           ))}
           <div className="grid grid-cols-2 gap-3 pt-4">
             <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
-          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search the whole website..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100"><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}
-          <div className="grid grid-cols-2 gap-3 pt-4"><button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button><div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div></div>{searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search the whole website..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100"><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}<Link href="/get-a-quote" className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
+          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search the whole website..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100" onClick={() => { setSearchOpen(false); setMobileOpen(false); }}><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}
+<Link href="/get-a-quote" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
     </nav>
