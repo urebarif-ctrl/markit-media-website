@@ -206,7 +206,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
         const data = (await response.json()) as { results?: BlogSearchResult[] };
         const blogItems: SearchItem[] = (data.results ?? []).map((post) => ({
           label: post.title,
-          href: `/blog/${post.slug}`,
+          href: `/${locale}/blog/${post.slug}`,
           desc: post.excerpt || post.category || "Marketing insight",
           category: "Insights",
         }));
