@@ -656,11 +656,25 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <SectionLabel>Selected Work</SectionLabel>
             <SectionTitle>Brands We&apos;ve Worked With</SectionTitle>
           </Animate>
-          <Stagger stagger={40} animation="fade-up" className="flex flex-wrap justify-center gap-4 mt-10">
-            {["NoorShad", "Vuse", "Cambridge Electrical", "HUBCO", "MeezoTech", "One Homes", "Minhaz Couture", "Pur Health", "American Auto Parts", "Yaar Bazaar"].map((name) => (
-              <div key={name} className="bg-white border border-gray-200 px-6 py-4 text-base font-bold text-black/70">
-                {name}
-              </div>
+          <Stagger stagger={40} animation="fade-up" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-10">
+            {[
+              { name:"NoorShad", service:"Video & Content", href:"/work/noorshad" },
+              { name:"Vuse", service:"Social Media", href:"/work/vuse" },
+              { name:"Cambridge Electrical", service:"Social Campaigns", href:"/work/cambridge-electrical" },
+              { name:"HUBCO", service:"Video & Motion", href:"/work/hubco" },
+              { name:"MeezoTech", service:"Branding & Motion", href:"/work/meezotech" },
+              { name:"One Homes", service:"Video Production", href:"/work/one-homes" },
+              { name:"Minhaz Couture", service:"Web & Social", href:"/work/minhaz-couture" },
+              { name:"Pur Health", service:"Web & Social", href:"/work/pur-health" },
+              { name:"American Auto Parts", service:"Video Production", href:"/work/american-auto-parts" },
+              { name:"Yaar Bazaar", service:"Brand & Creative", href:"/work" },
+            ].map((brand) => (
+              <Link key={brand.name} href={brand.href} className="group bg-white border border-gray-200 p-4 min-h-36 flex flex-col hover:border-black hover:shadow-md transition-all">
+                <span className="w-10 h-10 bg-black text-white flex items-center justify-center text-xs font-extrabold tracking-tight" aria-hidden="true">{brand.name.split(" ").map((part) => part[0]).join("").slice(0, 3)}</span>
+                <span className="font-[family-name:var(--font-display)] text-sm font-extrabold text-black mt-4 group-hover:underline">{brand.name}</span>
+                <span className="text-xs text-gray-400 mt-1">{brand.service}</span>
+                <span className="text-xs font-bold mt-auto pt-3">View work →</span>
+              </Link>
             ))}
           </Stagger>
           <Animate animation="fade-up" delay={100}>
