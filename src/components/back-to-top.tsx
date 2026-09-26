@@ -6,9 +6,27 @@ export function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    function onScroll() { setVisible(window.scrollY > 600); }
+    let frame = 0;
+    let lastVisible = window.scrollY > 600;
+    setVisible(lastVisible);
+
+    function onScroll() {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const nextVisible = window.scrollY > 600;
+        if (nextVisible !== lastVisible) {
+          lastVisible = nextVisible;
+          setVisible(nextVisible);
+        }
+      });
+    }
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (
