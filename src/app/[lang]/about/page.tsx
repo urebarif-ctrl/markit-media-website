@@ -4,6 +4,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import Link from "next/link";
+import Image from "next/image";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 import {
   Target,
@@ -137,12 +138,44 @@ export default function AboutPage() {
             </div>
           </Animate>
           <Animate animation="fade-in" delay={200}>
-            <img
+            <Image
               src="/images/about/team.svg"
               alt="The Markit Media team collaborating"
+              width={900}
+              height={675}
               className="w-full aspect-[4/3] object-cover"
             />
           </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-black text-white" aria-label="Inside the work">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel><span className="text-gray-400">Inside the Work</span></SectionLabel>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.6rem)] font-extrabold tracking-tight mt-3">
+              Strategy Becomes Something You Can See
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed mt-4 max-w-3xl">
+              A look at the creative and delivery side of Markit Media — campaign visuals, product content, social systems, and brand work from our portfolio.
+            </p>
+          </Animate>
+          <Stagger stagger={70} animation="fade-up" className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+            {[
+              { title: "Campaign Creative", image: "/images/portfolio/fashion-feed-hero.jpg" },
+              { title: "Food & Product Visuals", image: "/images/portfolio/foodfolio-hero.jpg" },
+              { title: "Social Content Systems", image: "/images/portfolio/social-media-hero.jpg" },
+              { title: "Brand Identity & Motion", image: "/images/portfolio/logofolio-hero.jpg" },
+            ].map((item) => (
+              <div key={item.title} className="group border border-white/15 overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
+                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-[1.03] transition-transform duration-500 motion-reduce:transition-none" />
+                </div>
+                <div className="p-5"><h3 className="font-bold">{item.title}</h3></div>
+              </div>
+            ))}
+          </Stagger>
+          <div className="mt-8"><Link href="/work" className="inline-flex bg-white text-black px-7 py-3.5 font-bold hover:bg-gray-100">Explore the work →</Link></div>
         </div>
       </section>
 
