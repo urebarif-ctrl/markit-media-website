@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { legacySeoPages, preservedLegacyPaths } from "./src/data/legacy-seo-pages";
 
 const nextConfig: NextConfig = {
   images: {
@@ -18,6 +19,10 @@ const nextConfig: NextConfig = {
           source: "/home-decor-interior-design-online-digital-marketing-agency",
           destination: "/en/industries/interior-design",
         },
+        ...legacySeoPages.map((page) => ({
+          source: page.path,
+          destination: `/en/legacy/${page.id}`,
+        })),
       ],
       afterFiles: [],
       fallback: [],
@@ -64,7 +69,7 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return [
+    const redirects = [
       // === Old page slugs (from Wayback Machine + Google index) ===
       { source: "/about-us", destination: "/en/about", permanent: true },
       { source: "/about-markit-media", destination: "/en/about", permanent: true },
@@ -334,7 +339,7 @@ const nextConfig: NextConfig = {
       { source: "/rss", destination: "/feed.xml", permanent: true },
       { source: "/feed/:path*", destination: "/feed.xml", permanent: true },
       { source: "/blogs/page/:num", destination: "/en/blog", permanent: true },
-      { source: "/blogs/:slug", destination: "/en/blog", permanent: true },
+      // Individual legacy blog URLs with Search Console demand are preserved via beforeFiles rewrites.
       { source: "/:year(\\d{4})/:month(\\d{2})", destination: "/en/blog", permanent: true },
 
       // === WordPress infrastructure ===
@@ -351,6 +356,11 @@ const nextConfig: NextConfig = {
       { source: "/wp-sitemap-taxonomies-category-1.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/wp-sitemap-users-1.xml", destination: "/sitemap.xml", permanent: true },
     ];
+
+    return redirects.filter((redirect) => {
+      if (redirect.source.includes(":")) return true;
+      return !preservedLegacyPaths.has(redirect.source.replace(/\/$/, ""));
+    });
   },
 };
 
