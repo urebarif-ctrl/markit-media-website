@@ -17,7 +17,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
 const LEGACY_URL =
-  "https://themarkitmedia.com/home-decor-interior-design-online-digital-marketing-agency/";
+  "https://themarkitmedia.com/home-decor-interior-design-online-digital-marketing-agency";
 
 export const metadata: Metadata = {
   title: "Home Decor & Interior Design Online Digital Marketing Agency",
