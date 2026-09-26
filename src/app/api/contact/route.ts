@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { saveFormSubmission } from "@/lib/mongodb";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 function limited(ip:string){const now=Date.now(),e=rateLimitMap.get(ip);if(!e||now>e.resetTime){rateLimitMap.set(ip,{count:1,resetTime:now+60_000});return false;}e.count++;return e.count>5;}
@@ -20,6 +21,7 @@ export async function POST(request:NextRequest){
   if(!data.name||data.name.length<2)return NextResponse.json({error:"Name is required."},{status:400});
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))return NextResponse.json({error:"A valid email address is required."},{status:400});
   if(!data.message||data.message.length<5)return NextResponse.json({error:"Please enter a message."},{status:400});
+  try{await saveFormSubmission("lead",data);}catch(e){console.error("Failed to save lead to MongoDB",e);}
   try{await saveToSheet(data);}catch(e){console.error("Failed to save lead to Google Sheets",e);}
   if(!process.env.RESEND_API_KEY)return NextResponse.json({error:"We could not send your message. Please email ciao@themarkitmedia.com directly."},{status:503});
   const resend=new Resend(process.env.RESEND_API_KEY);const from=process.env.RESEND_FROM_EMAIL||"Markit Media <contact@themarkitmedia.com>";const label=serviceLabel(data.service);
