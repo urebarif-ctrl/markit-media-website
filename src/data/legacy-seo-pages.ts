@@ -227,9 +227,9 @@ export const legacySeoPages: LegacySeoPage[] = [
     "id": "serivce-combination-mark-logo-designs",
     "path": "/serivce-combination-mark-logo-designs",
     "slug": "serivce-combination-mark-logo-designs",
-    "title": "Combination Mark Logo Designs",
-    "kind": "article",
-    "relatedHref": "/services/branding",
+    "title": "Combination Mark Logo Design",
+    "kind": "service",
+    "relatedHref": "/services/branding/logo-design",
     "clicks": 9,
     "impressions": 5654,
     "position": 18.7975
