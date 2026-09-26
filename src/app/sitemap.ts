@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPublishedSlugs, getAllPublishedSlugsWithDates, getAllCategories } from "@/lib/blog";
+import { legacySeoPages } from "@/data/legacy-seo-pages";
 
 const BASE_URL = "https://themarkitmedia.com";
 
@@ -435,7 +436,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
-  const buildDate = new Date("2026-09-23");
+  const buildDate = new Date("2026-09-26");
+
+  for (const page of legacySeoPages) {
+    entries.push({
+      url: `${BASE_URL}${page.path}/`,
+      lastModified: buildDate,
+      changeFrequency: "monthly",
+      priority: page.clicks > 0 || page.impressions >= 1000 ? 0.8 : 0.6,
+    });
+  }
 
   for (const locale of locales) {
     for (const page of staticPages) {
