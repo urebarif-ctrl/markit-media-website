@@ -33,7 +33,7 @@ export async function generateMetadata({
   const page = legacySeoPageById.get(id);
   if (!page) return {};
 
-  const canonical = `${BASE_URL}${page.path}/`;
+  const canonical = `${BASE_URL}${page.path}`;
   const description = getDescription(page);
 
   return {
@@ -246,7 +246,7 @@ export default async function LegacySeoPage({
   const area = topicArea(page);
   const framework = articleFramework(area);
   const faq = faqFor(page);
-  const canonical = `${BASE_URL}${page.path}/`;
+  const canonical = `${BASE_URL}${page.path}`;
   const description = getDescription(page);
   const isBeginnersWebsiteGuide = page.id === "beginners-guide-to-website-development";
 
