@@ -2251,3 +2251,66 @@ export const legacySeoPages: LegacySeoPage[] = [
 
 export const legacySeoPageById = new Map(legacySeoPages.map((page) => [page.id, page]));
 export const preservedLegacyPaths = new Set(legacySeoPages.map((page) => page.path));
+
+export const legacySeoAliases = [
+  {
+    "source": "/blogs/best-animation-software-for-creators-and-professionals",
+    "destination": "/best-animation-software-for-creators-and-professionals"
+  },
+  {
+    "source": "/blogs/how-to-create-a-winning-seo-strategy-for-a-new-website",
+    "destination": "/how-to-create-a-winning-seo-strategy-for-a-new-website"
+  },
+  {
+    "source": "/blogs/best-practices-for-choosing-a-domain-name-in-2025",
+    "destination": "/best-practices-for-choosing-a-domain-name-in-2025"
+  },
+  {
+    "source": "/blogs/social-media-automation-tools-2025",
+    "destination": "/social-media-automation-tools-2025"
+  },
+  {
+    "source": "/blogs/15-top-trends-of-social-media-in-2026",
+    "destination": "/15-top-trends-of-social-media-in-2026"
+  },
+  {
+    "source": "/blogs/difference-between-graphic-designers-and-graphic-illustrators",
+    "destination": "/difference-between-graphic-designers-and-graphic-illustrators"
+  },
+  {
+    "source": "/blogs/the-synergy-of-bpo-and-digital-marketing-a-winning-combination",
+    "destination": "/the-synergy-of-bpo-and-digital-marketing-a-winning-combination"
+  },
+  {
+    "source": "/blogs/blog-top-10-tools-for-social-media-management-2025",
+    "destination": "/blog-top-10-tools-for-social-media-management-2025"
+  },
+  {
+    "source": "/blogs/influencer-marketing-vs-ppc-advertising",
+    "destination": "/influencer-marketing-vs-ppc-advertising"
+  },
+  {
+    "source": "/blogs/the-role-of-chatbots-in-enhancing-digital-marketing-efforts",
+    "destination": "/the-role-of-chatbots-in-enhancing-digital-marketing-efforts"
+  },
+  {
+    "source": "/blogs/a-beginners-guide-to-understanding-online-marketing-metrics",
+    "destination": "/a-beginners-guide-to-understanding-online-marketing-metrics"
+  },
+  {
+    "source": "/blogs/how-to-drive-traffic-to-your-blog-using-social-media",
+    "destination": "/how-to-drive-traffic-to-your-blog-using-social-media"
+  },
+  {
+    "source": "/blogs/how-to-integrate-seo-into-your-website-development-workflow",
+    "destination": "/how-to-integrate-seo-into-your-website-development-workflow"
+  },
+  {
+    "source": "/blogs/top-10-plugins-for-wordpress-seo-optimization",
+    "destination": "/top-10-plugins-for-wordpress-seo-optimization"
+  },
+  {
+    "source": "/blogs/linkedin-summary-examples-to-attract-more-leads",
+    "destination": "/linkedin-summary-examples-to-attract-more-leads"
+  }
+] as const;
