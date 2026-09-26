@@ -33,6 +33,14 @@ const KNOWN_ROUTES = new Set([
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Consolidate the hostname before any path-level routing so Search Console
+  // sees one canonical HTTPS host.
+  if (request.nextUrl.hostname === "www.themarkitmedia.com") {
+    const url = request.nextUrl.clone();
+    url.hostname = "themarkitmedia.com";
+    return NextResponse.redirect(url, 301);
+  }
+
   if (pathname !== "/" && pathname.endsWith("/")) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(0, -1);
@@ -75,7 +83,7 @@ export function proxy(request: NextRequest) {
   if (segments.length === 0) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}`;
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(url, 301);
   }
 
   const first = segments[0];
@@ -83,7 +91,7 @@ export function proxy(request: NextRequest) {
   if (KNOWN_ROUTES.has(first)) {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}/${segments.join("/")}`;
-    return NextResponse.redirect(url);
+    return NextResponse.redirect(url, 301);
   }
 
   if (first.includes("-") && first.length > 10 && segments.length === 1) {
@@ -94,7 +102,7 @@ export function proxy(request: NextRequest) {
 
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(url);
+  return NextResponse.redirect(url, 301);
 }
 
 export const config = {
