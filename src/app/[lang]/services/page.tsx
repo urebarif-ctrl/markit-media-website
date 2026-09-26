@@ -234,28 +234,29 @@ export default function ServicesPage() {
 
       <section className="px-6 lg:px-12 py-12" aria-label="Service categories">
         <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="space-y-8">
+          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {serviceCategories.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="group grid grid-cols-1 md:grid-cols-[200px_1fr_auto] gap-0 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  <div className="aspect-[16/9] md:aspect-auto md:h-full overflow-hidden">
-                    <Image src={s.image} alt={`${s.title} services`} width={400} height={300} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
+                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <div className="relative aspect-[16/8] overflow-hidden bg-gray-100">
+                    <Image src={s.image} alt={`${s.title} services`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-[1.035] transition-transform motion-reduce:transition-none duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                    <div className="absolute left-5 bottom-5 w-11 h-11 bg-white text-black flex items-center justify-center shadow-lg"><Icon size={22} aria-hidden="true" /></div>
                   </div>
-                  <div className="p-6 md:p-8 flex-1">
-                    <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">
-                      {s.title}
-                    </h2>
-                    <p className="text-base text-gray-500 leading-relaxed mb-4">{s.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {s.subServices.map((sub) => (
-                        <span key={sub} className="text-base font-medium text-gray-400 bg-gray-100 px-3 py-1">
-                          {sub}
-                        </span>
+                  <div className="p-6 md:p-8 flex flex-col flex-1 min-h-72">
+                    <div className="flex items-start justify-between gap-5">
+                      <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black group-hover:underline">{s.title}</h2>
+                      <span className="text-xl text-gray-300 group-hover:text-black transition-colors" aria-hidden="true">↗</span>
+                    </div>
+                    <p className="text-base text-gray-500 leading-relaxed mt-3">{s.desc}</p>
+                    <div className="flex flex-wrap gap-2 mt-6">
+                      {s.subServices.slice(0, 5).map((sub) => (
+                        <span key={sub} className="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1.5">{sub}</span>
                       ))}
                     </div>
+                    <span className="mt-auto pt-7 text-sm font-bold text-black">Explore service details →</span>
                   </div>
-                  <span className="text-xl text-gray-400 group-hover:text-black transition-colors motion-reduce:transition-none flex-shrink-0 hidden md:flex items-center pr-8" aria-hidden="true">&rarr;</span>
                 </Link>
               );
             })}

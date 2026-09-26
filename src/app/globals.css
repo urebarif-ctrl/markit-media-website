@@ -218,35 +218,46 @@ h1, h2, h3, h4, h5, h6 {
 .stagger-child > a { display: flex; flex-direction: column; height: 100%; min-width: 0; }
 main h1, main h2, main h3 { overflow-wrap: anywhere; }
 
-/* Compact editorial service mosaic, including two columns on small phones. */
-.service-mosaic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding-bottom: 18px; }
-.service-mosaic > :nth-child(even) { position: relative; top: 18px; }
-.service-tile { position: relative; min-height: 154px; padding: 18px 14px; border: 1px solid #ddd; border-radius: 16px; background: #fff; color: #111; transition: background .25s, box-shadow .25s, transform .25s; }
-.service-mosaic > :nth-child(4n + 1) .service-tile { background: #151515; color: #fff; border-color: #151515; }
-.service-mosaic > :nth-child(4n) .service-tile { background: #eaeaea; }
+/* Equal-height interactive service and tool cards. */
+.service-mosaic { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.service-tile { min-height: 190px; color: #111; border-radius: 16px; }
+.flip-card { display: block !important; position: relative; perspective: 1200px; min-height: 230px; }
+.flip-card-inner { display: block; position: relative; width: 100%; height: 100%; min-height: inherit; transform-style: preserve-3d; transition: transform .5s ease; }
+.flip-card-face { position: absolute; inset: 0; display: flex; flex-direction: column; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: inherit; }
+.flip-card-back { transform: rotateY(180deg); padding: 24px; }
+.service-card-front { padding: 18px 14px; border: 1px solid #ddd; background: #fff; color: #111; }
 .service-tile-icon { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 10px; margin-bottom: 18px; }
-.service-tile-title { font-size: 14px; font-weight: 750; line-height: 1.35; padding-inline-end: 10px; }
+.service-tile-title { display: block; font-size: 14px; font-weight: 750; line-height: 1.35; padding-inline-end: 10px; }
 .service-tile-desc { display: none; }
 .service-tile-arrow { position: absolute; top: 18px; inset-inline-end: 14px; font-size: 20px; opacity: .6; }
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner, .flip-card:focus-within .flip-card-inner { transform: rotateY(180deg); }
+}
+@media (min-width: 640px) {
+  .service-mosaic { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .service-tile { min-height: 230px; }
+  .service-card-front { padding: 24px; }
+  .service-tile-title { font-size: 17px; }
+  .service-tile-desc { display: block; font-size: 14px; line-height: 1.65; opacity: .65; margin-top: 10px; }
+}
+@media (min-width: 1024px) { .service-mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (hover: none) {
+  .flip-card { min-height: 0; }
+  .flip-card-inner { display: grid; gap: 8px; transform: none !important; }
+  .flip-card-face { position: relative; inset: auto; min-height: 190px; backface-visibility: visible; -webkit-backface-visibility: visible; }
+  .flip-card-back { transform: none; min-height: 170px; }
+}
+@media (prefers-reduced-motion: reduce) { .flip-card-inner { transition: none; } }
+
 .resource-card { border-radius: 14px; }
 .resource-card h3 { font-size: 15px; line-height: 1.4; }
 .resource-card p { font-size: 13px; line-height: 1.65; }
 .home-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 85% 15%, #ffffff18, transparent 60%), linear-gradient(120deg, transparent 30%, #ffffff06 50%, transparent 70%); background-size: 150% 150%; animation: hero-drift 12s ease-in-out infinite alternate; }
 .home-hero > div { position: relative; }
 @keyframes hero-drift { from { background-position: 0% 0%; } to { background-position: 100% 70%; } }
-@media (hover: hover) {
-  .service-tile:hover { transform: translateY(-5px); box-shadow: 0 14px 30px #00000014; }
-}
 @media (min-width: 640px) {
-  .service-mosaic { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-  .service-tile { min-height: 214px; padding: 24px; }
-  .service-tile-title { font-size: 17px; }
-  .service-tile-desc { display: block; font-size: 14px; line-height: 1.65; opacity: .65; margin-top: 10px; }
   .resource-card h3 { font-size: 17px; }
   .resource-card p { font-size: 15px; }
-}
-@media (min-width: 1024px) {
-  .service-mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
   /* Avoid continuous paint work on mobile; preserve the static hero treatment. */
@@ -264,8 +275,6 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
   .home-hero::before { animation: none; }
-  .service-tile { transition: none; }
-  .service-tile:hover { transform: none; }
 }
 .animate-on-scroll:focus-within { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {

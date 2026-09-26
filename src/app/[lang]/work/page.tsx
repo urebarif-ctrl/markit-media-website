@@ -7,6 +7,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
+import { WorkServiceTabs } from "@/components/work-service-tabs";
 
 export const metadata: Metadata = {
   title: "Our Work — Selected Projects & Portfolio",
@@ -291,21 +292,8 @@ export default function WorkPage() {
             <SectionLabel>By Service</SectionLabel>
             <SectionTitle>Work Organized by Expertise</SectionTitle>
           </Animate>
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {serviceCategories.map((cat) => (
-              <Link key={cat.title} href={cat.href} className="group bg-white border border-gray-200 p-8 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{cat.title}</h3>
-                <p className="text-base text-gray-500 leading-relaxed mb-4">{cat.desc}</p>
-                {cat.clients.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {cat.clients.map((c) => (
-                      <span key={c} className="text-base text-gray-400 border border-gray-100 px-2 py-0.5">{c}</span>
-                    ))}
-                  </div>
-                )}
-              </Link>
-            ))}
-          </Stagger>
+          <WorkServiceTabs categories={serviceCategories} projects={featuredProjects} />
+
         </div>
       </section>
 

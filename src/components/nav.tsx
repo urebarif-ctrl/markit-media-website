@@ -366,6 +366,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           <Link href="/work" className={`${navLinkClass} px-3`}>Work</Link>
           <Link href="/case-studies" className={`${navLinkClass} px-3`}>Case Studies</Link>
           <Link href="/blog" className={`${navLinkClass} px-3`}>Insights</Link>
+          <Link href="/tools" className={`${navLinkClass} px-3`}>Tools</Link>
           <Link href="/about" className={`${navLinkClass} px-3`}>About</Link>
 
           <div className="h-6 w-px bg-current opacity-15 mx-1" aria-hidden="true" />
@@ -425,6 +426,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             { label: t.nav.work, href: "/work" },
             { label: t.nav.caseStudies, href: "/case-studies" },
             { label: t.nav.insights, href: "/blog" },
+            { label: "Tools", href: "/tools" },
             { label: "Resources", href: "/resources" },
             { label: t.nav.about, href: "/about" },
             { label: t.nav.contact, href: "/contact" },

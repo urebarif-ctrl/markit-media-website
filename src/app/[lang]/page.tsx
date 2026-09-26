@@ -37,18 +37,18 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { icon: Megaphone, title: "Performance Marketing", desc: "Meta Ads, Google Ads, PPC campaigns that convert.", href: "/services/performance-marketing" },
-  { icon: Search, title: "SEO", desc: "Technical, local, and content SEO to dominate search.", href: "/services/seo" },
-  { icon: Share2, title: "Social Media", desc: "Strategy, content creation, and community management.", href: "/services/social-media" },
-  { icon: Code, title: "Website Development", desc: "WordPress, Shopify, Next.js, and custom builds.", href: "/services/website-development" },
-  { icon: Palette, title: "Branding", desc: "Brand strategy, logo design, and visual identity.", href: "/services/branding" },
-  { icon: Video, title: "Video Production", desc: "Production, editing, reels, and motion graphics.", href: "/services/video-production" },
-  { icon: Bot, title: "AI Solutions", desc: "Chatbots, marketing automation, and AI consulting.", href: "/services/ai" },
-  { icon: Mail, title: "Email Marketing", desc: "Campaigns, automation, and list management.", href: "/services/email-marketing" },
-  { icon: FileText, title: "Content Marketing", desc: "Copywriting, content strategy, and SEO content.", href: "/services/content-marketing" },
-  { icon: TrendingUp, title: "Paid Advertising", desc: "Programmatic advertising and media buying.", href: "/services/paid-advertising" },
-  { icon: BarChart3, title: "Digital Marketing", desc: "Analytics, CRM, ORM, and fractional CMO.", href: "/services/digital-marketing" },
-  { icon: Briefcase, title: "BPO Services", desc: "Business process outsourcing and operations.", href: "/services/bpo" },
+  { icon: Megaphone, title: "Performance Marketing", desc: "Meta Ads, Google Ads, PPC campaigns that convert.", detail: "Build measurable acquisition systems around intent, creative testing, conversion tracking, and disciplined budget allocation.", href: "/services/performance-marketing" },
+  { icon: Search, title: "SEO", desc: "Technical, local, and content SEO to dominate search.", detail: "Improve crawlability, local visibility, topical authority, and organic conversion paths with an accountable search roadmap.", href: "/services/seo" },
+  { icon: Share2, title: "Social Media", desc: "Strategy, content creation, and community management.", detail: "Turn the feed into a consistent brand channel with content systems, community management, campaigns, and reporting.", href: "/services/social-media" },
+  { icon: Code, title: "Website Development", desc: "WordPress, Shopify, Next.js, and custom builds.", detail: "Design and build fast, conversion-focused websites with SEO-ready architecture, analytics, and scalable content foundations.", href: "/services/website-development" },
+  { icon: Palette, title: "Branding", desc: "Brand strategy, logo design, and visual identity.", detail: "Create a usable identity system covering positioning, visual language, brand assets, and real-world digital application.", href: "/services/branding" },
+  { icon: Video, title: "Video Production", desc: "Production, editing, reels, and motion graphics.", detail: "Plan and produce campaign videos, reels, motion graphics, product content, and edits built for the channels where they run.", href: "/services/video-production" },
+  { icon: Bot, title: "AI Solutions", desc: "Chatbots, marketing automation, and AI consulting.", detail: "Connect practical AI workflows to marketing, lead handling, support, content operations, and repetitive internal processes.", href: "/services/ai" },
+  { icon: Mail, title: "Email Marketing", desc: "Campaigns, automation, and list management.", detail: "Build lifecycle campaigns, segmentation, nurture flows, and retention automations tied to measurable customer actions.", href: "/services/email-marketing" },
+  { icon: FileText, title: "Content Marketing", desc: "Copywriting, content strategy, and SEO content.", detail: "Create useful content mapped to search intent, buyer questions, campaign needs, and the decisions prospects make before converting.", href: "/services/content-marketing" },
+  { icon: TrendingUp, title: "Paid Advertising", desc: "Programmatic advertising and media buying.", detail: "Plan channel mix, audiences, creative, bidding, measurement, and media allocation around business outcomes instead of impressions alone.", href: "/services/paid-advertising" },
+  { icon: BarChart3, title: "Digital Marketing", desc: "Analytics, CRM, ORM, and fractional CMO.", detail: "Bring channels, reporting, CRM, reputation, and growth planning into one operating view for clearer decisions.", href: "/services/digital-marketing" },
+  { icon: Briefcase, title: "BPO Services", desc: "Business process outsourcing and operations.", detail: "Extend execution capacity with structured support for customer operations, appointment setting, sales support, and repeatable workflows.", href: "/services/bpo" },
 ];
 
 const industries = [
@@ -276,7 +276,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <p className="text-sm font-bold text-gray-500 uppercase tracking-[0.18em] text-center">Platforms & services we work with</p>
             <p className="text-base text-gray-500 text-center mt-2 mb-7">Explore the specialist service behind each platform.</p>
           </Animate>
-          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-3">
             {[
               ["Meta Ads","/services/performance-marketing/meta-ads","/brand/meta.svg"],
               ["Google Ads","/services/performance-marketing/google-ads","/brand/google-ads.svg"],
@@ -288,8 +288,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               ["LinkedIn","/services/performance-marketing/linkedin-ads","/brand/linkedin.svg"],
               ["Shopify","/services/website-development/shopify","https://cdn.simpleicons.org/shopify"],
               ["WordPress","/services/website-development/wordpress","https://cdn.simpleicons.org/wordpress"],
-            ].map(([label,href,src])=><Link key={label} href={href} aria-label={`Explore ${label} services`} className="group min-h-24 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-md hover:-translate-y-0.5 transition-all">
-              <img src={src} alt={`${label} logo`} width="34" height="34" loading="lazy" className="h-9 w-9 object-contain"/>
+              ["Next.js","/services/website-development/nextjs-websites","https://cdn.simpleicons.org/nextdotjs"],
+              ["Figma","/tools","https://cdn.simpleicons.org/figma"],
+              ["GA4","/tools","https://cdn.simpleicons.org/googleanalytics"],
+              ["Search Console","/tools","https://cdn.simpleicons.org/googlesearchconsole"],
+              ["HubSpot","/tools","https://cdn.simpleicons.org/hubspot"],
+              ["Klaviyo","/tools","https://cdn.simpleicons.org/klaviyo"],
+            ].map(([label,href,src])=><Link key={label} href={href} aria-label={`Explore ${label}`} className="group min-h-28 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all">
+              <Image src={src} alt={`${label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
               <span className="text-[11px] font-bold text-gray-600 group-hover:text-black text-center">{label}</span>
             </Link>)}
           </div>
@@ -310,14 +316,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="service-tile group focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4">
-                  <div className="service-tile-icon">
-                    <Icon size={22} strokeWidth={2} aria-hidden="true" />
-                  </div>
-                  <h3 className="service-tile-title">
-                    {s.title}
-                  </h3>
-                  <p className="service-tile-desc">{s.desc}</p><span className="service-tile-arrow" aria-hidden="true">↗</span>
+                <Link key={s.href} href={s.href} className="service-tile flip-card group focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4">
+                  <span className="flip-card-inner">
+                    <span className="flip-card-face service-card-front">
+                      <span className="service-tile-icon"><Icon size={22} strokeWidth={2} aria-hidden="true" /></span>
+                      <span className="service-tile-title">{s.title}</span>
+                      <span className="service-tile-desc">{s.desc}</span>
+                      <span className="service-tile-arrow" aria-hidden="true">↗</span>
+                    </span>
+                    <span className="flip-card-face flip-card-back bg-black text-white">
+                      <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/50">What we do</span>
+                      <span className="font-[family-name:var(--font-display)] text-lg font-extrabold mt-4">{s.title}</span>
+                      <span className="text-sm leading-relaxed text-white/70 mt-3">{s.detail}</span>
+                      <span className="mt-auto pt-5 text-sm font-bold">Explore service →</span>
+                    </span>
+                  </span>
                 </Link>
               );
             })}
@@ -475,10 +488,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               Markets We Serve
             </h2>
           </Animate>
-          <Stagger stagger={100} animation="fade-up" className="flex flex-wrap justify-center gap-4 mt-12">
+          <Stagger stagger={100} animation="fade-up" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
             {markets.map((m) => (
-              <Link key={m.name} href={m.href} className="group flex items-center gap-3 px-5 py-3.5 border border-white/20 text-base font-medium text-gray-300 hover:border-white/70 hover:bg-white hover:text-black transition-all motion-reduce:transition-none">
-                <span className="text-2xl leading-none" aria-hidden="true">{m.flag}</span>
+              <Link key={m.name} href={m.href} className="group flex items-center justify-between gap-4 px-6 py-5 border border-white/20 text-base font-semibold text-gray-200 hover:border-white/70 hover:bg-white hover:text-black transition-all motion-reduce:transition-none">
+                <span className="text-3xl leading-none" aria-hidden="true">{m.flag}</span>
                 <span>{m.name}</span>
                 <span className="text-white/35 group-hover:text-black/50" aria-hidden="true">&rarr;</span>
               </Link>
@@ -520,13 +533,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 bg-white border-b border-gray-200" aria-label="Credentials and proof">
+      <section className="px-6 lg:px-12 py-20 bg-[#f7f5ff] border-y border-[#e8e2ff]" aria-label="Credentials and proof">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up"><SectionLabel>Platform Experience</SectionLabel><SectionTitle>Built Inside the Platforms That Drive Growth</SectionTitle><SectionDesc>Hands-on strategy and execution across paid media and commerce — from campaign structure and creative testing to storefronts, measurement, and optimization.</SectionDesc></Animate>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">{[
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">{[
             { label: "Paid Search", title: "Google Ads", logo: "/brand/google-ads.svg", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
             { label: "Paid Social", title: "Meta", logo: "/brand/meta.svg", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
             { label: "E-commerce", title: "Shopify", logo: "https://cdn.simpleicons.org/shopify", href: "/services/website-development/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+            { label: "CMS", title: "WordPress", logo: "https://cdn.simpleicons.org/wordpress", href: "/services/website-development/wordpress", desc: "Flexible content-driven builds, landing pages, performance improvements, migrations, and ongoing website support." },
+            { label: "Web Engineering", title: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs", href: "/services/website-development/nextjs-websites", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
+            { label: "Measurement", title: "Google Analytics", logo: "https://cdn.simpleicons.org/googleanalytics", href: "/tools", desc: "Event strategy, conversion measurement, attribution context, reporting, and decision-ready performance analysis." },
           ].map(item=><Link key={item.title} href={item.href} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
             <div className="flex items-start justify-between gap-5">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-white border border-gray-200 flex items-center justify-center shadow-sm">
@@ -598,18 +614,28 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
             {[
-              { title: "ROI Calculator", tag:"Performance", icon:"↗", desc: "Estimate marketing return from spend, revenue and campaign economics.", href: "/resources/roi-calculator" },
-              { title: "Website Grader", tag:"Website", icon:"◎", desc: "Review performance, SEO and UX signals in one practical scorecard.", href: "/resources/website-grader" },
-              { title: "Headline Analyzer", tag:"Content", icon:"Aa", desc: "Pressure-test headlines for ads, landing pages, blogs and email.", href: "/resources/headline-analyzer" },
-              { title: "Budget Calculator", tag:"Media Planning", icon:"$", desc: "Build a starting channel allocation around your available marketing budget.", href: "/resources/budget-calculator" },
-              { title: "SEO Audit Score", tag:"SEO", icon:"⌕", desc: "Check key technical and on-page factors and identify optimization priorities.", href: "/resources/seo-audit-score" },
-              { title: "Persona Builder", tag:"Strategy", icon:"◉", desc: "Turn audience assumptions into a more structured buyer-persona brief.", href: "/resources/persona-builder" },
-              { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", href: "/resources/competitor-analysis" },
-              { title: "Service Finder Quiz", tag:"Start Here", icon:"→", desc: "Answer a few questions and find the Markit Media services most relevant to you.", href: "/services/finder" },
+              { title: "ROI Calculator", tag:"Performance", icon:"↗", desc: "Estimate marketing return from spend, revenue and campaign economics.", example:"Compare a campaign's revenue against media spend before deciding whether to scale.", href: "/resources/roi-calculator" },
+              { title: "Website Grader", tag:"Website", icon:"◎", desc: "Review performance, SEO and UX signals in one practical scorecard.", example:"Spot obvious speed, search and conversion issues before planning a redesign.", href: "/resources/website-grader" },
+              { title: "Headline Analyzer", tag:"Content", icon:"Aa", desc: "Pressure-test headlines for ads, landing pages, blogs and email.", example:"Compare headline options before putting paid traffic behind a landing page.", href: "/resources/headline-analyzer" },
+              { title: "Budget Calculator", tag:"Media Planning", icon:"$", desc: "Build a starting channel allocation around your available marketing budget.", example:"Turn a monthly budget into a practical starting split across acquisition channels.", href: "/resources/budget-calculator" },
+              { title: "SEO Audit Score", tag:"SEO", icon:"⌕", desc: "Check key technical and on-page factors and identify optimization priorities.", example:"Create a prioritized SEO punch list instead of guessing what to fix first.", href: "/resources/seo-audit-score" },
+              { title: "Persona Builder", tag:"Strategy", icon:"◉", desc: "Turn audience assumptions into a more structured buyer-persona brief.", example:"Turn scattered customer notes into a brief your ads, content and sales team can use.", href: "/resources/persona-builder" },
+              { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", example:"Compare competitors side by side before choosing your offer, messaging and channel plan.", href: "/resources/competitor-analysis" },
+              { title: "Service Finder Quiz", tag:"Start Here", icon:"→", desc: "Answer a few questions and find the Markit Media services most relevant to you.", example:"Get a faster starting point when you know the goal but not which marketing service fits.", href: "/services/finder" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="group bg-white border border-gray-200 hover:border-black hover:-translate-y-1 hover:shadow-lg transition-all p-6 min-h-56 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <div className="flex items-start justify-between gap-3"><span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">{r.tag}</span><span className="w-10 h-10 bg-black text-white flex items-center justify-center font-extrabold text-lg">{r.icon}</span></div>
-                <div className="mt-auto pt-8"><h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline">{r.title}</h3><p className="text-sm text-gray-500 leading-relaxed mt-3">{r.desc}</p><span className="inline-block mt-5 text-sm font-bold">Open free tool →</span></div>
+              <Link key={r.href} href={r.href} className="flip-card tool-flip-card group min-h-64 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <span className="flip-card-inner">
+                  <span className="flip-card-face bg-white border border-gray-200 p-6 flex flex-col">
+                    <span className="flex items-start justify-between gap-3"><span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">{r.tag}</span><span className="w-10 h-10 bg-black text-white flex items-center justify-center font-extrabold text-lg">{r.icon}</span></span>
+                    <span className="mt-auto pt-8"><span className="block font-[family-name:var(--font-display)] text-lg font-extrabold text-black">{r.title}</span><span className="block text-sm text-gray-500 leading-relaxed mt-3">{r.desc}</span><span className="inline-block mt-5 text-sm font-bold">Hover for an example →</span></span>
+                  </span>
+                  <span className="flip-card-face flip-card-back bg-black text-white border border-black p-6 flex flex-col">
+                    <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/50">How it helps</span>
+                    <span className="font-[family-name:var(--font-display)] text-lg font-extrabold mt-5">{r.title}</span>
+                    <span className="text-sm text-white/70 leading-relaxed mt-4">{r.example}</span>
+                    <span className="mt-auto pt-6 text-sm font-bold">Open free tool →</span>
+                  </span>
+                </span>
               </Link>
             ))}
           </Stagger>

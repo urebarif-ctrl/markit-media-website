@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ToolsExplorer } from "@/components/tools-explorer";
 
 export const metadata: Metadata = {
   title: "Tools & Platforms — Technology We Use",
@@ -130,26 +131,7 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      {categories.map((cat, ci) => (
-        <section key={cat.title} className={`px-6 lg:px-12 py-12 ${ci % 2 === 1 ? "bg-gray-50" : ""}`} aria-label={cat.title}>
-          <div className="max-w-7xl mx-auto">
-            <Animate animation="fade-up">
-              <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6">{cat.title}</h2>
-            </Animate>
-            <Stagger stagger={40} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1">
-              {cat.tools.map((tool) => (
-                <div key={tool.name} className="flex items-start gap-3 py-3 border-b border-gray-100">
-                  <span className="mt-1.5 w-2 h-2 bg-black rounded-full flex-shrink-0" aria-hidden="true" />
-                  <div>
-                    <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black">{tool.name}</h3>
-                    <p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </Stagger>
-          </div>
-        </section>
-      ))}
+      <ToolsExplorer categories={categories} />
 
       <section aria-label="Tools Are Just Tools" className="px-6 lg:px-12 py-16">
         <div className="max-w-4xl mx-auto">
