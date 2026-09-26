@@ -224,7 +224,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
       window.clearTimeout(timer);
       controller.abort();
     };
-  }, [searchQuery, normalizedQuery]);
+  }, [searchQuery, normalizedQuery, locale]);
 
   useEffect(() => {
     function handleScroll() { setScrolled(window.scrollY > 20); }
