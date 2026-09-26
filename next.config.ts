@@ -321,11 +321,14 @@ const nextConfig: NextConfig = {
       { source: "/portfolio/elite-indo-pak-restaurant-marketing-case-study", destination: "/en/work/elite", permanent: true },
       { source: "/portfolio/elite-indo-pak-restaurant", destination: "/en/work/elite", permanent: true },
       { source: "/portfolio/velo", destination: "/en/work/vuse", permanent: true },
-      { source: "/portfolio/chefiality-complete-chef-specialty-store", destination: "/en/case-studies", permanent: true },
-      { source: "/portfolio/food-brand-marketing-agency-case-stydy-chefiality-store", destination: "/en/case-studies", permanent: true },
-      { source: "/portfolio/my-fresh-fruits", destination: "/en/case-studies", permanent: true },
+      { source: "/portfolio/chefiality-complete-chef-specialty-store", destination: "/en/work/chefiality", permanent: true },
+      { source: "/portfolio/food-brand-marketing-agency-case-stydy-chefiality-store", destination: "/en/work/chefiality", permanent: true },
+      { source: "/portfolio/my-fresh-fruits", destination: "/en/work/my-fresh-fruits", permanent: true },
       { source: "/portfolio/jason-for-georgia", destination: "/en/case-studies", permanent: true },
       { source: "/portfolio/healthcare-marketing-case-study-jason-for-georgia", destination: "/en/case-studies", permanent: true },
+
+      { source: "/website-portfolio", destination: "/en/work", permanent: true },
+      { source: "/creative-portfolio", destination: "/en/work", permanent: true },
 
       // === Portfolio/case study redirects ===
       { source: "/portfolio/:slug", destination: "/en/work", permanent: true },

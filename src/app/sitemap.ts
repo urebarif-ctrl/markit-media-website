@@ -416,6 +416,8 @@ const staticPages = [
   "/work/fashion-feed",
   "/work/social-media-designs",
   "/work/foodfolio",
+  "/work/chefiality",
+  "/work/my-fresh-fruits",
   "/results",
   "/capabilities",
   "/technology",
