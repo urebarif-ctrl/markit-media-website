@@ -63,6 +63,9 @@ function topicArea(page: LegacySeoPage) {
 }
 
 function getDescription(page: LegacySeoPage) {
+  if (page.id === "beginners-guide-to-website-development") {
+    return "A beginner-friendly guide to website development covering planning, domains, hosting, frontend, backend, CMS options, SEO, analytics, testing and launch.";
+  }
   if (page.kind === "service") {
     return `${page.title} services from Markit Media, with a clear approach, deliverables, process, measurement and next steps for businesses evaluating this capability.`;
   }
@@ -172,9 +175,9 @@ function faqFor(page: LegacySeoPage) {
     ];
   }
   return [
-    ["Why was this guide restored at its original URL?", "This topic continues to attract search demand. Keeping the original URL lets readers reach the information they expected while preserving the page history instead of sending them to an unrelated section."],
-    ["Is the information intended as a starting point or a complete plan?", "Use it as a practical framework. The exact implementation depends on your business, technology, market, audience and objectives."],
-    ["Where can I get help applying this to my business?", "Use the related service link on this page or request a quote. We can review the current setup and recommend the most relevant next steps."],
+    ["What should I focus on first?", "Start with the main outcome you want, then identify the audience, the decisions they need to make and the simplest sequence of work that can move that outcome forward."],
+    ["Is this a complete plan for every business?", "No. Use it as a practical framework. The exact implementation depends on your business model, technology, market, audience and objectives."],
+    ["When should I get expert help?", "Expert support is useful when the topic affects revenue, search visibility, technical risk, paid media efficiency or a customer journey that spans several channels or systems."],
   ];
 }
 
