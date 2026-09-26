@@ -17,6 +17,8 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["600", "700", "800"],
 });
 
+const isProduction = process.env.VERCEL_ENV === "production" || process.env.PRODUCTION_DEPLOY === "true";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   },
   description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
   metadataBase: new URL("https://themarkitmedia.com"),
-  robots: process.env.PRODUCTION_DEPLOY === "true"
+  robots: isProduction
     ? { index: true, follow: true }
     : { index: false, follow: false },
   icons: {
