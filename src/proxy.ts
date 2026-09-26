@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { preservedLegacyPaths } from "@/data/legacy-seo-pages";
 
 const locales = ["en", "ar", "ur"];
 const defaultLocale = "en";
+
+const PRESERVED_REWRITE_PATHS = new Set([
+  ...preservedLegacyPaths,
+  "/home-decor-interior-design-online-digital-marketing-agency",
+]);
 
 const CATEGORY_REDIRECTS: Record<string, string> = {
   "social-media-marketing": "social-media",
@@ -31,6 +37,13 @@ export function proxy(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.slice(0, -1);
     return NextResponse.redirect(url, 301);
+  }
+
+  // Let Search Console-proven legacy URLs continue to Next.js rewrites.
+  // Proxy runs before beforeFiles rewrites in Next.js 16, so redirecting these
+  // paths here would incorrectly collapse ranked pages into /en/blog.
+  if (PRESERVED_REWRITE_PATHS.has(pathname)) {
+    return NextResponse.next();
   }
 
   const pathnameHasLocale = locales.some(
