@@ -432,7 +432,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en"];
   const entries: MetadataRoute.Sitemap = [
     {
-      url: `${BASE_URL}/home-decor-interior-design-online-digital-marketing-agency/`,
+      url: `${BASE_URL}/home-decor-interior-design-online-digital-marketing-agency`,
       lastModified: new Date("2026-09-26"),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -441,8 +441,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const buildDate = new Date("2026-09-26");
 
   for (const page of legacySeoPages) {
+    // Service and industry legacy URLs with clear modern equivalents use permanent redirects.
+    // Keep redirecting URLs out of the sitemap; preserve only legacy articles as indexable URLs.
+    if (page.kind !== "article") continue;
+
     entries.push({
-      url: `${BASE_URL}${page.path}/`,
+      url: `${BASE_URL}${page.path}`,
       lastModified: buildDate,
       changeFrequency: "monthly",
       priority: page.clicks > 0 || page.impressions >= 1000 ? 0.8 : 0.6,
@@ -498,5 +502,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return entries;
+  return Array.from(new Map(entries.map((entry) => [entry.url, entry])).values());
 }
