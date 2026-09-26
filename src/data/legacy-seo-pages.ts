@@ -2301,6 +2301,28 @@ export const legacySeoPages: LegacySeoPage[] = [
     "clicks": 0,
     "impressions": 122,
     "position": 73.9672
+  },
+  {
+    "id": "online-reviews-the-voice-of-your-customers",
+    "path": "/online-reviews-the-voice-of-your-customers",
+    "slug": "online-reviews-the-voice-of-your-customers",
+    "title": "Online Reviews: The Voice of Your Customers",
+    "kind": "article",
+    "relatedHref": "/services/digital-marketing",
+    "clicks": 0,
+    "impressions": 26,
+    "position": 28.7308
+  },
+  {
+    "id": "blogging-websites",
+    "path": "/blogging-websites",
+    "slug": "blogging-websites",
+    "title": "Blogging Websites",
+    "kind": "article",
+    "relatedHref": "/services/website-development",
+    "clicks": 0,
+    "impressions": 25,
+    "position": 7.2
   }
 ];
 
@@ -2375,5 +2397,21 @@ export const legacySeoAliases = [
   {
     "source": "/blog/marketing-mix-modeling-explained-simply",
     "destination": "/en/blog/marketing-mix-modeling-explained-simply"
+  },
+  {
+    "source": "/blog/cohort-analysis-for-customer-retention",
+    "destination": "/en/blog/cohort-analysis-for-customer-retention"
+  },
+  {
+    "source": "/blog/predictive-lead-scoring-ai-identifies-prospects",
+    "destination": "/en/blog/predictive-lead-scoring-ai-identifies-prospects"
+  },
+  {
+    "source": "/blog/marketing-dashboard-actually-gets-used",
+    "destination": "/en/blog/build-marketing-dashboard-actually-gets-used"
+  },
+  {
+    "source": "/en/blog/marketing-dashboard-actually-gets-used",
+    "destination": "/en/blog/build-marketing-dashboard-actually-gets-used"
   }
 ] as const;
