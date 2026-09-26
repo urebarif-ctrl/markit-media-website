@@ -17,15 +17,12 @@ import { JsonLd } from "@/components/json-ld";
 import { SectionDesc, SectionLabel, SectionTitle } from "@/components/section";
 import {
   legacySeoPageById,
-  legacySeoPages,
   type LegacySeoPage,
 } from "@/data/legacy-seo-pages";
 
 const BASE_URL = "https://themarkitmedia.com";
 
-export function generateStaticParams() {
-  return legacySeoPages.map((page) => ({ id: page.id }));
-}
+export const revalidate = 86400;
 
 export async function generateMetadata({
   params,
