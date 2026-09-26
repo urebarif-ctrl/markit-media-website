@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { legacySeoPages, preservedLegacyPaths } from "./src/data/legacy-seo-pages";
+import { legacySeoAliases, legacySeoPages, preservedLegacyPaths } from "./src/data/legacy-seo-pages";
 
 const nextConfig: NextConfig = {
   images: {
@@ -70,6 +70,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     const redirects = [
+      ...legacySeoAliases.map((alias) => ({ ...alias, permanent: true as const })),
+
       // === Old page slugs (from Wayback Machine + Google index) ===
       { source: "/about-us", destination: "/en/about", permanent: true },
       { source: "/about-markit-media", destination: "/en/about", permanent: true },
