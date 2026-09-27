@@ -14,6 +14,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const loadedAt = useRef(Date.now());
 
   async function handleSubmit(e: FormEvent) {
@@ -24,22 +25,31 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
       return;
     }
     setSending(true);
+    setError("");
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: "Tool Lead",
           email,
-          message: `Lead from ${toolName} tool page. Wants results emailed.`,
+          message: `Lead from ${toolName} tool page. Requested follow-up by email.`,
           service: "general-inquiry",
+          source: `${toolName} Tool`,
+          landingPage: window.location.pathname,
         }),
       });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({ error: "Could not submit your email." }));
+        setError(data.error || "Could not submit your email.");
+        return;
+      }
+      setSubmitted(true);
     } catch {
-      // silent
+      setError("Network error. Please try again.");
+    } finally {
+      setSending(false);
     }
-    setSubmitted(true);
-    setSending(false);
   }
 
   return (
@@ -55,7 +65,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
           </p>
           {submitted ? (
             <div className="bg-black text-white px-6 py-4 inline-block">
-              <p className="font-bold text-base">Check your inbox! We've sent your results.</p>
+              <p className="font-bold text-base">Thanks — your request was received. Check your inbox for our follow-up.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
@@ -67,6 +77,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
                 required
                 className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none min-h-[44px]"
               />
+              {error && <p className="text-sm text-red-600 sm:col-span-2" role="alert">{error}</p>}
               <button
                 type="submit"
                 disabled={sending}
