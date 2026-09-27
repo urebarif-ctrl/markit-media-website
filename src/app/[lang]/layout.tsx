@@ -6,6 +6,8 @@ import { Footer } from "@/components/footer";
 import { BackToTop } from "@/components/back-to-top";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Analytics } from "@/components/analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
 import "../globals.css";
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
   icons: {
     icon: [
-      { url: "/favicon.svg?v=3", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon-animated.svg?v=4", type: "image/svg+xml", sizes: "any" },
       { url: "/favicon.ico?v=3", sizes: "32x32" },
     ],
     apple: "/apple-touch-icon.png",
@@ -88,6 +90,10 @@ export default async function LangLayout({
 
   return (
     <html lang={locale} dir={dir} className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <body className="min-h-full flex flex-col">
         {/* Organization + WebSite schemas live on homepage page.tsx only */}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold">
@@ -112,6 +118,8 @@ export default async function LangLayout({
 
         <CookieConsent />
         <Analytics />
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );
