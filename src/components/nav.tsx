@@ -313,6 +313,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             width={160}
             height={33}
             priority
+            unoptimized
             className={`h-8 w-auto transition-[filter] duration-300 ${isHome && !scrolled ? "brightness-0 invert" : ""}`}
           />
         </Link>
