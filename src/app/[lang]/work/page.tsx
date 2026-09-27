@@ -1,3 +1,4 @@
+import { BrandIcon } from "@/components/brand-icon";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -402,17 +403,17 @@ export default function WorkPage() {
           <p className="text-base text-gray-500 mb-6">See the full library of client showcases, behind-the-scenes content, and creative work across platforms.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {SOCIAL_LINKS.map((s) => {
-              const brand: Record<string,{bg:string;logo:string}> = {
-                YouTube:{bg:"bg-[#FF0000]",logo:"https://cdn.simpleicons.org/youtube/FFFFFF"},
-                Instagram:{bg:"bg-[#E4405F]",logo:"https://cdn.simpleicons.org/instagram/FFFFFF"},
-                LinkedIn:{bg:"bg-[#0A66C2]",logo:"https://cdn.simpleicons.org/linkedin/FFFFFF"},
-                Facebook:{bg:"bg-[#1877F2]",logo:"https://cdn.simpleicons.org/facebook/FFFFFF"},
-                Behance:{bg:"bg-[#1769FF]",logo:"https://cdn.simpleicons.org/behance/FFFFFF"},
-                WhatsApp:{bg:"bg-[#25D366]",logo:"https://cdn.simpleicons.org/whatsapp/FFFFFF"},
+              const brand: Record<string,{bg:string;iconColor:string}> = {
+                YouTube:{bg:"bg-[#FF0000]",iconColor:"#FFFFFF"},
+                Instagram:{bg:"bg-[#E4405F]",iconColor:"#FFFFFF"},
+                LinkedIn:{bg:"bg-[#0A66C2]",iconColor:"#0A66C2"},
+                Facebook:{bg:"bg-[#1877F2]",iconColor:"#FFFFFF"},
+                Behance:{bg:"bg-[#1769FF]",iconColor:"#FFFFFF"},
+                WhatsApp:{bg:"bg-[#25D366]",iconColor:"#FFFFFF"},
               };
               return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`Follow Markit Media on ${s.label}`}
                 className={`inline-flex items-center gap-2 px-4 py-3 text-base font-bold border ${brand[s.label] ? brand[s.label].bg+" text-white border-transparent" : "bg-white text-black border-gray-200"} hover:-translate-y-0.5 hover:shadow-md transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2`}>
-                {brand[s.label] ? <img src={brand[s.label].logo} alt="" width="20" height="20" className="w-5 h-5 object-contain"/> : <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />}{s.label}
+                {brand[s.label] ? <BrandIcon brand={s.label} color={brand[s.label].iconColor} className="w-5 h-5" /> : <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" dangerouslySetInnerHTML={{ __html: s.icon }} />}{s.label}
               </a>
             })}
           </div>
