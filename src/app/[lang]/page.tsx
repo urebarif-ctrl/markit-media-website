@@ -18,6 +18,7 @@ import {
 import { HeroStats } from "@/components/hero-stats";
 import { TypingEffect } from "@/components/typing-effect";
 import { YouTubeEmbed } from "@/components/youtube-embed";
+import { BrandIcon } from "@/components/brand-icon";
 
 export const metadata: Metadata = {
   title: "Markit Media — Full-Stack Digital Marketing Agency",
@@ -278,25 +279,27 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-3">
             {[
-              ["Meta Ads","/services/performance-marketing/meta-ads","/brand/meta.svg"],
-              ["Google Ads","/services/performance-marketing/google-ads","/brand/google-ads.svg"],
-              ["Facebook","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/facebook"],
-              ["Instagram","/services/performance-marketing/meta-ads","https://cdn.simpleicons.org/instagram"],
-              ["Microsoft Ads","/services/performance-marketing/microsoft-ads","/brand/microsoft-ads.svg"],
-              ["YouTube","/services/performance-marketing/youtube-ads","https://cdn.simpleicons.org/youtube"],
-              ["TikTok","/services/performance-marketing/tiktok-ads","https://cdn.simpleicons.org/tiktok"],
-              ["LinkedIn","/services/performance-marketing/linkedin-ads","/brand/linkedin.svg"],
-              ["Shopify","/services/website-development/shopify","https://cdn.simpleicons.org/shopify"],
-              ["WordPress","/services/website-development/wordpress","https://cdn.simpleicons.org/wordpress"],
-              ["Next.js","/services/website-development/nextjs-websites","https://cdn.simpleicons.org/nextdotjs"],
-              ["Figma","/tools","https://cdn.simpleicons.org/figma"],
-              ["GA4","/tools","https://cdn.simpleicons.org/googleanalytics"],
-              ["Search Console","/tools","https://cdn.simpleicons.org/googlesearchconsole"],
-              ["HubSpot","/tools","https://cdn.simpleicons.org/hubspot"],
-              ["Klaviyo","/tools","https://cdn.simpleicons.org/klaviyo"],
-            ].map(([label,href,src])=><Link key={label} href={href} aria-label={`Explore ${label}`} className="group min-h-28 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all">
-              <Image src={src} alt={`${label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
-              <span className="text-[11px] font-bold text-gray-600 group-hover:text-black text-center">{label}</span>
+              {label:"Meta Ads",href:"/services/performance-marketing/meta-ads",src:"/brand/meta.svg"},
+              {label:"Google Ads",href:"/services/performance-marketing/google-ads",src:"/brand/google-ads.svg"},
+              {label:"Facebook",href:"/services/performance-marketing/meta-ads",brand:"Facebook"},
+              {label:"Instagram",href:"/services/performance-marketing/meta-ads",brand:"Instagram"},
+              {label:"Microsoft Ads",href:"/services/performance-marketing/microsoft-ads",src:"/brand/microsoft-ads.svg"},
+              {label:"YouTube",href:"/services/performance-marketing/youtube-ads",brand:"YouTube"},
+              {label:"TikTok",href:"/services/performance-marketing/tiktok-ads",brand:"TikTok"},
+              {label:"LinkedIn",href:"/services/performance-marketing/linkedin-ads",src:"/brand/linkedin.svg"},
+              {label:"Shopify",href:"/services/website-development/shopify",brand:"Shopify"},
+              {label:"WordPress",href:"/services/website-development/wordpress",brand:"WordPress"},
+              {label:"Next.js",href:"/services/website-development/nextjs-websites",brand:"Next.js"},
+              {label:"Figma",href:"/tools",brand:"Figma"},
+              {label:"GA4",href:"/tools",brand:"GA4"},
+              {label:"Search Console",href:"/tools",brand:"Search Console"},
+              {label:"HubSpot",href:"/tools",brand:"HubSpot"},
+              {label:"Klaviyo",href:"/tools",brand:"Klaviyo"},
+            ].map((item)=><Link key={item.label} href={item.href} aria-label={`Explore ${item.label}`} className="group min-h-28 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all">
+              {item.src
+                ? <Image src={item.src} alt={`${item.label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
+                : <BrandIcon brand={item.brand || item.label} title={`${item.label} logo`} className="h-10 w-10" />}
+              <span className="text-[11px] font-bold text-gray-600 group-hover:text-black text-center">{item.label}</span>
             </Link>)}
           </div>
         </div>
