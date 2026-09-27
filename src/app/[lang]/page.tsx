@@ -542,14 +542,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">{[
             { label: "Paid Search", title: "Google Ads", logo: "/brand/google-ads.svg", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
             { label: "Paid Social", title: "Meta", logo: "/brand/meta.svg", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
-            { label: "E-commerce", title: "Shopify", logo: "https://cdn.simpleicons.org/shopify", href: "/services/website-development/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
-            { label: "CMS", title: "WordPress", logo: "https://cdn.simpleicons.org/wordpress", href: "/services/website-development/wordpress", desc: "Flexible content-driven builds, landing pages, performance improvements, migrations, and ongoing website support." },
-            { label: "Web Engineering", title: "Next.js", logo: "https://cdn.simpleicons.org/nextdotjs", href: "/services/website-development/nextjs-websites", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
-            { label: "Measurement", title: "Google Analytics", logo: "https://cdn.simpleicons.org/googleanalytics", href: "/tools", desc: "Event strategy, conversion measurement, attribution context, reporting, and decision-ready performance analysis." },
+            { label: "E-commerce", title: "Shopify", brand: "Shopify", href: "/services/website-development/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+            { label: "CMS", title: "WordPress", brand: "WordPress", href: "/services/website-development/wordpress", desc: "Flexible content-driven builds, landing pages, performance improvements, migrations, and ongoing website support." },
+            { label: "Web Engineering", title: "Next.js", brand: "Next.js", href: "/services/website-development/nextjs-websites", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
+            { label: "Measurement", title: "Google Analytics", brand: "GA4", href: "/tools", desc: "Event strategy, conversion measurement, attribution context, reporting, and decision-ready performance analysis." },
           ].map(item=><Link key={item.title} href={item.href} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
             <div className="flex items-start justify-between gap-5">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-white border border-gray-200 flex items-center justify-center shadow-sm">
-                <Image src={item.logo} alt="" width={36} height={36} className="w-9 h-9 object-contain"/>
+                {item.logo ? <Image src={item.logo} alt="" width={36} height={36} className="w-9 h-9 object-contain"/> : <BrandIcon brand={item.brand || item.title} className="w-9 h-9" />}
               </div>
               <span className="text-sm font-bold text-gray-400 group-hover:text-black transition-colors">&rarr;</span>
             </div>
