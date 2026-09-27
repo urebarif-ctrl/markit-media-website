@@ -35,15 +35,17 @@ async function syncSubscriberToKit(email: string): Promise<boolean> {
   return true;
 }
 
-async function saveLegacySubscriber(email: string, source: string, ip: string) {
+async function saveLegacySubscriber(email: string, source: string, ip: string): Promise<boolean> {
   try {
     const { getDb } = await import("@/lib/db");
     const db = getDb();
     db.prepare(
       `INSERT OR IGNORE INTO subscribers (email, source, ip) VALUES (?, ?, ?)`,
     ).run(email, source, ip);
+    return true;
   } catch (error) {
     console.error("Legacy subscriber fallback failed", error);
+    return false;
   }
 }
 
@@ -103,8 +105,16 @@ export async function POST(request: NextRequest) {
 
     // Keep the existing local subscriber store as a fallback while the
     // MongoDB/Kit integrations are being rolled out.
+    let legacySaved = false;
     if (!mongoSaved || !kitSynced) {
-      await saveLegacySubscriber(sanitizedEmail, sanitizedSource, ip);
+      legacySaved = await saveLegacySubscriber(sanitizedEmail, sanitizedSource, ip);
+    }
+
+    if (!mongoSaved && !kitSynced && !legacySaved) {
+      return NextResponse.json(
+        { error: "We could not save your subscription. Please try again." },
+        { status: 503 },
+      );
     }
 
     return NextResponse.json({ success: true });
