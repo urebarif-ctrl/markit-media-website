@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import Link from "next/link";
 
 interface ToolCTAProps {
@@ -15,15 +15,10 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
-  const loadedAt = useRef(Date.now());
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!email || sending) return;
-    if (Date.now() - loadedAt.current < 2000) {
-      setSubmitted(true);
-      return;
-    }
     setSending(true);
     setError("");
     try {
