@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandIcon } from "@/components/brand-icon";
 import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle } from "@/components/section";
@@ -129,18 +130,18 @@ export function ServicePage({
             {[
               { label: "Meta Ads", href: "/services/performance-marketing/meta-ads", src: "/brand/meta.svg" },
               { label: "Google Ads", href: "/services/performance-marketing/google-ads", src: "/brand/google-ads.svg" },
-              { label: "Facebook Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/facebook/1877F2" },
-              { label: "Instagram Ads", href: "/services/performance-marketing/meta-ads", src: "https://cdn.simpleicons.org/instagram/E4405F" },
+              { label: "Facebook Ads", href: "/services/performance-marketing/meta-ads", brand: "Facebook" },
+              { label: "Instagram Ads", href: "/services/performance-marketing/meta-ads", brand: "Instagram" },
               { label: "Microsoft Ads", href: "/services/performance-marketing/microsoft-ads", src: "/brand/microsoft-ads.svg" },
-              { label: "YouTube Ads", href: "/services/performance-marketing/youtube-ads", src: "https://cdn.simpleicons.org/youtube/FF0000" },
-              { label: "TikTok Ads", href: "/services/performance-marketing/tiktok-ads", src: "https://cdn.simpleicons.org/tiktok/000000" },
+              { label: "YouTube Ads", href: "/services/performance-marketing/youtube-ads", brand: "YouTube" },
+              { label: "TikTok Ads", href: "/services/performance-marketing/tiktok-ads", brand: "TikTok" },
               { label: "LinkedIn Ads", href: "/services/performance-marketing/linkedin-ads", src: "/brand/linkedin.svg" },
-              { label: "Shopify", href: "/services/website-development/shopify", src: "https://cdn.simpleicons.org/shopify/7AB55C" },
-              { label: "WordPress", href: "/services/website-development/wordpress", src: "https://cdn.simpleicons.org/wordpress/21759B" },
+              { label: "Shopify", href: "/services/website-development/shopify", brand: "Shopify" },
+              { label: "WordPress", href: "/services/website-development/wordpress", brand: "WordPress" },
             ].map((platform) => (
               <Link key={platform.label} href={platform.href} aria-label={`Explore our ${platform.label} services`} title={platform.label}
                 className="group min-h-24 flex flex-col items-center justify-center gap-3 border border-gray-200 bg-white p-3 hover:border-black hover:-translate-y-0.5 hover:shadow-md transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <img src={platform.src} alt={`${platform.label} logo`} width="34" height="34" loading="lazy" className="h-8 w-8 object-contain opacity-100" />
+                {platform.src ? <img src={platform.src} alt={`${platform.label} logo`} width="34" height="34" loading="lazy" className="h-8 w-8 object-contain opacity-100" /> : <BrandIcon brand={platform.brand || platform.label} title={`${platform.label} logo`} className="h-8 w-8" />}
                 <span className="text-[11px] leading-tight font-bold text-gray-600 group-hover:text-black text-center">{platform.label}</span>
               </Link>
             ))}
