@@ -11,7 +11,6 @@ interface FormState {
 export function ContactForm({ variant = "contact" }: { variant?: "contact" | "quote" }) {
   const [state, setState] = useState<FormState>({ status: "idle", message: "" });
   const formRef = useRef<HTMLFormElement>(null);
-  const loadedAt = useRef(Date.now());
   const router = useRouter();
   const isQuote = variant === "quote";
 
@@ -22,7 +21,7 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    if (data.get("website") || Date.now() - loadedAt.current < 2000) {
+    if (data.get("website")) {
       setState({ status: "sent", message: "Thank you! We'll be in touch." });
       return;
     }
