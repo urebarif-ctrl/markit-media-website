@@ -71,7 +71,7 @@ export function Footer({ translations:t }: { locale:string; translations:FooterT
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1.35fr_2fr] gap-12 lg:gap-16">
           <div>
-            <Link href="/" className="inline-block"><Image src="/images/logo-black.png" alt="Markit Media" width={170} height={35} className="h-8 w-auto invert brightness-200"/></Link>
+            <Link href="/" className="inline-block"><Image src="/images/logo-black.png" alt="Markit Media" width={170} height={35} unoptimized className="h-8 w-auto invert brightness-200"/></Link>
             <p className="text-sm text-gray-400 leading-6 mt-5 max-w-sm">{t.footer.tagline}</p>
             <div className="mt-7 space-y-3">
               <a href="mailto:ciao@themarkitmedia.com" className="flex items-center gap-3 text-sm text-gray-200 hover:text-white"><span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><Mail size={17}/></span>ciao@themarkitmedia.com</a>
