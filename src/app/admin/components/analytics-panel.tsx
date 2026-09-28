@@ -1,18 +1,18 @@
 "use client";
-import { useEffect,useState } from "react";
+import { useEffect,useState } from "react";\nimport {ArrowUpRight,Users,Clock3,Target,WalletCards,Sparkles} from "lucide-react";
 
 type Data=any;
 const money=(n:number)=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"$0";
 const label=(s:string)=>String(s||"").replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase());
 
 export function AnalyticsPanel({headers}:{headers:Record<string,string>}){
- const [data,setData]=useState<Data|null>(null),[days,setDays]=useState(30),[loading,setLoading]=useState(true);
- useEffect(()=>{setLoading(true);fetch(`/api/admin/analytics?days=${days}`,{headers}).then(r=>r.json()).then(d=>{setData(d);setLoading(false)}).catch(()=>setLoading(false))},[days,headers]);
+ const [data,setData]=useState<Data|null>(null),[days,setDays]=useState(30),[loading,setLoading]=useState(true),[error,setError]=useState("");
+ async function load(){setLoading(true);setError("");try{const r=await fetch(`/api/admin/analytics?days=${days}`,{headers});const d=await r.json();if(!r.ok||d.error)throw new Error(d.error||"Dashboard unavailable");setData(d)}catch(e:any){setError(e?.message||"Dashboard unavailable")}finally{setLoading(false)}}\n useEffect(()=>{load()},[days]);
  if(loading)return <div className="py-16 text-center text-gray-500">Loading operations dashboard...</div>;
- if(!data||data.error)return <div className="py-16 text-center text-red-600">Dashboard data could not be loaded.</div>;
+ if(!data||error)return <div className="min-h-[520px] grid place-items-center"><div className="max-w-lg rounded-3xl border bg-white p-8 text-center shadow-sm"><div className="mx-auto h-14 w-14 rounded-2xl bg-black text-white grid place-items-center"><Sparkles size={22}/></div><h2 className="mt-5 text-2xl font-black">Markit-Dashboard needs a refresh</h2><p className="mt-2 text-sm leading-6 text-zinc-500">{error||"We could not load your workspace data."} Your leads are not lost.</p><button onClick={load} className="mt-6 rounded-xl bg-black px-5 py-3 text-sm font-bold text-white">Try again</button></div></div>;
  const maxDay=Math.max(...data.leadsByDay.map((x:any)=>x.count),1);
  return <div className="space-y-6">
-  <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400">Markit Media Operations</p><h2 className="mt-1 text-3xl font-extrabold">Business Dashboard</h2><p className="mt-1 text-sm text-gray-500">Sales, follow-ups, content and website activity from MongoDB.</p></div><select value={days} onChange={e=>setDays(Number(e.target.value))} className="rounded-lg border bg-white px-3 py-2 text-sm"><option value={7}>Last 7 days</option><option value={30}>Last 30 days</option><option value={90}>Last 90 days</option><option value={365}>Last year</option></select></div>
+  <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400">Markit Media · Command Center</p><h2 className="mt-1 text-3xl font-black tracking-tight">Good to see you.</h2><p className="mt-1 text-sm text-gray-500">A clean view of leads, follow-ups, pipeline and content that needs attention.</p></div><select value={days} onChange={e=>setDays(Number(e.target.value))} className="rounded-lg border bg-white px-3 py-2 text-sm"><option value={7}>Last 7 days</option><option value={30}>Last 30 days</option><option value={90}>Last 90 days</option><option value={365}>Last year</option></select></div>
 
   <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
    {[["New Leads",data.summary.newLeads,`${data.summary.periodChange>=0?"+":""}${data.summary.periodChange}% vs previous period`],["Needs Follow-up",data.attention.overdue,"Overdue scheduled follow-ups"],["Qualified",data.summary.qualified,`${data.summary.proposals} currently at proposal stage`],["Pipeline Value",money(data.summary.pipelineValue),`${money(data.summary.wonValue)} won in selected period`]].map(([a,b,c],i)=><div key={String(a)} className={`rounded-2xl border p-5 ${i===0?"bg-black text-white":"bg-white"}`}><div className="text-xs font-bold uppercase tracking-wider opacity-50">{a}</div><div className="mt-2 text-3xl font-extrabold">{b}</div><div className="mt-2 text-xs opacity-60">{c}</div></div>)}
