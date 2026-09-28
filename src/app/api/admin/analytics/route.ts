@@ -1,91 +1,56 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { getMongoDb } from "@/lib/mongodb";
 import { verifyToken } from "@/lib/auth";
 
 function getAuth(request: NextRequest) {
   const cookie = request.cookies.get("admin_token")?.value;
   const header = request.headers.get("authorization")?.replace("Bearer ", "");
-  const token = cookie || header;
-  if (!token) return null;
-  return verifyToken(token);
+  return verifyToken(cookie || header || "");
 }
 
 export async function GET(request: NextRequest) {
   const auth = getAuth(request);
   if (!auth) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const db = getDb();
-  const { searchParams } = new URL(request.url);
-  const days = Math.min(365, Math.max(1, Number(searchParams.get("days")) || 30));
-  const since = new Date(Date.now() - days * 86400000).toISOString();
+  try {
+    const db = await getMongoDb();
+    const { searchParams } = new URL(request.url);
+    const days = Math.min(365, Math.max(1, Number(searchParams.get("days")) || 30));
+    const since = new Date(Date.now() - days * 86400000);
 
-  const leadsCount = (db.prepare("SELECT COUNT(*) as count FROM leads WHERE created_at >= ?").get(since) as { count: number }).count;
-  const newLeads = (db.prepare("SELECT COUNT(*) as count FROM leads WHERE status = 'new' AND created_at >= ?").get(since) as { count: number }).count;
-  const postsCount = (db.prepare("SELECT COUNT(*) as count FROM blog_posts").get() as { count: number }).count;
-  const publishedPosts = (db.prepare("SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published'").get() as { count: number }).count;
-  const mediaCount = (db.prepare("SELECT COUNT(*) as count FROM media").get() as { count: number }).count;
+    const leads = db.collection("form_submissions");
+    const briefs = db.collection("discovery_briefs");
+    const [leadCount, newLeads, briefCount, newBriefs, recentLeadDocs, recentBriefDocs] = await Promise.all([
+      leads.countDocuments({ createdAt: { $gte: since } }),
+      leads.countDocuments({ createdAt: { $gte: since }, status: { $in: [null, "new"] } }),
+      briefs.countDocuments({ createdAt: { $gte: since } }),
+      briefs.countDocuments({ createdAt: { $gte: since }, status: "new" }),
+      leads.find({ createdAt: { $gte: since } }).sort({ createdAt: -1 }).limit(10).toArray(),
+      briefs.find({ createdAt: { $gte: since } }).sort({ createdAt: -1 }).limit(10).toArray(),
+    ]);
 
-  const leadsByDay = db.prepare(`
-    SELECT DATE(created_at) as date, COUNT(*) as count
-    FROM leads WHERE created_at >= ?
-    GROUP BY DATE(created_at)
-    ORDER BY date
-  `).all(since);
+    const recentLeads = [...recentLeadDocs.map((x) => ({
+      id: x._id.toString(), name: String(x.name || x.fullName || "Website lead"),
+      email: String(x.email || ""), service: String(x.service || x.source || "Website form"),
+      status: String(x.status || "new"), created_at: x.createdAt || new Date(),
+    })), ...recentBriefDocs.map((x) => ({
+      id: x._id.toString(), name: String(x.name || x.brandName || "Discovery brief"),
+      email: String(x.email || ""), service: "Discovery Brief",
+      status: String(x.status || "new"), created_at: x.createdAt || new Date(),
+    }))].sort((a,b) => +new Date(b.created_at) - +new Date(a.created_at)).slice(0,10);
 
-  const leadsByService = db.prepare(`
-    SELECT service, COUNT(*) as count
-    FROM leads WHERE service != '' AND created_at >= ?
-    GROUP BY service
-    ORDER BY count DESC
-  `).all(since);
-
-  const leadsByStatus = db.prepare(`
-    SELECT status, COUNT(*) as count
-    FROM leads
-    GROUP BY status
-    ORDER BY count DESC
-  `).all();
-
-  const recentLeads = db.prepare(`
-    SELECT id, name, email, service, status, created_at
-    FROM leads
-    ORDER BY created_at DESC
-    LIMIT 10
-  `).all();
-
-  const draftPosts = (db.prepare("SELECT COUNT(*) as count FROM blog_posts WHERE status = 'draft'").get() as { count: number }).count;
-  const categoriesCount = (db.prepare("SELECT COUNT(DISTINCT category) as count FROM blog_posts WHERE category != ''").get() as { count: number }).count;
-
-  const postsByCategory = db.prepare(`
-    SELECT category, COUNT(*) as count
-    FROM blog_posts WHERE category != ''
-    GROUP BY category
-    ORDER BY count DESC
-  `).all();
-
-  const recentPosts = db.prepare(`
-    SELECT id, title, category, status, published_at
-    FROM blog_posts
-    ORDER BY COALESCE(published_at, created_at) DESC
-    LIMIT 8
-  `).all();
-
-  return NextResponse.json({
-    summary: {
-      totalLeads: leadsCount,
-      newLeads,
-      totalPosts: postsCount,
-      publishedPosts,
-      totalMedia: mediaCount,
-      draftPosts,
-      categories: categoriesCount,
-    },
-    leadsByDay,
-    leadsByService,
-    leadsByStatus,
-    recentLeads,
-    postsByCategory,
-    recentPosts,
-    period: `${days} days`,
-  });
+    return NextResponse.json({
+      summary: {
+        totalLeads: leadCount + briefCount,
+        newLeads: newLeads + newBriefs,
+        totalPosts: 0, publishedPosts: 0, totalMedia: 0, draftPosts: 0, categories: 0,
+      },
+      leadsByDay: [], leadsByService: [], leadsByStatus: [],
+      recentLeads, postsByCategory: [], recentPosts: [], period: `${days} days`,
+      database: "MongoDB",
+    });
+  } catch (error) {
+    console.error("Admin analytics failed", error);
+    return NextResponse.json({ error: "MongoDB dashboard unavailable" }, { status: 503 });
+  }
 }
