@@ -11,6 +11,7 @@ import { ContentPanel } from "./content-panel";
 import { ActivityPanel } from "./activity-panel";
 import { HealthPanel } from "./health-panel";
 import { GlobalSearch } from "./global-search";
+import { RedirectsPanel } from "./redirects-panel";
 
 interface DashboardProps {
   token: string;
@@ -30,6 +31,7 @@ const tabs = [
   { id: "testimonials", label: "Testimonials" },
   { id: "clients", label: "Clients" },
   { id: "health", label: "Health & SEO" },
+  { id: "redirects", label: "Redirects" },
   { id: "settings", label: "Settings" },
 ] as const;
 
@@ -104,6 +106,7 @@ export function AdminDashboard({ token, user, onLogout }: DashboardProps) {
         {activeTab === "testimonials" && <ContentPanel headers={headers} kind="testimonials" />}
         {activeTab === "clients" && <ContentPanel headers={headers} kind="clients" />}
         {activeTab === "health" && <HealthPanel headers={headers} />}
+        {activeTab === "redirects" && <RedirectsPanel headers={headers} />}
         {activeTab === "settings" && <SettingsPanel headers={headers} email={user.email} onSaved={onLogout} />}
       </main>
     </div>
