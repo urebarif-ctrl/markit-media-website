@@ -1,0 +1,9 @@
+"use client";
+import {useEffect,useState} from "react";
+export function ActivityPanel({headers}:{headers:Record<string,string>}){
+ const [items,setItems]=useState<any[]>([]),[loading,setLoading]=useState(true);
+ useEffect(()=>{fetch("/api/admin/activity?limit=150",{headers}).then(r=>r.json()).then(d=>{setItems(d.items||[]);setLoading(false)}).catch(()=>setLoading(false))},[headers]);
+ const pretty=(s:string)=>String(s||"Activity").replace(/[._]/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+ return <div className="space-y-6"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400">Audit Trail</p><h2 className="text-2xl font-extrabold">Activity</h2><p className="text-sm text-gray-500">CRM and CMS changes made by your team.</p></div>
+ <div className="rounded-2xl border bg-white">{loading?<div className="p-12 text-center text-gray-400">Loading activity…</div>:items.length?items.map((x:any)=><div key={x.id} className="flex gap-4 border-b p-4 last:border-0"><div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-black"/><div className="min-w-0 flex-1"><div className="text-sm font-bold">{pretty(x.action)}{x.leadName?<span className="font-normal"> · {x.leadName}</span>:null}</div><div className="mt-1 text-xs text-gray-500">{x.actor||"System"} · {x.createdAt?new Date(x.createdAt).toLocaleString():""}</div>{x.changes&&<div className="mt-2 text-xs text-gray-400">{Object.entries(x.changes).map(([k,v])=>`${pretty(k)}: ${String(v??"—")}`).join(" · ")}</div>}</div></div>):<div className="p-12 text-center text-gray-400">Activity will appear as your team uses the CRM.</div>}</div></div>
+}
