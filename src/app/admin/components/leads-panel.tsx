@@ -1,259 +1,33 @@
 "use client";
+import { useCallback,useEffect,useState } from "react";
 
-import { useState, useEffect, useCallback } from "react";
+type Lead={id:string;collection:string;formType:string;name:string;email:string;company:string;phone:string;service:string;budget:string;timeline:string;message:string;status:string;internalNotes:string;assignedTo:string;source:string;landingPage:string;referrer:string;utmSource:string;utmMedium:string;utmCampaign:string;marketingConsent:boolean;createdAt:string;details:Record<string,any>};
+const STATUS=[["new","New"],["in_progress","In Progress"],["contacted","Talked / Contacted"],["qualified","Qualified"],["proposal","Proposal"],["won","Won"],["completed","Completed"],["closed","Closed"]];
+const pretty=(v:string)=>v?String(v).replace(/[-_]/g," ").replace(/\b\w/g,c=>c.toUpperCase()):"—";
+const show=(v:any)=>Array.isArray(v)?v.join(", "):typeof v==="boolean"?(v?"Yes":"No"):v?String(v):"—";
 
-interface Lead {
-  id: number;
-  name: string;
-  email: string;
-  company: string;
-  phone: string;
-  service: string;
-  budget: string;
-  message: string;
-  submitted_at: string;
-  status: string;
-  notes: string;
-  created_at: string;
-}
-
-export function LeadsPanel({ headers }: { headers: Record<string, string> }) {
-  const [leads, setLeads] = useState<Lead[]>([]);
-  const [total, setTotal] = useState(0);
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [statusFilter, setStatusFilter] = useState("");
-  const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<Lead | null>(null);
-
-  const fetchLeads = useCallback(() => {
-    setLoading(true);
-    const params = new URLSearchParams({ page: String(page), limit: "20" });
-    if (statusFilter) params.set("status", statusFilter);
-    if (search) params.set("search", search);
-
-    fetch(`/api/admin/leads?${params}`, { headers })
-      .then((r) => r.json())
-      .then((d) => {
-        setLeads(d.leads || []);
-        setTotal(d.total || 0);
-        setTotalPages(d.totalPages || 1);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [page, statusFilter, search]);
-
-  useEffect(() => { fetchLeads(); }, [fetchLeads]);
-
-  async function updateLead(id: number, updates: { status?: string; notes?: string }) {
-    await fetch("/api/admin/leads", {
-      method: "PATCH",
-      headers,
-      body: JSON.stringify({ id, ...updates }),
-    });
-    fetchLeads();
-    if (selected?.id === id) {
-      setSelected((prev) => prev ? { ...prev, ...updates } : null);
-    }
-  }
-
-  function exportCSV() {
-    if (leads.length === 0) return;
-    const rows = [["Name", "Email", "Company", "Phone", "Service", "Budget", "Status", "Date", "Message"]];
-    for (const l of leads) {
-      rows.push([l.name, l.email, l.company || "", l.phone || "", l.service || "", l.budget || "", l.status, new Date(l.created_at).toLocaleDateString(), (l.message || "").replace(/"/g, '""')]);
-    }
-    const csv = rows.map((r) => r.map((c) => `"${c}"`).join(",")).join("\n");
-    const blob = new Blob([csv], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `leads-export-${new Date().toISOString().slice(0, 10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  const statusCounts = leads.reduce((acc, l) => { acc[l.status] = (acc[l.status] || 0) + 1; return acc; }, {} as Record<string, number>);
-
-  return (
-    <div className="space-y-6">
-      {/* Lead Stats */}
-      {total > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {[
-            { label: "Total Leads", value: total, bg: "bg-black text-white" },
-            { label: "New", value: statusCounts["new"] || 0, bg: "bg-gray-50" },
-            { label: "Contacted", value: statusCounts["contacted"] || 0, bg: "bg-gray-50" },
-            { label: "Converted", value: statusCounts["converted"] || 0, bg: "bg-gray-50" },
-          ].map((s) => (
-            <div key={s.label} className={`p-4 border border-gray-200 ${s.bg}`}>
-              <div className="text-2xl font-extrabold">{s.value}</div>
-              <div className="text-sm text-current opacity-60">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <h2 className="text-xl font-extrabold text-black">Leads ({total})</h2>
-        <div className="flex gap-3 flex-wrap">
-          <button
-            onClick={exportCSV}
-            disabled={leads.length === 0}
-            className="border border-gray-300 px-3 py-2 text-sm font-bold hover:bg-gray-50 disabled:opacity-30"
-          >
-            Export CSV
-          </button>
-          <input
-            type="search"
-            placeholder="Search..."
-            value={search}
-            onChange={(e) => { setSearch(e.target.value); setPage(1); }}
-            className="border border-gray-300 px-3 py-2 text-sm w-48"
-          />
-          <select
-            value={statusFilter}
-            onChange={(e) => { setStatusFilter(e.target.value); setPage(1); }}
-            className="border border-gray-300 px-3 py-2 text-sm bg-white"
-          >
-            <option value="">All Status</option>
-            <option value="new">New</option>
-            <option value="contacted">Contacted</option>
-            <option value="qualified">Qualified</option>
-            <option value="converted">Converted</option>
-            <option value="closed">Closed</option>
-          </select>
-        </div>
-      </div>
-
-      {loading ? (
-        <div className="text-base text-gray-500 py-12 text-center">Loading leads...</div>
-      ) : (
-        <>
-          <div className="bg-white border border-gray-200 overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-200 bg-gray-50">
-                  <th className="text-left py-3 px-4 font-bold text-black">Name</th>
-                  <th className="text-left py-3 px-4 font-bold text-black">Email</th>
-                  <th className="text-left py-3 px-4 font-bold text-black hidden md:table-cell">Company</th>
-                  <th className="text-left py-3 px-4 font-bold text-black hidden lg:table-cell">Service</th>
-                  <th className="text-left py-3 px-4 font-bold text-black">Status</th>
-                  <th className="text-left py-3 px-4 font-bold text-black hidden lg:table-cell">Date</th>
-                  <th className="text-left py-3 px-4 font-bold text-black">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {leads.map((lead) => (
-                  <tr key={lead.id} className="border-b border-gray-100 hover:bg-gray-50">
-                    <td className="py-3 px-4 text-gray-700 font-medium">{lead.name}</td>
-                    <td className="py-3 px-4 text-gray-500">{lead.email}</td>
-                    <td className="py-3 px-4 text-gray-500 hidden md:table-cell">{lead.company || "—"}</td>
-                    <td className="py-3 px-4 text-gray-500 hidden lg:table-cell">{lead.service || "—"}</td>
-                    <td className="py-3 px-4">
-                      <select
-                        value={lead.status}
-                        onChange={(e) => updateLead(lead.id, { status: e.target.value })}
-                        className="text-xs font-bold px-2 py-1 border border-gray-200 bg-white"
-                      >
-                        <option value="new">New</option>
-                        <option value="contacted">Contacted</option>
-                        <option value="qualified">Qualified</option>
-                        <option value="converted">Converted</option>
-                        <option value="closed">Closed</option>
-                      </select>
-                    </td>
-                    <td className="py-3 px-4 text-gray-500 hidden lg:table-cell">
-                      {new Date(lead.created_at).toLocaleDateString()}
-                    </td>
-                    <td className="py-3 px-4">
-                      <button
-                        onClick={() => setSelected(lead)}
-                        className="text-sm font-bold text-black hover:underline"
-                      >
-                        View
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-                {leads.length === 0 && (
-                  <tr><td colSpan={7} className="py-12 text-center text-gray-400">No leads found</td></tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Pagination */}
-          {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-2">
-              <button
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                disabled={page === 1}
-                className="px-4 py-2 text-sm border border-gray-200 disabled:opacity-30 hover:bg-gray-50"
-              >
-                Previous
-              </button>
-              <span className="text-sm text-gray-500">Page {page} of {totalPages}</span>
-              <button
-                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                disabled={page === totalPages}
-                className="px-4 py-2 text-sm border border-gray-200 disabled:opacity-30 hover:bg-gray-50"
-              >
-                Next
-              </button>
-            </div>
-          )}
-        </>
-      )}
-
-      {/* Lead detail modal */}
-      {selected && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setSelected(null)}>
-          <div className="bg-white max-w-lg w-full max-h-[90vh] overflow-y-auto p-8" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-extrabold text-black">{selected.name}</h3>
-              <button onClick={() => setSelected(null)} className="text-2xl text-gray-400 hover:text-black">×</button>
-            </div>
-            <div className="space-y-4 text-sm">
-              <div><span className="font-bold text-black">Email:</span> <a href={`mailto:${selected.email}`} className="text-blue-600 hover:underline">{selected.email}</a></div>
-              {selected.phone && <div><span className="font-bold text-black">Phone:</span> {selected.phone}</div>}
-              {selected.company && <div><span className="font-bold text-black">Company:</span> {selected.company}</div>}
-              {selected.service && <div><span className="font-bold text-black">Service:</span> {selected.service}</div>}
-              {selected.budget && <div><span className="font-bold text-black">Budget:</span> {selected.budget}</div>}
-              <div>
-                <span className="font-bold text-black">Message:</span>
-                <p className="mt-1 text-gray-600 whitespace-pre-wrap bg-gray-50 p-3">{selected.message}</p>
-              </div>
-              <div><span className="font-bold text-black">Submitted:</span> {new Date(selected.submitted_at).toLocaleString()}</div>
-              <div>
-                <span className="font-bold text-black">Status:</span>
-                <select
-                  value={selected.status}
-                  onChange={(e) => updateLead(selected.id, { status: e.target.value })}
-                  className="ml-2 border border-gray-200 px-2 py-1 text-sm bg-white"
-                >
-                  <option value="new">New</option>
-                  <option value="contacted">Contacted</option>
-                  <option value="qualified">Qualified</option>
-                  <option value="converted">Converted</option>
-                  <option value="closed">Closed</option>
-                </select>
-              </div>
-              <div>
-                <span className="font-bold text-black block mb-1">Notes:</span>
-                <textarea
-                  defaultValue={selected.notes}
-                  onBlur={(e) => updateLead(selected.id, { notes: e.target.value })}
-                  rows={3}
-                  className="w-full border border-gray-200 px-3 py-2 text-sm resize-y"
-                  placeholder="Add notes about this lead..."
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+export function LeadsPanel({headers}:{headers:Record<string,string>}){
+ const [leads,setLeads]=useState<Lead[]>([]),[selected,setSelected]=useState<Lead|null>(null),[loading,setLoading]=useState(true);
+ const [page,setPage]=useState(1),[totalPages,setTotalPages]=useState(1),[total,setTotal]=useState(0),[search,setSearch]=useState(""),[status,setStatus]=useState(""),[type,setType]=useState("");
+ const [counts,setCounts]=useState<Record<string,number>>({});
+ const load=useCallback(async()=>{setLoading(true);const p=new URLSearchParams({page:String(page),limit:"25"});if(search)p.set("search",search);if(status)p.set("status",status);if(type)p.set("type",type);const r=await fetch("/api/admin/leads?"+p,{headers});const d=await r.json();setLeads(d.leads||[]);setTotal(d.total||0);setCounts(d.counts||{});setTotalPages(d.totalPages||1);setLoading(false)},[page,search,status,type,headers]);
+ useEffect(()=>{load()},[load]);
+ async function update(lead:Lead,changes:Record<string,string>){const r=await fetch("/api/admin/leads",{method:"PATCH",headers,body:JSON.stringify({id:lead.id,collection:lead.collection,...changes})});if(r.ok){setSelected(x=>x&&x.id===lead.id?{...x,...changes}:x);load()}}
+ function csv(){const rows=[["Name","Email","Phone","Company","Form","Service","Status","Assigned","Source","Landing Page","UTM Source","UTM Medium","UTM Campaign","Date"]];leads.forEach(x=>rows.push([x.name,x.email,x.phone,x.company,x.formType,x.service,x.status,x.assignedTo,x.source,x.landingPage,x.utmSource,x.utmMedium,x.utmCampaign,x.createdAt]));const b=new Blob([rows.map(r=>r.map(c=>'"'+String(c||"").replace(/"/g,'""')+'"').join(",")).join("\n")],{type:"text/csv"});const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="markit-leads.csv";a.click();URL.revokeObjectURL(u)}
+ return <div className="space-y-6">
+  <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">{[["All",total],["New",counts.new||0],["In Progress",counts.in_progress||0],["Contacted",counts.contacted||0],["Completed",counts.completed||0]].map(([l,v])=><div key={String(l)} className="rounded-xl border border-gray-200 bg-white p-4"><div className="text-2xl font-extrabold">{v}</div><div className="text-xs font-bold uppercase tracking-wide text-gray-400">{l}</div></div>)}</div>
+  <div className="flex flex-wrap items-center justify-between gap-3"><div><h2 className="text-xl font-extrabold">Lead Inbox</h2><p className="text-sm text-gray-500">MongoDB · Contact, quote, tool, discovery and newsletter submissions</p></div><button onClick={csv} className="rounded-lg border px-3 py-2 text-sm font-bold">Export CSV</button></div>
+  <div className="grid gap-3 md:grid-cols-3"><input value={search} onChange={e=>{setSearch(e.target.value);setPage(1)}} placeholder="Search name, email, company, phone..." className="rounded-lg border px-3 py-2 text-sm"/><select value={type} onChange={e=>{setType(e.target.value);setPage(1)}} className="rounded-lg border bg-white px-3 py-2 text-sm"><option value="">All forms</option><option value="form_submissions">Website / Quote / Tool</option><option value="discovery_briefs">Discovery Brief</option><option value="newsletter_subscribers">Newsletter</option></select><select value={status} onChange={e=>{setStatus(e.target.value);setPage(1)}} className="rounded-lg border bg-white px-3 py-2 text-sm"><option value="">All statuses</option>{STATUS.map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></div>
+  <div className="overflow-x-auto rounded-xl border bg-white"><table className="w-full text-sm"><thead className="bg-gray-50"><tr>{["Customer","Form / Source","Contact","Service","Status","Owner","Date",""].map(x=><th key={x} className="px-4 py-3 text-left font-bold">{x}</th>)}</tr></thead><tbody>{loading?<tr><td colSpan={8} className="p-10 text-center text-gray-400">Loading MongoDB leads...</td></tr>:leads.length?leads.map(l=><tr key={l.collection+l.id} className="border-t hover:bg-gray-50"><td className="px-4 py-3"><b>{l.name}</b><div className="text-xs text-gray-400">{l.company}</div></td><td className="px-4 py-3"><b>{l.formType}</b><div className="text-xs text-gray-400">{l.source}</div></td><td className="px-4 py-3"><div>{l.email}</div><div className="text-xs text-gray-400">{l.phone}</div></td><td className="px-4 py-3 max-w-48 truncate">{l.service||"—"}</td><td className="px-4 py-3"><select value={l.status==="subscribed"?"new":l.status} onChange={e=>update(l,{status:e.target.value})} className="rounded border bg-white px-2 py-1 text-xs font-bold">{STATUS.map(([v,n])=><option key={v} value={v}>{n}</option>)}</select></td><td className="px-4 py-3">{l.assignedTo||"Unassigned"}</td><td className="px-4 py-3 whitespace-nowrap">{l.createdAt?new Date(l.createdAt).toLocaleDateString():"—"}</td><td className="px-4 py-3"><button onClick={()=>setSelected(l)} className="font-bold underline">Open</button></td></tr>):<tr><td colSpan={8} className="p-10 text-center text-gray-400">No submissions found.</td></tr>}</tbody></table></div>
+  {totalPages>1&&<div className="flex justify-center gap-3"><button disabled={page===1} onClick={()=>setPage(p=>p-1)} className="border px-4 py-2 disabled:opacity-30">Previous</button><span className="py-2 text-sm">Page {page} / {totalPages}</span><button disabled={page===totalPages} onClick={()=>setPage(p=>p+1)} className="border px-4 py-2 disabled:opacity-30">Next</button></div>}
+  {selected&&<div className="fixed inset-0 z-50 bg-black/55 p-4 flex items-center justify-center" onClick={()=>setSelected(null)}><div className="w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-2xl bg-white p-6 sm:p-8" onClick={e=>e.stopPropagation()}>
+   <div className="flex justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-widest text-gray-400">{selected.formType}</p><h3 className="text-2xl font-extrabold">{selected.name}</h3><p className="text-sm text-gray-500">{selected.company||"No company"} · {selected.source}</p></div><button onClick={()=>setSelected(null)} className="text-2xl">×</button></div>
+   <div className="mt-6 grid gap-3 sm:grid-cols-3"><a href={"mailto:"+selected.email} className="rounded-xl border p-3 font-bold">Email ↗<div className="text-xs font-normal text-gray-500 break-all">{selected.email}</div></a>{selected.phone&&<a href={"https://wa.me/"+selected.phone.replace(/\D/g,"")} target="_blank" className="rounded-xl border p-3 font-bold">WhatsApp ↗<div className="text-xs font-normal text-gray-500">{selected.phone}</div></a>}<div className="rounded-xl border p-3"><b>Submitted</b><div className="text-xs text-gray-500">{selected.createdAt?new Date(selected.createdAt).toLocaleString():"—"}</div></div></div>
+   <div className="mt-6 grid gap-4 sm:grid-cols-3"><label className="text-xs font-bold uppercase text-gray-500">Status<select value={selected.status==="subscribed"?"new":selected.status} onChange={e=>update(selected,{status:e.target.value})} className="mt-2 w-full rounded-lg border bg-white p-3 text-sm normal-case">{STATUS.map(([v,n])=><option key={v} value={v}>{n}</option>)}</select></label><label className="text-xs font-bold uppercase text-gray-500">Assigned to<input defaultValue={selected.assignedTo} onBlur={e=>update(selected,{assignedTo:e.target.value})} placeholder="Team member" className="mt-2 w-full rounded-lg border p-3 text-sm normal-case"/></label><div className="text-xs font-bold uppercase text-gray-500">Service<div className="mt-2 rounded-lg bg-gray-50 p-3 text-sm font-semibold normal-case">{selected.service||"—"}</div></div></div>
+   <div className="mt-6 grid gap-4 sm:grid-cols-2">{[["Email",selected.email],["Phone",selected.phone],["Company",selected.company],["Budget",selected.budget],["Timeline",selected.timeline],["Landing page",selected.landingPage],["Referrer",selected.referrer],["UTM Source",selected.utmSource],["UTM Medium",selected.utmMedium],["UTM Campaign",selected.utmCampaign],["Marketing consent",selected.marketingConsent]].map(([k,v])=><div key={String(k)} className="rounded-xl bg-gray-50 p-4"><p className="text-xs font-bold uppercase text-gray-400">{k}</p><p className="mt-1 break-words text-sm">{show(v)}</p></div>)}</div>
+   {selected.message&&<div className="mt-5 rounded-xl bg-gray-50 p-4"><p className="text-xs font-bold uppercase text-gray-400">Message / Brief</p><p className="mt-2 whitespace-pre-wrap text-sm">{selected.message}</p></div>}
+   {selected.collection==="discovery_briefs"&&<div className="mt-6"><h4 className="font-extrabold">Discovery answers</h4><div className="mt-3 grid gap-3 sm:grid-cols-2">{["brandName","link","stage","launchDate","launchTbd","categories","positioning","audiences","markets","city","assets","needs","platforms","paidAds","adBudget","goals","referenceBrand","communication"].map(k=><div key={k} className="rounded-xl border p-3"><p className="text-xs font-bold uppercase text-gray-400">{pretty(k)}</p><p className="mt-1 text-sm">{show(selected.details?.[k])}</p></div>)}</div></div>}
+   <label className="mt-6 block text-xs font-bold uppercase text-gray-500">Internal team notes<textarea defaultValue={selected.internalNotes} onBlur={e=>update(selected,{internalNotes:e.target.value})} rows={5} placeholder="Call notes, follow-up, requirements, next action..." className="mt-2 w-full rounded-xl border p-3 text-sm normal-case"/></label>
+  </div></div>}
+ </div>
 }
