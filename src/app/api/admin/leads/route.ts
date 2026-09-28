@@ -26,7 +26,7 @@ function normalize(doc:any, collection:string) {
     landingPage:String(doc.landingPage||""), referrer:String(doc.referrer||""),
     utmSource:String(doc.utmSource||""), utmMedium:String(doc.utmMedium||""), utmCampaign:String(doc.utmCampaign||""),
     marketingConsent:Boolean(doc.marketingConsent), createdAt:doc.createdAt||doc.submittedAt||doc.consentedAt||doc.updatedAt,
-    updatedAt:doc.updatedAt||doc.createdAt, details:doc
+    updatedAt:doc.updatedAt||doc.createdAt, lastContactedAt:doc.lastContactedAt||null, nextFollowUpAt:doc.nextFollowUpAt||null, estimatedDealValue:Number(doc.estimatedDealValue)||0, details:doc
   };
 }
 
@@ -55,12 +55,12 @@ export async function GET(request:NextRequest){
 export async function PATCH(request:NextRequest){
  if(!auth(request)) return NextResponse.json({error:"Unauthorized"},{status:401});
  try{
-  const {id,collection,status,internalNotes,assignedTo}=await request.json();
+  const {id,collection,status,internalNotes,assignedTo,nextFollowUpAt,estimatedDealValue}=await request.json();
   if(!id||!ObjectId.isValid(String(id))||!["form_submissions","discovery_briefs","newsletter_subscribers"].includes(collection)) return NextResponse.json({error:"Invalid lead"},{status:400});
   const update:any={updatedAt:new Date()};
   if(status!==undefined){ if(!statuses.has(String(status))) return NextResponse.json({error:"Invalid status"},{status:400}); update.status=String(status); if(status==="contacted") update.lastContactedAt=new Date(); }
   if(internalNotes!==undefined) update.internalNotes=String(internalNotes).slice(0,5000);
-  if(assignedTo!==undefined) update.assignedTo=String(assignedTo).slice(0,120);
+  if(assignedTo!==undefined) update.assignedTo=String(assignedTo).slice(0,120);\n  if(nextFollowUpAt!==undefined) update.nextFollowUpAt=nextFollowUpAt?new Date(String(nextFollowUpAt)):null;\n  if(estimatedDealValue!==undefined) update.estimatedDealValue=Math.max(0,Number(estimatedDealValue)||0);
   await (await getMongoDb()).collection(collection).updateOne({_id:new ObjectId(String(id))},{$set:update});
   return NextResponse.json({success:true});
  }catch(e){console.error("Lead update failed",e);return NextResponse.json({error:"Could not update lead"},{status:500});}
