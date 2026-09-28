@@ -33,6 +33,19 @@ const KNOWN_ROUTES = new Set([
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Admin is an internal, non-localized application. Keep it outside the
+  // public locale router and normalize accidental localized admin URLs.
+  const localizedAdminMatch = pathname.match(/^\/(?:en|ar|ur)\/admin(?:\/(.*))?$/);
+  if (localizedAdminMatch) {
+    const url = request.nextUrl.clone();
+    url.pathname = localizedAdminMatch[1] ? `/admin/${localizedAdminMatch[1]}` : "/admin";
+    return NextResponse.redirect(url, 307);
+  }
+
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    return NextResponse.next();
+  }
+
   // Consolidate the hostname before any path-level routing so Search Console
   // sees one canonical HTTPS host.
   if (request.nextUrl.hostname === "www.themarkitmedia.com") {
