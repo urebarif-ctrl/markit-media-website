@@ -1,9 +1,25 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent } from "react";
 
-export function QuoteForm({ service }: { service?: string }) {
+interface QuoteFormProps {
+  service?: string;
+  title?: string;
+  buttonText?: string;
+  messagePlaceholder?: string;
+}
+
+export function QuoteForm({
+  service,
+  title = "Get a Free Quote",
+  buttonText = "Send Request",
+  messagePlaceholder = "Tell us about your project...",
+}: QuoteFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const formId = useId();
+  const nameId = `${formId}-name`;
+  const emailId = `${formId}-email`;
+  const messageId = `${formId}-message`;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -53,23 +69,23 @@ export function QuoteForm({ service }: { service?: string }) {
       <div className="absolute -left-[9999px]" aria-hidden="true">
         <input type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
-      <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Get a Free Quote</h3>
+      <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">{title}</h3>
       <div>
-        <label htmlFor="quote-name" className="sr-only">Your name</label>
-        <input type="text" id="quote-name" name="name" required placeholder="Your name" className="w-full border border-gray-300 px-4 py-3 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none" />
+        <label htmlFor={nameId} className="sr-only">Your name</label>
+        <input type="text" id={nameId} name="name" required placeholder="Your name" className="w-full border border-gray-300 px-4 py-3 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none" />
       </div>
       <div>
-        <label htmlFor="quote-email" className="sr-only">Email address</label>
-        <input type="email" id="quote-email" name="email" required placeholder="Email address" className="w-full border border-gray-300 px-4 py-3 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none" />
+        <label htmlFor={emailId} className="sr-only">Email address</label>
+        <input type="email" id={emailId} name="email" required placeholder="Email address" className="w-full border border-gray-300 px-4 py-3 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none" />
       </div>
       {service && <input type="hidden" name="service" value={service} />}
       <div>
-        <label htmlFor="quote-message" className="sr-only">Project details</label>
-        <textarea id="quote-message" name="message" rows={3} required placeholder="Tell us about your project..." className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none resize-y transition-colors motion-reduce:transition-none" />
+        <label htmlFor={messageId} className="sr-only">Project details</label>
+        <textarea id={messageId} name="message" rows={3} required placeholder={messagePlaceholder} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none resize-y transition-colors motion-reduce:transition-none" />
       </div>
       {status === "error" && <p className="text-base text-red-600" role="alert">Please fill in all fields and try again.</p>}
       <button type="submit" disabled={status === "sending"} className="w-full bg-black text-white py-4 font-bold text-base min-h-[44px] hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-        {status === "sending" ? "Sending..." : "Send Request"}
+        {status === "sending" ? "Sending..." : buttonText}
       </button>
     </form>
   );
