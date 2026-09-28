@@ -261,6 +261,46 @@ export default function FinancePage() {
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Insurance SEO guides">
+        <div className="max-w-5xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>Insurance SEO Resources</SectionLabel>
+            <SectionTitle>Practical Guides for Insurance Search Visibility</SectionTitle>
+            <SectionDesc>
+              Insurance prospects often research before they contact a provider. These guides cover the technical, content and keyword work behind stronger organic visibility.
+            </SectionDesc>
+          </Animate>
+          <div className="grid md:grid-cols-2 gap-5 mt-9">
+            <Link
+              href="/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough"
+              className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-md transition-all"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">Insurance SEO</span>
+              <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-3 group-hover:underline">
+                SEO for Insurance: A Complete Ranking Guide
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mt-3">
+                A step-by-step guide covering content planning, backlinks, technical SEO and ongoing optimization.
+              </p>
+              <span className="inline-block mt-5 text-sm font-bold">Read the guide →</span>
+            </Link>
+            <Link
+              href="/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition"
+              className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-md transition-all"
+            >
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">Keywords & Strategy</span>
+              <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-3 group-hover:underline">
+                Insurance SEO Keywords and Strategies That Rank
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mt-3">
+                A companion guide focused on search intent, keyword strategy and turning research into actionable content.
+              </p>
+              <span className="inline-block mt-5 text-sm font-bold">Read the keyword guide →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="FAQ">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
