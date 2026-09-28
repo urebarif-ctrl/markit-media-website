@@ -1,5 +1,6 @@
 "use client";
-import { useEffect,useState } from "react";\nimport {ArrowUpRight,Users,Clock3,Target,WalletCards,Sparkles} from "lucide-react";
+import { useEffect,useState } from "react";
+import {ArrowUpRight,Users,Clock3,Target,WalletCards,Sparkles} from "lucide-react";
 
 type Data=any;
 const money=(n:number)=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"$0";
@@ -7,7 +8,8 @@ const label=(s:string)=>String(s||"").replace(/_/g," ").replace(/\b\w/g,c=>c.toU
 
 export function AnalyticsPanel({headers}:{headers:Record<string,string>}){
  const [data,setData]=useState<Data|null>(null),[days,setDays]=useState(30),[loading,setLoading]=useState(true),[error,setError]=useState("");
- async function load(){setLoading(true);setError("");try{const r=await fetch(`/api/admin/analytics?days=${days}`,{headers});const d=await r.json();if(!r.ok||d.error)throw new Error(d.error||"Dashboard unavailable");setData(d)}catch(e:any){setError(e?.message||"Dashboard unavailable")}finally{setLoading(false)}}\n useEffect(()=>{load()},[days]);
+ async function load(){setLoading(true);setError("");try{const r=await fetch(`/api/admin/analytics?days=${days}`,{headers});const d=await r.json();if(!r.ok||d.error)throw new Error(d.error||"Dashboard unavailable");setData(d)}catch(e:any){setError(e?.message||"Dashboard unavailable")}finally{setLoading(false)}}
+ useEffect(()=>{load()},[days]);
  if(loading)return <div className="py-16 text-center text-gray-500">Loading operations dashboard...</div>;
  if(!data||error)return <div className="min-h-[520px] grid place-items-center"><div className="max-w-lg rounded-3xl border bg-white p-8 text-center shadow-sm"><div className="mx-auto h-14 w-14 rounded-2xl bg-black text-white grid place-items-center"><Sparkles size={22}/></div><h2 className="mt-5 text-2xl font-black">Markit-Dashboard needs a refresh</h2><p className="mt-2 text-sm leading-6 text-zinc-500">{error||"We could not load your workspace data."} Your leads are not lost.</p><button onClick={load} className="mt-6 rounded-xl bg-black px-5 py-3 text-sm font-bold text-white">Try again</button></div></div>;
  const maxDay=Math.max(...data.leadsByDay.map((x:any)=>x.count),1);
