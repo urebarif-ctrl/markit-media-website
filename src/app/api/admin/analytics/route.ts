@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
       briefs.find({}).sort({createdAt:-1}).limit(1000).toArray(),
       subs.find({}).sort({createdAt:-1}).limit(1000).toArray(),
       posts.countDocuments({}),posts.countDocuments({status:"published"}),posts.countDocuments({status:"draft"}),
-      media.countDocuments({}),posts.distinct("category",{category:{$nin:["",null]}}),
+      media.countDocuments({}),posts.aggregate([{$match:{category:{$nin:["",null]}}},{$group:{_id:"$category"}}]).toArray(),
       posts.find({}).sort({createdAt:-1}).limit(5).toArray()
     ]);
 
