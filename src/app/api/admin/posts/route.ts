@@ -22,9 +22,9 @@ export async function GET(request: NextRequest) {
     if (q.get("search")) filter.$or = [{ title: { $regex: q.get("search"), $options: "i" } }, { slug: { $regex: q.get("search"), $options: "i" } }];
     const [docs,total,categories] = await Promise.all([
       c.find(filter).sort({ createdAt: -1 }).skip((page-1)*limit).limit(limit).toArray(),
-      c.countDocuments(filter), c.distinct("category", { category: { $nin: ["", null] } })
+      c.countDocuments(filter), c.aggregate([{ $match: { category: { $nin: ["", null] } } }, { $group: { _id: "$category" } }, { $sort: { _id: 1 } }]).toArray()
     ]);
-    return NextResponse.json({ posts: docs.map(postView), total, page, limit, totalPages: Math.max(1,Math.ceil(total/limit)), categories });
+    return NextResponse.json({ posts: docs.map(postView), total, page, limit, totalPages: Math.max(1,Math.ceil(total/limit)), categories: categories.map((x:any)=>x._id) });
   } catch(e) { console.error(e); return NextResponse.json({error:"Blog database unavailable"},{status:503}); }
 }
 
