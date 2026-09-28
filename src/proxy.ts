@@ -46,6 +46,11 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Private/share-only scheduling shortcut. Intentionally not part of public navigation.
+  if (pathname === "/meet") {
+    return NextResponse.next();
+  }
+
   // Consolidate the hostname before any path-level routing so Search Console
   // sees one canonical HTTPS host.
   if (request.nextUrl.hostname === "www.themarkitmedia.com") {
