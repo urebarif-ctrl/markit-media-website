@@ -175,65 +175,25 @@ export function DiscoveryForm() {
     setStatus("sending");
     setError("");
 
-    const details = [
-      "BRAND",
-      `Brand: ${brief.brandName}`,
-      `Website / social: ${brief.link || "Not provided"}`,
-      `Stage: ${brief.stage}`,
-      `Launch timing: ${brief.launchTbd ? "Not finalized" : brief.launchDate || "Not provided"}`,
-      `Category: ${brief.categories.join(", ")}`,
-      `Short description: ${brief.description || "Not provided"}`,
-      `Positioning: ${brief.positioning || "Not decided"}`,
-      "",
-      "AUDIENCE",
-      `Customer: ${brief.audiences.join(", ") || "Not specified"}`,
-      `Initial markets: ${brief.markets.join(", ")}`,
-      `Priority city / area: ${brief.city || "Not provided"}`,
-      "",
-      "READINESS & SCOPE",
-      `Assets available: ${brief.assets.join(", ") || "None specified"}`,
-      `Support needed: ${brief.needs.join(", ")}`,
-      `Platforms considered: ${brief.platforms.join(", ") || "Not specified"}`,
-      "",
-      "GROWTH",
-      `Paid advertising: ${brief.paidAds || "Not decided"}`,
-      `Monthly ad budget: ${brief.adBudget || "Not decided"}`,
-      `First 90-day goals: ${brief.goals.join(", ")}`,
-      "",
-      "BEFORE WE MEET",
-      `Anything else: ${brief.notes || "Nothing else added"}`,
-      `Reference brand: ${brief.referenceBrand || "Not provided"}`,
-      `Preferred communication: ${brief.communication || "Not specified"}`,
-    ].join("\n");
-
     try {
       const params = new URLSearchParams(window.location.search);
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/discovery", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: brief.name.trim(),
-          email: brief.email.trim(),
-          company: brief.company.trim(),
-          phone: brief.phone.trim(),
-          service: "digital-marketing",
-          budget: brief.adBudget,
-          timeline: brief.launchTbd ? "Not finalized" : brief.launchDate,
-          message: details,
-          marketingConsent: false,
+          ...brief,
           source: "Brand Discovery Brief",
           landingPage: window.location.pathname,
           referrer: document.referrer,
           utmSource: params.get("utm_source") || "",
           utmMedium: params.get("utm_medium") || "",
           utmCampaign: params.get("utm_campaign") || "",
-          website: brief.website,
         }),
       });
 
       if (!response.ok) {
-        const body = await response.json().catch(() => ({ error: "We could not send your brief. Please try again." }));
-        setError(body.error || "We could not send your brief. Please try again.");
+        const body = await response.json().catch(() => ({ error: "We could not save your brief. Please try again." }));
+        setError(body.error || "We could not save your brief. Please try again.");
         setStatus("idle");
         return;
       }
