@@ -10,6 +10,7 @@ import { getPostBySlug, getRelatedPosts, getAllPublishedSlugs } from "@/lib/blog
 import { ShareControls } from "./share-controls";
 import { ReadingProgress } from "@/components/reading-progress";
 import { NewsletterCta } from "@/components/newsletter-cta";
+import { QuoteForm } from "@/components/quote-form";
 
 /* ── Category-to-service mapping ─────────────────────────── */
 const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
@@ -187,6 +188,45 @@ const DEFAULT_TOOLS = [
   { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
 ];
 
+const INSURANCE_SEO_SLUGS = new Set([
+  "seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough",
+  "seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition",
+]);
+
+const INSURANCE_SEO_CHECKLIST = [
+  {
+    title: "Technical foundation",
+    text: "Keep important insurance pages crawlable, indexable, fast on mobile, canonically consistent and supported by appropriate structured data.",
+  },
+  {
+    title: "Search intent and service pages",
+    text: "Build pages around real insurance products, customer questions, locations and commercial intent instead of forcing every keyword into one generic page.",
+  },
+  {
+    title: "Trust and clarity",
+    text: "Make ownership, expertise, contact information, service scope, claims or policy explanations and important disclosures easy for visitors and search engines to understand.",
+  },
+  {
+    title: "Topical content",
+    text: "Use supporting guides, FAQs, definitions, comparisons and process content to answer the questions prospects research before they request a quote.",
+  },
+  {
+    title: "Internal linking",
+    text: "Connect educational content to the relevant insurance service, location and conversion pages so authority and users have a clear path through the site.",
+  },
+  {
+    title: "Measurement",
+    text: "Track organic queries, landing pages and meaningful enquiries through Search Console, analytics, forms and call or CRM data where available.",
+  },
+];
+
+const INSURANCE_SEO_LINKS = [
+  { label: "SEO Services", href: "/services/seo", desc: "Technical, on-page and content SEO built around measurable search visibility." },
+  { label: "Technical SEO", href: "/services/seo/technical-seo", desc: "Crawling, indexation, performance and technical foundations." },
+  { label: "Keyword Research", href: "/services/seo/keyword-research", desc: "Map search demand and intent before building or expanding content." },
+  { label: "Financial Services Marketing", href: "/industries/finance", desc: "Industry context for insurance, finance and other trust-sensitive services." },
+];
+
 function parseTags(tags: string): string[] {
   if (!tags) return [];
   try {
@@ -332,6 +372,110 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="blog-prose" dangerouslySetInnerHTML={{ __html: processedContent }} />
         </div>
       </section>
+
+      {INSURANCE_SEO_SLUGS.has(slug) && (
+        <>
+          <section aria-label="Insurance SEO implementation checklist" className="px-6 lg:px-12 pb-12">
+            <div className="max-w-5xl mx-auto border border-gray-200 bg-gray-50 p-6 sm:p-8">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500">Practical Framework</span>
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mt-3">
+                Turning Insurance SEO Research Into an Action Plan
+              </h2>
+              <p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">
+                Use this checklist after the guide to turn keyword and content ideas into a search program that connects technical SEO, useful insurance content and measurable enquiries.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-7">
+                {INSURANCE_SEO_CHECKLIST.map((item, index) => (
+                  <div key={item.title} className="bg-white border border-gray-200 p-5">
+                    <span className="text-xs font-bold text-gray-400">0{index + 1}</span>
+                    <h3 className="font-extrabold text-black mt-2">{item.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mt-2">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section aria-label="Related insurance SEO guide" className="px-6 lg:px-12 pb-12">
+            <div className="max-w-3xl mx-auto">
+              <div className="border border-gray-200 p-6 sm:p-8">
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500">Continue the Topic</span>
+                {slug === "seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough" ? (
+                  <>
+                    <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-3">
+                      Next: Insurance SEO Keywords and Ranking Strategies
+                    </h2>
+                    <p className="text-base text-gray-500 leading-relaxed mt-3">
+                      Continue with the companion guide focused on keyword selection, search intent and the strategies used to turn those terms into useful insurance content.
+                    </p>
+                    <Link href="/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
+                      Read the insurance keyword guide →
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-3">
+                      Start With the Step-by-Step Insurance SEO Guide
+                    </h2>
+                    <p className="text-base text-gray-500 leading-relaxed mt-3">
+                      If you want the wider framework first, the companion guide covers backlinks, content planning, technical SEO and ongoing optimization for insurance websites.
+                    </p>
+                    <Link href="/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
+                      Read the complete insurance SEO guide →
+                    </Link>
+                  </>
+                )}
+              </div>
+            </div>
+          </section>
+
+          <section aria-label="Insurance SEO services" className="px-6 lg:px-12 pb-12">
+            <div className="max-w-5xl mx-auto">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500">Relevant Expertise</span>
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mt-3">
+                If You Want Help Implementing the Strategy
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4 mt-7">
+                {INSURANCE_SEO_LINKS.map((item) => (
+                  <Link key={item.href} href={item.href} className="group border border-gray-200 p-5 hover:border-black transition-colors">
+                    <h3 className="font-extrabold text-black group-hover:underline">{item.label}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mt-2">{item.desc}</p>
+                    <span className="inline-block mt-4 text-sm font-bold">Explore →</span>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-5 text-sm text-gray-500">
+                Looking for examples of our wider client work? <Link href="/case-studies" className="font-bold text-black underline underline-offset-4 hover:no-underline">Browse selected case studies</Link>.
+              </div>
+            </div>
+          </section>
+
+          <section aria-label="Request an insurance SEO review" className="px-6 lg:px-12 pb-16">
+            <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+              <div className="pt-2">
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500">Request a Review</span>
+                <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black mt-3">
+                  Want Us to Review Your Insurance SEO?
+                </h2>
+                <p className="text-base text-gray-500 leading-relaxed mt-4">
+                  Share your website, target market and the insurance products or services you want to grow. We can review the current search setup and identify the highest-priority opportunities before recommending ongoing work.
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-3 mt-6 text-sm font-semibold">
+                  {["Technical SEO", "Keyword mapping", "Content gaps", "Internal linking", "Local visibility", "Conversion tracking"].map((item) => (
+                    <li key={item} className="border border-gray-200 px-4 py-3">{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <QuoteForm
+                service="Insurance SEO"
+                title="Request an Insurance SEO Review"
+                buttonText="Request SEO Review"
+                messagePlaceholder="Website, target market, insurance products/services and what you want to improve..."
+              />
+            </div>
+          </section>
+        </>
+      )}
 
       {parseTags(post.tags).length > 0 && (
         <section aria-label="Tags" className="px-6 lg:px-12 pb-8">
