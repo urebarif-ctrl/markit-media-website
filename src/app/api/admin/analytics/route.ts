@@ -3,7 +3,7 @@ import { getMongoDb } from "@/lib/mongodb";
 import { verifyToken } from "@/lib/auth";
 
 function auth(r: NextRequest) {
-  return verifyToken(r.cookies.get("admin_token")?.value || r.headers.get("authorization")?.replace("Bearer ", "") || "");
+  return verifyToken(r.cookies.get("admin_token")?.value || "");
 }
 const n=(v:any)=>Number(v)||0;
 const dateOf=(x:any)=>new Date(x.createdAt||x.submittedAt||x.consentedAt||x.updatedAt||Date.now());
