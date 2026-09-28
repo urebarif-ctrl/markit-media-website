@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
   icons: {
     icon: [
-      { url: "/favicon-animated.svg?v=4", type: "image/svg+xml", sizes: "any" },
-      { url: "/favicon.ico?v=3", sizes: "32x32" },
+      { url: "/favicon-animated.svg?v=5", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon.ico?v=5", sizes: "32x32" },
     ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest?v=3",
+  manifest: "/site.webmanifest?v=5",
   alternates: {
     canonical: "https://themarkitmedia.com/en",
     languages: {
