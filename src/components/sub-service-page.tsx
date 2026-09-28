@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { SectionLabel, SectionTitle } from "@/components/section";
@@ -17,9 +18,10 @@ interface SubServicePageProps {
   relatedServices?: { title: string; href: string; desc?: string }[];
   portfolio?: { title: string; href: string; desc: string }[];
   blogCategory?: string;
+  children?: ReactNode;
 }
 
-export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory }: SubServicePageProps) {
+export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, children }: SubServicePageProps) {
   const relatedPosts = blogCategory ? getPostsByCategory(blogCategory, 3) : [];
   const schema = {
     "@context": "https://schema.org",
@@ -102,6 +104,8 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
         </div>
       </section>
 
+      {children}
+
       {(portfolio.length > 0 || relatedServices.length > 0) && <section className="px-6 lg:px-12 py-20" aria-label="Related work and services"><div className="max-w-7xl mx-auto">
         <SectionLabel>Keep Exploring</SectionLabel><SectionTitle>Related Work & Services</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8 mt-10">
@@ -115,7 +119,6 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
         <div className="grid md:grid-cols-3 gap-6 mt-10">{relatedPosts.map(post=><Link key={post.slug} href={`/blog/${post.slug}`} className="group bg-white border border-gray-200 p-6 hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-wider text-gray-400">{post.category}</span><h3 className="font-extrabold text-lg mt-3 group-hover:underline">{post.title}</h3><p className="text-sm text-gray-500 mt-3 line-clamp-3">{post.excerpt}</p><span className="inline-block mt-5 text-sm font-bold">Read article →</span></Link>)}</div>
       </div></section>}
 
-      {/* FAQ */}
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="FAQ">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
@@ -138,7 +141,6 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
         </div>
       </section>
 
-      {/* CTA */}
       <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
