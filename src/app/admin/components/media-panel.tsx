@@ -1,11 +1,11 @@
 "use client";
 import { useCallback,useEffect,useState } from "react";
 type Item={id:string;original_name:string;mime_type:string;size:number;alt_text:string;folder:string;url:string;created_at:string};
-export function MediaPanel({token}:{token:string}){
+export function MediaPanel(){
  const [items,setItems]=useState<Item[]>([]),[folder,setFolder]=useState(""),[loading,setLoading]=useState(true),[ready,setReady]=useState(false),[publicReady,setPublicReady]=useState(false),[showAdd,setShowAdd]=useState(false);
  const [form,setForm]=useState({url:"",original_name:"",mime_type:"image/jpeg",alt_text:"",folder:"general"});
- const headers={"Authorization":`Bearer ${token}`},json={...headers,"Content-Type":"application/json"};
- const load=useCallback(async()=>{setLoading(true);const q=new URLSearchParams({limit:"100"});if(folder)q.set("folder",folder);const r=await fetch(`/api/admin/media?${q}`,{headers});const d=await r.json();setItems(d.media||[]);setReady(Boolean(d.storageReady));setPublicReady(Boolean(d.publicUrlConfigured));setLoading(false);},[folder,token]);
+ const headers:Record<string,string>={},json={"Content-Type":"application/json"};
+ const load=useCallback(async()=>{setLoading(true);const q=new URLSearchParams({limit:"100"});if(folder)q.set("folder",folder);const r=await fetch(`/api/admin/media?${q}`,{headers});const d=await r.json();setItems(d.media||[]);setReady(Boolean(d.storageReady));setPublicReady(Boolean(d.publicUrlConfigured));setLoading(false);},[folder]);
  useEffect(()=>{load()},[load]);
  async function add(){const r=await fetch("/api/admin/media",{method:"POST",headers:json,body:JSON.stringify(form)});const d=await r.json();if(!r.ok)return alert(d.error||"Could not add media");setForm({url:"",original_name:"",mime_type:"image/jpeg",alt_text:"",folder:"general"});setShowAdd(false);load();}
  async function del(id:string){if(!confirm("Remove this media record?"))return;await fetch("/api/admin/media",{method:"DELETE",headers:json,body:JSON.stringify({id})});load();}
