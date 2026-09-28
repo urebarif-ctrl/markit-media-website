@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 interface LoginProps {
-  onLogin: (token: string, user: { name: string; email: string; role: string }) => void;
+  onLogin: (user: { name: string; email: string; role: string }) => void;
 }
 
 export function AdminLogin({ onLogin }: LoginProps) {
@@ -31,7 +31,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
         return;
       }
 
-      onLogin(data.token, data.user);
+      onLogin(data.user);
     } catch {
       setError("Network error. Please try again.");
       setLoading(false);
