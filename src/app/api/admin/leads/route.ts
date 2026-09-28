@@ -60,8 +60,15 @@ export async function PATCH(request:NextRequest){
   const update:any={updatedAt:new Date()};
   if(status!==undefined){ if(!statuses.has(String(status))) return NextResponse.json({error:"Invalid status"},{status:400}); update.status=String(status); if(status==="contacted") update.lastContactedAt=new Date(); }
   if(internalNotes!==undefined) update.internalNotes=String(internalNotes).slice(0,5000);
-  if(assignedTo!==undefined) update.assignedTo=String(assignedTo).slice(0,120);\n  if(nextFollowUpAt!==undefined) update.nextFollowUpAt=nextFollowUpAt?new Date(String(nextFollowUpAt)):null;\n  if(estimatedDealValue!==undefined) update.estimatedDealValue=Math.max(0,Number(estimatedDealValue)||0);
-  await (await getMongoDb()).collection(collection).updateOne({_id:new ObjectId(String(id))},{$set:update});
+  if(assignedTo!==undefined) update.assignedTo=String(assignedTo).slice(0,120);
+  if(nextFollowUpAt!==undefined) update.nextFollowUpAt=nextFollowUpAt?new Date(String(nextFollowUpAt)):null;
+  if(estimatedDealValue!==undefined) update.estimatedDealValue=Math.max(0,Number(estimatedDealValue)||0);
+  const db=await getMongoDb(), target=db.collection(collection), oid=new ObjectId(String(id));
+  const before=await target.findOne({_id:oid});
+  await target.updateOne({_id:oid},{$set:update});
+  const changes:any={}; for(const k of ["status","internalNotes","assignedTo","nextFollowUpAt","estimatedDealValue"]) if(k in update) changes[k]=update[k];
+  const session=auth(request);
+  await db.collection("activity_log").insertOne({action:"lead.updated",entityType:"lead",entityId:String(id),collection,actor:session?.email||"admin",leadName:String(before?.name||before?.brandName||before?.email||"Lead"),changes,createdAt:new Date()});
   return NextResponse.json({success:true});
  }catch(e){console.error("Lead update failed",e);return NextResponse.json({error:"Could not update lead"},{status:500});}
 }
