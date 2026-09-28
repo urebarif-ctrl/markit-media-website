@@ -1,100 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb } from "@/lib/db";
+import { ObjectId } from "mongodb";
+import { getMongoDb } from "@/lib/mongodb";
 import { verifyToken } from "@/lib/auth";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
 
-function getAuth(request: NextRequest) {
-  const cookie = request.cookies.get("admin_token")?.value;
-  const header = request.headers.get("authorization")?.replace("Bearer ", "");
-  const token = cookie || header;
-  if (!token) return null;
-  return verifyToken(token);
+function auth(request: NextRequest) { const t=request.cookies.get("admin_token")?.value||request.headers.get("authorization")?.replace("Bearer ","")||""; return verifyToken(t); }
+const view=(x:any)=>({...x,id:x._id.toString(),_id:undefined,original_name:x.originalName,mime_type:x.mimeType,alt_text:x.altText,created_at:x.createdAt});
+
+export async function GET(request:NextRequest){
+ if(!auth(request)) return NextResponse.json({error:"Unauthorized"},{status:401});
+ try{const db=await getMongoDb(),c=db.collection("media_assets"),q=new URL(request.url).searchParams,page=Math.max(1,Number(q.get("page"))||1),limit=Math.min(100,Math.max(1,Number(q.get("limit"))||30));const f:any={};if(q.get("folder"))f.folder=q.get("folder");if(q.get("search"))f.$or=[{originalName:{$regex:q.get("search"),$options:"i"}},{altText:{$regex:q.get("search"),$options:"i"}}];const [docs,total,folders]=await Promise.all([c.find(f).sort({createdAt:-1}).skip((page-1)*limit).limit(limit).toArray(),c.countDocuments(f),c.distinct("folder")]);return NextResponse.json({media:docs.map(view),total,page,limit,totalPages:Math.max(1,Math.ceil(total/limit)),folders,storageReady:Boolean(process.env.R2_ENDPOINT&&process.env.R2_BUCKET_NAME&&process.env.R2_ACCESS_KEY_ID&&process.env.R2_SECRET_ACCESS_KEY),publicUrlConfigured:Boolean(process.env.R2_PUBLIC_URL)});}catch(e){console.error(e);return NextResponse.json({error:"Media database unavailable"},{status:503});}
 }
-
-export async function GET(request: NextRequest) {
-  const auth = getAuth(request);
-  if (!auth) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const db = getDb();
-  const { searchParams } = new URL(request.url);
-  const page = Math.max(1, Number(searchParams.get("page")) || 1);
-  const limit = Math.min(100, Math.max(1, Number(searchParams.get("limit")) || 30));
-  const folder = searchParams.get("folder") || "";
-  const offset = (page - 1) * limit;
-
-  let where = "1=1";
-  const params: (string | number)[] = [];
-
-  if (folder) {
-    where += " AND folder = ?";
-    params.push(folder);
-  }
-
-  const total = (db.prepare(`SELECT COUNT(*) as count FROM media WHERE ${where}`).get(...params) as { count: number }).count;
-  const media = db.prepare(`SELECT * FROM media WHERE ${where} ORDER BY created_at DESC LIMIT ? OFFSET ?`).all(...params, limit, offset);
-
-  return NextResponse.json({ media, total, page, limit, totalPages: Math.ceil(total / limit) });
+export async function POST(request:NextRequest){
+ const session=auth(request);if(!session)return NextResponse.json({error:"Unauthorized"},{status:401});
+ try{const b=await request.json();if(!b.url)return NextResponse.json({error:"Media URL required. R2 direct upload will activate after Cloudflare migration."},{status:400});const db=await getMongoDb(),now=new Date(),doc={filename:String(b.filename||b.original_name||"asset"),originalName:String(b.original_name||b.filename||"asset"),mimeType:String(b.mime_type||"application/octet-stream"),size:Number(b.size)||0,altText:String(b.alt_text||""),folder:String(b.folder||"general"),url:String(b.url),storage:String(b.storage||"external"),createdAt:now,updatedAt:now,createdBy:session.email};const r=await db.collection("media_assets").insertOne(doc);await db.collection("activity_log").insertOne({action:"media.created",entityType:"media_asset",entityId:r.insertedId.toString(),actor:session.email,createdAt:now});return NextResponse.json({id:r.insertedId.toString(),...view({...doc,_id:r.insertedId}),success:true},{status:201});}catch(e){console.error(e);return NextResponse.json({error:"Could not save media"},{status:500});}
 }
-
-export async function POST(request: NextRequest) {
-  const auth = getAuth(request);
-  if (!auth) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const formData = await request.formData();
-  const file = formData.get("file") as File | null;
-  const folder = String(formData.get("folder") || "general");
-  const altText = String(formData.get("alt_text") || "");
-
-  if (!file) {
-    return NextResponse.json({ error: "No file provided" }, { status: 400 });
-  }
-
-  const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/avif", "image/gif", "image/svg+xml", "video/mp4", "video/webm", "application/pdf"];
-  if (!allowedTypes.includes(file.type)) {
-    return NextResponse.json({ error: "File type not allowed" }, { status: 400 });
-  }
-
-  const maxSize = 50 * 1024 * 1024;
-  if (file.size > maxSize) {
-    return NextResponse.json({ error: "File too large (max 50MB)" }, { status: 400 });
-  }
-
-  const ext = file.name.split(".").pop()?.toLowerCase() || "bin";
-  const safeName = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-  const uploadDir = path.join(process.cwd(), "public", "uploads", folder);
-
-  await mkdir(uploadDir, { recursive: true });
-
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-  await writeFile(path.join(uploadDir, safeName), buffer);
-
-  const url = `/uploads/${folder}/${safeName}`;
-
-  const db = getDb();
-  const result = db.prepare(`
-    INSERT INTO media (filename, original_name, mime_type, size, alt_text, folder, url)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `).run(safeName, file.name, file.type, file.size, altText, folder, url);
-
-  return NextResponse.json({
-    id: result.lastInsertRowid,
-    url,
-    filename: safeName,
-    original_name: file.name,
-    success: true,
-  }, { status: 201 });
-}
-
-export async function DELETE(request: NextRequest) {
-  const auth = getAuth(request);
-  if (!auth) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { id } = await request.json();
-  if (!id) return NextResponse.json({ error: "Media ID required" }, { status: 400 });
-
-  const db = getDb();
-  db.prepare("DELETE FROM media WHERE id = ?").run(id);
-  return NextResponse.json({ success: true });
-}
+export async function PATCH(request:NextRequest){const session=auth(request);if(!session)return NextResponse.json({error:"Unauthorized"},{status:401});try{const b=await request.json();if(!ObjectId.isValid(String(b.id)))return NextResponse.json({error:"Valid media ID required"},{status:400});const set:any={updatedAt:new Date()};for(const [a,k] of [["alt_text","altText"],["folder","folder"],["url","url"]] as const)if(a in b)set[k]=String(b[a]);const db=await getMongoDb();await db.collection("media_assets").updateOne({_id:new ObjectId(String(b.id))},{$set:set});return NextResponse.json({success:true});}catch(e){return NextResponse.json({error:"Could not update media"},{status:500});}}
+export async function DELETE(request:NextRequest){const session=auth(request);if(!session)return NextResponse.json({error:"Unauthorized"},{status:401});try{const {id}=await request.json();if(!ObjectId.isValid(String(id)))return NextResponse.json({error:"Valid media ID required"},{status:400});const db=await getMongoDb();await db.collection("media_assets").deleteOne({_id:new ObjectId(String(id))});await db.collection("activity_log").insertOne({action:"media.deleted",entityType:"media_asset",entityId:String(id),actor:session.email,createdAt:new Date()});return NextResponse.json({success:true});}catch(e){return NextResponse.json({error:"Could not delete media"},{status:500});}}
