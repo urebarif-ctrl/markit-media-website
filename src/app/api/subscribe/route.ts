@@ -90,6 +90,13 @@ export async function POST(request: NextRequest) {
       await saveFormSubmission("newsletter", {
         email: sanitizedEmail,
         source: sanitizedSource,
+        landingPage: String(body.landingPage || "").slice(0, 300),
+        referrer: String(body.referrer || "").slice(0, 500),
+        utmSource: String(body.utmSource || "").slice(0, 180),
+        utmMedium: String(body.utmMedium || "").slice(0, 180),
+        utmCampaign: String(body.utmCampaign || "").slice(0, 180),
+        internalNotes: "",
+        assignedTo: "",
         consentedAt: new Date(),
       });
       mongoSaved = true;
