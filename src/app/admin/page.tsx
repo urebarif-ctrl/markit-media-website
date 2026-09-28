@@ -1,36 +1,44 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AdminLogin } from "./components/login";
 import { AdminDashboard } from "./components/dashboard";
 
+type AdminUser = { name: string; email: string; role: string };
+
 export default function AdminPage() {
-  const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<{ name: string; email: string; role: string } | null>(null);
+  const [user, setUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const stored = localStorage.getItem("admin_token");
-    const storedUser = localStorage.getItem("admin_user");
-    if (stored && storedUser) {
-      setToken(stored);
-      try { setUser(JSON.parse(storedUser)); } catch { /* ignore */ }
-    }
-    setLoading(false);
+    let active = true;
+    fetch("/api/admin/session", { cache: "no-store" })
+      .then(async (res) => {
+        if (!res.ok) return null;
+        return res.json();
+      })
+      .then((data) => {
+        if (active && data?.user) setUser(data.user);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
-  function handleLogin(t: string, u: { name: string; email: string; role: string }) {
-    setToken(t);
-    setUser(u);
-    localStorage.setItem("admin_token", t);
-    localStorage.setItem("admin_user", JSON.stringify(u));
+  function handleLogin(nextUser: AdminUser) {
+    setUser(nextUser);
   }
 
-  function handleLogout() {
-    setToken(null);
-    setUser(null);
-    localStorage.removeItem("admin_token");
-    localStorage.removeItem("admin_user");
+  async function handleLogout() {
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+    } finally {
+      setUser(null);
+    }
   }
 
   if (loading) {
@@ -41,9 +49,9 @@ export default function AdminPage() {
     );
   }
 
-  if (!token || !user) {
+  if (!user) {
     return <AdminLogin onLogin={handleLogin} />;
   }
 
-  return <AdminDashboard token={token} user={user} onLogout={handleLogout} />;
+  return <AdminDashboard user={user} onLogout={handleLogout} />;
 }
