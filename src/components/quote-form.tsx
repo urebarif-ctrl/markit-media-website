@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent } from "react";\nimport { useRouter } from "next/navigation";
 
 interface QuoteFormProps {
   service?: string;
@@ -15,7 +15,7 @@ export function QuoteForm({
   buttonText = "Send Request",
   messagePlaceholder = "Tell us about your project...",
 }: QuoteFormProps) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");\n  const router = useRouter();
   const formId = useId();
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
@@ -55,7 +55,7 @@ export function QuoteForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      setStatus(res.ok ? "sent" : "error");
+      if(res.ok){ router.push("/thank-you?from=quote"); } else setStatus("error");
     } catch {
       setStatus("error");
     }
