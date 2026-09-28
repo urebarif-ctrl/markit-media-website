@@ -1,6 +1,7 @@
 "use client";
 
-import { useId, useState, type FormEvent } from "react";\nimport { useRouter } from "next/navigation";
+import { useId, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 interface QuoteFormProps {
   service?: string;
@@ -15,7 +16,8 @@ export function QuoteForm({
   buttonText = "Send Request",
   messagePlaceholder = "Tell us about your project...",
 }: QuoteFormProps) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");\n  const router = useRouter();
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const router = useRouter();
   const formId = useId();
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
