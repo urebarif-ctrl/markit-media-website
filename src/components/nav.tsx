@@ -3,7 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect, useCallback } from "react";
-import { usePathname } from "next/navigation";\nimport { StartProjectCta } from "@/components/start-project-cta";
+import { usePathname } from "next/navigation";
+import { StartProjectCta } from "@/components/start-project-cta";
 
 interface NavTranslations {
   nav: Record<string, string>;
