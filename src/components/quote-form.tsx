@@ -36,6 +36,12 @@ export function QuoteForm({
       email: String(data.get("email") || "").trim(),
       service: String(data.get("service") || service || "").trim(),
       message: String(data.get("message") || "").trim(),
+      source: "Inline Quote Form",
+      landingPage: window.location.pathname,
+      referrer: document.referrer,
+      utmSource: new URLSearchParams(window.location.search).get("utm_source") || "",
+      utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "",
+      utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
     };
 
     if (!body.name || !body.email || !body.message) {
