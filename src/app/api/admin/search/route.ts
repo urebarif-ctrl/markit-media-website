@@ -1,6 +1,6 @@
 import { NextRequest,NextResponse } from "next/server";
 import { getMongoDb } from "@/lib/mongodb";import { verifyToken } from "@/lib/auth";
-function auth(r:NextRequest){return verifyToken(r.cookies.get("admin_token")?.value||r.headers.get("authorization")?.replace("Bearer ","")||"");}
+function auth(r:NextRequest){return verifyToken(r.cookies.get("admin_token")?.value||"");}
 export async function GET(r:NextRequest){if(!auth(r))return NextResponse.json({error:"Unauthorized"},{status:401});const q=(new URL(r.url).searchParams.get("q")||"").trim().slice(0,80);if(q.length<2)return NextResponse.json({results:[]});const rx=new RegExp(q.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&"),"i"),db=await getMongoDb();
 const [forms,briefs,posts,cases,portfolio,clients,media]=await Promise.all([
 db.collection("form_submissions").find({$or:[{name:rx},{email:rx},{company:rx},{service:rx}]}).limit(6).toArray(),
