@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type ReactNode } from "react";\nimport { useRouter } from "next/navigation";
+import { useState, type ReactNode } from "react";
+import { useRouter } from "next/navigation";
 
 type Brief = {
   brandName: string;
@@ -107,7 +108,8 @@ function SectionHeading({ eyebrow, title, note }: { eyebrow: string; title: stri
   );
 }
 
-export function DiscoveryForm() {\n  const router = useRouter();
+export function DiscoveryForm() {
+  const router = useRouter();
   const [brief, setBrief] = useState<Brief>(initialBrief);
   const [step, setStep] = useState(0);
   const [error, setError] = useState("");
@@ -198,7 +200,8 @@ export function DiscoveryForm() {\n  const router = useRouter();
         return;
       }
 
-      setStatus("sent");\n      router.push("/thank-you?from=discovery");
+      setStatus("sent");
+      router.push("/thank-you?from=discovery");
     } catch {
       setError("Network error. Please try again.");
       setStatus("idle");
