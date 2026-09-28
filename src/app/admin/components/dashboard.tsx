@@ -6,7 +6,8 @@ import { PostsPanel } from "./posts-panel";
 import { MediaPanel } from "./media-panel";
 import { AnalyticsPanel } from "./analytics-panel";
 import { DiscoveryPanel } from "./discovery-panel";
-import { SettingsPanel } from "./settings-panel";\nimport { ContentPanel } from "./content-panel";
+import { SettingsPanel } from "./settings-panel";
+import { ContentPanel } from "./content-panel";
 
 interface DashboardProps {
   token: string;
@@ -19,7 +20,11 @@ const tabs = [
   { id: "discovery", label: "Discovery Briefs" },
   { id: "leads", label: "Leads" },
   { id: "posts", label: "Blog Posts" },
-  { id: "media", label: "Media" },\n  { id: "case_studies", label: "Case Studies" },\n  { id: "portfolio", label: "Portfolio" },\n  { id: "testimonials", label: "Testimonials" },\n  { id: "clients", label: "Clients" },
+  { id: "media", label: "Media" },
+  { id: "case_studies", label: "Case Studies" },
+  { id: "portfolio", label: "Portfolio" },
+  { id: "testimonials", label: "Testimonials" },
+  { id: "clients", label: "Clients" },
   { id: "settings", label: "Settings" },
 ] as const;
 
@@ -86,7 +91,11 @@ export function AdminDashboard({ token, user, onLogout }: DashboardProps) {
         {activeTab === "discovery" && <DiscoveryPanel headers={headers} />}
         {activeTab === "leads" && <LeadsPanel headers={headers} />}
         {activeTab === "posts" && <PostsPanel headers={headers} />}
-        {activeTab === "media" && <MediaPanel token={token} />}\n        {activeTab === "case_studies" && <ContentPanel headers={headers} kind="case_studies" />}\n        {activeTab === "portfolio" && <ContentPanel headers={headers} kind="portfolio" />}\n        {activeTab === "testimonials" && <ContentPanel headers={headers} kind="testimonials" />}\n        {activeTab === "clients" && <ContentPanel headers={headers} kind="clients" />}
+        {activeTab === "media" && <MediaPanel token={token} />}
+        {activeTab === "case_studies" && <ContentPanel headers={headers} kind="case_studies" />}
+        {activeTab === "portfolio" && <ContentPanel headers={headers} kind="portfolio" />}
+        {activeTab === "testimonials" && <ContentPanel headers={headers} kind="testimonials" />}
+        {activeTab === "clients" && <ContentPanel headers={headers} kind="clients" />}
         {activeTab === "settings" && <SettingsPanel headers={headers} email={user.email} onSaved={onLogout} />}
       </main>
     </div>
