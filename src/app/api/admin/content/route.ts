@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import { getMongoDb } from "@/lib/mongodb";
 import { verifyToken } from "@/lib/auth";
-function auth(r:NextRequest){return verifyToken(r.cookies.get("admin_token")?.value||r.headers.get("authorization")?.replace("Bearer ","")||"");}
+function auth(r:NextRequest){return verifyToken(r.cookies.get("admin_token")?.value||"");}
 const allowed=["case_studies","portfolio","testimonials","clients"] as const;
 function collection(type:string){return allowed.includes(type as any)?type:null;}
 export async function GET(r:NextRequest){if(!auth(r))return NextResponse.json({error:"Unauthorized"},{status:401});const q=new URL(r.url).searchParams,type=collection(q.get("type")||"");if(!type)return NextResponse.json({error:"Invalid content type"},{status:400});const db=await getMongoDb(),docs=await db.collection(type).find({}).sort({sortOrder:1,createdAt:-1}).limit(250).toArray();return NextResponse.json({items:docs.map((x:any)=>({...x,id:x._id.toString(),_id:undefined}))});}
