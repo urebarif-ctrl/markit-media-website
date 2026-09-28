@@ -39,13 +39,9 @@ export const metadata: Metadata = {
     ? { index: true, follow: true }
     : { index: false, follow: false },
   icons: {
-    icon: [
-      { url: "/favicon-animated.svg?v=5", type: "image/svg+xml", sizes: "any" },
-      { url: "/favicon.ico?v=5", sizes: "32x32" },
-    ],
-    apple: "/apple-touch-icon.png",
+    icon: [{ url: "/favicon.svg?v=6", type: "image/svg+xml", sizes: "any" }],
   },
-  manifest: "/site.webmanifest?v=5",
+  manifest: "/site.webmanifest?v=6",
   alternates: {
     canonical: "https://themarkitmedia.com/en",
     languages: {
