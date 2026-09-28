@@ -7,12 +7,6 @@ function limited(ip:string){const now=Date.now(),e=rateLimitMap.get(ip);if(!e||n
 function esc(v:unknown){return String(v||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;").trim();}
 function serviceLabel(v:string){return v ? v.split("-").map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(" ") : "General Inquiry";}
 function portfolio(v:string){const m:Record<string,string>={branding:"/work/logo-folio","video-production":"/work","social-media":"/work","website-development":"/work","performance-marketing":"/case-studies",seo:"/case-studies"};return m[v]||"/work";}
-async function saveToSheet(data:Record<string,string|boolean>){
-  const url=process.env.GOOGLE_SHEETS_WEBHOOK_URL;
-  if(!url)return;
-  const r=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...data,secret:process.env.GOOGLE_SHEETS_WEBHOOK_SECRET||""}),cache:"no-store"});
-  if(!r.ok) throw new Error("Google Sheets webhook failed");
-}
 export async function POST(request:NextRequest){
  try{
   const ip=request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()||"unknown";if(limited(ip))return NextResponse.json({error:"Too many requests. Please try again later."},{status:429});
@@ -21,8 +15,7 @@ export async function POST(request:NextRequest){
   if(!data.name||data.name.length<2)return NextResponse.json({error:"Name is required."},{status:400});
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))return NextResponse.json({error:"A valid email address is required."},{status:400});
   if(!data.message||data.message.length<5)return NextResponse.json({error:"Please enter a message."},{status:400});
-  try{await saveFormSubmission("lead",data);}catch(e){console.error("Failed to save lead to MongoDB",e);}
-  try{await saveToSheet(data);}catch(e){console.error("Failed to save lead to Google Sheets",e);}
+  try{await saveFormSubmission("lead",{...data,internalNotes:"",assignedTo:"",updatedAt:new Date()});}catch(e){console.error("Failed to save lead to MongoDB",e);return NextResponse.json({error:"We could not save your request. Please try again."},{status:503});}
   if(!process.env.RESEND_API_KEY)return NextResponse.json({error:"We could not send your message. Please email ciao@themarkitmedia.com directly."},{status:503});
   const resend=new Resend(process.env.RESEND_API_KEY);const from=process.env.RESEND_FROM_EMAIL||"Markit Media <contact@themarkitmedia.com>";const label=serviceLabel(data.service);const isDiscovery=data.source==="Brand Discovery Brief";const messageHtml=data.message.replace(/\\n/g,"<br>");
   const internal=await resend.emails.send({from,to:["ciao@themarkitmedia.com","ureb.arif@themarkitmedia.com","urebarif@gmail.com"],replyTo:data.email,subject:isDiscovery?`New Discovery Brief: ${data.name} — ${data.company||data.name}`:`New Website Lead: ${data.name} — ${label}`,html:`<h2>${isDiscovery?"New pre-discovery brand brief":"New website inquiry"}</h2><p><b>Name:</b> ${data.name}<br><b>Email:</b> ${data.email}<br><b>Company:</b> ${data.company||"—"}<br><b>Phone/WhatsApp:</b> ${data.phone||"—"}<br><b>Service:</b> ${label}<br><b>Budget:</b> ${data.budget||"—"}<br><b>Timeline:</b> ${data.timeline||"—"}<br><b>Source:</b> ${data.source||"Website"}<br><b>Landing page:</b> ${data.landingPage||"—"}<br><b>UTM:</b> ${[data.utmSource,data.utmMedium,data.utmCampaign].filter(Boolean).join(" / ")||"—"}</p><p><b>${isDiscovery?"Discovery brief":"Message"}</b><br>${messageHtml}</p>`});
