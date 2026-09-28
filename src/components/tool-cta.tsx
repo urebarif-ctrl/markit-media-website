@@ -32,6 +32,10 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
           service: "general-inquiry",
           source: `${toolName} Tool`,
           landingPage: window.location.pathname,
+          referrer: document.referrer,
+          utmSource: new URLSearchParams(window.location.search).get("utm_source") || "",
+          utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "",
+          utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
         }),
       });
       if (!res.ok) {
