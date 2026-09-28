@@ -1,16 +1,24 @@
+import { createHash } from "crypto";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { getDb } from "./db";
 
 function getJwtSecret(): string {
-  const secret = process.env.JWT_SECRET;
-  if (!secret) {
-    if (process.env.NODE_ENV === "production") {
-      console.warn("WARNING: JWT_SECRET not set in production. Set JWT_SECRET environment variable.");
-    }
-    return "dev-jwt-secret-change-in-production";
+  const explicit = process.env.JWT_SECRET?.trim();
+  if (explicit) return explicit;
+
+  // Production previously fell back to a public, hard-coded secret. Until a
+  // dedicated JWT_SECRET is added in Vercel, derive a private signing key from
+  // an existing server-only secret so deployments fail closed rather than use
+  // a predictable credential.
+  const serverSecret = process.env.MONGODB_URI?.trim();
+  if (process.env.NODE_ENV === "production") {
+    if (!serverSecret) throw new Error("JWT_SECRET is required in production");
+    return createHash("sha256")
+      .update(`markit-admin-session:v1:${serverSecret}`)
+      .digest("hex");
   }
-  return secret;
+
+  return explicit || "dev-only-markit-admin-secret";
 }
 
 export interface JwtPayload {
@@ -20,12 +28,18 @@ export interface JwtPayload {
 }
 
 export function generateToken(payload: JwtPayload): string {
-  return jwt.sign(payload, getJwtSecret(), { expiresIn: "24h" });
+  return jwt.sign(payload, getJwtSecret(), {
+    expiresIn: "8h",
+    algorithm: "HS256",
+  });
 }
 
 export function verifyToken(token: string): JwtPayload | null {
+  if (!token) return null;
   try {
-    return jwt.verify(token, getJwtSecret()) as JwtPayload;
+    return jwt.verify(token, getJwtSecret(), {
+      algorithms: ["HS256"],
+    }) as JwtPayload;
   } catch {
     return null;
   }
@@ -37,18 +51,4 @@ export async function hashPassword(password: string): Promise<string> {
 
 export async function verifyPassword(password: string, hash: string): Promise<boolean> {
   return bcrypt.compare(password, hash);
-}
-
-export async function ensureDefaultAdmin(): Promise<void> {
-  const db = getDb();
-  const existing = db.prepare("SELECT id FROM users WHERE email = ?").get("admin@markitmedia.com");
-  if (!existing) {
-    const hash = await hashPassword("admin123");
-    db.prepare("INSERT INTO users (email, password_hash, name, role) VALUES (?, ?, ?, ?)").run(
-      "admin@markitmedia.com",
-      hash,
-      "Admin",
-      "admin",
-    );
-  }
 }
