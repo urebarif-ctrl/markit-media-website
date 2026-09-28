@@ -3,7 +3,7 @@ import { ObjectId } from "mongodb";
 import { getMongoDb } from "@/lib/mongodb";
 import { verifyToken } from "@/lib/auth";
 
-function auth(request: NextRequest) { const t=request.cookies.get("admin_token")?.value||request.headers.get("authorization")?.replace("Bearer ","")||""; return verifyToken(t); }
+function auth(request: NextRequest) { const t=request.cookies.get("admin_token")?.value||""; return verifyToken(t); }
 const view=(x:any)=>({...x,id:x._id.toString(),_id:undefined,original_name:x.originalName,mime_type:x.mimeType,alt_text:x.altText,created_at:x.createdAt});
 
 export async function GET(request:NextRequest){
