@@ -1,204 +1,39 @@
 "use client";
+import { useEffect,useState } from "react";
 
-import { useState, useEffect } from "react";
+type Data=any;
+const money=(n:number)=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"$0";
+const label=(s:string)=>String(s||"").replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase());
 
-interface AnalyticsData {
-  summary: {
-    totalLeads: number;
-    newLeads: number;
-    totalPosts: number;
-    publishedPosts: number;
-    totalMedia: number;
-    draftPosts?: number;
-    categories?: number;
-  };
-  leadsByDay: { date: string; count: number }[];
-  leadsByService: { service: string; count: number }[];
-  leadsByStatus: { status: string; count: number }[];
-  recentLeads: { id: number; name: string; email: string; service: string; status: string; created_at: string }[];
-  postsByCategory?: { category: string; count: number }[];
-  recentPosts?: { id: number; title: string; category: string; status: string; published_at: string | null }[];
-}
+export function AnalyticsPanel({headers}:{headers:Record<string,string>}){
+ const [data,setData]=useState<Data|null>(null),[days,setDays]=useState(30),[loading,setLoading]=useState(true);
+ useEffect(()=>{setLoading(true);fetch(`/api/admin/analytics?days=${days}`,{headers}).then(r=>r.json()).then(d=>{setData(d);setLoading(false)}).catch(()=>setLoading(false))},[days,headers]);
+ if(loading)return <div className="py-16 text-center text-gray-500">Loading operations dashboard...</div>;
+ if(!data||data.error)return <div className="py-16 text-center text-red-600">Dashboard data could not be loaded.</div>;
+ const maxDay=Math.max(...data.leadsByDay.map((x:any)=>x.count),1);
+ return <div className="space-y-6">
+  <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-gray-400">Markit Media Operations</p><h2 className="mt-1 text-3xl font-extrabold">Business Dashboard</h2><p className="mt-1 text-sm text-gray-500">Sales, follow-ups, content and website activity from MongoDB.</p></div><select value={days} onChange={e=>setDays(Number(e.target.value))} className="rounded-lg border bg-white px-3 py-2 text-sm"><option value={7}>Last 7 days</option><option value={30}>Last 30 days</option><option value={90}>Last 90 days</option><option value={365}>Last year</option></select></div>
 
-export function AnalyticsPanel({ headers }: { headers: Record<string, string> }) {
-  const [data, setData] = useState<AnalyticsData | null>(null);
-  const [days, setDays] = useState(30);
-  const [loading, setLoading] = useState(true);
+  <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+   {[["New Leads",data.summary.newLeads,`${data.summary.periodChange>=0?"+":""}${data.summary.periodChange}% vs previous period`],["Needs Follow-up",data.attention.overdue,"Overdue scheduled follow-ups"],["Qualified",data.summary.qualified,`${data.summary.proposals} currently at proposal stage`],["Pipeline Value",money(data.summary.pipelineValue),`${money(data.summary.wonValue)} won in selected period`]].map(([a,b,c],i)=><div key={String(a)} className={`rounded-2xl border p-5 ${i===0?"bg-black text-white":"bg-white"}`}><div className="text-xs font-bold uppercase tracking-wider opacity-50">{a}</div><div className="mt-2 text-3xl font-extrabold">{b}</div><div className="mt-2 text-xs opacity-60">{c}</div></div>)}
+  </div>
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`/api/admin/analytics?days=${days}`, { headers })
-      .then((r) => r.json())
-      .then((d) => { setData(d); setLoading(false); })
-      .catch(() => setLoading(false));
-  }, [days]);
+  <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
+   <section className="rounded-2xl border bg-white p-6"><div className="flex items-center justify-between"><div><h3 className="font-extrabold">Needs Your Attention</h3><p className="text-xs text-gray-400">Items most likely to need action now</p></div><span className="rounded-full bg-red-50 px-3 py-1 text-xs font-bold text-red-700">{data.attention.needsContact+data.attention.overdue} actionable</span></div><div className="mt-5 grid grid-cols-2 gap-3">{[["Uncontacted leads",data.attention.needsContact,"New or in progress"],["Overdue follow-ups",data.attention.overdue,"Past scheduled date"],["Stale leads",data.attention.stale,"7+ days without contact"],["Unassigned",data.attention.unassigned,"Open leads without owner"]].map(([a,b,c])=><div key={String(a)} className="rounded-xl bg-gray-50 p-4"><div className="text-2xl font-extrabold">{b}</div><div className="mt-1 text-sm font-bold">{a}</div><div className="text-xs text-gray-400">{c}</div></div>)}</div></section>
+   <section className="rounded-2xl border bg-white p-6"><h3 className="font-extrabold">Lead Activity</h3><p className="text-xs text-gray-400">{data.period}</p><div className="mt-5 flex h-40 items-end gap-1">{data.leadsByDay.length?data.leadsByDay.map((x:any)=><div key={x.date} title={`${x.date}: ${x.count}`} className="flex h-full flex-1 items-end"><div className="w-full rounded-t bg-black" style={{height:`${Math.max(4,(x.count/maxDay)*100)}%`}}/></div>):<div className="m-auto text-sm text-gray-400">No lead activity yet</div>}</div></section>
+  </div>
 
-  if (loading) return <div className="text-base text-gray-500 py-12 text-center">Loading analytics...</div>;
-  if (!data) return <div className="text-base text-red-600 py-12 text-center">Failed to load analytics</div>;
+  <section className="rounded-2xl border bg-white p-6"><div className="flex items-end justify-between"><div><h3 className="font-extrabold">Sales Pipeline</h3><p className="text-xs text-gray-400">Current stage distribution and estimated opportunity value</p></div><div className="text-right"><div className="text-xs uppercase text-gray-400">Open value</div><div className="font-extrabold">{money(data.summary.pipelineValue)}</div></div></div><div className="mt-5 grid grid-cols-2 gap-2 md:grid-cols-6">{data.pipeline.map((x:any)=><div key={x.stage} className="rounded-xl border p-4"><div className="text-xs font-bold uppercase text-gray-400">{label(x.stage)}</div><div className="mt-2 text-2xl font-extrabold">{x.count}</div><div className="mt-1 text-xs text-gray-500">{money(x.value)}</div></div>)}</div></section>
 
-  return (
-    <div className="space-y-8">
-      {/* Period selector */}
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-extrabold text-black">Dashboard</h2>
-        <select
-          value={days}
-          onChange={(e) => setDays(Number(e.target.value))}
-          className="border border-gray-300 px-3 py-2 text-sm bg-white"
-        >
-          <option value={7}>Last 7 days</option>
-          <option value={30}>Last 30 days</option>
-          <option value={90}>Last 90 days</option>
-          <option value={365}>Last year</option>
-        </select>
-      </div>
+  <div className="grid gap-6 lg:grid-cols-2">
+   <section className="rounded-2xl border bg-white p-6"><h3 className="font-extrabold">Upcoming Follow-ups</h3><div className="mt-4 space-y-2">{data.followUps.length?data.followUps.map((x:any)=><div key={x.id} className="flex items-center justify-between rounded-xl bg-gray-50 p-3"><div><div className="text-sm font-bold">{x.name}</div><div className="text-xs text-gray-400">{x.company||x.service} · {x.assignedTo||"Unassigned"}</div></div><div className="text-right text-xs font-bold">{new Date(x.nextFollowUpAt).toLocaleDateString()}<div className="font-normal text-gray-400">{new Date(x.nextFollowUpAt).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}</div></div></div>):<p className="py-8 text-center text-sm text-gray-400">No follow-ups scheduled yet. Add them from Lead Inbox.</p>}</div></section>
+   <section className="rounded-2xl border bg-white p-6"><h3 className="font-extrabold">Recent Leads</h3><div className="mt-4 space-y-2">{data.recentLeads.map((x:any)=><div key={x.id} className="flex items-center justify-between border-b py-3 last:border-0"><div><div className="text-sm font-bold">{x.name}</div><div className="text-xs text-gray-400">{x.service} · {x.source}</div></div><div className="text-right"><div className="text-xs font-bold">{label(x.status)}</div><div className="text-xs text-gray-400">{x.assignedTo||"Unassigned"}</div></div></div>)}</div></section>
+  </div>
 
-      {/* Summary cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-        {[
-          { label: "Total Leads", value: data.summary.totalLeads, color: "bg-black text-white" },
-          { label: "New Leads", value: data.summary.newLeads, color: "bg-black text-white" },
-          { label: "Blog Posts", value: data.summary.totalPosts, color: "bg-gray-100 text-black" },
-          { label: "Published", value: data.summary.publishedPosts, color: "bg-gray-100 text-black" },
-          { label: "Drafts", value: data.summary.draftPosts ?? 0, color: "bg-gray-100 text-black" },
-          { label: "Categories", value: data.summary.categories ?? 0, color: "bg-gray-100 text-black" },
-          { label: "Media Files", value: data.summary.totalMedia, color: "bg-gray-100 text-black" },
-        ].map((card) => (
-          <div key={card.label} className={`p-5 ${card.color}`}>
-            <div className="text-2xl font-extrabold">{card.value}</div>
-            <div className="text-sm mt-1 opacity-70">{card.label}</div>
-          </div>
-        ))}
-      </div>
+  <div className="grid gap-6 lg:grid-cols-3">
+   {[["Lead Sources",data.leadsBySource,"source"],["Top Services",data.leadsByService,"service"],["Status Breakdown",data.leadsByStatus,"status"]].map(([title,items,key]:any)=><section key={title} className="rounded-2xl border bg-white p-6"><h3 className="font-extrabold">{title}</h3><div className="mt-4 space-y-3">{items.slice(0,7).map((x:any)=><div key={x[key]} className="flex justify-between gap-4 text-sm"><span className="truncate text-gray-600">{label(x[key])}</span><b>{x.count}</b></div>)}</div></section>)}
+  </div>
 
-      {/* Leads chart (simple bar) */}
-      {data.leadsByDay.length > 0 && (
-        <div className="bg-white border border-gray-200 p-6">
-          <h3 className="text-base font-bold text-black mb-4">Leads Over Time</h3>
-          <div className="flex items-end gap-1 h-40">
-            {data.leadsByDay.map((day) => {
-              const max = Math.max(...data.leadsByDay.map((d) => d.count), 1);
-              const height = (day.count / max) * 100;
-              return (
-                <div key={day.date} className="flex-1 flex flex-col items-center gap-1" title={`${day.date}: ${day.count} leads`}>
-                  <div className="w-full bg-black" style={{ height: `${Math.max(height, 2)}%` }} />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Leads by service */}
-        {data.leadsByService.length > 0 && (
-          <div className="bg-white border border-gray-200 p-6">
-            <h3 className="text-base font-bold text-black mb-4">Leads by Service</h3>
-            <div className="space-y-3">
-              {data.leadsByService.map((s) => (
-                <div key={s.service} className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">{s.service}</span>
-                  <span className="text-sm font-bold text-black">{s.count}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Leads by status */}
-        <div className="bg-white border border-gray-200 p-6">
-          <h3 className="text-base font-bold text-black mb-4">Leads by Status</h3>
-          <div className="space-y-3">
-            {data.leadsByStatus.map((s) => (
-              <div key={s.status} className="flex items-center justify-between">
-                <span className="text-sm text-gray-600 capitalize">{s.status}</span>
-                <span className="text-sm font-bold text-black">{s.count}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Content stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {data.postsByCategory && data.postsByCategory.length > 0 && (
-          <div className="bg-white border border-gray-200 p-6">
-            <h3 className="text-base font-bold text-black mb-4">Posts by Category</h3>
-            <div className="space-y-2">
-              {data.postsByCategory.map((c) => {
-                const maxCat = Math.max(...(data.postsByCategory || []).map((x) => x.count), 1);
-                return (
-                  <div key={c.category} className="flex items-center gap-3">
-                    <span className="text-sm text-gray-600 w-32 flex-shrink-0 truncate">{c.category}</span>
-                    <div className="flex-1 bg-gray-100 h-4">
-                      <div className="bg-black h-4" style={{ width: `${(c.count / maxCat) * 100}%` }} />
-                    </div>
-                    <span className="text-sm font-bold text-black w-8 text-right">{c.count}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {data.recentPosts && data.recentPosts.length > 0 && (
-          <div className="bg-white border border-gray-200 p-6">
-            <h3 className="text-base font-bold text-black mb-4">Latest Blog Posts</h3>
-            <div className="space-y-3">
-              {data.recentPosts.map((post) => (
-                <div key={post.id} className="flex items-start justify-between gap-2 py-2 border-b border-gray-100">
-                  <div>
-                    <div className="text-sm font-medium text-gray-700 line-clamp-1">{post.title}</div>
-                    <div className="text-sm text-gray-400">{post.category}</div>
-                  </div>
-                  <span className={`text-sm font-bold px-2 py-0.5 flex-shrink-0 uppercase ${post.status === "published" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>{post.status}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Recent leads */}
-      <div className="bg-white border border-gray-200 p-6">
-        <h3 className="text-base font-bold text-black mb-4">Recent Leads</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left py-2 px-2 font-bold text-black">Name</th>
-                <th className="text-left py-2 px-2 font-bold text-black">Email</th>
-                <th className="text-left py-2 px-2 font-bold text-black hidden sm:table-cell">Service</th>
-                <th className="text-left py-2 px-2 font-bold text-black">Status</th>
-                <th className="text-left py-2 px-2 font-bold text-black hidden md:table-cell">Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.recentLeads.map((lead) => (
-                <tr key={lead.id} className="border-b border-gray-100">
-                  <td className="py-2 px-2 text-gray-700">{lead.name}</td>
-                  <td className="py-2 px-2 text-gray-500">{lead.email}</td>
-                  <td className="py-2 px-2 text-gray-500 hidden sm:table-cell">{lead.service || "—"}</td>
-                  <td className="py-2 px-2">
-                    <span className={`text-xs font-bold px-2 py-1 uppercase ${
-                      lead.status === "new" ? "bg-blue-100 text-blue-800" :
-                      lead.status === "contacted" ? "bg-yellow-100 text-yellow-800" :
-                      lead.status === "converted" ? "bg-green-100 text-green-800" :
-                      "bg-gray-100 text-gray-600"
-                    }`}>{lead.status}</span>
-                  </td>
-                  <td className="py-2 px-2 text-gray-500 hidden md:table-cell">
-                    {new Date(lead.created_at).toLocaleDateString()}
-                  </td>
-                </tr>
-              ))}
-              {data.recentLeads.length === 0 && (
-                <tr><td colSpan={5} className="py-8 text-center text-gray-400">No leads yet</td></tr>
-              )}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
+  <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-7">{[["Discovery",data.summary.discoveryBriefs],["Newsletter",data.summary.newsletterSubscribers],["Blogs",data.summary.totalPosts],["Published",data.summary.publishedPosts],["Drafts",data.summary.draftPosts],["Media",data.summary.totalMedia],["Categories",data.summary.categories]].map(([a,b])=><div key={String(a)} className="rounded-xl border bg-white p-4"><div className="text-xl font-extrabold">{b}</div><div className="text-xs uppercase text-gray-400">{a}</div></div>)}</div>
+ </div>
 }
