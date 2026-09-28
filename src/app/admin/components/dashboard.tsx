@@ -6,6 +6,7 @@ import { PostsPanel } from "./posts-panel";
 import { MediaPanel } from "./media-panel";
 import { AnalyticsPanel } from "./analytics-panel";
 import { DiscoveryPanel } from "./discovery-panel";
+import { SettingsPanel } from "./settings-panel";
 
 interface DashboardProps {
   token: string;
@@ -19,6 +20,7 @@ const tabs = [
   { id: "leads", label: "Leads" },
   { id: "posts", label: "Blog Posts" },
   { id: "media", label: "Media" },
+  { id: "settings", label: "Settings" },
 ] as const;
 
 type TabId = typeof tabs[number]["id"];
@@ -85,6 +87,7 @@ export function AdminDashboard({ token, user, onLogout }: DashboardProps) {
         {activeTab === "leads" && <LeadsPanel headers={headers} />}
         {activeTab === "posts" && <PostsPanel headers={headers} />}
         {activeTab === "media" && <MediaPanel token={token} />}
+        {activeTab === "settings" && <SettingsPanel headers={headers} email={user.email} onSaved={onLogout} />}
       </main>
     </div>
   );
