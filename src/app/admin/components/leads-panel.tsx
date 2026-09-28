@@ -9,7 +9,6 @@ const show=(v:any)=>Array.isArray(v)?v.join(", "):typeof v==="boolean"?(v?"Yes":
 
 export function LeadsPanel({headers}:{headers:Record<string,string>}){
  const [leads,setLeads]=useState<Lead[]>([]),[selected,setSelected]=useState<Lead|null>(null),[loading,setLoading]=useState(true);
- const exportRef=useRef<HTMLDivElement>(null);
  const [page,setPage]=useState(1),[totalPages,setTotalPages]=useState(1),[total,setTotal]=useState(0),[search,setSearch]=useState(""),[status,setStatus]=useState(""),[type,setType]=useState("");
  const [counts,setCounts]=useState<Record<string,number>>({});
  const [compose,setCompose]=useState<{subject:string;message:string}|null>(null),[sending,setSending]=useState(false);
