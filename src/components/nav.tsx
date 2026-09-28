@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { StartProjectCta } from "@/components/start-project-cta";
 
 interface NavTranslations {
   nav: Record<string, string>;
@@ -382,7 +381,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase text-sm`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>
             {languageOpen && <div className="absolute top-full right-0 min-w-40 bg-white text-black shadow-2xl border border-gray-100 py-2">{[["en","English"],["ar","العربية"],["ur","اردو"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`block px-4 py-3 text-sm hover:bg-gray-50 ${locale === code ? "font-extrabold" : "font-semibold"}`} onClick={() => setLanguageOpen(false)}>{label}{locale === code ? " ✓" : ""}</Link>)}</div>}
           </div>
-          <StartProjectCta className={`ml-1 px-5 py-3 text-sm font-extrabold transition-colors ${isHome && !scrolled ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"}`} />
+          <Link href="/get-a-quote" className={`ml-1 px-5 py-3 text-sm font-extrabold transition-colors ${isHome && !scrolled ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"}`}>Request a Quote</Link>
         </div>
 
         {/* Mobile toggle */}
