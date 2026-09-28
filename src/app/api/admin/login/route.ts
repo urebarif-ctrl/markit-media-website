@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     const db = await getMongoDb();
     const users = db.collection("admin_users");
     const adminEmail = process.env.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL;
-    const adminPassword = process.env.ADMIN_PASSWORD || DEFAULT_ADMIN_PASSWORD;
+    const adminPassword = process.env.ADMIN_PASSWORD;
 
     let user = await users.findOne({ email: adminEmail });
     if (!user) {
