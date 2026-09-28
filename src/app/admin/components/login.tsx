@@ -56,7 +56,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
-              placeholder="admin@markitmedia.com"
+              placeholder="ureb.arif@themarkitmedia.com"
             />
           </div>
           <div>
