@@ -4,7 +4,7 @@ import { getMongoDb } from "@/lib/mongodb";
 import { verifyToken } from "@/lib/auth";
 
 function auth(request: NextRequest) {
-  const token = request.cookies.get("admin_token")?.value || request.headers.get("authorization")?.replace("Bearer ", "") || "";
+  const token = request.cookies.get("admin_token")?.value || "";
   return verifyToken(token);
 }
 const statuses = new Set(["new","in_progress","contacted","qualified","proposal","won","completed","closed"]);
