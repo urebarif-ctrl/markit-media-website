@@ -14,7 +14,7 @@ export function NewsletterCta({ source = "footer" }: { source?: string }) {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify({ email, source, landingPage: window.location.pathname, referrer: document.referrer, utmSource: new URLSearchParams(window.location.search).get("utm_source") || "", utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "", utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "" }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
