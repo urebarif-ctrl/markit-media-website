@@ -28,6 +28,7 @@ export default function WebsiteDevelopmentPage() {
         { title: "Squarespace Development", desc: "Polished Squarespace websites for service businesses, portfolios, and content-led brands.", href: "/services/website-development/squarespace" },
         { title: "Next.js Development", desc: "High-performance React applications with server-side rendering and static generation.", href: "/services/website-development/nextjs" },
         { title: "Custom Web Apps", desc: "Full-stack web applications built to solve specific business problems.", href: "/services/website-development/custom-web-apps" },
+        { title: "Freelance Web Developers", desc: "Flexible WordPress, Shopify, Next.js, and front-end development capacity for businesses and agencies that need reliable project support.", href: "/services/website-development/freelance-developers" },
         { title: "Landing Pages", desc: "High-converting landing pages designed for campaigns, launches, and lead generation.", href: "/services/website-development/landing-pages" },
         { title: "E-commerce Solutions", desc: "Online stores with payment integration, inventory management, and order processing.", href: "/services/website-development/ecommerce" },
         { title: "Website Migration", desc: "Platform, hosting, CMS, or domain migrations planned for continuity, QA, analytics, and minimal disruption.", href: "/services/website-development/website-migration" },
