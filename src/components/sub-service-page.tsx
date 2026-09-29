@@ -137,7 +137,7 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
         <div className="grid md:grid-cols-3 gap-6 mt-10">{relatedPosts.map(post=><Link key={post.slug} href={`/blog/${post.slug}`} className="group bg-white border border-gray-200 p-6 hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-wider text-gray-400">{post.category}</span><h3 className="font-extrabold text-lg mt-3 group-hover:underline">{post.title}</h3><p className="text-sm text-gray-500 mt-3 line-clamp-3">{post.excerpt}</p><span className="inline-block mt-5 text-sm font-bold">Read article →</span></Link>)}</div>
       </div></section>}
 
-      <section className="px-6 lg:px-12 py-20" aria-label="Request a quote">
+      <section id="subservice-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
           <div className="pt-2">
             <SectionLabel>Request a Quote</SectionLabel>
@@ -193,8 +193,8 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Tell us what you need, what is already in place, and the result you want from {title.toLowerCase()}.
             </p>
-            <Link href="#top" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-              Review the Service &uarr;
+            <Link href="#subservice-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              Request a Quote &rarr;
             </Link>
           </Animate>
         </div>
