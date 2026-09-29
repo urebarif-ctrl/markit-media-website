@@ -127,42 +127,6 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
 
   const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
 
-  useEffect(() => {
-    if (normalizedQuery.length < 2) {
-      setBlogSearchResults([]);
-      setSearchLoading(false);
-      return;
-    }
-
-    const controller = new AbortController();
-    const timer = window.setTimeout(async () => {
-      setSearchLoading(true);
-      try {
-        const response = await fetch(`/api/blog/search?q=${encodeURIComponent(searchQuery.trim())}`, {
-          signal: controller.signal,
-        });
-        const data = (await response.json()) as { results?: BlogSearchResult[] };
-        const blogItems: SearchItem[] = (data.results ?? []).map((post) => ({
-          label: post.title,
-          href: `/${locale}/blog/${post.slug}`,
-          desc: post.excerpt || post.category || "Marketing insight",
-          category: "Insights",
-        }));
-        setBlogSearchResults(blogItems);
-      } catch (error) {
-        if (!(error instanceof DOMException && error.name === "AbortError")) {
-          setBlogSearchResults([]);
-        }
-      } finally {
-        if (!controller.signal.aborted) setSearchLoading(false);
-      }
-    }, 180);
-
-    return () => {
-      window.clearTimeout(timer);
-      controller.abort();
-    };
-  }, [searchQuery, normalizedQuery, locale]);
 
   useEffect(() => {
     function handleScroll() { setScrolled(window.scrollY > 20); }
@@ -405,7 +369,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
-          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2">{searchResults.map((item) => <Link key={`mobile-${item.category}-${item.href}`} href={item.href} className="block py-3 border-b border-gray-100" onClick={() => { setSearchOpen(false); setMobileOpen(false); }}><span className="text-xs uppercase text-gray-400">{item.category}</span><span className="block font-bold">{item.label}</span></Link>)}</div></div>}
+          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2"></div></div>}
 <Link href="/get-a-quote" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
