@@ -278,8 +278,37 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                   <div><p className="text-lg font-bold">Tell us what you want to grow.</p><Link href="/get-a-quote" className="mt-4 inline-flex rounded-full bg-white px-4 py-2.5 text-sm font-extrabold text-black hover:bg-[#EEE9FF]">Get a recommendation →</Link></div>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-1 p-4 max-h-[58vh] overflow-y-auto">
-                {serviceCategories.map((s, index) => <Link key={s.href} href={s.href} className="group p-3.5 hover:bg-[#F5F2FF] rounded-xl transition-colors"><span className="flex items-center gap-2 text-sm font-bold text-black"><span className={`h-2 w-2 rounded-full ${index < 4 ? "bg-[#6C4CF1]" : "bg-gray-200 group-hover:bg-[#6C4CF1]"}`} />{s.label}</span><span className="block text-xs leading-relaxed text-gray-500 mt-1 pl-4">{s.desc}</span></Link>)}
+              <div className="grid grid-cols-[1.45fr_.95fr] gap-5 p-5">
+                <div>
+                  <div className="flex items-center justify-between mb-3"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">Core growth services</span><span className="text-[11px] font-semibold text-gray-400">Start here</span></div>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { label: "PPC & Paid Ads", href: "/services/performance-marketing", desc: "Meta Ads, Google Ads & PPC management", tag: "PPC" },
+                      { label: "SEO", href: "/services/seo", desc: "Technical, local, content & AI SEO", tag: "SEO" },
+                      { label: "Social Media Marketing", href: "/services/social-media", desc: "Strategy, content & community management", tag: "SMM" },
+                      { label: "Website Development", href: "/services/website-development", desc: "WordPress, Shopify & Next.js", tag: "WEB" },
+                    ].map((item) => <Link key={item.href} href={item.href} className="group min-h-[104px] rounded-2xl border border-[#E7E1FF] bg-[#F8F6FF] p-4 transition-all hover:-translate-y-0.5 hover:border-[#6C4CF1] hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-white px-2 py-1 text-[9px] font-extrabold tracking-wider text-[#5A3ED6]">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-[#5A3ED6]">Explore →</span></Link>)}
+                  </div>
+                </div>
+                <div className="border-l border-gray-100 pl-5">
+                  <span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-gray-400">More capabilities</span>
+                  <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1">
+                    {[
+                      { label: "Branding", href: "/services/branding" },
+                      { label: "Video Production", href: "/services/video-production" },
+                      { label: "AI Solutions", href: "/services/ai" },
+                      { label: "App Development", href: "/services/app-development" },
+                      { label: "Content Marketing", href: "/services/content-marketing" },
+                      { label: "Email Marketing", href: "/services/email-marketing" },
+                      { label: "E-commerce", href: "/services/ecommerce-marketing" },
+                      { label: "Analytics", href: "/services/marketing-analytics" },
+                      { label: "BPO Services", href: "/services/bpo" },
+                      { label: "White Label", href: "/services/white-label" },
+                      { label: "Media Buying", href: "/services/media-planning-buying" },
+                      { label: "Upwork Growth", href: "/services/upwork-growth" },
+                    ].map((item) => <Link key={item.href} href={item.href} className="group flex items-center justify-between rounded-lg px-2.5 py-2 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-black"><span>{item.label}</span><span className="text-gray-300 group-hover:text-[#6C4CF1]">↗</span></Link>)}
+                  </div>
+                </div>
               </div>
               <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/services" className="text-sm font-extrabold text-[#5A3ED6]">All services →</Link></div>
             </div>
