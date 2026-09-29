@@ -69,6 +69,24 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  // Canonical free-tool URLs. Keep the 155 interactive utilities grouped under
+  // /free-tools and preserve old /resources/* bookmarks with permanent redirects.
+  const freeToolMatch = pathname.match(/^\/(?:en\/)?free-tools\/free-(.+)$/);
+  if (freeToolMatch) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/en/resources/${freeToolMatch[1]}`;
+    const response = NextResponse.rewrite(url);
+    response.headers.set("X-Robots-Tag", "index, follow");
+    return response;
+  }
+
+  const oldToolMatch = pathname.match(/^\/(?:en\/)?resources\/(.+)$/);
+  if (oldToolMatch) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/en/free-tools/free-${oldToolMatch[1]}`;
+    return NextResponse.redirect(url, 308);
+  }
+
   // Private/share-only scheduling shortcut. Intentionally not part of public navigation.
   if (pathname === "/meet") {
     return NextResponse.next();
