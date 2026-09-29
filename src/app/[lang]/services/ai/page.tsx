@@ -23,6 +23,7 @@ export default function AiPage() {
       longDescription="AI is transforming how businesses approach marketing and customer engagement. Our AI solutions team helps you identify high-impact opportunities for automation and intelligence, then builds and deploys the systems to capture them. From customer-facing chatbots to predictive analytics and marketing automation workflows, we bring practical AI to your business operations."
       subServices={[
         { title: "AI Chatbots", desc: "Custom chatbots for customer support, lead qualification, and appointment booking.", href: "/services/ai/chatbots" },
+        { title: "AI Marketing", desc: "AI-assisted marketing workflows for research, content, campaign operations, personalization, and faster execution with human review.", href: "/services/ai/ai-marketing" },
         { title: "Marketing Automation", desc: "Automated workflows for email sequences, lead nurturing, and campaign triggers.", href: "/services/ai/marketing-automation" },
         { title: "AI Consulting", desc: "Strategic guidance on where and how to apply AI across your marketing operations.", href: "/services/ai/consulting" },
         { title: "Predictive Analytics", desc: "Data models that forecast customer behavior, churn risk, and campaign performance.", href: "/services/ai/predictive-analytics" },
