@@ -28,6 +28,13 @@ export default function BpoPage() {
         { title: "Data Entry", desc: "Accurate, high-volume data entry, data cleaning, and database management.", href: "/services/bpo/data-entry" },
         { title: "Customer Support", desc: "Trained support agents for email, chat, and phone across your preferred tools.", href: "/services/bpo/customer-support" },
         { title: "Operations", desc: "Process management, order fulfillment support, and back-office operations.", href: "/services/bpo/operations" },
+        { title: "Appointment Setting", desc: "Lead qualification, calendar booking, follow-up, CRM updates, and handoff workflows for sales teams.", href: "/services/bpo/appointment-setting" },
+        { title: "Sales Development Representatives", desc: "Dedicated SDR support for prospecting, qualification, outreach, follow-up, and pipeline development.", href: "/services/bpo/sdr" },
+        { title: "Back Office Support", desc: "Administrative processing, documentation, coordination, records, and recurring operational tasks handled by a managed team.", href: "/services/bpo/back-office" },
+        { title: "Finance & Accounting Support", desc: "Bookkeeping support, invoicing, reconciliation assistance, reporting preparation, and structured finance operations.", href: "/services/bpo/finance-accounting" },
+        { title: "Staff Augmentation", desc: "Flexible digital, sales, support, and operations capacity that works alongside your existing team and systems.", href: "/services/bpo/staff-augmentation" },
+        { title: "Recruitment Process Outsourcing", desc: "Candidate sourcing, screening, coordination, interview support, and recruitment operations for growing teams.", href: "/services/bpo/recruitment-process-outsourcing" },
+
       ]}
       comparison={{
         title: "Managed BPO Team vs. Building the Function In-House",
