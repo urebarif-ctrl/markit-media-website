@@ -290,11 +290,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {label:"Shopify",href:"/services/website-development/shopify",brand:"Shopify"},
               {label:"WordPress",href:"/services/website-development/wordpress",brand:"WordPress"},
               {label:"Next.js",href:"/services/website-development/nextjs-websites",brand:"Next.js"},
-              {label:"Figma",href:"/tools",brand:"Figma"},
-              {label:"GA4",href:"/tools",brand:"GA4"},
-              {label:"Search Console",href:"/tools",brand:"Search Console"},
-              {label:"HubSpot",href:"/tools",brand:"HubSpot"},
-              {label:"Klaviyo",href:"/tools",brand:"Klaviyo"},
+              {label:"Figma",href:"/en/tools",brand:"Figma"},
+              {label:"GA4",href:"/en/tools",brand:"GA4"},
+              {label:"Search Console",href:"/en/tools",brand:"Search Console"},
+              {label:"HubSpot",href:"/en/tools",brand:"HubSpot"},
+              {label:"Klaviyo",href:"/en/tools",brand:"Klaviyo"},
             ].map((item)=><Link key={item.label} href={item.href} aria-label={`Explore ${item.label}`} className="group min-h-28 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all">
               {item.src
                 ? <Image src={item.src} alt={`${item.label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
