@@ -325,7 +325,7 @@ export default function ApproachPage() {
               { title: "Why Markit Media", desc: "How we compare to typical agencies.", href: "/why-markit-media" },
               { title: "Services", desc: "Full list of what we offer.", href: "/services" },
               { title: "Case Studies", desc: "See how we work in practice.", href: "/case-studies" },
-              { title: "Tools We Use", desc: "The technology behind our work.", href: "/tools" },
+              { title: "Tools We Use", desc: "The technology behind our work.", href: "/en/tools" },
               { title: "Pricing", desc: "How we structure our engagements.", href: "/pricing" },
               { title: "Results", desc: "Our KPI framework and measurement.", href: "/results" },
               { title: "Resources", desc: "Free guides, tools, and calculators.", href: "/resources" },
