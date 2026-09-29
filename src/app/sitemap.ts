@@ -440,15 +440,11 @@ const staticPages = [
 
 // Pages intentionally kept out of Google because they duplicate stronger tools, are utility-only,
 // or are paginated archives rather than standalone search destinations.
-const highPriorityKarachiPages = new Set([
-  "/locations/karachi",
-  "/locations/karachi/marketing-agency",
-  "/locations/karachi/ppc-ads",
-  "/locations/karachi/website-development",
-  "/locations/karachi/seo-services",
-  "/locations/karachi/social-media-marketing",
-  "/locations/karachi/branding",
-]);
+const isPriorityIndexPage = (page: string) =>
+  page === "/services" ||
+  page.startsWith("/services/") ||
+  page === "/locations" ||
+  page.startsWith("/locations/");
 
 const excludedFromIndexSitemap = new Set([
   "/resources/competitor-ad-spy", "/resources/funnel-visualizer", "/resources/customer-journey-mapper",
@@ -473,7 +469,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
-  const buildDate = new Date("2026-09-26");
+  const buildDate = new Date("2026-09-29");
 
   for (const page of legacySeoPages) {
     // Service and industry legacy URLs with clear modern equivalents use permanent redirects.
@@ -495,8 +491,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       let priority = 0.65;
       if (page === "") priority = 1;
       else if (page === "/about" || page === "/services" || page === "/locations" || page === "/blog" || page === "/free-tools") priority = 0.95;
-      else if (highPriorityKarachiPages.has(page)) priority = 0.95;
-      else if (page.startsWith("/services/") || page.startsWith("/locations/")) priority = depth <= 2 ? 0.9 : 0.85;
+      else if (isPriorityIndexPage(page)) priority = 0.95;
       else if (page.startsWith("/resources/")) priority = 0.8;
       else if (depth === 1) priority = 0.8;
       else if (depth === 2) priority = 0.75;
@@ -504,10 +499,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${BASE_URL}/${locale}${page}`,
         lastModified: buildDate,
+        // The sitemap protocol has no 15-day/biweekly value. "monthly" is the
+        // closest supported non-weekly hint; lastModified carries freshness.
         changeFrequency:
-          page === "" || page === "/blog" || highPriorityKarachiPages.has(page)
+          page === "" || page === "/blog"
             ? "weekly"
-            : "monthly",
+            : isPriorityIndexPage(page)
+              ? "monthly"
+              : "monthly",
         priority,
       });
     }
