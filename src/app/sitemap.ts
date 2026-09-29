@@ -618,7 +618,7 @@ const excludedFromIndexSitemap = new Set([
   "/resources/social-media-calendar-template", "/resources/content-calendar",
 ]);
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export function getSitemapEntries(): MetadataRoute.Sitemap {
   const locales = ["en"];
   const entries: MetadataRoute.Sitemap = [
     {
@@ -700,4 +700,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   return Array.from(new Map(entries.map((entry) => [entry.url, entry])).values());
+}
+
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return getSitemapEntries();
 }

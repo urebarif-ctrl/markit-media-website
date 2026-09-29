@@ -37,7 +37,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/"],
       },
     ],
-    sitemap: "https://themarkitmedia.com/sitemap.xml",
+    sitemap: "https://themarkitmedia.com/sitemap-index.xml",
     host: "https://themarkitmedia.com",
   };
 }
