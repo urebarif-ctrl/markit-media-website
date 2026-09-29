@@ -137,7 +137,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
     { label: "Publisher Partnerships", href: "/partners/publishers", desc: "Join our publisher partner network", category: "Company" },
     { label: "Glossary", href: "/glossary", desc: "Marketing, advertising and technology terms", category: "Resources" },
     { label: "Free Tools", href: "/free-tools", desc: "Browse all free marketing tools", category: "Tools" },
-    { label: "Tools", href: "/tools", desc: "Platforms and tools used by our team", category: "Tools" },
+    { label: "Tools", href: "/en/tools", desc: "Platforms and tools used by our team", category: "Tools" },
     { label: "Marketing Pricing Calculator", href: "/resources/pricing-calculator", desc: "Estimate marketing service investment", category: "Tools" },
     { label: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator", desc: "Compare agency pricing models", category: "Tools" },
     { label: "ROI Calculator", href: "/resources/roi-calculator", desc: "Estimate marketing return on investment", category: "Tools" },
@@ -367,7 +367,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           <Link href="/work" className={`${navLinkClass} px-3`}>Work</Link>
           <Link href="/case-studies" className={`${navLinkClass} px-3`}>Case Studies</Link>
           <Link href="/blog" className={`${navLinkClass} px-3`}>Insights</Link>
-          <Link href="/tools" className={`${navLinkClass} px-3`}>Tools</Link>
+          <Link href="/en/tools" className={`${navLinkClass} px-3`}>Tools</Link>
           <Link href="/about" className={`${navLinkClass} px-3`}>About</Link>
 
           <div className="h-6 w-px bg-current opacity-15 mx-1" aria-hidden="true" />
@@ -427,7 +427,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             { label: t.nav.work, href: "/work" },
             { label: t.nav.caseStudies, href: "/case-studies" },
             { label: t.nav.insights, href: "/blog" },
-            { label: "Tools", href: "/tools" },
+            { label: "Tools", href: "/en/tools" },
             { label: "Resources", href: "/resources" },
             { label: t.nav.about, href: "/about" },
             { label: t.nav.contact, href: "/contact" },
