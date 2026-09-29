@@ -205,6 +205,162 @@ export default function MetaAdsPage() {
         },
       ]}
     >
+      <section className="px-6 lg:px-12 py-16 border-y border-gray-100 bg-white" aria-label="Meta advertising platforms and campaign system">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
+            <div>
+              <SectionLabel>Facebook + Instagram + Meta</SectionLabel>
+              <SectionTitle>One advertising system. Multiple ways to reach and convert.</SectionTitle>
+              <p className="text-lg text-gray-500 leading-relaxed mt-5 max-w-2xl">
+                We manage campaigns across Facebook and Instagram through Meta Ads Manager, connecting creative, audiences, placements and conversion data into one measurable acquisition system.
+              </p>
+              <div className="flex flex-wrap gap-3 mt-7">
+                {[
+                  ["Meta", "∞"],
+                  ["Facebook", "f"],
+                  ["Instagram", "◎"],
+                  ["Reels", "▶"],
+                  ["Messenger", "✦"],
+                ].map(([name, icon]) => (
+                  <div key={name} className="inline-flex items-center gap-2.5 rounded-full border border-gray-200 bg-white px-4 py-2.5 shadow-sm">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white text-lg font-black">{icon}</span>
+                    <span className="text-sm font-bold">{name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] bg-black text-white p-6 sm:p-8 shadow-2xl overflow-hidden relative">
+              <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full border border-white/10" />
+              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full border border-white/10" />
+              <div className="relative">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-gray-500 font-bold">Campaign system</p>
+                    <h3 className="text-2xl font-extrabold mt-2">From attention to revenue</h3>
+                  </div>
+                  <div className="text-4xl font-black">∞</div>
+                </div>
+                <div className="grid grid-cols-4 gap-2 mt-8">
+                  {[
+                    ["01", "Creative"],
+                    ["02", "Audience"],
+                    ["03", "Conversion"],
+                    ["04", "Learning"],
+                  ].map(([n, label], index) => (
+                    <div key={label} className="relative">
+                      <div className="rounded-xl border border-white/15 bg-white/[0.06] p-3 min-h-24">
+                        <span className="text-[10px] text-gray-500 font-bold">{n}</span>
+                        <p className="text-xs sm:text-sm font-bold mt-5">{label}</p>
+                      </div>
+                      {index < 3 && <span className="absolute -right-2.5 top-1/2 z-10 text-gray-500">→</span>}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 rounded-xl bg-white text-black p-4 flex items-center justify-between gap-5">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-gray-400 font-bold">Optimization loop</p>
+                    <p className="font-extrabold mt-1">Test → Learn → Improve → Scale</p>
+                  </div>
+                  <div className="h-12 w-12 shrink-0 rounded-full border-4 border-black border-l-gray-200" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Meta Ads funnel and performance metrics">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <SectionLabel>Full Funnel Advertising</SectionLabel>
+              <SectionTitle>We do not treat every audience like they are ready to buy.</SectionTitle>
+              <p className="text-gray-500 leading-relaxed mt-5 max-w-xl">
+                The message, creative and campaign objective should change as people move from discovery to consideration and conversion. Retargeting then reconnects with people who showed intent but did not act.
+              </p>
+              <div className="mt-9 space-y-3">
+                {[
+                  ["Awareness", "Cold audiences · Video · Reels · Discovery", "100%"],
+                  ["Consideration", "Engagers · Visitors · Product viewers", "82%"],
+                  ["Conversion", "Leads · Purchases · Messages · Bookings", "64%"],
+                  ["Retargeting", "High-intent users · CRM · Past customers", "46%"],
+                ].map(([title, text, width]) => (
+                  <div key={title} className="rounded-xl bg-white border border-gray-200 p-4">
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <h3 className="font-extrabold">{title}</h3>
+                        <p className="text-xs text-gray-500 mt-1">{text}</p>
+                      </div>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full mt-4 overflow-hidden">
+                      <div className="h-full bg-black rounded-full" style={{ width }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <SectionLabel>What We Watch</SectionLabel>
+              <h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold tracking-tight mt-3">Metrics connected to business outcomes</h2>
+              <div className="grid grid-cols-2 gap-3 mt-8">
+                {[
+                  ["CPA / CPL", "Acquisition efficiency"],
+                  ["ROAS", "Revenue efficiency"],
+                  ["CTR", "Creative response"],
+                  ["CVR", "Conversion quality"],
+                  ["Frequency", "Audience saturation"],
+                  ["AOV / LTV", "Customer economics"],
+                ].map(([metric, label], index) => (
+                  <div key={metric} className="rounded-2xl bg-white border border-gray-200 p-5">
+                    <div className="flex h-16 items-end gap-1 mb-4" aria-hidden="true">
+                      {[35, 52, 44, 68, 58, 82, 72].map((height, bar) => (
+                        <span key={bar} className="flex-1 bg-black/90 rounded-t-sm" style={{ height: `${Math.max(14, height - index * 2)}%` }} />
+                      ))}
+                    </div>
+                    <p className="text-xl font-black">{metric}</p>
+                    <p className="text-xs text-gray-500 mt-1">{label}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-400 leading-relaxed mt-4">
+                Visual bars are illustrative. Client reporting uses actual account, analytics and CRM data where available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20" aria-label="Meta Ads creative formats">
+        <div className="max-w-7xl mx-auto">
+          <SectionLabel>Creative That Fits the Feed</SectionLabel>
+          <SectionTitle>Different formats for different moments</SectionTitle>
+          <p className="text-lg text-gray-500 leading-relaxed mt-5 max-w-3xl">
+            Meta performance increasingly depends on the quality and variety of creative inputs. We plan testing around the offer and customer, then produce or adapt assets for the placements that matter.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+            {[
+              ["9:16", "Reels & Stories", "Short-form vertical creative built around fast hooks, demonstrations and clear next actions."],
+              ["1:1", "Static Ads", "Focused visual concepts for offers, benefits, proof, products and lead generation."],
+              ["▦", "Carousels", "Multi-card storytelling for products, features, steps, comparisons and catalog activity."],
+              ["UGC", "Native-style Video", "Creator-style concepts and less polished formats designed to feel natural in the feed."],
+            ].map(([visual, title, text]) => (
+              <div key={title} className="group rounded-2xl border border-gray-200 overflow-hidden bg-white hover:shadow-xl transition-shadow">
+                <div className="aspect-[4/3] bg-black flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-5 rounded-xl border border-white/15" />
+                  <span className="relative text-white text-4xl font-black tracking-tight">{visual}</span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-extrabold text-lg">{title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed mt-2">{text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-20" aria-label="How Markit Media manages Meta Ads">
         <div className="max-w-7xl mx-auto">
           <SectionLabel>How We Work</SectionLabel>
