@@ -118,6 +118,18 @@ const creativeServices: ServiceItem[] = [
     icon: PenTool,
     href: "/services/content-marketing/copywriting",
   },
+  {
+    title: "Motion Graphics",
+    desc: "Animated social assets, typography, explainers, transitions, product motion, and branded graphics for campaigns that need more movement than a static post.",
+    icon: Video,
+    href: "/services/video-production/motion-design",
+  },
+  {
+    title: "AI Assisted Content",
+    desc: "AI supported ideation, visual concepts, copy variations, and creative workflows used with human review to increase output without losing brand direction.",
+    icon: Sparkles,
+    href: "/services/ai/ai-marketing",
+  },
 ];
 
 const managementServices: ServiceItem[] = [
