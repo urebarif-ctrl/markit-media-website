@@ -23,6 +23,7 @@ export default function SeoPage() {
       longDescription="Search engine optimization is a long-term investment in your digital presence. Our SEO team conducts thorough audits, develops keyword strategies, optimizes your technical infrastructure, creates SEO-driven content, and builds high-quality backlinks to improve your rankings and drive qualified traffic."
       subServices={[
         { title: "Technical SEO", desc: "Site speed, crawlability, indexation, Core Web Vitals, and schema markup.", href: "/services/seo/technical-seo" },
+        { title: "AI SEO", desc: "Improve visibility across traditional search and AI-driven discovery with entity, content, technical, and answer-engine optimization.", href: "/services/seo/ai-seo" },
         { title: "Local SEO", desc: "Google Business Profile, local citations, and map pack optimization.", href: "/services/seo/local-seo" },
         { title: "Content SEO", desc: "Keyword-optimized content creation and on-page optimization.", href: "/services/seo/content-seo" },
         { title: "Link Building", desc: "High-quality backlink acquisition through outreach and digital PR.", href: "/services/seo/link-building" },
