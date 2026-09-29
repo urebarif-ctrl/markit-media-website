@@ -6,8 +6,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "Resources — Digital Marketing Guides & Tools",
-  description: "Free digital marketing resources: blog articles, glossary, checklists, and guides to help you grow your business online.",
+  title: "Free Tools & Resources | Digital Marketing Guides",
+  description: "Explore free marketing tools, calculators, audits, checklists, guides and digital marketing resources from Markit Media. No signup required for interactive tools.",
   alternates: { canonical: "https://themarkitmedia.com/en/resources" },
   openGraph: {
     title: "Free Marketing Resources",
