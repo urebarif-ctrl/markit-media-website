@@ -12,20 +12,6 @@ interface NavTranslations {
   accessibility: Record<string, string>;
 }
 
-interface SearchItem {
-  label: string;
-  href: string;
-  desc: string;
-  category: "Services" | "Industries" | "Work" | "Insights" | "Tools" | "Resources" | "Company";
-}
-
-interface BlogSearchResult {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-}
-
 const serviceCategories = [
   { label: "Performance Marketing", href: "/services/performance-marketing", desc: "Meta Ads, Google Ads, PPC" },
   { label: "SEO", href: "/services/seo", desc: "Technical, local, and content SEO" },
@@ -112,9 +98,6 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [blogSearchResults, setBlogSearchResults] = useState<SearchItem[]>([]);
-  const [searchLoading, setSearchLoading] = useState(false);
 
   const servicesRef = useRef<HTMLDivElement>(null);
   const industriesRef = useRef<HTMLDivElement>(null);
@@ -369,7 +352,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
-          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2"></div></div>}
+          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search"  placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2"></div></div>}
 <Link href="/get-a-quote" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
