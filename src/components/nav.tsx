@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
+import { SiteSearch } from "@/components/site-search";
 
 interface NavTranslations {
   nav: Record<string, string>;
@@ -125,69 +126,6 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const industriesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
-
-  const utilityPages: SearchItem[] = [
-    { label: "Pricing", href: "/pricing", desc: "Engagement models, example budgets and pricing guidance", category: "Company" },
-    { label: "Our Process", href: "/process", desc: "How we discover, plan, launch and optimize", category: "Company" },
-    { label: "FAQ", href: "/faq", desc: "Common questions about working with Markit Media", category: "Company" },
-    { label: "Careers", href: "/careers", desc: "Open roles and opportunities", category: "Company" },
-    { label: "Locations", href: "/locations", desc: "Markets and locations we serve", category: "Company" },
-    { label: "Technology", href: "/technology", desc: "Platforms, tools and technology we work with", category: "Company" },
-    { label: "Write for Markit Media", href: "/write-for-us", desc: "Guest contributor and editorial guidelines", category: "Company" },
-    { label: "Publisher Partnerships", href: "/partners/publishers", desc: "Join our publisher partner network", category: "Company" },
-    { label: "Glossary", href: "/glossary", desc: "Marketing, advertising and technology terms", category: "Resources" },
-    { label: "Free Tools", href: "/free-tools", desc: "Browse all free marketing tools", category: "Tools" },
-    { label: "Tools", href: "/en/tools", desc: "Platforms and tools used by our team", category: "Tools" },
-    { label: "Marketing Pricing Calculator", href: "/resources/pricing-calculator", desc: "Estimate marketing service investment", category: "Tools" },
-    { label: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator", desc: "Compare agency pricing models", category: "Tools" },
-    { label: "ROI Calculator", href: "/resources/roi-calculator", desc: "Estimate marketing return on investment", category: "Tools" },
-    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner", desc: "Plan channel and campaign budgets", category: "Tools" },
-    { label: "Website Grader", href: "/resources/website-grader", desc: "Review website readiness and performance", category: "Tools" },
-    { label: "Website Audit", href: "/resources/website-audit", desc: "Run a structured website audit", category: "Tools" },
-    { label: "SEO Audit Score", href: "/resources/seo-audit-score", desc: "Check key SEO readiness signals", category: "Tools" },
-    { label: "Backlink Analyzer", href: "/resources/backlink-analyzer", desc: "Review backlink opportunities and signals", category: "Tools" },
-    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator", desc: "Estimate Google Ads budget and outcomes", category: "Tools" },
-    { label: "UTM Builder", href: "/resources/utm-builder", desc: "Build campaign tracking URLs", category: "Tools" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer", desc: "Review and improve marketing headlines", category: "Tools" },
-    { label: "Meta Description Generator", href: "/resources/meta-description-generator", desc: "Create search-friendly meta descriptions", category: "Tools" },
-    { label: "Content Brief Generator", href: "/resources/content-brief-generator", desc: "Build a structured content brief", category: "Tools" },
-    { label: "Social Media Planner", href: "/resources/social-media-planner", desc: "Plan social content and campaigns", category: "Tools" },
-  ];
-
-  const searchItems: SearchItem[] = [
-    ...serviceCategories.map((item) => ({ ...item, category: "Services" as const })),
-    ...industryList.map((item) => ({ ...item, desc: "Industry expertise", category: "Industries" as const })),
-    { label: "Case Studies", href: "/case-studies", desc: "Results and client work", category: "Work" },
-    { label: "Portfolio", href: "/work", desc: "Selected creative and digital work", category: "Work" },
-    { label: "Blog & Insights", href: "/blog", desc: "Marketing articles and insights", category: "Insights" },
-    { label: "Resources", href: "/resources", desc: "Guides, calculators and practical resources", category: "Resources" },
-    ...utilityPages,
-    { label: "About Markit Media", href: "/about", desc: "About the agency", category: "Company" },
-    { label: "Contact", href: "/contact", desc: "Talk to our team", category: "Company" },
-    { label: "Request a Quote", href: "/get-a-quote", desc: "Start a project", category: "Company" },
-  ];
-
-  const normalizedQuery = searchQuery.trim().toLowerCase();
-  const staticMatches = normalizedQuery
-    ? searchItems.filter((item) => `${item.label} ${item.desc} ${item.category}`.toLowerCase().includes(normalizedQuery))
-    : [
-        searchItems.find((item) => item.label === "Blog & Insights"),
-        searchItems.find((item) => item.label === "Marketing Pricing Calculator"),
-        searchItems.find((item) => item.label === "ROI Calculator"),
-        searchItems.find((item) => item.label === "Case Studies"),
-        searchItems.find((item) => item.label === "Services"),
-        searchItems.find((item) => item.label === "Resources"),
-        searchItems.find((item) => item.label === "Pricing"),
-        searchItems.find((item) => item.label === "Contact"),
-      ].filter(Boolean) as SearchItem[];
-
-  const combinedResults = normalizedQuery
-    ? [...staticMatches.slice(0, 10), ...blogSearchResults.slice(0, 6)]
-    : staticMatches;
-
-  const searchResults = combinedResults
-    .filter((item, index, items) => items.findIndex((candidate) => candidate.href === item.href) === index)
-    .slice(0, 16);
 
   useEffect(() => {
     if (normalizedQuery.length < 2) {
@@ -375,7 +313,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => { setSearchOpen(!searchOpen); setLanguageOpen(false); }} className={`${navLinkClass} px-3`} aria-label="Search website" aria-expanded={searchOpen}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
-            {searchOpen && <div className="absolute top-full right-0 w-[520px] max-w-[90vw] bg-white text-black shadow-2xl border border-gray-100 p-4"><label htmlFor="site-search" className="sr-only">Search the website</label><input id="site-search" autoFocus value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search blogs, services, tools, industries, pages..." className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-black" /><div className="flex items-center justify-between px-1 pt-3"><span className="text-[11px] font-bold uppercase tracking-[.14em] text-gray-400">{normalizedQuery ? "Search results" : "Quick access"}</span>{searchLoading && <span className="text-xs text-gray-400">Searching insights...</span>}</div><div className="mt-2 max-h-[460px] overflow-y-auto">{searchResults.length ? searchResults.map((item) => <Link key={`${item.category}-${item.href}`} href={item.href} className="block p-3 hover:bg-gray-50 border-b border-gray-50 last:border-b-0" onClick={() => setSearchOpen(false)}><span className="block text-[11px] font-bold uppercase tracking-wide text-gray-400">{item.category}</span><span className="block text-sm font-bold">{item.label}</span><span className="block text-xs text-gray-500 line-clamp-2 mt-0.5">{item.desc}</span></Link>) : <p className="p-3 text-sm text-gray-500">No matching pages or articles found.</p>}</div></div>}
+            {searchOpen && <div className="absolute top-full right-0 w-[560px] max-w-[92vw] bg-white text-black shadow-2xl border border-gray-100 p-4"><SiteSearch locale={locale} compact /></div>}
           </div>
           <div className="relative">
             <button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase text-sm`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>
