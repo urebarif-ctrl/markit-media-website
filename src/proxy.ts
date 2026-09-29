@@ -32,18 +32,41 @@ const KNOWN_ROUTES = new Set([
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const hostname = request.nextUrl.hostname.toLowerCase();
+  const dashboardHost = hostname === "dashboard.themarkitmedia.com";
 
-  // Admin is an internal, non-localized application. Keep it outside the
-  // public locale router and normalize accidental localized admin URLs.
-  const localizedAdminMatch = pathname.match(/^\/(?:en|ar|ur)\/admin(?:\/(.*))?$/);
-  if (localizedAdminMatch) {
+  // Keep the CMS on its dedicated hostname while reusing the same application,
+  // API routes, authentication and MongoDB connection.
+  if (dashboardHost) {
+    if (pathname === "/") {
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin";
+      return NextResponse.rewrite(url);
+    }
+    if (pathname === "/admin" || pathname.startsWith("/admin/") || pathname.startsWith("/api/admin/") || pathname.startsWith("/_next/")) {
+      return NextResponse.next();
+    }
     const url = request.nextUrl.clone();
-    url.pathname = localizedAdminMatch[1] ? `/admin/${localizedAdminMatch[1]}` : "/admin";
+    url.pathname = "/admin";
     return NextResponse.redirect(url, 307);
   }
 
+  // The CMS no longer lives on the public hostname. Send old bookmarks to the
+  // dashboard subdomain without changing the public website or admin API.
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {
-    return NextResponse.next();
+    const url = request.nextUrl.clone();
+    url.hostname = "dashboard.themarkitmedia.com";
+    url.pathname = pathname.replace(/^\/admin/, "") || "/";
+    return NextResponse.redirect(url, 308);
+  }
+
+  // Normalize accidental localized admin bookmarks onto the dashboard host.
+  const localizedAdminMatch = pathname.match(/^\/(?:en|ar|ur)\/admin(?:\/(.*))?$/);
+  if (localizedAdminMatch) {
+    const url = request.nextUrl.clone();
+    url.hostname = "dashboard.themarkitmedia.com";
+    url.pathname = localizedAdminMatch[1] ? `/${localizedAdminMatch[1]}` : "/";
+    return NextResponse.redirect(url, 308);
   }
 
   // Private/share-only scheduling shortcut. Intentionally not part of public navigation.
