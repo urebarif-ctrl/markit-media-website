@@ -20,7 +20,7 @@ import {
   Target,
   Sparkles,
   PlaySquare,
-  Linkedin,
+  LinkedinIcon,
 } from "lucide-react";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -178,7 +178,7 @@ const growthServices: ServiceItem[] = [
   {
     title: "LinkedIn Advertising",
     desc: "B2B paid social campaigns for professional audiences, lead generation, company visibility, and targeted decision maker reach.",
-    icon: Linkedin,
+    icon: LinkedinIcon,
     href: "/services/performance-marketing/linkedin-ads",
   },
   {
