@@ -25,6 +25,7 @@ export default function VideoProductionPage() {
         { title: "Commercial Production", desc: "Brand commercials and promotional videos from concept through final delivery.", href: "/services/video-production/commercial-production" },
         { title: "Video Editing", desc: "Professional editing, color grading, sound design, and post-production.", href: "/services/video-production/video-editing" },
         { title: "Motion Graphics", desc: "Animated graphics, title sequences, lower thirds, and visual effects.", href: "/services/video-production/motion-graphics" },
+        { title: "Motion Design", desc: "Branded motion systems, animated typography, interface motion, product visuals, and campaign animation built around a consistent visual language.", href: "/services/video-production/motion-design" },
         { title: "Reels & Short-Form", desc: "Vertical video content optimized for Instagram Reels, TikTok, and YouTube Shorts.", href: "/services/video-production/reels-short-form" },
         { title: "Animation", desc: "2D and explainer animations that simplify complex ideas and engage viewers.", href: "/services/video-production/animation" },
       ]}
