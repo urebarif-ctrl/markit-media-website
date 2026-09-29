@@ -6,6 +6,7 @@ import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { getPostsByCategory } from "@/lib/blog";
+import { QuoteForm } from "@/components/quote-form";
 import type { LucideIcon } from "lucide-react";
 
 interface SubService {
@@ -108,8 +109,11 @@ export function ServicePage({
               <p className="text-lg text-gray-500 leading-relaxed mt-6">{description}</p>
               <p className="text-base text-gray-500 leading-relaxed mt-4">{longDescription}</p>
               <div className="flex flex-wrap gap-4 mt-8">
-                <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  Get Started &rarr;
+                <Link href="#service-scope" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  Explore What&apos;s Included &darr;
+                </Link>
+                <Link href="#service-quote" className="inline-flex items-center gap-3 border border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  Request a Quote &rarr;
                 </Link>
               </div>
             </div>
@@ -122,40 +126,17 @@ export function ServicePage({
         </div>
       </section>
 
-      {/* Service platforms */}
-      <section className="border-y border-gray-200 py-8 bg-white" aria-label="Platforms and services">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <p className="text-sm font-bold text-gray-500 uppercase tracking-[0.18em] text-center mb-6">Platforms & services we work with</p>
-          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
-            {[
-              { label: "Meta Ads", href: "/services/performance-marketing/meta-ads", src: "/brand/meta.svg" },
-              { label: "Google Ads", href: "/services/performance-marketing/google-ads", src: "/brand/google-ads.svg" },
-              { label: "Facebook Ads", href: "/services/performance-marketing/meta-ads", brand: "Facebook" },
-              { label: "Instagram Ads", href: "/services/performance-marketing/meta-ads", brand: "Instagram" },
-              { label: "Microsoft Ads", href: "/services/performance-marketing/microsoft-ads", src: "/brand/microsoft-ads.svg" },
-              { label: "YouTube Ads", href: "/services/performance-marketing/youtube-ads", brand: "YouTube" },
-              { label: "TikTok Ads", href: "/services/performance-marketing/tiktok-ads", brand: "TikTok" },
-              { label: "LinkedIn Ads", href: "/services/performance-marketing/linkedin-ads", src: "/brand/linkedin.svg" },
-              { label: "Shopify", href: "/services/website-development/shopify", brand: "Shopify" },
-              { label: "WordPress", href: "/services/website-development/wordpress", brand: "WordPress" },
-            ].map((platform) => (
-              <Link key={platform.label} href={platform.href} aria-label={`Explore our ${platform.label} services`} title={platform.label}
-                className="group min-h-24 flex flex-col items-center justify-center gap-3 border border-gray-200 bg-white p-3 hover:border-black hover:-translate-y-0.5 hover:shadow-md transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                {platform.src ? <img src={platform.src} alt={`${platform.label} logo`} width="34" height="34" loading="lazy" className="h-8 w-8 object-contain opacity-100" /> : <BrandIcon brand={platform.brand || platform.label} title={`${platform.label} logo`} className="h-8 w-8" />}
-                <span className="text-[11px] leading-tight font-bold text-gray-600 group-hover:text-black text-center">{platform.label}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Sub-services */}
+
       {subServices.length > 0 && (
-        <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Services included">
+        <section id="service-scope" className="px-6 lg:px-12 py-20 bg-gray-50 scroll-mt-24" aria-label="Services included">
           <div className="max-w-7xl mx-auto">
             <Animate animation="fade-up">
               <SectionLabel>What&apos;s Included</SectionLabel>
-              <SectionTitle>Services</SectionTitle>
+              <SectionTitle>What You Can Hire Us For</SectionTitle>
+              <p className="text-lg text-gray-500 leading-relaxed mt-5 max-w-3xl">
+                This is not a single generic deliverable. The engagement can include the specialist services below, combined around your goals, current setup, internal resources, and the work that will create the most value.
+              </p>
             </Animate>
             <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {subServices.map((sub) => (
@@ -188,6 +169,58 @@ export function ServicePage({
               </Animate>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="How we deliver this service">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <SectionLabel>How We Work</SectionLabel>
+            <SectionTitle>From Scope to Execution to Improvement</SectionTitle>
+            <p className="text-lg text-gray-500 leading-relaxed mt-5 max-w-3xl">
+              We do not start with a prebuilt package and force it onto every client. We first understand the objective and current setup, then define the right scope, execute the work, measure what happened, and improve the next cycle.
+            </p>
+          </Animate>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mt-10">
+            {[
+              ["01", "Discover", "Understand the business, audience, current performance, constraints, assets, and priorities."],
+              ["02", "Scope", "Define the work, deliverables, channels, ownership, timeline, and measurement plan."],
+              ["03", "Build", "Create, configure, produce, or implement the agreed work with clear review points."],
+              ["04", "Launch", "Publish, deploy, activate, or hand off the work with the right checks in place."],
+              ["05", "Improve", "Review performance and feedback, then prioritize the next iteration instead of treating launch as the finish line."],
+            ].map(([number, step, copy]) => (
+              <div key={number} className="bg-white border border-gray-200 p-5">
+                <span className="text-xs font-bold text-gray-400 tracking-[0.16em]">{number}</span>
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold mt-3">{step}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mt-3">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="service-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div className="pt-2">
+            <SectionLabel>Request a Quote</SectionLabel>
+            <SectionTitle>Tell Us What You Need</SectionTitle>
+            <p className="text-lg text-gray-500 leading-relaxed mt-5">
+              Share your current setup, the result you want, what your team already handles, and where you need us to take ownership. We will use that context to recommend a sensible scope rather than pushing a generic package.
+            </p>
+            <div className="mt-7 grid sm:grid-cols-2 gap-3">
+              {subServices.slice(0, 6).map((sub) => (
+                <div key={sub.href} className="border border-gray-200 bg-gray-50 px-4 py-3">
+                  <span className="text-sm font-bold text-black">{sub.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <QuoteForm
+            service={title}
+            title={`Request a ${title} Quote`}
+            buttonText="Send Request"
+            messagePlaceholder="Your business, current setup, goals, timeline, and what you want us to handle..."
+          />
         </div>
       </section>
 
@@ -396,8 +429,8 @@ export function ServicePage({
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Let&apos;s discuss how {title.toLowerCase()} can grow your business.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-              Get a Free Consultation &rarr;
+            <Link href="#service-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              Request a Quote &rarr;
             </Link>
           </Animate>
         </div>
