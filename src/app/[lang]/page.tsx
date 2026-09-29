@@ -234,6 +234,38 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         </div>
       </section>
 
+      <section className="px-6 lg:px-12 py-16 md:py-20 bg-white border-b border-gray-100" aria-label="Core growth services">
+        <div className="max-w-7xl mx-auto">
+          <Animate animation="fade-up">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5">
+              <div className="max-w-3xl">
+                <SectionLabel>Core Growth Services</SectionLabel>
+                <SectionTitle>Four capabilities we lead with.</SectionTitle>
+                <SectionDesc>Paid acquisition, organic search, social content and conversion-focused websites — designed to work as one growth system or as focused standalone engagements.</SectionDesc>
+              </div>
+              <Link href="/services" className="shrink-0 text-sm font-extrabold text-[#5A3ED6] hover:underline">Explore all services →</Link>
+            </div>
+          </Animate>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-10">
+            {[
+              { icon: Megaphone, eyebrow: "Paid Growth", title: "PPC & Meta Ads", desc: "Meta Ads, Google Ads and PPC management focused on qualified demand, conversion tracking and efficient spend.", href: "/services/performance-marketing", links: [["Meta Ads","/services/performance-marketing/meta-ads"],["Google Ads","/services/performance-marketing/google-ads"]] },
+              { icon: Search, eyebrow: "Organic Growth", title: "SEO", desc: "Technical, local, content and AI search strategies built to improve visibility and turn search demand into business.", href: "/services/seo", links: [["Technical SEO","/services/seo/technical-seo"],["Local SEO","/services/seo/local-seo"]] },
+              { icon: Share2, eyebrow: "Brand & Community", title: "Social Media Marketing", desc: "Strategy, content creation and community management that give your brand a consistent, useful presence.", href: "/services/social-media", links: [["Content Creation","/services/social-media/content-creation"],["Social Strategy","/services/social-media/social-strategy"]] },
+              { icon: Code, eyebrow: "Digital Experience", title: "Website Development", desc: "WordPress, Shopify and Next.js websites built around speed, search visibility, usability and conversion.", href: "/services/website-development", links: [["WordPress","/services/website-development/wordpress"],["Shopify","/services/website-development/shopify"]] },
+            ].map((item) => {
+              const Icon=item.icon;
+              return <div key={item.href} className="group flex min-h-[330px] flex-col border border-gray-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-black hover:shadow-lg">
+                <div className="flex items-center justify-between"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">{item.eyebrow}</span><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F2FF] text-[#5A3ED6]"><Icon size={18}/></span></div>
+                <h2 className="mt-8 font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight">{item.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-gray-500">{item.desc}</p>
+                <div className="mt-6 flex flex-wrap gap-2">{item.links.map(([label,href])=><Link key={href} href={href} className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-bold text-gray-600 hover:border-black hover:text-black">{label}</Link>)}</div>
+                <Link href={item.href} className="mt-auto pt-8 text-sm font-extrabold text-black group-hover:text-[#5A3ED6]">Explore service →</Link>
+              </div>
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 lg:px-12 py-24 bg-gray-50" aria-label="Selected client work">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
