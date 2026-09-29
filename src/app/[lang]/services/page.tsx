@@ -6,6 +6,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { SOCIAL_URLS } from "@/lib/social";
+import { QuoteForm } from "@/components/quote-form";
 import {
   Search, Share2, Code, Palette, Video, Bot, Mail, TrendingUp,
   BarChart3, Megaphone, FileText, Briefcase, ShoppingCart, Camera,
@@ -45,7 +46,7 @@ const serviceCategories = [
     desc: "Strategy, content creation, community management, influencer marketing, and social analytics.",
     href: "/services/social-media",
     image: "/images/services/social-media.jpg",
-    subServices: ["Social Strategy", "Content Creation", "Community Management", "Influencer Marketing", "Social Analytics"],
+    subServices: ["Social Strategy", "Content Creation", "Reels & Video", "Community Management", "Influencer Marketing", "Paid Social", "Social Analytics"],
   },
   {
     icon: Code,
@@ -143,6 +144,70 @@ const serviceCategories = [
     image: "/images/services/bpo.jpg",
     subServices: ["Virtual Assistants", "Data Entry", "Customer Support", "Operations"],
   },
+  {
+    icon: Code,
+    title: "App Development",
+    desc: "Web apps, MVPs, internal tools, customer portals, dashboards, and product development for businesses that need more than a marketing website.",
+    href: "/services/app-development",
+    image: "/images/services/web-dev.jpg",
+    subServices: ["Web Apps", "MVP Development", "Portals", "Dashboards", "Custom Product Builds"],
+  },
+  {
+    icon: Briefcase,
+    title: "White Label Services",
+    desc: "Behind-the-scenes fulfillment for agencies across PPC, SEO, social, creative, WordPress, Shopify, Next.js, web development, and AI SEO.",
+    href: "/services/white-label",
+    image: "/images/services/digital-marketing.jpg",
+    subServices: ["White Label PPC", "SEO", "Meta Ads", "Google Ads", "Social Media", "Web Development"],
+  },
+  {
+    icon: BarChart3,
+    title: "Marketing Analytics",
+    desc: "Measurement planning, dashboards, attribution, conversion tracking, reporting systems, and data visibility across marketing channels.",
+    href: "/services/marketing-analytics",
+    image: "/images/services/analytics.jpg",
+    subServices: ["Measurement", "Dashboards", "Attribution", "Conversion Tracking", "Reporting"],
+  },
+  {
+    icon: Megaphone,
+    title: "Media Planning & Buying",
+    desc: "Cross-channel media strategy, channel planning, budget allocation, buying, pacing, campaign coordination, and performance review.",
+    href: "/services/media-planning-buying",
+    image: "/images/services/paid-advertising.jpg",
+    subServices: ["Media Planning", "Budget Allocation", "Media Buying", "Pacing", "Cross-Channel Campaigns"],
+  },
+  {
+    icon: Share2,
+    title: "WhatsApp Business",
+    desc: "Messaging workflows, lead handling, automation, campaign journeys, CRM handoff, and customer communication through WhatsApp Business.",
+    href: "/services/whatsapp-business",
+    image: "/images/services/social-media.jpg",
+    subServices: ["Lead Messaging", "Automation", "Customer Journeys", "CRM Handoff", "Support Workflows"],
+  },
+  {
+    icon: Mail,
+    title: "SMS Marketing",
+    desc: "Permission-based SMS campaigns, promotional messaging, lifecycle communication, reminders, and customer re-engagement.",
+    href: "/services/sms-marketing",
+    image: "/images/services/email.jpg",
+    subServices: ["Campaigns", "Lifecycle SMS", "Promotions", "Reminders", "Re-engagement"],
+  },
+  {
+    icon: TrendingUp,
+    title: "Upwork Growth",
+    desc: "Profile positioning, proposal strategy, agency bidding, portfolio presentation, lead qualification, and client acquisition support for Upwork.",
+    href: "/services/upwork-growth",
+    image: "/images/services/digital-marketing.jpg",
+    subServices: ["Profile Optimization", "Proposal Strategy", "Agency Bidding", "Portfolio", "Client Acquisition"],
+  },
+  {
+    icon: Palette,
+    title: "Design Systems",
+    desc: "Reusable UI foundations, components, patterns, design tokens, and documentation for teams that need consistency across digital products.",
+    href: "/services/design-systems",
+    image: "/images/services/branding.jpg",
+    subServices: ["UI Foundations", "Components", "Design Tokens", "Patterns", "Documentation"],
+  },
 ];
 
 const servicesFaqItems = [
@@ -203,8 +268,8 @@ export default function ServicesPage() {
               From strategy to execution, we cover every digital marketing channel. Choose the services you need, or let us build a complete growth plan.
             </SectionDesc>
             <div className="flex flex-wrap gap-4 mt-8">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Get a Free Consultation &rarr;
+              <Link href="#services-quote" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Request a Quote &rarr;
               </Link>
               <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Find the Right Service
@@ -218,8 +283,8 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "13", label: "Service Categories" },
-              { value: "60+", label: "Individual Services" },
+              { value: "23", label: "Service Categories" },
+              { value: "100+", label: "Specialist Service Pages" },
               { value: "20", label: "Industries Served" },
               { value: "6", label: "Countries" },
             ].map((stat) => (
@@ -444,6 +509,29 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section id="services-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a services quote">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div className="pt-2">
+            <SectionLabel>Request a Quote</SectionLabel>
+            <SectionTitle>Not Sure Which Services You Need?</SectionTitle>
+            <p className="text-lg text-gray-500 leading-relaxed mt-5">
+              Tell us the business goal, what is already working, what is not, and what your team can handle internally. We can recommend the right mix of services and a practical starting scope instead of forcing a prebuilt package.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3 mt-7">
+              {["Growth & paid media", "SEO & content", "Web & app development", "Social & creative", "Branding & production", "AI & automation", "Analytics & CRM", "BPO & operations"].map((item) => (
+                <div key={item} className="border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-semibold">{item}</div>
+              ))}
+            </div>
+          </div>
+          <QuoteForm
+            service="Digital Marketing Services"
+            title="Tell Us What You Need"
+            buttonText="Request Recommendation"
+            messagePlaceholder="Your business, goals, current marketing, priority services, budget range, timeline, and what you want us to handle..."
+          />
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Services FAQ">
         <div className="max-w-3xl mx-auto">
@@ -475,10 +563,10 @@ export default function ServicesPage() {
               Ready to Talk Strategy?
             </h2>
             <p className="text-lg text-gray-400 mt-4 mb-8">
-              Schedule a free consultation and we&apos;ll recommend the best approach for your business goals.
+              Tell us your goals and current setup. We&apos;ll recommend the service mix and scope that makes sense for the business.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-              Get a Free Consultation &rarr;
+            <Link href="#services-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              Request a Recommendation &rarr;
             </Link>
           </Animate>
         </div>
