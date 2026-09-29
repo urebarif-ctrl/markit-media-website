@@ -424,7 +424,17 @@ const staticPages = [
   "/partners",
   "/onboarding",
   "/services/photography",
+  "/services/photography/product-photography",
+  "/services/photography/corporate-photography",
+  "/services/photography/event-photography",
+  "/services/photography/architectural-photography",
+  "/services/photography/lifestyle-photography",
   "/services/public-relations",
+  "/services/public-relations/media-outreach",
+  "/services/public-relations/press-releases",
+  "/services/public-relations/reputation-management",
+  "/services/public-relations/event-pr",
+  "/services/public-relations/crisis-communications",
   "/resources/campaign-brief-builder",
 ];
 
