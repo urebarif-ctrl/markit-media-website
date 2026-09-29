@@ -428,6 +428,21 @@ const staticPages = [
   "/resources/campaign-brief-builder",
 ];
 
+// Pages intentionally kept out of Google because they duplicate stronger tools, are utility-only,
+// or are paginated archives rather than standalone search destinations.
+const excludedFromIndexSitemap = new Set([
+  "/resources/competitor-ad-spy", "/resources/funnel-visualizer", "/resources/customer-journey-mapper",
+  "/resources/brand-tone-generator", "/resources/marketing-goal-setter", "/resources/marketing-calendar",
+  "/resources/competitor-matrix", "/resources/competitive-swot", "/resources/competitor-benchmarking",
+  "/resources/meeting-agenda-builder", "/resources/vendor-evaluation", "/resources/budget-allocator",
+  "/resources/swot-analysis", "/resources/competitive-gap", "/resources/campaign-brief-builder",
+  "/resources/customer-feedback-survey", "/resources/marketing-rfp-template", "/resources/competitive-swot-analyzer",
+  "/resources/campaign-naming-generator", "/resources/brand-consistency-checker", "/resources/persona-workshop",
+  "/resources/team-capacity-planner", "/resources/scope-of-work-generator", "/resources/email-sequence-planner",
+  "/resources/competitive-intel-dashboard", "/resources/marketing-kpi-tracker", "/resources/channel-recommender",
+  "/resources/social-media-calendar-template", "/resources/content-calendar",
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en"];
   const entries: MetadataRoute.Sitemap = [
@@ -455,12 +470,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of locales) {
     for (const page of staticPages) {
+      if (excludedFromIndexSitemap.has(page)) continue;
       const depth = page.split("/").filter(Boolean).length;
-      let priority = 0.7;
+      let priority = 0.65;
       if (page === "") priority = 1;
-      else if (depth === 1) priority = 0.9;
-      else if (depth === 2) priority = 0.8;
-      else priority = 0.7;
+      else if (page === "/about" || page === "/services" || page === "/locations" || page === "/blog" || page === "/free-tools") priority = 0.95;
+      else if (page.startsWith("/services/") || page.startsWith("/locations/")) priority = depth <= 2 ? 0.9 : 0.85;
+      else if (page.startsWith("/resources/")) priority = 0.8;
+      else if (depth === 1) priority = 0.8;
+      else if (depth === 2) priority = 0.75;
 
       entries.push({
         url: `${BASE_URL}/${locale}${page}`,
@@ -476,19 +494,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${BASE_URL}/${locale}/blog/${post.slug}`,
         lastModified: new Date(post.updated_at || post.published_at || Date.now()),
         changeFrequency: "monthly",
-        priority: 0.6,
+        priority: 0.8,
       });
     }
 
-    const totalBlogPages = Math.ceil(blogPosts.length / 30);
-    for (let p = 2; p <= totalBlogPages; p++) {
-      entries.push({
-        url: `${BASE_URL}/${locale}/blog/page/${p}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: 0.5,
-      });
-    }
+    // Paginated blog archives are intentionally omitted from the sitemap.
+    // Individual published articles and category hubs carry the indexable search value.
 
     const blogCategories = getAllCategories();
     for (const cat of blogCategories) {
