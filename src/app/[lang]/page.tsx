@@ -86,6 +86,7 @@ const markets = [
   { name: "United Kingdom", flag: "🇬🇧", href: "/locations/uk" },
   { name: "Australia", flag: "🇦🇺", href: "/locations/australia" },
   { name: "Saudi Arabia", flag: "🇸🇦", href: "/locations/saudi-arabia" },
+  { name: "Pakistan", flag: "🇵🇰", href: "/locations/karachi" },
 ];
 
 const faqItems = [
@@ -254,12 +255,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { icon: Code, eyebrow: "Digital Experience", title: "Website Development", desc: "WordPress, Shopify and Next.js websites built around speed, search visibility, usability and conversion.", href: "/services/website-development", links: [["WordPress","/services/website-development/wordpress"],["Shopify","/services/website-development/shopify"]] },
             ].map((item) => {
               const Icon=item.icon;
-              return <div key={item.href} className="group flex min-h-[330px] flex-col border border-gray-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-black hover:shadow-lg">
+              return <div key={item.href} className="group flex min-h-[250px] sm:min-h-[290px] flex-col border border-gray-200 bg-white p-5 sm:p-6 transition-all hover:-translate-y-1 hover:border-black hover:shadow-lg">
                 <div className="flex items-center justify-between"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">{item.eyebrow}</span><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F2FF] text-[#5A3ED6]"><Icon size={18}/></span></div>
-                <h2 className="mt-8 font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight">{item.title}</h2>
+                <h2 className="mt-5 sm:mt-7 font-[family-name:var(--font-display)] text-xl sm:text-2xl font-extrabold tracking-tight">{item.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-gray-500">{item.desc}</p>
                 <div className="mt-6 flex flex-wrap gap-2">{item.links.map(([label,href])=><Link key={href} href={href} className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-bold text-gray-600 hover:border-black hover:text-black">{label}</Link>)}</div>
-                <Link href={item.href} className="mt-auto pt-8 text-sm font-extrabold text-black group-hover:text-[#5A3ED6]">Explore service →</Link>
+                <Link href={item.href} className="mt-auto pt-5 sm:pt-7 text-sm font-extrabold text-black group-hover:text-[#5A3ED6]">Explore service →</Link>
               </div>
             })}
           </div>
@@ -280,7 +281,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {src:"/images/portfolio/foodfolio-hero.jpg",eyebrow:"Food · Brand Creative",title:"FoodFolio",desc:"Food-focused creative spanning brand presentation, product storytelling and social content.",href:"/work/foodfolio",span:"lg:col-span-5"},
               {src:"/images/portfolio/social-media-hero.jpg",eyebrow:"Social · Campaigns",title:"Social Media Designs",desc:"A cross-industry selection of social creative designed to make brands look sharper in the feed.",href:"/work/social-media-designs",span:"lg:col-span-5"},
               {src:"/images/portfolio/logo-folio-hero.jpg",eyebrow:"Branding · Identity",title:"LogoFolio",desc:"Identity and logo work across technology, food, energy, retail and emerging brands.",href:"/work/logo-folio",span:"lg:col-span-7"},
-            ].map((item,idx)=><Link key={item.href} href={item.href} className={`group relative overflow-hidden bg-black min-h-[360px] md:min-h-[430px] ${item.span}`}>
+            ].map((item,idx)=><Link key={item.href} href={item.href} className={`group relative overflow-hidden bg-black min-h-[300px] sm:min-h-[360px] md:min-h-[430px] ${item.span}`}>
               <Image src={item.src} alt={item.title+" — selected work by Markit Media"} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"/>
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
@@ -327,7 +328,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {label:"Search Console",href:"/en/tools",brand:"Search Console"},
               {label:"HubSpot",href:"/en/tools",brand:"HubSpot"},
               {label:"Klaviyo",href:"/en/tools",brand:"Klaviyo"},
-            ].map((item)=><Link key={item.label} href={item.href} aria-label={`Explore ${item.label}`} className="group min-h-28 flex flex-col items-center justify-center gap-3 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all">
+            ].map((item)=><Link key={item.label} href={item.href} aria-label={`Explore ${item.label}`} className="group min-h-24 sm:min-h-28 flex flex-col items-center justify-center gap-2.5 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               {item.src
                 ? <Image src={item.src} alt={`${item.label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
                 : <BrandIcon brand={item.brand || item.label} title={`${item.label} logo`} className="h-10 w-10" />}
@@ -390,7 +391,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="grid lg:grid-cols-2 gap-4 mt-10 mb-5">
             {industries.filter((ind) => "featured" in ind && ind.featured).map((ind) => {
               const Icon = ind.icon;
-              return <Link key={ind.href} href={ind.href} className="group relative overflow-hidden bg-black text-white p-7 sm:p-8 min-h-56 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              return <Link key={ind.href} href={ind.href} className="group relative overflow-hidden bg-black text-white p-6 sm:p-8 min-h-48 sm:min-h-56 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="flex items-start justify-between"><div className="w-14 h-14 bg-white text-black flex items-center justify-center"><Icon size={27} strokeWidth={2} aria-hidden="true"/></div><span className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">Specialist Industry</span></div>
                 <div className="mt-8"><h3 className="font-[family-name:var(--font-display)] text-2xl font-extrabold max-w-md">{ind.title}</h3><p className="text-gray-400 mt-3 max-w-xl leading-relaxed">{"desc" in ind ? ind.desc : ""}</p><span className="inline-block mt-5 font-bold">Explore industry expertise ↗</span></div>
               </Link>;
@@ -399,7 +400,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <Stagger stagger={45} animation="fade-up" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {industries.filter((ind) => !("featured" in ind && ind.featured)).slice(0,14).map((ind) => {
               const Icon = ind.icon;
-              return <Link key={ind.href} href={ind.href} className="group bg-gray-50 border border-gray-200 hover:bg-white hover:border-black hover:shadow-md transition-all p-5 min-h-32 flex flex-col justify-between focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              return <Link key={ind.href} href={ind.href} className="group bg-gray-50 border border-gray-200 hover:bg-white hover:border-black hover:shadow-md transition-all p-4 sm:p-5 min-h-28 sm:min-h-32 flex flex-col justify-between focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="w-10 h-10 bg-white border border-gray-200 text-gray-600 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors"><Icon size={20} strokeWidth={2} aria-hidden="true"/></div>
                 <div className="flex items-end justify-between gap-3 mt-5"><h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base font-bold text-black">{ind.title}</h3><span className="text-gray-400 group-hover:text-black">↗</span></div>
               </Link>;
@@ -491,12 +492,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { num: "03", eyebrow: "Build & Launch", title: "Put the Strategy to Work", desc: "Specialists turn the plan into campaigns, content, experiences, and systems — then launch with measurement in place.", mark: "→" },
               { num: "04", eyebrow: "Learn & Scale", title: "Improve What the Data Proves", desc: "We review signals, test deliberately, cut waste, strengthen what performs, and keep the next move tied to evidence.", mark: "↗" },
             ].map((step) => (
-              <div key={step.num} className="group relative min-h-[370px] bg-gray-50 border border-gray-200 p-7 md:p-8 overflow-hidden hover:bg-black hover:border-black transition-colors duration-300 motion-reduce:transition-none">
+              <div key={step.num} className="group relative min-h-[270px] sm:min-h-[310px] lg:min-h-[340px] bg-gray-50 border border-gray-200 p-6 md:p-7 overflow-hidden hover:bg-black hover:border-black transition-colors duration-300 motion-reduce:transition-none">
                 <div className="flex items-start justify-between">
                   <span className="font-[family-name:var(--font-display)] text-sm font-extrabold tracking-[0.18em] text-gray-400 group-hover:text-white/45">{step.num}</span>
                   <span aria-hidden="true" className="font-[family-name:var(--font-display)] text-4xl font-light text-gray-300 group-hover:text-white/70">{step.mark}</span>
                 </div>
-                <div className="mt-20">
+                <div className="mt-10 sm:mt-14 lg:mt-16">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400 group-hover:text-white/55">{step.eyebrow}</p>
                   <h3 className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-extrabold text-black group-hover:text-white tracking-tight leading-tight mt-3">{step.title}</h3>
                   <p className="text-sm md:text-base text-gray-500 group-hover:text-white/65 leading-relaxed mt-4">{step.desc}</p>
@@ -658,11 +659,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", example:"Compare competitors side by side before choosing your offer, messaging and channel plan.", href: "/resources/competitor-analysis" },
               { title: "Service Finder Quiz", tag:"Start Here", icon:"→", desc: "Answer a few questions and find the Markit Media services most relevant to you.", example:"Get a faster starting point when you know the goal but not which marketing service fits.", href: "/services/finder" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="flip-card tool-flip-card group min-h-64 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={r.href} href={r.href} className="flip-card tool-flip-card group min-h-56 sm:min-h-64 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <span className="flip-card-inner">
                   <span className="flip-card-face bg-white border border-gray-200 p-6 flex flex-col">
                     <span className="flex items-start justify-between gap-3"><span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">{r.tag}</span><span className="w-10 h-10 bg-black text-white flex items-center justify-center font-extrabold text-lg">{r.icon}</span></span>
-                    <span className="mt-auto pt-8"><span className="block font-[family-name:var(--font-display)] text-lg font-extrabold text-black">{r.title}</span><span className="block text-sm text-gray-500 leading-relaxed mt-3">{r.desc}</span><span className="inline-block mt-5 text-sm font-bold">Hover for an example →</span></span>
+                    <span className="mt-auto pt-8"><span className="block font-[family-name:var(--font-display)] text-lg font-extrabold text-black">{r.title}</span><span className="block text-sm text-gray-500 leading-relaxed mt-3">{r.desc}</span><span className="inline-block mt-5 text-sm font-bold"><span className="hidden [@media(hover:hover)]:inline">Hover for an example →</span><span className="[@media(hover:hover)]:hidden">Open free tool →</span></span></span>
                   </span>
                   <span className="flip-card-face flip-card-back bg-black text-white border border-black p-6 flex flex-col">
                     <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/50">How it helps</span>
