@@ -243,9 +243,11 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 @media (min-width: 1024px) { .service-mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (hover: none) {
   .flip-card { min-height: 0; }
-  .flip-card-inner { display: grid; gap: 8px; transform: none !important; }
-  .flip-card-face { position: relative; inset: auto; min-height: 190px; backface-visibility: visible; -webkit-backface-visibility: visible; }
-  .flip-card-back { transform: none; min-height: 170px; }
+  .flip-card-inner { display: block; transform: none !important; min-height: 0; }
+  .flip-card-face { position: relative; inset: auto; min-height: 0; backface-visibility: visible; -webkit-backface-visibility: visible; }
+  .flip-card-back { display: none; }
+  .tool-flip-card .flip-card-face { min-height: 190px; }
+  .tool-flip-card .flip-card-face:first-child { padding: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { .flip-card-inner { transition: none; } }
 
@@ -290,4 +292,15 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
     content-visibility: auto;
     contain-intrinsic-size: auto 760px;
   }
+}
+
+
+/* Mobile homepage interaction polish */
+@media (max-width: 767px) {
+  body { overflow-x: clip; }
+  .home-page .tool-flip-card { min-height: 190px !important; }
+  .home-page .tool-flip-card .flip-card-inner { min-height: 190px; }
+  .home-page .tool-flip-card .flip-card-face:first-child { min-height: 190px; }
+  .home-page [aria-label="Platforms and services we work with"] .grid { gap: 8px; }
+  .home-page [aria-label="Markets we serve"] .grid { grid-template-columns: 1fr; }
 }
