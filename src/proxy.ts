@@ -246,6 +246,20 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  // Country-level access restriction for the public website.
+  // Vercel provides a trusted ISO 3166-1 country code on incoming requests.
+  const visitorCountry = request.headers.get("x-vercel-ip-country")?.toUpperCase();
+  if (visitorCountry === "IN" || visitorCountry === "NG") {
+    return new NextResponse("Access unavailable in your region.", {
+      status: 403,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "private, no-store",
+        "X-Robots-Tag": "noindex, nofollow",
+      },
+    });
+  }
+
   // Private/share-only scheduling shortcut. Intentionally not part of public navigation.
   if (pathname === "/meet") {
     return NextResponse.next();
