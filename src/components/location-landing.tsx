@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { QuoteForm } from "@/components/quote-form";
 
 export type LocalServiceKey =
   | "marketing-agency"
@@ -333,6 +334,7 @@ export function CityLocationLanding({ cityKey }: {cityKey:string}) {
       </div>
     </section>
     <section className="px-6 lg:px-12 py-20 bg-gray-50"><div className="max-w-4xl mx-auto"><Animate animation="fade-up"><SectionLabel>FAQ</SectionLabel><SectionTitle>Digital marketing in {p.city}</SectionTitle></Animate><div className="mt-8">{faqs.map(([q,a])=><details key={q} className="border-b border-gray-200 py-5"><summary className="font-bold cursor-pointer">{q}</summary><p className="text-base text-gray-600 leading-relaxed mt-3">{a}</p></details>)}</div></div></section>
+    <section id="location-quote" className="px-6 lg:px-12 py-20"><div className="max-w-4xl mx-auto"><QuoteForm service={`Digital Marketing in ${p.city}`} title={`Request a ${p.city} Marketing Quote`} buttonText="Request Quote" /></div></section>
     <section className="px-6 lg:px-12 py-20 bg-black text-white text-center"><div className="max-w-3xl mx-auto"><h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold">Need a stronger growth plan for {p.city}?</h2><p className="text-lg text-gray-300 mt-4">Tell us what you are trying to grow. We will recommend the right mix of services rather than forcing your business into a fixed package.</p><Link href="/contact" className="inline-block mt-8 bg-white text-black px-9 py-4 font-bold">Request a Quote →</Link></div></section>
   </article>;
 }
@@ -355,6 +357,7 @@ export function ServiceLocationLanding({ cityKey, serviceKey }: {cityKey:string;
     <section className="px-6 lg:px-12 py-20 bg-gray-50"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Connected Capabilities</SectionLabel><SectionTitle>Bring in the rest of Markit Media when needed</SectionTitle></Animate><div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{fullServiceCatalog.slice(0,8).map(([t,h,d])=><Link key={h} href={h} className="bg-white border border-gray-200 p-5 hover:border-black transition-colors"><h3 className="font-bold">{t}</h3><p className="text-sm text-gray-500 mt-2 leading-relaxed">{d}</p></Link>)}</div><Link href={base} className="inline-block mt-8 font-bold underline underline-offset-4">View all {p.city} marketing services →</Link></div></section>
     <section className="px-6 lg:px-12 py-20"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Process</SectionLabel><SectionTitle>From brief to measurable improvement</SectionTitle></Animate><div className="grid md:grid-cols-4 gap-6 mt-10">{[["01","Audit & Discovery","Understand goals, existing data, competitors and current performance."],["02","Strategy","Set priorities, channels, deliverables, measurement and timeline."],["03","Delivery","Build and launch with specialist execution and clear ownership."],["04","Optimization","Measure, test, improve and expand based on evidence."]].map(([n,t,d])=><div key={n} className="border border-gray-200 p-6"><span className="text-3xl font-extrabold text-gray-300">{n}</span><h3 className="font-bold mt-4">{t}</h3><p className="text-base text-gray-500 mt-2">{d}</p></div>)}</div></div></section>
     <section className="px-6 lg:px-12 py-20 bg-gray-50"><div className="max-w-4xl mx-auto"><Animate animation="fade-up"><SectionLabel>FAQ</SectionLabel><SectionTitle>{s.title} in {p.city}</SectionTitle></Animate><div className="mt-8">{faqs.map(([q,a])=><details key={q} className="border-b border-gray-200 py-5"><summary className="font-bold cursor-pointer">{q}</summary><p className="text-base text-gray-600 leading-relaxed mt-3">{a}</p></details>)}</div></div></section>
+    <section id="service-quote" className="px-6 lg:px-12 py-20"><div className="max-w-4xl mx-auto"><QuoteForm service={`${s.title} in ${p.city}`} title={`Request a ${s.title} Quote`} buttonText="Request Quote" /></div></section>
     <section className="px-6 lg:px-12 py-20 bg-black text-white text-center"><div className="max-w-3xl mx-auto"><h2 className="font-[family-name:var(--font-display)] text-3xl font-extrabold">Need {s.title.toLowerCase()} in {p.city}?</h2><p className="text-lg text-gray-300 mt-4">Share your goals, current setup and priorities. We will recommend the right scope and show how it connects to the rest of your marketing.</p><Link href="/contact" className="inline-block mt-8 bg-white text-black px-9 py-4 font-bold">Request a Quote →</Link></div></section>
   </article>;
 }
