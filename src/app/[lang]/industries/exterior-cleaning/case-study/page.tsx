@@ -5,6 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { SectionDesc, SectionLabel, SectionTitle } from "@/components/section";
+import { CaseStudyThumbnail } from "@/components/case-study-thumbnail";
 
 const pageUrl = "https://themarkitmedia.com/en/industries/exterior-cleaning/case-study";
 
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
       "How service-specific Meta Ads campaigns generated 448 visible exterior cleaning leads across June, July and August 2026 campaign screenshots.",
     type: "article",
     url: pageUrl,
+    images: [{ url: `https://themarkitmedia.com/api/case-study-thumbnail?title=${encodeURIComponent("448 Visible Meta Ads Leads for an Exterior Cleaning Business")}`, width: 1200, height: 630 }],
   },
 };
 
@@ -175,6 +177,12 @@ export default function ExteriorCleaningCaseStudyPage() {
               Note: figures are described as visible because they are calculated from the campaign rows visible in the uploaded screenshots, not from a full exported account report.
             </p>
           </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-10 bg-white" aria-label="Case study thumbnail">
+        <div className="max-w-6xl mx-auto overflow-hidden border border-gray-100">
+          <CaseStudyThumbnail title="448 Visible Meta Ads Leads for an Exterior Cleaning Business" priority />
         </div>
       </section>
 
