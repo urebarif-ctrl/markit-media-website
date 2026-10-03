@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { CaseStudyThumbnail } from "@/components/case-study-thumbnail";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -44,7 +45,7 @@ export default function CaseStudiesPage(){
   <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Selected client case studies"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Selected Client Work</SectionLabel><SectionTitle>Projects Connected to the Portfolio</SectionTitle><SectionDesc>Every card below opens the corresponding project page, so the case-study collection and portfolio stay connected rather than becoming two separate libraries.</SectionDesc></Animate>
    <Stagger stagger={60} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">{studies.map(s=><Link key={s.href} href={s.href} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
-    <div className="relative aspect-[16/9] bg-gray-100"><Image src={s.image} alt={`${s.client} — ${s.service} project`} fill sizes="(max-width:768px) 100vw,33vw" className="object-cover"/></div>
+    <div className="relative aspect-[16/9] bg-gray-100 overflow-hidden"><CaseStudyThumbnail title={`${s.client}: ${s.service}`} /></div>
     <div className="p-6"><div className="flex gap-2 flex-wrap text-xs font-bold uppercase tracking-wide text-gray-500"><span>{s.industry}</span><span>•</span><span>{s.service}</span></div><h2 className="font-extrabold text-xl mt-3 group-hover:underline">{s.client}</h2><p className="text-gray-500 mt-3 leading-relaxed">{s.desc}</p><span className="font-bold inline-block mt-5">View project details →</span></div>
    </Link>)}</Stagger>
   </div></section>
