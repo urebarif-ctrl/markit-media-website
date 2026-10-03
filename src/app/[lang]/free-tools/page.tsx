@@ -4,6 +4,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { FreeToolIcon, FreeToolMiniIcon } from "@/components/free-tool-icon";
 
 export const metadata: Metadata = {
   title: "155+ Free Marketing Tools — Calculators, Audits, Generators & Planners",
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "155+ Free Marketing Tools",
     description: "Interactive calculators, audit scorecards, generators, and planners — all free, no signup required.",
+    images: [{ url: "https://themarkitmedia.com/api/free-tool-thumbnail?title=155%2B%20Free%20Marketing%20Tools", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "155+ Free Marketing Tools",
+    description: "Interactive calculators, audit scorecards, generators, and planners — all free, no signup required.",
+    images: ["https://themarkitmedia.com/api/free-tool-thumbnail?title=155%2B%20Free%20Marketing%20Tools"],
   },
 };
 
@@ -289,14 +297,13 @@ export default function FreeToolsPage() {
         <section key={cat.title} id={cat.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")} className={`px-6 lg:px-12 py-12 ${ci % 2 === 1 ? "bg-gray-50" : ""}`} aria-label={cat.title}>
           <div className="max-w-7xl mx-auto">
             <Animate animation="fade-up">
-              <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-2">{cat.title}</h2>
+              <div className="flex items-center gap-3 mb-2"><FreeToolIcon category={cat.title} /><h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black">{cat.title}</h2></div>
               <p className="text-base text-gray-400 mb-8">{cat.tools.length} tools</p>
             </Animate>
             <Stagger stagger={30} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {cat.tools.map((tool) => (
                 <Link key={tool.href} href={tool.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline mb-1">{tool.name}</h3>
-                  <p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p>
+                  <div className="flex items-start gap-3"><span className="mt-0.5 text-gray-500 group-hover:text-black"><FreeToolMiniIcon name={tool.name} /></span><div><h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline mb-1">{tool.name}</h3><p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p></div></div>
                 </Link>
               ))}
             </Stagger>
