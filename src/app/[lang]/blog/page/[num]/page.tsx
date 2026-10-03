@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ num: stri
     title: `Blog ,  Page ${page} ,  Digital Marketing Insights`,
     description: `Page ${page} of the Markit Media blog. Expert insights on SEO, paid advertising, social media, branding, and digital marketing strategy.`,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/page/${page}` },
-    robots: page > 1 ? { index: true, follow: true } : undefined,
+    robots: page > 1 ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `Blog ,  Page ${page}`,
       description: "Expert insights on digital marketing strategy and execution.",
