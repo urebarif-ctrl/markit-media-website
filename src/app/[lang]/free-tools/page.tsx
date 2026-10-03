@@ -250,6 +250,7 @@ const categories = [
 
 const totalTools = categories.reduce((sum, cat) => sum + cat.tools.length, 0);
 
+// Unified dynamic thumbnail deployment: blog, case studies, and free tools.
 export default function FreeToolsPage() {
   const schema = {
     "@context": "https://schema.org",
