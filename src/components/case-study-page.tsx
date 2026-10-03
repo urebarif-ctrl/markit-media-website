@@ -3,6 +3,7 @@ import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { YouTubeEmbed } from "@/components/youtube-embed";
+import { CaseStudyThumbnail } from "@/components/case-study-thumbnail";
 
 interface CaseStudyVideo {
   id: string;
@@ -72,6 +73,12 @@ export function CaseStudyPage({
               ))}
             </div>
           </Animate>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 pb-10" aria-label="Case study thumbnail">
+        <div className="max-w-5xl mx-auto overflow-hidden border border-gray-100">
+          <CaseStudyThumbnail title={title} priority />
         </div>
       </section>
 
