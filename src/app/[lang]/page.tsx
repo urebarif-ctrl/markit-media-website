@@ -202,26 +202,36 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
             <div className="hidden lg:block relative">
               <Animate animation="fade-up" delay={200}>
-                <div className="relative grid grid-cols-2 gap-3 p-3 border border-white/10 bg-white/[0.025]">
-                  <div className="space-y-4">
-                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
-                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">300+</div>
-                      <div className="text-base text-gray-500 mt-1">Videos Produced</div>
-                    </div>
-                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
-                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">6</div>
-                      <div className="text-base text-gray-500 mt-1">Countries Served</div>
+                <div className="relative min-h-[500px]">
+                  <div className="absolute inset-x-0 top-0 h-[390px] overflow-hidden border border-white/10 bg-white/[0.03]">
+                    <Image
+                      src="/images/portfolio/social-media-hero.jpg"
+                      alt="Selected social media creative work by Markit Media"
+                      fill
+                      priority
+                      sizes="50vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-7">
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/60">Selected creative work</p>
+                      <p className="mt-2 max-w-sm font-[family-name:var(--font-display)] text-2xl font-extrabold text-white">
+                        Strategy is stronger when you can see the execution.
+                      </p>
                     </div>
                   </div>
-                  <div className="space-y-4 mt-8">
-                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
-                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">12+</div>
-                      <div className="text-base text-gray-500 mt-1">Services Offered</div>
-                    </div>
-                    <div className="bg-white/[0.06] border border-white/10 p-6 hover:bg-white/[0.09] transition-colors">
-                      <div className="text-3xl font-extrabold text-white font-[family-name:var(--font-display)]">155+</div>
-                      <div className="text-base text-gray-500 mt-1">Free Marketing Tools</div>
-                    </div>
+                  <div className="absolute -bottom-1 left-7 right-7 grid grid-cols-4 border border-white/15 bg-black/95 shadow-2xl">
+                    {[
+                      ["300+", "Videos"],
+                      ["12+", "Capabilities"],
+                      ["6", "Countries"],
+                      ["155+", "Free Tools"],
+                    ].map(([value, label]) => (
+                      <div key={label} className="border-r border-white/10 px-4 py-5 last:border-r-0">
+                        <div className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-white">{value}</div>
+                        <div className="mt-1 text-xs font-medium text-white/50">{label}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Animate>
@@ -686,57 +696,92 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       </section>
 
       {/* Selected Work / Client Showcase */}
-      <section className="px-6 lg:px-12 py-16" aria-label="Selected work">
+      <section className="px-6 lg:px-12 py-20 bg-white" aria-label="Selected work">
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
-            <SectionLabel>Selected Work</SectionLabel>
-            <SectionTitle>Brands We&apos;ve Worked With</SectionTitle>
-          </Animate>
-          <Stagger stagger={40} animation="fade-up" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-10">
-            {[
-              { name:"NoorShad", service:"Video & Content", href:"/work/noorshad" },
-              { name:"Vuse", service:"Social Media", href:"/work/vuse" },
-              { name:"Cambridge Electrical", service:"Social Campaigns", href:"/work/cambridge-electrical" },
-              { name:"HUBCO", service:"Video & Motion", href:"/work/hubco" },
-              { name:"MeezoTech", service:"Branding & Motion", href:"/work/meezotech" },
-              { name:"One Homes", service:"Video Production", href:"/work/one-homes" },
-              { name:"Minhaz Couture", service:"Web & Social", href:"/work/minhaz-couture" },
-              { name:"Pur Health", service:"Web & Social", href:"/work/pur-health" },
-              { name:"American Auto Parts", service:"Video Production", href:"/work/american-auto-parts" },
-              { name:"Yaar Bazaar", service:"Brand & Creative", href:"/work" },
-            ].map((brand) => (
-              <Link key={brand.name} href={brand.href} className="group bg-white border border-gray-200 p-4 min-h-36 flex flex-col hover:border-black hover:shadow-md transition-all">
-                <span className="w-10 h-10 bg-black text-white flex items-center justify-center text-xs font-extrabold tracking-tight" aria-hidden="true">{brand.name.split(" ").map((part) => part[0]).join("").slice(0, 3)}</span>
-                <span className="font-[family-name:var(--font-display)] text-sm font-extrabold text-black mt-4 group-hover:underline">{brand.name}</span>
-                <span className="text-xs text-gray-400 mt-1">{brand.service}</span>
-                <span className="text-xs font-bold mt-auto pt-3">View work →</span>
-              </Link>
-            ))}
-          </Stagger>
-          <Animate animation="fade-up" delay={100}>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <Link href="/work/noorshad" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <span className="text-base text-gray-400">Real Estate</span>
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-1">NoorShad</h3>
-                <p className="text-base text-gray-500 mt-2">Video-first real estate branding with 9+ productions.</p>
-              </Link>
-              <Link href="/work/vuse" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <span className="text-base text-gray-400">Consumer Goods</span>
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-1">Vuse</h3>
-                <p className="text-base text-gray-500 mt-2">Ongoing social media content for a global brand.</p>
-              </Link>
-              <Link href="/work/cambridge-electrical" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-md transition-all p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <span className="text-base text-gray-400">Consumer Electronics</span>
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-1">Cambridge Electrical</h3>
-                <p className="text-base text-gray-500 mt-2">Seasonal campaigns driving engagement.</p>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+              <div className="max-w-3xl">
+                <SectionLabel>Selected Work</SectionLabel>
+                <SectionTitle>Show the work. Then talk about the service.</SectionTitle>
+                <SectionDesc>
+                  A closer look at the creative systems, campaigns and digital experiences we build for brands across different categories.
+                </SectionDesc>
+              </div>
+              <Link href="/work" className="shrink-0 text-sm font-extrabold text-black hover:underline">
+                Explore all work →
               </Link>
             </div>
           </Animate>
-          <Animate animation="fade-up" delay={150}>
-            <div className="mt-8 text-center">
-              <Link href="/work" className="inline-flex items-center gap-2 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                View All Projects &rarr;
+
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-5">
+            <Animate animation="fade-up" className="lg:col-span-7">
+              <Link href="/work/social-media-designs" className="group block">
+                <div className="relative aspect-[16/11] overflow-hidden bg-gray-100">
+                  <Image
+                    src="/images/portfolio/social-media-hero.jpg"
+                    alt="Social media creative portfolio"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 58vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none"
+                  />
+                </div>
+                <div className="mt-5 flex items-start justify-between gap-6">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400">Social Media and Campaign Creative</p>
+                    <h3 className="mt-2 font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">Creative built for the feed, not just the portfolio.</h3>
+                  </div>
+                  <span className="text-xl text-black transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                </div>
               </Link>
+            </Animate>
+
+            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5">
+              {[
+                {
+                  href: "/work/foodfolio",
+                  src: "/images/portfolio/foodfolio-hero.jpg",
+                  eyebrow: "Food and Hospitality",
+                  title: "Visual systems designed to make products feel worth choosing.",
+                  alt: "Food and beverage creative portfolio",
+                },
+                {
+                  href: "/work/fashion-feed",
+                  src: "/images/portfolio/fashion-feed-hero.jpg",
+                  eyebrow: "Fashion and Lifestyle",
+                  title: "Campaign design with a stronger editorial point of view.",
+                  alt: "Fashion campaign creative portfolio",
+                },
+              ].map((item, index) => (
+                <Animate key={item.href} animation="fade-up" delay={(index + 1) * 100}>
+                  <Link href={item.href} className="group grid grid-cols-[0.9fr_1.1fr] min-h-[190px] overflow-hidden border border-gray-200 bg-gray-50 hover:border-black/30 hover:bg-white transition-colors">
+                    <div className="relative min-h-[190px] overflow-hidden">
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 18vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transition-none"
+                      />
+                    </div>
+                    <div className="p-5 flex flex-col justify-between">
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-gray-400">{item.eyebrow}</p>
+                        <h3 className="mt-3 font-[family-name:var(--font-display)] text-lg font-extrabold leading-snug text-black">{item.title}</h3>
+                      </div>
+                      <span className="mt-5 text-sm font-bold text-black">View project →</span>
+                    </div>
+                  </Link>
+                </Animate>
+              ))}
+            </div>
+          </div>
+
+          <Animate animation="fade-up" delay={200}>
+            <div className="mt-12 border-t border-gray-200 pt-7 flex flex-wrap items-center gap-x-8 gap-y-3">
+              <span className="text-xs font-bold uppercase tracking-[0.16em] text-gray-400">Also worked with</span>
+              {["NoorShad", "Vuse", "Cambridge Electrical", "HUBCO", "Minhaz Couture", "Pur Health"].map((name) => (
+                <span key={name} className="font-[family-name:var(--font-display)] text-sm font-extrabold text-gray-700">{name}</span>
+              ))}
             </div>
           </Animate>
         </div>
