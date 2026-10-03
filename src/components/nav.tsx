@@ -215,26 +215,26 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             </Link>
             <div id="services-dropdown" className={`${dropdownPanelBase} w-[min(920px,90vw)] ${servicesOpen ? dropdownVisible : dropdownHidden}`}>
               <div className="grid grid-cols-[1.15fr_.85fr] border-b border-gray-100">
-                <div className="p-7 bg-gradient-to-br from-[#f5f2ff] via-white to-[#eef7ff]">
-                  <span className="inline-flex rounded-full bg-[#6C4CF1]/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">What we do</span>
+                <div className="p-7 bg-[#F7F7F5]">
+                  <span className="inline-flex rounded-full bg-black px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-white">What we do</span>
                   <h2 className="text-[28px] leading-tight font-extrabold mt-3">Growth, creative & technology that work together.</h2>
                   <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">Start with your goal. We will help you find the right mix of media, search, creative and technology.</p>
                 </div>
                 <div className="p-7 bg-[#101010] text-white flex flex-col justify-between">
                   <span className="text-xs font-bold uppercase tracking-[.18em] text-white/50">Not sure where to start?</span>
-                  <div><p className="text-lg font-bold">Tell us what you want to grow.</p><Link href="/get-a-quote" className="mt-4 inline-flex rounded-full bg-white px-4 py-2.5 text-sm font-extrabold text-black hover:bg-[#EEE9FF]">Get a recommendation →</Link></div>
+                  <div><p className="text-lg font-bold">Tell us what you want to grow.</p><Link href="/get-a-quote" className="mt-4 inline-flex rounded-full bg-white px-4 py-2.5 text-sm font-extrabold text-black hover:bg-gray-100">Get a recommendation →</Link></div>
                 </div>
               </div>
               <div className="grid grid-cols-[1.45fr_.95fr] gap-5 p-5">
                 <div>
-                  <div className="flex items-center justify-between mb-3"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">Core growth services</span><span className="text-[11px] font-semibold text-gray-400">Start here</span></div>
+                  <div className="flex items-center justify-between mb-3"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-white">Core growth services</span><span className="text-[11px] font-semibold text-gray-400">Start here</span></div>
                   <div className="grid grid-cols-2 gap-2">
                     {[
                       { label: "PPC & Paid Ads", href: "/services/performance-marketing", desc: "Meta Ads, Google Ads & PPC management", tag: "PPC" },
                       { label: "SEO", href: "/services/seo", desc: "Technical, local, content & AI SEO", tag: "SEO" },
                       { label: "Social Media Marketing", href: "/services/social-media", desc: "Strategy, content & community management", tag: "SMM" },
                       { label: "Website Development", href: "/services/website-development", desc: "WordPress, Shopify & Next.js", tag: "WEB" },
-                    ].map((item) => <Link key={item.href} href={item.href} className="group min-h-[104px] rounded-2xl border border-[#E7E1FF] bg-[#F8F6FF] p-4 transition-all hover:-translate-y-0.5 hover:border-[#6C4CF1] hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-white px-2 py-1 text-[9px] font-extrabold tracking-wider text-[#5A3ED6]">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-[#5A3ED6]">Explore →</span></Link>)}
+                    ].map((item) => <Link key={item.href} href={item.href} className="group min-h-[104px] rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-black hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-white px-2 py-1 text-[9px] font-extrabold tracking-wider text-white">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-white">Explore →</span></Link>)}
                   </div>
                 </div>
                 <div className="border-l border-gray-100 pl-5">
@@ -253,11 +253,11 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                       { label: "White Label", href: "/services/white-label" },
                       { label: "Media Buying", href: "/services/media-planning-buying" },
                       { label: "Upwork Growth", href: "/services/upwork-growth" },
-                    ].map((item) => <Link key={item.href} href={item.href} className="group flex items-center justify-between rounded-lg px-2.5 py-2 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-black"><span>{item.label}</span><span className="text-gray-300 group-hover:text-[#6C4CF1]">↗</span></Link>)}
+                    ].map((item) => <Link key={item.href} href={item.href} className="group flex items-center justify-between rounded-lg px-2.5 py-2 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-black"><span>{item.label}</span><span className="text-gray-300 group-hover:text-black">↗</span></Link>)}
                   </div>
                 </div>
               </div>
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/services" className="text-sm font-extrabold text-[#5A3ED6]">All services →</Link></div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/services" className="text-sm font-extrabold text-white">All services →</Link></div>
             </div>
           </div>
 
@@ -270,11 +270,11 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               Industries <span aria-hidden="true" className="text-xs">⌄</span>
             </Link>
             <div id="industries-dropdown" className={`${dropdownPanelBase} w-[min(780px,88vw)] ${industriesOpen ? dropdownVisible : dropdownHidden}`}>
-              <div className="p-7 border-b border-gray-100 bg-gradient-to-r from-[#fff4ed] via-white to-[#f5f2ff]"><span className="inline-flex rounded-full bg-[#FF7A45]/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-[#D95C2A]">Industry experience</span><h2 className="text-[28px] leading-tight font-extrabold mt-3">Strategies shaped around how your customers buy.</h2><p className="mt-2 text-sm text-gray-600">Pick your market to see relevant services, thinking and proof.</p></div>
+              <div className="p-7 border-b border-gray-100 bg-[#F7F7F5]"><span className="inline-flex rounded-full bg-black px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-white">Industry experience</span><h2 className="text-[28px] leading-tight font-extrabold mt-3">Strategies shaped around how your customers buy.</h2><p className="mt-2 text-sm text-gray-600">Pick your market to see relevant services, thinking and proof.</p></div>
               <div className="grid grid-cols-3 gap-2 p-4 max-h-[55vh] overflow-y-auto">
-                {industryList.map((ind, index) => <Link key={ind.href} href={ind.href} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-[#FFF7F2] hover:bg-[#FFEADF]" : "hover:bg-[#F5F2FF]"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
+                {industryList.map((ind, index) => <Link key={ind.href} href={ind.href} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-white hover:bg-gray-50" : "hover:bg-gray-50"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
               </div>
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/industries" className="text-sm font-extrabold text-[#5A3ED6]">Explore all industries →</Link></div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/industries" className="text-sm font-extrabold text-white">Explore all industries →</Link></div>
             </div>
           </div>
 
