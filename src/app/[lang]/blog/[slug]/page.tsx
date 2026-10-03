@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { BlogThumbnail } from "@/components/blog-thumbnail";
 import { notFound } from "next/navigation";
 import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -255,13 +256,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       section: post.category,
       authors: [post.author],
       tags: parseTags(post.tags).length > 0 ? parseTags(post.tags) : [post.category],
-      images: [{ url: post.og_image || "https://themarkitmedia.com/images/branding/og-image.png", width: 1200, height: 630 }],
+      images: [{ url: `https://themarkitmedia.com/api/blog-thumbnail?title=${encodeURIComponent(post.title)}`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.meta_title || post.title,
       description: post.meta_description || post.excerpt,
-      images: [post.og_image || "https://themarkitmedia.com/images/branding/og-image.png"],
+      images: [`https://themarkitmedia.com/api/blog-thumbnail?title=${encodeURIComponent(post.title)}`],
     },
   };
 }
@@ -324,7 +325,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     articleSection: post.category,
     wordCount: Math.round(post.content.replace(/<[^>]+>/g, "").split(/\s+/).length),
     keywords: parseTags(post.tags),
-    ...(post.cover_image ? { image: post.cover_image } : {}),
+    image: `https://themarkitmedia.com/api/blog-thumbnail?title=${encodeURIComponent(post.title)}`,
   };
 
   const processedContent = addExternalLinkAttrs(addHeadingIds(markdownToHtml(post.content)));
@@ -358,13 +359,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      {post.cover_image && (
-        <section aria-label="Cover image" className="px-6 lg:px-12 pb-8">
-          <div className="max-w-4xl mx-auto">
-            <Image src={post.cover_image} alt={`Cover image for ${post.title}`} width={1200} height={600} className="w-full aspect-[2/1] object-cover" priority />
+      <section aria-label="Article thumbnail" className="px-6 lg:px-12 pb-8">
+          <div className="max-w-4xl mx-auto overflow-hidden">
+            <BlogThumbnail title={post.title} priority />
           </div>
         </section>
-      )}
 
       <section aria-label="Article content" className="px-6 lg:px-12 pb-12">
         <div className="max-w-3xl mx-auto">
@@ -543,11 +542,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   href={`/blog/${r.slug}`}
                   className="group border border-gray-200 bg-white hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
-                  {r.cover_image && (
-                    <div className="aspect-[16/9] overflow-hidden">
-                      <Image src={r.cover_image} alt={`Cover for ${r.title}`} width={640} height={360} className="w-full h-full object-cover group-hover:scale-105 transition-transform motion-reduce:transition-none duration-500" />
-                    </div>
-                  )}
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <BlogThumbnail title={r.title} />
+                  </div>
                   <div className="p-6">
                     <span className="text-base font-bold text-black uppercase tracking-wide">{r.category}</span>
                     <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline mt-2 mb-2 leading-snug">
