@@ -7,7 +7,16 @@ export function getDb(): Database.Database {
   if (db) return db;
 
   const dbPath = path.join(process.cwd(), "data", "markit.db");
-  db = new Database(dbPath);
+  const isVercel = Boolean(process.env.VERCEL);
+  // Vercel bundles the seeded database with the app, but the deployment filesystem is read-only.
+  // Open it read-only in production so public pages can safely query content without trying to create WAL files.
+  db = new Database(dbPath, isVercel ? { readonly: true, fileMustExist: true } : undefined);
+
+  if (isVercel) {
+    db.pragma("foreign_keys = ON");
+    return db;
+  }
+
   db.pragma("journal_mode = WAL");
   db.pragma("foreign_keys = ON");
 
