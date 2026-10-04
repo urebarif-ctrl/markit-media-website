@@ -1,15 +1,37 @@
 import Database from "better-sqlite3";
 import path from "path";
+import fs from "fs";
 
 let db: Database.Database | null = null;
 
 export function getDb(): Database.Database {
   if (db) return db;
 
-  const dbPath = path.join(process.cwd(), "data", "markit.db");
   const isVercel = Boolean(process.env.VERCEL);
-  // Vercel bundles the seeded database with the app, but the deployment filesystem is read-only.
-  // Open it read-only in production so public pages can safely query content without trying to create WAL files.
+  let dbPath = path.join(process.cwd(), "data", "markit.db");
+
+  if (isVercel) {
+    // Next/Vercel can place traced assets beside a server function rather than at process.cwd().
+    // Resolve the bundled seed from known runtime locations and copy it to /tmp, the writable
+    // filesystem guaranteed for serverless functions. This also prevents SQLite from ever
+    // attempting sidecar files inside the immutable deployment bundle.
+    const candidates = [
+      dbPath,
+      path.join(process.cwd(), ".next", "server", "data", "markit.db"),
+      path.join(__dirname, "..", "..", "data", "markit.db"),
+      path.join(__dirname, "..", "..", "..", "data", "markit.db"),
+      path.join("/var/task", "data", "markit.db"),
+    ];
+    const bundledDb = candidates.find((candidate) => fs.existsSync(candidate));
+    if (!bundledDb) {
+      throw new Error(`Bundled SQLite database not found. Checked: ${candidates.join(", ")}`);
+    }
+
+    const tmpDb = "/tmp/markit.db";
+    if (!fs.existsSync(tmpDb)) fs.copyFileSync(bundledDb, tmpDb);
+    dbPath = tmpDb;
+  }
+
   db = new Database(dbPath, isVercel ? { readonly: true, fileMustExist: true } : undefined);
 
   if (isVercel) {
