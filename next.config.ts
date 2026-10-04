@@ -34,8 +34,12 @@ const nextConfig: NextConfig = {
   },
   serverExternalPackages: ["better-sqlite3"],
   outputFileTracingIncludes: {
-    "/api/**": ["./data/**"],
-    "/feed.xml": ["./data/**"],
+    // The seeded SQLite database is read by localized blog pages, metadata, sitemap/feed routes,
+    // and API handlers. Include it in every Node.js server trace, not only /api routes.
+    "/*": ["./data/markit.db"],
+    "/**": ["./data/markit.db"],
+    "/api/**": ["./data/markit.db"],
+    "/feed.xml": ["./data/markit.db"],
   },
   experimental: {
     optimizePackageImports: ["lucide-react"],
