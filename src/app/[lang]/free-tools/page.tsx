@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "155+ Free Marketing Tools",
     description: "Interactive calculators, audit scorecards, generators, and planners — all free, no signup required.",
-    images: [{ url: "https://themarkitmedia.com/api/free-tool-thumbnail?title=155%2B%20Free%20Marketing%20Tools", width: 1200, height: 630 }],
+    images: [{ url: "https://themarkitmedia.com/api/free-tool-thumbnail?title=155%2B%20Free%20Marketing%20Tools", width: 1200, height: 630, alt: "155+ Free Marketing Tools by Markit Media — calculators, audits, generators and planners" }],
   },
   twitter: {
     card: "summary_large_image",

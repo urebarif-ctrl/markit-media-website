@@ -13,7 +13,7 @@ export function BlogThumbnail({
   return (
     <Image
       src={src}
-      alt={title}
+      alt={`${title} — digital marketing article thumbnail by Markit Media`}
       width={1200}
       height={630}
       priority={priority}
