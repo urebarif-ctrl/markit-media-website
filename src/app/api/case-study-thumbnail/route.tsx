@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
       </div>
       <div style={{ position: "absolute", right: "45px", top: "65px", width: "455px", height: "510px", border: "2px dashed #d4d4d4", borderRadius: "230px", display: "flex" }} />
       {tiles.map((tile) => (
-        <div key={tile.label} aria-label={tile.label} style={{ position: "absolute", left: tile.x, top: tile.y, width: tile.size, height: tile.size, borderRadius: "22px", background: "rgba(255,255,255,.96)", border: "1px solid #e6e6e6", boxShadow: "0 18px 45px rgba(0,0,0,.09)", display: "flex", alignItems: "center", justifyContent: "center", color: "#111", fontWeight: 800, fontSize: tile.fs, transform: tile.label === "Instagram" ? "rotate(-6deg)" : tile.label === "Facebook" ? "rotate(7deg)" : tile.label === "Google Ads" ? "rotate(5deg)" : "none" }}>
+        <div key={tile.label} aria-label={tile.label} style={{ position: "absolute", left: tile.x, top: tile.y, width: tile.size, height: tile.size, borderRadius: "22px", background: "rgba(255,255,255,.96)", border: "1px solid #e6e6e6", boxShadow: "0 18px 45px rgba(0,0,0,.09)", display: "flex", alignItems: "center", justifyContent: "center", color: "#111", fontWeight: 800, fontSize: tile.fs, transform: tile.label === "Instagram" ? "rotate(-6deg)" : tile.label === "Facebook" ? "rotate(7deg)" : tile.label === "Google Ads" ? "rotate(5deg)" : "rotate(0deg)" }}>
           {tile.mark}
         </div>
       ))}
