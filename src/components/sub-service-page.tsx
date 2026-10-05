@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { QuoteForm } from "@/components/quote-form";
 import { getPostsByCategory } from "@/lib/blog";
+import { serviceClusters } from "@/data/service-clusters";
 
 interface SubServicePageProps {
   parentTitle: string;
@@ -23,24 +24,7 @@ interface SubServicePageProps {
 
 export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, children }: SubServicePageProps) {
   const relatedPosts = blogCategory ? getPostsByCategory(blogCategory, 3) : [];
-  const clusterNavigation: Record<string, { title: string; href: string }[]> = {
-    "/services/website-development": [
-      { title: "WordPress Development", href: "/services/website-development/wordpress" },
-      { title: "Wix Development", href: "/services/website-development/wix" },
-      { title: "Webflow Development", href: "/services/website-development/webflow" },
-      { title: "Squarespace Development", href: "/services/website-development/squarespace" },
-      { title: "Next.js Development", href: "/services/website-development/nextjs" },
-      { title: "Custom Web Apps", href: "/services/website-development/custom-web-apps" },
-      { title: "Landing Pages", href: "/services/website-development/landing-pages" },
-      { title: "Website Migration", href: "/services/website-development/website-migration" },
-      { title: "SEO Migration & Redirects", href: "/services/website-development/seo-migration-redirects" },
-    ],
-    "/services/shopify": [
-      { title: "Shopify Development", href: "/services/website-development/shopify" },
-      { title: "Shopify Marketing", href: "/services/ecommerce-marketing/shopify-marketing" },
-    ],
-  };
-  const siblingServices = (clusterNavigation[parentHref] || []).filter((item) => item.title !== title);
+  const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title);
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
