@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Admin — Markit Media CMS",
-  robots: { index: false, follow: false },
+  title: "Markit Media Dashboard",
+  description: "Private Markit Media internal workspace.",
+  robots: {
+    index: false,
+    follow: false,
+    noarchive: true,
+    nosnippet: true,
+    noimageindex: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      noarchive: true,
+      nosnippet: true,
+    },
+  },
 };
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full bg-gray-50 font-sans text-gray-900">
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

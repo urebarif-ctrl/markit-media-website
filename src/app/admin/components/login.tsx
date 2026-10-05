@@ -1,92 +1,115 @@
 "use client";
 
+import Image from "next/image";
 import { useState, type FormEvent } from "react";
+import { ArrowLeft, LockKeyhole, MailCheck, ShieldCheck } from "lucide-react";
 
 interface LoginProps {
   onLogin: (user: { name: string; email: string; role: string }) => void;
 }
 
 export function AdminLogin({ onLogin }: LoginProps) {
+  const [step, setStep] = useState<"credentials" | "otp">("credentials");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [code, setCode] = useState("");
+  const [challengeId, setChallengeId] = useState("");
+  const [emailHint, setEmailHint] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleCredentials(e: FormEvent) {
     e.preventDefault();
     setError("");
     setLoading(true);
-
     try {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
       const data = await res.json();
       if (!res.ok) {
         setError(data.error || "Login failed");
-        setLoading(false);
         return;
       }
+      setChallengeId(data.challengeId);
+      setEmailHint(data.emailHint || email);
+      setCode("");
+      setStep("otp");
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
+  async function handleOtp(e: FormEvent) {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ challengeId, code }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Verification failed");
+        return;
+      }
       onLogin(data.user);
     } catch {
       setError("Network error. Please try again.");
+    } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-gray-50">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-extrabold text-black uppercase tracking-wide">Markit Media</h1>
-          <p className="text-base text-gray-500 mt-2">CMS Dashboard</p>
+    <div className="min-h-screen bg-[#f4f4f2] grid lg:grid-cols-[1.05fr_.95fr]">
+      <section className="hidden lg:flex bg-black text-white p-12 xl:p-16 flex-col justify-between">
+        <div className="w-fit rounded-2xl bg-white p-4">
+          <Image src="/images/logo-black.png" alt="Markit Media" width={190} height={58} className="h-10 w-auto object-contain" priority />
         </div>
+        <div className="max-w-xl">
+          <p className="text-xs font-bold uppercase tracking-[.28em] text-zinc-500">Internal workspace</p>
+          <h1 className="mt-5 text-5xl xl:text-6xl font-black tracking-[-.04em] leading-[.98]">One secure place for leads, content and growth data.</h1>
+          <p className="mt-6 text-base leading-7 text-zinc-400">Protected with password verification, email two-factor authentication and private sessions.</p>
+        </div>
+        <div className="flex items-center gap-2 text-xs text-zinc-500"><ShieldCheck size={16}/> Private Markit Media system</div>
+      </section>
 
-        <form onSubmit={handleSubmit} className="bg-white p-8 border border-gray-200 space-y-6">
-          <div>
-            <label htmlFor="email" className="block text-sm font-bold text-black uppercase tracking-wide mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
-              placeholder="ureb.arif@themarkitmedia.com"
-            />
+      <section className="flex items-center justify-center px-5 py-12 sm:px-10">
+        <div className="w-full max-w-md">
+          <div className="lg:hidden mb-8">
+            <Image src="/images/logo-black.png" alt="Markit Media" width={180} height={54} className="h-10 w-auto object-contain" priority />
           </div>
-          <div>
-            <label htmlFor="password" className="block text-sm font-bold text-black uppercase tracking-wide mb-2">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
-              placeholder="••••••••"
-            />
+          <div className="rounded-3xl border border-black/10 bg-white p-7 sm:p-9 shadow-[0_25px_80px_rgba(0,0,0,.07)]">
+            <div className="h-12 w-12 rounded-2xl bg-black text-white grid place-items-center">{step === "otp" ? <MailCheck size={21}/> : <LockKeyhole size={21}/>}</div>
+            <h2 className="mt-6 text-3xl font-black tracking-tight">{step === "otp" ? "Check your email" : "Dashboard sign in"}</h2>
+            <p className="mt-2 text-sm leading-6 text-zinc-500">{step === "otp" ? `We sent a 6-digit verification code to ${emailHint}. The code expires in 10 minutes.` : "Use an authorized Markit Media account to continue."}</p>
+
+            {step === "credentials" ? (
+              <form onSubmit={handleCredentials} className="mt-7 space-y-5">
+                <label className="block text-sm font-bold">Email<input type="email" value={email} onChange={e=>setEmail(e.target.value)} required autoComplete="email" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3.5 outline-none focus:border-black" placeholder="name@themarkitmedia.com"/></label>
+                <label className="block text-sm font-bold">Password<input type="password" value={password} onChange={e=>setPassword(e.target.value)} required autoComplete="current-password" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3.5 outline-none focus:border-black" placeholder="••••••••••••"/></label>
+                {error && <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700" role="alert">{error}</div>}
+                <button type="submit" disabled={loading} className="w-full rounded-xl bg-black py-3.5 font-bold text-white hover:bg-zinc-800 disabled:opacity-50">{loading ? "Checking account..." : "Continue securely"}</button>
+              </form>
+            ) : (
+              <form onSubmit={handleOtp} className="mt-7 space-y-5">
+                <label className="block text-sm font-bold">Verification code<input inputMode="numeric" autoComplete="one-time-code" value={code} onChange={e=>setCode(e.target.value.replace(/\D/g,"").slice(0,6))} required minLength={6} maxLength={6} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-4 text-center text-2xl font-black tracking-[.35em] outline-none focus:border-black" placeholder="000000"/></label>
+                {error && <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700" role="alert">{error}</div>}
+                <button type="submit" disabled={loading || code.length !== 6} className="w-full rounded-xl bg-black py-3.5 font-bold text-white hover:bg-zinc-800 disabled:opacity-50">{loading ? "Verifying..." : "Verify and open dashboard"}</button>
+                <button type="button" onClick={()=>{setStep("credentials");setError("");setPassword("");setCode("")}} className="w-full flex items-center justify-center gap-2 text-sm font-bold text-zinc-500 hover:text-black"><ArrowLeft size={15}/> Back to sign in</button>
+              </form>
+            )}
           </div>
-
-          {error && (
-            <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-base" role="alert">
-              {error}
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-black text-white py-4 font-bold text-base hover:bg-gray-800 transition-colors disabled:opacity-50"
-          >
-            {loading ? "Signing in..." : "Sign In"}
-          </button>
-        </form>
-      </div>
+          <p className="mt-5 text-center text-xs text-zinc-400">Dashboard access is private, non-indexable and logged for security.</p>
+        </div>
+      </section>
     </div>
   );
 }
