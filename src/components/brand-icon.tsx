@@ -111,7 +111,15 @@ export function BrandIcon({ brand, className = "w-6 h-6", color, title }: BrandI
   }
 
   const icon = ICONS[key];
-  if (!icon) return null;
+  if (!icon) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} role={title ? "img" : undefined} aria-hidden={title ? undefined : true} aria-label={title}>
+        {title ? <title>{title}</title> : null}
+        <rect width="24" height="24" rx="5" fill={color || "#111"} />
+        <text x="12" y="15" textAnchor="middle" fontSize="8" fontWeight="700" fill="#fff">{brand.trim().slice(0, 2).toUpperCase()}</text>
+      </svg>
+    );
+  }
 
   return (
     <svg viewBox="0 0 24 24" className={className} role={title ? "img" : undefined} aria-hidden={title ? undefined : true} aria-label={title}>
