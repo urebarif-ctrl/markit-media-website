@@ -35,10 +35,10 @@ export async function GET(request: NextRequest) {
     ];
     const current=all.filter(x=>dateOf(x)>=since);
     const previous=all.filter(x=>dateOf(x)>=previousSince&&dateOf(x)<since);
+    const status=(x:any)=>String(x.status||"new").toLowerCase();
     const excludedLeadStatuses=new Set(["spam","sales_outreach"]);
     const sales=current.filter((x:any)=>x._kind!=="Newsletter"&&!excludedLeadStatuses.has(status(x)));
     const previousSales=previous.filter((x:any)=>x._kind!=="Newsletter"&&!excludedLeadStatuses.has(status(x)));
-    const status=(x:any)=>String(x.status||"new").toLowerCase();
     const openStatuses=new Set(["new","in_progress","contacted","qualified","proposal"]);
     const staleCutoff=new Date(Date.now()-7*86400000);
     const now=new Date();
