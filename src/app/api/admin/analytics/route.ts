@@ -35,7 +35,9 @@ export async function GET(request: NextRequest) {
     ];
     const current=all.filter(x=>dateOf(x)>=since);
     const previous=all.filter(x=>dateOf(x)>=previousSince&&dateOf(x)<since);
-    const sales=current.filter((x:any)=>x._kind!=="Newsletter");
+    const excludedLeadStatuses=new Set(["spam","sales_outreach"]);
+    const sales=current.filter((x:any)=>x._kind!=="Newsletter"&&!excludedLeadStatuses.has(status(x)));
+    const previousSales=previous.filter((x:any)=>x._kind!=="Newsletter"&&!excludedLeadStatuses.has(status(x)));
     const status=(x:any)=>String(x.status||"new").toLowerCase();
     const openStatuses=new Set(["new","in_progress","contacted","qualified","proposal"]);
     const staleCutoff=new Date(Date.now()-7*86400000);
@@ -60,10 +62,10 @@ export async function GET(request: NextRequest) {
       service:String(x.service||x._kind),source:String(x.utmSource||x.source||x._kind),status:status(x),assignedTo:String(x.assignedTo||""),created_at:dateOf(x)
     }));
     const cat=await posts.aggregate([{$match:{category:{$nin:["",null]}}},{$group:{_id:"$category",count:{$sum:1}}},{$sort:{count:-1}}]).toArray();
-    const change=previous.length?Math.round(((current.length-previous.length)/previous.length)*100):current.length?100:0;
+    const change=previousSales.length?Math.round(((sales.length-previousSales.length)/previousSales.length)*100):sales.length?100:0;
 
     return NextResponse.json({
-      summary:{totalLeads:current.length,newLeads:sales.filter(x=>status(x)==="new").length,inProgress:sales.filter(x=>status(x)==="in_progress").length,contacted:sales.filter(x=>status(x)==="contacted").length,qualified:sales.filter(x=>status(x)==="qualified").length,proposals:sales.filter(x=>status(x)==="proposal").length,won:sales.filter(x=>status(x)==="won").length,discoveryBriefs:current.filter((x:any)=>x._kind==="Discovery Brief").length,newsletterSubscribers:current.filter((x:any)=>x._kind==="Newsletter").length,totalPosts,publishedPosts,draftPosts,totalMedia,categories:categories.length,pipelineValue,wonValue,periodChange:change},
+      summary:{totalLeads:current.filter((x:any)=>x._kind!=="Newsletter").length,genuineLeads:sales.length,spam:current.filter((x:any)=>x._kind!=="Newsletter"&&status(x)==="spam").length,salesOutreach:current.filter((x:any)=>x._kind!=="Newsletter"&&status(x)==="sales_outreach").length,newLeads:sales.filter(x=>status(x)==="new").length,inProgress:sales.filter(x=>status(x)==="in_progress").length,contacted:sales.filter(x=>status(x)==="contacted").length,qualified:sales.filter(x=>status(x)==="qualified").length,proposals:sales.filter(x=>status(x)==="proposal").length,won:sales.filter(x=>status(x)==="won").length,discoveryBriefs:current.filter((x:any)=>x._kind==="Discovery Brief").length,newsletterSubscribers:current.filter((x:any)=>x._kind==="Newsletter").length,totalPosts,publishedPosts,draftPosts,totalMedia,categories:categories.length,pipelineValue,wonValue,periodChange:change},
       attention:{needsContact:needsContact.length,overdue:overdue.length,stale:stale.length,unassigned:unassigned.length},
       pipeline,
       followUps:followUps.map((x:any)=>({id:String(x._id),name:String(x.name||x.brandName||x.email||"Lead"),company:String(x.company||x.brandName||""),service:String(x.service||x._kind),status:status(x),assignedTo:String(x.assignedTo||""),nextFollowUpAt:x.nextFollowUpAt})),

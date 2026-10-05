@@ -7,7 +7,7 @@ function auth(request: NextRequest) {
   const token = request.cookies.get("admin_token")?.value || "";
   return verifyToken(token);
 }
-const statuses = new Set(["new","in_progress","contacted","qualified","proposal","won","completed","closed"]);
+const statuses = new Set(["new","in_progress","contacted","qualified","proposal","won","existing_client","partnership","sales_outreach","spam","lost","completed","closed"]);
 const safeRegex=(s:string)=>s.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&");
 
 function normalize(doc:any, collection:string) {
@@ -21,6 +21,7 @@ function normalize(doc:any, collection:string) {
     budget:String(doc.budget||doc.adBudget||""), timeline:String(doc.timeline||doc.launchDate||""),
     message:String(doc.message||doc.description||doc.notes||""),
     status:String(doc.status||(isNewsletter?"subscribed":"new")).toLowerCase(),
+    tags:Array.isArray(doc.tags)?doc.tags.map((x:any)=>String(x)).filter(Boolean).slice(0,12):[],
     internalNotes:String(doc.internalNotes||""), assignedTo:String(doc.assignedTo||""),
     source:String(doc.source||(isDiscovery?"Brand Discovery Brief":isNewsletter?"Newsletter":"Website")),
     landingPage:String(doc.landingPage||""), referrer:String(doc.referrer||""),
@@ -55,10 +56,11 @@ export async function GET(request:NextRequest){
 export async function PATCH(request:NextRequest){
  if(!auth(request)) return NextResponse.json({error:"Unauthorized"},{status:401});
  try{
-  const {id,collection,status,internalNotes,assignedTo,nextFollowUpAt,estimatedDealValue}=await request.json();
+  const {id,collection,status,tags,internalNotes,assignedTo,nextFollowUpAt,estimatedDealValue}=await request.json();
   if(!id||!ObjectId.isValid(String(id))||!["form_submissions","discovery_briefs","newsletter_subscribers"].includes(collection)) return NextResponse.json({error:"Invalid lead"},{status:400});
   const update:any={updatedAt:new Date()};
   if(status!==undefined){ if(!statuses.has(String(status))) return NextResponse.json({error:"Invalid status"},{status:400}); update.status=String(status); if(status==="contacted") update.lastContactedAt=new Date(); }
+  if(tags!==undefined){if(!Array.isArray(tags))return NextResponse.json({error:"Invalid tags"},{status:400});update.tags=tags.map((x:any)=>String(x).trim().slice(0,40)).filter(Boolean).slice(0,12);}
   if(internalNotes!==undefined) update.internalNotes=String(internalNotes).slice(0,5000);
   if(assignedTo!==undefined) update.assignedTo=String(assignedTo).slice(0,120);
   if(nextFollowUpAt!==undefined) update.nextFollowUpAt=nextFollowUpAt?new Date(String(nextFollowUpAt)):null;
@@ -66,7 +68,7 @@ export async function PATCH(request:NextRequest){
   const db=await getMongoDb(), target=db.collection(collection), oid=new ObjectId(String(id));
   const before=await target.findOne({_id:oid});
   await target.updateOne({_id:oid},{$set:update});
-  const changes:any={}; for(const k of ["status","internalNotes","assignedTo","nextFollowUpAt","estimatedDealValue"]) if(k in update) changes[k]=update[k];
+  const changes:any={}; for(const k of ["status","tags","internalNotes","assignedTo","nextFollowUpAt","estimatedDealValue"]) if(k in update) changes[k]=update[k];
   const session=auth(request);
   await db.collection("activity_log").insertOne({action:"lead.updated",entityType:"lead",entityId:String(id),collection,actor:session?.email||"admin",leadName:String(before?.name||before?.brandName||before?.email||"Lead"),changes,createdAt:new Date()});
   return NextResponse.json({success:true});
