@@ -1,0 +1,16 @@
+import type { Metadata } from "next";
+import { ServicePage } from "@/components/service-page";
+import { Database } from "lucide-react";
+export const metadata:Metadata={title:"CRM Development & Implementation Services",description:"CRM development, implementation, automation and integration across HubSpot, Salesforce, Zoho and custom CRM systems.",alternates:{canonical:"https://themarkitmedia.com/en/services/crm-development"}};
+export default function Page(){return <ServicePage icon={Database} title="CRM Development" description="Build or improve the system that connects leads, sales activity, customer data, follow-up and reporting." longDescription="CRM work is not only software setup. The useful system has to reflect the actual sales process, customer lifecycle, permissions, integrations and reporting requirements. We support platform implementation as well as custom CRM development." subServices={[
+{title:"CRM Consulting",desc:"Platform selection, implementation planning, migration, adoption and workflow design.",href:"/services/digital-marketing/crm-consulting"},
+{title:"Custom CRM Development",desc:"Purpose-built CRM systems for workflows that do not fit a standard platform.",href:"/services/crm-development/custom-crm"},
+{title:"HubSpot CRM",desc:"HubSpot implementation, pipelines, properties, automation and reporting.",href:"/services/crm-development/hubspot"},
+{title:"Salesforce CRM",desc:"Salesforce configuration, process design, integrations and automation.",href:"/services/crm-development/salesforce"},
+{title:"Zoho CRM",desc:"Zoho CRM setup, modules, pipelines and automation.",href:"/services/crm-development/zoho"},
+{title:"CRM Automation",desc:"Lead routing, lifecycle updates, tasks, notifications and scoring.",href:"/services/crm-development/automation"}]} platforms={[
+{name:"HubSpot",note:"CRM, marketing, sales pipelines and automation.",href:"/services/crm-development/hubspot"},
+{name:"Salesforce",note:"Enterprise CRM and process automation.",href:"/services/crm-development/salesforce"},
+{name:"Zoho",note:"CRM, workflows and business-suite integration.",href:"/services/crm-development/zoho"},
+{name:"GoHighLevel",note:"Lead management, pipelines and automation."},
+{name:"Pipedrive",note:"Sales pipeline management and workflow automation."}]} benefits={["CRM architecture based on the real sales process","Cleaner customer and lead data","Automated routing and follow-up","Better marketing and sales handoff","Integrations with forms, ads and email","Decision-ready reporting"]} faq={[{q:"Do you build custom CRM systems?",a:"Yes. When standard platforms cannot support the workflow efficiently, we can scope a custom CRM with the required data model, permissions, pipelines, integrations and reporting."},{q:"Do you implement HubSpot, Salesforce and Zoho?",a:"Yes. Each has a dedicated service page under CRM Development."}]} relatedServices={[{title:"App Development",href:"/services/app-development"},{title:"Email Marketing",href:"/services/email-marketing"},{title:"Marketing Analytics",href:"/services/marketing-analytics"}]}/>}
