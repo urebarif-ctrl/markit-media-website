@@ -4,11 +4,11 @@ import { Code } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Website Development",
-  description: "Website development across WordPress, Shopify, Next.js, Webflow, Squarespace and custom stacks, including redesigns, migrations, redirects and SEO-safe launches.",
+  description: "Website development across WordPress, Wix, Webflow, Squarespace, Next.js and custom stacks, including redesigns, migrations, redirects and SEO-safe launches.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development" },
   openGraph: {
     title: "Website Development",
-    description: "Custom website development: WordPress, Shopify, Next.js, web apps, landing pages, and e-commerce. Fast, responsive, SEO-optimized websites built for res...",
+    description: "Custom website development across WordPress, Wix, Webflow, Squarespace, Next.js, landing pages and custom web applications.",
   },
 };
 
@@ -19,11 +19,11 @@ export default function WebsiteDevelopmentPage() {
       heroImage="/images/services/web-dev.jpg"
       blogCategory="Web"
       title="Website Development"
-      description="Get a fast, responsive, and conversion-focused website. We build on WordPress, Shopify, Next.js, and custom frameworks, delivering sites that look great and perform even better."
+      description="Get a fast, responsive, and conversion-focused website. We build on WordPress, Wix, Webflow, Squarespace, Next.js and custom frameworks, with platform selection based on your content, performance and ownership needs."
       longDescription="A website project is more than a visual redesign. We plan information architecture, content hierarchy, responsive UX, CMS ownership, performance, analytics, technical SEO and launch requirements together. Our team works across managed CMS platforms and modern application stacks, and can also migrate an existing site without casually discarding valuable URLs, content or search signals. For migrations with URL changes, we map old URLs to relevant new destinations, implement permanent redirects, update internal links and canonicals, and validate the launch rather than treating migration as a simple copy-and-paste exercise."
       subServices={[
         { title: "WordPress Development", desc: "Custom WordPress themes, plugins, and headless CMS setups for flexible content management.", href: "/services/website-development/wordpress" },
-        { title: "Shopify Development", desc: "Custom Shopify storefronts, theme customization, and app integrations.", href: "/services/website-development/shopify" },
+        { title: "Wix Development", desc: "Structured Wix websites for service businesses, portfolios and content-led brands that need straightforward editing.", href: "/services/website-development/wix" },
         { title: "Webflow Development", desc: "Responsive Webflow builds, CMS implementation, component systems, and site improvements.", href: "/services/website-development/webflow" },
         { title: "Squarespace Development", desc: "Polished Squarespace websites for service businesses, portfolios, and content-led brands.", href: "/services/website-development/squarespace" },
         { title: "Next.js Development", desc: "High-performance React applications with server-side rendering and static generation.", href: "/services/website-development/nextjs" },
@@ -43,7 +43,7 @@ export default function WebsiteDevelopmentPage() {
         "Scalable architecture that grows with your business",
       ]}
       faq={[
-        { q: "What platforms do you build on?", a: "We build on WordPress, Shopify, Next.js, and custom frameworks depending on your needs. We recommend the best platform based on your goals, budget, and technical requirements." },
+        { q: "What platforms do you build on?", a: "We build on WordPress, Wix, Webflow, Squarespace, Next.js and custom frameworks depending on your needs. Shopify is handled as a dedicated ecommerce service family because store development and growth require a different operating model." },
         { q: "How long does it take to build a website?", a: "A standard website takes 4-8 weeks from kickoff to launch. Complex web applications and e-commerce stores may take 8-12 weeks depending on scope." },
         { q: "Do you provide website hosting?", a: "We help you set up and manage hosting on the best platform for your site, whether that is managed WordPress hosting, Vercel, or cloud infrastructure." },
         { q: "Will my website be mobile-friendly?", a: "Every website we build is mobile-first and fully responsive across all screen sizes and devices." },
@@ -82,6 +82,7 @@ export default function WebsiteDevelopmentPage() {
         { title: "Karachi", href: "/locations/karachi/website-development" },
       ]}
       relatedServices={[
+        { title: "Shopify", href: "/services/shopify" },
         { title: "SEO", href: "/services/seo" },
         { title: "Branding & Design", href: "/services/branding" },
         { title: "E-commerce Marketing", href: "/services/ecommerce-marketing" },
