@@ -22,11 +22,20 @@ export default function EmailMarketingPage() {
       description="Turn your email list into a consistent revenue channel. We design campaigns, build automation flows, manage your lists, run A/B tests, and optimize deliverability."
       longDescription="Email remains one of the highest-ROI marketing channels. Our email marketing team designs and sends campaigns that get opened, read, and clicked. We build automated sequences for onboarding, nurturing, and retention, segment your lists for targeted messaging, and continuously test and optimize to improve performance."
       subServices={[
+        { title: "Mailchimp Email Marketing", desc: "Mailchimp campaign setup, templates, automations, audience structure, reporting and ongoing optimization.", href: "/services/email-marketing/mailchimp" },
         { title: "Campaign Design", desc: "Custom email templates and campaign creative that reflect your brand and drive action.", href: "/services/email-marketing/campaign-design" },
         { title: "Email Automation", desc: "Welcome sequences, drip campaigns, abandoned cart flows, and triggered emails.", href: "/services/email-marketing/automation" },
         { title: "List Management", desc: "List segmentation, hygiene, growth strategies, and subscriber lifecycle management.", href: "/services/email-marketing/list-management" },
         { title: "A/B Testing", desc: "Subject lines, content, send times, and CTA testing to continuously improve performance.", href: "/services/email-marketing/ab-testing" },
         { title: "Deliverability", desc: "Inbox placement optimization, domain authentication, and sender reputation management.", href: "/services/email-marketing/deliverability" },
+      ]}
+      platforms={[
+        { name: "Mailchimp", note: "Campaigns, audiences, templates and automations.", href: "/services/email-marketing/mailchimp" },
+        { name: "Klaviyo", note: "Ecommerce lifecycle flows, segmentation and retention." },
+        { name: "SendGrid", note: "Transactional and API-driven email delivery." },
+        { name: "HubSpot", note: "CRM-connected marketing email and automation." },
+        { name: "ActiveCampaign", note: "Lifecycle automation, segmentation and CRM workflows." },
+        { name: "Brevo", note: "Email, automation and customer messaging." },
       ]}
       benefits={[
         "High-ROI channel that you own, independent of algorithm changes",
