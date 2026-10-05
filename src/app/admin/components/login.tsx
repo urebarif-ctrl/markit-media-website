@@ -19,6 +19,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
   const [notice, setNotice] = useState("");
   const [loading, setLoading] = useState(false);
   const [resending, setResending] = useState(false);
+  const [emailOnly, setEmailOnly] = useState(false);
 
   async function handleCredentials(e: FormEvent) {
     e.preventDefault();
@@ -40,6 +41,38 @@ export function AdminLogin({ onLogin }: LoginProps) {
       setChallengeId(data.challengeId);
       setEmailHint(data.emailHint || email);
       setCode("");
+      setStep("otp");
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function requestEmailCode() {
+    setError("");
+    setNotice("");
+    if (!email.trim()) {
+      setError("Enter your authorized dashboard email first.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/request-login-code", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        cache: "no-store",
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(data.error || "Could not send login code.");
+        return;
+      }
+      setChallengeId(data.challengeId);
+      setEmailHint(data.emailHint || email);
+      setCode("");
+      setEmailOnly(true);
       setStep("otp");
     } catch {
       setError("Network error. Please try again.");
@@ -107,6 +140,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
     setPassword("");
     setCode("");
     setChallengeId("");
+    setEmailOnly(false);
   }
 
   return (
@@ -131,7 +165,7 @@ export function AdminLogin({ onLogin }: LoginProps) {
           <div className="rounded-3xl border border-black/10 bg-white p-7 sm:p-9 shadow-[0_25px_80px_rgba(0,0,0,.07)]">
             <div className="h-12 w-12 rounded-2xl bg-black text-white grid place-items-center">{step === "otp" ? <MailCheck size={21}/> : <LockKeyhole size={21}/>}</div>
             <h2 className="mt-6 text-3xl font-black tracking-tight">{step === "otp" ? "Check your email" : "Dashboard sign in"}</h2>
-            <p className="mt-2 text-sm leading-6 text-zinc-500">{step === "otp" ? `We sent a 6-digit verification code to ${emailHint}. The code expires in 10 minutes.` : "Sign in with any authorized dashboard email address."}</p>
+            <p className="mt-2 text-sm leading-6 text-zinc-500">{step === "otp" ? `We sent a 6-digit verification code to ${emailHint}. The code expires in 10 minutes.` : "Sign in with your password, or request a secure email login code."}</p>
 
             {step === "credentials" ? (
               <form onSubmit={handleCredentials} className="mt-7 space-y-5">
@@ -139,6 +173,9 @@ export function AdminLogin({ onLogin }: LoginProps) {
                 <label className="block text-sm font-bold">Password<input type="password" value={password} onChange={e=>setPassword(e.target.value)} required autoComplete="current-password" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3.5 outline-none focus:border-black" placeholder="••••••••••••"/></label>
                 {error && <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700" role="alert">{error}</div>}
                 <button type="submit" disabled={loading} className="w-full rounded-xl bg-black py-3.5 font-bold text-white hover:bg-zinc-800 disabled:opacity-50">{loading ? "Checking account..." : "Continue securely"}</button>
+                <div className="relative py-1"><div className="border-t"/><span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-3 text-xs font-bold uppercase tracking-wider text-zinc-400">or</span></div>
+                <button type="button" onClick={requestEmailCode} disabled={loading || !email.trim()} className="w-full rounded-xl border border-zinc-300 py-3.5 font-bold text-zinc-800 hover:border-black disabled:opacity-40">Email me a login code</button>
+                <p className="text-center text-xs leading-5 text-zinc-400">Use this if you do not remember the dashboard password. Only authorized admin emails can receive a code.</p>
               </form>
             ) : (
               <form onSubmit={handleOtp} className="mt-7 space-y-5">
