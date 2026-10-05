@@ -45,9 +45,9 @@ export async function GET(request:NextRequest){
   ]);
   let all=[...forms.map(x=>normalize(x,"form_submissions")),...briefs.map(x=>normalize(x,"discovery_briefs")),...subs.map(x=>normalize(x,"newsletter_subscribers"))]
    .sort((a,b)=>+new Date(b.createdAt)-+new Date(a.createdAt));
-  if(status) all=all.filter(x=>x.status===status);
   if(type) all=all.filter(x=>x.collection===type);
   const counts=all.reduce((a:any,x:any)=>(a[x.status]=(a[x.status]||0)+1,a),{});
+  if(status) all=all.filter(x=>x.status===status);
   const total=all.length, start=(page-1)*limit;
   return NextResponse.json({leads:all.slice(start,start+limit),total,counts,page,limit,totalPages:Math.max(1,Math.ceil(total/limit)),database:"MongoDB"});
  }catch(e){console.error("Unified lead inbox failed",e);return NextResponse.json({error:"MongoDB lead inbox unavailable"},{status:503});}

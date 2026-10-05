@@ -1,4 +1,4 @@
-import { randomInt, randomUUID } from "crypto";
+import { randomInt, randomUUID, timingSafeEqual } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getMongoDb } from "@/lib/mongodb";
@@ -24,12 +24,19 @@ function maskEmail(email: string) {
   return `${shown}${"*".repeat(Math.max(2, name.length - shown.length))}@${domain}`;
 }
 
+function secureEqual(a: string, b: string) {
+  const left = Buffer.from(a);
+  const right = Buffer.from(b);
+  return left.length === right.length && timingSafeEqual(left, right);
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
     const normalizedEmail = String(email || "").trim().toLowerCase();
+    const suppliedPassword = String(password || "");
 
-    if (!normalizedEmail || !password) {
+    if (!normalizedEmail || !suppliedPassword) {
       return noStore(NextResponse.json({ error: "Email and password required" }, { status: 400 }));
     }
 
@@ -39,33 +46,43 @@ export async function POST(request: NextRequest) {
     const now = new Date();
     const key = `${getClientIp(request)}:${normalizedEmail}`;
 
-    await limits.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }).catch(() => undefined);
-    const attempt = await limits.findOne({ key });
+    await Promise.all([
+      limits.createIndex({ expiresAt: 1 }, { expireAfterSeconds: 0 }).catch(() => undefined),
+      users.createIndex({ email: 1 }, { unique: true }).catch(() => undefined),
+    ]);
 
+    const attempt = await limits.findOne({ key });
     if (attempt?.blockedUntil && new Date(attempt.blockedUntil).getTime() > now.getTime()) {
       return noStore(NextResponse.json({ error: "Too many sign-in attempts. Try again in 15 minutes." }, { status: 429 }));
     }
 
     let user = await users.findOne({ email: normalizedEmail });
 
-    if (!user && (await users.countDocuments({})) === 0) {
-      const bootstrapEmail = String(process.env.ADMIN_EMAIL || "").trim().toLowerCase();
-      const bootstrapPassword = process.env.ADMIN_PASSWORD || "";
-      if (bootstrapEmail && bootstrapPassword && normalizedEmail === bootstrapEmail) {
-        const passwordHash = await hashPassword(bootstrapPassword);
-        const result = await users.insertOne({
-          email: bootstrapEmail,
-          password_hash: passwordHash,
-          name: "Markit Media Admin",
-          role: "admin",
-          createdAt: now,
-          updatedAt: now,
-        });
-        user = await users.findOne({ _id: result.insertedId });
-      }
+    // Trusted environment bootstrap/recovery account. This works even if another admin
+    // already exists, preventing the configured owner account from being locked out.
+    const bootstrapEmail = String(process.env.ADMIN_EMAIL || "").trim().toLowerCase();
+    const bootstrapPassword = String(process.env.ADMIN_PASSWORD || "");
+    const bootstrapMatch =
+      !user &&
+      bootstrapEmail &&
+      bootstrapPassword &&
+      normalizedEmail === bootstrapEmail &&
+      secureEqual(suppliedPassword, bootstrapPassword);
+
+    if (bootstrapMatch) {
+      const passwordHash = await hashPassword(bootstrapPassword);
+      const result = await users.insertOne({
+        email: bootstrapEmail,
+        password_hash: passwordHash,
+        name: "Markit Media Admin",
+        role: "admin",
+        createdAt: now,
+        updatedAt: now,
+      });
+      user = await users.findOne({ _id: result.insertedId });
     }
 
-    const valid = Boolean(user && (await verifyPassword(String(password), String(user.password_hash))));
+    const valid = Boolean(user && user.password_hash && (await verifyPassword(suppliedPassword, String(user.password_hash))));
     if (!valid) {
       const failures = Number(attempt?.failures || 0) + 1;
       const blockedUntil = failures >= MAX_FAILURES ? new Date(now.getTime() + BLOCK_MS) : null;
@@ -96,6 +113,7 @@ export async function POST(request: NextRequest) {
       codeHash: hashOtpCode(challengeId, code),
       attempts: 0,
       createdAt: now,
+      lastSentAt: now,
       expiresAt: new Date(now.getTime() + OTP_TTL_MS),
       ip: getClientIp(request),
     });
@@ -111,7 +129,8 @@ export async function POST(request: NextRequest) {
 
     if (sent.error) {
       await challenges.deleteOne({ challengeId });
-      return noStore(NextResponse.json({ error: "Could not send the verification code." }, { status: 502 }));
+      console.error("Admin OTP email failed", sent.error);
+      return noStore(NextResponse.json({ error: "Could not send the verification code. Please try again." }, { status: 502 }));
     }
 
     await db.collection("activity_log").insertOne({ action: "admin.otp_sent", entityType: "admin_session", actor: normalizedEmail, createdAt: now });

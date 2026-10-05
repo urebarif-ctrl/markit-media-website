@@ -13,9 +13,14 @@ function adminOnly(request: NextRequest) {
 export async function GET(request: NextRequest) {
   const s = session(request);
   if (!s) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  const db = await getMongoDb();
-  const users = await db.collection("admin_users").find({}, { projection: { password_hash: 0 } }).sort({ createdAt: 1 }).toArray();
-  return NextResponse.json({ users: users.map((u:any)=>({ id:String(u._id), name:String(u.name||"Team member"), email:String(u.email), role:String(u.role||"manager"), createdAt:u.createdAt })) });
+  try {
+    const db = await getMongoDb();
+    const users = await db.collection("admin_users").find({}, { projection: { password_hash: 0 } }).sort({ createdAt: 1 }).toArray();
+    return NextResponse.json({ users: users.map((u:any)=>({ id:String(u._id), name:String(u.name||"Team member"), email:String(u.email), role:String(u.role||"manager"), createdAt:u.createdAt })) });
+  } catch (error) {
+    console.error("Admin users lookup failed", error);
+    return NextResponse.json({ error: "Could not load dashboard users." }, { status: 503 });
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -31,14 +36,16 @@ export async function POST(request: NextRequest) {
 
     const db = await getMongoDb();
     const users = db.collection("admin_users");
+    await users.createIndex({ email: 1 }, { unique: true }).catch(() => undefined);
     if (await users.findOne({ email: normalizedEmail })) return NextResponse.json({ error: "That user already exists." }, { status: 409 });
 
     const now = new Date();
     const result = await users.insertOne({ name: cleanName, email: normalizedEmail, password_hash: await hashPassword(String(password)), role: cleanRole, createdAt: now, updatedAt: now });
     await db.collection("activity_log").insertOne({ action:"admin.user_created", entityType:"admin_user", entityId:String(result.insertedId), actor:s.email, target:normalizedEmail, role:cleanRole, createdAt:now });
     return NextResponse.json({ ok:true, user:{ id:String(result.insertedId), name:cleanName, email:normalizedEmail, role:cleanRole } });
-  } catch (error) {
+  } catch (error:any) {
     console.error("Admin user creation failed", error);
+    if (error?.code === 11000) return NextResponse.json({ error: "That user already exists." }, { status: 409 });
     return NextResponse.json({ error: "Could not create dashboard user." }, { status: 500 });
   }
 }
