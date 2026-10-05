@@ -41,7 +41,7 @@ const services = [
   { icon: Megaphone, title: "Performance Marketing", desc: "Meta Ads, Google Ads, PPC campaigns that convert.", detail: "Build measurable acquisition systems around intent, creative testing, conversion tracking, and disciplined budget allocation.", href: "/services/performance-marketing" },
   { icon: Search, title: "SEO", desc: "Technical, local, and content SEO to dominate search.", detail: "Improve crawlability, local visibility, topical authority, and organic conversion paths with an accountable search roadmap.", href: "/services/seo" },
   { icon: Share2, title: "Social Media", desc: "Strategy, content creation, and community management.", detail: "Turn the feed into a consistent brand channel with content systems, community management, campaigns, and reporting.", href: "/services/social-media" },
-  { icon: Code, title: "Website Development", desc: "WordPress, Shopify, Next.js, and custom builds.", detail: "Design and build fast, conversion-focused websites with SEO-ready architecture, analytics, and scalable content foundations.", href: "/services/website-development" },
+  { icon: Code, title: "Website Development", desc: "WordPress, Wix, Webflow, Next.js, and custom builds.", detail: "Design and build fast, conversion-focused websites with SEO-ready architecture, analytics, and scalable content foundations.", href: "/services/website-development" },
   { icon: Palette, title: "Branding", desc: "Brand strategy, logo design, and visual identity.", detail: "Create a usable identity system covering positioning, visual language, brand assets, and real-world digital application.", href: "/services/branding" },
   { icon: Video, title: "Video Production", desc: "Production, editing, reels, and motion graphics.", detail: "Plan and produce campaign videos, reels, motion graphics, product content, and edits built for the channels where they run.", href: "/services/video-production" },
   { icon: Bot, title: "AI Solutions", desc: "Chatbots, marketing automation, and AI consulting.", detail: "Connect practical AI workflows to marketing, lead handling, support, content operations, and repetitive internal processes.", href: "/services/ai" },
@@ -262,7 +262,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { icon: Megaphone, eyebrow: "Paid Growth", title: "PPC & Meta Ads", desc: "Meta Ads, Google Ads and PPC management focused on qualified demand, conversion tracking and efficient spend.", href: "/services/performance-marketing", links: [["Meta Ads","/services/performance-marketing/meta-ads"],["Google Ads","/services/performance-marketing/google-ads"]] },
               { icon: Search, eyebrow: "Organic Growth", title: "SEO", desc: "Technical, local, content and AI search strategies built to improve visibility and turn search demand into business.", href: "/services/seo", links: [["Technical SEO","/services/seo/technical-seo"],["Local SEO","/services/seo/local-seo"]] },
               { icon: Share2, eyebrow: "Brand & Community", title: "Social Media Marketing", desc: "Strategy, content creation and community management that give your brand a consistent, useful presence.", href: "/services/social-media", links: [["Content Creation","/services/social-media/content-creation"],["Social Strategy","/services/social-media/social-strategy"]] },
-              { icon: Code, eyebrow: "Digital Experience", title: "Website Development", desc: "WordPress, Shopify and Next.js websites built around speed, search visibility, usability and conversion.", href: "/services/website-development", links: [["WordPress","/services/website-development/wordpress"],["Shopify","/services/website-development/shopify"]] },
+              { icon: Code, eyebrow: "Digital Experience", title: "Website Development", desc: "WordPress, Wix, Webflow and Next.js websites built around speed, search visibility, usability and conversion.", href: "/services/website-development", links: [["WordPress","/services/website-development/wordpress"],["Next.js","/services/website-development/nextjs"]] },
             ].map((item) => {
               const Icon=item.icon;
               return <div key={item.href} className="group flex min-h-[250px] sm:min-h-[290px] flex-col border border-gray-200 bg-white p-5 sm:p-6 transition-all hover:-translate-y-1 hover:border-black hover:shadow-lg">
@@ -330,7 +330,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {label:"YouTube",href:"/services/performance-marketing/youtube-ads",brand:"YouTube"},
               {label:"TikTok",href:"/services/performance-marketing/tiktok-ads",brand:"TikTok"},
               {label:"LinkedIn",href:"/services/performance-marketing/linkedin-ads",src:"/brand/linkedin.svg"},
-              {label:"Shopify",href:"/services/website-development/shopify",brand:"Shopify"},
+              {label:"Shopify",href:"/services/shopify",brand:"Shopify"},
               {label:"WordPress",href:"/services/website-development/wordpress",brand:"WordPress"},
               {label:"Next.js",href:"/services/website-development/nextjs-websites",brand:"Next.js"},
               {label:"Figma",href:"/en/tools",brand:"Figma"},
@@ -585,7 +585,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">{[
             { label: "Paid Search", title: "Google Ads", logo: "/brand/google-ads.svg", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
             { label: "Paid Social", title: "Meta", logo: "/brand/meta.svg", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
-            { label: "E-commerce", title: "Shopify", brand: "Shopify", href: "/services/website-development/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
+            { label: "E-commerce", title: "Shopify", brand: "Shopify", href: "/services/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
             { label: "CMS", title: "WordPress", brand: "WordPress", href: "/services/website-development/wordpress", desc: "Flexible content-driven builds, landing pages, performance improvements, migrations, and ongoing website support." },
             { label: "Web Engineering", title: "Next.js", brand: "Next.js", href: "/services/website-development/nextjs-websites", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
             { label: "Measurement", title: "Google Analytics", brand: "GA4", href: "/tools", desc: "Event strategy, conversion measurement, attribution context, reporting, and decision-ready performance analysis." },
