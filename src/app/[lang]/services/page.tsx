@@ -105,10 +105,18 @@ const serviceCategories = [
   {
     icon: Code,
     title: "Website Development",
-    desc: "WordPress, Shopify, Next.js, landing pages and custom web builds designed around speed, search visibility and conversion.",
+    desc: "WordPress, Wix, Webflow, Squarespace, Next.js, landing pages and custom web builds designed around speed, search visibility and conversion.",
     href: "/services/website-development",
     image: "/images/services/web-dev.jpg",
-    subServices: ["WordPress", "Shopify", "Next.js", "Custom Development", "Landing Pages", "E-commerce"],
+    subServices: ["WordPress", "Wix", "Webflow", "Squarespace", "Next.js", "Custom Development"],
+  },
+  {
+    icon: ShoppingCart,
+    title: "Shopify",
+    desc: "Shopify development and growth services covering storefronts, themes, integrations, migrations, conversion and ecommerce marketing.",
+    href: "/services/shopify",
+    image: "/images/services/ecommerce-marketing.jpg",
+    subServices: ["Shopify Development", "Shopify Marketing", "Shopify Plus", "Store Migration", "CRO"],
   },
   {
     icon: Palette,
@@ -421,7 +429,7 @@ export default function ServicesPage() {
       <section className="px-6 lg:px-12 pb-16" aria-label="Services overview">
         <div className="max-w-7xl mx-auto border-y border-gray-200 grid grid-cols-2 lg:grid-cols-4">
           {[
-            ["23", "service categories"],
+            ["24", "service categories"],
             ["100+", "specialist pages"],
             ["20+", "industries"],
             ["6+", "core markets"],
