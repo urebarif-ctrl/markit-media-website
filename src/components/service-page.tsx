@@ -28,8 +28,12 @@ interface ComparisonTable {
   rows: [string, string, string][];
 }
 
+interface ServicePlatform { name:string; note?:string; href?:string; }
+
 interface ServicePageProps {
   icon: LucideIcon;
+  parentTitle?: string;
+  parentHref?: string;
   title: string;
   description: string;
   longDescription: string;
@@ -44,10 +48,13 @@ interface ServicePageProps {
   heroImage?: string;
   blogCategory?: string;
   comparison?: ComparisonTable;
+  platforms?: ServicePlatform[];
 }
 
 export function ServicePage({
   icon: Icon,
+  parentTitle,
+  parentHref,
   title,
   description,
   longDescription,
@@ -62,6 +69,7 @@ export function ServicePage({
   heroImage,
   blogCategory,
   comparison,
+  platforms,
 }: ServicePageProps) {
   const relatedPosts = blogCategory
     ? getPostsByCategory(blogCategory, 3)
@@ -93,7 +101,7 @@ export function ServicePage({
     <article>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: title }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, ...(parentTitle && parentHref ? [{ label: parentTitle, href: parentHref }] : []), { label: title }]} />
 
       {/* Hero */}
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label={title}>
@@ -151,6 +159,8 @@ export function ServicePage({
           </div>
         </section>
       )}
+
+      {platforms && platforms.length > 0 && <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label="Platforms and tools we work with"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Platforms & Tools</SectionLabel><SectionTitle>Technology We Work With</SectionTitle><p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">We choose the platform around the workflow, data, ownership and growth requirements rather than forcing every project into one tool.</p></Animate><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mt-8">{platforms.map((platform)=><div key={platform.name} className="bg-white min-h-28 p-5"><div className="flex items-center gap-3"><div className="w-9 h-9 border border-gray-200 flex items-center justify-center"><BrandIcon brand={platform.name} className="w-5 h-5" title={platform.name}/></div><div><div className="font-bold text-sm">{platform.href?<Link href={platform.href} className="hover:underline">{platform.name}</Link>:platform.name}</div>{platform.note&&<p className="text-xs text-gray-500 leading-relaxed mt-1">{platform.note}</p>}</div></div></div>)}</div></div></section>}
 
       {/* Benefits */}
       <section className="px-6 lg:px-12 py-20" aria-label="Benefits">
