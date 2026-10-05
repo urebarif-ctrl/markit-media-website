@@ -215,6 +215,14 @@ const serviceCategories = [
     subServices: ["Web Apps", "MVP Development", "Portals", "Dashboards", "Custom Product Builds"],
   },
   {
+    icon: BarChart3,
+    title: "CRM Development",
+    desc: "Custom CRM development, HubSpot, Salesforce, Zoho, CRM automation, integrations, migration and consulting.",
+    href: "/services/crm-development",
+    image: "/images/services/digital-marketing.jpg",
+    subServices: ["Custom CRM", "HubSpot", "Salesforce", "Zoho", "CRM Automation"],
+  },
+  {
     icon: Briefcase,
     title: "White Label Services",
     desc: "Behind-the-scenes delivery for agencies across PPC, SEO, social, creative, web development and AI search.",
@@ -429,7 +437,7 @@ export default function ServicesPage() {
       <section className="px-6 lg:px-12 pb-16" aria-label="Services overview">
         <div className="max-w-7xl mx-auto border-y border-gray-200 grid grid-cols-2 lg:grid-cols-4">
           {[
-            ["24", "service categories"],
+            ["25", "service categories"],
             ["100+", "specialist pages"],
             ["20+", "industries"],
             ["6+", "core markets"],
