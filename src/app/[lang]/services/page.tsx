@@ -2,32 +2,86 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
-import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
+import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { SOCIAL_URLS } from "@/lib/social";
 import { QuoteForm } from "@/components/quote-form";
 import {
-  Search, Share2, Code, Palette, Video, Bot, Mail, TrendingUp,
-  BarChart3, Megaphone, FileText, Briefcase, ShoppingCart, Camera,
+  Search,
+  Share2,
+  Code,
+  Palette,
+  Video,
+  Bot,
+  Mail,
+  TrendingUp,
+  BarChart3,
+  Megaphone,
+  FileText,
+  Briefcase,
+  ShoppingCart,
+  Camera,
+  ArrowRight,
+  Check,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services — SEO, PPC, Web Development & More",
-  description: "Explore Markit Media's full-stack digital marketing services: SEO, PPC, social media, web development, branding, video, AI, email, content, and more.",
-  alternates: { canonical: "https://themarkitmedia.com/en/services" },
-  openGraph: {
-    title: "Digital Marketing Services",
-    description:
-      "Full-stack digital marketing: SEO, PPC, social media, web development, branding, video, AI, email, and content.",
+  title: "Digital Marketing Services | SEO, PPC, Web & Social",
+  description:
+    "Explore Markit Media services for SEO, Google Ads, Meta Ads, social media, web development, branding, video, AI, analytics, ecommerce and BPO.",
+  keywords: [
+    "digital marketing services",
+    "digital marketing agency",
+    "SEO services",
+    "PPC management",
+    "Google Ads management",
+    "Meta Ads management",
+    "social media marketing",
+    "website development",
+    "branding agency",
+    "video production",
+    "marketing analytics",
+  ],
+  alternates: {
+    canonical: "https://themarkitmedia.com/en/services",
+    languages: {
+      "en": "https://themarkitmedia.com/en/services",
+      "ar": "https://themarkitmedia.com/ar/services",
+      "ur": "https://themarkitmedia.com/ur/services",
+      "x-default": "https://themarkitmedia.com/en/services",
+    },
   },
+  openGraph: {
+    title: "Digital Marketing Services | Markit Media",
+    description:
+      "SEO, paid media, social, websites, branding, video, AI, analytics and growth services built around measurable business goals.",
+    url: "https://themarkitmedia.com/en/services",
+    type: "website",
+    images: [
+      {
+        url: "https://themarkitmedia.com/images/branding/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Markit Media digital marketing services",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Marketing Services | Markit Media",
+    description:
+      "Explore SEO, PPC, social media, web development, branding, video, AI, analytics and ecommerce services.",
+    images: ["https://themarkitmedia.com/images/branding/og-image.png"],
+  },
+  robots: { index: true, follow: true },
 };
 
 const serviceCategories = [
   {
     icon: Megaphone,
     title: "Performance Marketing",
-    desc: "Meta Ads, Google Ads, TikTok Ads, LinkedIn Ads, and PPC campaign management that drives real conversions.",
+    desc: "Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads and PPC management focused on qualified demand and measurable acquisition.",
     href: "/services/performance-marketing",
     image: "/images/services/analytics.jpg",
     subServices: ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "PPC Management", "Retargeting"],
@@ -35,23 +89,23 @@ const serviceCategories = [
   {
     icon: Search,
     title: "SEO",
-    desc: "Technical SEO, local SEO, content SEO, link building, and keyword research to dominate organic search.",
+    desc: "Technical SEO, local SEO, content strategy, link building and AI search optimization built to increase qualified organic visibility.",
     href: "/services/seo",
     image: "/images/services/seo.jpg",
-    subServices: ["Technical SEO", "Local SEO", "Content SEO", "Link Building", "SEO Audits", "Keyword Research"],
+    subServices: ["Technical SEO", "Local SEO", "Content SEO", "Link Building", "SEO Audits", "AI SEO"],
   },
   {
     icon: Share2,
     title: "Social Media Marketing",
-    desc: "Strategy, content creation, community management, influencer marketing, and social analytics.",
+    desc: "Strategy, content creation, reels, community management, influencer support and paid social for brands that need a stronger feed and clearer growth system.",
     href: "/services/social-media",
     image: "/images/services/social-media.jpg",
-    subServices: ["Social Strategy", "Content Creation", "Reels & Video", "Community Management", "Influencer Marketing", "Paid Social", "Social Analytics"],
+    subServices: ["Social Strategy", "Content Creation", "Reels & Video", "Community Management", "Influencer Marketing", "Paid Social"],
   },
   {
     icon: Code,
     title: "Website Development",
-    desc: "WordPress, Shopify, Next.js, custom web apps, landing pages, and e-commerce solutions.",
+    desc: "WordPress, Shopify, Next.js, landing pages and custom web builds designed around speed, search visibility and conversion.",
     href: "/services/website-development",
     image: "/images/services/web-dev.jpg",
     subServices: ["WordPress", "Shopify", "Next.js", "Custom Development", "Landing Pages", "E-commerce"],
@@ -59,7 +113,7 @@ const serviceCategories = [
   {
     icon: Palette,
     title: "Branding & Design",
-    desc: "Brand strategy, logo design, visual identity, brand guidelines, and packaging design.",
+    desc: "Brand strategy, identity systems, logo design, brand books, packaging and campaign creative with practical rollout guidance.",
     href: "/services/branding",
     image: "/images/services/branding.jpg",
     subServices: ["Brand Strategy", "Logo Design", "Visual Identity", "Brand Guidelines", "Packaging"],
@@ -67,7 +121,7 @@ const serviceCategories = [
   {
     icon: Video,
     title: "Video Production",
-    desc: "Commercial production, editing, motion graphics, reels, testimonial videos, and animation.",
+    desc: "Commercial production, editing, motion graphics, reels, testimonials and animation for paid media, social and brand storytelling.",
     href: "/services/video-production",
     image: "/images/services/video.jpg",
     subServices: ["Commercial Production", "Video Editing", "Motion Graphics", "Reels & Shorts", "Animation"],
@@ -75,7 +129,7 @@ const serviceCategories = [
   {
     icon: Bot,
     title: "AI Solutions",
-    desc: "AI chatbots, marketing automation, AI consulting, predictive analytics, and workflow optimization.",
+    desc: "AI chatbots, marketing automation, consulting and workflow optimization for teams that want practical AI adoption.",
     href: "/services/ai",
     image: "/images/services/ai.jpg",
     subServices: ["AI Chatbots", "Marketing Automation", "AI Consulting", "Predictive Analytics"],
@@ -83,7 +137,7 @@ const serviceCategories = [
   {
     icon: Mail,
     title: "Email Marketing",
-    desc: "Campaign design, automation sequences, list management, A/B testing, and deliverability optimization.",
+    desc: "Campaign strategy, automation, list management, testing and deliverability programs that improve retention and lifecycle performance.",
     href: "/services/email-marketing",
     image: "/images/services/email.jpg",
     subServices: ["Campaign Design", "Email Automation", "List Management", "A/B Testing", "Deliverability"],
@@ -91,23 +145,23 @@ const serviceCategories = [
   {
     icon: FileText,
     title: "Content Marketing",
-    desc: "Content strategy, copywriting, blog writing, whitepapers, case studies, and SEO content production.",
+    desc: "Content strategy, copywriting, blogs, landing page copy, case studies and search-led editorial production.",
     href: "/services/content-marketing",
     image: "/images/services/content-marketing.jpg",
-    subServices: ["Content Strategy", "Copywriting", "Blog Writing", "Whitepapers", "SEO Content"],
+    subServices: ["Content Strategy", "Copywriting", "Blog Writing", "Case Studies", "SEO Content"],
   },
   {
     icon: TrendingUp,
     title: "Paid Advertising",
-    desc: "Programmatic advertising, display ads, native ads, media buying, and cross-channel campaigns.",
+    desc: "Display, programmatic, native, media buying and cross-channel paid campaigns beyond standard search and social buying.",
     href: "/services/paid-advertising",
     image: "/images/services/paid-advertising.jpg",
     subServices: ["Programmatic", "Display Ads", "Native Advertising", "Media Buying"],
   },
   {
     icon: BarChart3,
-    title: "Digital Marketing",
-    desc: "Analytics setup, CRM consulting, ORM, fractional CMO services, and marketing strategy.",
+    title: "Digital Marketing Strategy",
+    desc: "Analytics, CRM consulting, reputation management, fractional CMO support and integrated marketing planning.",
     href: "/services/digital-marketing",
     image: "/images/services/digital-marketing.jpg",
     subServices: ["Analytics", "CRM Consulting", "ORM", "Fractional CMO", "Marketing Strategy"],
@@ -115,15 +169,15 @@ const serviceCategories = [
   {
     icon: ShoppingCart,
     title: "E-commerce Marketing",
-    desc: "Amazon Ads, Shopify marketing, product feed optimization, and marketplace management.",
+    desc: "Shopify marketing, product feeds, marketplace growth, paid acquisition and conversion work for ecommerce brands.",
     href: "/services/ecommerce-marketing",
     image: "/images/services/ecommerce-marketing.jpg",
-    subServices: ["Amazon Ads", "Shopify Marketing", "Product Feed Optimization", "Marketplace Management"],
+    subServices: ["Amazon Ads", "Shopify Marketing", "Product Feeds", "Marketplace Management"],
   },
   {
     icon: Megaphone,
     title: "Public Relations",
-    desc: "Media outreach, press releases, reputation management, event PR, and crisis communications.",
+    desc: "Media outreach, press releases, reputation support, event PR and crisis communications.",
     href: "/services/public-relations",
     image: "/images/services/pr.jpg",
     subServices: ["Media Outreach", "Press Releases", "Reputation Management", "Event PR", "Crisis Comms"],
@@ -131,7 +185,7 @@ const serviceCategories = [
   {
     icon: Camera,
     title: "Professional Photography",
-    desc: "Product photography, corporate headshots, event coverage, architectural shoots, and lifestyle photography.",
+    desc: "Product, food, corporate, event, architectural and lifestyle photography for campaigns, websites and social content.",
     href: "/services/photography",
     image: "/images/services/photography.jpg",
     subServices: ["Product Photography", "Corporate Photos", "Event Coverage", "Architectural", "Lifestyle"],
@@ -139,15 +193,15 @@ const serviceCategories = [
   {
     icon: Briefcase,
     title: "BPO Services",
-    desc: "Business process outsourcing, virtual assistants, data entry, customer support, and operations.",
+    desc: "Customer support, appointment setting, virtual assistance, data operations and outsourced business processes.",
     href: "/services/bpo",
     image: "/images/services/bpo.jpg",
-    subServices: ["Virtual Assistants", "Data Entry", "Customer Support", "Operations"],
+    subServices: ["Customer Support", "Appointment Setting", "Virtual Assistants", "Data Entry", "Operations"],
   },
   {
     icon: Code,
     title: "App Development",
-    desc: "Web apps, MVPs, internal tools, customer portals, dashboards, and product development for businesses that need more than a marketing website.",
+    desc: "Web apps, MVPs, internal tools, customer portals and dashboards for businesses that need more than a marketing website.",
     href: "/services/app-development",
     image: "/images/services/web-dev.jpg",
     subServices: ["Web Apps", "MVP Development", "Portals", "Dashboards", "Custom Product Builds"],
@@ -155,7 +209,7 @@ const serviceCategories = [
   {
     icon: Briefcase,
     title: "White Label Services",
-    desc: "Behind-the-scenes fulfillment for agencies across PPC, SEO, social, creative, WordPress, Shopify, Next.js, web development, and AI SEO.",
+    desc: "Behind-the-scenes delivery for agencies across PPC, SEO, social, creative, web development and AI search.",
     href: "/services/white-label",
     image: "/images/services/digital-marketing.jpg",
     subServices: ["White Label PPC", "SEO", "Meta Ads", "Google Ads", "Social Media", "Web Development"],
@@ -163,7 +217,7 @@ const serviceCategories = [
   {
     icon: BarChart3,
     title: "Marketing Analytics",
-    desc: "Measurement planning, dashboards, attribution, conversion tracking, reporting systems, and data visibility across marketing channels.",
+    desc: "Measurement planning, dashboards, attribution, conversion tracking and reporting systems across marketing channels.",
     href: "/services/marketing-analytics",
     image: "/images/services/analytics.jpg",
     subServices: ["Measurement", "Dashboards", "Attribution", "Conversion Tracking", "Reporting"],
@@ -171,7 +225,7 @@ const serviceCategories = [
   {
     icon: Megaphone,
     title: "Media Planning & Buying",
-    desc: "Cross-channel media strategy, channel planning, budget allocation, buying, pacing, campaign coordination, and performance review.",
+    desc: "Media strategy, channel planning, budget allocation, buying, pacing and cross-channel performance review.",
     href: "/services/media-planning-buying",
     image: "/images/services/paid-advertising.jpg",
     subServices: ["Media Planning", "Budget Allocation", "Media Buying", "Pacing", "Cross-Channel Campaigns"],
@@ -179,7 +233,7 @@ const serviceCategories = [
   {
     icon: Share2,
     title: "WhatsApp Business",
-    desc: "Messaging workflows, lead handling, automation, campaign journeys, CRM handoff, and customer communication through WhatsApp Business.",
+    desc: "Lead handling, automation, customer journeys, CRM handoff and support workflows through WhatsApp Business.",
     href: "/services/whatsapp-business",
     image: "/images/services/social-media.jpg",
     subServices: ["Lead Messaging", "Automation", "Customer Journeys", "CRM Handoff", "Support Workflows"],
@@ -187,7 +241,7 @@ const serviceCategories = [
   {
     icon: Mail,
     title: "SMS Marketing",
-    desc: "Permission-based SMS campaigns, promotional messaging, lifecycle communication, reminders, and customer re-engagement.",
+    desc: "Permission-based promotional messaging, lifecycle communication, reminders and re-engagement campaigns.",
     href: "/services/sms-marketing",
     image: "/images/services/email.jpg",
     subServices: ["Campaigns", "Lifecycle SMS", "Promotions", "Reminders", "Re-engagement"],
@@ -195,7 +249,7 @@ const serviceCategories = [
   {
     icon: TrendingUp,
     title: "Upwork Growth",
-    desc: "Profile positioning, proposal strategy, agency bidding, portfolio presentation, lead qualification, and client acquisition support for Upwork.",
+    desc: "Profile positioning, proposal strategy, portfolio presentation, agency bidding and client acquisition support.",
     href: "/services/upwork-growth",
     image: "/images/services/digital-marketing.jpg",
     subServices: ["Profile Optimization", "Proposal Strategy", "Agency Bidding", "Portfolio", "Client Acquisition"],
@@ -203,27 +257,100 @@ const serviceCategories = [
   {
     icon: Palette,
     title: "Design Systems",
-    desc: "Reusable UI foundations, components, patterns, design tokens, and documentation for teams that need consistency across digital products.",
+    desc: "Reusable UI foundations, components, design tokens and documentation for teams that need consistency across digital products.",
     href: "/services/design-systems",
     image: "/images/services/branding.jpg",
     subServices: ["UI Foundations", "Components", "Design Tokens", "Patterns", "Documentation"],
   },
 ];
 
+const priorityServices = serviceCategories.slice(0, 6);
+
+const serviceGroups = [
+  {
+    name: "Acquire",
+    desc: "Reach people already searching, scrolling or comparing.",
+    services: [
+      ["Performance Marketing", "/services/performance-marketing"],
+      ["SEO", "/services/seo"],
+      ["Paid Advertising", "/services/paid-advertising"],
+      ["Media Planning & Buying", "/services/media-planning-buying"],
+      ["Public Relations", "/services/public-relations"],
+    ],
+  },
+  {
+    name: "Build",
+    desc: "Create the digital products and brand systems customers interact with.",
+    services: [
+      ["Website Development", "/services/website-development"],
+      ["App Development", "/services/app-development"],
+      ["Branding & Design", "/services/branding"],
+      ["Design Systems", "/services/design-systems"],
+      ["Professional Photography", "/services/photography"],
+      ["Video Production", "/services/video-production"],
+    ],
+  },
+  {
+    name: "Engage",
+    desc: "Turn attention into ongoing customer relationships.",
+    services: [
+      ["Social Media Marketing", "/services/social-media"],
+      ["Content Marketing", "/services/content-marketing"],
+      ["Email Marketing", "/services/email-marketing"],
+      ["WhatsApp Business", "/services/whatsapp-business"],
+      ["SMS Marketing", "/services/sms-marketing"],
+    ],
+  },
+  {
+    name: "Scale",
+    desc: "Connect marketing, measurement and operations as the business grows.",
+    services: [
+      ["Digital Marketing Strategy", "/services/digital-marketing"],
+      ["Marketing Analytics", "/services/marketing-analytics"],
+      ["E-commerce Marketing", "/services/ecommerce-marketing"],
+      ["AI Solutions", "/services/ai"],
+      ["BPO Services", "/services/bpo"],
+      ["White Label Services", "/services/white-label"],
+      ["Upwork Growth", "/services/upwork-growth"],
+    ],
+  },
+];
+
 const servicesFaqItems = [
-  { q: "How do I know which services I need?", a: "Start with a free consultation. We will analyze your business goals, current marketing efforts, and competitive landscape to recommend the channels and services that will have the highest impact. You can also take our Service Finder Quiz for instant recommendations." },
-  { q: "Can I start with one service and add more later?", a: "Absolutely. Many clients start with one or two channels, see results, and expand from there. Our full-stack capability means you do not need to find another agency when you are ready to scale." },
-  { q: "Do you offer packages or custom plans?", a: "We build custom plans based on your goals, budget, and competitive landscape. No two businesses are the same, so cookie-cutter packages rarely deliver optimal results. See our Pricing page for how we structure engagements." },
-  { q: "How long does it take to see results?", a: "It depends on the channel. Paid advertising can generate results within the first week. SEO typically takes 3-6 months for meaningful organic growth. We set realistic expectations during strategy and provide interim metrics along the way." },
-  { q: "Do you work with businesses outside the USA?", a: "Yes. We serve clients across the United States, Canada, United Arab Emirates, United Kingdom, Australia, and Saudi Arabia. Our team works across time zones to provide responsive support." },
+  {
+    q: "Which digital marketing services should we start with?",
+    a: "Start with the business goal, not the channel. If you need demand now, paid media may be the fastest starting point. If you need durable search visibility, SEO and content are usually stronger. If conversion is the issue, the website and measurement setup may need attention first. We review the current setup before recommending scope.",
+  },
+  {
+    q: "Can Markit Media manage several channels together?",
+    a: "Yes. We can manage a single specialist service or combine SEO, paid media, social, content, website work, analytics and creative under one operating plan.",
+  },
+  {
+    q: "Can we start with one service and expand later?",
+    a: "Yes. Many engagements begin with one priority channel and expand after the measurement, creative and reporting systems are working properly.",
+  },
+  {
+    q: "Do you offer fixed packages?",
+    a: "Some projects have defined scopes, but ongoing marketing is usually priced around goals, channels, workload and media spend. We prefer a clear custom scope over forcing every business into the same package.",
+  },
+  {
+    q: "How quickly can digital marketing produce results?",
+    a: "Paid media can create measurable activity quickly when tracking and the offer are ready. SEO and content usually require a longer compounding period. Website, creative and analytics work can improve performance immediately but should be evaluated against a clear baseline.",
+  },
+  {
+    q: "Which markets do you work in?",
+    a: "We work with businesses across the United States, Canada, the United Arab Emirates, the United Kingdom, Australia, Saudi Arabia and other markets where our services are a fit.",
+  },
 ];
 
 export default function ServicesPage() {
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Markit Media Services",
-    description: "Explore Markit Media's full-stack digital marketing services: SEO, PPC, social media, web development, branding, video, AI, email, content, and more.",
+    name: "Digital Marketing Services by Markit Media",
+    url: "https://themarkitmedia.com/en/services",
+    description:
+      "SEO, paid media, social media, website development, branding, video, AI, analytics, ecommerce and BPO services from Markit Media.",
     provider: {
       "@type": "Organization",
       name: "Markit Media",
@@ -232,11 +359,12 @@ export default function ServicesPage() {
     },
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: serviceCategories.map((s, i) => ({
+      numberOfItems: serviceCategories.length,
+      itemListElement: serviceCategories.map((service, index) => ({
         "@type": "ListItem",
-        position: i + 1,
-        name: s.title,
-        url: `https://themarkitmedia.com/en${s.href}`,
+        position: index + 1,
+        name: service.title,
+        url: `https://themarkitmedia.com/en${service.href}`,
       })),
     },
   };
@@ -257,70 +385,102 @@ export default function ServicesPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
 
-      <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Our services">
-        <div className="max-w-4xl mx-auto">
+      <section className="px-6 lg:px-12 pt-20 lg:pt-28 pb-12" aria-labelledby="services-heading">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-end">
           <Animate animation="fade-up">
-            <SectionLabel>Our Services</SectionLabel>
-            <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
-              Full-Stack Digital Marketing
+            <SectionLabel>Digital Marketing Services</SectionLabel>
+            <h1
+              id="services-heading"
+              className="font-[family-name:var(--font-display)] text-[clamp(2.6rem,6.5vw,5.6rem)] font-extrabold text-black tracking-[-0.045em] leading-[0.94] mt-4"
+            >
+              Strategy, creative and growth under one roof.
             </h1>
-            <SectionDesc>
-              From strategy to execution, we cover every digital marketing channel. Choose the services you need, or let us build a complete growth plan.
-            </SectionDesc>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <Link href="#services-quote" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Request a Quote &rarr;
+          </Animate>
+          <Animate animation="fade-up" delay={100}>
+            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
+              Markit Media brings paid media, SEO, social, websites, branding, video, AI and analytics into one practical growth system. Start with one service or build an integrated team around the channels that matter most.
+            </p>
+            <div className="flex flex-wrap gap-3 mt-7">
+              <Link
+                href="#services-quote"
+                className="inline-flex items-center gap-2 bg-black text-white px-6 py-3.5 font-bold text-sm hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                Discuss your project <ArrowRight size={16} aria-hidden="true" />
               </Link>
-              <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                Find the Right Service
+              <Link
+                href="/services/finder"
+                className="inline-flex items-center gap-2 border border-gray-300 text-black px-6 py-3.5 font-bold text-sm hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                Find the right service
               </Link>
             </div>
           </Animate>
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 pb-8" aria-label="Service stats">
-        <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: "23", label: "Service Categories" },
-              { value: "100+", label: "Specialist Service Pages" },
-              { value: "20", label: "Industries Served" },
-              { value: "6", label: "Countries" },
-            ].map((stat) => (
-              <div key={stat.label} className="border border-gray-200 p-6 text-center">
-                <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold text-black">{stat.value}</p>
-                <p className="text-base text-gray-500 mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </Stagger>
+      <section className="px-6 lg:px-12 pb-16" aria-label="Services overview">
+        <div className="max-w-7xl mx-auto border-y border-gray-200 grid grid-cols-2 lg:grid-cols-4">
+          {[
+            ["23", "service categories"],
+            ["100+", "specialist pages"],
+            ["20+", "industries"],
+            ["6+", "core markets"],
+          ].map(([value, label], index) => (
+            <div
+              key={label}
+              className={`py-6 lg:py-8 ${index % 2 === 0 ? "pr-5" : "pl-5"} lg:px-7 first:lg:pl-0 last:lg:pr-0 border-gray-200 ${index < 3 ? "lg:border-r" : ""}`}
+            >
+              <p className="font-[family-name:var(--font-display)] text-3xl lg:text-4xl font-extrabold tracking-tight">{value}</p>
+              <p className="text-sm text-gray-500 mt-1">{label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-12" aria-label="Service categories">
+      <section className="px-6 lg:px-12 py-16 lg:py-24 bg-[#f5f5f3]" aria-labelledby="priority-services">
         <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {serviceCategories.map((s) => {
-              const Icon = s.icon;
+          <div className="grid lg:grid-cols-[.8fr_1.2fr] gap-8 lg:gap-16 items-end mb-10 lg:mb-14">
+            <Animate animation="fade-up">
+              <SectionLabel>Core Capabilities</SectionLabel>
+              <SectionTitle>Where most growth plans start</SectionTitle>
+            </Animate>
+            <Animate animation="fade-up" delay={80}>
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl lg:ml-auto">
+                These are the services we most often combine to improve demand generation, organic visibility, brand consistency and conversion. Each has a dedicated page with deeper scope and sub-services.
+              </p>
+            </Animate>
+          </div>
+
+          <Stagger stagger={70} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-300 border border-gray-300">
+            {priorityServices.map((service) => {
+              const Icon = service.icon;
               return (
-                <Link key={s.href} href={s.href} className="group bg-white border border-gray-200 hover:border-black hover:shadow-xl transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  <div className="relative aspect-[16/8] overflow-hidden bg-gray-100">
-                    <Image src={s.image} alt={`${s.title} services`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-[1.035] transition-transform motion-reduce:transition-none duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-                    <div className="absolute left-5 bottom-5 w-11 h-11 bg-white text-black flex items-center justify-center shadow-lg"><Icon size={22} aria-hidden="true" /></div>
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group bg-white min-h-[420px] flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                    <Image
+                      src={service.image}
+                      alt={`${service.title} by Markit Media`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none"
+                    />
                   </div>
-                  <div className="p-6 md:p-8 flex flex-col flex-1 min-h-72">
-                    <div className="flex items-start justify-between gap-5">
-                      <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black group-hover:underline">{s.title}</h2>
-                      <span className="text-xl text-gray-300 group-hover:text-black transition-colors" aria-hidden="true">↗</span>
+                  <div className="p-6 lg:p-7 flex flex-col flex-1">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="w-10 h-10 border border-gray-200 flex items-center justify-center">
+                        <Icon size={19} aria-hidden="true" />
+                      </div>
+                      <ArrowRight size={18} className="text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all motion-reduce:transition-none" aria-hidden="true" />
                     </div>
-                    <p className="text-base text-gray-500 leading-relaxed mt-3">{s.desc}</p>
-                    <div className="flex flex-wrap gap-2 mt-6">
-                      {s.subServices.slice(0, 5).map((sub) => (
-                        <span key={sub} className="text-sm font-medium text-gray-600 bg-gray-100 px-3 py-1.5">{sub}</span>
-                      ))}
-                    </div>
-                    <span className="mt-auto pt-7 text-sm font-bold text-black">Explore service details →</span>
+                    <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-6 tracking-tight">{service.title}</h2>
+                    <p className="text-sm text-gray-600 leading-relaxed mt-3">{service.desc}</p>
+                    <p className="text-xs text-gray-500 mt-auto pt-6 leading-relaxed">
+                      {service.subServices.slice(0, 4).join(" · ")}
+                    </p>
                   </div>
                 </Link>
               );
@@ -329,200 +489,163 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Finder CTA */}
-      <section className="px-6 lg:px-12 py-16 bg-gray-50" aria-label="Service finder">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="all-services">
+        <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
-            <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-3">
-              Not Sure Where to Start?
+            <SectionLabel>Complete Service Directory</SectionLabel>
+            <h2 id="all-services" className="font-[family-name:var(--font-display)] text-[clamp(1.9rem,4vw,3.2rem)] font-extrabold tracking-tight mt-3 max-w-3xl">
+              Find the capability you need without digging through a wall of cards.
             </h2>
-            <p className="text-base text-gray-500 mb-6">
-              Answer a few quick questions and get personalized service recommendations.
+            <p className="text-base text-gray-600 leading-relaxed mt-4 max-w-2xl">
+              We organize the full service stack around four jobs: acquiring demand, building digital experiences, engaging customers and scaling the system.
             </p>
-            <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              Take the Service Finder Quiz &rarr;
-            </Link>
           </Animate>
+
+          <div className="mt-12 border-t border-gray-200">
+            {serviceGroups.map((group) => (
+              <div key={group.name} className="grid lg:grid-cols-[.32fr_.68fr] gap-5 lg:gap-10 py-9 border-b border-gray-200">
+                <div>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold">{group.name}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed mt-2 max-w-xs">{group.desc}</p>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-x-8">
+                  {group.services.map(([label, href]) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="group flex items-center justify-between gap-4 py-3.5 border-b border-gray-100 text-sm font-semibold hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+                    >
+                      <span>{label}</span>
+                      <ArrowRight size={15} className="text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all motion-reduce:transition-none" aria-hidden="true" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Why Full-Service */}
-      <section className="px-6 lg:px-12 py-16" aria-label="Full-service advantages">
-        <div className="max-w-7xl mx-auto">
+      <section className="px-6 lg:px-12 py-16 lg:py-24 bg-black text-white" aria-label="How services work together">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
           <Animate animation="fade-up">
-            <SectionLabel>Why Full-Service</SectionLabel>
-            <SectionTitle>The Advantage of a Single Partner</SectionTitle>
-            <SectionDesc>
-              When every channel is managed under one roof, strategy compounds instead of fragmenting.
-            </SectionDesc>
+            <SectionLabel>One Growth System</SectionLabel>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.4rem)] font-extrabold tracking-tight leading-tight mt-3">
+              The channel is not the strategy.
+            </h2>
+            <p className="text-base lg:text-lg text-gray-400 leading-relaxed mt-5 max-w-xl">
+              Search, paid media, social, creative and web performance affect each other. We use shared measurement and one operating brief so decisions made in one channel improve the rest.
+            </p>
+            <Link href="/process" className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-white/40 pb-1 hover:border-white">
+              See our process <ArrowRight size={15} aria-hidden="true" />
+            </Link>
           </Animate>
-          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+
+          <Stagger stagger={70} animation="fade-up" className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
             {[
-              {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <rect x="4" y="4" width="10" height="10" stroke="black" strokeWidth="2" />
-                    <rect x="18" y="4" width="10" height="10" stroke="black" strokeWidth="2" />
-                    <rect x="4" y="18" width="10" height="10" stroke="black" strokeWidth="2" />
-                    <rect x="18" y="18" width="10" height="10" stroke="black" strokeWidth="2" />
-                    <line x1="14" y1="9" x2="18" y2="9" stroke="black" strokeWidth="2" />
-                    <line x1="9" y1="14" x2="9" y2="18" stroke="black" strokeWidth="2" />
-                    <line x1="23" y1="14" x2="23" y2="18" stroke="black" strokeWidth="2" />
-                    <line x1="14" y1="23" x2="18" y2="23" stroke="black" strokeWidth="2" />
-                  </svg>
-                ),
-                title: "Unified Strategy",
-                desc: "SEO, paid ads, social, content, and design all work from the same brief — no conflicting priorities.",
-              },
-              {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <circle cx="16" cy="16" r="12" stroke="black" strokeWidth="2" />
-                    <polyline points="10,18 14,12 18,16 24,8" stroke="black" strokeWidth="2" fill="none" />
-                  </svg>
-                ),
-                title: "Cross-Channel Insights",
-                desc: "Learnings from one channel feed into every other. Your PPC data improves your SEO. Your social insights sharpen your content.",
-              },
-              {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <rect x="6" y="6" width="20" height="20" stroke="black" strokeWidth="2" />
-                    <line x1="6" y1="16" x2="26" y2="16" stroke="black" strokeWidth="2" />
-                    <line x1="16" y1="6" x2="16" y2="26" stroke="black" strokeWidth="2" />
-                    <circle cx="11" cy="11" r="2" fill="black" />
-                    <circle cx="21" cy="21" r="2" fill="black" />
-                  </svg>
-                ),
-                title: "Single Point of Contact",
-                desc: "One account lead who knows your business. No repeating context to five different agencies.",
-              },
-              {
-                icon: (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <path d="M8 24 L16 8 L24 24" stroke="black" strokeWidth="2" fill="none" />
-                    <line x1="11" y1="19" x2="21" y2="19" stroke="black" strokeWidth="2" />
-                    <circle cx="16" cy="8" r="3" stroke="black" strokeWidth="2" fill="none" />
-                  </svg>
-                ),
-                title: "Faster Execution",
-                desc: "No back-and-forth between vendors. Changes that take weeks with multiple agencies take days with one.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
-                <div className="mb-4">{item.icon}</div>
-                <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{item.title}</h3>
-                <p className="text-base text-gray-500 leading-relaxed">{item.desc}</p>
+              ["Shared measurement", "Tracking, attribution and reporting use the same business goals across channels."],
+              ["Creative feedback loops", "Paid and organic performance shows which messages deserve more investment."],
+              ["Search intelligence", "Keyword and landing page data informs content, ads and website priorities."],
+              ["Faster handoffs", "Strategy, design, media and development work from the same context instead of separate vendor briefs."],
+            ].map(([title, copy]) => (
+              <div key={title} className="border-t border-white/20 pt-5">
+                <Check size={18} aria-hidden="true" className="mb-4" />
+                <h3 className="font-[family-name:var(--font-display)] text-base font-bold">{title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed mt-2">{copy}</p>
               </div>
             ))}
           </Stagger>
         </div>
       </section>
 
-      {/* Industries */}
-      <section className="px-6 lg:px-12 py-16 bg-black text-white" aria-label="Industries served">
+      <section className="px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="industry-heading">
         <div className="max-w-7xl mx-auto">
-          <Animate animation="fade-up">
-            <SectionLabel>Industries</SectionLabel>
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-tight mt-3 mb-3">
-              Specialized Experience Across 20 Verticals
-            </h2>
-            <p className="text-base text-gray-400 max-w-2xl mb-10">
-              Every industry has unique buyer journeys, compliance requirements, and competitive dynamics. We build strategies that account for all of them.
-            </p>
-          </Animate>
-          <Stagger stagger={40} animation="fade-up" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-end">
+            <Animate animation="fade-up">
+              <SectionLabel>Industry Experience</SectionLabel>
+              <h2 id="industry-heading" className="font-[family-name:var(--font-display)] text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3">
+                Different markets need different acquisition logic.
+              </h2>
+            </Animate>
+            <Animate animation="fade-up" delay={80}>
+              <p className="text-base text-gray-600 leading-relaxed max-w-xl lg:ml-auto">
+                We adapt channel mix, creative, lead handling and measurement to the way customers actually buy in each category.
+              </p>
+            </Animate>
+          </div>
+
+          <div className="mt-10 flex flex-wrap border-t border-l border-gray-200">
             {[
-              { label: "Home Services", href: "/industries/home-services" },
-              { label: "E-commerce", href: "/industries/ecommerce" },
-              { label: "Healthcare", href: "/industries/healthcare" },
-              { label: "Real Estate", href: "/industries/real-estate" },
-              { label: "Restaurants", href: "/industries/restaurants" },
-              { label: "Fashion", href: "/industries/fashion" },
-              { label: "B2B", href: "/industries/b2b" },
-              { label: "EV Chargers", href: "/industries/ev-chargers" },
-              { label: "Education", href: "/industries/education" },
-              { label: "Legal", href: "/industries/legal" },
-              { label: "SaaS", href: "/industries/saas" },
-              { label: "Finance", href: "/industries/finance" },
-              { label: "Hospitality", href: "/industries/hospitality" },
-              { label: "Fitness", href: "/industries/fitness" },
-              { label: "Automotive", href: "/industries/automotive" },
-              { label: "Nonprofits", href: "/industries/nonprofits" },
-              { label: "Construction", href: "/industries/construction" },
-              { label: "Travel", href: "/industries/travel" },
-              { label: "Professional Services", href: "/industries/professional-services" },
-              { label: "Manufacturing", href: "/industries/manufacturing" },
-            ].map((ind) => (
-              <Link key={ind.href} href={ind.href} className="border border-white/20 px-4 py-4 text-base font-medium text-white hover:bg-white hover:text-black transition-colors duration-200 motion-reduce:transition-none text-center focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                {ind.label}
+              ["Exterior Cleaning", "/industries/exterior-cleaning"],
+              ["Rehab & Recovery", "/industries/rehab-recovery"],
+              ["Restaurants", "/industries/restaurants"],
+              ["E-commerce", "/industries/ecommerce"],
+              ["Healthcare", "/industries/healthcare"],
+              ["EV Chargers", "/industries/ev-chargers"],
+              ["Real Estate", "/industries/real-estate"],
+              ["Fashion", "/industries/fashion"],
+              ["SaaS", "/industries/saas"],
+              ["B2B", "/industries/b2b"],
+              ["Construction", "/industries/construction"],
+              ["Professional Services", "/industries/professional-services"],
+            ].map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="group w-1/2 md:w-1/3 lg:w-1/4 border-r border-b border-gray-200 min-h-24 p-4 lg:p-5 flex items-end justify-between gap-3 text-sm font-semibold hover:bg-gray-50 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+              >
+                <span>{label}</span>
+                <ArrowRight size={14} className="text-gray-300 group-hover:text-black" aria-hidden="true" />
               </Link>
             ))}
-          </Stagger>
-          <Animate animation="fade-up">
-            <p className="text-base text-gray-400 mt-8">
-              Don&apos;t see your industry? <Link href="/contact" className="text-white underline hover:no-underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in touch</Link> — most of what we do applies across verticals.
-            </p>
-          </Animate>
-        </div>
-      </section>
-
-      {/* Cross-links */}
-      <section className="px-6 lg:px-12 py-16" aria-label="Related pages">
-        <div className="max-w-7xl mx-auto">
-          <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Link href="/capabilities" className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Full Capabilities</h3>
-              <p className="text-base text-gray-500">See the complete breakdown of what we offer and the advantage of working with a full-service agency.</p>
-            </Link>
-            <Link href="/results" className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">How We Measure Results</h3>
-              <p className="text-base text-gray-500">Our KPI framework, reporting cadence, and the analytics platforms behind every campaign.</p>
-            </Link>
-            <Link href="/process" className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Our Process</h3>
-              <p className="text-base text-gray-500">From discovery to optimization — a proven 5-step process for every engagement.</p>
-            </Link>
-          </Stagger>
-        </div>
-      </section>
-
-      <section className="px-6 lg:px-12 py-12" aria-label="Free tools">
-        <div className="max-w-4xl mx-auto">
-          <Animate animation="fade-up">
-            <h2 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-4">Free Tools to Get Started</h2>
-            <div className="flex flex-wrap gap-3">
-              {[
-                { label: "ROI Calculator", href: "/resources/roi-calculator" },
-                { label: "Service Finder Quiz", href: "/services/finder" },
-                { label: "Budget Planner", href: "/resources/marketing-budget-planner" },
-                { label: "SEO Health Check", href: "/resources/seo-checklist" },
-                { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
-                { label: "Website Grader", href: "/resources/website-grader" },
-              ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </Animate>
-        </div>
-      </section>
-
-      <section id="services-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a services quote">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-          <div className="pt-2">
-            <SectionLabel>Request a Quote</SectionLabel>
-            <SectionTitle>Not Sure Which Services You Need?</SectionTitle>
-            <p className="text-lg text-gray-500 leading-relaxed mt-5">
-              Tell us the business goal, what is already working, what is not, and what your team can handle internally. We can recommend the right mix of services and a practical starting scope instead of forcing a prebuilt package.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3 mt-7">
-              {["Growth & paid media", "SEO & content", "Web & app development", "Social & creative", "Branding & production", "AI & automation", "Analytics & CRM", "BPO & operations"].map((item) => (
-                <div key={item} className="border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-semibold">{item}</div>
-              ))}
-            </div>
           </div>
+          <Link href="/industries" className="inline-flex items-center gap-2 mt-7 text-sm font-bold border-b border-black pb-1">
+            Explore all industries <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section className="px-6 lg:px-12 py-16 lg:py-24 bg-[#f5f5f3]" aria-label="Proof and resources">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-px bg-gray-300 border border-gray-300">
+          {[
+            ["See the work", "Browse real client projects across websites, social, branding, video and campaigns.", "/work"],
+            ["Read case studies", "See the context behind selected client engagements and the services connected to them.", "/case-studies"],
+            ["Use free tools", "Explore calculators, audits, generators and planners built for practical marketing decisions.", "/free-tools"],
+          ].map(([title, copy, href]) => (
+            <Link key={href} href={href} className="group bg-white p-7 lg:p-9 min-h-64 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold">{title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mt-3">{copy}</p>
+              <span className="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-bold">
+                Explore <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform motion-reduce:transition-none" aria-hidden="true" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section id="services-quote" className="px-6 lg:px-12 py-20 lg:py-28 scroll-mt-24" aria-label="Request a services quote">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-16 items-start">
+          <Animate animation="fade-up">
+            <SectionLabel>Request a Quote</SectionLabel>
+            <SectionTitle>Tell us the business problem. We will map the right service mix.</SectionTitle>
+            <p className="text-base lg:text-lg text-gray-600 leading-relaxed mt-5">
+              Share the goal, current setup, priority market, budget range and what your internal team already handles. We will recommend a practical starting scope rather than forcing a prebuilt package.
+            </p>
+            <div className="mt-7 space-y-3">
+              {[
+                "Paid growth and lead generation",
+                "SEO and organic visibility",
+                "Website, ecommerce or app work",
+                "Social, creative and video",
+                "Analytics, CRM and automation",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 text-sm font-semibold">
+                  <Check size={16} aria-hidden="true" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </Animate>
           <QuoteForm
             service="Digital Marketing Services"
             title="Tell Us What You Need"
@@ -532,22 +655,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Services FAQ">
-        <div className="max-w-3xl mx-auto">
+      <section className="px-6 lg:px-12 py-20 bg-[#f5f5f3]" aria-labelledby="services-faq">
+        <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>FAQ</SectionLabel>
-            <SectionTitle>Common Questions About Our Services</SectionTitle>
+            <h2 id="services-faq" className="font-[family-name:var(--font-display)] text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight mt-3">
+              Questions about working with a full-service digital agency
+            </h2>
           </Animate>
-          <div className="mt-10">
-            {servicesFaqItems.map((item, i) => (
-              <Animate key={i} animation="fade-up" delay={i * 50}>
-                <details className="group border-b border-gray-200">
-                  <summary className="flex justify-between items-center py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <div className="mt-10 border-t border-gray-300">
+            {servicesFaqItems.map((item, index) => (
+              <Animate key={item.q} animation="fade-up" delay={index * 40}>
+                <details className="group border-b border-gray-300">
+                  <summary className="flex justify-between items-center gap-5 py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0 ml-4" aria-hidden="true">+</span>
+                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0" aria-hidden="true">+</span>
                   </summary>
-                  <div className="pb-5 text-base text-gray-500 leading-relaxed">{item.a}</div>
+                  <div className="pb-6 text-base text-gray-600 leading-relaxed max-w-3xl">{item.a}</div>
                 </details>
               </Animate>
             ))}
@@ -555,18 +679,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Get started">
-        <div className="max-w-3xl mx-auto">
+      <section className="px-6 lg:px-12 py-20 lg:py-24 bg-black text-white" aria-label="Get started">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <Animate animation="fade-up">
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
-              Ready to Talk Strategy?
+            <p className="text-sm uppercase tracking-[0.2em] text-gray-400 font-semibold">Start with the goal</p>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4.2rem)] font-extrabold tracking-tight leading-[1] mt-4 max-w-3xl">
+              Need a clearer marketing plan?
             </h2>
-            <p className="text-lg text-gray-400 mt-4 mb-8">
-              Tell us your goals and current setup. We&apos;ll recommend the service mix and scope that makes sense for the business.
-            </p>
-            <Link href="#services-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-              Request a Recommendation &rarr;
+          </Animate>
+          <Animate animation="fade-up" delay={80}>
+            <Link
+              href="#services-quote"
+              className="inline-flex items-center gap-3 bg-white text-black px-7 py-4 font-bold text-sm hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+            >
+              Request a recommendation <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </Animate>
         </div>
