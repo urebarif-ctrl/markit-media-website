@@ -1,4 +1,48 @@
 import type { Metadata } from "next";
-import { SubServicePage } from "@/components/sub-service-page";
-export const metadata: Metadata={title:"App Development Company | Web & Mobile Apps",description:"Custom app development for web and mobile products, portals, dashboards, MVPs and business applications. Strategy, UX, engineering, integrations and launch support.",alternates:{canonical:"https://themarkitmedia.com/en/services/app-development"}};
-export default function Page(){return <SubServicePage parentTitle="Services" parentHref="/services" title="App Development" description="We design and build conversion-focused digital products, from MVPs and customer portals to internal tools and full web applications. Our approach connects product strategy, UX, engineering, APIs, analytics and growth so the application is useful on launch day and scalable after it." details={["Product discovery, requirements and MVP planning around real user journeys and business goals.","UX/UI design for responsive web applications, portals, dashboards and mobile-first experiences.","Full-stack application development with modern JavaScript and API-driven architecture.","Authentication, payments, CRM, analytics and third-party API integrations where the product requires them.","Quality assurance across devices, browsers, accessibility and core user flows before launch.","Deployment, monitoring, iteration and growth support after release."]} benefits={["One partner from product strategy through launch","Modern, maintainable application architecture","Responsive experiences across mobile, tablet and desktop","Integration-ready builds for your existing stack","Analytics and conversion measurement built into the product","Ongoing iteration instead of a one-and-done handoff"]} faq={[{q:"What kinds of apps do you build?",a:"We build web applications, customer portals, dashboards, internal tools, MVPs and mobile-first products. The technology is selected around the product requirements rather than forcing every project into one stack."},{q:"Can you build an MVP first?",a:"Yes. We can scope the smallest useful release, validate the key workflow, then expand the product based on usage and business priorities."},{q:"Can you integrate an app with our CRM or APIs?",a:"Yes. API, CRM, payment, analytics and automation integrations can be included when the external platform supports the required access."},{q:"Do you provide post-launch support?",a:"Yes. We can support monitoring, maintenance, feature development, conversion improvements and product iteration after launch."}]}/>}
+import { ServicePage } from "@/components/service-page";
+import { Smartphone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "App Development Company | Mobile, iOS, Android & Web Apps",
+  description: "Custom app development for mobile, iOS, Android, cross-platform and web applications. Product strategy, UX, engineering, APIs, analytics and launch support.",
+  alternates: { canonical: "https://themarkitmedia.com/en/services/app-development" },
+};
+
+export default function Page() {
+  return <ServicePage
+    icon={Smartphone}
+    title="App Development"
+    description="Design and build mobile and web applications around real user journeys, business requirements and measurable product goals."
+    longDescription="Our app development work covers product discovery, UX, mobile engineering, web applications, APIs, integrations, analytics, QA and post-launch iteration. The parent service connects each specialist build so the architecture stays clear instead of treating every technology page as an unrelated service."
+    subServices={[
+      { title: "Mobile App Development", desc: "The mobile app hub for native, Android, iOS and cross-platform application development.", href: "/services/app-development/mobile-apps" },
+      { title: "Web App Development", desc: "Browser-based applications, SaaS products, portals, dashboards and internal tools.", href: "/services/app-development/web-apps" },
+    ]}
+    platforms={[
+      { name: "iOS", note: "Native iPhone and iPad application delivery." },
+      { name: "Android", note: "Native Android applications and Play Store releases." },
+      { name: "React Native", note: "Shared mobile codebases for iOS and Android." },
+      { name: "Flutter", note: "Cross-platform mobile application development." },
+      { name: "Next.js", note: "Modern web applications and product front ends." },
+      { name: "Node.js", note: "APIs, integrations and backend services." },
+    ]}
+    benefits={[
+      "One parent architecture across mobile and web app services",
+      "Platform selection based on product requirements",
+      "Reusable design systems and maintainable code",
+      "API, CRM, payment and analytics integration",
+      "Quality assurance across devices and user flows",
+      "Post-launch monitoring and product iteration",
+    ]}
+    faq={[
+      { q: "Do you build both mobile and web apps?", a: "Yes. Mobile App Development and Web App Development sit under the same App Development service family, with specialist pages for native, Android, iOS and cross-platform builds." },
+      { q: "Should we build native or cross-platform?", a: "It depends on product requirements, device features, team structure, budget and roadmap. We evaluate those constraints before recommending native iOS and Android or a shared framework such as React Native or Flutter." },
+      { q: "Can you build an MVP first?", a: "Yes. We can define the smallest useful release, validate the core workflow and expand after real usage data is available." },
+    ]}
+    relatedServices={[
+      { title: "CRM Development", href: "/services/crm-development" },
+      { title: "Website Development", href: "/services/website-development" },
+      { title: "AI Solutions", href: "/services/ai" },
+    ]}
+  />;
+}
