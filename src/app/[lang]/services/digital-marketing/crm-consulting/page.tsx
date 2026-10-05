@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 export default function CrmConsultingPage() {
   return (
     <SubServicePage
-      parentTitle="Digital Marketing"
-      parentHref="/services/digital-marketing"
+      parentTitle="CRM Development"
+      parentHref="/services/crm-development"
       title="CRM Consulting"
       description="A CRM is only as useful as its setup and adoption. We help you select the right platform, configure it to match your sales process, automate repetitive workflows, and train your team — so your CRM becomes a revenue tool, not just a contact database."
       details={[
