@@ -23,6 +23,24 @@ interface SubServicePageProps {
 
 export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, children }: SubServicePageProps) {
   const relatedPosts = blogCategory ? getPostsByCategory(blogCategory, 3) : [];
+  const clusterNavigation: Record<string, { title: string; href: string }[]> = {
+    "/services/website-development": [
+      { title: "WordPress Development", href: "/services/website-development/wordpress" },
+      { title: "Wix Development", href: "/services/website-development/wix" },
+      { title: "Webflow Development", href: "/services/website-development/webflow" },
+      { title: "Squarespace Development", href: "/services/website-development/squarespace" },
+      { title: "Next.js Development", href: "/services/website-development/nextjs" },
+      { title: "Custom Web Apps", href: "/services/website-development/custom-web-apps" },
+      { title: "Landing Pages", href: "/services/website-development/landing-pages" },
+      { title: "Website Migration", href: "/services/website-development/website-migration" },
+      { title: "SEO Migration & Redirects", href: "/services/website-development/seo-migration-redirects" },
+    ],
+    "/services/shopify": [
+      { title: "Shopify Development", href: "/services/website-development/shopify" },
+      { title: "Shopify Marketing", href: "/services/ecommerce-marketing/shopify-marketing" },
+    ],
+  };
+  const siblingServices = (clusterNavigation[parentHref] || []).filter((item) => item.title !== title);
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -51,6 +69,9 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <Animate animation="fade-up">
+              <Link href={parentHref} className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors mb-3">
+                <span aria-hidden="true">←</span> Part of {parentTitle}
+              </Link>
               <SectionLabel>{parentTitle}</SectionLabel>
               <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
                 {title}
@@ -123,6 +144,30 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
       </section>
 
       {children}
+
+      {siblingServices.length > 0 && (
+        <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label={`More ${parentTitle} services`}>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div>
+                <SectionLabel>Service Family</SectionLabel>
+                <SectionTitle>More {parentTitle} Services</SectionTitle>
+              </div>
+              <Link href={parentHref} className="text-sm font-bold border-b border-black pb-1">
+                View {parentTitle} overview →
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 mt-8">
+              {siblingServices.map((service) => (
+                <Link key={service.href} href={service.href} className="group bg-white p-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                  <span className="font-semibold text-sm">{service.title}</span>
+                  <span className="text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all" aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {(portfolio.length > 0 || relatedServices.length > 0) && <section className="px-6 lg:px-12 py-20" aria-label="Related work and services"><div className="max-w-7xl mx-auto">
         <SectionLabel>Keep Exploring</SectionLabel><SectionTitle>Related Work & Services</SectionTitle>
