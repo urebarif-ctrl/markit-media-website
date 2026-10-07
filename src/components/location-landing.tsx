@@ -260,14 +260,14 @@ export function buildLocationMetadata(cityKey:string, serviceKey?:LocalServiceKe
   const base = localBase(p);
   if (!serviceKey) {
     return {
-      title: `Digital Marketing Agency in ${p.city} — Markit Media`,
-      description: `Full-service digital marketing agency serving ${p.city}: SEO, PPC, social media, website development, branding, content, analytics, AI, email, video and more.`,
+      title: `Digital Marketing Agency in ${p.city}`,
+      description: `Digital marketing agency serving ${p.city}. ${p.market.replace(/\.$/, '')}. SEO, PPC, social media, website development, branding, video and more.`,
       alternates: { canonical: `https://themarkitmedia.com/en${base}` },
     };
   }
   const s = localServiceContent[serviceKey];
   return {
-    title: `${s.title} in ${p.city} — Markit Media`,
+    title: `${s.title} in ${p.city}`,
     description: `${s.title} serving ${p.city}. ${s.core} Explore the complete service offering, process, related capabilities and local market approach.`,
     alternates: { canonical: `https://themarkitmedia.com/en${base}/${serviceKey}` },
   };
@@ -374,7 +374,7 @@ const countryProfiles: Record<string,{name:string;slug:string;desc:string;focus:
 
 export function buildCountryMetadata(key:string):Metadata {
   const p=countryProfiles[key];
-  return {title:`Digital Marketing Agency in ${p.name} — Markit Media`,description:`${p.desc} Explore Markit Media's complete service offering.`,alternates:{canonical:`https://themarkitmedia.com/en/locations/${p.slug}`}};
+  return {title:`Digital Marketing Agency in ${p.name}`,description:`${p.desc} Explore Markit Media's complete service offering.`,alternates:{canonical:`https://themarkitmedia.com/en/locations/${p.slug}`}};
 }
 
 export function CountryLocationLanding({countryKey}:{countryKey:string}) {
