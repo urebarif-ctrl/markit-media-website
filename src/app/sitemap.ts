@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPublishedSlugs, getAllPublishedSlugsWithDates, getAllCategories } from "@/lib/blog";
-import { legacySeoPages } from "@/data/legacy-seo-pages";
+import { legacySeoPages, retiredLegacyArticlePaths } from "@/data/legacy-seo-pages";
 
 const BASE_URL = "https://themarkitmedia.com";
 
@@ -658,7 +658,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
   for (const page of legacySeoPages) {
     // Service and industry legacy URLs with clear modern equivalents use permanent redirects.
     // Keep redirecting URLs out of the sitemap; preserve only legacy articles as indexable URLs.
-    if (page.kind !== "article") continue;
+    if (page.kind !== "article" || retiredLegacyArticlePaths.has(page.path)) continue;
 
     entries.push({
       url: `${BASE_URL}${page.path}`,

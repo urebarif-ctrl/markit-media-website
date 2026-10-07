@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
-import { legacySeoAliases, legacySeoPages, preservedLegacyPaths } from "./src/data/legacy-seo-pages";
+import { legacySeoAliases, legacySeoPages, retiredLegacyArticlePaths, retiredLegacyArticleRedirects } from "./src/data/legacy-seo-pages";
+
+const preservedLegacyArticlePaths = new Set(legacySeoPages.filter((page) => page.kind === "article" && !retiredLegacyArticlePaths.has(page.path)).map((page) => page.path));
 
 const nextConfig: NextConfig = {
   images: {
@@ -23,7 +25,7 @@ const nextConfig: NextConfig = {
           source: "/home-decor-interior-design-online-digital-marketing-agency",
           destination: "/en/industries/interior-design",
         },
-        ...legacySeoPages.map((page) => ({
+        ...legacySeoPages.filter((page) => page.kind === "article" && !retiredLegacyArticlePaths.has(page.path)).map((page) => ({
           source: page.path,
           destination: `/en/legacy/${page.id}`,
         })),
@@ -82,6 +84,46 @@ const nextConfig: NextConfig = {
   async redirects() {
     const redirects = [
       ...legacySeoAliases.map((alias) => ({ ...alias, permanent: true as const })),
+      ...retiredLegacyArticleRedirects.map((item) => ({ ...item, permanent: true as const })),
+
+      // === Oct 7, 2026 GSC crawled-not-indexed cleanup ===
+      { source: "/motion-graphics", destination: "/en/blog/motion-graphics", permanent: true },
+      { source: "/mastering-shopify-success-in-2024", destination: "/en/services/website-development/shopify", permanent: true },
+      { source: "/the-importance-of-ssl-certificates-in-website-development-and-seo", destination: "/en/services/website-development", permanent: true },
+      { source: "/chat-gpt-pros-and-cons-of-ai-conversation", destination: "/en/services/ai", permanent: true },
+      { source: "/business-websites", destination: "/en/services/website-development", permanent: true },
+      { source: "/seo-and-user-experience-why-they-go-hand-in-hand-in-website-development", destination: "/en/services/seo/technical-seo", permanent: true },
+      { source: "/the-ultimate-guide-to-exploring-social-media-marketing", destination: "/en/services/social-media", permanent: true },
+      { source: "/social-networking-websites", destination: "/en/services/social-media", permanent: true },
+      { source: "/educational-websites", destination: "/en/industries/education", permanent: true },
+      { source: "/what-are-the-benefits-of-digital-transformation", destination: "/en/services/digital-marketing", permanent: true },
+      { source: "/the-future-of-web-development-trends-to-watch-in-2025", destination: "/the-future-of-website-development-trends-to-watch-in-2026", permanent: true },
+      { source: "/mobile-first-website-design", destination: "/en/services/website-development", permanent: true },
+      { source: "/the-future-of-e-commerce-online-marketing-strategies-for-2025", destination: "/en/services/ecommerce-marketing", permanent: true },
+      { source: "/the-future-of-e-commerce-online-marketing-strategies-for-2025/the-future-of-e-commerce-online-marketing-strategies-for-2026", destination: "/en/services/ecommerce-marketing", permanent: true },
+      { source: "/5-must-have-features-for-a-successful-e-commerce-website-development", destination: "/en/services/website-development/ecommerce", permanent: true },
+      { source: "/the-future-of-website-development-trends-to-watch-in-2025", destination: "/the-future-of-website-development-trends-to-watch-in-2026", permanent: true },
+      { source: "/are-you-making-these-common-wordpress-mistakes-on-your-website", destination: "/en/services/website-development/wordpress", permanent: true },
+      { source: "/how-to-elevate-your-brand-with-creative-designs", destination: "/en/services/branding", permanent: true },
+      { source: "/the-complete-guide-to-a-seamless-website-migration", destination: "/en/services/website-development/website-migration", permanent: true },
+      { source: "/how-markit-media-drives-conversions-across-the-digital-marketing-spectrum", destination: "/en/services/digital-marketing", permanent: true },
+      { source: "/the-art-of-creating-an-engaging-social-media-calendar", destination: "/en/free-tools/free-social-media-calendar-template", permanent: true },
+      { source: "/on-page-seo-tips-for-wordpress-bloggers", destination: "/en/services/seo/content-seo", permanent: true },
+      { source: "/b2b-businesses-and-digital-", destination: "/en/industries/b2b", permanent: true },
+
+      { source: "/blogs/using-google-analytics-for-better-online-marketing-decisions", destination: "/en/services/marketing-analytics", permanent: true },
+      { source: "/blogs/5-must-have-features-for-a-successful-e-commerce-website-development", destination: "/en/services/website-development/ecommerce", permanent: true },
+      { source: "/blogs/the-benefits-of-responsive-design-for-website-development", destination: "/en/services/website-development", permanent: true },
+      { source: "/blogs/ai-chatbots-customer-engagement-redefined", destination: "/en/services/ai/chatbots", permanent: true },
+      { source: "/blogs/how-to-elevate-your-brand-with-creative-design", destination: "/en/services/branding", permanent: true },
+      { source: "/blogs/digital-marketing-trends-in-2025", destination: "/en/services/digital-marketing", permanent: true },
+      { source: "/blogs/important-google-ranking-factors-in-2025", destination: "/important-google-ranking-factors-in-2025", permanent: true },
+      { source: "/blogs/on-page-seo-tips-for-wordpress-bloggers", destination: "/en/services/seo/content-seo", permanent: true },
+      { source: "/blogs/how-to-speed-up-your-wordpress-website-for-better-seo", destination: "/how-to-speed-up-your-wordpress-website-for-better-seo", permanent: true },
+      { source: "/blogs/the-latest-trends-in-website-development-for-2025", destination: "/the-latest-trends-in-website-development-for-2026", permanent: true },
+      { source: "/blogs/creating-effective-online-marketing-campaigns-with-limited-resources", destination: "/en/services/digital-marketing", permanent: true },
+      { source: "/blogs/why-content-marketing-is-vital-for-digital-marketing-success", destination: "/why-content-marketing-is-vital-for-digital-marketing-success", permanent: true },
+      { source: "/blogs/the-importance-of-mobile-optimization-in-website-development", destination: "/en/services/website-development", permanent: true },
 
       // === Old page slugs (from Wayback Machine + Google index) ===
       { source: "/about-us", destination: "/en/about", permanent: true },
@@ -352,6 +394,10 @@ const nextConfig: NextConfig = {
 
       // === Portfolio/case study redirects ===
       { source: "/portfolio/:slug", destination: "/en/work", permanent: true },
+      { source: "/portfolio-websites", destination: "/en/work", permanent: true },
+      { source: "/creative-portfolio/:slug", destination: "/en/work", permanent: true },
+      { source: "/ba_myfreshfruit", destination: "/en/work/my-fresh-fruits", permanent: true },
+      { source: "/pg_elite", destination: "/en/work/elite", permanent: true },
       { source: "/portfolio_tag/:slug", destination: "/en/work", permanent: true },
       { source: "/case-study/:slug", destination: "/en/case-studies", permanent: true },
       { source: "/cases/:slug", destination: "/en/case-studies", permanent: true },
@@ -360,14 +406,17 @@ const nextConfig: NextConfig = {
       { source: "/category/:slug", destination: "/en/blog", permanent: true },
       { source: "/tag/:slug", destination: "/en/blog", permanent: true },
       { source: "/author/:slug", destination: "/en/blog", permanent: true },
+      { source: "/author/:slug/:path*", destination: "/en/blog", permanent: true },
       { source: "/feed", destination: "/feed.xml", permanent: true },
       { source: "/rss", destination: "/feed.xml", permanent: true },
       { source: "/feed/:path*", destination: "/feed.xml", permanent: true },
+      { source: "/:slug/feed", destination: "/:slug", permanent: true },
       { source: "/blogs/page/:num", destination: "/en/blog", permanent: true },
       // Individual legacy blog URLs with Search Console demand are preserved via beforeFiles rewrites.
       { source: "/:year(\\d{4})/:month(\\d{2})", destination: "/en/blog", permanent: true },
 
       // === WordPress infrastructure ===
+      { source: "/wp-content/uploads/2025/12/MM-Profile.pdf", destination: "/en/about", permanent: true },
       { source: "/wp-content/:path*", destination: "/en", permanent: false },
       { source: "/wp-admin/:path*", destination: "/en", permanent: false },
       { source: "/wp-login.php", destination: "/en", permanent: false },
@@ -384,7 +433,7 @@ const nextConfig: NextConfig = {
 
     return redirects.filter((redirect) => {
       if (redirect.source.includes(":")) return true;
-      return !preservedLegacyPaths.has(redirect.source.replace(/\/$/, ""));
+      return !preservedLegacyArticlePaths.has(redirect.source.replace(/\/$/, ""));
     });
   },
 };

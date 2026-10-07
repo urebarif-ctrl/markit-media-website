@@ -2326,6 +2326,15 @@ export const legacySeoPages: LegacySeoPage[] = [
   }
 ];
 
+export const retiredLegacyArticleRedirects = [
+  { source: "/using-google-analytics-for-better-online-marketing-decisions", destination: "/en/services/marketing-analytics" },
+  { source: "/why-photography-is-important-for-social-media-marketing", destination: "/en/services/photography" },
+  { source: "/ai-chatbots-customer-engagement-redefined", destination: "/en/services/ai/chatbots" },
+  { source: "/custom-website-vs-wordpress-making-the-right-choice", destination: "/en/services/website-development/wordpress" },
+] as const;
+
+export const retiredLegacyArticlePaths = new Set(retiredLegacyArticleRedirects.map((item) => item.source));
+
 export const legacySeoPageById = new Map(legacySeoPages.map((page) => [page.id, page]));
 export const preservedLegacyPaths = new Set(legacySeoPages.map((page) => page.path));
 
