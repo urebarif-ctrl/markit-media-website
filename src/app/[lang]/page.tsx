@@ -21,18 +21,15 @@ import { YouTubeEmbed } from "@/components/youtube-embed";
 import { BrandIcon } from "@/components/brand-icon";
 
 export const metadata: Metadata = {
-  title: "Markit Media — Full-Stack Digital Marketing Agency",
   description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
   alternates: { canonical: "https://themarkitmedia.com/en" },
   openGraph: {
-    title: "Markit Media — Full-Stack Digital Marketing Agency",
     description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
     type: "website",
     images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Markit Media — Full-Stack Digital Marketing Agency",
     description: "Full-stack digital marketing, website development, and creative services.",
   },
 };

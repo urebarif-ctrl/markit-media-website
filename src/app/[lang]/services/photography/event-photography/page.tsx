@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Event Photography | Markit Media",
+  title: "Event Photography",
   description: "Professional photography coverage for conferences, exhibitions, launches, corporate events, hospitality, activations, networking, and branded experiences.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/photography/event-photography" },
 };

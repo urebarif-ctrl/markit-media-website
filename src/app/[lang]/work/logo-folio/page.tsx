@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "A selection of our logo design and animation work across energy, technology, F&B, fashion, and agency brands. Professional motion graphics and brand identity.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/logo-folio" },
   openGraph: {
-    title: "Logo Folio — Markit Media",
+    title: "Logo Folio",
     description: "Logo design and animation portfolio showcasing identity work across multiple industries.",
   },
 };
@@ -29,7 +29,7 @@ export default function LogoFolioPage() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Logo Folio — Markit Media",
+    name: "Logo Folio",
     description: "Branding and logo animation portfolio showcasing our identity design work.",
   };
 

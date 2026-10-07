@@ -3,7 +3,7 @@ import Link from "next/link";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 
 export const metadata: Metadata = {
-  title: "Indus Foods × Markit Media — Private Proposal",
+  title: "Indus Foods — Private Proposal",
   description: "Private proposal prepared for Indus Foods.",
   robots: { index: false, follow: false, nocache: true },
 };

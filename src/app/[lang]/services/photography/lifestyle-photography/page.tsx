@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Lifestyle Photography | Markit Media",
+  title: "Lifestyle Photography",
   description: "Styled lifestyle photography for brands, products, hospitality, fashion, food, personal brands, and campaigns that need natural human context.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/photography/lifestyle-photography" },
 };

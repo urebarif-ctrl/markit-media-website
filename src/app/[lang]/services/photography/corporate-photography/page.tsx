@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Corporate Photography | Markit Media",
+  title: "Corporate Photography",
   description: "Professional corporate photography for teams, leadership, offices, employer branding, PR, websites, LinkedIn, events, and company communications.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/photography/corporate-photography" },
 };
