@@ -264,7 +264,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               const Icon=item.icon;
               return <div key={item.href} className="group flex min-h-[250px] sm:min-h-[290px] flex-col border border-gray-200 bg-white p-5 sm:p-6 transition-all hover:-translate-y-1 hover:border-black hover:shadow-lg">
                 <div className="flex items-center justify-between"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">{item.eyebrow}</span><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F2FF] text-[#5A3ED6]"><Icon size={18}/></span></div>
-                <h2 className="mt-5 sm:mt-7 font-[family-name:var(--font-display)] text-xl sm:text-2xl font-extrabold tracking-tight">{item.title}</h2>
+                <h3 className="mt-5 sm:mt-7 font-[family-name:var(--font-display)] text-xl sm:text-2xl font-extrabold tracking-tight">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-gray-500">{item.desc}</p>
                 <div className="mt-6 flex flex-wrap gap-2">{item.links.map(([label,href])=><Link key={href} href={href} className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-bold text-gray-600 hover:border-black hover:text-black">{label}</Link>)}</div>
                 <Link href={item.href} className="mt-auto pt-5 sm:pt-7 text-sm font-extrabold text-black group-hover:text-[#5A3ED6]">Explore service →</Link>
@@ -548,7 +548,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>How Clients Work With Us</SectionLabel>
-            <SectionTitle>Common Engagements</SectionTitle>
+            <SectionTitle as="h3">Common Engagements</SectionTitle>
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {[
@@ -578,7 +578,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       <section className="px-6 lg:px-12 py-20 bg-[#f7f5ff] border-y border-[#e8e2ff]" aria-label="Credentials and proof">
         <div className="max-w-7xl mx-auto">
-          <Animate animation="fade-up"><SectionLabel>Platform Experience</SectionLabel><SectionTitle>Built Inside the Platforms That Drive Growth</SectionTitle><SectionDesc>Hands-on strategy and execution across paid media and commerce — from campaign structure and creative testing to storefronts, measurement, and optimization.</SectionDesc></Animate>
+          <Animate animation="fade-up"><SectionLabel>Platform Experience</SectionLabel><SectionTitle as="h3">Built Inside the Platforms That Drive Growth</SectionTitle><SectionDesc>Hands-on strategy and execution across paid media and commerce — from campaign structure and creative testing to storefronts, measurement, and optimization.</SectionDesc></Animate>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">{[
             { label: "Paid Search", title: "Google Ads", logo: "/brand/google-ads.svg", href: "/services/performance-marketing/google-ads", desc: "Search strategy, campaign structure, conversion measurement, account optimization, and scalable paid acquisition." },
             { label: "Paid Social", title: "Meta", logo: "/brand/meta.svg", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
@@ -594,7 +594,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               <span className="text-sm font-bold text-gray-400 group-hover:text-black transition-colors">&rarr;</span>
             </div>
             <div className="mt-8 text-sm font-bold uppercase tracking-[0.14em] text-gray-400">{item.label}</div>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mt-2">{item.title}</h2>
+            <h4 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mt-2">{item.title}</h4>
             <p className="text-base text-gray-500 leading-relaxed mt-3">{item.desc}</p>
             <div className="mt-6 pt-5 border-t border-gray-200 text-sm font-bold">Explore our {item.title} work <span aria-hidden="true">&rarr;</span></div>
           </Link>)}</div>
@@ -608,7 +608,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="flex items-end justify-between mb-12">
               <div>
                 <SectionLabel>Insights</SectionLabel>
-                <SectionTitle>Latest from the Blog</SectionTitle>
+                <SectionTitle as="h3">Latest from the Blog</SectionTitle>
               </div>
               <Link href="/en/blog" className="hidden md:inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All &rarr;
@@ -652,7 +652,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Free Resources</SectionLabel>
-            <SectionTitle>155+ Free Marketing Tools</SectionTitle>
+            <SectionTitle as="h3">155+ Free Marketing Tools</SectionTitle>
             <p className="text-lg text-gray-500 mt-4 max-w-2xl">Interactive calculators, audit scorecards, generators, and planners to help you grow.</p>
           </Animate>
           <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
@@ -699,7 +699,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
               <div className="max-w-3xl">
                 <SectionLabel>Selected Work</SectionLabel>
-                <SectionTitle>Show the work. Then talk about the service.</SectionTitle>
+                <SectionTitle as="h3">Show the work. Then talk about the service.</SectionTitle>
                 <SectionDesc>
                   A closer look at the creative systems, campaigns and digital experiences we build for brands across different categories.
                 </SectionDesc>
@@ -789,7 +789,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <SectionLabel>Creative Work</SectionLabel>
-            <SectionTitle>Design &amp; Branding Portfolio</SectionTitle>
+            <SectionTitle as="h3">Design &amp; Branding Portfolio</SectionTitle>
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             {[
@@ -818,9 +818,9 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
         <div className="max-w-7xl mx-auto">
           <Animate animation="fade-up">
             <span className="text-base font-bold text-white/50 uppercase tracking-[0.15em]">Our Work in Motion</span>
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight mt-3">
+            <h3 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-white tracking-tight mt-3">
               Watch What We Build
-            </h2>
+            </h3>
           </Animate>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             <Animate animation="fade-up" delay={100}>

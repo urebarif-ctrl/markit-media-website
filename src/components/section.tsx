@@ -8,11 +8,11 @@ export function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-export function SectionTitle({ children }: { children: ReactNode }) {
+export function SectionTitle({ children, as: Tag = "h2" }: { children: ReactNode; as?: "h2" | "h3" | "h4" }) {
   return (
-    <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight leading-tight">
+    <Tag className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold text-black tracking-tight leading-tight">
       {children}
-    </h2>
+    </Tag>
   );
 }
 
