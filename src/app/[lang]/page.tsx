@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { HeroStats } from "@/components/hero-stats";
 import { TypingEffect } from "@/components/typing-effect";
-import { YouTubeEmbed } from "@/components/youtube-embed";
+import dynamic from "next/dynamic";
+const YouTubeEmbed = dynamic(() => import("@/components/youtube-embed").then(m => m.YouTubeEmbed));
 import { BrandIcon } from "@/components/brand-icon";
 
 export const metadata: Metadata = {

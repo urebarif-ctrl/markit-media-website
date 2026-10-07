@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { SiteSearch } from "@/components/site-search";
+import dynamic from "next/dynamic";
+const SiteSearch = dynamic(() => import("@/components/site-search").then(m => m.SiteSearch));
 
 interface NavTranslations {
   nav: Record<string, string>;
