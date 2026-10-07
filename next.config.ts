@@ -119,7 +119,7 @@ const nextConfig: NextConfig = {
       { source: "/blogs/digital-marketing-trends-in-2025", destination: "/en/services/digital-marketing", permanent: true },
       { source: "/blogs/important-google-ranking-factors-in-2025", destination: "/important-google-ranking-factors-in-2025", permanent: true },
       { source: "/blogs/on-page-seo-tips-for-wordpress-bloggers", destination: "/en/services/seo/content-seo", permanent: true },
-      { source: "/blogs/how-to-speed-up-your-wordpress-website-for-better-seo", destination: "/how-to-speed-up-your-wordpress-website-for-better-seo", permanent: true },
+      { source: "/blogs/how-to-speed-up-your-wordpress-website-for-better-seo", destination: "/en/services/seo/technical-seo", permanent: true },
       { source: "/blogs/the-latest-trends-in-website-development-for-2025", destination: "/the-latest-trends-in-website-development-for-2026", permanent: true },
       { source: "/blogs/creating-effective-online-marketing-campaigns-with-limited-resources", destination: "/en/services/digital-marketing", permanent: true },
       { source: "/blogs/why-content-marketing-is-vital-for-digital-marketing-success", destination: "/why-content-marketing-is-vital-for-digital-marketing-success", permanent: true },

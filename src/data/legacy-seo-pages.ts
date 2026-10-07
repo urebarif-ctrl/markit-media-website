@@ -2360,7 +2360,7 @@ export const legacySeoAliases = [
   },
   {
     "source": "/blogs/15-top-trends-of-social-media-in-2026",
-    "destination": "/15-top-trends-of-social-media-in-2026"
+    "destination": "/en/services/social-media"
   },
   {
     "source": "/blogs/difference-between-graphic-designers-and-graphic-illustrators",
