@@ -28,38 +28,48 @@ const inter = Inter({
   weight: ["400", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Markit Media — Full-Stack Digital Marketing Agency",
-    template: "%s | Markit Media",
-  },
-  description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
-  metadataBase: new URL("https://themarkitmedia.com"),
-  robots: isProduction
-    ? { index: true, follow: true }
-    : { index: false, follow: false },
-  icons: {
-    icon: [{ url: "/favicon.svg?v=6", type: "image/svg+xml", sizes: "any" }],
-  },
-  manifest: "/site.webmanifest?v=6",
-  alternates: {
-    canonical: "https://themarkitmedia.com/en",
-    languages: {
-      "en": "https://themarkitmedia.com/en",
-      "x-default": "https://themarkitmedia.com/en",
+const INDEXABLE_LOCALES = new Set(["en"]);
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> },
+): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = locales.includes(lang as Locale) ? lang : "en";
+  const shouldIndex = isProduction && INDEXABLE_LOCALES.has(locale);
+
+  return {
+    title: {
+      default: "Markit Media — Full-Stack Digital Marketing Agency",
+      template: "%s | Markit Media",
     },
-    types: { "application/rss+xml": "/feed.xml" },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "Markit Media",
-    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+    description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
+    metadataBase: new URL("https://themarkitmedia.com"),
+    robots: isProduction
+      ? { index: shouldIndex, follow: true }
+      : { index: false, follow: false },
+    icons: {
+      icon: [{ url: "/favicon.svg?v=6", type: "image/svg+xml", sizes: "any" }],
+    },
+    manifest: "/site.webmanifest?v=6",
+    alternates: {
+      canonical: `https://themarkitmedia.com/${locale}`,
+      languages: {
+        "en": "https://themarkitmedia.com/en",
+        "x-default": "https://themarkitmedia.com/en",
+      },
+      types: { "application/rss+xml": "/feed.xml" },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "ar" ? "ar_SA" : locale === "ur" ? "ur_PK" : "en_US",
+      siteName: "Markit Media",
+      images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: "device-width",
