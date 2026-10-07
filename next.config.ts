@@ -275,6 +275,7 @@ const nextConfig: NextConfig = {
 
       // === Old /Markit/* paths (previous Next.js version) ===
       { source: "/Markit/ai", destination: "/en/services/ai", permanent: true },
+      { source: "/Markit/ai/:path*", destination: "/en/services/ai", permanent: true },
       { source: "/Markit/seo", destination: "/en/services/seo", permanent: true },
       { source: "/Markit/bpo", destination: "/en/services/bpo", permanent: true },
       { source: "/Markit/blog", destination: "/en/blog", permanent: true },
@@ -283,6 +284,7 @@ const nextConfig: NextConfig = {
       { source: "/Markit/digital-marketing", destination: "/en/services/digital-marketing", permanent: true },
       { source: "/Markit/digital-marketing/ppc", destination: "/en/services/performance-marketing", permanent: true },
       { source: "/Markit/video-production", destination: "/en/services/video-production", permanent: true },
+      { source: "/Markit/video-production/:path*", destination: "/en/services/video-production", permanent: true },
       { source: "/Markit/website-development", destination: "/en/services/website-development", permanent: true },
       { source: "/Markit/website-development/:path*", destination: "/en/services/website-development", permanent: true },
 

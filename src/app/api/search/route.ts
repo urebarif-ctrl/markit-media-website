@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMongoDb } from "@/lib/mongodb";
-import { legacySeoPages } from "@/data/legacy-seo-pages";
+import { legacySeoPages, retiredLegacyArticlePaths } from "@/data/legacy-seo-pages";
 import sitemap from "@/app/sitemap";
 
 type SearchResult = { title:string; href:string; description:string; type:string; breadcrumb:string; score:number };
@@ -33,7 +33,7 @@ export async function GET(request:NextRequest){
  const limit=Math.min(100,Math.max(8,Number(request.nextUrl.searchParams.get("limit"))||30));
  if(q.length<2)return NextResponse.json({results:[],query:q});
  const routeResults:SearchResult[]=sitemap().map(entry=>{const url=new URL(entry.url),path=url.pathname,title=titleFromPath(path),type=typeFromPath(path),description=type+" on Markit Media";return{title,href:path,description,type,breadcrumb:breadcrumb(path),score:rank(q,title,path,description)}}).filter(x=>isPublic(x.href)&&x.score>0);
- for(const page of legacySeoPages){if(page.kind!=="article"||!isPublic(page.path))continue;const title=page.title||titleFromPath(page.path),description=page.kind==="article"?"Marketing insight from Markit Media":page.kind==="service"?"Markit Media service page":"Industry marketing page",score=rank(q,title,page.path,description);if(score>0)routeResults.push({title,href:page.path,description,type:page.kind==="article"?"Article":page.kind==="service"?"Service":"Industry",breadcrumb:page.kind==="article"?"Insights › Legacy Article":page.kind==="service"?"Services › Legacy URL":"Industries › Legacy URL",score})}
+ for(const page of legacySeoPages){if(page.kind!=="article"||retiredLegacyArticlePaths.has(page.path)||!isPublic(page.path))continue;const title=page.title||titleFromPath(page.path),description=page.kind==="article"?"Marketing insight from Markit Media":page.kind==="service"?"Markit Media service page":"Industry marketing page",score=rank(q,title,page.path,description);if(score>0)routeResults.push({title,href:page.path,description,type:page.kind==="article"?"Article":page.kind==="service"?"Service":"Industry",breadcrumb:page.kind==="article"?"Insights › Legacy Article":page.kind==="service"?"Services › Legacy URL":"Industries › Legacy URL",score})}
  const dynamic:SearchResult[]=[];
  try{
   const db=await getMongoDb(),safe=q.replace(/[^a-z0-9\s-]/gi,""),rx=new RegExp(safe,"i");
