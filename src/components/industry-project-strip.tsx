@@ -52,7 +52,7 @@ export function IndustryProjectStrip() {
     <div className="max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#5A3ED6]">Relevant proof</p><h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mt-3">Work and capabilities relevant to this industry</h2><p className="text-gray-500 mt-3 max-w-3xl">See public examples where we have a close industry match, plus the delivery capabilities most commonly used for this market.</p></div>
-        <Link href="/case-studies" className="font-bold underline shrink-0">Browse all case studies →</Link>
+        <Link href="/en/case-studies" className="font-bold underline shrink-0">Browse all case studies →</Link>
       </div>
       <div className="grid md:grid-cols-3 gap-4 mt-8">{projects.map((project) => <Link key={project.title + project.href} href={project.href} className="group bg-white border border-gray-200 p-6 min-h-40 flex flex-col hover:border-black hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-[0.12em] text-gray-400">{project.service}</span><h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold mt-4 group-hover:underline">{project.title}</h3><span className="mt-auto pt-5 text-sm font-bold">View relevant work →</span></Link>)}</div>
     </div>

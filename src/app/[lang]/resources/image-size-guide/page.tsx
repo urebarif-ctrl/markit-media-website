@@ -102,9 +102,9 @@ export default function ImageSizeGuidePage() {
       <meta name="description" content="Free reference guide with up-to-date social media image dimensions for every platform so your visuals always look sharp." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Social Media Image Size Guide</li>
         </ol>
@@ -205,7 +205,7 @@ export default function ImageSizeGuidePage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our creative team produces platform-optimized images, graphics, and video for all your marketing channels.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Creative Help &rarr;
             </Link>
           </Animate>

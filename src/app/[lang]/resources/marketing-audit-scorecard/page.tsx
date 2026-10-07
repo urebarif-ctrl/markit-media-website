@@ -1046,7 +1046,7 @@ export default function MarketingAuditScorecardPage() {
                     categories and accelerate your marketing results.
                   </p>
                   <a
-                    href="/get-a-quote"
+                    href="/en/get-a-quote"
                     className="inline-flex items-center justify-center min-h-[44px] px-8 py-4 text-base font-bold bg-white text-black hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                   >
                     Get a Free Consultation
@@ -1062,7 +1062,7 @@ export default function MarketingAuditScorecardPage() {
       <section aria-label="Need Expert Help?" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
-        <Link href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>
+        <Link href="/en/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>
       </section>
     
       <ToolCTA

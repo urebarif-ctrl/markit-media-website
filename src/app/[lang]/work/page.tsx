@@ -280,7 +280,7 @@ export default function WorkPage() {
           <Animate animation="fade-up" delay={100}>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-8">
               <p className="text-gray-500 max-w-2xl">Want the project context rather than only the visual portfolio? Browse the connected case-study collection.</p>
-              <Link href="/case-studies" className="inline-flex items-center bg-black text-white px-6 py-3 font-bold hover:bg-gray-800">Explore Case Studies →</Link>
+              <Link href="/en/case-studies" className="inline-flex items-center bg-black text-white px-6 py-3 font-bold hover:bg-gray-800">Explore Case Studies →</Link>
             </div>
           </Animate>
         </div>
@@ -366,7 +366,7 @@ export default function WorkPage() {
             <SectionDesc>
               A selection of our logo design and animation work across industries.
             </SectionDesc>
-            <Link href="/work/logo-folio" className="inline-block mt-6 bg-black text-white font-bold px-8 py-4 text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/work/logo-folio" className="inline-block mt-6 bg-black text-white font-bold px-8 py-4 text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               View Logo Folio &rarr;
             </Link>
           </Animate>
@@ -431,10 +431,10 @@ export default function WorkPage() {
               Contact us for a free consultation. Let&apos;s discuss your next project.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/contact" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Start a Project &rarr;
               </Link>
-              <Link href="/get-a-quote" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/get-a-quote" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Quote
               </Link>
             </div>

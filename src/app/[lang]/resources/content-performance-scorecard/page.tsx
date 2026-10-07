@@ -1247,25 +1247,25 @@ export default function ContentPerformanceScorecardPage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/resources/content-audit-scorecard"
+              href="/en/resources/content-audit-scorecard"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Audit Scorecard
             </Link>
             <Link
-              href="/resources/content-roi-calculator"
+              href="/en/resources/content-roi-calculator"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content ROI Calculator
             </Link>
             <Link
-              href="/resources/content-gap-finder"
+              href="/en/resources/content-gap-finder"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Gap Finder
             </Link>
             <Link
-              href="/resources/content-calendar"
+              href="/en/resources/content-calendar"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Calendar
@@ -1287,7 +1287,7 @@ export default function ContentPerformanceScorecardPage() {
               turn your scorecard into measurable results.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

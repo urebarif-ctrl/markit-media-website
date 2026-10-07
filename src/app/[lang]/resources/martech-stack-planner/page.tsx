@@ -1322,7 +1322,7 @@ export default function MartechStackPlannerPage() {
             </p>
             <div className="pt-2">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className={`inline-block px-8 py-4 bg-black text-white text-base font-bold border-2 border-black transition-colors motion-reduce:transition-none hover:bg-white hover:text-black ${focusClasses}`}
               >
                 Get a Free Consultation

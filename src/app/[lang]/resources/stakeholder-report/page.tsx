@@ -1137,9 +1137,9 @@ export default function StakeholderReportPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/resources/kpi-dashboard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">KPI Dashboard</Link>
-                <Link href="/resources/marketing-roi-report" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing ROI Report</Link>
-                <Link href="/resources/client-reporting-dashboard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Client Reporting Dashboard</Link>
+                <Link href="/en/resources/kpi-dashboard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">KPI Dashboard</Link>
+                <Link href="/en/resources/marketing-roi-report" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing ROI Report</Link>
+                <Link href="/en/resources/client-reporting-dashboard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Client Reporting Dashboard</Link>
           </div>
         </div>
       </section>
@@ -1158,7 +1158,7 @@ export default function StakeholderReportPage() {
               so you can focus on execution.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-neutral-800 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Get in Touch &rarr;

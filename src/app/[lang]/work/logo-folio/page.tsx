@@ -85,10 +85,10 @@ export default function LogoFolioPage() {
             From logo design and animation to full brand identity systems, we create visual identities that differentiate and endure.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/services/branding" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/en/services/branding" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Branding Services
             </Link>
-            <Link href="/contact" className="bg-black text-white px-5 py-3 text-base font-bold hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/contact" className="bg-black text-white px-5 py-3 text-base font-bold hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Quote &rarr;
             </Link>
           </div>

@@ -464,9 +464,9 @@ export default function MarketingProposalGeneratorPage() {
       <meta name="description" content="Generate professional marketing proposals with scope, deliverables, timeline, and pricing sections. Free tool from Markit Media." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Marketing Proposal Generator</li>
         </ol>
@@ -1100,7 +1100,7 @@ export default function MarketingProposalGeneratorPage() {
               goals and competitive landscape.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Request a Custom Proposal &rarr;

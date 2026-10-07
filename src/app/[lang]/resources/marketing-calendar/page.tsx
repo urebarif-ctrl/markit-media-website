@@ -130,7 +130,7 @@ export default function MarketingCalendarPage() {
       <meta name="description" content="Generate a 12-month marketing calendar tailored to your industry with campaign themes, key dates, channel recommendations, and budget allocation guidance." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Marketing Calendar</span>
         </nav>
@@ -232,7 +232,7 @@ export default function MarketingCalendarPage() {
             <section aria-label="Need Help Executing Your Marketing Plan?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Executing Your Marketing Plan?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds and executes marketing strategies from planning to results.</p>
-              <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Start Your Strategy &rarr;</Link>
+              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Start Your Strategy &rarr;</Link>
             </section>
           </div>
         )}

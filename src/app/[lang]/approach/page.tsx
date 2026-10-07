@@ -197,10 +197,10 @@ export default function ApproachPage() {
                 your customers, and your competitive landscape. Then we build a plan to win.
               </SectionDesc>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/en/contact" className="inline-flex items-center bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   Talk to Us &rarr;
                 </Link>
-                <Link href="/process" className="inline-flex items-center border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/en/process" className="inline-flex items-center border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   See Our Process
                 </Link>
               </div>
@@ -390,10 +390,10 @@ export default function ApproachPage() {
               Every great campaign starts with a conversation. Tell us about your goals, and we will tell you how we would approach them.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Schedule a Call &rarr;
               </Link>
-              <Link href="/get-a-quote" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/get-a-quote" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Quote
               </Link>
             </div>

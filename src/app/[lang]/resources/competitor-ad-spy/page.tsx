@@ -140,7 +140,7 @@ export default function CompetitorAdSpyPage() {
       <meta name="description" content="Document and analyse competitor advertising across platforms. Track messaging, offers, CTAs, and creative strategies in a structured format." />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Competitor Ad Spy Worksheet</span>
         </nav>
@@ -330,7 +330,7 @@ export default function CompetitorAdSpyPage() {
             <section aria-label="Want to Outperform Your Competitors?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Want to Outperform Your Competitors?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team analyses competitor strategies and builds campaigns designed to win market share.</p>
-              <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Competitive Analysis &rarr;
               </Link>
             </section>
@@ -343,10 +343,10 @@ export default function CompetitorAdSpyPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/resources/competitor-analysis" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Analysis</Link>
-                <Link href="/resources/competitor-benchmarking" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Benchmarking</Link>
-                <Link href="/resources/competitor-matrix" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Matrix</Link>
-                <Link href="/resources/competitor-pricing-tracker" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Pricing</Link>
+                <Link href="/en/resources/competitor-analysis" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Analysis</Link>
+                <Link href="/en/resources/competitor-benchmarking" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Benchmarking</Link>
+                <Link href="/en/resources/competitor-matrix" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Matrix</Link>
+                <Link href="/en/resources/competitor-pricing-tracker" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Pricing</Link>
           </div>
         </div>
       </section>

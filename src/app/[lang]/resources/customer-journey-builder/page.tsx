@@ -117,9 +117,9 @@ export default function CustomerJourneyBuilderPage() {
       <meta name="description" content="Map your customer journey across awareness, consideration, decision, and retention stages with touchpoints, emotions, and opportunities." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Customer Journey Map Builder</li>
         </ol>

@@ -955,7 +955,7 @@ export default function SocialProofGuidePage() {
               Our team helps businesses develop social proof strategies, create compelling case studies, and build trust systems that convert visitors into customers.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base min-h-[44px] hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Social Proof Consultation &rarr;

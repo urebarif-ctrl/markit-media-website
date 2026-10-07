@@ -253,10 +253,10 @@ export function ServicePage({
             <Animate animation="fade-up" delay={100}>
               <div className="mt-8 text-center">
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Link href="/work" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href="/en/work" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     View All Projects &rarr;
                   </Link>
-                  <Link href="/case-studies" className="inline-flex items-center gap-2 text-base font-bold text-gray-500 hover:text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href="/en/case-studies" className="inline-flex items-center gap-2 text-base font-bold text-gray-500 hover:text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     Explore Case Studies &rarr;
                   </Link>
                 </div>

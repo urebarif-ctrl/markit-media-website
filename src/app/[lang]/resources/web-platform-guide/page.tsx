@@ -202,7 +202,7 @@ export default function WebPlatformGuidePage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/services/website-development/wordpress" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/website-development/wordpress" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Our WordPress Services &rarr;
               </Link>
             </div>
@@ -217,7 +217,7 @@ export default function WebPlatformGuidePage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/services/website-development/shopify" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/website-development/shopify" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Our Shopify Services &rarr;
               </Link>
             </div>
@@ -232,7 +232,7 @@ export default function WebPlatformGuidePage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/services/website-development/nextjs" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/website-development/nextjs" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Our Next.js Services &rarr;
               </Link>
             </div>
@@ -251,7 +251,7 @@ export default function WebPlatformGuidePage() {
             </p>
             <p className="text-base text-gray-600 leading-relaxed">
               Our{" "}
-              <Link href="/services/website-development" className="font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/website-development" className="font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 website development services
               </Link>{" "}
               cover WordPress, Shopify, Next.js, and custom web applications. We handle everything from strategy
@@ -271,10 +271,10 @@ export default function WebPlatformGuidePage() {
               Tell us about your project and we will recommend the right platform, scope, and timeline for your business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Free Consultation &rarr;
               </Link>
-              <Link href="/services/website-development" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/services/website-development" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Explore Web Development
               </Link>
             </div>

@@ -149,7 +149,7 @@ export default function MarketingGoalSetterPage() {
       <meta name="description" content="Set SMART marketing goals with structured templates for traffic, leads, revenue, brand awareness, and engagement. Track progress and export your goal plan." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Marketing Goal Setter</span>
         </nav>
@@ -298,7 +298,7 @@ export default function MarketingGoalSetterPage() {
             <section aria-label="Need Help Hitting Your Goals?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Hitting Your Goals?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds data-driven strategies to help you reach your marketing targets on time and on budget.</p>
-              <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Plan Your Strategy &rarr;</Link>
+              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Plan Your Strategy &rarr;</Link>
             </section>
           </div>
         )}

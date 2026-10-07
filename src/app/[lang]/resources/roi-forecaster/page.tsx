@@ -165,9 +165,9 @@ export default function ROIForecasterPage() {
       <meta name="description" content="Forecast marketing ROI by channel with traffic, conversion rate, average order value, and cost inputs. Compare scenarios and project annual returns." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Marketing ROI Forecaster</li>
         </ol>
@@ -384,10 +384,10 @@ export default function ROIForecasterPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/resources/roi-calculator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Calculator</Link>
-                <Link href="/resources/roi-dashboard" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
-                <Link href="/resources/marketing-roi-report" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
-                <Link href="/resources/kpi-builder" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">KPI Builder</Link>
+                <Link href="/en/resources/roi-calculator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Calculator</Link>
+                <Link href="/en/resources/roi-dashboard" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
+                <Link href="/en/resources/marketing-roi-report" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
+                <Link href="/en/resources/kpi-builder" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">KPI Builder</Link>
           </div>
         </div>
       </section>

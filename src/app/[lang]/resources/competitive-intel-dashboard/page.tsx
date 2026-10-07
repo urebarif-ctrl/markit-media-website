@@ -1237,7 +1237,7 @@ export default function CompetitiveIntelDashboardPage() {
               and develop campaigns that exploit your competitors&apos; weaknesses.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center justify-center min-h-[44px] px-8 py-4 text-base font-bold bg-white text-black hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation
@@ -1254,25 +1254,25 @@ export default function CompetitiveIntelDashboardPage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/resources/competitor-analysis"
+              href="/en/resources/competitor-analysis"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitor Analysis
             </Link>
             <Link
-              href="/resources/competitor-benchmarking"
+              href="/en/resources/competitor-benchmarking"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitor Benchmarking
             </Link>
             <Link
-              href="/resources/competitive-swot"
+              href="/en/resources/competitive-swot"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitive SWOT
             </Link>
             <Link
-              href="/resources/competitive-gap"
+              href="/en/resources/competitive-gap"
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitive Gap

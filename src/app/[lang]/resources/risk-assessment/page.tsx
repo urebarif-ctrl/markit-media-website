@@ -1052,9 +1052,9 @@ export default function RiskAssessmentPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/resources/swot-analysis" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">SWOT Analysis</Link>
-                <Link href="/resources/competitive-swot-analyzer" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Competitive SWOT Analyzer</Link>
-                <Link href="/resources/marketing-audit-scorecard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
+                <Link href="/en/resources/swot-analysis" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">SWOT Analysis</Link>
+                <Link href="/en/resources/competitive-swot-analyzer" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Competitive SWOT Analyzer</Link>
+                <Link href="/en/resources/marketing-audit-scorecard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
           </div>
         </div>
       </section>
@@ -1073,7 +1073,7 @@ export default function RiskAssessmentPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className={`inline-flex items-center justify-center gap-3 bg-white text-black px-10 py-5 min-h-[44px] font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2`}
               >
                 Get in Touch &rarr;

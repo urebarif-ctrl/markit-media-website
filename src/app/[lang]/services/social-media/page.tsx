@@ -497,8 +497,8 @@ export default function SocialMediaPage() {
             ))}
           </div>
           <div className="flex flex-wrap gap-5 mt-8">
-            <Link href="/work" className="font-bold underline underline-offset-4 hover:no-underline">View all work →</Link>
-            <Link href="/case-studies" className="font-bold text-gray-500 hover:text-black underline underline-offset-4 hover:no-underline">Explore case studies →</Link>
+            <Link href="/en/work" className="font-bold underline underline-offset-4 hover:no-underline">View all work →</Link>
+            <Link href="/en/case-studies" className="font-bold text-gray-500 hover:text-black underline underline-offset-4 hover:no-underline">Explore case studies →</Link>
           </div>
         </div>
       </section>

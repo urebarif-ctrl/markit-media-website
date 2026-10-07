@@ -424,7 +424,7 @@ export default function ServicesPage() {
                 Discuss your project <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
-                href="/services/finder"
+                href="/en/services/finder"
                 className="inline-flex items-center gap-2 border border-gray-300 text-black px-6 py-3.5 font-bold text-sm hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Find the right service
@@ -552,7 +552,7 @@ export default function ServicesPage() {
             <p className="text-base lg:text-lg text-gray-400 leading-relaxed mt-5 max-w-xl">
               Search, paid media, social, creative and web performance affect each other. We use shared measurement and one operating brief so decisions made in one channel improve the rest.
             </p>
-            <Link href="/process" className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-white/40 pb-1 hover:border-white">
+            <Link href="/en/process" className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-white/40 pb-1 hover:border-white">
               See our process <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </Animate>
@@ -615,7 +615,7 @@ export default function ServicesPage() {
               </Link>
             ))}
           </div>
-          <Link href="/industries" className="inline-flex items-center gap-2 mt-7 text-sm font-bold border-b border-black pb-1">
+          <Link href="/en/industries" className="inline-flex items-center gap-2 mt-7 text-sm font-bold border-b border-black pb-1">
             Explore all industries <ArrowRight size={14} aria-hidden="true" />
           </Link>
         </div>

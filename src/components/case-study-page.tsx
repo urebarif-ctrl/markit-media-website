@@ -169,10 +169,10 @@ export function CaseStudyPage({
             Let&apos;s discuss how we can apply the same approach to your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/get-a-quote" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/get-a-quote" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Request a Quote &rarr;
             </Link>
-            <Link href="/work" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/work" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               See More Work
             </Link>
           </div>

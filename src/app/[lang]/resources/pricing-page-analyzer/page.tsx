@@ -96,7 +96,7 @@ export default function PricingPageAnalyzerPage() {
       <meta name="description" content="Analyse your pricing page against proven conversion best practices. Get a score and actionable recommendations to improve your pricing page performance." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Pricing Page Analyser</span>
         </nav>
@@ -199,7 +199,7 @@ export default function PricingPageAnalyzerPage() {
             <section aria-label="Want a Higher-Converting Pricing Page?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Want a Higher-Converting Pricing Page?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our CRO team designs and tests pricing pages that turn more visitors into customers.</p>
-              <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Optimise Your Pricing Page &rarr;</Link>
+              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Optimise Your Pricing Page &rarr;</Link>
             </section>
           </div>
         )}

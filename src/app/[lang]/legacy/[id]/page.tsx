@@ -310,7 +310,7 @@ export default async function LegacySeoPage({
               <Link href={page.relatedHref} className="inline-flex items-center gap-2 bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">
                 Explore related expertise <ArrowRight size={17} />
               </Link>
-              <Link href="/get-a-quote" className="inline-flex items-center gap-2 border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
+              <Link href="/en/get-a-quote" className="inline-flex items-center gap-2 border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
                 Talk to our team
               </Link>
             </div>
@@ -447,7 +447,7 @@ export default async function LegacySeoPage({
             <Link href={page.relatedHref} className="bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">
               Explore related service
             </Link>
-            <Link href="/get-a-quote" className="border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
+            <Link href="/en/get-a-quote" className="border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
               Request a quote
             </Link>
           </div>

@@ -79,19 +79,19 @@ export default function ThankYouPage() {
             <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mb-6 text-center">While You Wait</h2>
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Link href="/case-studies" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/en/case-studies" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Case Studies</h3>
               <p className="text-base text-gray-500">See selected work, approaches, and client outcomes.</p>
             </Link>
-            <Link href="/services" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/en/services" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Explore Services</h3>
               <p className="text-base text-gray-500">Review the services we can combine around your goals.</p>
             </Link>
-            <Link href="/process" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/en/process" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">Our Process</h3>
               <p className="text-base text-gray-500">See how we take your project from strategy to results.</p>
             </Link>
-            <Link href="/faq" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href="/en/faq" className="group bg-gray-50 border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 text-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-2">FAQ</h3>
               <p className="text-base text-gray-500">Answers to common questions about working with us.</p>
             </Link>

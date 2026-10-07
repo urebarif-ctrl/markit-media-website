@@ -140,7 +140,7 @@ export default function MarketingStackAuditPage() {
       <meta name="description" content="Tools for measuring website and marketing performance" />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Marketing Stack Audit</span>
         </nav>
@@ -270,7 +270,7 @@ export default function MarketingStackAuditPage() {
             <section aria-label="Need Help Optimising Your Stack?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Optimising Your Stack?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">We help businesses select, integrate, and optimise their marketing technology for maximum impact.</p>
-              <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Stack Optimisation Help &rarr;</Link>
+              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Stack Optimisation Help &rarr;</Link>
             </section>
           </div>
         )}

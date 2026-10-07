@@ -1879,7 +1879,7 @@ export default function CampaignBriefBuilderPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 font-bold text-base hover:bg-neutral-200 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Get in touch

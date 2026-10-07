@@ -466,7 +466,7 @@ export default function CampaignNamingGeneratorPage() {
           <Animate animation="fade-up">
             <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
               <Link
-                href="/resources"
+                href="/en/resources"
                 className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Resources
@@ -997,7 +997,7 @@ export default function CampaignNamingGeneratorPage() {
               Our team manages campaigns across every major platform with disciplined naming, tracking, and reporting built in from day one.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get Campaign Support &rarr;

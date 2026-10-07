@@ -1362,7 +1362,7 @@ export default function ClientReportingDashboardPage() {
               delivers insights that help you make better decisions. Let us handle the numbers.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-neutral-800 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Get in Touch &rarr;

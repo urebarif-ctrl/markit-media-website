@@ -172,7 +172,7 @@ export default function FinancePage() {
             <Animate animation="fade-up" delay={200}>
               <div className="flex flex-wrap gap-4 mt-8">
                 <Link
-                  href="/contact"
+                  href="/en/contact"
                   className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   Get a Free Consultation &rarr;
@@ -272,7 +272,7 @@ export default function FinancePage() {
           </Animate>
           <div className="grid md:grid-cols-2 gap-5 mt-9">
             <Link
-              href="/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough"
+              href="/en/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough"
               className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-md transition-all"
             >
               <span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">Insurance SEO</span>
@@ -285,7 +285,7 @@ export default function FinancePage() {
               <span className="inline-block mt-5 text-sm font-bold">Read the guide →</span>
             </Link>
             <Link
-              href="/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition"
+              href="/en/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition"
               className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-md transition-all"
             >
               <span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">Keywords & Strategy</span>
@@ -341,7 +341,7 @@ export default function FinancePage() {
               needs and drives qualified leads.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

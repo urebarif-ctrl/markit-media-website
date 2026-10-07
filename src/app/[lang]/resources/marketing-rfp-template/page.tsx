@@ -928,7 +928,7 @@ export default function MarketingRFPTemplatePage() {
               from a team that has delivered results for businesses like yours.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-200 transition-colors motion-reduce:transition-none mt-8 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Contact Us &rarr;

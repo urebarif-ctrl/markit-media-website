@@ -49,8 +49,8 @@ export function PortfolioArchivePage({ client, subtitle, note }: PortfolioArchiv
               This page keeps the project easy to find while connecting it to the current Markit Media branding portfolio. We do not publish unverified performance figures or project details that are not part of the current portfolio record.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link href="/work/logo-folio" className="bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">View LogoFolio</Link>
-              <Link href="/services/branding" className="border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">Explore Branding</Link>
+              <Link href="/en/work/logo-folio" className="bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">View LogoFolio</Link>
+              <Link href="/en/services/branding" className="border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">Explore Branding</Link>
             </div>
           </Animate>
         </div>

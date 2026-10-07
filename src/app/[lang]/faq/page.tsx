@@ -309,7 +309,7 @@ export default function FaqPage() {
               Frequently Asked Questions
             </h1>
             <SectionDesc>
-              Answers to the most common questions about our services, process, and pricing. Can&apos;t find what you&apos;re looking for? <Link href="/contact" className="underline hover:text-black">Contact us</Link>.
+              Answers to the most common questions about our services, process, and pricing. Can&apos;t find what you&apos;re looking for? <Link href="/en/contact" className="underline hover:text-black">Contact us</Link>.
             </SectionDesc>
           </Animate>
         </div>
@@ -371,7 +371,7 @@ export default function FaqPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               We&apos;re here to help. Reach out and we&apos;ll get back to you within one business day.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Contact Us &rarr;
             </Link>
           </Animate>

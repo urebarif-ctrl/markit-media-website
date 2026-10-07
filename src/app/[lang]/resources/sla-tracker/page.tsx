@@ -778,7 +778,7 @@ export default function SlaTrackerPage() {
               Our team helps businesses establish clear, measurable SLAs with their marketing partners. Get accountability frameworks that protect your investment and drive consistent results.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className={btnPrimary}
             >
               Contact Us

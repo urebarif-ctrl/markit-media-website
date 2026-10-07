@@ -160,7 +160,7 @@ export default function GetAQuotePage() {
           </div>
           <Animate animation="fade-up">
             <p className="mt-8 text-base text-gray-500">
-              More questions? Check our <Link href="/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link>, <Link href="/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>, or message us on WhatsApp.
+              More questions? Check our <Link href="/en/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link>, <Link href="/en/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>, or message us on WhatsApp.
             </p>
           </Animate>
         </div>

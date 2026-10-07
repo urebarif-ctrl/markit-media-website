@@ -215,7 +215,7 @@ export default function ServiceFinderPage() {
 
               <Animate animation="fade-up" delay={400}>
                 <div className="mt-12 flex flex-wrap gap-4">
-                  <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href="/en/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     Get a Free Consultation &rarr;
                   </Link>
                   <button

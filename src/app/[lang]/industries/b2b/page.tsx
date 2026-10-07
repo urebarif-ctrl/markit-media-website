@@ -142,7 +142,7 @@ export default function B2BIndustryPage() {
           <Animate animation="fade-up" delay={200}>
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Get a Free Consultation &rarr;
@@ -246,7 +246,7 @@ export default function B2BIndustryPage() {
               Let&apos;s build a digital marketing strategy that reaches your ideal buyers and turns them into customers. No fluff, no vanity metrics&mdash;just qualified leads and measurable revenue growth.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

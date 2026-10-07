@@ -1719,7 +1719,7 @@ export default function ScopeOfWorkGeneratorPage() {
               across every marketing channel. Let us handle the strategy so you can focus on growth.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 min-h-[44px]"
             >
               Get a Free Consultation &rarr;

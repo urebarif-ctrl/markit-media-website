@@ -308,7 +308,7 @@ export default function ExteriorCleaningPage() {
             <Animate animation="fade-up" delay={200}>
               <div className="flex flex-wrap gap-4 mt-9">
                 <Link
-                  href="/get-a-quote"
+                  href="/en/get-a-quote"
                   className="inline-flex items-center gap-3 bg-black text-white px-9 py-4 font-bold text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   Request a Growth Plan &rarr;
@@ -414,7 +414,7 @@ export default function ExteriorCleaningPage() {
               <p className="text-base text-gray-500 leading-relaxed mt-5">
                 That means avoiding one overloaded services page. Window cleaning, soft washing, roof cleaning, pressure washing, gutter cleaning, and commercial work deserve enough depth to answer the questions behind each search.
               </p>
-              <Link href="/services/seo" className="inline-flex mt-7 font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/seo" className="inline-flex mt-7 font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Explore SEO services &rarr;
               </Link>
             </div>
@@ -630,7 +630,7 @@ export default function ExteriorCleaningPage() {
               Tell us what you clean, where you work, and what your best jobs look like. We&apos;ll map the marketing around the business you actually want to build.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/get-a-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/get-a-quote" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Request a Quote &rarr;
               </Link>
               <a href="https://wa.me/923002086081" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">

@@ -1262,7 +1262,7 @@ export default function ExperimentTrackerPage() {
               businesses. Let us build a testing roadmap that compounds results.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-block mt-8 bg-white text-black px-10 py-4 text-base font-bold hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get in Touch

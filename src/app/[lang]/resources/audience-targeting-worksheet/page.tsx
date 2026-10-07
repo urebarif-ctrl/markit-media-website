@@ -259,7 +259,7 @@ export default function AudienceTargetingWorksheetPage() {
       <meta name="description" content="Define your ideal customer with this interactive worksheet. Map demographics, psychographics, pain points, and preferred channels, then export your targeting..." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Audience Targeting Worksheet</span>
         </nav>
@@ -377,7 +377,7 @@ export default function AudienceTargetingWorksheetPage() {
             <section aria-label="Need Help Reaching Your Audience?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Reaching Your Audience?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds targeted campaigns that connect your brand with the right people on the right channels.</p>
-              <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Start Your Campaign &rarr;
               </Link>
             </section>

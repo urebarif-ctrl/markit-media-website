@@ -935,7 +935,7 @@ export default function BacklinkAnalyzerPage() {
                 strengthen your domain authority.
               </p>
               <Link
-                href="/contact"
+                href="/en/contact"
                 className={`inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-neutral-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2`}
               >
                 Get a Link Building Strategy &rarr;

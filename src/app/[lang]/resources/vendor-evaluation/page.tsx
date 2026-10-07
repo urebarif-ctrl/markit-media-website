@@ -1309,7 +1309,7 @@ export default function VendorEvaluationPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className="inline-block bg-black text-white px-8 py-4 text-base font-bold hover:bg-neutral-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Get in Touch

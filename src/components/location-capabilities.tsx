@@ -138,8 +138,8 @@ export function LocationCapabilities({ location, mode = "all" }: { location: str
           ))}
         </div>
         <div className="flex flex-wrap gap-4 mt-10">
-          <Link href="/services" className="inline-flex items-center bg-black text-white px-7 py-3.5 font-bold text-base hover:bg-gray-800 transition-colors">Explore All Services</Link>
-          <Link href="/contact" className="inline-flex items-center border-2 border-black text-black px-7 py-3.5 font-bold text-base hover:bg-black hover:text-white transition-colors">Request a Quote</Link>
+          <Link href="/en/services" className="inline-flex items-center bg-black text-white px-7 py-3.5 font-bold text-base hover:bg-gray-800 transition-colors">Explore All Services</Link>
+          <Link href="/en/contact" className="inline-flex items-center border-2 border-black text-black px-7 py-3.5 font-bold text-base hover:bg-black hover:text-white transition-colors">Request a Quote</Link>
         </div>
       </div>
     </section>

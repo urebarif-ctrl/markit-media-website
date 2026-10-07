@@ -193,7 +193,7 @@ export default function MarketingStatistics2026Page() {
               </p>
               <p className="text-base text-gray-500 leading-relaxed">
                 Looking for the previous year? See our{" "}
-                <Link href="/resources/marketing-statistics" className="text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href="/en/resources/marketing-statistics" className="text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   2025 Marketing Statistics
                 </Link>.
               </p>
@@ -211,7 +211,7 @@ export default function MarketingStatistics2026Page() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Data is only valuable when it drives action. Let us build a strategy informed by what actually works.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Strategy Session &rarr;
             </Link>
           </Animate>

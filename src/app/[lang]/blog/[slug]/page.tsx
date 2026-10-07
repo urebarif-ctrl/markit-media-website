@@ -407,7 +407,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <p className="text-base text-gray-500 leading-relaxed mt-3">
                       Continue with the companion guide focused on keyword selection, search intent and the strategies used to turn those terms into useful insurance content.
                     </p>
-                    <Link href="/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
+                    <Link href="/en/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
                       Read the insurance keyword guide →
                     </Link>
                   </>
@@ -419,7 +419,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <p className="text-base text-gray-500 leading-relaxed mt-3">
                       If you want the wider framework first, the companion guide covers backlinks, content planning, technical SEO and ongoing optimization for insurance websites.
                     </p>
-                    <Link href="/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
+                    <Link href="/en/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
                       Read the complete insurance SEO guide →
                     </Link>
                   </>
@@ -444,7 +444,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 ))}
               </div>
               <div className="mt-5 text-sm text-gray-500">
-                Looking for examples of our wider client work? <Link href="/case-studies" className="font-bold text-black underline underline-offset-4 hover:no-underline">Browse selected case studies</Link>.
+                Looking for examples of our wider client work? <Link href="/en/case-studies" className="font-bold text-black underline underline-offset-4 hover:no-underline">Browse selected case studies</Link>.
               </div>
             </div>
           </section>
@@ -525,7 +525,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-base text-gray-500 leading-relaxed mb-6">
             Our team specializes in turning these insights into results. Get a free consultation to discuss your goals.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href="/en/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             Talk to an Expert &rarr;
           </Link>
         </div>
@@ -613,10 +613,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section aria-label="Navigation" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/blog" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href="/en/blog" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             &larr; Back to Blog
           </Link>
-          <Link href="/contact" className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href="/en/contact" className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             Get in Touch &rarr;
           </Link>
         </div>

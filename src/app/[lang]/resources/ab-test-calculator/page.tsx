@@ -88,13 +88,13 @@ export default function ABTestCalculatorPage() {
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li>
-            <Link href="/" className="hover:text-black transition-colors motion-reduce:transition-none">
+            <Link href="/en/" className="hover:text-black transition-colors motion-reduce:transition-none">
               Home
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/resources" className="hover:text-black transition-colors motion-reduce:transition-none">
+            <Link href="/en/resources" className="hover:text-black transition-colors motion-reduce:transition-none">
               Resources
             </Link>
           </li>
@@ -443,7 +443,7 @@ export default function ABTestCalculatorPage() {
               so you can make data-driven decisions with confidence.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

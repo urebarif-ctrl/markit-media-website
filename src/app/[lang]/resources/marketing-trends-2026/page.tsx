@@ -168,7 +168,7 @@ export default function MarketingTrends2026Page() {
                 <p className="text-base font-bold text-black">Looking for the 2025 edition?</p>
                 <p className="text-base text-gray-500">See what we predicted last year and how it played out.</p>
               </div>
-              <Link href="/resources/marketing-trends-2025" className="text-base font-bold text-black hover:underline whitespace-nowrap focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/resources/marketing-trends-2025" className="text-base font-bold text-black hover:underline whitespace-nowrap focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Read 2025 Trends &rarr;
               </Link>
             </div>
@@ -185,7 +185,7 @@ export default function MarketingTrends2026Page() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our team can audit your current strategy against these trends and build a plan that positions your business ahead of the curve.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Strategy Session &rarr;
             </Link>
           </Animate>

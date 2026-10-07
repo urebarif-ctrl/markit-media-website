@@ -134,7 +134,7 @@ export default function SEOvsPPCPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/services/seo" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/seo" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Explore Our SEO Services &rarr;
               </Link>
             </div>
@@ -150,7 +150,7 @@ export default function SEOvsPPCPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/services/performance-marketing" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href="/en/services/performance-marketing" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Explore Our PPC Services &rarr;
               </Link>
             </div>
@@ -185,10 +185,10 @@ export default function SEOvsPPCPage() {
               We will analyze your business and recommend the right mix of SEO and PPC based on your goals, budget, and timeline.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Free Assessment &rarr;
               </Link>
-              <Link href="/services/finder" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href="/en/services/finder" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Take the Service Finder Quiz
               </Link>
             </div>

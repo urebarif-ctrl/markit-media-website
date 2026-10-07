@@ -548,7 +548,7 @@ export default function ChannelMixModellerPage() {
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li>
             <Link
-              href="/"
+              href="/en/"
               className="hover:text-black transition-colors motion-reduce:transition-none"
             >
               Home
@@ -557,7 +557,7 @@ export default function ChannelMixModellerPage() {
           <li aria-hidden="true">/</li>
           <li>
             <Link
-              href="/resources"
+              href="/en/resources"
               className="hover:text-black transition-colors motion-reduce:transition-none"
             >
               Resources
@@ -992,7 +992,7 @@ export default function ChannelMixModellerPage() {
             Export as .txt
           </button>
           <Link
-            href="/get-a-quote"
+            href="/en/get-a-quote"
             className="inline-flex items-center justify-center gap-3 border-2 border-black text-black px-10 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
             Get a Custom Strategy &rarr;
@@ -1028,7 +1028,7 @@ export default function ChannelMixModellerPage() {
       <section aria-label="Need Expert Help?" className="bg-black text-white px-6 lg:px-12 py-16 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-extrabold mb-4">Need Expert Help?</h2>
         <p className="text-base text-neutral-300 mb-8 max-w-2xl mx-auto">Our team can help you implement these insights and drive measurable results for your business.</p>
-        <Link href="/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>
+        <Link href="/en/contact" className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get in Touch</Link>
       </section>
     
       <ToolCTA

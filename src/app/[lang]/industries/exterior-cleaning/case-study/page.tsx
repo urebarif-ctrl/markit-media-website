@@ -154,10 +154,10 @@ export default function ExteriorCleaningCaseStudyPage() {
               ))}
             </div>
             <div className="flex flex-wrap gap-4 mt-9">
-              <Link href="/get-a-quote" className="bg-white text-black px-8 py-4 font-bold hover:bg-gray-100">
+              <Link href="/en/get-a-quote" className="bg-white text-black px-8 py-4 font-bold hover:bg-gray-100">
                 Request a Similar Campaign →
               </Link>
-              <Link href="/industries/exterior-cleaning" className="border border-white/30 px-8 py-4 font-bold hover:bg-white hover:text-black">
+              <Link href="/en/industries/exterior-cleaning" className="border border-white/30 px-8 py-4 font-bold hover:bg-white hover:text-black">
                 Exterior Cleaning Marketing →
               </Link>
             </div>
@@ -381,10 +381,10 @@ export default function ExteriorCleaningCaseStudyPage() {
               If you run a window cleaning, pressure washing, soft washing, roof washing or exterior cleaning business, we can map your service mix, market, campaign structure and tracking before scaling spend.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Link href="/get-a-quote" className="bg-white text-black px-9 py-4 font-bold hover:bg-gray-100">
+              <Link href="/en/get-a-quote" className="bg-white text-black px-9 py-4 font-bold hover:bg-gray-100">
                 Request a Quote →
               </Link>
-              <Link href="/services/performance-marketing/meta-ads" className="border border-white/30 px-9 py-4 font-bold hover:bg-white hover:text-black">
+              <Link href="/en/services/performance-marketing/meta-ads" className="border border-white/30 px-9 py-4 font-bold hover:bg-white hover:text-black">
                 Explore Meta Ads →
               </Link>
             </div>

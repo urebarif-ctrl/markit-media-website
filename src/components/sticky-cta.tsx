@@ -29,7 +29,7 @@ export function StickyCta() {
         aria-label="Get a free consultation"
       >
         <Link
-          href="/contact"
+          href="/en/contact"
           className="flex-1 flex items-center justify-center gap-2 px-6 py-4 min-h-[56px] text-white text-base font-[family-name:var(--font-display)] font-semibold no-underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
         >
           Get a Free Consultation
@@ -70,7 +70,7 @@ export function StickyCta() {
       >
         <div className="relative">
           <Link
-            href="/get-a-quote"
+            href="/en/get-a-quote"
             className="flex items-center justify-center bg-black text-white px-6 py-4 min-h-[48px] text-base font-[family-name:var(--font-display)] font-semibold shadow-lg hover:bg-gray-900 transition-colors motion-reduce:transition-none no-underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
           >
             Get a Quote

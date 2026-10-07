@@ -220,7 +220,7 @@ export default async function BlogCategoryPage({
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-2 mb-8">
             <Link
-              href="/blog"
+              href="/en/blog"
               className="px-4 py-2 text-base font-medium border border-gray-200 text-gray-600 hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               All
@@ -278,7 +278,7 @@ export default async function BlogCategoryPage({
                 Showing {posts.length} of {totalCount} articles
               </p>
               <Link
-                href="/blog"
+                href="/en/blog"
                 className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Browse All Articles &rarr;
@@ -332,7 +332,7 @@ export default async function BlogCategoryPage({
               Our team can turn these insights into a strategy tailored to your business.
             </p>
             <Link
-              href="/contact"
+              href="/en/contact"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

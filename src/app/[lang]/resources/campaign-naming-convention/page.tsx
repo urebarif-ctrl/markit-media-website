@@ -82,7 +82,7 @@ export default function CampaignNamingConventionPage() {
       <meta name="description" content="Generate consistent campaign naming conventions for Google Ads, Meta Ads, email, and UTM parameters. Keep your marketing data clean and organised." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Campaign Naming Convention</span>
         </nav>
@@ -210,7 +210,7 @@ export default function CampaignNamingConventionPage() {
           <section aria-label="Need Campaign Management Help?" className="bg-black text-white p-8 lg:p-12 text-center">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Campaign Management Help?</h2>
             <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team manages campaigns across every major platform with disciplined naming, tracking, and reporting.</p>
-            <Link href="/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Campaign Support &rarr;</Link>
+            <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Get Campaign Support &rarr;</Link>
           </section>
         </div>
       </div>

@@ -1283,7 +1283,7 @@ export default function QuarterlyReviewPage() {
               Our team helps brands turn quarterly insights into higher-performing strategies.
               Let us help you plan, execute, and optimize your next quarter.
             </p>
-            <Link href="/contact" className={btnPrimary}>
+            <Link href="/en/contact" className={btnPrimary}>
               Get in Touch
             </Link>
           </Animate>

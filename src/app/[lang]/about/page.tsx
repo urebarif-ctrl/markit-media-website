@@ -175,7 +175,7 @@ export default function AboutPage() {
               </div>
             ))}
           </Stagger>
-          <div className="mt-8"><Link href="/work" className="inline-flex bg-white text-black px-7 py-3.5 font-bold hover:bg-gray-100">Explore the work →</Link></div>
+          <div className="mt-8"><Link href="/en/work" className="inline-flex bg-white text-black px-7 py-3.5 font-bold hover:bg-gray-100">Explore the work →</Link></div>
         </div>
       </section>
 
@@ -372,7 +372,7 @@ export default function AboutPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
           >
             <Link
-              href="/approach"
+              href="/en/approach"
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -386,7 +386,7 @@ export default function AboutPage() {
               </span>
             </Link>
             <Link
-              href="/process"
+              href="/en/process"
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -401,7 +401,7 @@ export default function AboutPage() {
               </span>
             </Link>
             <Link
-              href="/why-markit-media"
+              href="/en/why-markit-media"
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -415,7 +415,7 @@ export default function AboutPage() {
               </span>
             </Link>
             <Link
-              href="/services"
+              href="/en/services"
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -534,13 +534,13 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/contact"
+                href="/en/contact"
                 className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Get in Touch <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
-                href="/careers"
+                href="/en/careers"
                 className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Join Our Team

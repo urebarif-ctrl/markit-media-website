@@ -21,7 +21,7 @@ export default function Error({ reset }: { error: Error; reset: () => void }) {
             Try Again
           </button>
           <Link
-            href="/"
+            href="/en/"
             className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
             Go Home

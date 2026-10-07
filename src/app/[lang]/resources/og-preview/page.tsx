@@ -45,9 +45,9 @@ export default function OgPreviewPage() {
       <meta name="description" content="Preview how your links appear on Facebook, Twitter/X, and LinkedIn before sharing. Free tool to optimize Open Graph tags and maximize social media engagement." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Social Share Preview</li>
         </ol>
@@ -254,7 +254,7 @@ export default function OgPreviewPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               OG tags are just the start. Let our team build a social media strategy that drives real engagement.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Talk to a Social Media Expert &rarr;
             </Link>
           </Animate>

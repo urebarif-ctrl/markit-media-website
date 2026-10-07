@@ -62,7 +62,7 @@ export function Footer({ translations:t }: { locale:string; translations:FooterT
         <div className="flex flex-wrap gap-3">
           <a href="mailto:ciao@themarkitmedia.com" className="inline-flex items-center gap-2 bg-white text-black px-5 py-3.5 font-bold text-sm hover:bg-gray-200"><Mail size={18}/> Email us</a>
           <a href="https://wa.me/923002086081" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-white/25 px-5 py-3.5 font-bold text-sm hover:bg-white hover:text-black"><MessageCircle size={18}/> WhatsApp</a>
-          <Link href="/get-a-quote" className="inline-flex items-center gap-2 border border-white/25 px-5 py-3.5 font-bold text-sm hover:bg-white hover:text-black">Request a quote <ArrowUpRight size={17}/></Link>
+          <Link href="/en/get-a-quote" className="inline-flex items-center gap-2 border border-white/25 px-5 py-3.5 font-bold text-sm hover:bg-white hover:text-black">Request a quote <ArrowUpRight size={17}/></Link>
         </div>
       </div>
     </section>
@@ -71,7 +71,7 @@ export function Footer({ translations:t }: { locale:string; translations:FooterT
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[1.35fr_2fr] gap-12 lg:gap-16">
           <div>
-            <Link href="/" className="inline-block"><Image src="/images/logo-black.png" alt="Markit Media" width={170} height={35} unoptimized className="h-8 w-auto invert brightness-200"/></Link>
+            <Link href="/en/" className="inline-block"><Image src="/images/logo-black.png" alt="Markit Media" width={170} height={35} unoptimized className="h-8 w-auto invert brightness-200"/></Link>
             <p className="text-sm text-gray-400 leading-6 mt-5 max-w-sm">{t.footer.tagline}</p>
             <div className="mt-7 space-y-3">
               <a href="mailto:ciao@themarkitmedia.com" className="flex items-center gap-3 text-sm text-gray-200 hover:text-white"><span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><Mail size={17}/></span>ciao@themarkitmedia.com</a>
@@ -96,7 +96,7 @@ export function Footer({ translations:t }: { locale:string; translations:FooterT
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-5 md:items-end md:justify-between">
         <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold tracking-tight">Strategy. Search. Creative. Technology.</p>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-gray-500">
-          <span>{t.footer.copyright}</span><Link href="/privacy-policy" className="hover:text-white">Privacy</Link><Link href="/terms" className="hover:text-white">Terms</Link>
+          <span>{t.footer.copyright}</span><Link href="/en/privacy-policy" className="hover:text-white">Privacy</Link><Link href="/en/terms" className="hover:text-white">Terms</Link>
         </div>
       </div>
     </div>

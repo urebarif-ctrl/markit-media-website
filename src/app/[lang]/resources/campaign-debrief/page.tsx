@@ -1059,9 +1059,9 @@ export default function CampaignDebriefPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/resources/campaign-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Campaign Tracker</Link>
-                <Link href="/resources/experiment-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Experiment Tracker</Link>
-                <Link href="/resources/marketing-audit-scorecard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
+                <Link href="/en/resources/campaign-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Campaign Tracker</Link>
+                <Link href="/en/resources/experiment-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Experiment Tracker</Link>
+                <Link href="/en/resources/marketing-audit-scorecard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
           </div>
         </div>
       </section>
@@ -1077,7 +1077,7 @@ export default function CampaignDebriefPage() {
               Our team helps brands translate campaign learnings into higher-performing strategies.
               Let us turn your debrief data into your next campaign plan.
             </p>
-            <Link href="/contact" className={btnPrimary}>
+            <Link href="/en/contact" className={btnPrimary}>
               Get in Touch
             </Link>
           </Animate>
