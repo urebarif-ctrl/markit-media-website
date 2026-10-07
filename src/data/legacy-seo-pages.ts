@@ -2333,7 +2333,7 @@ export const retiredLegacyArticleRedirects = [
   { source: "/custom-website-vs-wordpress-making-the-right-choice", destination: "/en/services/website-development/wordpress" },
 ] as const;
 
-export const retiredLegacyArticlePaths = new Set(retiredLegacyArticleRedirects.map((item) => item.source));
+export const retiredLegacyArticlePaths = new Set<string>(retiredLegacyArticleRedirects.map((item) => item.source));
 
 export const legacySeoPageById = new Map(legacySeoPages.map((page) => [page.id, page]));
 export const preservedLegacyPaths = new Set(legacySeoPages.map((page) => page.path));
