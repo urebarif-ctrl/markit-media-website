@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function AnimationPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"After Effects","note":"Adobe"},{"name":"Premiere Pro","note":"Adobe"},{"name":"Lottie"},{"name":"Canva"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
       title="Animation"

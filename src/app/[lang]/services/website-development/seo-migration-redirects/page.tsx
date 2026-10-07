@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <SubServicePage
+      platforms={[{"name":"Google Search Console"},{"name":"Screaming Frog"},{"name":"Ahrefs"},{"name":"Semrush"},{"name":"Cloudflare"},{"name":"WordPress"}]}
     parentTitle="Website Development"
     parentHref="/services/website-development"
     title="SEO Migration & Redirect Services"

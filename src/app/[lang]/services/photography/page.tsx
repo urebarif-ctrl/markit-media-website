@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function PhotographyPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Adobe","note":"Lightroom"},{"name":"Adobe","note":"Photoshop"},{"name":"Canva"},{"name":"Google","note":"Drive"}]}
       icon={Camera}
       blogCategory="Photography"
       title="Professional Photography"

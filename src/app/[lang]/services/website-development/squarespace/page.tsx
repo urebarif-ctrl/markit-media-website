@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <SubServicePage
+      platforms={[{"name":"Squarespace"},{"name":"Google Analytics","note":"GA4"},{"name":"Stripe"},{"name":"Canva"},{"name":"Google Tag Manager"}]}
     parentTitle="Website Development"
     parentHref="/services/website-development"
     title="Squarespace Development"

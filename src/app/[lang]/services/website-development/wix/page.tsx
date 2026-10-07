@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function WixDevelopmentPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Wix"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Canva"},{"name":"Stripe"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
       title="Wix Development"

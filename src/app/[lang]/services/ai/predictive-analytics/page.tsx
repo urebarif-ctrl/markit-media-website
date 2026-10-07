@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function PredictiveAnalyticsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"Google Data Studio","note":"Looker Studio"},{"name":"HubSpot"},{"name":"Salesforce"},{"name":"Tableau"}]}
       parentTitle="AI Solutions"
       parentHref="/services/ai"
       title="Predictive Analytics"

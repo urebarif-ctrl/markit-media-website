@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function WebsiteDevelopmentPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Next.js"},{"name":"WordPress"},{"name":"Shopify"},{"name":"Webflow"},{"name":"Wix"},{"name":"Squarespace"},{"name":"Vercel"},{"name":"Cloudflare"},{"name":"AWS"},{"name":"Figma"}]}
       icon={Code}
       heroImage="/images/services/web-dev.jpg"
       blogCategory="Web"

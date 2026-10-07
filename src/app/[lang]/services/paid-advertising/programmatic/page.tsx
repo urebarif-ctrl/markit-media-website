@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ProgrammaticPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Ads","note":"DV360"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Paid Advertising"
       parentHref="/services/paid-advertising"
       title="Programmatic Advertising"

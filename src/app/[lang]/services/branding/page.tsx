@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function BrandingPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Figma"},{"name":"Adobe","note":"Creative Suite"},{"name":"Canva"},{"name":"Behance"}]}
       icon={Palette}
       heroImage="/images/services/branding.jpg"
       blogCategory="Branding"

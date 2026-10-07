@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function AiConsultingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"HubSpot"},{"name":"Salesforce"},{"name":"Zapier"},{"name":"Slack"},{"name":"AWS"}]}
       parentTitle="AI Solutions"
       parentHref="/services/ai"
       title="AI Consulting"

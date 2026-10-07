@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <SubServicePage
+      platforms={[{"name":"Webflow"},{"name":"Figma"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Zapier"}]}
     parentTitle="Website Development"
     parentHref="/services/website-development"
     title="Webflow Development"

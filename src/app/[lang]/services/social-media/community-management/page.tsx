@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function CommunityManagementPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Instagram"},{"name":"Facebook"},{"name":"LinkedIn"},{"name":"TikTok"},{"name":"X","note":"Twitter"},{"name":"WhatsApp"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
       title="Community Management"

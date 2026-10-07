@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { saveFormSubmission } from "@/lib/mongodb";
+import { notifyNewLead } from "@/lib/notifications";
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 function limited(ip:string){const now=Date.now(),e=rateLimitMap.get(ip);if(!e||now>e.resetTime){rateLimitMap.set(ip,{count:1,resetTime:now+60_000});return false;}e.count++;return e.count>5;}
@@ -16,6 +17,7 @@ export async function POST(request:NextRequest){
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))return NextResponse.json({error:"A valid email address is required."},{status:400});
   if(!data.message||data.message.length<5)return NextResponse.json({error:"Please enter a message."},{status:400});
   try{await saveFormSubmission("lead",{...data,internalNotes:"",assignedTo:"",updatedAt:new Date()});}catch(e){console.error("Failed to save lead to MongoDB",e);return NextResponse.json({error:"We could not save your request. Please try again."},{status:503});}
+  notifyNewLead({name:data.name,email:data.email,service:serviceLabel(data.service),source:data.source||"Website",formType:data.source==="Brand Discovery Brief"?"Discovery Brief":"Website Form",createdAt:data.submittedAt}).catch(()=>{});
   if(!process.env.RESEND_API_KEY)return NextResponse.json({error:"We could not send your message. Please email ciao@themarkitmedia.com directly."},{status:503});
   const resend=new Resend(process.env.RESEND_API_KEY);const from=process.env.RESEND_FROM_EMAIL||"Markit Media <contact@themarkitmedia.com>";const label=serviceLabel(data.service);const isDiscovery=data.source==="Brand Discovery Brief";const messageHtml=data.message.replace(/\\n/g,"<br>");
   const internal=await resend.emails.send({from,to:["ciao@themarkitmedia.com","ureb.arif@themarkitmedia.com","urebarif@gmail.com"],replyTo:data.email,subject:isDiscovery?`New Discovery Brief: ${data.name} — ${data.company||data.name}`:`New Website Lead: ${data.name} — ${label}`,html:`<h2>${isDiscovery?"New pre-discovery brand brief":"New website inquiry"}</h2><p><b>Name:</b> ${data.name}<br><b>Email:</b> ${data.email}<br><b>Company:</b> ${data.company||"—"}<br><b>Phone/WhatsApp:</b> ${data.phone||"—"}<br><b>Service:</b> ${label}<br><b>Budget:</b> ${data.budget||"—"}<br><b>Timeline:</b> ${data.timeline||"—"}<br><b>Source:</b> ${data.source||"Website"}<br><b>Landing page:</b> ${data.landingPage||"—"}<br><b>UTM:</b> ${[data.utmSource,data.utmMedium,data.utmCampaign].filter(Boolean).join(" / ")||"—"}</p><p><b>${isDiscovery?"Discovery brief":"Message"}</b><br>${messageHtml}</p>`});

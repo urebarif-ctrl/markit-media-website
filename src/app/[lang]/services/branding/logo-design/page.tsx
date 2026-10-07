@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function LogoDesignPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Figma"},{"name":"Adobe","note":"Illustrator"},{"name":"Canva"},{"name":"Behance"}]}
       parentTitle="Branding & Design"
       parentHref="/services/branding"
       title="Logo Design"

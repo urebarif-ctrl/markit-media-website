@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function VideoProductionPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Premiere Pro","note":"Adobe"},{"name":"After Effects","note":"Adobe"},{"name":"DaVinci Resolve"},{"name":"Canva"},{"name":"YouTube"},{"name":"Instagram"},{"name":"TikTok"}]}
       icon={Video}
       heroImage="/images/services/video.jpg"
       blogCategory="Video"

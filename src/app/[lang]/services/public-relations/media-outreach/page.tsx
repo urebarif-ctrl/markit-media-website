@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <SubServicePage
+      platforms={[{"name":"LinkedIn"},{"name":"Google","note":"News"},{"name":"Semrush"},{"name":"Notion"}]}
       parentTitle="Public Relations"
       parentHref="/services/public-relations"
       title="Media Outreach"

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function NextJsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Next.js"},{"name":"Vercel"},{"name":"React"},{"name":"Cloudflare"},{"name":"AWS"},{"name":"Figma"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
       title="Next.js Development"

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ChatbotsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"WhatsApp"},{"name":"Facebook","note":"Messenger"},{"name":"Slack"},{"name":"HubSpot"},{"name":"Zapier"}]}
       parentTitle="AI Solutions"
       parentHref="/services/ai"
       title="AI Chatbots"

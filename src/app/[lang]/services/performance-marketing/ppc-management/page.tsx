@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function PpcManagementPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Microsoft Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
       title="PPC Management"

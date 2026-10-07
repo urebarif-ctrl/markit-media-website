@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function ShopifyPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Shopify"},{"name":"Google Analytics","note":"GA4"},{"name":"Facebook","note":"Meta Pixel"},{"name":"Klaviyo"},{"name":"Google Tag Manager"},{"name":"Stripe"}]}
       parentTitle="Shopify"
       parentHref="/services/shopify"
       title="Shopify Development"

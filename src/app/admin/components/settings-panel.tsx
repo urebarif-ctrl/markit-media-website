@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, type FormEvent } from "react";
-import { ShieldCheck, UserPlus, Users } from "lucide-react";
+import { Bell, ShieldCheck, UserPlus, Users } from "lucide-react";
 
 type TeamUser={id:string;name:string;email:string;role:string;createdAt?:string};
 
@@ -13,13 +13,27 @@ export function SettingsPanel({ headers, email, onSaved }: { headers: Record<str
   const [users,setUsers]=useState<TeamUser[]>([]);
   const [userError,setUserError]=useState("");
   const [invite,setInvite]=useState({name:"",email:"",password:"",role:"manager"});
+  const [webhook,setWebhook]=useState({slackWebhookUrl:"",emailDigest:false,digestEmail:"",enabled:false});
+  const [webhookMsg,setWebhookMsg]=useState("");
+  const [webhookLoading,setWebhookLoading]=useState(false);
+
+  async function loadWebhook(){
+    try{const r=await fetch("/api/admin/webhooks",{headers,cache:"no-store"});if(r.ok){const d=await r.json();setWebhook(d);}}catch{}
+  }
+
+  async function saveWebhook(e:FormEvent){
+    e.preventDefault();setWebhookLoading(true);setWebhookMsg("");
+    const r=await fetch("/api/admin/webhooks",{method:"POST",headers,body:JSON.stringify(webhook)});
+    const d=await r.json();setWebhookLoading(false);
+    setWebhookMsg(r.ok?"Notification settings saved.":d.error||"Could not save notification settings");
+  }
 
   async function loadUsers(){
     const r=await fetch("/api/admin/users",{headers,cache:"no-store"});
     const d=await r.json();
     if(r.ok)setUsers(d.users||[]);
   }
-  useEffect(()=>{loadUsers()},[]);
+  useEffect(()=>{loadUsers();loadWebhook();},[]);
 
   async function submit(e:FormEvent){
     e.preventDefault(); setLoading(true); setMessage("");
@@ -68,6 +82,14 @@ export function SettingsPanel({ headers, email, onSaved }: { headers: Record<str
       </div>
       {userError&&<p className="mt-3 text-sm font-semibold text-red-700">{userError}</p>}
       <button className="mt-4 rounded-xl bg-black px-5 py-3 text-sm font-bold text-white">Add dashboard user</button>
+    </form>
+
+    <form onSubmit={saveWebhook} className="rounded-2xl border border-gray-200 bg-white p-6 space-y-5">
+      <div className="flex items-center gap-3"><div className="h-10 w-10 rounded-xl bg-black text-white grid place-items-center"><Bell size={18}/></div><div><h3 className="font-extrabold">Notifications</h3><p className="text-xs text-gray-400">Get alerted when new leads come in via Slack or email digest.</p></div></div>
+      <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={webhook.enabled} onChange={e=>setWebhook({...webhook,enabled:e.target.checked})} className="h-4 w-4 rounded border-gray-300"/><span className="text-sm font-bold">Enable notifications</span></label>
+      <div><label className="mb-2 block text-sm font-bold">Slack webhook URL</label><input type="url" value={webhook.slackWebhookUrl} onChange={e=>setWebhook({...webhook,slackWebhookUrl:e.target.value})} placeholder="https://hooks.slack.com/services/..." className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm" /></div>
+      {webhookMsg&&<p className="text-sm font-semibold">{webhookMsg}</p>}
+      <button disabled={webhookLoading} className="rounded-lg bg-black px-5 py-3 text-sm font-bold text-white disabled:opacity-50">{webhookLoading?"Saving...":"Save notification settings"}</button>
     </form>
   </div>;
 }

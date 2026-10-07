@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ListManagementPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Mailchimp"},{"name":"Klaviyo"},{"name":"ActiveCampaign"},{"name":"HubSpot"},{"name":"Zapier"}]}
       parentTitle="Email Marketing"
       parentHref="/services/email-marketing"
       title="List Management"

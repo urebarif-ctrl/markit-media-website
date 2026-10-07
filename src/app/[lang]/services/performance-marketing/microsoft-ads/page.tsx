@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <SubServicePage
+      platforms={[{"name":"Microsoft Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Ads","note":"Import campaigns"}]}
     parentTitle="Performance Marketing"
     parentHref="/services/performance-marketing"
     title="Microsoft Ads (Bing)"

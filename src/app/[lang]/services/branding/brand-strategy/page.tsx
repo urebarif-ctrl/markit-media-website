@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function BrandStrategyPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Figma"},{"name":"Notion"},{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"}]}
       parentTitle="Branding & Design"
       parentHref="/services/branding"
       title="Brand Strategy"

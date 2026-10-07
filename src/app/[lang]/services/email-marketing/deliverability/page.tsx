@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function DeliverabilityPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Mailchimp"},{"name":"SendGrid"},{"name":"Klaviyo"},{"name":"Google","note":"Postmaster Tools"},{"name":"Brevo","note":"Sendinblue"}]}
       parentTitle="Email Marketing"
       parentHref="/services/email-marketing"
       title="Email Deliverability"

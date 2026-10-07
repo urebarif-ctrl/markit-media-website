@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function WhitepapersPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Canva"},{"name":"Adobe","note":"InDesign"},{"name":"Google Analytics","note":"GA4"},{"name":"HubSpot"}]}
       parentTitle="Content Marketing"
       parentHref="/services/content-marketing"
       title="Whitepapers & Reports"

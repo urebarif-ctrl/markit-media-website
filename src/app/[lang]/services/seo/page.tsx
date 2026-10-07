@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function SeoPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Google Search Console"},{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"},{"name":"Ahrefs"},{"name":"Moz"},{"name":"Screaming Frog"},{"name":"Surfer"},{"name":"Google Tag Manager"}]}
       icon={Search}
       heroImage="/images/services/seo.jpg"
       blogCategory="SEO"

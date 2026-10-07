@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { Image as ImageIcon, X } from "lucide-react";
 
 interface Post {
   id: number;
@@ -18,9 +19,12 @@ interface Post {
   og_image: string;
   reading_time: number;
   published_at: string | null;
+  scheduled_at?: string | null;
   created_at: string;
   updated_at: string;
 }
+
+interface MediaAsset { id: string; url: string; alt: string; folder: string; filename: string; createdAt: string; }
 
 const emptyPost: Omit<Post, "id" | "created_at" | "updated_at"> = {
   slug: "",
@@ -39,6 +43,50 @@ const emptyPost: Omit<Post, "id" | "created_at" | "updated_at"> = {
   published_at: null,
 };
 
+function MediaPicker({ onSelect, onClose, headers }: { onSelect: (url: string) => void; onClose: () => void; headers: Record<string, string> }) {
+  const [assets, setAssets] = useState<MediaAsset[]>([]);
+  const [folder, setFolder] = useState("blog");
+  const [mediaSearch, setMediaSearch] = useState("");
+  const [mediaLoading, setMediaLoading] = useState(true);
+  useEffect(() => {
+    setMediaLoading(true);
+    const p = new URLSearchParams({ folder });
+    if (mediaSearch) p.set("search", mediaSearch);
+    fetch(`/api/admin/media?${p}`, { headers }).then(r => r.json()).then(d => { setAssets(d.assets || []); setMediaLoading(false); }).catch(() => setMediaLoading(false));
+  }, [folder, mediaSearch]);
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[85vh] flex flex-col" onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between p-5 border-b">
+          <h3 className="text-lg font-extrabold">Select from Media Library</h3>
+          <button onClick={onClose}><X size={20} /></button>
+        </div>
+        <div className="flex gap-3 p-4 border-b">
+          <input value={mediaSearch} onChange={e => setMediaSearch(e.target.value)} placeholder="Search media..." className="flex-1 border px-3 py-2 text-sm rounded-lg" />
+          <select value={folder} onChange={e => setFolder(e.target.value)} className="border px-3 py-2 text-sm rounded-lg bg-white">
+            {["general", "blog", "services", "case-studies", "portfolio", "branding"].map(f => <option key={f} value={f}>{f}</option>)}
+          </select>
+        </div>
+        <div className="flex-1 overflow-y-auto p-4">
+          {mediaLoading ? <p className="text-center text-gray-400 py-12">Loading media...</p> :
+            assets.length ? <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+              {assets.map(a => (
+                <button key={a.id} onClick={() => { onSelect(a.url); onClose(); }} className="group border rounded-lg overflow-hidden hover:border-black transition-colors">
+                  <div className="aspect-square bg-gray-100 relative">
+                    {a.url.match(/\.(jpg|jpeg|png|gif|webp|svg)$/i) ?
+                      <img src={a.url} alt={a.alt || a.filename} className="w-full h-full object-cover" /> :
+                      <div className="w-full h-full flex items-center justify-center text-gray-400"><ImageIcon size={24} /></div>}
+                  </div>
+                  <div className="p-2 text-xs text-gray-600 truncate">{a.filename || a.alt || "Media"}</div>
+                </button>
+              ))}
+            </div> : <p className="text-center text-gray-400 py-12">No media found in this folder.</p>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function PostsPanel({ headers }: { headers: Record<string, string> }) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [total, setTotal] = useState(0);
@@ -52,6 +100,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
   const [saving, setSaving] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
   const [categories, setCategories] = useState<string[]>([]);
+  const [mediaPicker, setMediaPicker] = useState<{ field: string } | null>(null);
 
   const fetchPosts = useCallback(() => {
     setLoading(true);
@@ -204,6 +253,13 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
                       {btn.label}
                     </button>
                   ))}
+                  <button
+                    type="button"
+                    onClick={() => setMediaPicker({ field: "content" })}
+                    className="px-3 py-1.5 text-sm font-bold text-gray-600 hover:bg-black hover:text-white transition-colors flex items-center gap-1"
+                  >
+                    <ImageIcon size={14} /> Img
+                  </button>
                 </div>
                 <textarea
                   value={editing.content}
@@ -258,13 +314,17 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-bold text-black uppercase tracking-wide mb-2">Cover Image URL</label>
-              <input
-                type="text"
-                value={editing.cover_image}
-                onChange={(e) => setEditing((p) => p ? { ...p, cover_image: e.target.value } : null)}
-                className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
-                placeholder="/uploads/blog/image.jpg"
-              />
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={editing.cover_image}
+                  onChange={(e) => setEditing((p) => p ? { ...p, cover_image: e.target.value } : null)}
+                  className="flex-1 border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none"
+                  placeholder="/uploads/blog/image.jpg"
+                />
+                <button type="button" onClick={() => setMediaPicker({ field: "cover_image" })} className="border border-gray-300 px-3 py-2 hover:bg-gray-50 flex items-center gap-1 text-sm font-bold shrink-0"><ImageIcon size={16} /> Browse</button>
+              </div>
+              {editing.cover_image && <img src={editing.cover_image} alt="Cover preview" className="mt-2 h-24 w-auto object-cover border border-gray-200" />}
             </div>
             <div>
               <label className="block text-sm font-bold text-black uppercase tracking-wide mb-2">Status</label>
@@ -275,7 +335,19 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
               >
                 <option value="draft">Draft</option>
                 <option value="published">Published</option>
+                <option value="scheduled">Scheduled</option>
               </select>
+              {editing.status === "scheduled" && (
+                <div className="mt-2">
+                  <label className="block text-xs font-bold text-gray-500 mb-1">Publish at</label>
+                  <input
+                    type="datetime-local"
+                    value={editing.scheduled_at ? new Date(editing.scheduled_at).toISOString().slice(0, 16) : ""}
+                    onChange={(e) => setEditing((p) => p ? { ...p, scheduled_at: e.target.value } : null)}
+                    className="w-full border border-gray-300 px-4 py-2 text-sm focus-visible:border-black focus-visible:outline-none"
+                  />
+                </div>
+              )}
             </div>
           </div>
 
@@ -307,13 +379,16 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
               </div>
               <div>
                 <label className="block text-sm font-bold text-gray-600 mb-1">OG Image URL</label>
-                <input
-                  type="text"
-                  value={editing.og_image}
-                  onChange={(e) => setEditing((p) => p ? { ...p, og_image: e.target.value } : null)}
-                  className="w-full border border-gray-300 px-4 py-2 text-sm focus-visible:border-black focus-visible:outline-none"
-                  placeholder="/uploads/blog/og-image.jpg"
-                />
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={editing.og_image}
+                    onChange={(e) => setEditing((p) => p ? { ...p, og_image: e.target.value } : null)}
+                    className="flex-1 border border-gray-300 px-4 py-2 text-sm focus-visible:border-black focus-visible:outline-none"
+                    placeholder="/uploads/blog/og-image.jpg"
+                  />
+                  <button type="button" onClick={() => setMediaPicker({ field: "og_image" })} className="border border-gray-300 px-3 py-2 hover:bg-gray-50 flex items-center gap-1 text-sm font-bold shrink-0"><ImageIcon size={14} /> Browse</button>
+                </div>
               </div>
             </div>
           </div>
@@ -440,6 +515,22 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
             </div>
           )}
         </>
+      )}
+      {mediaPicker && (
+        <MediaPicker
+          headers={headers}
+          onClose={() => setMediaPicker(null)}
+          onSelect={(url) => {
+            if (mediaPicker.field === "cover_image") {
+              setEditing((p) => p ? { ...p, cover_image: url } : null);
+            } else if (mediaPicker.field === "og_image") {
+              setEditing((p) => p ? { ...p, og_image: url } : null);
+            } else if (mediaPicker.field === "content") {
+              setEditing((p) => p ? { ...p, content: p.content + `<img src="${url}" alt="" />` } : null);
+            }
+            setMediaPicker(null);
+          }}
+        />
       )}
     </div>
   );

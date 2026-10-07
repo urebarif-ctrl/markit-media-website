@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ProductFeedOptimizationPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Merchant","note":"Shopping"},{"name":"Facebook","note":"Catalog"},{"name":"Shopify"},{"name":"WooCommerce"},{"name":"Google Ads"}]}
       parentTitle="E-commerce Marketing"
       parentHref="/services/ecommerce-marketing"
       title="Product Feed Optimization"

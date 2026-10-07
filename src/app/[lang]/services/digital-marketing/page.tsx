@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function DigitalMarketingPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Search Console"},{"name":"Semrush"},{"name":"HubSpot"},{"name":"Mailchimp"},{"name":"Canva"}]}
       icon={BarChart3}
       heroImage="/images/services/digital-marketing.jpg"
       blogCategory="Digital Marketing"

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function ContentMarketingPage() {
   return (
     <ServicePage
+      platforms={[{"name":"WordPress"},{"name":"Semrush"},{"name":"Surfer"},{"name":"Google Search Console"},{"name":"Google Analytics","note":"GA4"},{"name":"Ahrefs"},{"name":"Canva"},{"name":"Notion"}]}
       icon={FileText}
       heroImage="/images/services/content-marketing.jpg"
       blogCategory="Content"

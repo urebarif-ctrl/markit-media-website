@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function VisualIdentityPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Figma"},{"name":"Adobe","note":"Creative Suite"},{"name":"Canva"},{"name":"Behance"}]}
       parentTitle="Branding & Design"
       parentHref="/services/branding"
       title="Visual Identity"

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function BlogWritingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"WordPress"},{"name":"Surfer"},{"name":"Semrush"},{"name":"Google Search Console"},{"name":"Ahrefs"},{"name":"Canva"}]}
       parentTitle="Content Marketing"
       parentHref="/services/content-marketing"
       title="Blog Writing"

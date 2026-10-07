@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function LandingPagesPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Webflow"},{"name":"WordPress"},{"name":"Next.js"},{"name":"Figma"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Hotjar"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
       title="Landing Page Design"

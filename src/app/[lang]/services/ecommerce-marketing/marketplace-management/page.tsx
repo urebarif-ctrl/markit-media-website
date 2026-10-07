@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function MarketplaceManagementPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Amazon"},{"name":"Shopify"},{"name":"Google Merchant","note":"Shopping"},{"name":"Facebook","note":"Meta Shops"},{"name":"Google Analytics","note":"GA4"}]}
       parentTitle="E-commerce Marketing"
       parentHref="/services/ecommerce-marketing"
       title="Marketplace Management"

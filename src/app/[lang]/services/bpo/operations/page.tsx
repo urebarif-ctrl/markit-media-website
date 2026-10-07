@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function OperationsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Asana"},{"name":"Trello"},{"name":"Notion"},{"name":"Slack"},{"name":"Zapier"},{"name":"Google","note":"Workspace"}]}
       parentTitle="BPO Services"
       parentHref="/services/bpo"
       title="Operations Support"

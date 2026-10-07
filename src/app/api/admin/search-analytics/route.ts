@@ -98,8 +98,10 @@ export async function GET(request:NextRequest){
   const errors:string[]=[];
   let queries:any={rows:[]},pages:any={rows:[]},ga4:any=null;
 
+  let daily:any={rows:[]};
   try{queries=await gscReport(token,site,startDate,endDate,["query"],30)}catch(e:any){errors.push(e.message||"Search Console query report failed")}
   try{pages=await gscReport(token,site,startDate,endDate,["page"],50)}catch(e:any){errors.push(e.message||"Search Console page report failed")}
+  try{daily=await gscReport(token,site,startDate,endDate,["date"],days)}catch(e:any){errors.push(e.message||"Search Console daily report failed")}
 
   const ga4Property=process.env.GA4_PROPERTY_ID?.trim();
   if(ga4Property){
@@ -110,6 +112,7 @@ export async function GET(request:NextRequest){
   const pageRows=(pages.rows||[]).map((r:any)=>({page:r.keys?.[0]||"",clicks:r.clicks||0,impressions:r.impressions||0,ctr:r.ctr||0,position:r.position||0}));
   const gaRows=(ga4?.rows||[]).map((r:any)=>({page:r.dimensionValues?.[0]?.value||"",views:Number(r.metricValues?.[0]?.value||0),users:Number(r.metricValues?.[1]?.value||0),sessions:Number(r.metricValues?.[2]?.value||0)}));
 
+  const dailyData=(daily.rows||[]).map((r:any)=>({date:r.keys?.[0]||"",clicks:r.clicks||0,impressions:r.impressions||0,ctr:r.ctr||0,position:r.position||0})).sort((a:any,b:any)=>a.date.localeCompare(b.date));
   const totals=pageRows.reduce((a:any,x:any)=>({clicks:a.clicks+x.clicks,impressions:a.impressions+x.impressions}),{clicks:0,impressions:0});
   const weightedPosition=pageRows.reduce((sum:number,x:any)=>sum+(x.position*x.impressions),0)/(totals.impressions||1);
   const topBlogs=(gaRows.length?gaRows.map((x:any)=>({...x,source:"GA4"})):pageRows.map((x:any)=>({...x,views:x.clicks,users:0,sessions:0,source:"Search Console"}))).filter((x:any)=>x.page.includes("/blog/")).slice(0,15);
@@ -117,6 +120,7 @@ export async function GET(request:NextRequest){
   return NextResponse.json({
     configured:true,days,startDate,endDate,site,
     summary:{clicks:totals.clicks,impressions:totals.impressions,ctr:totals.impressions?totals.clicks/totals.impressions:0,position:weightedPosition},
+    dailyData,
     topQueries:queryRows.slice(0,20),
     topPages:gaRows.length?gaRows.slice(0,20):pageRows.slice(0,20),
     topBlogs,

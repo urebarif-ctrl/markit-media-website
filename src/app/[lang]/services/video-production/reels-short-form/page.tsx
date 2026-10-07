@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function ReelsShortFormPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Instagram"},{"name":"TikTok"},{"name":"YouTube"},{"name":"CapCut"},{"name":"Premiere Pro","note":"Adobe"},{"name":"Canva"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
       title="Reels & Short-Form Video"

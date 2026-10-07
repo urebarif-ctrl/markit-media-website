@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function CustomWebAppsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"React"},{"name":"Next.js"},{"name":"Vercel"},{"name":"AWS"},{"name":"Cloudflare"},{"name":"Stripe"},{"name":"Figma"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
       title="Custom Web Applications"

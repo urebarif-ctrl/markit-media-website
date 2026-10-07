@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function TechnicalSeoPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Search Console"},{"name":"Screaming Frog"},{"name":"Ahrefs"},{"name":"Semrush"},{"name":"Google Tag Manager"},{"name":"Cloudflare"},{"name":"Vercel"}]}
       parentTitle="SEO"
       parentHref="/services/seo"
       title="Technical SEO"

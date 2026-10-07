@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function VideoEditingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Premiere Pro","note":"Adobe"},{"name":"DaVinci Resolve"},{"name":"After Effects","note":"Adobe"},{"name":"CapCut"},{"name":"Descript"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
       title="Video Editing"

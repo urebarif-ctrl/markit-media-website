@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function AbTestingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Mailchimp"},{"name":"Klaviyo"},{"name":"ActiveCampaign"},{"name":"Google Analytics","note":"GA4"},{"name":"SendGrid"}]}
       parentTitle="Email Marketing"
       parentHref="/services/email-marketing"
       title="A/B Testing"

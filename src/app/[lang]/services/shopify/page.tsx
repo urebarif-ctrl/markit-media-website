@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ShopifyServicesPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Shopify"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"Klaviyo"},{"name":"Stripe"},{"name":"Google Merchant","note":"Shopping"}]}
       icon={ShoppingCart}
       heroImage="/images/services/ecommerce-marketing.jpg"
       blogCategory="Ecommerce"

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function CampaignDesignPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Mailchimp"},{"name":"Klaviyo"},{"name":"Canva"},{"name":"Figma"},{"name":"SendGrid"}]}
       parentTitle="Email Marketing"
       parentHref="/services/email-marketing"
       title="Email Campaign Design"

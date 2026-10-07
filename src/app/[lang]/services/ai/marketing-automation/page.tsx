@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function MarketingAutomationPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"HubSpot"},{"name":"ActiveCampaign"},{"name":"Mailchimp"},{"name":"Zapier"},{"name":"Salesforce"},{"name":"Slack"}]}
       parentTitle="AI Solutions"
       parentHref="/services/ai"
       title="Marketing Automation"

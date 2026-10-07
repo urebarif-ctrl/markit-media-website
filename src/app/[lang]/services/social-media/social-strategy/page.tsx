@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function SocialStrategyPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Instagram"},{"name":"Facebook"},{"name":"LinkedIn"},{"name":"TikTok"},{"name":"YouTube"},{"name":"X","note":"Twitter"},{"name":"Google Analytics","note":"GA4"},{"name":"Canva"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
       title="Social Media Strategy"

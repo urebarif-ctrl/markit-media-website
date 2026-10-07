@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function GoogleAdsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Merchant","note":"Shopping"},{"name":"Google Search Console"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
       title="Google Ads Management"

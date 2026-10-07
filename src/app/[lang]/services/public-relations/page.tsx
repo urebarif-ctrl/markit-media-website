@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function PublicRelationsPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Google","note":"News"},{"name":"Semrush"},{"name":"LinkedIn"},{"name":"Google Analytics","note":"GA4"},{"name":"Slack"},{"name":"Notion"}]}
       icon={Megaphone}
       blogCategory="PR"
       title="Public Relations"

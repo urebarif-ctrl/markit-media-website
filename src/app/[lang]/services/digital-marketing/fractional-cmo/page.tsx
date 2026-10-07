@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function FractionalCmoPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"HubSpot"},{"name":"Semrush"},{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"Slack"},{"name":"Notion"}]}
       parentTitle="Digital Marketing"
       parentHref="/services/digital-marketing"
       title="Fractional CMO"

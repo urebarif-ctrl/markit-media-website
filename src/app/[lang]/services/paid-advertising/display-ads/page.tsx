@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function DisplayAdsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Ads","note":"Display Network"},{"name":"Facebook","note":"Meta Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Canva"}]}
       parentTitle="Paid Advertising"
       parentHref="/services/paid-advertising"
       title="Display Advertising"

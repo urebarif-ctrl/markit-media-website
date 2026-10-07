@@ -139,6 +139,55 @@ export function getDb(): Database.Database {
     CREATE INDEX IF NOT EXISTS idx_analytics_created ON analytics_events(created_at);
     CREATE INDEX IF NOT EXISTS idx_subscribers_email ON subscribers(email);
     CREATE INDEX IF NOT EXISTS idx_subscribers_status ON subscribers(status);
+
+    CREATE TABLE IF NOT EXISTS proposals (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      slug TEXT UNIQUE NOT NULL,
+      client_name TEXT NOT NULL,
+      client_email TEXT DEFAULT '',
+      client_company TEXT DEFAULT '',
+      title TEXT NOT NULL DEFAULT 'Proposal',
+      subtitle TEXT DEFAULT '',
+      intro TEXT DEFAULT '',
+      packages TEXT DEFAULT '[]',
+      commercial_notes TEXT DEFAULT '[]',
+      case_studies TEXT DEFAULT '[]',
+      whatsapp TEXT DEFAULT '',
+      currency TEXT DEFAULT 'PKR',
+      status TEXT DEFAULT 'draft',
+      valid_until TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS invoices (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      invoice_number TEXT UNIQUE NOT NULL,
+      proposal_id INTEGER,
+      client_name TEXT NOT NULL,
+      client_email TEXT DEFAULT '',
+      client_company TEXT DEFAULT '',
+      client_address TEXT DEFAULT '',
+      items TEXT DEFAULT '[]',
+      subtotal REAL DEFAULT 0,
+      tax_rate REAL DEFAULT 0,
+      tax_amount REAL DEFAULT 0,
+      total REAL DEFAULT 0,
+      currency TEXT DEFAULT 'PKR',
+      status TEXT DEFAULT 'draft',
+      due_date TEXT,
+      paid_at TEXT,
+      notes TEXT DEFAULT '',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (proposal_id) REFERENCES proposals(id) ON DELETE SET NULL
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_proposals_slug ON proposals(slug);
+    CREATE INDEX IF NOT EXISTS idx_proposals_status ON proposals(status);
+    CREATE INDEX IF NOT EXISTS idx_invoices_number ON invoices(invoice_number);
+    CREATE INDEX IF NOT EXISTS idx_invoices_status ON invoices(status);
+    CREATE INDEX IF NOT EXISTS idx_invoices_proposal ON invoices(proposal_id);
   `);
 
   return db;

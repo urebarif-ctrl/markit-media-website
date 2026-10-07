@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function AnalyticsSetupPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Data Studio","note":"Looker Studio"},{"name":"Hotjar"},{"name":"Google Search Console"},{"name":"Facebook","note":"Meta Pixel"}]}
       parentTitle="Digital Marketing"
       parentHref="/services/digital-marketing"
       title="Analytics Setup"

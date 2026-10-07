@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ContentStrategyPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Semrush"},{"name":"Ahrefs"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Search Console"},{"name":"Notion"},{"name":"Trello"}]}
       parentTitle="Content Marketing"
       parentHref="/services/content-marketing"
       title="Content Strategy"

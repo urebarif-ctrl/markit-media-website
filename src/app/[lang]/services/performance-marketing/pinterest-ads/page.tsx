@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <SubServicePage
+      platforms={[{"name":"Pinterest"},{"name":"Google Analytics","note":"GA4"},{"name":"Shopify"},{"name":"Google Tag Manager"}]}
     parentTitle="Performance Marketing"
     parentHref="/services/performance-marketing"
     title="Pinterest Ads"

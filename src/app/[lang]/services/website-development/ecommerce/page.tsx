@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function EcommercePage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Shopify"},{"name":"WooCommerce"},{"name":"Magento"},{"name":"Stripe"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Facebook","note":"Meta Pixel"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
       title="E-commerce Solutions"

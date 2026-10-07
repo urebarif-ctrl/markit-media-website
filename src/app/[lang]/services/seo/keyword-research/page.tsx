@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function KeywordResearchPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Semrush"},{"name":"Ahrefs"},{"name":"Moz"},{"name":"Google Search Console"},{"name":"Google Ads","note":"Keyword Planner"},{"name":"Surfer"}]}
       parentTitle="SEO"
       parentHref="/services/seo"
       title="Keyword Research"

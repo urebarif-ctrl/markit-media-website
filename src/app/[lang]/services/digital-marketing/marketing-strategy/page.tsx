@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function MarketingStrategyPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"},{"name":"HubSpot"},{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"Notion"}]}
       parentTitle="Digital Marketing"
       parentHref="/services/digital-marketing"
       title="Marketing Strategy"

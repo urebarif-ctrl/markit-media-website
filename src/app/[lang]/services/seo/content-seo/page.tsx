@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ContentSeoPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Surfer"},{"name":"Semrush"},{"name":"Ahrefs"},{"name":"Google Search Console"},{"name":"Google Analytics","note":"GA4"},{"name":"WordPress"}]}
       parentTitle="SEO"
       parentHref="/services/seo"
       title="Content SEO"

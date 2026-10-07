@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function InfluencerMarketingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Instagram"},{"name":"TikTok"},{"name":"YouTube"},{"name":"Facebook"},{"name":"LinkedIn"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
       title="Influencer Marketing"

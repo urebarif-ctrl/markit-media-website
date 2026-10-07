@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function AmazonAdsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Amazon"},{"name":"Google Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"}]}
       parentTitle="E-commerce Marketing"
       parentHref="/services/ecommerce-marketing"
       title="Amazon Advertising"

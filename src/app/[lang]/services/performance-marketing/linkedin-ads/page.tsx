@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function LinkedInAdsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"LinkedIn"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"HubSpot","note":"CRM integration"},{"name":"Salesforce"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
       title="LinkedIn Ads"

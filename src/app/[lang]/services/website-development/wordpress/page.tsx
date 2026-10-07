@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function WordPressPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"WordPress"},{"name":"WooCommerce"},{"name":"Cloudflare"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Figma"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
       title="WordPress Development"

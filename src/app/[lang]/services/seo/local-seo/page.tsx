@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function LocalSeoPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google My Business"},{"name":"Google Search Console"},{"name":"Semrush"},{"name":"Ahrefs"},{"name":"Moz"},{"name":"Google Ads"}]}
       parentTitle="SEO"
       parentHref="/services/seo"
       title="Local SEO"

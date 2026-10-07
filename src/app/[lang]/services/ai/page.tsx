@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function AiPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"HubSpot"},{"name":"Zapier"},{"name":"Slack"},{"name":"Salesforce"},{"name":"Semrush"}]}
       icon={Bot}
       heroImage="/images/services/ai.jpg"
       blogCategory="AI"

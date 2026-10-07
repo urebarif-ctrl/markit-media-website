@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ShopifyMarketingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Shopify"},{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"Klaviyo"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Merchant","note":"Shopping"}]}
       parentTitle="E-commerce Marketing"
       parentHref="/services/ecommerce-marketing"
       title="Shopify Marketing"

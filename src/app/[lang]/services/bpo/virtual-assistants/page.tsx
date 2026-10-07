@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function VirtualAssistantsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Slack"},{"name":"Google","note":"Workspace"},{"name":"Notion"},{"name":"Asana"},{"name":"Canva"},{"name":"Zapier"}]}
       parentTitle="BPO Services"
       parentHref="/services/bpo"
       title="Virtual Assistants"

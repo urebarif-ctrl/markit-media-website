@@ -1,12 +1,15 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
+import { BrandIcon } from "@/components/brand-icon";
 import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { QuoteForm } from "@/components/quote-form";
 import { getPostsByCategory } from "@/lib/blog";
 import { serviceClusters } from "@/data/service-clusters";
+
+interface ServicePlatform { name: string; note?: string; href?: string; }
 
 interface SubServicePageProps {
   parentTitle: string;
@@ -19,10 +22,11 @@ interface SubServicePageProps {
   relatedServices?: { title: string; href: string; desc?: string }[];
   portfolio?: { title: string; href: string; desc: string }[];
   blogCategory?: string;
+  platforms?: ServicePlatform[];
   children?: ReactNode;
 }
 
-export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, children }: SubServicePageProps) {
+export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children }: SubServicePageProps) {
   const relatedPosts = blogCategory ? getPostsByCategory(blogCategory, 3) : [];
   const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title);
   const schema = {
@@ -126,6 +130,8 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
           </div>
         </div>
       </section>
+
+      {platforms && platforms.length > 0 && <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label="Platforms and tools we work with"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Platforms & Tools</SectionLabel><SectionTitle>Technology We Work With</SectionTitle><p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">We choose the platform around the workflow, data, ownership and growth requirements rather than forcing every project into one tool.</p></Animate><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mt-8">{platforms.map((platform)=><div key={platform.name} className="bg-white min-h-28 p-5"><div className="flex items-center gap-3"><div className="w-9 h-9 border border-gray-200 flex items-center justify-center"><BrandIcon brand={platform.name} className="w-5 h-5" title={platform.name}/></div><div><div className="font-bold text-sm">{platform.href?<Link href={platform.href} className="hover:underline">{platform.name}</Link>:platform.name}</div>{platform.note&&<p className="text-xs text-gray-500 leading-relaxed mt-1">{platform.note}</p>}</div></div></div>)}</div></div></section>}
 
       {children}
 

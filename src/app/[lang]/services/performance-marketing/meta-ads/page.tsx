@@ -126,6 +126,7 @@ const industries = [
 export default function MetaAdsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Facebook"},{"name":"Instagram"},{"name":"WhatsApp"},{"name":"Google Analytics","note":"GA4"},{"name":"Shopify","note":"Pixel integration"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
       title="Meta Ads (Facebook & Instagram)"

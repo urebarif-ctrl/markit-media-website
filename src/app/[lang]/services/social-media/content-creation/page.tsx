@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function ContentCreationPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Canva"},{"name":"Adobe","note":"Creative Suite"},{"name":"Instagram"},{"name":"Facebook"},{"name":"TikTok"},{"name":"LinkedIn"},{"name":"CapCut"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
       title="Social Media Content Creation"

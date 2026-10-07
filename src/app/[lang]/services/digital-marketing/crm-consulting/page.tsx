@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function CrmConsultingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"HubSpot"},{"name":"Salesforce"},{"name":"Zoho"},{"name":"Pipedrive"},{"name":"GoHighLevel"},{"name":"Zapier"}]}
       parentTitle="CRM Development"
       parentHref="/services/crm-development"
       title="CRM Consulting"

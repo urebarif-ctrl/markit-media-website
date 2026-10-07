@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function PaidAdvertisingPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"LinkedIn"},{"name":"TikTok"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"}]}
       icon={TrendingUp}
       heroImage="/images/services/paid-advertising.jpg"
       blogCategory="Advertising"

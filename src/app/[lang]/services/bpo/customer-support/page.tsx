@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function CustomerSupportPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Zoho"},{"name":"HubSpot"},{"name":"Slack"},{"name":"WhatsApp"},{"name":"Asana"}]}
       parentTitle="BPO Services"
       parentHref="/services/bpo"
       title="Customer Support"

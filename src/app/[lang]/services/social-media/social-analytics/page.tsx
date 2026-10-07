@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function SocialAnalyticsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"Facebook","note":"Meta Business Suite"},{"name":"Instagram"},{"name":"LinkedIn"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
       title="Social Media Analytics"

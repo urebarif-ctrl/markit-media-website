@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function MediaBuyingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"LinkedIn"},{"name":"TikTok"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Paid Advertising"
       parentHref="/services/paid-advertising"
       title="Media Buying"

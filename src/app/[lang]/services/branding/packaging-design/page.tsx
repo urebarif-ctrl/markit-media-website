@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function PackagingDesignPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Adobe","note":"Illustrator"},{"name":"Figma"},{"name":"Canva"},{"name":"Adobe","note":"Photoshop"}]}
       parentTitle="Branding & Design"
       parentHref="/services/branding"
       title="Packaging Design"

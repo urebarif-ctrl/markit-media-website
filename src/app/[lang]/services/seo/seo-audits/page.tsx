@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function SeoAuditsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Screaming Frog"},{"name":"Google Search Console"},{"name":"Ahrefs"},{"name":"Semrush"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Hotjar"}]}
       parentTitle="SEO"
       parentHref="/services/seo"
       title="SEO Audits"

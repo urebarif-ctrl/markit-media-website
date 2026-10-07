@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function CopywritingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"},{"name":"Surfer"},{"name":"Canva"},{"name":"WordPress"}]}
       parentTitle="Content Marketing"
       parentHref="/services/content-marketing"
       title="Copywriting"

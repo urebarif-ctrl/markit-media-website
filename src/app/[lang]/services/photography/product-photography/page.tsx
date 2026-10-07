@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <SubServicePage
+      platforms={[{"name":"Adobe","note":"Lightroom"},{"name":"Adobe","note":"Photoshop"},{"name":"Canva"},{"name":"Shopify"},{"name":"Amazon"}]}
       parentTitle="Professional Photography"
       parentHref="/services/photography"
       title="Product Photography"

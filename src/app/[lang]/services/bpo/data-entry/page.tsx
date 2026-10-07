@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function DataEntryPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google","note":"Sheets"},{"name":"Notion"},{"name":"Zoho"},{"name":"HubSpot"},{"name":"Zapier"}]}
       parentTitle="BPO Services"
       parentHref="/services/bpo"
       title="Data Entry Services"

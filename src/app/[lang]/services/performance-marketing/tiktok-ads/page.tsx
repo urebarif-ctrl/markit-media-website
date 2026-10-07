@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function TikTokAdsPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"TikTok"},{"name":"Google Analytics","note":"GA4"},{"name":"Shopify","note":"Pixel integration"},{"name":"Google Tag Manager"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
       title="TikTok Ads"

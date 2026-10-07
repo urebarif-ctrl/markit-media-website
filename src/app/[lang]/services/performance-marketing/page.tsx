@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function PerformanceMarketingPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"LinkedIn"},{"name":"TikTok"},{"name":"Microsoft Ads"},{"name":"Pinterest"},{"name":"X","note":"Twitter Ads"},{"name":"YouTube"},{"name":"Google Analytics","note":"GA4"}]}
       icon={Megaphone}
       heroImage="/images/services/analytics.jpg"
       blogCategory="Performance Marketing"

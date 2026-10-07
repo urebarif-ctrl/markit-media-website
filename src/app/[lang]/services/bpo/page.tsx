@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function BpoPage() {
   return (
     <ServicePage
+      platforms={[{"name":"Slack"},{"name":"Asana"},{"name":"Trello"},{"name":"Notion"},{"name":"Zoho"},{"name":"HubSpot"},{"name":"Google","note":"Workspace"}]}
       icon={Briefcase}
       heroImage="/images/services/bpo.jpg"
       title="BPO Services"

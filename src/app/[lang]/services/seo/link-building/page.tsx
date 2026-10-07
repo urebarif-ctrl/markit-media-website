@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function LinkBuildingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Ahrefs"},{"name":"Semrush"},{"name":"Moz"},{"name":"Google Search Console"},{"name":"Screaming Frog"}]}
       parentTitle="SEO"
       parentHref="/services/seo"
       title="Link Building"

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function RetargetingPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"LinkedIn"},{"name":"Google Tag Manager"},{"name":"Google Analytics","note":"GA4"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
       title="Retargeting & Remarketing"

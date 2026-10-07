@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function OrmPage() {
   return (
     <SubServicePage
+      platforms={[{"name":"Google My Business"},{"name":"Google Search Console"},{"name":"Semrush"},{"name":"Google Ads"},{"name":"Facebook"}]}
       parentTitle="Digital Marketing"
       parentHref="/services/digital-marketing"
       title="Online Reputation Management"
