@@ -2331,6 +2331,9 @@ export const retiredLegacyArticleRedirects = [
   { source: "/why-photography-is-important-for-social-media-marketing", destination: "/en/services/photography" },
   { source: "/ai-chatbots-customer-engagement-redefined", destination: "/en/services/ai/chatbots" },
   { source: "/custom-website-vs-wordpress-making-the-right-choice", destination: "/en/services/website-development/wordpress" },
+  { source: "/what-is-a-business-account-on-whatsapp-whatsapp-business-overview", destination: "/en/services/whatsapp-business" },
+  { source: "/15-top-trends-of-social-media-in-2026", destination: "/en/services/social-media" },
+  { source: "/how-to-speed-up-your-wordpress-website-for-better-seo", destination: "/en/services/seo/technical-seo" },
 ] as const;
 
 export const retiredLegacyArticlePaths = new Set<string>(retiredLegacyArticleRedirects.map((item) => item.source));
