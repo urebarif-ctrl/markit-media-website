@@ -74,6 +74,7 @@ export function getDb(): Database.Database {
       meta_description TEXT DEFAULT '',
       og_image TEXT DEFAULT '',
       reading_time INTEGER DEFAULT 5,
+      noindex INTEGER DEFAULT 0,
       published_at TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP

@@ -246,6 +246,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.meta_title || post.title,
     description: post.meta_description || post.excerpt,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/${slug}` },
+    ...(post.noindex ? { robots: { index: false, follow: true } } : {}),
     keywords: parseTags(post.tags).join(", ") || post.category,
     openGraph: {
       title: post.meta_title || post.title,

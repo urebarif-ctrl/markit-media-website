@@ -15,6 +15,7 @@ export interface BlogPost {
   meta_description: string;
   og_image: string;
   reading_time: number;
+  noindex: number;
   published_at: string | null;
   created_at: string;
   updated_at: string;
@@ -92,6 +93,6 @@ export function getAllPublishedSlugs(): string[] {
 export function getAllPublishedSlugsWithDates(): { slug: string; updated_at: string; published_at: string | null }[] {
   const db = getDb();
   return db
-    .prepare(`SELECT slug, updated_at, published_at FROM blog_posts WHERE status = 'published' ORDER BY published_at DESC`)
+    .prepare(`SELECT slug, updated_at, published_at FROM blog_posts WHERE status = 'published' AND noindex = 0 ORDER BY published_at DESC`)
     .all() as { slug: string; updated_at: string; published_at: string | null }[];
 }
