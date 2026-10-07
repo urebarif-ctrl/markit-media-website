@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Digital Marketing Services | Markit Media",
+    title: "Digital Marketing Services",
     description:
       "SEO, paid media, social, websites, branding, video, AI, analytics and growth services built around measurable business goals.",
     url: "https://themarkitmedia.com/en/services",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Marketing Services | Markit Media",
+    title: "Digital Marketing Services",
     description:
       "Explore SEO, PPC, social media, web development, branding, video, AI, analytics and ecommerce services.",
     images: ["https://themarkitmedia.com/images/branding/og-image.png"],

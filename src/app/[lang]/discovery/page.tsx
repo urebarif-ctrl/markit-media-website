@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://themarkitmedia.com/en/discovery" },
   robots: { index: false, follow: true },
   openGraph: {
-    title: "Pre-Discovery Brand Brief | Markit Media",
+    title: "Pre-Discovery Brand Brief",
     description: "A quick 3–4 minute brief so Markit Media can come prepared for your discovery session.",
   },
 };

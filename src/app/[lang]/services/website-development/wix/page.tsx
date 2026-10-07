@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Wix Development Services | Markit Media",
+  title: "Wix Development Services",
   description:
     "Wix website development, redesign, CMS setup, integrations, SEO foundations and migration support for service businesses and growing brands.",
   alternates: {
     canonical: "https://themarkitmedia.com/en/services/website-development/wix",
   },
   openGraph: {
-    title: "Wix Development Services | Markit Media",
+    title: "Wix Development Services",
     description:
       "Structured Wix websites, redesigns, CMS setup, integrations and SEO-ready launches for businesses that want simple content ownership.",
   },

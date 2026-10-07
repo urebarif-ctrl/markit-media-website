@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Crisis Communications | Markit Media",
+  title: "Crisis Communications",
   description: "Crisis communication planning, message development, monitoring, stakeholder coordination, and response support for sensitive situations where speed and accuracy matter.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/crisis-communications" },
 };

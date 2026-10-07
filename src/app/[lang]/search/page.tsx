@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { SiteSearch } from "@/components/site-search";
 
 export const metadata:Metadata={
- title:"Search the Markit Media Website",
+ title:"Search the Website",
  description:"Search Markit Media services, industries, locations, tools, resources, case studies and marketing insights.",
  robots:{index:false,follow:true},
 };

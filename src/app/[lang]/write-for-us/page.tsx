@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Write for Markit Media | Guest Contributor Guidelines",
+  title: "Write for Us — Guest Contributor Guidelines",
   description: "Pitch an original marketing, SEO, advertising, ecommerce, branding, AI, or web development article to Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/write-for-us" },
 };

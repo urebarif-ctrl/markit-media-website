@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Media Outreach | Markit Media",
+  title: "Media Outreach",
   description: "Targeted media outreach and journalist pitching built around credible stories, relevant publications, timely angles, and useful relationships rather than mass-emailing generic press lists.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/media-outreach" },
 };

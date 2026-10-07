@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Press Release Writing & Distribution | Markit Media",
+  title: "Press Release Writing & Distribution",
   description: "Press release strategy, writing, editing, media assets, and distribution support for announcements that have a clear news angle and need professional presentation.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/press-releases" },
 };

@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { fullServiceCatalog } from "@/components/location-landing";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency Locations — Markit Media",
+  title: "Digital Marketing Agency Locations",
   description: "Explore Markit Media digital marketing services across the United States, Pakistan, Canada, UAE, UK, Australia and Saudi Arabia.",
   alternates: { canonical: "https://themarkitmedia.com/en/locations" },
 };

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Publisher Partnerships | Markit Media",
+  title: "Publisher Partnerships",
   description: "Join Markit Media's publisher partner network for relevant editorial and sponsored content opportunities.",
   alternates: { canonical: "https://themarkitmedia.com/en/partners/publishers" },
 };

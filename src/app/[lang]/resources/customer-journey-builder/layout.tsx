@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Customer Journey Map Builder | Free Tool | Markit Media",
+  title: "Customer Journey Map Builder | Free Tool",
   description:
     "Map your customer journey across awareness, consideration, decision, and retention stages with touchpoints, emotions, and opportunities.",
 };

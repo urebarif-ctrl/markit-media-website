@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Content Gap Finder | Free Tool | Markit Media",
+  title: "Content Gap Finder | Free Tool",
   description: "Identify content gaps in your marketing strategy. Map your existing content against the buyer journey and find opportunities to fill.",
   openGraph: {
-    title: "Content Gap Finder | Free Tool | Markit Media",
+    title: "Content Gap Finder | Free Tool",
     description: "Map existing content against the buyer journey and find gaps.",
   },
 };

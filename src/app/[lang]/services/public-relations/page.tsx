@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Strategic public relations services: media outreach, press releases, reputation management, event PR, and crisis communications for brands that want to be heard.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations" },
   openGraph: {
-    title: "Public Relations — Markit Media",
+    title: "Public Relations",
     description: "Strategic public relations services: media outreach, press releases, reputation management, event PR, and crisis communications.",
   },
 };

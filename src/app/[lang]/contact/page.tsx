@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Get in touch with Markit Media for a free consultation. We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
   alternates: { canonical: "https://themarkitmedia.com/en/contact" },
   openGraph: {
-    title: "Contact Markit Media",
+    title: "Contact Us",
     description:
       "Get a free consultation. We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
   },

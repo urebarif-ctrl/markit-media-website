@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Shopify development and ecommerce growth services including storefront builds, theme customization, Shopify Plus, integrations, migration and Shopify marketing.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/shopify" },
   openGraph: {
-    title: "Shopify Services | Markit Media",
+    title: "Shopify Services",
     description:
       "Shopify development and growth services spanning storefronts, integrations, migration, conversion and ecommerce marketing.",
   },

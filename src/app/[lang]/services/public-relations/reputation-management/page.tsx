@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Reputation Management | Markit Media",
+  title: "Reputation Management",
   description: "Reputation monitoring, response planning, review strategy, search visibility, communications, and escalation workflows designed to help brands protect and improve how they are perceived.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/reputation-management" },
 };

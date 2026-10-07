@@ -6,11 +6,11 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  title: "Why Markit Media — What Makes Us Different",
+  title: "Why Us — What Makes Us Different",
   description: "Learn what sets Markit Media apart: senior talent, full-stack execution, transparent reporting, and data-driven marketing across 6 countries.",
   alternates: { canonical: "https://themarkitmedia.com/en/why-markit-media" },
   openGraph: {
-    title: "Why Choose Markit Media",
+    title: "Why Choose Us",
     description: "Senior talent, full-stack execution, transparent reporting, and data-driven marketing across 6 countries.",
   },
 };

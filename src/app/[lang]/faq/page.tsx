@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Get answers to common questions about digital marketing services, pricing, timelines, and working with Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/faq" },
   openGraph: {
-    title: "FAQs — Markit Media",
+    title: "FAQs",
     description:
       "Answers to common questions about our digital marketing services, pricing, timelines, and how we work.",
   },

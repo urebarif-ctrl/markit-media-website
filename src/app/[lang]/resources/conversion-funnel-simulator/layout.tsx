@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conversion Funnel Simulator | Free Tool | Markit Media",
+  title: "Conversion Funnel Simulator | Free Tool",
   description: "Simulate your marketing funnel with custom stages, conversion rates, and revenue projections. Identify bottlenecks and optimisation opportunities.",
   openGraph: {
-    title: "Conversion Funnel Simulator | Free Tool | Markit Media",
+    title: "Conversion Funnel Simulator | Free Tool",
     description: "Simulate your marketing funnel to identify bottlenecks and optimisation opportunities.",
   },
 };

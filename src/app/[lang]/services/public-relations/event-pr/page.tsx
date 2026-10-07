@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
 export const metadata: Metadata = {
-  title: "Event PR | Markit Media",
+  title: "Event PR",
   description: "PR planning and communications for launches, exhibitions, conferences, openings, corporate events, hospitality experiences, and branded activations before, during, and after the event.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/event-pr" },
 };
