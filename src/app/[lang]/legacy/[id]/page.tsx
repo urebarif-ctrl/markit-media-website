@@ -36,12 +36,14 @@ export async function generateMetadata({
   const canonical = `${BASE_URL}${page.path}`;
   const description = getDescription(page);
 
+  const metaTitle = customTitles[page.id] ?? page.title;
+
   return {
-    title: page.title,
+    title: metaTitle,
     description,
     alternates: { canonical },
     openGraph: {
-      title: page.title,
+      title: metaTitle,
       description,
       url: canonical,
       type: page.kind === "article" ? "article" : "website",
@@ -62,9 +64,73 @@ function topicArea(page: LegacySeoPage) {
   return "marketing";
 }
 
+const customTitles: Record<string, string> = {
+  "top-web-design-companies-in-the-usa":
+    "Top Web Design Companies in the USA (2026 Ranked List)",
+  "top-web-development-companies-in-the-usa":
+    "Top Web Development Companies in the USA (2026 Ranked List)",
+  "best-animation-software-for-creators-and-professionals":
+    "Best Animation Software (2026): Tools for Creators and Professionals",
+  "how-much-does-website-development-cost-in-the-usa":
+    "Website Development Cost in the USA (2026 Pricing Guide)",
+  "best-personal-website-examples-to-inspire-your-own-brand":
+    "25 Best Personal Website Examples (2026) to Inspire Your Brand",
+  "shopify-vs-woocommerce-vs-magento-which-platform-is-best":
+    "Shopify vs WooCommerce vs Magento (2026): Which Platform Is Best?",
+  "top-10-plugins-for-wordpress-seo-optimization":
+    "10 Best WordPress SEO Plugins (2026 Rankings and Reviews)",
+  "blog-top-10-tools-for-social-media-management-2025":
+    "10 Best Social Media Management Tools (2026 Compared)",
+  "best-practices-for-choosing-a-domain-name-in-2025":
+    "How to Choose a Domain Name in 2026 (Best Practices Guide)",
+};
+
+const customDescriptions: Record<string, string> = {
+  "beginners-guide-to-website-development":
+    "A beginner-friendly guide to website development covering planning, domains, hosting, frontend, backend, CMS options, SEO, analytics, testing and launch.",
+  "22-best-augmented-reality-games-you-must-try":
+    "The 22 best augmented reality games for 2026, including multiplayer AR, mobile AR shooters, AR puzzle games and outdoor AR adventures for iOS and Android.",
+  "social-media-phone-vs-desktop-use":
+    "How social media usage differs between phone and desktop. Platform-by-platform breakdown of mobile vs desktop engagement, demographics and content performance.",
+  "top-web-design-companies-in-the-usa":
+    "A ranked list of top web design companies in the USA for 2026, covering agency specializations, pricing models, portfolios and how to choose the right web design partner.",
+  "best-personal-website-examples-to-inspire-your-own-brand":
+    "25 best personal website examples across portfolios, freelancers, creators and executives. Real sites with design breakdowns to inspire your own personal brand online.",
+  "top-web-development-companies-in-the-usa":
+    "Top web development companies in the USA compared by stack expertise, project size, pricing and client reviews. Updated for 2026 with agency profiles and selection criteria.",
+  "best-animation-software-for-creators-and-professionals":
+    "The best animation software for 2026 compared: 2D, 3D, motion graphics and logo animation tools ranked by features, pricing, learning curve and professional use cases.",
+  "steps-to-create-a-digital-marketing-agency-website":
+    "Step-by-step guide to building a digital marketing agency website that generates leads. Covers structure, copy, portfolio, trust signals, SEO and conversion optimization.",
+  "how-much-does-website-development-cost-in-the-usa":
+    "Website development costs in the USA for 2026: pricing by site type, platform, complexity and agency tier. Includes cost breakdowns for WordPress, Shopify, custom and enterprise builds.",
+  "blog-top-10-tools-for-social-media-management-2025":
+    "The 10 best social media management tools for 2026 compared by scheduling, analytics, team collaboration, pricing and platform support for agencies and businesses.",
+  "top-10-plugins-for-wordpress-seo-optimization":
+    "10 best WordPress SEO plugins for 2026 ranked by features, speed impact, ease of use and pricing. Includes Yoast, Rank Math, All in One SEO and newer alternatives.",
+  "using-influencer-marketing-to-complement-your-digital-strategy":
+    "How to use influencer marketing alongside SEO, paid ads and email to build a multi-channel digital strategy. Covers selection, contracts, measurement and ROI tracking.",
+  "how-accurate-is-semrush-data-and-how-often-is-its-database-updated":
+    "How accurate is Semrush data? Analysis of Semrush keyword volume, traffic estimates, backlink data and ranking accuracy. Includes update frequency and comparison with Google data.",
+  "best-practices-for-choosing-a-domain-name-in-2025":
+    "How to choose a domain name in 2026: best practices for branding, SEO, length, extensions, availability checks and common domain selection mistakes to avoid.",
+  "how-to-create-a-winning-seo-strategy-for-a-new-website":
+    "Complete SEO strategy for new websites: keyword research, technical setup, content planning, link building and measurement. A practical roadmap from launch to first-page rankings.",
+  "common-digital-marketing-mistakes-brands-need-to-avoid":
+    "The most common digital marketing mistakes brands make in 2026 and how to avoid them. Covers strategy, targeting, budget, measurement, content and channel selection errors.",
+  "social-impact-of-ai-how-artificial-intelligence-is-transforming-society":
+    "How artificial intelligence is transforming society: the social impact of AI on jobs, healthcare, education, privacy, creativity and daily life. Benefits, risks and ethical considerations.",
+  "pagination-vs-infinite-scroll-which-is-best-for-your-website":
+    "Pagination vs infinite scroll compared for UX, SEO, performance and conversion. When to use each pattern based on content type, user behavior and search engine requirements.",
+  "shopify-vs-woocommerce-vs-magento-which-platform-is-best":
+    "Shopify vs WooCommerce vs Magento compared for 2026: pricing, scalability, customization, SEO, speed and total cost of ownership. Which ecommerce platform fits your business.",
+  "the-cost-of-social-media-marketing-in-us-2026-guide":
+    "Social media marketing costs in the USA for 2026: monthly management fees, ad spend benchmarks, platform-by-platform pricing and what to expect from agencies vs in-house teams.",
+};
+
 function getDescription(page: LegacySeoPage) {
-  if (page.id === "beginners-guide-to-website-development") {
-    return "A beginner-friendly guide to website development covering planning, domains, hosting, frontend, backend, CMS options, SEO, analytics, testing and launch.";
+  if (customDescriptions[page.id]) {
+    return customDescriptions[page.id];
   }
   if (page.kind === "service") {
     return `${page.title} services from Markit Media, with a clear approach, deliverables, process, measurement and next steps for businesses evaluating this capability.`;
