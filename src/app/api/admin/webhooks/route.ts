@@ -16,6 +16,7 @@ export async function GET(request: NextRequest) {
       slackWebhookUrl: config?.slackWebhookUrl || "",
       emailDigest: config?.emailDigest || false,
       digestEmail: config?.digestEmail || "",
+      digestFrequency: config?.digestFrequency || "daily",
       enabled: config?.enabled || false,
     });
   } catch (e) {
@@ -32,6 +33,7 @@ export async function POST(request: NextRequest) {
       slackWebhookUrl: String(body.slackWebhookUrl || "").trim(),
       emailDigest: Boolean(body.emailDigest),
       digestEmail: String(body.digestEmail || "").trim(),
+      digestFrequency: (body.digestFrequency === "weekly" ? "weekly" : "daily") as "daily" | "weekly",
       enabled: Boolean(body.enabled),
       updatedAt: new Date(),
     };

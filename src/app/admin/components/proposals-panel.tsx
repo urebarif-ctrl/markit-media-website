@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import { Plus, Send, FileText, Trash2, ExternalLink, Copy, ChevronDown, ChevronUp, Receipt } from "lucide-react";
+import { Plus, Send, FileText, Trash2, ExternalLink, Copy, ChevronDown, ChevronUp, Receipt, Download, Mail, Loader2 } from "lucide-react";
 
 interface Package { name: string; price: string; recommended: boolean; items: string[] }
 interface CommercialNote { title: string; text: string }
@@ -232,6 +232,7 @@ export function ProposalsPanel({ headers }: { headers: Record<string, string> })
   const [editingProposal, setEditingProposal] = useState<Proposal | "new" | null>(null);
   const [editingInvoice, setEditingInvoice] = useState<Invoice | "new" | null>(null);
   const [expanded, setExpanded] = useState<number | null>(null);
+  const [sendingInvoice, setSendingInvoice] = useState<number | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -271,6 +272,16 @@ export function ProposalsPanel({ headers }: { headers: Record<string, string> })
     const url = type === "proposals" ? "/api/admin/proposals" : "/api/admin/invoices";
     await fetch(url, { method: "DELETE", headers, body: JSON.stringify({ id }) });
     load();
+  }
+
+  async function sendInvoice(id: number) {
+    setSendingInvoice(id);
+    try {
+      const res = await fetch("/api/admin/invoices/send", { method: "POST", headers, body: JSON.stringify({ id }) });
+      const data = await res.json();
+      if (!res.ok) { alert(data.error || "Failed to send invoice"); return; }
+      load();
+    } catch { alert("Failed to send invoice"); } finally { setSendingInvoice(null); }
   }
 
   function copyLink(slug: string) {
@@ -367,6 +378,16 @@ export function ProposalsPanel({ headers }: { headers: Record<string, string> })
                 <div className="px-5 pb-4 border-t bg-zinc-50/50">
                   <div className="flex flex-wrap gap-2 pt-3">
                     <button onClick={() => setEditingInvoice(inv)} className="text-xs font-semibold border rounded-lg px-3 py-1.5 hover:bg-zinc-100">Edit</button>
+                    <a href={`/en/invoice/${inv.id}`} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold border rounded-lg px-3 py-1.5 hover:bg-zinc-100 flex items-center gap-1"><Download size={12} /> Download PDF</a>
+                    {inv.client_email && (
+                      <button
+                        onClick={() => sendInvoice(inv.id)}
+                        disabled={sendingInvoice === inv.id}
+                        className="text-xs font-semibold bg-black text-white rounded-lg px-3 py-1.5 flex items-center gap-1 disabled:opacity-50"
+                      >
+                        {sendingInvoice === inv.id ? <><Loader2 size={12} className="animate-spin" /> Sending...</> : <><Mail size={12} /> Send Invoice</>}
+                      </button>
+                    )}
                     {inv.status === "draft" && <button onClick={() => updateStatus("invoices", inv.id, "sent")} className="text-xs font-semibold bg-blue-600 text-white rounded-lg px-3 py-1.5 flex items-center gap-1"><Send size={12} /> Mark sent</button>}
                     {inv.status === "sent" && <button onClick={() => updateStatus("invoices", inv.id, "paid")} className="text-xs font-semibold bg-green-600 text-white rounded-lg px-3 py-1.5">Mark paid</button>}
                     <button onClick={() => deleteItem("invoices", inv.id)} className="text-xs font-semibold text-red-500 border border-red-200 rounded-lg px-3 py-1.5 hover:bg-red-50 ml-auto"><Trash2 size={12} /></button>

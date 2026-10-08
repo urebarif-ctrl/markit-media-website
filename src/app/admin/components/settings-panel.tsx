@@ -3,6 +3,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Bell, ShieldCheck, UserPlus, Users } from "lucide-react";
 
 type TeamUser={id:string;name:string;email:string;role:string;createdAt?:string};
+type RoleOption={slug:string;name:string;is_system:boolean};
 
 export function SettingsPanel({ headers, email, onSaved }: { headers: Record<string,string>; email: string; onSaved: () => void }) {
   const [newEmail,setNewEmail]=useState(email);
@@ -13,9 +14,12 @@ export function SettingsPanel({ headers, email, onSaved }: { headers: Record<str
   const [users,setUsers]=useState<TeamUser[]>([]);
   const [userError,setUserError]=useState("");
   const [invite,setInvite]=useState({name:"",email:"",password:"",role:"manager"});
-  const [webhook,setWebhook]=useState({slackWebhookUrl:"",emailDigest:false,digestEmail:"",enabled:false});
+  const [webhook,setWebhook]=useState({slackWebhookUrl:"",emailDigest:false,digestEmail:"",digestFrequency:"daily" as "daily"|"weekly",enabled:false});
   const [webhookMsg,setWebhookMsg]=useState("");
+  const [digestTesting,setDigestTesting]=useState(false);
+  const [digestResult,setDigestResult]=useState("");
   const [webhookLoading,setWebhookLoading]=useState(false);
+  const [availableRoles,setAvailableRoles]=useState<RoleOption[]>([]);
 
   async function loadWebhook(){
     try{const r=await fetch("/api/admin/webhooks",{headers,cache:"no-store"});if(r.ok){const d=await r.json();setWebhook(d);}}catch{}
@@ -33,7 +37,13 @@ export function SettingsPanel({ headers, email, onSaved }: { headers: Record<str
     const d=await r.json();
     if(r.ok)setUsers(d.users||[]);
   }
-  useEffect(()=>{loadUsers();loadWebhook();},[]);
+  async function loadRoles(){
+    try{
+      const r=await fetch("/api/admin/roles",{headers,cache:"no-store"});
+      if(r.ok){const d=await r.json();setAvailableRoles((d.roles||[]).map((r:any)=>({slug:r.slug,name:r.name,is_system:r.is_system})));}
+    }catch{}
+  }
+  useEffect(()=>{loadUsers();loadWebhook();loadRoles();},[]);
 
   async function submit(e:FormEvent){
     e.preventDefault(); setLoading(true); setMessage("");
@@ -78,7 +88,7 @@ export function SettingsPanel({ headers, email, onSaved }: { headers: Record<str
         <input value={invite.name} onChange={e=>setInvite({...invite,name:e.target.value})} required placeholder="Full name" className="rounded-xl border px-4 py-3 text-sm"/>
         <input type="email" value={invite.email} onChange={e=>setInvite({...invite,email:e.target.value})} required placeholder="Email address" className="rounded-xl border px-4 py-3 text-sm"/>
         <input type="password" value={invite.password} onChange={e=>setInvite({...invite,password:e.target.value})} required minLength={12} placeholder="Temporary password" className="rounded-xl border px-4 py-3 text-sm"/>
-        <select value={invite.role} onChange={e=>setInvite({...invite,role:e.target.value})} className="rounded-xl border bg-white px-4 py-3 text-sm"><option value="manager">Manager</option><option value="admin">Admin</option></select>
+        <select value={invite.role} onChange={e=>setInvite({...invite,role:e.target.value})} className="rounded-xl border bg-white px-4 py-3 text-sm">{availableRoles.filter(r=>r.slug!=="master_admin").map(r=><option key={r.slug} value={r.slug}>{r.name}</option>)}{availableRoles.length===0&&<><option value="manager">Manager</option><option value="admin">Admin</option></>}</select>
       </div>
       {userError&&<p className="mt-3 text-sm font-semibold text-red-700">{userError}</p>}
       <button className="mt-4 rounded-xl bg-black px-5 py-3 text-sm font-bold text-white">Add dashboard user</button>
@@ -88,6 +98,19 @@ export function SettingsPanel({ headers, email, onSaved }: { headers: Record<str
       <div className="flex items-center gap-3"><div className="h-10 w-10 rounded-xl bg-black text-white grid place-items-center"><Bell size={18}/></div><div><h3 className="font-extrabold">Notifications</h3><p className="text-xs text-gray-400">Get alerted when new leads come in via Slack or email digest.</p></div></div>
       <label className="flex items-center gap-3 cursor-pointer"><input type="checkbox" checked={webhook.enabled} onChange={e=>setWebhook({...webhook,enabled:e.target.checked})} className="h-4 w-4 rounded border-gray-300"/><span className="text-sm font-bold">Enable notifications</span></label>
       <div><label className="mb-2 block text-sm font-bold">Slack webhook URL</label><input type="url" value={webhook.slackWebhookUrl} onChange={e=>setWebhook({...webhook,slackWebhookUrl:e.target.value})} placeholder="https://hooks.slack.com/services/..." className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm" /></div>
+
+      {/* Email Digest */}
+      <div style={{borderTop:"1px solid #eee",paddingTop:20,marginTop:8}}>
+        <h4 className="text-sm font-bold mb-3">Email Digest</h4>
+        <label className="flex items-center gap-3 cursor-pointer mb-3"><input type="checkbox" checked={webhook.emailDigest} onChange={e=>setWebhook({...webhook,emailDigest:e.target.checked})} className="h-4 w-4 rounded border-gray-300"/><span className="text-sm">Enable email digest</span></label>
+        {webhook.emailDigest&&<>
+          <div className="mb-3"><label className="mb-2 block text-sm font-bold">Recipient email</label><input type="email" value={webhook.digestEmail} onChange={e=>setWebhook({...webhook,digestEmail:e.target.value})} placeholder="you@example.com" className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm"/></div>
+          <div className="mb-3"><label className="mb-2 block text-sm font-bold">Frequency</label><select value={webhook.digestFrequency||"daily"} onChange={e=>setWebhook({...webhook,digestFrequency:e.target.value as "daily"|"weekly"})} className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm"><option value="daily">Daily (8 AM UTC)</option><option value="weekly">Weekly (Monday 8 AM UTC)</option></select></div>
+          <button type="button" disabled={digestTesting||!webhook.digestEmail} onClick={async()=>{setDigestTesting(true);setDigestResult("");try{const r=await fetch("/api/admin/digest",{method:"POST",headers});const d=await r.json();setDigestResult(r.ok?(d.sent?`Digest sent! ${d.stats?.leads??0} leads, ${d.stats?.subscribers??0} subscribers, ${d.stats?.followUps??0} follow-ups.`:d.reason||"Skipped"):(d.error||"Failed to send digest"));}catch{setDigestResult("Network error");}finally{setDigestTesting(false);}}} className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-bold hover:bg-zinc-50 disabled:opacity-50">{digestTesting?"Sending...":"Send Test Digest"}</button>
+          {digestResult&&<p className="mt-2 text-sm text-gray-600">{digestResult}</p>}
+        </>}
+      </div>
+
       {webhookMsg&&<p className="text-sm font-semibold">{webhookMsg}</p>}
       <button disabled={webhookLoading} className="rounded-lg bg-black px-5 py-3 text-sm font-bold text-white disabled:opacity-50">{webhookLoading?"Saving...":"Save notification settings"}</button>
     </form>
