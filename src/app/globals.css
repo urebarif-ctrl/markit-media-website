@@ -257,6 +257,7 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 .home-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 85% 15%, #ffffff18, transparent 60%), linear-gradient(120deg, transparent 30%, #ffffff06 50%, transparent 70%); background-size: 150% 150%; animation: hero-drift 12s ease-in-out infinite alternate; }
 .home-hero > div { position: relative; }
 @keyframes hero-drift { from { background-position: 0% 0%; } to { background-position: 100% 70%; } }
+.hero-mosaic > a { border: 1px solid rgba(255,255,255,0.08); }
 @media (min-width: 640px) {
   .resource-card h3 { font-size: 17px; }
   .resource-card p { font-size: 15px; }

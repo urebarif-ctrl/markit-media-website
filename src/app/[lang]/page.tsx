@@ -15,7 +15,6 @@ import {
   Hotel, Dumbbell, Car, HeartHandshake,
   Building, Plane, Factory,
 } from "lucide-react";
-import { HeroStats } from "@/components/hero-stats";
 import { TypingEffect } from "@/components/typing-effect";
 import dynamic from "next/dynamic";
 const YouTubeEmbed = dynamic(() => import("@/components/youtube-embed").then(m => m.YouTubeEmbed));
@@ -158,17 +157,17 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       {/* Hero */}
       <section className="home-hero relative bg-black overflow-hidden pt-20" aria-label="Hero">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14 sm:py-20 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <div>
               <Animate animation="fade-up">
-                <span className="inline-block text-base font-bold text-white/50 uppercase tracking-[0.2em] mb-6">Full-Stack Digital Agency</span>
-                <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5.5vw,4rem)] font-extrabold text-white tracking-tight leading-[1.08]">
+                <span className="inline-block text-sm font-bold text-white/40 uppercase tracking-[0.25em] mb-5">Full-Stack Digital Agency</span>
+                <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.5rem,5.8vw,4.25rem)] font-extrabold text-white tracking-tight leading-[1.06]">
                   {t.home.heroTitle}
                 </h1>
               </Animate>
               <Animate animation="fade-up" delay={150}>
-                <p className="text-xl text-gray-400 leading-relaxed mt-6 max-w-lg">
+                <p className="text-lg sm:text-xl text-gray-400 leading-relaxed mt-6 max-w-lg">
                   {t.home.heroSubtitle}
                 </p>
               </Animate>
@@ -183,7 +182,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       "Video Production",
                       "AI-Powered Solutions",
                     ]}
-                    className="text-lg text-white/70 font-medium"
+                    className="text-lg text-white/60 font-medium"
                   />
                 </div>
               </Animate>
@@ -197,47 +196,72 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   </Link>
                 </div>
               </Animate>
+              <Animate animation="fade-up" delay={450}>
+                <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+                  {[
+                    ["100+", "Clients Served"],
+                    ["6", "Countries"],
+                    ["12+", "Capabilities"],
+                  ].map(([value, label]) => (
+                    <div key={label}>
+                      <div className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-extrabold text-white">{value}</div>
+                      <div className="mt-1 text-xs text-white/40">{label}</div>
+                    </div>
+                  ))}
+                </div>
+              </Animate>
             </div>
             <div className="hidden lg:block relative">
               <Animate animation="fade-up" delay={200}>
-                <div className="relative min-h-[500px]">
-                  <div className="absolute inset-x-0 top-0 h-[390px] overflow-hidden border border-white/10 bg-white/[0.03]">
-                    <Image
-                      src="/images/portfolio/social-media-hero.jpg"
-                      alt="Selected social media creative work by Markit Media"
-                      fill
-                      priority
-                      sizes="50vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-7">
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/60">Selected creative work</p>
-                      <p className="mt-2 max-w-sm font-[family-name:var(--font-display)] text-2xl font-extrabold text-white">
-                        Strategy is stronger when you can see the execution.
-                      </p>
+                <div className="hero-mosaic grid grid-cols-12 grid-rows-12 gap-2 h-[520px]">
+                  <Link href="/en/work/fashion-feed" className="group relative col-span-7 row-span-7 overflow-hidden">
+                    <Image src="/images/portfolio/fashion-feed-hero.jpg" alt="Fashion campaign creative by Markit Media" fill priority sizes="35vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Fashion</span>
+                      <p className="text-sm font-bold text-white mt-0.5">Campaign Creative</p>
                     </div>
-                  </div>
-                  <div className="absolute -bottom-1 left-7 right-7 grid grid-cols-4 border border-white/15 bg-black/95 shadow-2xl">
-                    {[
-                      ["300+", "Videos"],
-                      ["12+", "Capabilities"],
-                      ["6", "Countries"],
-                      ["155+", "Free Tools"],
-                    ].map(([value, label]) => (
-                      <div key={label} className="border-r border-white/10 px-4 py-5 last:border-r-0">
-                        <div className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-white">{value}</div>
-                        <div className="mt-1 text-xs font-medium text-white/50">{label}</div>
-                      </div>
-                    ))}
-                  </div>
+                  </Link>
+                  <Link href="/en/work/logo-folio" className="group relative col-span-5 row-span-5 overflow-hidden">
+                    <Image src="/images/portfolio/logofolio-hero.jpg" alt="Logo and identity work by Markit Media" fill priority sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Branding</span>
+                      <p className="text-sm font-bold text-white mt-0.5">Identity Systems</p>
+                    </div>
+                  </Link>
+                  <Link href="/en/work/foodfolio" className="group relative col-span-5 row-span-7 overflow-hidden">
+                    <Image src="/images/portfolio/foodfolio-hero.jpg" alt="Food and brand creative by Markit Media" fill priority sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Food &amp; Brand</span>
+                      <p className="text-sm font-bold text-white mt-0.5">Product Storytelling</p>
+                    </div>
+                  </Link>
+                  <Link href="/en/work/social-media-designs" className="group relative col-span-7 row-span-5 overflow-hidden">
+                    <Image src="/images/portfolio/social-media-hero.jpg" alt="Social media designs by Markit Media" fill priority sizes="35vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Social Media</span>
+                      <p className="text-sm font-bold text-white mt-0.5">Campaign Designs</p>
+                    </div>
+                  </Link>
                 </div>
               </Animate>
             </div>
           </div>
-          <Animate animation="fade-up" delay={450}>
-            <div className="mt-14 lg:hidden">
-              <HeroStats />
+          <Animate animation="fade-up" delay={500}>
+            <div className="mt-10 lg:hidden">
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { src: "/images/portfolio/fashion-feed-hero.jpg", alt: "Fashion creative" },
+                  { src: "/images/portfolio/logofolio-hero.jpg", alt: "Logo and branding" },
+                ].map((img) => (
+                  <div key={img.alt} className="relative aspect-[4/3] overflow-hidden">
+                    <Image src={img.src} alt={img.alt} fill sizes="45vw" className="object-cover" />
+                  </div>
+                ))}
+              </div>
             </div>
           </Animate>
         </div>
