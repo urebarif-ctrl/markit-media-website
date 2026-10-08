@@ -214,8 +214,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 
-  // Update status from draft to sent
-  if (inv.status === "draft") {
+  // Update status to sent (from draft or overdue)
+  if (inv.status === "draft" || inv.status === "overdue") {
     db.prepare(
       "UPDATE invoices SET status = 'sent', updated_at = ? WHERE id = ?"
     ).run(new Date().toISOString(), id);

@@ -32,7 +32,7 @@ function formatDate(d: string) { return new Date(d).toLocaleDateString("en-US", 
 
 // ── Proposal Form ──
 function ProposalForm({ proposal, onSave, onCancel }: { proposal?: Proposal; onSave: (data: Record<string, unknown>) => void; onCancel: () => void }) {
-  const parse = <T,>(s: string | undefined, fallback: T): T => { try { return s ? JSON.parse(s) : fallback; } catch { return fallback; } };
+  const parse = <T,>(s: unknown, fallback: T): T => { if (Array.isArray(s)) return s as unknown as T; if (!s) return fallback; try { return JSON.parse(s as string); } catch { return fallback; } };
   const [form, setForm] = useState({
     client_name: proposal?.client_name || "", client_email: proposal?.client_email || "",
     client_company: proposal?.client_company || "", title: proposal?.title || "Social, Content\n& Growth.",
@@ -131,7 +131,7 @@ function ProposalForm({ proposal, onSave, onCancel }: { proposal?: Proposal; onS
 // ── Invoice Form ──
 interface InvItem { description: string; qty: number; rate: number; amount: number }
 function InvoiceForm({ invoice, proposals, onSave, onCancel }: { invoice?: Invoice; proposals: Proposal[]; onSave: (data: Record<string, unknown>) => void; onCancel: () => void }) {
-  const parse = <T,>(s: string | undefined, fallback: T): T => { try { return s ? JSON.parse(s) : fallback; } catch { return fallback; } };
+  const parse = <T,>(s: unknown, fallback: T): T => { if (Array.isArray(s)) return s as unknown as T; if (!s) return fallback; try { return JSON.parse(s as string); } catch { return fallback; } };
   const [form, setForm] = useState({
     proposal_id: invoice?.proposal_id || "", client_name: invoice?.client_name || "",
     client_email: invoice?.client_email || "", client_company: invoice?.client_company || "",
@@ -171,6 +171,7 @@ function InvoiceForm({ invoice, proposals, onSave, onCancel }: { invoice?: Invoi
             <option value="">None</option>
             {proposals.map(p => <option key={p.id} value={p.id}>{p.client_company || p.client_name}</option>)}
           </select>
+          {form.proposal_id && (() => { const lp = proposals.find(p => p.id === Number(form.proposal_id)); return lp ? <p className="text-xs text-blue-600 mt-1.5 flex items-center gap-1"><FileText size={11} /> Linked to proposal for {lp.client_company || lp.client_name}</p> : null; })()}
         </div>
         <Input label="Due date" value={form.due_date} onChange={v => setForm({ ...form, due_date: v })} type="date" />
       </div>
@@ -320,7 +321,14 @@ export function ProposalsPanel({ headers }: { headers: Record<string, string> })
 
       {tab === "proposals" && (
         <div className="space-y-3">
-          {proposals.length === 0 && <p className="text-sm text-zinc-400 py-8 text-center">No proposals yet.</p>}
+          {proposals.length === 0 && !editingProposal && (
+            <div className="text-center py-16 border-2 border-dashed rounded-2xl">
+              <FileText size={40} className="mx-auto text-zinc-300 mb-4" />
+              <p className="font-bold text-zinc-600 mb-1">No proposals yet</p>
+              <p className="text-sm text-zinc-400 mb-6 max-w-xs mx-auto">Create a professional proposal for your next client with packages, case studies, and commercial terms.</p>
+              <button onClick={() => setEditingProposal("new")} className="bg-black text-white px-5 py-2.5 rounded-xl text-sm font-bold inline-flex items-center gap-1.5"><Plus size={14} /> Create your first proposal</button>
+            </div>
+          )}
           {proposals.map(p => (
             <div key={p.id} className="border rounded-2xl bg-white overflow-hidden">
               <button onClick={() => setExpanded(expanded === p.id ? null : p.id)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-zinc-50 text-left">
@@ -358,18 +366,49 @@ export function ProposalsPanel({ headers }: { headers: Record<string, string> })
 
       {tab === "invoices" && (
         <div className="space-y-3">
-          {invoices.length === 0 && <p className="text-sm text-zinc-400 py-8 text-center">No invoices yet.</p>}
+          {invoices.length > 0 && (() => {
+            const today = new Date(); today.setHours(0, 0, 0, 0);
+            const outstanding = invoices.filter(i => i.status === "sent").reduce((s, i) => s + i.total, 0);
+            const totalPaid = invoices.filter(i => i.status === "paid").reduce((s, i) => s + i.total, 0);
+            const overdueCount = invoices.filter(i => i.status === "overdue" || (i.status === "sent" && i.due_date && new Date(i.due_date) < today)).length;
+            const cur = invoices[0]?.currency || "PKR";
+            return (
+              <div className="grid grid-cols-3 gap-3">
+                <div className="border rounded-xl px-4 py-3 bg-white">
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Outstanding</p>
+                  <p className="text-lg font-extrabold mt-0.5">{cur} {outstanding.toLocaleString()}</p>
+                </div>
+                <div className="border rounded-xl px-4 py-3 bg-white">
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Paid</p>
+                  <p className="text-lg font-extrabold text-green-700 mt-0.5">{cur} {totalPaid.toLocaleString()}</p>
+                </div>
+                <div className="border rounded-xl px-4 py-3 bg-white">
+                  <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Overdue</p>
+                  <p className="text-lg font-extrabold text-amber-700 mt-0.5">{overdueCount}</p>
+                </div>
+              </div>
+            );
+          })()}
+          {invoices.length === 0 && !editingInvoice && (
+            <div className="text-center py-16 border-2 border-dashed rounded-2xl">
+              <Receipt size={40} className="mx-auto text-zinc-300 mb-4" />
+              <p className="font-bold text-zinc-600 mb-1">No invoices yet</p>
+              <p className="text-sm text-zinc-400 mb-6 max-w-xs mx-auto">Create and send professional invoices to your clients. Track payments and keep your finances organized.</p>
+              <button onClick={() => setEditingInvoice("new")} className="bg-black text-white px-5 py-2.5 rounded-xl text-sm font-bold inline-flex items-center gap-1.5"><Plus size={14} /> Create your first invoice</button>
+            </div>
+          )}
           {invoices.map(inv => (
             <div key={inv.id} className="border rounded-2xl bg-white overflow-hidden">
               <button onClick={() => setExpanded(expanded === -inv.id ? null : -inv.id)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-zinc-50 text-left">
-                <div className="flex items-center gap-3 min-w-0">
+                <div className="flex items-center gap-3 min-w-0 flex-1">
                   <Receipt size={16} className="text-zinc-400 shrink-0" />
                   <div className="min-w-0">
                     <p className="font-bold text-sm truncate">{inv.invoice_number} — {inv.client_company || inv.client_name}</p>
-                    <p className="text-xs text-zinc-400">{inv.currency} {inv.total.toLocaleString()} · {formatDate(inv.created_at)}</p>
+                    <p className="text-xs text-zinc-400">{formatDate(inv.created_at)}{inv.proposal_id ? (() => { const lp = proposals.find(p => p.id === inv.proposal_id); return lp ? ` · ${lp.client_company || lp.client_name} proposal` : ""; })() : ""}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
+                  <span className="text-sm font-extrabold whitespace-nowrap">{inv.currency} {inv.total.toLocaleString()}</span>
                   <Badge status={inv.status} />
                   {expanded === -inv.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                 </div>
@@ -390,6 +429,7 @@ export function ProposalsPanel({ headers }: { headers: Record<string, string> })
                     )}
                     {inv.status === "draft" && <button onClick={() => updateStatus("invoices", inv.id, "sent")} className="text-xs font-semibold bg-blue-600 text-white rounded-lg px-3 py-1.5 flex items-center gap-1"><Send size={12} /> Mark sent</button>}
                     {inv.status === "sent" && <button onClick={() => updateStatus("invoices", inv.id, "paid")} className="text-xs font-semibold bg-green-600 text-white rounded-lg px-3 py-1.5">Mark paid</button>}
+                    {inv.status === "sent" && inv.due_date && new Date(inv.due_date) < new Date() && <button onClick={() => updateStatus("invoices", inv.id, "overdue")} className="text-xs font-semibold bg-amber-500 text-white rounded-lg px-3 py-1.5">Mark overdue</button>}
                     <button onClick={() => deleteItem("invoices", inv.id)} className="text-xs font-semibold text-red-500 border border-red-200 rounded-lg px-3 py-1.5 hover:bg-red-50 ml-auto"><Trash2 size={12} /></button>
                   </div>
                 </div>

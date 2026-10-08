@@ -7,6 +7,12 @@ function auth(req: NextRequest) {
   return verifyToken(req.cookies.get("admin_token")?.value || "");
 }
 
+function safeJsonParse(s: unknown, fallback: unknown[] = []) {
+  if (Array.isArray(s)) return s;
+  if (!s || typeof s !== "string") return fallback;
+  try { return JSON.parse(s); } catch { return fallback; }
+}
+
 function generateSlug(company: string): string {
   const base = company.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 30);
   return `${base}-${randomBytes(6).toString("hex")}`;
@@ -28,8 +34,14 @@ export async function GET(req: NextRequest) {
   if (clauses.length) sql += " WHERE " + clauses.join(" AND ");
   sql += " ORDER BY created_at DESC";
 
-  const rows = db.prepare(sql).all(...params);
-  return NextResponse.json({ proposals: rows });
+  const rows = db.prepare(sql).all(...params) as Record<string, unknown>[];
+  const proposals = rows.map(row => ({
+    ...row,
+    packages: safeJsonParse(row.packages),
+    commercial_notes: safeJsonParse(row.commercial_notes),
+    case_studies: safeJsonParse(row.case_studies),
+  }));
+  return NextResponse.json({ proposals });
 }
 
 export async function POST(req: NextRequest) {

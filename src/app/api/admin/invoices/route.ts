@@ -6,6 +6,12 @@ function auth(req: NextRequest) {
   return verifyToken(req.cookies.get("admin_token")?.value || "");
 }
 
+function safeJsonParse(s: unknown, fallback: unknown[] = []) {
+  if (Array.isArray(s)) return s;
+  if (!s || typeof s !== "string") return fallback;
+  try { return JSON.parse(s); } catch { return fallback; }
+}
+
 function nextInvoiceNumber(db: ReturnType<typeof getDb>): string {
   const year = new Date().getFullYear();
   const row = db.prepare("SELECT invoice_number FROM invoices WHERE invoice_number LIKE ? ORDER BY id DESC LIMIT 1").get(`MM-${year}-%`) as { invoice_number: string } | undefined;
@@ -24,7 +30,12 @@ export async function GET(req: NextRequest) {
   if (status) { sql += " WHERE status = ?"; params.push(status); }
   sql += " ORDER BY created_at DESC";
 
-  return NextResponse.json({ invoices: db.prepare(sql).all(...params) });
+  const rows = db.prepare(sql).all(...params) as Record<string, unknown>[];
+  const invoices = rows.map(row => ({
+    ...row,
+    items: safeJsonParse(row.items),
+  }));
+  return NextResponse.json({ invoices });
 }
 
 export async function POST(req: NextRequest) {
