@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Website Migration Checklist — Launch Without Losing Rankings",
   description:
     "Follow this free comprehensive website migration checklist covering pre-migration planning, technical setup, content migration, and post-launch monitoring to protect your SEO.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/migration-checklist" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-migration-checklist" },
   openGraph: {
     title: "Free Website Migration Checklist",
     description:

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Website Speed Assessment — Find What's Slowing Your Site",
   description:
     "Assess your website speed with this free quiz evaluating hosting, images, scripts, caching, and mobile performance. Get a prioritized list of fixes to load faster.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/speed-test" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-speed-test" },
   openGraph: {
     title: "Free Website Speed Assessment Quiz",
     description:

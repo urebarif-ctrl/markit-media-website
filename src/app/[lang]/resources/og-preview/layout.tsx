@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Open Graph Preview Tool — See How Your Links Look When Shared",
   description:
     "Preview how your links appear on Facebook, Twitter/X, and LinkedIn before sharing. Free tool to optimize Open Graph tags and maximize social media engagement.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/og-preview" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-og-preview" },
   openGraph: {
     title: "Free Open Graph Preview Tool",
     description:

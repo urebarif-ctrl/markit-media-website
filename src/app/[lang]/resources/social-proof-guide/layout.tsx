@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Social Proof Guide — Build Trust That Converts Visitors",
   description:
     "Use this free interactive guide to implement social proof elements based on your business type and existing assets. Testimonials, reviews, case studies, and more.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/social-proof-guide" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-proof-guide" },
   openGraph: {
     title: "Free Social Proof Implementation Guide",
     description:

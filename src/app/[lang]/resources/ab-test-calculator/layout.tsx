@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "A/B Test Sample Size Calculator — Run Confident Experiments",
   description:
     "Use our free A/B test sample size calculator to determine how many visitors you need for statistically significant results. Set confidence level, power, and minimum detectable effect.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/ab-test-calculator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-ab-test-calculator" },
   openGraph: {
     title: "A/B Test Sample Size Calculator",
     description:

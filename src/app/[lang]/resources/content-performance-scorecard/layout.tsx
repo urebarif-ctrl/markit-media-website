@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Score your content across 8 dimensions with customizable weights. Compare multiple content pieces with radar charts, get tier classifications, and export actionable recommendations.",
   alternates: {
     canonical:
-      "https://themarkitmedia.com/en/resources/content-performance-scorecard",
+      "https://themarkitmedia.com/en/free-tools/free-content-performance-scorecard",
   },
   openGraph: {
     title: "Content Performance Scorecard | Free Marketing Tool",

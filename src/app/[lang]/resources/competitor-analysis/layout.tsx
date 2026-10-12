@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Competitor Analysis Framework — Map Your Market Landscape",
   description:
     "Use our free competitor analysis framework to systematically evaluate your competition. Map their channels, positioning, and strategies to find your competitive advantage.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/competitor-analysis" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-competitor-analysis" },
   openGraph: {
     title: "Free Competitor Analysis Framework",
     description:

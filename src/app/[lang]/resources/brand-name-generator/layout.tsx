@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Brand Name Generator — Find the Perfect Business Name",
   description:
     "Use our free brand name generator to discover creative business name ideas based on your industry, style, and preferences. Get memorable names with availability insights.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/brand-name-generator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-brand-name-generator" },
   openGraph: {
     title: "Free Brand Name Generator",
     description:

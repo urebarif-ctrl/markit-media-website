@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Marketing Team Capacity Planner | Free Tool",
   description:
     "Plan your marketing team workload with our free capacity planner. Add team members and projects, visualize utilization per role, spot over-allocation, and export your plan.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/team-capacity-planner" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-team-capacity-planner" },
   openGraph: {
     title: "Marketing Team Capacity Planner | Free Tool",
     description:
       "Plan your marketing team workload with our free capacity planner. Add team members and projects, visualize utilization per role, spot over-allocation, and export your plan.",
-    url: "https://themarkitmedia.com/en/resources/team-capacity-planner",
+    url: "https://themarkitmedia.com/en/free-tools/free-team-capacity-planner",
     type: "website",
   },
 };

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Content Repurposing Planner — Maximize Every Piece of Content",
   description:
     "Use our free content repurposing planner to turn one piece of content into many. See derivative formats, estimated timelines, and a visual content tree for any original piece.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/content-repurposing" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-content-repurposing" },
   openGraph: {
     title: "Free Content Repurposing Planner",
     description:

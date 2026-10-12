@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Evaluate your website against Nielsen's 10 usability heuristics. Score each principle, identify issues, and get improvement recommendations.",
   alternates: {
     canonical:
-      "https://themarkitmedia.com/en/resources/website-heuristic-evaluator",
+      "https://themarkitmedia.com/en/free-tools/free-website-heuristic-evaluator",
   },
   openGraph: {
     title: "Website Heuristic Evaluator | Free Tool",

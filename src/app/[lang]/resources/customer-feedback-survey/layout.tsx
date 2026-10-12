@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Build professional customer feedback surveys from proven templates. NPS, CSAT, product feedback, and post-purchase surveys with best-practice questions.",
   alternates: {
     canonical:
-      "https://themarkitmedia.com/en/resources/customer-feedback-survey",
+      "https://themarkitmedia.com/en/free-tools/free-customer-feedback-survey",
   },
   openGraph: {
     title: "Customer Feedback Survey Builder | Free Tool",

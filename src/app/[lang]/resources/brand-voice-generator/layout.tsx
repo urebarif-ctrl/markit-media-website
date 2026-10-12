@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Brand Voice Generator — Define Your Brand Personality",
   description:
     "Use our free brand voice generator to create detailed voice and tone guidelines for your brand. Get industry-specific recommendations based on your personality and audience.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/brand-voice-generator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-brand-voice-generator" },
   openGraph: {
     title: "Free Brand Voice & Tone Generator",
     description:

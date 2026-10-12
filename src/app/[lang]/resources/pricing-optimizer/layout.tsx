@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing Page Optimizer",
   description: "Audit and optimize your pricing page for conversions with actionable recommendations.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/pricing-optimizer" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-pricing-optimizer" },
   openGraph: {
     title: "Pricing Page Optimizer",
     description: "Audit and optimize your pricing page for conversions with actionable recommendations.",

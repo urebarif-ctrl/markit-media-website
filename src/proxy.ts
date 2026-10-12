@@ -243,7 +243,7 @@ export function proxy(request: NextRequest) {
   if (oldToolMatch && FREE_TOOL_SLUGS.has(oldToolMatch[1])) {
     const url = request.nextUrl.clone();
     url.pathname = `/en/free-tools/free-${oldToolMatch[1]}`;
-    return NextResponse.redirect(url, 308);
+    return NextResponse.redirect(url, 301);
   }
 
   // Country-level access restriction for the public website.

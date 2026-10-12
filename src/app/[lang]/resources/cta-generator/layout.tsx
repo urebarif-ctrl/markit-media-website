@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "CTA Generator — Create High-Converting Button Text & Headlines",
   description:
     "Free CTA generator that creates compelling button text, headlines, and subheadlines tailored to your business type and audience.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/cta-generator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-cta-generator" },
   openGraph: {
     title: "CTA Generator — Button Text & Headlines",
     description:

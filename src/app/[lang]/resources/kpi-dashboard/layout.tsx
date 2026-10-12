@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "KPI Dashboard Builder — Track the Metrics That Matter",
   description:
     "Free KPI dashboard builder that creates custom marketing dashboards based on your business goals and active channels.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/kpi-dashboard" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-kpi-dashboard" },
   openGraph: {
     title: "KPI Dashboard Builder",
     description:

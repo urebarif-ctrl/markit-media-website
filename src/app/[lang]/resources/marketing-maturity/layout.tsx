@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing Maturity Assessment — Find Your Growth Gaps",
   description:
     "Free marketing maturity assessment that scores your strategy, analytics, content, and tech stack so you know where to level up.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/marketing-maturity" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-maturity" },
   openGraph: {
     title: "Marketing Maturity Assessment",
     description:

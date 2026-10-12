@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing Experiment Tracker | Free Planning Tool",
   description:
     "Plan, run, and analyze marketing experiments with our free tracker. Score ideas with ICE framework, visualize timelines, track win rates, and build a learnings library.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/experiment-tracker" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-experiment-tracker" },
   openGraph: {
     title: "Marketing Experiment Tracker | Free Planning Tool",
     description:

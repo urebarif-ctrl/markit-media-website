@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing ROI Dashboard — Compare Channel Performance",
   description:
     "Free interactive ROI dashboard to compare marketing channel performance side by side. Track ROI, cost per lead, and get budget reallocation suggestions.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/roi-dashboard" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-roi-dashboard" },
   openGraph: {
     title: "Marketing ROI Dashboard",
     description:

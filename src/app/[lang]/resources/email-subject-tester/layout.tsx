@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Email Subject Line Tester — Score Lines for Opens & Deliverability",
   description:
     "Free email subject line tester that analyzes and scores your subject lines for deliverability, engagement, and inbox placement.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/email-subject-tester" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-email-subject-tester" },
   openGraph: {
     title: "Email Subject Line Tester — Score Lines",
     description:

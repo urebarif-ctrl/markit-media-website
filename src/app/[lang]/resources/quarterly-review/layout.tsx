@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards. Free interactive template.",
   alternates: {
-    canonical: "https://themarkitmedia.com/en/resources/quarterly-review",
+    canonical: "https://themarkitmedia.com/en/free-tools/free-quarterly-review",
   },
   openGraph: {
     title: "Marketing Quarterly Review Template | Free Tool",
     description:
       "Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards. Free interactive template.",
-    url: "https://themarkitmedia.com/en/resources/quarterly-review",
+    url: "https://themarkitmedia.com/en/free-tools/free-quarterly-review",
     type: "website",
   },
 };

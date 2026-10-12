@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing Checklists — Launch-Ready Templates",
   description:
     "Use our free marketing checklists to stay organized across every campaign. Pre-built templates for website launches, SEO audits, ad campaigns, and more.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/checklists" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-checklists" },
   openGraph: {
     title: "Free Marketing Checklists & Templates",
     description:

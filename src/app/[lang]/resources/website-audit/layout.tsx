@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Website Audit Scorecard — Grade Every Page That Matters",
   description:
     "Run a free comprehensive website audit covering technical SEO, UX, content quality, conversions, and trust signals. Get a clear scorecard with prioritized fixes.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/website-audit" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-website-audit" },
   openGraph: {
     title: "Free Website Audit Scorecard",
     description:

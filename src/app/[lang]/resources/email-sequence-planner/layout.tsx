@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Email Sequence Planner — Map Automated Flows That Convert",
   description:
     "Free email sequence planner for building automated welcome, nurture, and cart abandonment flows with timing and content guidance.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/email-sequence-planner" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-email-sequence-planner" },
   openGraph: {
     title: "Email Sequence Planner — Automated Flows",
     description:

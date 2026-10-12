@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Website Launch Checklist — Never Miss a Step Before Go-Live",
   description:
     "Free website launch countdown checklist covering content, SEO, technical setup, and legal requirements so nothing slips through.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/launch-countdown" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-launch-countdown" },
   openGraph: {
     title: "Website Launch Checklist",
     description:

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Meta Description Generator — Write Click-Worthy SEO Descriptions",
   description:
     "Generate optimized meta descriptions for blog posts, service pages, and product pages with this free template-based tool. Improve CTR and search visibility instantly.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/meta-description-generator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-meta-description-generator" },
   openGraph: {
     title: "Free Meta Description Generator Tool",
     description:

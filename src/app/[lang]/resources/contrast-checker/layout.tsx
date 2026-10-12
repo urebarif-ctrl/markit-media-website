@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Color Contrast Checker — Verify WCAG Accessibility",
   description:
     "Use our free color contrast checker to verify your text and background colors meet WCAG accessibility standards. Check AA and AAA compliance for normal and large text.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/contrast-checker" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-contrast-checker" },
   openGraph: {
     title: "Free WCAG Color Contrast Checker",
     description:

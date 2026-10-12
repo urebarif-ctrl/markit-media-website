@@ -4,12 +4,12 @@ export const metadata: Metadata = {
   title: "Marketing Sprint Planner | Free Tool",
   description:
     "Free 2-week marketing sprint planner with Kanban board, burndown tracking, and effort estimation. Plan agile marketing sprints, assign tasks, and track velocity.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/sprint-planner" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-sprint-planner" },
   openGraph: {
     title: "Marketing Sprint Planner | Free Tool",
     description:
       "Free 2-week marketing sprint planner with Kanban board, burndown tracking, and effort estimation. Plan agile marketing sprints, assign tasks, and track velocity.",
-    url: "https://themarkitmedia.com/en/resources/sprint-planner",
+    url: "https://themarkitmedia.com/en/free-tools/free-sprint-planner",
     type: "website",
   },
 };

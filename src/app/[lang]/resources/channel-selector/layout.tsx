@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing Channel Selector — Find Your Best Channels",
   description:
     "Use our free marketing channel selector quiz to discover which channels will drive the best results for your business. Get personalized recommendations based on your goals and budget.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/channel-selector" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-channel-selector" },
   openGraph: {
     title: "Marketing Channel Selector Quiz",
     description:

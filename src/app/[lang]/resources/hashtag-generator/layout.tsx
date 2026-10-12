@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Hashtag Generator — Get Platform-Optimized Tags by Niche",
   description:
     "Free hashtag generator that creates platform-optimized hashtag sets by niche and content type for maximum reach.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/hashtag-generator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-hashtag-generator" },
   openGraph: {
     title: "Hashtag Generator — Tags by Niche",
     description:

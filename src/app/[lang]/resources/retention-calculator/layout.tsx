@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Calculate customer retention rate, churn rate, and lifetime value with our free interactive tool. Track monthly cohorts, compare industry benchmarks, and model revenue impact of retention improvements.",
   alternates: {
-    canonical: "https://themarkitmedia.com/en/resources/retention-calculator",
+    canonical: "https://themarkitmedia.com/en/free-tools/free-retention-calculator",
   },
   openGraph: {
     title: "Customer Retention Calculator | Free Marketing Tool",
     description:
       "Free interactive retention calculator. Measure churn, track cohorts, compare benchmarks, and see the revenue impact of improving customer retention.",
-    url: "https://themarkitmedia.com/en/resources/retention-calculator",
+    url: "https://themarkitmedia.com/en/free-tools/free-retention-calculator",
     siteName: "Markit Media",
     type: "website",
   },

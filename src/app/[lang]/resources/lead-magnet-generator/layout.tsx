@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Lead Magnet Idea Generator",
   description: "Generate high-converting lead magnet ideas tailored to your industry, funnel stage, and format.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/lead-magnet-generator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-lead-magnet-generator" },
   openGraph: {
     title: "Lead Magnet Idea Generator",
     description: "Generate high-converting lead magnet ideas tailored to your industry, funnel stage, and format.",

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Influencer ROI Calculator — Measure Campaign Returns by Tier",
   description:
     "Free influencer ROI calculator that estimates campaign returns by influencer tier, platform, and campaign type.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/influencer-roi" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-influencer-roi" },
   openGraph: {
     title: "Influencer ROI Calculator",
     description:

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     "Generate structured post-mortem debriefs for your marketing campaigns. Compare planned vs actual metrics, document lessons learned, and create actionable next steps.",
   alternates: {
-    canonical: "https://themarkitmedia.com/en/resources/campaign-debrief",
+    canonical: "https://themarkitmedia.com/en/free-tools/free-campaign-debrief",
   },
   openGraph: {
     title: "Campaign Debrief Generator | Free Tool",
     description:
       "Generate structured post-mortem debriefs for your marketing campaigns. Compare planned vs actual metrics, document lessons learned, and create actionable next steps.",
-    url: "https://themarkitmedia.com/en/resources/campaign-debrief",
+    url: "https://themarkitmedia.com/en/free-tools/free-campaign-debrief",
     type: "website",
   },
 };

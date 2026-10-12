@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing Channel Mix Modeller | Free Tool",
   description:
     "Model your marketing channel mix allocation. Set budgets across channels, see projected ROI, and find the optimal spend distribution.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/channel-mix-modeller" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-channel-mix-modeller" },
   openGraph: {
     title: "Marketing Channel Mix Modeller | Free Tool",
     description:

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Content Brief Generator — Create SEO-Optimized Briefs",
   description:
     "Use our free content brief generator to create detailed SEO content briefs with keyword targeting, outlines, and competitor insights. Give writers everything they need in one document.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/content-brief" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-content-brief" },
   openGraph: {
     title: "Free SEO Content Brief Generator",
     description:

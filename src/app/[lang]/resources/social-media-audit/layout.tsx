@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Social Media Audit Checklist — Evaluate Your Presence Objectively",
   description:
     "Audit your social media presence with this free checklist covering profile optimization, content strategy, engagement metrics, and analytics. Identify gaps and opportunities.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/social-media-audit" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-media-audit" },
   openGraph: {
     title: "Free Social Media Audit Checklist",
     description:

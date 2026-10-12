@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Brand Name Evaluator | Free Tool",
   description:
     "Score and evaluate brand names across memorability, pronounceability, uniqueness, and more. Free tool from Markit Media.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/brand-name-evaluator" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-brand-name-evaluator" },
   openGraph: {
     title: "Brand Name Evaluator | Free Tool",
     description:

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Marketing Budget Planner — Allocate Spend by Channel & Goal",
   description:
     "Free marketing budget planner that builds a monthly channel allocation based on your business stage, goals, and total budget.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/marketing-budget-planner" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-budget-planner" },
   openGraph: {
     title: "Marketing Budget Planner",
     description:

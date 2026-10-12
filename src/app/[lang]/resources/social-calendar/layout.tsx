@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Social Media Calendar Generator — Plan a Week of Posts in Minutes",
   description:
     "Generate a weekly social media content calendar with post ideas, hashtags, and best posting times using this free tool. Stay consistent without the daily scramble.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/social-calendar" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-calendar" },
   openGraph: {
     title: "Free Social Media Calendar Generator",
     description:
