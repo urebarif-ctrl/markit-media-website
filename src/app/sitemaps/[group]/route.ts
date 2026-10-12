@@ -14,7 +14,6 @@ const GROUPS = [
   "locations-international",
   "industries",
   "free-tools",
-  "resources",
   "work",
   "blog",
   "legacy-articles",
@@ -55,7 +54,7 @@ function belongsTo(group: Group, entry: MetadataRoute.Sitemap[number]) {
   }
   if (group === "industries") return path === "/industries" || path.startsWith("/industries/");
   if (group === "free-tools") return path === "/free-tools" || path.startsWith("/free-tools/");
-  if (group === "resources") return path === "/resources" || path.startsWith("/resources/");
+  if (group === "resources") return false;
   if (group === "work") {
     return path === "/work" || path.startsWith("/work/") || path === "/case-studies" || path.startsWith("/case-studies/");
   }
@@ -66,7 +65,7 @@ function belongsTo(group: Group, entry: MetadataRoute.Sitemap[number]) {
     path === "/locations" || path.startsWith("/locations/") ||
     path === "/industries" || path.startsWith("/industries/") ||
     path === "/free-tools" || path.startsWith("/free-tools/") ||
-    path === "/resources" || path.startsWith("/resources/") ||
+    path.startsWith("/resources/") ||
     path === "/work" || path.startsWith("/work/") ||
     path === "/case-studies" || path.startsWith("/case-studies/") ||
     path === "/blog" || path.startsWith("/blog/");

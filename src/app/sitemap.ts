@@ -17,7 +17,6 @@ const staticPages = [
   "/services/finder",
   "/glossary",
   "/why-markit-media",
-  "/resources",
   "/resources/checklists",
   "/resources/roi-calculator",
   "/resources/ab-test-calculator",
@@ -653,7 +652,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
-  const buildDate = new Date("2026-09-29");
+  const buildDate = new Date("2026-10-12");
 
   for (const page of legacySeoPages) {
     // Service and industry legacy URLs with clear modern equivalents use permanent redirects.

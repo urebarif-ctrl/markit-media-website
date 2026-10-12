@@ -11,7 +11,6 @@ const GROUPS = [
   "locations-international",
   "industries",
   "free-tools",
-  "resources",
   "work",
   "blog",
   "legacy-articles",
