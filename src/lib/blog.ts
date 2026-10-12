@@ -51,8 +51,8 @@ export function getCategoryPostCount(category: string): number {
   const db = getDb();
   const row = db
     .prepare(`SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published' AND category = ?`)
-    .get(category) as { count: number };
-  return row.count;
+    .get(category) as { count: number } | undefined;
+  return row?.count ?? 0;
 }
 
 export function getRelatedPosts(slug: string, category: string, limit = 3): BlogPost[] {
@@ -78,8 +78,8 @@ export function getPublishedPostCount(): number {
   const db = getDb();
   const row = db
     .prepare(`SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published'`)
-    .get() as { count: number };
-  return row.count;
+    .get() as { count: number } | undefined;
+  return row?.count ?? 0;
 }
 
 export function getAllPublishedSlugs(): string[] {

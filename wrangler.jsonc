@@ -1,5 +1,6 @@
 {
-  "name": "markit-media-staging",
+  "name": "markit-media",
+  "workers_dev": true,
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat"],
@@ -7,7 +8,32 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "markit-media-db",
+      "database_id": "7942431a-8b2d-43a5-9acb-640270ac705c"
+    },
+    {
+      "binding": "NEXT_TAG_CACHE_D1",
+      "database_name": "markit-media-db",
+      "database_id": "7942431a-8b2d-43a5-9acb-640270ac705c"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "markit-media-cache"
+    }
+  ],
   "vars": {
-    "PRODUCTION_DEPLOY": "false"
+    "PRODUCTION_DEPLOY": "true",
+    "OPEN_NEXT_BUILD_ID": "FpKhPkQUvIzVWUke0BdCX",
+    "NEXT_PUBLIC_SITE_URL": "https://themarkitmedia.com",
+    "R2_BUCKET_NAME": "markit-media-assets",
+    "R2_PUBLIC_URL": "https://media.themarkitmedia.com"
+  },
+  "triggers": {
+    "crons": ["0 8 * * *"]
   }
 }

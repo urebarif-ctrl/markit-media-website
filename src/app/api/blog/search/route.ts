@@ -6,22 +6,26 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ results: [] });
   }
 
-  try {
-    const { getDb } = await import("@/lib/db");
-    const db = getDb();
+  const searchTerm = `%${q.replace(/[%_]/g, "")}%`;
 
-    const searchTerm = `%${q.replace(/[%_]/g, "")}%`;
-    const results = db
+  try {
+    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+    const { env } = getCloudflareContext();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const d1 = (env as any).DB as { prepare(sql: string): { bind(...values: unknown[]): { all(): Promise<{ results: unknown[] }> } } };
+
+    const { results } = await d1
       .prepare(
         `SELECT slug, title, excerpt, category, reading_time, published_at
          FROM blog_posts
-         WHERE status = 'published' AND (title LIKE ? OR excerpt LIKE ? OR category LIKE ? OR tags LIKE ?)
+         WHERE status = 'published' AND (title LIKE ?1 OR excerpt LIKE ?1 OR category LIKE ?1 OR tags LIKE ?1)
          ORDER BY
-           CASE WHEN title LIKE ? THEN 0 ELSE 1 END,
+           CASE WHEN title LIKE ?1 THEN 0 ELSE 1 END,
            published_at DESC
          LIMIT 12`,
       )
-      .all(searchTerm, searchTerm, searchTerm, searchTerm, searchTerm);
+      .bind(searchTerm)
+      .all();
 
     return NextResponse.json(
       { results },
@@ -32,6 +36,32 @@ export async function GET(request: NextRequest) {
       },
     );
   } catch {
-    return NextResponse.json({ results: [] });
+    try {
+      const { getDb } = await import("@/lib/db");
+      const db = getDb();
+
+      const results = db
+        .prepare(
+          `SELECT slug, title, excerpt, category, reading_time, published_at
+           FROM blog_posts
+           WHERE status = 'published' AND (title LIKE ? OR excerpt LIKE ? OR category LIKE ? OR tags LIKE ?)
+           ORDER BY
+             CASE WHEN title LIKE ? THEN 0 ELSE 1 END,
+             published_at DESC
+           LIMIT 12`,
+        )
+        .all(searchTerm, searchTerm, searchTerm, searchTerm, searchTerm);
+
+      return NextResponse.json(
+        { results },
+        {
+          headers: {
+            "Cache-Control": "public, max-age=300, s-maxage=300",
+          },
+        },
+      );
+    } catch {
+      return NextResponse.json({ results: [] });
+    }
   }
 }

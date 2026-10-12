@@ -6,8 +6,7 @@ import { Footer } from "@/components/footer";
 import { BackToTop } from "@/components/back-to-top";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Analytics } from "@/components/analytics";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
 import "../globals.css";
@@ -125,8 +124,13 @@ export default async function LangLayout({
 
         <CookieConsent />
         <Analytics />
-        <VercelAnalytics />
-        <SpeedInsights />
+        {isProduction && (
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "fead5badd1b14b4d86c54150eef71286"}'
+          />
+        )}
       </body>
     </html>
   );
