@@ -500,9 +500,6 @@ export default function PricingOptimizerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Pricing Page Optimizer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-pricing-optimizer" />
-      <meta name="description" content="How clearly your pricing tiers, features, and comparisons are presented to visitors." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

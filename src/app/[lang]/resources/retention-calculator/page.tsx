@@ -438,9 +438,6 @@ export default function RetentionCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }}
       />
-      <title>Customer Retention Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-retention-calculator" />
-      <meta name="description" content="A structured onboarding sequence in the first 30 days reduces early churn by up to 50%. Map every touchpoint and automate where possible." />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

@@ -721,9 +721,6 @@ export default function EmailCampaignPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Email Campaign Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-campaign-planner" />
-      <meta name="description" content="Plan your email campaign with recommended sequences, subject lines, send timing, and success metrics for any campaign type and audience." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

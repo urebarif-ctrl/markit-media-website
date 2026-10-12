@@ -245,9 +245,6 @@ export default function HashtagGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Social Media Hashtag Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-hashtag-generator" />
-      <meta name="description" content="Generate curated hashtag suggestions organized by reach for Instagram, TikTok, LinkedIn, Twitter/X, YouTube, and more." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

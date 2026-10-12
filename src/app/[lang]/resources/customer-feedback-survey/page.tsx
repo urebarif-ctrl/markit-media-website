@@ -262,9 +262,6 @@ function TemplateCard({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Customer Feedback Survey Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-customer-feedback-survey" />
-      <meta name="description" content="The gold-standard loyalty metric. One scored question plus a follow-up." />
       <span className="block font-[family-name:var(--font-display)] text-lg font-extrabold">{template.name}</span>
       <span className={`block text-base mt-2 leading-relaxed ${active ? "text-neutral-300" : "text-neutral-500"}`}>
         {template.description}

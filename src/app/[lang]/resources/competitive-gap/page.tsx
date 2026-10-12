@@ -199,9 +199,6 @@ function ScoreSelector({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Competitive Gap Analyzer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitive-gap" />
-      <meta name="description" content="Search rankings, organic traffic volume, keyword coverage, and domain authority" />
       <label htmlFor={id} className="sr-only">
         {sideLabel} for {dimensionLabel}
       </label>

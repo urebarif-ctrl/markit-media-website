@@ -152,8 +152,6 @@ export default function MigrationChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Website Migration Checklist | Free Marketing Tool — Markit Media</title>
-      <meta name="description" content="An interactive 30-point checklist to ensure a smooth website migration without losing SEO rankings or breaking functionality." />
       <JsonLd data={webAppSchema} />
 
       <Breadcrumb

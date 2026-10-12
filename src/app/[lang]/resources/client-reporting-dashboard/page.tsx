@@ -396,9 +396,6 @@ export default function ClientReportingDashboardPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Client Reporting Dashboard Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-client-reporting-dashboard" />
-      <meta name="description" content="Build professional marketing reports for clients. Select KPIs, add channels, include insights and recommendations. Export ready-to-present reports." />
         <Breadcrumb
           items={[
             { label: "Resources", href: "/resources" },

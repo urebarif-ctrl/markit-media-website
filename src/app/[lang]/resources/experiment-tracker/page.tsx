@@ -789,9 +789,6 @@ export default function ExperimentTrackerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }}
       />
-      <title>Marketing Experiment Tracker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-experiment-tracker" />
-      <meta name="description" content="Track A/B tests and marketing experiments with hypothesis logging, variant tracking, statistical significance calculations, and win/loss analysis." />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

@@ -285,8 +285,6 @@ export default function WebsiteAuditPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Website Audit Checklist | Free Marketing Tool — Markit Media</title>
-      <meta name="description" content="Your website has a strong foundation across all key areas. Focus on maintaining these standards and pursuing advanced optimizations." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

@@ -172,9 +172,6 @@ export default function EmailSubjectTesterPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Email Subject Line Tester | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-subject-tester" />
-      <meta name="description" content="Free email subject line tester that analyzes and scores your subject lines for deliverability, engagement, and inbox placement." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>

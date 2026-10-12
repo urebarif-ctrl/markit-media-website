@@ -223,9 +223,6 @@ export default function CroAuditPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Conversion Rate Optimization Audit | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-cro-audit" />
-      <meta name="description" content="A 20-point conversion rate optimization audit checklist. Evaluate your website across page speed, above-the-fold design, content, and CTAs to identify conver..." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

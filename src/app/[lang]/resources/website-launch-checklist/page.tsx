@@ -333,9 +333,6 @@ export default function WebsiteLaunchChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Website Launch Checklist | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-website-launch-checklist" />
-      <meta name="description" content="A 50-item interactive checklist covering content, SEO, performance, security, design, analytics, legal, and launch-day tasks for launching a website." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

@@ -327,9 +327,6 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Content Audit Scorecard | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-audit-scorecard" />
-      <meta name="description" content="Evaluate the substance and value of your content." />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );

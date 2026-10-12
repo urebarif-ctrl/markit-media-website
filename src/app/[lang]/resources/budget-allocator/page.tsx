@@ -202,8 +202,6 @@ function PieChart({ channels, budget }: { channels: ChannelData[]; budget: numbe
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Budget allocation pie chart</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-budget-allocator" />
       {slices.length === 1 ? (
         <circle cx="50" cy="50" r="40" fill={slices[0].color} />
       ) : (
@@ -215,7 +213,6 @@ function PieChart({ channels, budget }: { channels: ChannelData[]; budget: numbe
             stroke="#fff"
             strokeWidth="0.5"
           >
-            <title>{`${s.ch.label}: ${s.ch.pct}% (${formatCurrency(budget * s.ch.pct / 100)})`}</title>
           </path>
         ))
       )}
@@ -259,7 +256,6 @@ function RoiBarChart({ channels }: { channels: ChannelData[] }) {
       role="img"
       aria-label="Expected ROI by channel bar chart"
     >
-      <title>Expected ROI by channel</title>
       {active.map((ch, i) => {
         const y = i * (barH + gap) + 5;
         const minW = (ch.roiMin / maxRoi) * chartW;

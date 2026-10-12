@@ -356,9 +356,6 @@ export default function WebsiteHeuristicEvaluatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Website Heuristic Evaluator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-website-heuristic-evaluator" />
-      <meta name="description" content="The system should always keep users informed about what is going on, through appropriate feedback within reasonable time." />
       {/* Breadcrumb */}
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-1.5 text-base text-gray-500 max-w-7xl mx-auto">

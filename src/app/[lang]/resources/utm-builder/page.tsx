@@ -58,9 +58,6 @@ export default function UtmBuilderPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>UTM Link Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-utm-builder" />
-      <meta name="description" content="Build UTM-tagged tracking URLs for campaign attribution across marketing channels with this free tool. Know exactly which campaigns drive results." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>

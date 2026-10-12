@@ -305,9 +305,6 @@ export default function SprintPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Marketing Sprint Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-sprint-planner" />
-      <meta name="description" content="Free 2-week marketing sprint planner with Kanban board, burndown tracking, and effort estimation." />
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },

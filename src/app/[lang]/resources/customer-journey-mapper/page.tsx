@@ -305,9 +305,6 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Customer Journey Mapper | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-customer-journey-mapper" />
-      <meta name="description" content="The customer first discovers your brand or realizes they have a need." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );

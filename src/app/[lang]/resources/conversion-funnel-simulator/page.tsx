@@ -368,9 +368,6 @@ export default function ConversionFunnelSimulatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Conversion Funnel Simulator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-conversion-funnel-simulator" />
-      <meta name="description" content="Simulate your marketing funnel with custom stages, conversion rates, and revenue projections. Identify bottlenecks and optimisation opportunities." />
       <JsonLd data={schema} />
 
       <Breadcrumb

@@ -148,9 +148,6 @@ function CircularScore({ score, size = 160 }: { score: number; size?: number }) 
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Brand Name Evaluator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-brand-name-evaluator" />
-      <meta name="description" content="How easy is it to remember?" />
       <svg
         width={size}
         height={size}

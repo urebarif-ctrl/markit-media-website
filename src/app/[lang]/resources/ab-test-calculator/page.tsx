@@ -81,9 +81,6 @@ export default function ABTestCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>A/B Testing Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ab-test-calculator" />
-      <meta name="description" content="Use our free A/B test sample size calculator to determine how many visitors you need for statistically significant results. Set confidence level, power, and ..." />
       {/* Breadcrumb */}
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">

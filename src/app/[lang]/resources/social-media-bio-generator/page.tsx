@@ -184,9 +184,6 @@ export default function SocialMediaBioGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Social Media Bio Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-social-media-bio-generator" />
-      <meta name="description" content="Generate optimised social media bios for LinkedIn, Instagram, Twitter/X, TikTok, and Facebook with character limits, keywords, and CTAs." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
           <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>

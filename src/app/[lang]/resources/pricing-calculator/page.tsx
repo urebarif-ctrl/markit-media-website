@@ -269,9 +269,6 @@ export default function PricingCalculatorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Marketing Pricing Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-pricing-calculator" />
-      <meta name="description" content="Search engine optimization and organic growth" />
       {/* JSON-LD */}
       <JsonLd
         data={{

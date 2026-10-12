@@ -804,9 +804,6 @@ export default function CampaignBriefBuilderPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Campaign Brief Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-brief-builder" />
-      <meta name="description" content="Pre-launch buzz, launch day activation, and post-launch nurture" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

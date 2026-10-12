@@ -426,9 +426,6 @@ function RadarChart({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Competitor Analysis Matrix | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitor-matrix" />
-      <meta name="description" content="Market recognition, recall, and perceived authority" />
       <svg
         viewBox="0 0 400 400"
         className="w-full h-auto"

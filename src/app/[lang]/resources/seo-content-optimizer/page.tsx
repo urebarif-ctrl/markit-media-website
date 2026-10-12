@@ -491,9 +491,6 @@ function ScoreBar({ score, label }: { score: number; label: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>SEO Content Optimizer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-seo-content-optimizer" />
-      <meta name="description" content="Each page should focus on one primary keyword and a handful of closely related secondary keywords. This helps search engines understand the page" />
       <div className="flex justify-between mb-2">
         <span className="text-base font-bold text-black">{label}</span>
         <span className="text-base text-neutral-500">{score}/100</span>

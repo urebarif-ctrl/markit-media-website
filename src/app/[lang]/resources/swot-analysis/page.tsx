@@ -294,9 +294,6 @@ function QuadrantInput({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>SWOT Analysis Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-swot-analysis" />
-      <meta name="description" content="Use strengths to take advantage of opportunities" />
       <div className={`${quadrant.headerBg} ${quadrant.headerText} px-5 py-4`}>
         <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold">
           {quadrant.label}

@@ -561,9 +561,6 @@ export default function SchemaGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }}
       />
-      <title>Schema Markup Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-schema-generator" />
-      <meta name="description" content="Generate structured data markup (JSON-LD) for LocalBusiness, Organization, Product, FAQ, Article, and Breadcrumb schemas." />
       {/* --- Hero --- */}
       <section aria-label="Free Tool" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">

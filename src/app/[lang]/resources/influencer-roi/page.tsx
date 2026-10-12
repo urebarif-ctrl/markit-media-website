@@ -248,9 +248,6 @@ export default function InfluencerRoiPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Influencer Marketing ROI Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-influencer-roi" />
-      <meta name="description" content="Estimate the ROI of influencer marketing campaigns. Calculate projected reach, engagement, conversions, and return based on influencer tier, platform, and ca..." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

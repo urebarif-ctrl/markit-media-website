@@ -340,9 +340,6 @@ export default function ClientOnboardingChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Client Onboarding Checklist Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-client-onboarding-checklist" />
-      <meta name="description" content="Gather foundational materials and align on objectives before any work begins." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

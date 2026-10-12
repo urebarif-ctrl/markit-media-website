@@ -586,9 +586,6 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>A/B Test Ideas Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ab-test-ideas" />
-      <meta name="description" content="Free A/B test ideas generator. Select your page type and conversion goal to get a prioritized list of test ideas with hypotheses, ICE scores, and sample size..." />
       {copied ? "Copied" : label || "Copy to Clipboard"}
     </button>
   );

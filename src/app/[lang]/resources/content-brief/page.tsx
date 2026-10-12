@@ -365,9 +365,6 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>SEO Content Brief Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-brief" />
-      <meta name="description" content="Create SEO-optimized content briefs for blog posts, landing pages, service pages, and more. Get heading structures, content outlines, and SEO checklists." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );

@@ -891,9 +891,6 @@ export default function ContentCalendarPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Content Calendar Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-calendar" />
-      <meta name="description" content="Generate a customized content calendar with topic suggestions, content types, and posting schedules tailored to your industry and channels." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">

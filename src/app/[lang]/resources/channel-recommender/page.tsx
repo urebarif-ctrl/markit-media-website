@@ -805,8 +805,6 @@ function ComparisonChart({ results }: { results: ChannelResult[] }) {
         role="img"
         aria-label="Bar chart comparing match scores of top recommended marketing channels"
       >
-        <title>Channel Match Score Comparison</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-channel-recommender" />
         {top8.map((ch, i) => {
           const y = gap + i * (barHeight + gap);
           const barWidth = (ch.matchScore / 100) * chartWidth;

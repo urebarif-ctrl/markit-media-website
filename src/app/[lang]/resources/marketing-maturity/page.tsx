@@ -374,9 +374,6 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Marketing Maturity Assessment | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-maturity" />
-      <meta name="description" content="How well-defined and executed is your marketing strategy?" />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );

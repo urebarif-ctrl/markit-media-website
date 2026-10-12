@@ -275,9 +275,6 @@ function AnswerButtons({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Email Marketing Health Checker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-health-checker" />
-      <meta name="description" content="For each question, select Yes (fully implemented), Partial (partially implemented), or No (not implemented). Accurate answers produce actionable results." />
       <legend className="sr-only">Answer for: {questionText}</legend>
       {options.map((opt, i) => {
         const isSelected = value === opt.value;

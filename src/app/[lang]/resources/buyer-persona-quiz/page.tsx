@@ -534,9 +534,6 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Buyer Persona Quiz | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-buyer-persona-quiz" />
-      <meta name="description" content="Free interactive quiz that helps you build a detailed buyer persona profile based on your business information." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>
   );

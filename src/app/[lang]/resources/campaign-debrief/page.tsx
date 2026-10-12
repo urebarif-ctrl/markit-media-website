@@ -568,9 +568,6 @@ export default function CampaignDebriefPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Campaign Debrief Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-debrief" />
-      <meta name="description" content="Generate structured post-mortem debriefs for marketing campaigns with planned vs actual metrics, lessons learned, and action items." />
       <JsonLd
         data={{
           "@context": "https://schema.org",

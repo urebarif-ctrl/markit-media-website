@@ -155,8 +155,6 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
         role="img"
         aria-label="Bar chart showing ROI percentage by channel"
       >
-        <title>ROI by Channel</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-roi-report" />
         {/* zero line */}
         <line
           x1={midX}
@@ -252,7 +250,6 @@ function PieChart({ channels }: { channels: ChannelData[] }) {
         role="img"
         aria-label="Pie chart showing spend distribution by channel"
       >
-        <title>Spend Distribution</title>
         {slices.map((sl) => {
           const angle = sl.pct * 2 * Math.PI;
           const startX = cx + r * Math.cos(cumAngle);

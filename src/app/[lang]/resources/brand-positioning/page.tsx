@@ -177,9 +177,6 @@ function TextInput({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Brand Positioning Canvas | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-brand-positioning" />
-      <meta name="description" content="Ensure your homepage, about page, and landing pages reflect the positioning statement and brand personality." />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}
       </label>

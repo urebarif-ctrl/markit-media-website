@@ -217,8 +217,6 @@ function SpendChart({
       role="img"
       aria-label="Budget pacing chart comparing ideal spend line versus actual spend"
     >
-      <title>Budget pacing chart</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ad-budget-pacing" />
       {/* Axes */}
       <line x1={PAD} y1={PAD} x2={PAD} y2={PAD + ih} stroke="#a3a3a3" strokeWidth={1} />
       <line x1={PAD} y1={PAD + ih} x2={PAD + iw} y2={PAD + ih} stroke="#a3a3a3" strokeWidth={1} />

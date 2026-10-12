@@ -382,9 +382,6 @@ export default function OkrPlannerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Marketing OKR Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-okr-planner" />
-      <meta name="description" content="Grow organic website traffic" />
       <JsonLd data={jsonLd} />
 
       <Breadcrumb

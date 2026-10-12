@@ -263,9 +263,6 @@ function StarRating({
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Martech Stack Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-martech-stack-planner" />
-      <meta name="description" content="Plan, budget, and optimize your marketing technology stack. Compare tools across 8 categories, track costs, map integrations, and detect overlaps." />
       {[1, 2, 3, 4, 5].map((star) => (
         <button
           key={star}

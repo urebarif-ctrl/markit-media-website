@@ -359,9 +359,6 @@ export default function BacklinkAnalyzerPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }}
       />
-      <title>Backlink Profile Analyzer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-backlink-analyzer" />
-      <meta name="description" content="Analyze and score your backlink profile quality with domain authority tracking, link type distribution, and exportable audit reports." />
       <Breadcrumb
         items={[
           { label: "Resources", href: "/resources" },

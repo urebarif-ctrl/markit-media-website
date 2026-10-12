@@ -746,9 +746,6 @@ function CopyButton({ text }: { text: string }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Marketing Channel Selector | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-channel-selector" />
-      <meta name="description" content="Free interactive tool that recommends the best marketing channels based on your business type, goals, budget, and audience." />
       {copied ? "Copied" : "Copy Results"}
     </button>
   );

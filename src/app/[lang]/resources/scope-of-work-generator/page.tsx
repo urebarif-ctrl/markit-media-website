@@ -652,9 +652,6 @@ export default function ScopeOfWorkGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Scope of Work Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-scope-of-work-generator" />
-      <meta name="description" content="Stakeholder interviews, competitive analysis, and project requirements" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

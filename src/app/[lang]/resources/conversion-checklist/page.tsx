@@ -359,9 +359,6 @@ export default function ConversionChecklistPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Website Conversion Optimization Checklist | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-conversion-checklist" />
-      <meta name="description" content="A 30-point interactive checklist that scores your website" />
       <JsonLd
         data={{
           "@context": "https://schema.org",

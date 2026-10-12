@@ -336,9 +336,6 @@ function ChevronIcon({ open }: { open: boolean }) {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Marketing RFP Template Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-rfp-template" />
-      <meta name="description" content="Build a professional marketing RFP (Request for Proposal) from a structured template. Cover scope, requirements, evaluation criteria, and timeline." />
       <path d="M5 7.5L10 12.5L15 7.5" />
     </svg>
   );

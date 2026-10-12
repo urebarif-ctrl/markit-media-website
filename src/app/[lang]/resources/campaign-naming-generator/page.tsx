@@ -457,9 +457,6 @@ export default function CampaignNamingGeneratorPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Campaign Naming Convention Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-naming-generator" />
-      <meta name="description" content="Generate consistent campaign naming conventions for Google Ads, Meta Ads, LinkedIn, and more. Keep your ad accounts organised." />
       {/* -------------------------------------------------------- Header */}
       <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">

@@ -169,9 +169,6 @@ export default function SocialMediaAuditPage() {
           provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
         }) }}
       />
-      <title>Social Media Audit Checklist | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-social-media-audit" />
-      <meta name="description" content="A free 25-item interactive checklist to audit your social media presence across profile optimization, content strategy, engagement, analytics, and growth." />
       
       {/* Related Tools */}
       <section className="px-6 lg:px-12 py-12" aria-label="Related tools">
