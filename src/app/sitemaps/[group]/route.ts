@@ -54,7 +54,6 @@ function belongsTo(group: Group, entry: MetadataRoute.Sitemap[number]) {
   }
   if (group === "industries") return path === "/industries" || path.startsWith("/industries/");
   if (group === "free-tools") return path === "/free-tools" || path.startsWith("/free-tools/");
-  if (group === "resources") return false;
   if (group === "work") {
     return path === "/work" || path.startsWith("/work/") || path === "/case-studies" || path.startsWith("/case-studies/");
   }
