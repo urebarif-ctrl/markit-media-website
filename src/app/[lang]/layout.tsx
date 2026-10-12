@@ -19,7 +19,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["600", "700", "800"],
 });
 
-const isProduction = process.env.VERCEL_ENV === "production" || process.env.PRODUCTION_DEPLOY === "true";
+const isProduction = process.env.VERCEL_ENV === "production" || process.env.PRODUCTION_DEPLOY === "true" || process.env.CF_PAGES_BRANCH === "main";
 
 const inter = Inter({
   subsets: ["latin"],

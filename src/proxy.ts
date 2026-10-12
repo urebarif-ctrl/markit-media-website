@@ -248,7 +248,7 @@ export function proxy(request: NextRequest) {
 
   // Country-level access restriction for the public website.
   // Vercel provides a trusted ISO 3166-1 country code on incoming requests.
-  const visitorCountry = request.headers.get("x-vercel-ip-country")?.toUpperCase();
+  const visitorCountry = (request.headers.get("x-vercel-ip-country") || request.headers.get("cf-ipcountry"))?.toUpperCase();
   if (visitorCountry === "IN" || visitorCountry === "NG") {
     return new NextResponse("Access unavailable in your region.", {
       status: 403,

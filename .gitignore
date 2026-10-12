@@ -51,3 +51,7 @@ next-env.d.ts
 # Temp scripts
 scripts/
 .gstack/
+
+# cloudflare
+.open-next/
+.wrangler/

@@ -1,20 +1,51 @@
-import Database from "better-sqlite3";
 import path from "path";
 import fs from "fs";
 
-let db: Database.Database | null = null;
+type SqliteDb = import("better-sqlite3").Database;
+let db: SqliteDb | null = null;
 
-export function getDb(): Database.Database {
+const noopStatement = {
+  run: () => ({ changes: 0, lastInsertRowid: 0 }),
+  get: () => undefined,
+  all: () => [],
+  iterate: function* () {},
+  pluck: function () { return this; },
+  expand: function () { return this; },
+  raw: function () { return this; },
+  columns: () => [],
+  bind: function () { return this; },
+  safeIntegers: function () { return this; },
+};
+
+const noopDb = {
+  prepare: () => noopStatement,
+  exec: () => noopDb,
+  pragma: () => undefined,
+  close: () => {},
+  transaction: (fn: (...args: unknown[]) => unknown) => fn,
+  inTransaction: false,
+} as unknown as SqliteDb;
+
+function isWorkersRuntime(): boolean {
+  try {
+    return typeof (globalThis as Record<string, unknown>).WebSocketPair === "function";
+  } catch {
+    return false;
+  }
+}
+
+export function getDb(): SqliteDb {
   if (db) return db;
+
+  if (isWorkersRuntime()) {
+    db = noopDb;
+    return db;
+  }
 
   const isVercel = Boolean(process.env.VERCEL);
   let dbPath = path.join(process.cwd(), "data", "markit.db");
 
   if (isVercel) {
-    // Next/Vercel can place traced assets beside a server function rather than at process.cwd().
-    // Resolve the bundled seed from known runtime locations and copy it to /tmp, the writable
-    // filesystem guaranteed for serverless functions. This also prevents SQLite from ever
-    // attempting sidecar files inside the immutable deployment bundle.
     const candidates = [
       dbPath,
       path.join(process.cwd(), ".next", "server", "data", "markit.db"),
@@ -32,17 +63,19 @@ export function getDb(): Database.Database {
     dbPath = tmpDb;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
+  const Database = require("better-sqlite3") as { new(filename: string, options?: Record<string, unknown>): SqliteDb };
   db = new Database(dbPath, isVercel ? { readonly: true, fileMustExist: true } : undefined);
 
   if (isVercel) {
-    db.pragma("foreign_keys = ON");
-    return db;
+    db!.pragma("foreign_keys = ON");
+    return db!;
   }
 
-  db.pragma("journal_mode = WAL");
-  db.pragma("foreign_keys = ON");
+  db!.pragma("journal_mode = WAL");
+  db!.pragma("foreign_keys = ON");
 
-  db.exec(`
+  db!.exec(`
     CREATE TABLE IF NOT EXISTS leads (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
@@ -190,5 +223,5 @@ export function getDb(): Database.Database {
     CREATE INDEX IF NOT EXISTS idx_invoices_proposal ON invoices(proposal_id);
   `);
 
-  return db;
+  return db!;
 }
