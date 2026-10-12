@@ -797,7 +797,7 @@ export default function CampaignBriefBuilderPage() {
           "@type": "WebApplication",
           name: "Campaign Brief Builder",
           description: "Pre-launch buzz, launch day activation, and post-launch nurture",
-          url: "https://themarkitmedia.com/en/resources/campaign-brief-builder",
+          url: "https://themarkitmedia.com/en/free-tools/free-campaign-brief-builder",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -805,7 +805,7 @@ export default function CampaignBriefBuilderPage() {
         }) }}
       />
       <title>Campaign Brief Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/campaign-brief-builder" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-brief-builder" />
       <meta name="description" content="Pre-launch buzz, launch day activation, and post-launch nurture" />
       <JsonLd
         data={{

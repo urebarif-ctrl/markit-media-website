@@ -411,7 +411,7 @@ function RadarChart({
           "@type": "WebApplication",
           name: "Marketing Vendor Evaluation Scorecard",
           description: "Range of services offered relative to your needs",
-          url: "https://themarkitmedia.com/en/resources/vendor-evaluation",
+          url: "https://themarkitmedia.com/en/free-tools/free-vendor-evaluation",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -419,7 +419,7 @@ function RadarChart({
         }) }}
       />
       <title>Marketing Vendor Evaluation Scorecard | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/vendor-evaluation" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-vendor-evaluation" />
       <meta name="description" content="Range of services offered relative to your needs" />
       <svg
         viewBox="0 0 440 440"

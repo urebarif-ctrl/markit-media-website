@@ -348,7 +348,7 @@ function NumberInput({
           "@type": "WebApplication",
           name: "Enter Your Data",
           description: "People who first learn about your brand or product.",
-          url: "https://themarkitmedia.com/en/resources/funnel-visualizer",
+          url: "https://themarkitmedia.com/en/free-tools/free-funnel-visualizer",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -356,7 +356,7 @@ function NumberInput({
         }) }}
       />
       <title>Marketing Funnel Visualizer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/funnel-visualizer" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-funnel-visualizer" />
       <meta name="description" content="People who first learn about your brand or product." />
       <label
         htmlFor={id}

@@ -367,7 +367,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Marketing Maturity Assessment",
           description: "How well-defined and executed is your marketing strategy?",
-          url: "https://themarkitmedia.com/en/resources/marketing-maturity",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-maturity",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -375,7 +375,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Marketing Maturity Assessment | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-maturity" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-maturity" />
       <meta name="description" content="How well-defined and executed is your marketing strategy?" />
       {copied ? "Copied" : "Copy Results"}
     </button>

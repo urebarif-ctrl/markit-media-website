@@ -139,7 +139,7 @@ function StatusBadge({ status }: { status: PacingStatus }) {
           "@type": "WebApplication",
           name: "Ad Budget Pacing Calculator",
           description: "Track your advertising budget pacing across campaigns. Monitor spend rate, forecast end-of-month spend, and identify over/under-pacing campaigns.",
-          url: "https://themarkitmedia.com/en/resources/ad-budget-pacing",
+          url: "https://themarkitmedia.com/en/free-tools/free-ad-budget-pacing",
           applicationCategory: "Advertising Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -218,7 +218,7 @@ function SpendChart({
       aria-label="Budget pacing chart comparing ideal spend line versus actual spend"
     >
       <title>Budget pacing chart</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/ad-budget-pacing" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ad-budget-pacing" />
       {/* Axes */}
       <line x1={PAD} y1={PAD} x2={PAD} y2={PAD + ih} stroke="#a3a3a3" strokeWidth={1} />
       <line x1={PAD} y1={PAD + ih} x2={PAD + iw} y2={PAD + ih} stroke="#a3a3a3" strokeWidth={1} />

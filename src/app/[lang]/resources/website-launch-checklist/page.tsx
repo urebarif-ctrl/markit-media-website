@@ -326,7 +326,7 @@ export default function WebsiteLaunchChecklistPage() {
           "@type": "WebApplication",
           name: "Website Launch Checklist",
           description: "A 50-item interactive checklist covering content, SEO, performance, security, design, analytics, legal, and launch-day tasks for launching a website.",
-          url: "https://themarkitmedia.com/en/resources/website-launch-checklist",
+          url: "https://themarkitmedia.com/en/free-tools/free-website-launch-checklist",
           applicationCategory: "Web Development Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -334,7 +334,7 @@ export default function WebsiteLaunchChecklistPage() {
         }) }}
       />
       <title>Website Launch Checklist | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/website-launch-checklist" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-website-launch-checklist" />
       <meta name="description" content="A 50-item interactive checklist covering content, SEO, performance, security, design, analytics, legal, and launch-day tasks for launching a website." />
       
       {/* Related Tools */}

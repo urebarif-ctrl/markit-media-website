@@ -278,7 +278,7 @@ export default function WebsiteAuditPage() {
           "@type": "WebApplication",
           name: "Website Development",
           description: "Your website has a strong foundation across all key areas. Focus on maintaining these standards and pursuing advanced optimizations.",
-          url: "https://themarkitmedia.com/en/resources/website-audit",
+          url: "https://themarkitmedia.com/en/free-tools/free-website-audit",
           applicationCategory: "Web Development Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

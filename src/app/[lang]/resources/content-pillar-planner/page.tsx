@@ -411,7 +411,7 @@ export default function ContentPillarPlannerPage() {
           "@type": "WebApplication",
           name: "Content Marketing",
           description: "Plan your content pillar strategy with topic clusters, supporting content, and a publishing calendar.",
-          url: "https://themarkitmedia.com/en/resources/content-pillar-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-content-pillar-planner",
           applicationCategory: "Content Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -419,7 +419,7 @@ export default function ContentPillarPlannerPage() {
         }) }}
       />
       <title>Content Pillar Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-pillar-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-pillar-planner" />
       <meta name="description" content="Plan your content pillar strategy with topic clusters, supporting content, and a publishing calendar." />
       
       {/* Related Tools */}

@@ -216,7 +216,7 @@ export default function CroAuditPage() {
           "@type": "WebApplication",
           name: "Conversion Rate Optimization Audit",
           description: "A 20-point conversion rate optimization audit checklist. Evaluate your website across page speed, above-the-fold design, content, and CTAs to identify conversion-killing issues.",
-          url: "https://themarkitmedia.com/en/resources/cro-audit",
+          url: "https://themarkitmedia.com/en/free-tools/free-cro-audit",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -224,7 +224,7 @@ export default function CroAuditPage() {
         }) }}
       />
       <title>Conversion Rate Optimization Audit | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/cro-audit" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-cro-audit" />
       <meta name="description" content="A 20-point conversion rate optimization audit checklist. Evaluate your website across page speed, above-the-fold design, content, and CTAs to identify conver..." />
       <JsonLd
         data={{

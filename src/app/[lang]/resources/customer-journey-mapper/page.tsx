@@ -298,7 +298,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Define Your Business",
           description: "The customer first discovers your brand or realizes they have a need.",
-          url: "https://themarkitmedia.com/en/resources/customer-journey-mapper",
+          url: "https://themarkitmedia.com/en/free-tools/free-customer-journey-mapper",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -306,7 +306,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Customer Journey Mapper | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/customer-journey-mapper" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-customer-journey-mapper" />
       <meta name="description" content="The customer first discovers your brand or realizes they have a need." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>

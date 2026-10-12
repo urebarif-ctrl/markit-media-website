@@ -136,7 +136,7 @@ function BarChart({
           "@type": "WebApplication",
           name: "Marketing ROI Dashboard",
           description: "Compare marketing channel performance with ROI calculations, budget allocation charts, and optimization suggestions.",
-          url: "https://themarkitmedia.com/en/resources/roi-dashboard",
+          url: "https://themarkitmedia.com/en/free-tools/free-roi-dashboard",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -144,7 +144,7 @@ function BarChart({
         }) }}
       />
       <title>Marketing ROI Dashboard | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/roi-dashboard" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-roi-dashboard" />
       <meta name="description" content="Compare marketing channel performance with ROI calculations, budget allocation charts, and optimization suggestions." />
       {data.map((d, i) => {
         const y = gap + i * (barH + gap);

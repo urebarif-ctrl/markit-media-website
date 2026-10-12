@@ -645,7 +645,7 @@ export default function ScopeOfWorkGeneratorPage() {
           "@type": "WebApplication",
           name: "Scope of Work Generator",
           description: "Stakeholder interviews, competitive analysis, and project requirements",
-          url: "https://themarkitmedia.com/en/resources/scope-of-work-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-scope-of-work-generator",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -653,7 +653,7 @@ export default function ScopeOfWorkGeneratorPage() {
         }) }}
       />
       <title>Scope of Work Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/scope-of-work-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-scope-of-work-generator" />
       <meta name="description" content="Stakeholder interviews, competitive analysis, and project requirements" />
       <JsonLd
         data={{

@@ -142,7 +142,7 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
           "@type": "WebApplication",
           name: "Marketing ROI Report Generator",
           description: "Generate a professional marketing ROI report. Input channel spend and revenue data to create a comprehensive performance analysis.",
-          url: "https://themarkitmedia.com/en/resources/marketing-roi-report",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-roi-report",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -156,7 +156,7 @@ function BarChart({ channels }: { channels: ChannelData[] }) {
         aria-label="Bar chart showing ROI percentage by channel"
       >
         <title>ROI by Channel</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-roi-report" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-roi-report" />
         {/* zero line */}
         <line
           x1={midX}

@@ -238,7 +238,7 @@ export default function HashtagGeneratorPage() {
           "@type": "WebApplication",
           name: "Social Media Hashtag Generator",
           description: "Generate curated hashtag suggestions organized by reach for Instagram, TikTok, LinkedIn, Twitter/X, YouTube, and more.",
-          url: "https://themarkitmedia.com/en/resources/hashtag-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-hashtag-generator",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -246,7 +246,7 @@ export default function HashtagGeneratorPage() {
         }) }}
       />
       <title>Social Media Hashtag Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/hashtag-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-hashtag-generator" />
       <meta name="description" content="Generate curated hashtag suggestions organized by reach for Instagram, TikTok, LinkedIn, Twitter/X, YouTube, and more." />
       
       {/* Related Tools */}

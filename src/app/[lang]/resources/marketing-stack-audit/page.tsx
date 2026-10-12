@@ -128,7 +128,7 @@ export default function MarketingStackAuditPage() {
           "@type": "WebApplication",
           name: "Digital Marketing",
           description: "Tools for measuring website and marketing performance",
-          url: "https://themarkitmedia.com/en/resources/marketing-stack-audit",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-stack-audit",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -136,7 +136,7 @@ export default function MarketingStackAuditPage() {
         }) }}
       />
       <title>Marketing Stack Audit | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-stack-audit" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-stack-audit" />
       <meta name="description" content="Tools for measuring website and marketing performance" />
       <div className="max-w-5xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

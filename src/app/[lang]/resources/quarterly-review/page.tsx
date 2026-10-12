@@ -469,7 +469,7 @@ export default function QuarterlyReviewPage() {
           "@type": "WebApplication",
           name: "Marketing Quarterly Review Template",
           description: "Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards.",
-          url: "https://themarkitmedia.com/en/resources/quarterly-review",
+          url: "https://themarkitmedia.com/en/free-tools/free-quarterly-review",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -477,7 +477,7 @@ export default function QuarterlyReviewPage() {
         }) }}
       />
       <title>Marketing Quarterly Review Template | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/quarterly-review" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-quarterly-review" />
       <meta name="description" content="Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards." />
       <JsonLd
         data={{
@@ -486,7 +486,7 @@ export default function QuarterlyReviewPage() {
           name: "Marketing Quarterly Review Template",
           description:
             "Build structured quarterly marketing reviews with channel performance tracking, goal progress, budget variance analysis, and auto-generated scorecards.",
-          url: "https://themarkitmedia.com/en/resources/quarterly-review",
+          url: "https://themarkitmedia.com/en/free-tools/free-quarterly-review",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Any",
           offers: {

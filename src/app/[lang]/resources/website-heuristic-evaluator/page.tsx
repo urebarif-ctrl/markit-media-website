@@ -349,7 +349,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
           "@type": "WebApplication",
           name: "Website Development",
           description: "The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.",
-          url: "https://themarkitmedia.com/en/resources/website-heuristic-evaluator",
+          url: "https://themarkitmedia.com/en/free-tools/free-website-heuristic-evaluator",
           applicationCategory: "Web Development Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -357,7 +357,7 @@ export default function WebsiteHeuristicEvaluatorPage() {
         }) }}
       />
       <title>Website Heuristic Evaluator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/website-heuristic-evaluator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-website-heuristic-evaluator" />
       <meta name="description" content="The system should always keep users informed about what is going on, through appropriate feedback within reasonable time." />
       {/* Breadcrumb */}
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">

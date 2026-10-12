@@ -954,7 +954,7 @@ function SelectInput({
           "@type": "WebApplication",
           name: "Social Media Content Calendar",
           description: "Select the industry that best matches your business so the content ideas are relevant and practical for your audience.",
-          url: "https://themarkitmedia.com/en/resources/social-calendar",
+          url: "https://themarkitmedia.com/en/free-tools/free-social-calendar",
           applicationCategory: "Social Media Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -962,7 +962,7 @@ function SelectInput({
         }) }}
       />
       <title>Social Media Content Calendar | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-calendar" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-social-calendar" />
       <meta name="description" content="Select the industry that best matches your business so the content ideas are relevant and practical for your audience." />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}

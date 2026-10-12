@@ -884,7 +884,7 @@ export default function ContentCalendarPage() {
           "@type": "WebApplication",
           name: "Content Calendar Generator",
           description: "Generate a customized content calendar with topic suggestions, content types, and posting schedules tailored to your industry and channels.",
-          url: "https://themarkitmedia.com/en/resources/content-calendar",
+          url: "https://themarkitmedia.com/en/free-tools/free-content-calendar",
           applicationCategory: "Content Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -892,7 +892,7 @@ export default function ContentCalendarPage() {
         }) }}
       />
       <title>Content Calendar Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-calendar" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-calendar" />
       <meta name="description" content="Generate a customized content calendar with topic suggestions, content types, and posting schedules tailored to your industry and channels." />
       
       {/* Related Tools */}

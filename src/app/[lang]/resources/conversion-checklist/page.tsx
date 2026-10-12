@@ -352,7 +352,7 @@ export default function ConversionChecklistPage() {
           "@type": "WebApplication",
           name: "Website Conversion Optimization Checklist",
           description: "A 30-point interactive checklist that scores your website",
-          url: "https://themarkitmedia.com/en/resources/conversion-checklist",
+          url: "https://themarkitmedia.com/en/free-tools/free-conversion-checklist",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -360,7 +360,7 @@ export default function ConversionChecklistPage() {
         }) }}
       />
       <title>Website Conversion Optimization Checklist | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/conversion-checklist" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-conversion-checklist" />
       <meta name="description" content="A 30-point interactive checklist that scores your website" />
       <JsonLd
         data={{

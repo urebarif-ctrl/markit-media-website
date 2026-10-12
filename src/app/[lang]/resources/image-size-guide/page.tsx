@@ -90,7 +90,7 @@ export default function ImageSizeGuidePage() {
           "@type": "WebApplication",
           name: "Social Media Image Size Guide",
           description: "Free reference guide with up-to-date social media image dimensions for every platform so your visuals always look sharp.",
-          url: "https://themarkitmedia.com/en/resources/image-size-guide",
+          url: "https://themarkitmedia.com/en/free-tools/free-image-size-guide",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -98,7 +98,7 @@ export default function ImageSizeGuidePage() {
         }) }}
       />
       <title>Social Media Image Size Guide | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/image-size-guide" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-image-size-guide" />
       <meta name="description" content="Free reference guide with up-to-date social media image dimensions for every platform so your visuals always look sharp." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

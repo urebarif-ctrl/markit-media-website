@@ -333,7 +333,7 @@ export default function ClientOnboardingChecklistPage() {
           "@type": "WebApplication",
           name: "Client Onboarding Checklist Generator",
           description: "Gather foundational materials and align on objectives before any work begins.",
-          url: "https://themarkitmedia.com/en/resources/client-onboarding-checklist",
+          url: "https://themarkitmedia.com/en/free-tools/free-client-onboarding-checklist",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -341,7 +341,7 @@ export default function ClientOnboardingChecklistPage() {
         }) }}
       />
       <title>Client Onboarding Checklist Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/client-onboarding-checklist" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-client-onboarding-checklist" />
       <meta name="description" content="Gather foundational materials and align on objectives before any work begins." />
       <JsonLd
         data={{

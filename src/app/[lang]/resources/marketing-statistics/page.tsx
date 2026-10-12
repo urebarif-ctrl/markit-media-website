@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "Digital Marketing Statistics 2025 — Key Industry Data",
   description: "Essential digital marketing statistics for 2025. Data on SEO, PPC, social media, email marketing, content marketing, and e-commerce to inform your strategy.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/marketing-statistics" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-statistics" },
 };
 
 const categories = [
@@ -118,7 +118,7 @@ export default function MarketingStatisticsPage() {
           "@type": "WebApplication",
           name: "Digital Marketing Statistics 2025",
           description: "Essential digital marketing statistics for 2025. Data on SEO, PPC, social media, email marketing, content marketing, and e-commerce to inform your strategy.",
-          url: "https://themarkitmedia.com/en/resources/marketing-statistics",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-statistics",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

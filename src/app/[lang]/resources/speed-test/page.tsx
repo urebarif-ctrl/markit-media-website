@@ -129,7 +129,7 @@ export default function SpeedTestPage() {
           "@type": "WebApplication",
           name: "Website Speed Assessment",
           description: "Assess your website speed with this free quiz evaluating hosting, images, scripts, caching, and mobile performance. Get a prioritized list of fixes to load faster.",
-          url: "https://themarkitmedia.com/en/resources/speed-test",
+          url: "https://themarkitmedia.com/en/free-tools/free-speed-test",
           applicationCategory: "Web Development Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -137,7 +137,7 @@ export default function SpeedTestPage() {
         }) }}
       />
       <title>Website Speed Assessment | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/speed-test" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-speed-test" />
       <meta name="description" content="Assess your website speed with this free quiz evaluating hosting, images, scripts, caching, and mobile performance. Get a prioritized list of fixes to load f..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

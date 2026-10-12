@@ -192,7 +192,7 @@ function ScoreSelector({
           "@type": "WebApplication",
           name: "Competitive Gap Analyzer",
           description: "Search rankings, organic traffic volume, keyword coverage, and domain authority",
-          url: "https://themarkitmedia.com/en/resources/competitive-gap",
+          url: "https://themarkitmedia.com/en/free-tools/free-competitive-gap",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -200,7 +200,7 @@ function ScoreSelector({
         }) }}
       />
       <title>Competitive Gap Analyzer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitive-gap" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitive-gap" />
       <meta name="description" content="Search rankings, organic traffic volume, keyword coverage, and domain authority" />
       <label htmlFor={id} className="sr-only">
         {sideLabel} for {dimensionLabel}

@@ -804,7 +804,7 @@ function StepIndicator({
           "@type": "WebApplication",
           name: "Email Sequence Planner",
           description: "Introduce new subscribers to your brand and guide them toward their first action.",
-          url: "https://themarkitmedia.com/en/resources/email-sequence-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-email-sequence-planner",
           applicationCategory: "Email Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -812,7 +812,7 @@ function StepIndicator({
         }) }}
       />
       <title>Email Sequence Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-sequence-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-sequence-planner" />
       <meta name="description" content="Introduce new subscribers to your brand and guide them toward their first action." />
       {labels.map((label, i) => {
         const isActive = i === current;

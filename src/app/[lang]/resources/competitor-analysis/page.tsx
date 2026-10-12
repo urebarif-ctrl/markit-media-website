@@ -88,7 +88,7 @@ export default function CompetitorAnalysisPage() {
           "@type": "WebApplication",
           name: "Competitor Analysis Worksheet",
           description: "Use our free competitor analysis framework to systematically evaluate your competition. Map their channels, positioning, and strategies to find your competitive advantage.",
-          url: "https://themarkitmedia.com/en/resources/competitor-analysis",
+          url: "https://themarkitmedia.com/en/free-tools/free-competitor-analysis",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -96,7 +96,7 @@ export default function CompetitorAnalysisPage() {
         }) }}
       />
       <title>Competitor Analysis Worksheet | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitor-analysis" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitor-analysis" />
       <meta name="description" content="Use our free competitor analysis framework to systematically evaluate your competition. Map their channels, positioning, and strategies to find your competit..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

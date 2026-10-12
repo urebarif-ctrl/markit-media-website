@@ -358,7 +358,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "SEO Content Brief Generator",
           description: "Create SEO-optimized content briefs for blog posts, landing pages, service pages, and more. Get heading structures, content outlines, and SEO checklists.",
-          url: "https://themarkitmedia.com/en/resources/content-brief",
+          url: "https://themarkitmedia.com/en/free-tools/free-content-brief",
           applicationCategory: "Content Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -366,7 +366,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>SEO Content Brief Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-brief" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-brief" />
       <meta name="description" content="Create SEO-optimized content briefs for blog posts, landing pages, service pages, and more. Get heading structures, content outlines, and SEO checklists." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>

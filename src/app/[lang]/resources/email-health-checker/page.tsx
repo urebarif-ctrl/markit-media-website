@@ -268,7 +268,7 @@ function AnswerButtons({
           "@type": "WebApplication",
           name: "Email Marketing Health Checker",
           description: "For each question, select Yes (fully implemented), Partial (partially implemented), or No (not implemented). Accurate answers produce actionable results.",
-          url: "https://themarkitmedia.com/en/resources/email-health-checker",
+          url: "https://themarkitmedia.com/en/free-tools/free-email-health-checker",
           applicationCategory: "Email Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -276,7 +276,7 @@ function AnswerButtons({
         }) }}
       />
       <title>Email Marketing Health Checker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-health-checker" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-health-checker" />
       <meta name="description" content="For each question, select Yes (fully implemented), Partial (partially implemented), or No (not implemented). Accurate answers produce actionable results." />
       <legend className="sr-only">Answer for: {questionText}</legend>
       {options.map((opt, i) => {

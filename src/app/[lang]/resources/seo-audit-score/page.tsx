@@ -114,7 +114,7 @@ export default function SeoAuditScorePage() {
           "@type": "WebApplication",
           name: "SEO Audit Score Calculator",
           description: "Free SEO audit tool with 40 checkpoints across technical, on-page, content, off-page, and UX categories. Get your site",
-          url: "https://themarkitmedia.com/en/resources/seo-audit-score",
+          url: "https://themarkitmedia.com/en/free-tools/free-seo-audit-score",
           applicationCategory: "SEO Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -122,7 +122,7 @@ export default function SeoAuditScorePage() {
         }) }}
       />
       <title>SEO Audit Score Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/seo-audit-score" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-seo-audit-score" />
       <meta name="description" content="Free SEO audit tool with 40 checkpoints across technical, on-page, content, off-page, and UX categories. Get your site" />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

@@ -88,7 +88,7 @@ export default function SocialPostGeneratorPage() {
           "@type": "WebApplication",
           name: "Social Media Post Generator",
           description: "Generate platform-specific social media posts for LinkedIn, Instagram, Twitter/X, Facebook, and TikTok. Enter your topic and get ready-to-use templates.",
-          url: "https://themarkitmedia.com/en/resources/social-post-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-social-post-generator",
           applicationCategory: "Social Media Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -96,7 +96,7 @@ export default function SocialPostGeneratorPage() {
         }) }}
       />
       <title>Social Media Post Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-post-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-social-post-generator" />
       <meta name="description" content="Generate platform-specific social media posts for LinkedIn, Instagram, Twitter/X, Facebook, and TikTok. Enter your topic and get ready-to-use templates." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

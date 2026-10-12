@@ -368,7 +368,7 @@ function SwotItemInput({
           "@type": "WebApplication",
           name: "Competitive SWOT Matrix",
           description: "Internal advantages and capabilities",
-          url: "https://themarkitmedia.com/en/resources/competitive-swot",
+          url: "https://themarkitmedia.com/en/free-tools/free-competitive-swot",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -376,7 +376,7 @@ function SwotItemInput({
         }) }}
       />
       <title>Competitive SWOT Matrix | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitive-swot" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitive-swot" />
       <meta name="description" content="Internal advantages and capabilities" />
       <label
         htmlFor={inputId}

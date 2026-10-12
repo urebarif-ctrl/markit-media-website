@@ -459,7 +459,7 @@ function VolumeChart({ schedule }: { schedule: ScheduleDay[] }) {
           "@type": "WebApplication",
           name: "Email Warm-Up Planner",
           description: "Build initial trust with mailbox providers by sending to your most engaged contacts only.",
-          url: "https://themarkitmedia.com/en/resources/email-warmup-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-email-warmup-planner",
           applicationCategory: "Email Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -467,7 +467,7 @@ function VolumeChart({ schedule }: { schedule: ScheduleDay[] }) {
         }) }}
       />
       <title>Email Warm-Up Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-warmup-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-warmup-planner" />
       <meta name="description" content="Build initial trust with mailbox providers by sending to your most engaged contacts only." />
       {/* Grid lines */}
       {yLabels.map((label) => (

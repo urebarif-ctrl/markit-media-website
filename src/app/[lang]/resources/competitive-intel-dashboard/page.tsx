@@ -352,7 +352,7 @@ function ScoreSlider({
           "@type": "WebApplication",
           name: "Competitive Intelligence Dashboard",
           description: "Organic search presence, keyword rankings, and domain authority",
-          url: "https://themarkitmedia.com/en/resources/competitive-intel-dashboard",
+          url: "https://themarkitmedia.com/en/free-tools/free-competitive-intel-dashboard",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -360,7 +360,7 @@ function ScoreSlider({
         }) }}
       />
       <title>Competitive Intelligence Dashboard | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitive-intel-dashboard" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitive-intel-dashboard" />
       <meta name="description" content="Organic search presence, keyword rankings, and domain authority" />
       <div className="flex items-center justify-between mb-1">
         <label htmlFor={id} className="text-base font-bold text-black">
@@ -1010,7 +1010,7 @@ export default function CompetitiveIntelDashboardPage() {
             "Track up to 5 competitors across SEO, social media, content, ad spend, brand recognition, and innovation. Compare scores, identify gaps, and export insights.",
           applicationCategory: "MarketingApplication",
           operatingSystem: "Any",
-          url: "https://themarkitmedia.com/en/resources/competitive-intel-dashboard",
+          url: "https://themarkitmedia.com/en/free-tools/free-competitive-intel-dashboard",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         }}
       />

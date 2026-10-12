@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "WordPress vs Shopify vs Next.js: Which Platform Is Right for You?",
   description: "A comprehensive comparison of WordPress, Shopify, and Next.js to help you choose the right web platform for your business based on cost, speed, SEO, and scalability.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/web-platform-guide" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-web-platform-guide" },
 };
 
 const comparison = [
@@ -136,7 +136,7 @@ export default function WebPlatformGuidePage() {
           "@type": "WebApplication",
           name: "WordPress vs Shopify vs Next.js: Which Platform Is Right for You?",
           description: "A comprehensive comparison of WordPress, Shopify, and Next.js to help you choose the right web platform for your business based on cost, speed, SEO, and scalability.",
-          url: "https://themarkitmedia.com/en/resources/web-platform-guide",
+          url: "https://themarkitmedia.com/en/free-tools/free-web-platform-guide",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

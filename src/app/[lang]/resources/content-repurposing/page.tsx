@@ -147,7 +147,7 @@ function ContentTree({ originalLabel, derivatives }: { originalLabel: string; de
           "@type": "WebApplication",
           name: "Content Repurposing Planner",
           description: "Plan how to repurpose one piece of content into multiple formats across platforms.",
-          url: "https://themarkitmedia.com/en/resources/content-repurposing",
+          url: "https://themarkitmedia.com/en/free-tools/free-content-repurposing",
           applicationCategory: "Content Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -155,7 +155,7 @@ function ContentTree({ originalLabel, derivatives }: { originalLabel: string; de
         }) }}
       />
       <title>Content Repurposing Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-repurposing" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-repurposing" />
       <meta name="description" content="Plan how to repurpose one piece of content into multiple formats across platforms." />
       <svg
         viewBox={`0 0 ${totalWidth} ${totalHeight}`}

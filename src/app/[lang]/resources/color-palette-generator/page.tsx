@@ -330,7 +330,7 @@ export default function ColorPaletteGeneratorPage() {
           "@type": "WebApplication",
           name: "Color Palette Generator",
           description: "Opposite on the color wheel. High contrast, great for CTAs and emphasis.",
-          url: "https://themarkitmedia.com/en/resources/color-palette-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-color-palette-generator",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -338,7 +338,7 @@ export default function ColorPaletteGeneratorPage() {
         }) }}
       />
       <title>Color Palette Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/color-palette-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-color-palette-generator" />
       <meta name="description" content="Opposite on the color wheel. High contrast, great for CTAs and emphasis." />
       
       {/* Related Tools */}

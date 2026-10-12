@@ -408,7 +408,7 @@ export default function MeetingAgendaBuilderPage() {
           "@type": "WebApplication",
           name: "Marketing Meeting Agenda Builder",
           description: "15-minute sync on wins, blockers, and priorities",
-          url: "https://themarkitmedia.com/en/resources/meeting-agenda-builder",
+          url: "https://themarkitmedia.com/en/free-tools/free-meeting-agenda-builder",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -416,7 +416,7 @@ export default function MeetingAgendaBuilderPage() {
         }) }}
       />
       <title>Marketing Meeting Agenda Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/meeting-agenda-builder" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-meeting-agenda-builder" />
       <meta name="description" content="15-minute sync on wins, blockers, and priorities" />
       <JsonLd
         data={{

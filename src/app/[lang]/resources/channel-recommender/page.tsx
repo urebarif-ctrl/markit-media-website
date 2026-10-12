@@ -791,7 +791,7 @@ function ComparisonChart({ results }: { results: ChannelResult[] }) {
           "@type": "WebApplication",
           name: "Marketing Channel Recommender",
           description: "Free interactive tool that recommends and ranks the best marketing channels based on your business details, goals, budget, and team size.",
-          url: "https://themarkitmedia.com/en/resources/channel-recommender",
+          url: "https://themarkitmedia.com/en/free-tools/free-channel-recommender",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -806,7 +806,7 @@ function ComparisonChart({ results }: { results: ChannelResult[] }) {
         aria-label="Bar chart comparing match scores of top recommended marketing channels"
       >
         <title>Channel Match Score Comparison</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/channel-recommender" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-channel-recommender" />
         {top8.map((ch, i) => {
           const y = gap + i * (barHeight + gap);
           const barWidth = (ch.matchScore / 100) * chartWidth;

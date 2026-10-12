@@ -577,7 +577,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Website Redesign Planner",
           description: "How modern, professional, and visually consistent is your current website design?",
-          url: "https://themarkitmedia.com/en/resources/redesign-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-redesign-planner",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -585,7 +585,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Website Redesign Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/redesign-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-redesign-planner" />
       <meta name="description" content="How modern, professional, and visually consistent is your current website design?" />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>

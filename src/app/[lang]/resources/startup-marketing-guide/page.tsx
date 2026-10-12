@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "Digital Marketing for Startups — A Practical Guide",
   description: "A practical digital marketing guide for startups. How to prioritize channels, allocate budget, build brand awareness, and generate leads on a limited budget.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/startup-marketing-guide" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-startup-marketing-guide" },
 };
 
 const phases = [
@@ -105,7 +105,7 @@ export default function StartupMarketingGuidePage() {
           "@type": "WebApplication",
           name: "Digital Marketing for Startups",
           description: "A practical digital marketing guide for startups. How to prioritize channels, allocate budget, build brand awareness, and generate leads on a limited budget.",
-          url: "https://themarkitmedia.com/en/resources/startup-marketing-guide",
+          url: "https://themarkitmedia.com/en/free-tools/free-startup-marketing-guide",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

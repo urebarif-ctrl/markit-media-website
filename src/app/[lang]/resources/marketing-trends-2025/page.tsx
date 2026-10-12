@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "Digital Marketing Trends 2025 — What to Watch",
   description: "The most important digital marketing trends for 2025: AI in marketing, privacy-first strategies, short-form video, zero-click search, and more.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/marketing-trends-2025" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-trends-2025" },
 };
 
 const trends = [
@@ -97,7 +97,7 @@ export default function MarketingTrends2025Page() {
           "@type": "WebApplication",
           name: "10 Digital Marketing Trends for 2025",
           description: "The most important digital marketing trends for 2025: AI in marketing, privacy-first strategies, short-form video, zero-click search, and more.",
-          url: "https://themarkitmedia.com/en/resources/marketing-trends-2025",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-trends-2025",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

@@ -739,7 +739,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Marketing Channel Selector",
           description: "Free interactive tool that recommends the best marketing channels based on your business type, goals, budget, and audience.",
-          url: "https://themarkitmedia.com/en/resources/channel-selector",
+          url: "https://themarkitmedia.com/en/free-tools/free-channel-selector",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -747,7 +747,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Marketing Channel Selector | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/channel-selector" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-channel-selector" />
       <meta name="description" content="Free interactive tool that recommends the best marketing channels based on your business type, goals, budget, and audience." />
       {copied ? "Copied" : "Copy Results"}
     </button>

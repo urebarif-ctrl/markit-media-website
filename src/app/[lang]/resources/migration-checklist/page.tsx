@@ -145,7 +145,7 @@ export default function MigrationChecklistPage() {
           "@type": "WebApplication",
           name: "Pre-Migration Planning",
           description: "An interactive 30-point checklist to ensure a smooth website migration without losing SEO rankings or breaking functionality.",
-          url: "https://themarkitmedia.com/en/resources/migration-checklist",
+          url: "https://themarkitmedia.com/en/free-tools/free-migration-checklist",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

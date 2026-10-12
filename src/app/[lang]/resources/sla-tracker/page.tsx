@@ -278,7 +278,7 @@ export default function SlaTrackerPage() {
     }
     lines.push("---");
     lines.push("Generated with Markit Media SLA Tracker");
-    lines.push("https://themarkitmedia.com/en/resources/sla-tracker");
+    lines.push("https://themarkitmedia.com/en/free-tools/free-sla-tracker");
 
     const blob = new Blob([lines.join("\n")], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
@@ -300,7 +300,7 @@ export default function SlaTrackerPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Marketing SLA Tracker",
-    url: "https://themarkitmedia.com/en/resources/sla-tracker",
+    url: "https://themarkitmedia.com/en/free-tools/free-sla-tracker",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Any",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -321,7 +321,7 @@ export default function SlaTrackerPage() {
           "@type": "WebApplication",
           name: "Marketing SLA Tracker",
           description: "Track and manage marketing service level agreements. Monitor compliance rates, identify at-risk deliverables, and maintain accountability across agency-client relationships.",
-          url: "https://themarkitmedia.com/en/resources/sla-tracker",
+          url: "https://themarkitmedia.com/en/free-tools/free-sla-tracker",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -329,7 +329,7 @@ export default function SlaTrackerPage() {
         }) }}
       />
       <title>Marketing SLA Tracker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/sla-tracker" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-sla-tracker" />
       <meta name="description" content="Track and manage marketing service level agreements. Monitor compliance rates, identify at-risk deliverables, and maintain accountability across agency-clien..." />
       <JsonLd data={jsonLd} />
 

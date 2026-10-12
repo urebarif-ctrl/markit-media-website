@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "Digital Marketing Statistics 2026 — Key Industry Benchmarks",
   description: "Essential digital marketing statistics and industry benchmarks for 2026. Data on SEO, paid ads, social media, email, content marketing, e-commerce, and AI adoption to inform your strategy.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/marketing-statistics-2026" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-statistics-2026" },
 };
 
 const categories = [
@@ -109,7 +109,7 @@ export default function MarketingStatistics2026Page() {
           "@type": "WebApplication",
           name: "Digital Marketing Statistics 2026",
           description: "Essential digital marketing statistics and industry benchmarks for 2026. Data on SEO, paid ads, social media, email, content marketing, e-commerce, and AI adoption to inform your strategy.",
-          url: "https://themarkitmedia.com/en/resources/marketing-statistics-2026",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-statistics-2026",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

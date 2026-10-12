@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "SEO vs PPC: Which Is Right for Your Business?",
   description: "A detailed comparison of SEO and PPC marketing. Understand the costs, timelines, pros, and cons of each channel to make the right investment for your business.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/seo-vs-ppc" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-seo-vs-ppc" },
 };
 
 const comparison = [
@@ -71,7 +71,7 @@ export default function SEOvsPPCPage() {
           "@type": "WebApplication",
           name: "SEO vs PPC: Which Is Right for Your Business?",
           description: "A detailed comparison of SEO and PPC marketing. Understand the costs, timelines, pros, and cons of each channel to make the right investment for your business.",
-          url: "https://themarkitmedia.com/en/resources/seo-vs-ppc",
+          url: "https://themarkitmedia.com/en/free-tools/free-seo-vs-ppc",
           applicationCategory: "SEO Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

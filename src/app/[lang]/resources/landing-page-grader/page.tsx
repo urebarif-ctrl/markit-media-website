@@ -293,7 +293,7 @@ export default function LandingPageGraderPage() {
           "@type": "WebApplication",
           name: "Landing Page Grader",
           description: "Grade your landing page across 20 criteria and get instant improvement recommendations.",
-          url: "https://themarkitmedia.com/en/resources/landing-page-grader",
+          url: "https://themarkitmedia.com/en/free-tools/free-landing-page-grader",
           applicationCategory: "Advertising Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -301,7 +301,7 @@ export default function LandingPageGraderPage() {
         }) }}
       />
       <title>Landing Page Grader | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/landing-page-grader" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-landing-page-grader" />
       <meta name="description" content="Grade your landing page across 20 criteria and get instant improvement recommendations." />
       
       {/* Related Tools */}

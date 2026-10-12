@@ -714,7 +714,7 @@ export default function EmailCampaignPlannerPage() {
           "@type": "WebApplication",
           name: "Email Campaign Planner",
           description: "Plan your email campaign with recommended sequences, subject lines, send timing, and success metrics for any campaign type and audience.",
-          url: "https://themarkitmedia.com/en/resources/email-campaign-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-email-campaign-planner",
           applicationCategory: "Email Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -722,7 +722,7 @@ export default function EmailCampaignPlannerPage() {
         }) }}
       />
       <title>Email Campaign Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-campaign-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-campaign-planner" />
       <meta name="description" content="Plan your email campaign with recommended sequences, subject lines, send timing, and success metrics for any campaign type and audience." />
       
       {/* Related Tools */}

@@ -112,7 +112,7 @@ function ScoreBar({ label, value, max }: { label: string; value: number; max: nu
           "@type": "WebApplication",
           name: "Email Subject Line A/B Tester",
           description: "Compare two email subject lines side-by-side. Get scored analysis on length, power words, personalisation, urgency, and clarity to pick the winner.",
-          url: "https://themarkitmedia.com/en/resources/email-subject-ab-tester",
+          url: "https://themarkitmedia.com/en/free-tools/free-email-subject-ab-tester",
           applicationCategory: "Email Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -120,7 +120,7 @@ function ScoreBar({ label, value, max }: { label: string; value: number; max: nu
         }) }}
       />
       <title>Email Subject Line A/B Tester | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-subject-ab-tester" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-subject-ab-tester" />
       <meta name="description" content="Compare two email subject lines side-by-side. Get scored analysis on length, power words, personalisation, urgency, and clarity to pick the winner." />
       <span className="w-36 text-gray-600 shrink-0">{label}</span>
       <div className="flex-1 h-5 bg-gray-100 relative">

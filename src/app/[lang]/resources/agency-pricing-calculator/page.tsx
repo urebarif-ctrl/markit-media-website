@@ -440,7 +440,7 @@ export default function AgencyPricingCalculatorPage() {
           name: "Agency Pricing Calculator",
           description:
             "Calculate agency service pricing across hourly, retainer, and project-based models with industry benchmarks.",
-          url: "https://themarkitmedia.com/en/resources/agency-pricing-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-agency-pricing-calculator",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Any",
           offers: {
@@ -473,7 +473,7 @@ export default function AgencyPricingCalculatorPage() {
             "@type": "WebApplication",
             name: "Agency Pricing Calculator",
             description: "Model hourly, retainer, and project-based pricing with team composition, overhead, and profit margins",
-            url: "https://themarkitmedia.com/en/resources/agency-pricing-calculator",
+            url: "https://themarkitmedia.com/en/free-tools/free-agency-pricing-calculator",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -486,7 +486,7 @@ export default function AgencyPricingCalculatorPage() {
         }}
       />
       <title>Agency Pricing Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/agency-pricing-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-agency-pricing-calculator" />
       <meta name="description" content="Start with your costs (salaries, overhead, tools) and add a profit margin. This is the most straightforward approach and ensures you cover expenses while mai..." />
           <Animate animation="fade-up">
             <SectionLabel>Interactive Tools</SectionLabel>

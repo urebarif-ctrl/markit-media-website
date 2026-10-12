@@ -233,7 +233,7 @@ export default function EmailDeliverabilityPage() {
           "@type": "WebApplication",
           name: "Email Deliverability Checker",
           description: "Your email infrastructure is well-configured. Keep monitoring and maintaining these practices.",
-          url: "https://themarkitmedia.com/en/resources/email-deliverability",
+          url: "https://themarkitmedia.com/en/free-tools/free-email-deliverability",
           applicationCategory: "Email Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -241,7 +241,7 @@ export default function EmailDeliverabilityPage() {
         }) }}
       />
       <title>Email Deliverability Checker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/email-deliverability" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-email-deliverability" />
       <meta name="description" content="Your email infrastructure is well-configured. Keep monitoring and maintaining these practices." />
       
       {/* Related Tools */}

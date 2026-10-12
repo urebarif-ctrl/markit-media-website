@@ -561,7 +561,7 @@ export default function CampaignDebriefPage() {
           "@type": "WebApplication",
           name: "Campaign Debrief Generator",
           description: "Generate structured post-mortem debriefs for marketing campaigns with planned vs actual metrics, lessons learned, and action items.",
-          url: "https://themarkitmedia.com/en/resources/campaign-debrief",
+          url: "https://themarkitmedia.com/en/free-tools/free-campaign-debrief",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -569,7 +569,7 @@ export default function CampaignDebriefPage() {
         }) }}
       />
       <title>Campaign Debrief Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/campaign-debrief" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-debrief" />
       <meta name="description" content="Generate structured post-mortem debriefs for marketing campaigns with planned vs actual metrics, lessons learned, and action items." />
       <JsonLd
         data={{
@@ -578,7 +578,7 @@ export default function CampaignDebriefPage() {
           name: "Campaign Debrief Generator",
           description:
             "Generate structured post-mortem debriefs for marketing campaigns with planned vs actual metrics, lessons learned, and action items.",
-          url: "https://themarkitmedia.com/en/resources/campaign-debrief",
+          url: "https://themarkitmedia.com/en/free-tools/free-campaign-debrief",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Any",
           offers: {

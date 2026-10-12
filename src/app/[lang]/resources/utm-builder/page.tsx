@@ -51,7 +51,7 @@ export default function UtmBuilderPage() {
           "@type": "WebApplication",
           name: "UTM Link Builder",
           description: "Build UTM-tagged tracking URLs for campaign attribution across marketing channels with this free tool. Know exactly which campaigns drive results.",
-          url: "https://themarkitmedia.com/en/resources/utm-builder",
+          url: "https://themarkitmedia.com/en/free-tools/free-utm-builder",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -59,7 +59,7 @@ export default function UtmBuilderPage() {
         }) }}
       />
       <title>UTM Link Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/utm-builder" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-utm-builder" />
       <meta name="description" content="Build UTM-tagged tracking URLs for campaign attribution across marketing channels with this free tool. Know exactly which campaigns drive results." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

@@ -490,7 +490,7 @@ export default function SocialProofGuidePage() {
           "@type": "WebApplication",
           name: "Social Proof Strategy Builder",
           description: "Endorsements, certifications, or recommendations from recognized authorities in your industry. Expert approval signals that your product or service meets professional standards.",
-          url: "https://themarkitmedia.com/en/resources/social-proof-guide",
+          url: "https://themarkitmedia.com/en/free-tools/free-social-proof-guide",
           applicationCategory: "Social Media Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -498,7 +498,7 @@ export default function SocialProofGuidePage() {
         }) }}
       />
       <title>Social Proof Strategy Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/social-proof-guide" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-social-proof-guide" />
       <meta name="description" content="Endorsements, certifications, or recommendations from recognized authorities in your industry. Expert approval signals that your product or service meets pro..." />
       <JsonLd
         data={{

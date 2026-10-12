@@ -375,7 +375,7 @@ export default function OkrPlannerPage() {
           "@type": "WebApplication",
           name: "Increase Brand Awareness",
           description: "Grow organic website traffic",
-          url: "https://themarkitmedia.com/en/resources/okr-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-okr-planner",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -383,7 +383,7 @@ export default function OkrPlannerPage() {
         }) }}
       />
       <title>Marketing OKR Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/okr-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-okr-planner" />
       <meta name="description" content="Grow organic website traffic" />
       <JsonLd data={jsonLd} />
 

@@ -579,7 +579,7 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
           "@type": "WebApplication",
           name: "A/B Test Ideas Generator",
           description: "Free A/B test ideas generator. Select your page type and conversion goal to get a prioritized list of test ideas with hypotheses, ICE scores, and sample size recommendations.",
-          url: "https://themarkitmedia.com/en/resources/ab-test-ideas",
+          url: "https://themarkitmedia.com/en/free-tools/free-ab-test-ideas",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -587,7 +587,7 @@ function CopyButton({ text, label }: { text: string; label?: string }) {
         }) }}
       />
       <title>A/B Test Ideas Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/ab-test-ideas" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ab-test-ideas" />
       <meta name="description" content="Free A/B test ideas generator. Select your page type and conversion goal to get a prioritized list of test ideas with hypotheses, ICE scores, and sample size..." />
       {copied ? "Copied" : label || "Copy to Clipboard"}
     </button>

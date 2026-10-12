@@ -259,7 +259,7 @@ export default function FunnelCalculatorPage() {
           "@type": "WebApplication",
           name: "Digital Marketing",
           description: "Monthly website visitors",
-          url: "https://themarkitmedia.com/en/resources/funnel-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-funnel-calculator",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -267,7 +267,7 @@ export default function FunnelCalculatorPage() {
         }) }}
       />
       <title>Marketing Funnel Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/funnel-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-funnel-calculator" />
       <meta name="description" content="Monthly website visitors" />
       
       {/* Related Tools */}

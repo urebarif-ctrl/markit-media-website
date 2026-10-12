@@ -1212,7 +1212,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Website Tech Stack Advisor",
           description: "Free interactive tool that recommends the right website platform and tech stack based on your business requirements, budget, and technical expertise.",
-          url: "https://themarkitmedia.com/en/resources/tech-stack-advisor",
+          url: "https://themarkitmedia.com/en/free-tools/free-tech-stack-advisor",
           applicationCategory: "Advertising Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -1220,7 +1220,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Website Tech Stack Advisor | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/tech-stack-advisor" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-tech-stack-advisor" />
       <meta name="description" content="Free interactive tool that recommends the right website platform and tech stack based on your business requirements, budget, and technical expertise." />
       {copied ? "Copied" : "Copy Results"}
     </button>

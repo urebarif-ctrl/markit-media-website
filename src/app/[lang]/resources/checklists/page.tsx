@@ -175,7 +175,7 @@ export default function ChecklistsPage() {
           "@type": "WebApplication",
           name: "Digital Marketing Checklists",
           description: "Use our free marketing checklists to stay organized across every campaign. Pre-built templates for website launches, SEO audits, ad campaigns, and more.",
-          url: "https://themarkitmedia.com/en/resources/checklists",
+          url: "https://themarkitmedia.com/en/free-tools/free-checklists",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

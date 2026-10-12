@@ -445,7 +445,7 @@ export default function StakeholderReportPage() {
             "@type": "WebApplication",
             name: "Marketing Stakeholder Report Generator",
             description: "Build executive, board, team, and client reports with drag-to-reorder sections and KPI highlights",
-            url: "https://themarkitmedia.com/en/resources/stakeholder-report",
+            url: "https://themarkitmedia.com/en/free-tools/free-stakeholder-report",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -458,7 +458,7 @@ export default function StakeholderReportPage() {
         }}
       />
       <title>Marketing Stakeholder Report Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/stakeholder-report" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-stakeholder-report" />
       <meta name="description" content="Build executive, board, team, and client reports with drag-to-reorder sections and KPI highlights" />
             <div className="flex items-center justify-between flex-wrap gap-4 mb-10 no-print">
               <button

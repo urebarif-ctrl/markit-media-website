@@ -181,7 +181,7 @@ export default function AdCopyGeneratorPage() {
           "@type": "WebApplication",
           name: "Ad Copy Generator",
           description: "Use our free ad copy generator to create compelling ad templates for Google Ads, Facebook, LinkedIn, and email campaigns. Get platform-optimized copy in seconds.",
-          url: "https://themarkitmedia.com/en/resources/ad-copy-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-ad-copy-generator",
           applicationCategory: "Advertising Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -189,7 +189,7 @@ export default function AdCopyGeneratorPage() {
         }) }}
       />
       <title>Ad Copy Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/ad-copy-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ad-copy-generator" />
       <meta name="description" content="Use our free ad copy generator to create compelling ad templates for Google Ads, Facebook, LinkedIn, and email campaigns. Get platform-optimized copy in seco..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

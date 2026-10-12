@@ -61,7 +61,7 @@ export default function ContrastCheckerPage() {
           "@type": "WebApplication",
           name: "Color Contrast Checker",
           description: "Use our free color contrast checker to verify your text and background colors meet WCAG accessibility standards. Check AA and AAA compliance for normal and large text.",
-          url: "https://themarkitmedia.com/en/resources/contrast-checker",
+          url: "https://themarkitmedia.com/en/free-tools/free-contrast-checker",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -69,7 +69,7 @@ export default function ContrastCheckerPage() {
         }) }}
       />
       <title>Color Contrast Checker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/contrast-checker" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-contrast-checker" />
       <meta name="description" content="Use our free color contrast checker to verify your text and background colors meet WCAG accessibility standards. Check AA and AAA compliance for normal and l..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

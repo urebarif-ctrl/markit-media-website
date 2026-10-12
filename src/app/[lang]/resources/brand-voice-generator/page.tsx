@@ -559,7 +559,7 @@ export default function BrandVoiceGeneratorPage() {
           "@type": "WebApplication",
           name: "Brand Voice Generator",
           description: "Generate a complete brand voice guide including tone, do",
-          url: "https://themarkitmedia.com/en/resources/brand-voice-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-brand-voice-generator",
           applicationCategory: "Branding Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -567,7 +567,7 @@ export default function BrandVoiceGeneratorPage() {
         }) }}
       />
       <title>Brand Voice Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-voice-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-brand-voice-generator" />
       <meta name="description" content="Generate a complete brand voice guide including tone, do" />
       
       {/* Related Tools */}

@@ -431,7 +431,7 @@ export default function RetentionCalculatorPage() {
           "@type": "WebApplication",
           name: "Customer Retention Calculator",
           description: "Calculate customer retention rates, churn metrics, lifetime value, and revenue impact with monthly tracking, cohort analysis, and industry benchmarks.",
-          url: "https://themarkitmedia.com/en/resources/retention-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-retention-calculator",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -439,7 +439,7 @@ export default function RetentionCalculatorPage() {
         }}
       />
       <title>Customer Retention Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/retention-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-retention-calculator" />
       <meta name="description" content="A structured onboarding sequence in the first 30 days reduces early churn by up to 50%. Map every touchpoint and automate where possible." />
       <Breadcrumb
         items={[

@@ -302,7 +302,7 @@ function DownloadButton({
           "@type": "WebApplication",
           name: "Content Performance Scorecard",
           description: "Volume and quality of visitors this content attracts through organic search, social, referral, and direct channels.",
-          url: "https://themarkitmedia.com/en/resources/content-performance-scorecard",
+          url: "https://themarkitmedia.com/en/free-tools/free-content-performance-scorecard",
           applicationCategory: "Content Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -310,7 +310,7 @@ function DownloadButton({
         }) }}
       />
       <title>Content Performance Scorecard | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-performance-scorecard" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-performance-scorecard" />
       <meta name="description" content="Volume and quality of visitors this content attracts through organic search, social, referral, and direct channels." />
       Export as .txt
     </button>

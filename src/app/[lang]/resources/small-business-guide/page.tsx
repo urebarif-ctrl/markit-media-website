@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "Digital Marketing for Small Business — Complete Guide",
   description: "A comprehensive guide to digital marketing for small businesses. Learn which channels to prioritize, how to allocate your budget, and when to hire an agency.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/small-business-guide" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-small-business-guide" },
 };
 
 const channels = [
@@ -104,7 +104,7 @@ export default function SmallBusinessGuidePage() {
           "@type": "WebApplication",
           name: "Digital Marketing for Small Business",
           description: "A comprehensive guide to digital marketing for small businesses. Learn which channels to prioritize, how to allocate your budget, and when to hire an agency.",
-          url: "https://themarkitmedia.com/en/resources/small-business-guide",
+          url: "https://themarkitmedia.com/en/free-tools/free-small-business-guide",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

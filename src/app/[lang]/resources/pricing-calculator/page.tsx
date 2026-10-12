@@ -262,7 +262,7 @@ export default function PricingCalculatorPage() {
           "@type": "WebApplication",
           name: "Marketing Pricing Calculator",
           description: "Search engine optimization and organic growth",
-          url: "https://themarkitmedia.com/en/resources/pricing-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-pricing-calculator",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -270,7 +270,7 @@ export default function PricingCalculatorPage() {
         }) }}
       />
       <title>Marketing Pricing Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/pricing-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-pricing-calculator" />
       <meta name="description" content="Search engine optimization and organic growth" />
       {/* JSON-LD */}
       <JsonLd
@@ -280,7 +280,7 @@ export default function PricingCalculatorPage() {
           name: "Marketing Pricing Calculator",
           description:
             "Estimate typical industry pricing for digital marketing services based on business size, services needed, and engagement model.",
-          url: "https://themarkitmedia.com/en/resources/pricing-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-pricing-calculator",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Any",
           offers: {

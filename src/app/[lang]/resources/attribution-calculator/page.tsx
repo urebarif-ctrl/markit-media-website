@@ -186,7 +186,7 @@ function StackedBarChart({ channels, allAttributions }: {
           "@type": "WebApplication",
           name: "Marketing Attribution Calculator",
           description: "Compare Last Touch, First Touch, Linear, and Time Decay attribution models side by side.",
-          url: "https://themarkitmedia.com/en/resources/attribution-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-attribution-calculator",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -194,7 +194,7 @@ function StackedBarChart({ channels, allAttributions }: {
         }) }}
       />
       <title>Marketing Attribution Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/attribution-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-attribution-calculator" />
       <meta name="description" content="Compare Last Touch, First Touch, Linear, and Time Decay attribution models side by side." />
       {MODEL_KEYS.map((model, mi) => {
         const y = mi * (barHeight + gap) + 10;

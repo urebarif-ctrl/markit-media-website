@@ -493,7 +493,7 @@ export default function PricingOptimizerPage() {
           "@type": "WebApplication",
           name: "Pricing Page Optimizer",
           description: "How clearly your pricing tiers, features, and comparisons are presented to visitors.",
-          url: "https://themarkitmedia.com/en/resources/pricing-optimizer",
+          url: "https://themarkitmedia.com/en/free-tools/free-pricing-optimizer",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -501,7 +501,7 @@ export default function PricingOptimizerPage() {
         }) }}
       />
       <title>Pricing Page Optimizer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/pricing-optimizer" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-pricing-optimizer" />
       <meta name="description" content="How clearly your pricing tiers, features, and comparisons are presented to visitors." />
       <JsonLd
         data={{

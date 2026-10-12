@@ -484,7 +484,7 @@ export default function RiskAssessmentPage() {
           "@type": "WebApplication",
           name: "Marketing Risk Assessment Matrix",
           description: "Identify, score, and mitigate marketing risks with a visual heat map, category breakdown, and exportable risk register.",
-          url: "https://themarkitmedia.com/en/resources/risk-assessment",
+          url: "https://themarkitmedia.com/en/free-tools/free-risk-assessment",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -527,7 +527,7 @@ export default function RiskAssessmentPage() {
             "@type": "WebApplication",
             name: "Marketing Risk Assessment Matrix",
             description: "Map marketing risks on a 5x5 likelihood vs impact matrix with SVG heatmap and mitigation strategies",
-            url: "https://themarkitmedia.com/en/resources/risk-assessment",
+            url: "https://themarkitmedia.com/en/free-tools/free-risk-assessment",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -540,7 +540,7 @@ export default function RiskAssessmentPage() {
         }}
       />
       <title>Marketing Risk Assessment Matrix | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/risk-assessment" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-risk-assessment" />
       <meta name="description" content="Unfavorable media coverage or viral social media backlash damages brand perception." />
             {[
               { label: "Total Risks", value: totalRisks },

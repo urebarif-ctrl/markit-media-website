@@ -178,7 +178,7 @@ export default function BudgetCalculatorPage() {
           "@type": "WebApplication",
           name: "Marketing Budget Calculator",
           description: "Use our free marketing budget calculator to get recommended budget allocations across SEO, PPC, social media, content, email, and video based on your business type and goals.",
-          url: "https://themarkitmedia.com/en/resources/budget-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-budget-calculator",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -186,7 +186,7 @@ export default function BudgetCalculatorPage() {
         }) }}
       />
       <title>Marketing Budget Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/budget-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-budget-calculator" />
       <meta name="description" content="Use our free marketing budget calculator to get recommended budget allocations across SEO, PPC, social media, content, email, and video based on your busines..." />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">

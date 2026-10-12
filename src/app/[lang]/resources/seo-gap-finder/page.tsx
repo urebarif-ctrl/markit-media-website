@@ -271,7 +271,7 @@ function CoverageBarChart({ checked, industry }: { checked: Checked; industry: I
           "@type": "WebApplication",
           name: "SEO Content Gap Finder",
           description: "Choose the business type that best matches yours. This customizes the analysis to weight content types that matter most in your space.",
-          url: "https://themarkitmedia.com/en/resources/seo-gap-finder",
+          url: "https://themarkitmedia.com/en/free-tools/free-seo-gap-finder",
           applicationCategory: "SEO Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -279,7 +279,7 @@ function CoverageBarChart({ checked, industry }: { checked: Checked; industry: I
         }) }}
       />
       <title>SEO Content Gap Finder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/seo-gap-finder" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-seo-gap-finder" />
       <meta name="description" content="Choose the business type that best matches yours. This customizes the analysis to weight content types that matter most in your space." />
       {categories.map((cat) => {
         const pct = getCategoryCoverage(checked, cat);

@@ -450,7 +450,7 @@ export default function CampaignNamingGeneratorPage() {
           "@type": "WebApplication",
           name: "Campaign Naming Convention Generator",
           description: "Generate consistent campaign naming conventions for Google Ads, Meta Ads, LinkedIn, and more. Keep your ad accounts organised.",
-          url: "https://themarkitmedia.com/en/resources/campaign-naming-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-campaign-naming-generator",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -458,7 +458,7 @@ export default function CampaignNamingGeneratorPage() {
         }) }}
       />
       <title>Campaign Naming Convention Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/campaign-naming-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-naming-generator" />
       <meta name="description" content="Generate consistent campaign naming conventions for Google Ads, Meta Ads, LinkedIn, and more. Keep your ad accounts organised." />
       {/* -------------------------------------------------------- Header */}
       <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">

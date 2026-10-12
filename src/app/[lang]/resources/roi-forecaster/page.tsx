@@ -153,7 +153,7 @@ export default function ROIForecasterPage() {
           "@type": "WebApplication",
           name: "Marketing ROI Forecaster",
           description: "Forecast marketing ROI by channel with traffic, conversion rate, average order value, and cost inputs. Compare scenarios and project annual returns.",
-          url: "https://themarkitmedia.com/en/resources/roi-forecaster",
+          url: "https://themarkitmedia.com/en/free-tools/free-roi-forecaster",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -161,7 +161,7 @@ export default function ROIForecasterPage() {
         }) }}
       />
       <title>Marketing ROI Forecaster | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/roi-forecaster" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-roi-forecaster" />
       <meta name="description" content="Forecast marketing ROI by channel with traffic, conversion rate, average order value, and cost inputs. Compare scenarios and project annual returns." />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

@@ -320,7 +320,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Content Audit Scorecard",
           description: "Evaluate the substance and value of your content.",
-          url: "https://themarkitmedia.com/en/resources/content-audit-scorecard",
+          url: "https://themarkitmedia.com/en/free-tools/free-content-audit-scorecard",
           applicationCategory: "Content Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -328,7 +328,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Content Audit Scorecard | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/content-audit-scorecard" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-content-audit-scorecard" />
       <meta name="description" content="Evaluate the substance and value of your content." />
       {copied ? "Copied" : "Copy Results"}
     </button>

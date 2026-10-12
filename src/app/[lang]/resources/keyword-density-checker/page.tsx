@@ -116,7 +116,7 @@ function DensityBar({ entry, maxDensity }: { entry: WordEntry; maxDensity: numbe
           "@type": "WebApplication",
           name: "Keyword Density Checker",
           description: "Free keyword density checker that analyzes keyword density, word frequency, and content length to keep your SEO on point.",
-          url: "https://themarkitmedia.com/en/resources/keyword-density-checker",
+          url: "https://themarkitmedia.com/en/free-tools/free-keyword-density-checker",
           applicationCategory: "SEO Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -124,7 +124,7 @@ function DensityBar({ entry, maxDensity }: { entry: WordEntry; maxDensity: numbe
         }) }}
       />
       <title>Keyword Density Checker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/keyword-density-checker" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-keyword-density-checker" />
       <meta name="description" content="Free keyword density checker that analyzes keyword density, word frequency, and content length to keep your SEO on point." />
       <span className="w-28 truncate text-base font-bold text-black flex-shrink-0">{entry.word}</span>
       <div className="flex-1 h-6 bg-gray-100 relative">

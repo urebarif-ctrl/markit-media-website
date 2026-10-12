@@ -230,7 +230,7 @@ function SelectField({
           "@type": "WebApplication",
           name: "Buyer Persona Builder",
           description: "Build detailed buyer personas for your marketing strategy. Fill in demographics, psychographics, and buying behavior to generate a formatted persona document.",
-          url: "https://themarkitmedia.com/en/resources/persona-builder",
+          url: "https://themarkitmedia.com/en/free-tools/free-persona-builder",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -238,7 +238,7 @@ function SelectField({
         }) }}
       />
       <title>Buyer Persona Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/persona-builder" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-persona-builder" />
       <meta name="description" content="Build detailed buyer personas for your marketing strategy. Fill in demographics, psychographics, and buying behavior to generate a formatted persona document." />
       <label htmlFor={id} className="block text-base font-bold text-black mb-2">
         {label}

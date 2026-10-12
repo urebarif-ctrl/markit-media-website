@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "How to Choose a Digital Marketing Agency — Complete Guide",
   description: "A practical guide to evaluating and choosing a digital marketing agency. Red flags to watch for, questions to ask, and what to expect from a good partnership.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/agency-comparison" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-agency-comparison" },
 };
 
 const criteria = [
@@ -96,7 +96,7 @@ export default function AgencyComparisonPage() {
           "@type": "WebApplication",
           name: "How to Choose a Digital Marketing Agency",
           description: "A practical guide to evaluating and choosing a digital marketing agency. Red flags to watch for, questions to ask, and what to expect from a good partnership.",
-          url: "https://themarkitmedia.com/en/resources/agency-comparison",
+          url: "https://themarkitmedia.com/en/free-tools/free-agency-comparison",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

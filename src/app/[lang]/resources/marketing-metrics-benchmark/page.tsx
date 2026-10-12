@@ -1052,7 +1052,7 @@ export default function MarketingMetricsBenchmarkPage() {
           "@type": "WebApplication",
           name: "Marketing Metrics Benchmark Tool",
           description: "Compare your marketing metrics against industry benchmarks. Explore 50+ metrics with definitions, formulas, benchmarks, and optimization tips.",
-          url: "https://themarkitmedia.com/en/resources/marketing-metrics-benchmark",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-metrics-benchmark",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -1060,7 +1060,7 @@ export default function MarketingMetricsBenchmarkPage() {
         }) }}
       />
       <title>Marketing Metrics Benchmark Tool | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/marketing-metrics-benchmark" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-marketing-metrics-benchmark" />
       <meta name="description" content="Compare your marketing metrics against industry benchmarks. Explore 50+ metrics with definitions, formulas, benchmarks, and optimization tips." />
       {/* Breadcrumb */}
       <Breadcrumb

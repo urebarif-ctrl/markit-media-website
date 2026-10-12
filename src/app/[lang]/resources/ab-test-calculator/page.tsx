@@ -74,7 +74,7 @@ export default function ABTestCalculatorPage() {
           "@type": "WebApplication",
           name: "A/B Testing Calculator",
           description: "Use our free A/B test sample size calculator to determine how many visitors you need for statistically significant results. Set confidence level, power, and minimum detectable effect.",
-          url: "https://themarkitmedia.com/en/resources/ab-test-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-ab-test-calculator",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -82,7 +82,7 @@ export default function ABTestCalculatorPage() {
         }) }}
       />
       <title>A/B Testing Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/ab-test-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-ab-test-calculator" />
       <meta name="description" content="Use our free A/B test sample size calculator to determine how many visitors you need for statistically significant results. Set confidence level, power, and ..." />
       {/* Breadcrumb */}
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">

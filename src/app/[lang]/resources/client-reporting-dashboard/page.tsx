@@ -389,7 +389,7 @@ export default function ClientReportingDashboardPage() {
           "@type": "WebApplication",
           name: "Client Reporting Dashboard Builder",
           description: "Build professional marketing reports for clients. Select KPIs, add channels, include insights and recommendations. Export ready-to-present reports.",
-          url: "https://themarkitmedia.com/en/resources/client-reporting-dashboard",
+          url: "https://themarkitmedia.com/en/free-tools/free-client-reporting-dashboard",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -397,7 +397,7 @@ export default function ClientReportingDashboardPage() {
         }) }}
       />
       <title>Client Reporting Dashboard Builder | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/client-reporting-dashboard" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-client-reporting-dashboard" />
       <meta name="description" content="Build professional marketing reports for clients. Select KPIs, add channels, include insights and recommendations. Export ready-to-present reports." />
         <Breadcrumb
           items={[

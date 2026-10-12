@@ -33,7 +33,7 @@ export default function OgPreviewPage() {
           "@type": "WebApplication",
           name: "Social Share Preview",
           description: "Preview how your links appear on Facebook, Twitter/X, and LinkedIn before sharing. Free tool to optimize Open Graph tags and maximize social media engagement.",
-          url: "https://themarkitmedia.com/en/resources/og-preview",
+          url: "https://themarkitmedia.com/en/free-tools/free-og-preview",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -41,7 +41,7 @@ export default function OgPreviewPage() {
         }) }}
       />
       <title>Social Share Preview | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/og-preview" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-og-preview" />
       <meta name="description" content="Preview how your links appear on Facebook, Twitter/X, and LinkedIn before sharing. Free tool to optimize Open Graph tags and maximize social media engagement." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">

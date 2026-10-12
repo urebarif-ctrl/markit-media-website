@@ -256,7 +256,7 @@ function StarRating({
           "@type": "WebApplication",
           name: "Martech Stack Planner",
           description: "Plan, budget, and optimize your marketing technology stack. Compare tools across 8 categories, track costs, map integrations, and detect overlaps.",
-          url: "https://themarkitmedia.com/en/resources/martech-stack-planner",
+          url: "https://themarkitmedia.com/en/free-tools/free-martech-stack-planner",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -264,7 +264,7 @@ function StarRating({
         }) }}
       />
       <title>Martech Stack Planner | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/martech-stack-planner" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-martech-stack-planner" />
       <meta name="description" content="Plan, budget, and optimize your marketing technology stack. Compare tools across 8 categories, track costs, map integrations, and detect overlaps." />
       {[1, 2, 3, 4, 5].map((star) => (
         <button
@@ -672,7 +672,7 @@ export default function MartechStackPlannerPage() {
 
     lines.push("---");
     lines.push("Exported from Markit Media Martech Stack Planner");
-    lines.push("https://themarkitmedia.com/en/resources/martech-stack-planner");
+    lines.push("https://themarkitmedia.com/en/free-tools/free-martech-stack-planner");
 
     const blob = new Blob([lines.join("\n")], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
@@ -689,7 +689,7 @@ export default function MartechStackPlannerPage() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: "Martech Stack Planner",
-    url: "https://themarkitmedia.com/en/resources/martech-stack-planner",
+    url: "https://themarkitmedia.com/en/free-tools/free-martech-stack-planner",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     offers: {

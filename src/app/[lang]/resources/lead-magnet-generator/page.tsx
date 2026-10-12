@@ -375,7 +375,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Lead Magnet Idea Generator",
           description: "Free interactive tool that generates lead magnet ideas tailored to your industry, funnel stage, and preferred format.",
-          url: "https://themarkitmedia.com/en/resources/lead-magnet-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-lead-magnet-generator",
           applicationCategory: "Advertising Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -383,7 +383,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Lead Magnet Idea Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/lead-magnet-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-lead-magnet-generator" />
       <meta name="description" content="Free interactive tool that generates lead magnet ideas tailored to your industry, funnel stage, and preferred format." />
       {copied ? "Copied" : "Copy Results"}
     </button>

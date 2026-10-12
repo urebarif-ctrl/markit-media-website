@@ -419,7 +419,7 @@ function RadarChart({
           "@type": "WebApplication",
           name: "Competitor Analysis Matrix",
           description: "Market recognition, recall, and perceived authority",
-          url: "https://themarkitmedia.com/en/resources/competitor-matrix",
+          url: "https://themarkitmedia.com/en/free-tools/free-competitor-matrix",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -427,7 +427,7 @@ function RadarChart({
         }) }}
       />
       <title>Competitor Analysis Matrix | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/competitor-matrix" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-competitor-matrix" />
       <meta name="description" content="Market recognition, recall, and perceived authority" />
       <svg
         viewBox="0 0 400 400"

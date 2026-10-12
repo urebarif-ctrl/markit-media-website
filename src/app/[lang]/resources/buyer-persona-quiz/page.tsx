@@ -527,7 +527,7 @@ function CopyButton({ text }: { text: string }) {
           "@type": "WebApplication",
           name: "Buyer Persona Quiz",
           description: "Free interactive quiz that helps you build a detailed buyer persona profile based on your business information.",
-          url: "https://themarkitmedia.com/en/resources/buyer-persona-quiz",
+          url: "https://themarkitmedia.com/en/free-tools/free-buyer-persona-quiz",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -535,7 +535,7 @@ function CopyButton({ text }: { text: string }) {
         }) }}
       />
       <title>Buyer Persona Quiz | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/buyer-persona-quiz" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-buyer-persona-quiz" />
       <meta name="description" content="Free interactive quiz that helps you build a detailed buyer persona profile based on your business information." />
       {copied ? "Copied" : "Copy to Clipboard"}
     </button>

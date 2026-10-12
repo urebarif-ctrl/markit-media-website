@@ -134,7 +134,7 @@ export default function ClvCalculatorPage() {
           "@type": "WebApplication",
           name: "Customer Lifetime Value Calculator",
           description: "You are recovering your acquisition cost but making no profit. Growth at this ratio is unsustainable long-term.",
-          url: "https://themarkitmedia.com/en/resources/clv-calculator",
+          url: "https://themarkitmedia.com/en/free-tools/free-clv-calculator",
           applicationCategory: "Business Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -142,7 +142,7 @@ export default function ClvCalculatorPage() {
         }) }}
       />
       <title>Customer Lifetime Value Calculator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/clv-calculator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-clv-calculator" />
       <meta name="description" content="You are recovering your acquisition cost but making no profit. Growth at this ratio is unsustainable long-term." />
       
       {/* Related Tools */}

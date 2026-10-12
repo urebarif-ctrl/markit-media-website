@@ -782,7 +782,7 @@ export default function ExperimentTrackerPage() {
           "@type": "WebApplication",
           name: "Marketing Experiment Tracker",
           description: "Track A/B tests and marketing experiments with hypothesis logging, variant tracking, statistical significance calculations, and win/loss analysis.",
-          url: "https://themarkitmedia.com/en/resources/experiment-tracker",
+          url: "https://themarkitmedia.com/en/free-tools/free-experiment-tracker",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -790,7 +790,7 @@ export default function ExperimentTrackerPage() {
         }}
       />
       <title>Marketing Experiment Tracker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/experiment-tracker" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-experiment-tracker" />
       <meta name="description" content="Track A/B tests and marketing experiments with hypothesis logging, variant tracking, statistical significance calculations, and win/loss analysis." />
       <Breadcrumb
         items={[

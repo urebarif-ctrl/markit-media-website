@@ -9,7 +9,7 @@ import { ToolCTA } from "@/components/tool-cta";
 export const metadata: Metadata = {
   title: "Digital Marketing Trends 2026 — What to Watch",
   description: "The most important digital marketing trends for 2026: agentic AI, first-party data, video commerce, search generative experience, and more.",
-  alternates: { canonical: "https://themarkitmedia.com/en/resources/marketing-trends-2026" },
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-trends-2026" },
 };
 
 const trends = [
@@ -95,7 +95,7 @@ export default function MarketingTrends2026Page() {
           "@type": "WebApplication",
           name: "10 Digital Marketing Trends Shaping 2026",
           description: "The most important digital marketing trends for 2026: agentic AI, first-party data, video commerce, search generative experience, and more.",
-          url: "https://themarkitmedia.com/en/resources/marketing-trends-2026",
+          url: "https://themarkitmedia.com/en/free-tools/free-marketing-trends-2026",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

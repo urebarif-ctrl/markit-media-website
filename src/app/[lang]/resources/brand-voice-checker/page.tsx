@@ -283,7 +283,7 @@ function AttributeChip({
           "@type": "WebApplication",
           name: "Brand Voice Consistency Checker",
           description: "Select 3 to 5 voice attributes that describe how your brand communicates. Review the Do and Do Not examples for each.",
-          url: "https://themarkitmedia.com/en/resources/brand-voice-checker",
+          url: "https://themarkitmedia.com/en/free-tools/free-brand-voice-checker",
           applicationCategory: "Branding Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -291,7 +291,7 @@ function AttributeChip({
         }) }}
       />
       <title>Brand Voice Consistency Checker | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-voice-checker" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-brand-voice-checker" />
       <meta name="description" content="Select 3 to 5 voice attributes that describe how your brand communicates. Review the Do and Do Not examples for each." />
       {attr.name}
     </button>

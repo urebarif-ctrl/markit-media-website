@@ -70,7 +70,7 @@ export default function CampaignNamingConventionPage() {
           "@type": "WebApplication",
           name: "Campaign Naming Convention Generator",
           description: "Generate consistent campaign naming conventions for Google Ads, Meta Ads, email, and UTM parameters. Keep your marketing data clean and organised.",
-          url: "https://themarkitmedia.com/en/resources/campaign-naming-convention",
+          url: "https://themarkitmedia.com/en/free-tools/free-campaign-naming-convention",
           applicationCategory: "Marketing Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -78,7 +78,7 @@ export default function CampaignNamingConventionPage() {
         }) }}
       />
       <title>Campaign Naming Convention Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/campaign-naming-convention" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-campaign-naming-convention" />
       <meta name="description" content="Generate consistent campaign naming conventions for Google Ads, Meta Ads, email, and UTM parameters. Keep your marketing data clean and organised." />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">

@@ -352,7 +352,7 @@ export default function BacklinkAnalyzerPage() {
           "@type": "WebApplication",
           name: "Backlink Profile Analyzer",
           description: "Analyze and score your backlink profile quality with domain authority tracking, link type distribution, and exportable audit reports.",
-          url: "https://themarkitmedia.com/en/resources/backlink-analyzer",
+          url: "https://themarkitmedia.com/en/free-tools/free-backlink-analyzer",
           applicationCategory: "SEO Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -360,7 +360,7 @@ export default function BacklinkAnalyzerPage() {
         }}
       />
       <title>Backlink Profile Analyzer | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/backlink-analyzer" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-backlink-analyzer" />
       <meta name="description" content="Analyze and score your backlink profile quality with domain authority tracking, link type distribution, and exportable audit reports." />
       <Breadcrumb
         items={[

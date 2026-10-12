@@ -132,7 +132,7 @@ export default function BrandNameGeneratorPage() {
           "@type": "WebApplication",
           name: "Brand Name Generator",
           description: "Use our free brand name generator to discover creative business name ideas based on your industry, style, and preferences. Get memorable names with availability insights.",
-          url: "https://themarkitmedia.com/en/resources/brand-name-generator",
+          url: "https://themarkitmedia.com/en/free-tools/free-brand-name-generator",
           applicationCategory: "Branding Tool",
           operatingSystem: "Web",
           offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -140,7 +140,7 @@ export default function BrandNameGeneratorPage() {
         }) }}
       />
       <title>Brand Name Generator | Free Marketing Tool — Markit Media</title>
-      <link rel="canonical" href="https://themarkitmedia.com/en/resources/brand-name-generator" />
+      <link rel="canonical" href="https://themarkitmedia.com/en/free-tools/free-brand-name-generator" />
       <meta name="description" content="Use our free brand name generator to discover creative business name ideas based on your industry, style, and preferences. Get memorable names with availabil..." />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
