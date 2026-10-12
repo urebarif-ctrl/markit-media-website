@@ -676,8 +676,9 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
       const depth = sitemapPage.split("/").filter(Boolean).length;
       let priority = 0.65;
       if (page === "") priority = 1;
-      else if (page === "/about" || page === "/services" || page === "/locations" || page === "/blog" || page === "/free-tools") priority = 0.95;
-      else if (isPriorityIndexPage(page)) priority = 0.95;
+      else if (page === "/services" || page.startsWith("/services/")) priority = 1;
+      else if (page === "/locations" || page.startsWith("/locations/")) priority = 0.95;
+      else if (page === "/about" || page === "/blog" || page === "/free-tools") priority = 0.9;
       else if (isFreeTool) priority = 0.5;
       else if (page.startsWith("/resources/")) priority = 0.7;
       else if (depth === 1) priority = 0.8;
