@@ -15,7 +15,7 @@ import "../globals.css";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  display: "swap",
+  display: "optional",
   weight: ["600", "700", "800"],
 });
 
@@ -24,7 +24,7 @@ const isProduction = process.env.VERCEL_ENV === "production" || process.env.PROD
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  display: "swap",
+  display: "optional",
   weight: ["400", "600", "700"],
 });
 

@@ -291,7 +291,12 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 @supports (content-visibility: auto) {
   .home-page > section:not(:first-of-type) {
     content-visibility: auto;
-    contain-intrinsic-size: auto 760px;
+    contain-intrinsic-size: auto 1200px;
+  }
+  @media (min-width: 1024px) {
+    .home-page > section:not(:first-of-type) {
+      contain-intrinsic-size: auto 760px;
+    }
   }
 }
 
