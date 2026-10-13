@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
+import { trackEvent } from "@/lib/tracking";
 
 type Brief = {
   brandName: string;
@@ -200,6 +201,10 @@ export function DiscoveryForm() {
         return;
       }
 
+      trackEvent("generate_lead", {
+        form_name: "discovery_brief",
+        source: "Brand Discovery Brief",
+      });
       setStatus("sent");
       router.push("/thank-you?from=discovery");
     } catch {

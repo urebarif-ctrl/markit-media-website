@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
+import { ConversionTracker } from "@/components/conversion-tracker";
 
 export const metadata: Metadata = {
   title: "Thank You — We'll Be in Touch",
@@ -23,6 +25,7 @@ const nextSteps = [
 export default function ThankYouPage() {
   return (
     <article className="min-h-[80vh] flex flex-col justify-center">
+      <Suspense><ConversionTracker /></Suspense>
       <section aria-label="Message Received" className="px-6 lg:px-12 py-20">
         <div className="max-w-3xl mx-auto text-center">
           <Animate animation="fade-up">

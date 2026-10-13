@@ -2,6 +2,7 @@
 
 import { useId, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { trackEvent } from "@/lib/tracking";
 
 interface QuoteFormProps {
   service?: string;
@@ -57,7 +58,14 @@ export function QuoteForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      if(res.ok){ router.push("/thank-you?from=quote"); } else setStatus("error");
+      if (res.ok) {
+        trackEvent("generate_lead", {
+          form_name: "inline_quote",
+          service: body.service,
+          source: "Inline Quote Form",
+        });
+        router.push("/thank-you?from=quote");
+      } else setStatus("error");
     } catch {
       setStatus("error");
     }

@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/tracking";
 
 interface ToolCTAProps {
   toolName: string;
@@ -43,6 +44,10 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
         setError(data.error || "Could not submit your email.");
         return;
       }
+      trackEvent("generate_lead", {
+        form_name: "tool_cta",
+        source: `${toolName} Tool`,
+      });
       setSubmitted(true);
     } catch {
       setError("Network error. Please try again.");

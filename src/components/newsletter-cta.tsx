@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { trackEvent } from "@/lib/tracking";
 
 export function NewsletterCta({ source = "footer" }: { source?: string }) {
   const [email, setEmail] = useState("");
@@ -17,6 +18,7 @@ export function NewsletterCta({ source = "footer" }: { source?: string }) {
         body: JSON.stringify({ email, source, landingPage: window.location.pathname, referrer: document.referrer, utmSource: new URLSearchParams(window.location.search).get("utm_source") || "", utmMedium: new URLSearchParams(window.location.search).get("utm_medium") || "", utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "" }),
       });
       if (!res.ok) throw new Error();
+      trackEvent("newsletter_signup", { source });
       setStatus("success");
       setEmail("");
     } catch {

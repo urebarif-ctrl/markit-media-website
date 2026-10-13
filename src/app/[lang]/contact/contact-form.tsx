@@ -2,6 +2,7 @@
 
 import { useState, useRef, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { trackEvent } from "@/lib/tracking";
 
 interface FormState {
   status: "idle" | "sending" | "sent" | "error";
@@ -68,6 +69,12 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
         return;
       }
 
+      trackEvent("generate_lead", {
+        form_name: isQuote ? "request_quote" : "contact",
+        service: body.service,
+        budget: body.budget,
+        source: body.source,
+      });
       formRef.current?.reset();
       router.push("/thank-you");
     } catch {
