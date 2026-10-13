@@ -31,7 +31,8 @@
     "OPEN_NEXT_BUILD_ID": "FpKhPkQUvIzVWUke0BdCX",
     "NEXT_PUBLIC_SITE_URL": "https://themarkitmedia.com",
     "R2_BUCKET_NAME": "markit-media-assets",
-    "R2_PUBLIC_URL": "https://media.themarkitmedia.com"
+    "R2_PUBLIC_URL": "https://media.themarkitmedia.com",
+    "NEXT_PUBLIC_GTM_ID": "GTM-M69FQSTC"
   },
   "triggers": {
     "crons": ["0 8 * * *"]

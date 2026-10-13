@@ -4,6 +4,9 @@ import { legacySeoAliases, legacySeoPages, retiredLegacyArticlePaths, retiredLeg
 const preservedLegacyArticlePaths = new Set(legacySeoPages.filter((page) => page.kind === "article" && !retiredLegacyArticlePaths.has(page.path)).map((page) => page.path));
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_GTM_ID: "GTM-M69FQSTC",
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "i.ytimg.com" },
