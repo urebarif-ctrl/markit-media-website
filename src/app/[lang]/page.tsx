@@ -107,6 +107,7 @@ const faqItems = [
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
   const t = await getDictionary(locale);
 
   const orgSchema = {
@@ -304,8 +305,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <div className="flex items-center justify-between"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-[#5A3ED6]">{item.eyebrow}</span><span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F5F2FF] text-[#5A3ED6]"><Icon size={18}/></span></div>
                 <h3 className="mt-5 sm:mt-7 font-[family-name:var(--font-display)] text-xl sm:text-2xl font-extrabold tracking-tight">{item.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-gray-500">{item.desc}</p>
-                <div className="mt-6 flex flex-wrap gap-2">{item.links.map(([label,href])=><Link key={href} href={href} className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-bold text-gray-600 hover:border-black hover:text-black">{label}</Link>)}</div>
-                <Link href={item.href} className="mt-auto pt-5 sm:pt-7 text-sm font-extrabold text-black group-hover:text-[#5A3ED6]">Explore service →</Link>
+                <div className="mt-6 flex flex-wrap gap-2">{item.links.map(([label,href])=><Link key={href} href={l(href)} className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-bold text-gray-600 hover:border-black hover:text-black">{label}</Link>)}</div>
+                <Link href={l(item.href)} className="mt-auto pt-5 sm:pt-7 text-sm font-extrabold text-black group-hover:text-[#5A3ED6]">Explore service →</Link>
               </div>
             })}
           </div>
@@ -326,7 +327,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {src:"/images/portfolio/foodfolio-hero.jpg",eyebrow:"Food · Brand Creative",title:"FoodFolio",desc:"Food-focused creative spanning brand presentation, product storytelling and social content.",href:"/work/foodfolio",span:"lg:col-span-5"},
               {src:"/images/portfolio/social-media-hero.jpg",eyebrow:"Social · Campaigns",title:"Social Media Designs",desc:"A cross-industry selection of social creative designed to make brands look sharper in the feed.",href:"/work/social-media-designs",span:"lg:col-span-5"},
               {src:"/images/portfolio/logo-folio-hero.jpg",eyebrow:"Branding · Identity",title:"LogoFolio",desc:"Identity and logo work across technology, food, energy, retail and emerging brands.",href:"/work/logo-folio",span:"lg:col-span-7"},
-            ].map((item,idx)=><Link key={item.href} href={item.href} className={`group relative overflow-hidden bg-black min-h-[300px] sm:min-h-[360px] md:min-h-[430px] ${item.span}`}>
+            ].map((item,idx)=><Link key={item.href} href={l(item.href)} className={`group relative overflow-hidden bg-black min-h-[300px] sm:min-h-[360px] md:min-h-[430px] ${item.span}`}>
               <Image src={item.src} alt={item.title+" — selected work by Markit Media"} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"/>
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
@@ -373,7 +374,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {label:"Search Console",href:"/en/tools",brand:"Search Console"},
               {label:"HubSpot",href:"/en/tools",brand:"HubSpot"},
               {label:"Klaviyo",href:"/en/tools",brand:"Klaviyo"},
-            ].map((item)=><Link key={item.label} href={item.href} aria-label={`Explore ${item.label}`} className="group min-h-24 sm:min-h-28 flex flex-col items-center justify-center gap-2.5 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            ].map((item)=><Link key={item.label} href={item.href.startsWith("/en/") ? item.href : l(item.href)} aria-label={`Explore ${item.label}`} className="group min-h-24 sm:min-h-28 flex flex-col items-center justify-center gap-2.5 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               {item.src
                 ? <Image src={item.src} alt={`${item.label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
                 : <BrandIcon brand={item.brand || item.label} title={`${item.label} logo`} className="h-10 w-10" />}
@@ -397,7 +398,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <Link key={s.href} href={s.href} className="service-tile flip-card group focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4">
+                <Link key={s.href} href={l(s.href)} className="service-tile flip-card group focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4">
                   <span className="flip-card-inner">
                     <span className="flip-card-face service-card-front">
                       <span className="service-tile-icon"><Icon size={22} strokeWidth={2} aria-hidden="true" /></span>
@@ -436,7 +437,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <div className="grid lg:grid-cols-2 gap-4 mt-10 mb-5">
             {industries.filter((ind) => "featured" in ind && ind.featured).map((ind) => {
               const Icon = ind.icon;
-              return <Link key={ind.href} href={ind.href} className="group relative overflow-hidden bg-black text-white p-6 sm:p-8 min-h-48 sm:min-h-56 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              return <Link key={ind.href} href={l(ind.href)} className="group relative overflow-hidden bg-black text-white p-6 sm:p-8 min-h-48 sm:min-h-56 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="flex items-start justify-between"><div className="w-14 h-14 bg-white text-black flex items-center justify-center"><Icon size={27} strokeWidth={2} aria-hidden="true"/></div><span className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">Specialist Industry</span></div>
                 <div className="mt-8"><h3 className="font-[family-name:var(--font-display)] text-2xl font-extrabold max-w-md">{ind.title}</h3><p className="text-gray-400 mt-3 max-w-xl leading-relaxed">{"desc" in ind ? ind.desc : ""}</p><span className="inline-block mt-5 font-bold">Explore industry expertise ↗</span></div>
               </Link>;
@@ -445,7 +446,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <Stagger stagger={45} animation="fade-up" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {industries.filter((ind) => !("featured" in ind && ind.featured)).slice(0,14).map((ind) => {
               const Icon = ind.icon;
-              return <Link key={ind.href} href={ind.href} className="group bg-gray-50 border border-gray-200 hover:bg-white hover:border-black hover:shadow-md transition-all p-4 sm:p-5 min-h-28 sm:min-h-32 flex flex-col justify-between focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              return <Link key={ind.href} href={l(ind.href)} className="group bg-gray-50 border border-gray-200 hover:bg-white hover:border-black hover:shadow-md transition-all p-4 sm:p-5 min-h-28 sm:min-h-32 flex flex-col justify-between focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="w-10 h-10 bg-white border border-gray-200 text-gray-600 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors"><Icon size={20} strokeWidth={2} aria-hidden="true"/></div>
                 <div className="flex items-end justify-between gap-3 mt-5"><h3 className="font-[family-name:var(--font-display)] text-sm sm:text-base font-bold text-black">{ind.title}</h3><span className="text-gray-400 group-hover:text-black">↗</span></div>
               </Link>;
@@ -571,7 +572,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <Stagger stagger={100} animation="fade-up" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
             {markets.map((m) => (
-              <Link key={m.name} href={m.href} className="group flex items-center justify-between gap-4 px-6 py-5 border border-white/20 text-base font-semibold text-gray-200 hover:border-white/70 hover:bg-white hover:text-black transition-all motion-reduce:transition-none">
+              <Link key={m.name} href={l(m.href)} className="group flex items-center justify-between gap-4 px-6 py-5 border border-white/20 text-base font-semibold text-gray-200 hover:border-white/70 hover:bg-white hover:text-black transition-all motion-reduce:transition-none">
                 <span className="text-3xl leading-none" aria-hidden="true">{m.flag}</span>
                 <span>{m.name}</span>
                 <span className="text-white/35 group-hover:text-black/50" aria-hidden="true">&rarr;</span>
@@ -624,7 +625,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             { label: "CMS", title: "WordPress", brand: "WordPress", href: "/services/website-development/wordpress", desc: "Flexible content-driven builds, landing pages, performance improvements, migrations, and ongoing website support." },
             { label: "Web Engineering", title: "Next.js", brand: "Next.js", href: "/services/website-development/nextjs-websites", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
             { label: "Measurement", title: "Google Analytics", brand: "GA4", href: "/tools", desc: "Event strategy, conversion measurement, attribution context, reporting, and decision-ready performance analysis." },
-          ].map(item=><Link key={item.title} href={item.href} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
+          ].map(item=><Link key={item.title} href={l(item.href)} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
             <div className="flex items-start justify-between gap-5">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-white border border-gray-200 flex items-center justify-center shadow-sm">
                 {item.logo ? <Image src={item.logo} alt="" width={36} height={36} className="w-9 h-9 object-contain"/> : <BrandIcon brand={item.brand || item.title} className="w-9 h-9" />}
@@ -657,7 +658,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             {getPublishedPosts(3).map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/${locale}/blog/${post.slug}`}
                 className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
@@ -704,7 +705,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", example:"Compare competitors side by side before choosing your offer, messaging and channel plan.", href: "/resources/competitor-analysis" },
               { title: "Service Finder Quiz", tag:"Start Here", icon:"→", desc: "Answer a few questions and find the Markit Media services most relevant to you.", example:"Get a faster starting point when you know the goal but not which marketing service fits.", href: "/services/finder" },
             ].map((r) => (
-              <Link key={r.href} href={r.href} className="flip-card tool-flip-card group min-h-56 sm:min-h-64 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={r.href} href={l(r.href)} className="flip-card tool-flip-card group min-h-56 sm:min-h-64 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <span className="flip-card-inner">
                   <span className="flip-card-face bg-white border border-gray-200 p-6 flex flex-col">
                     <span className="flex items-start justify-between gap-3"><span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">{r.tag}</span><span className="w-10 h-10 bg-black text-white flex items-center justify-center font-extrabold text-lg">{r.icon}</span></span>
@@ -788,7 +789,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 },
               ].map((item, index) => (
                 <Animate key={item.href} animation="fade-up" delay={(index + 1) * 100}>
-                  <Link href={item.href} className="group grid grid-cols-[0.9fr_1.1fr] min-h-[190px] overflow-hidden border border-gray-200 bg-gray-50 hover:border-black/30 hover:bg-white transition-colors">
+                  <Link href={l(item.href)} className="group grid grid-cols-[0.9fr_1.1fr] min-h-[190px] overflow-hidden border border-gray-200 bg-gray-50 hover:border-black/30 hover:bg-white transition-colors">
                     <div className="relative min-h-[190px] overflow-hidden">
                       <Image
                         src={item.src}
@@ -836,7 +837,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { src: "/images/portfolio/behance/foodfolio.jpg", alt: "Food and beverage design portfolio", href: "/work/foodfolio" },
               { src: "/images/portfolio/behance/logofolio.jpg", alt: "Logo design portfolio", href: "/work/logo-folio" },
             ].map((item) => (
-              <Link key={item.href} href={item.href} className="group relative aspect-[4/3] overflow-hidden bg-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={item.href} href={l(item.href)} className="group relative aspect-[4/3] overflow-hidden bg-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
               </Link>
             ))}

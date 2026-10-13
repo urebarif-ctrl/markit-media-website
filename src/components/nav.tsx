@@ -90,6 +90,7 @@ function moveFocusInPanel(panelId: string, direction: "next" | "prev" | "first" 
 
 export function Nav({ locale, translations }: { locale: string; translations: NavTranslations }) {
   const t = translations;
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const pathname = usePathname();
   const isHome = /^\/(en|ar|ur)\/?$/.test(pathname);
   const [scrolled, setScrolled] = useState(false);
@@ -236,7 +237,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                       { label: "SEO", href: "/services/seo", desc: "Technical, local, content & AI SEO", tag: "SEO" },
                       { label: "Social Media Marketing", href: "/services/social-media", desc: "Strategy, content & community management", tag: "SMM" },
                       { label: "Website Development", href: "/services/website-development", desc: "WordPress, Shopify & Next.js", tag: "WEB" },
-                    ].map((item) => <Link key={item.href} href={item.href} className="group min-h-[104px] rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-black hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-gray-100 px-2 py-1 text-[9px] font-extrabold tracking-wider text-gray-500">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-black group-hover:underline">Explore →</span></Link>)}
+                    ].map((item) => <Link key={item.href} href={l(item.href)} className="group min-h-[104px] rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-black hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-gray-100 px-2 py-1 text-[9px] font-extrabold tracking-wider text-gray-500">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-black group-hover:underline">Explore →</span></Link>)}
                   </div>
                 </div>
                 <div className="border-l border-gray-100 pl-5">
@@ -255,7 +256,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                       { label: "White Label", href: "/services/white-label" },
                       { label: "Media Buying", href: "/services/media-planning-buying" },
                       { label: "Upwork Growth", href: "/services/upwork-growth" },
-                    ].map((item) => <Link key={item.href} href={item.href} className="group flex items-center justify-between rounded-lg px-2.5 py-2 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-black"><span>{item.label}</span><span className="text-gray-300 group-hover:text-black">↗</span></Link>)}
+                    ].map((item) => <Link key={item.href} href={l(item.href)} className="group flex items-center justify-between rounded-lg px-2.5 py-2 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-black"><span>{item.label}</span><span className="text-gray-300 group-hover:text-black">↗</span></Link>)}
                   </div>
                 </div>
               </div>
@@ -274,7 +275,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <div id="industries-dropdown" className={`${dropdownPanelBase} w-[min(780px,88vw)] ${industriesOpen ? dropdownVisible : dropdownHidden}`}>
               <div className="p-7 border-b border-gray-100 bg-[#F7F7F5]"><span className="inline-flex rounded-full bg-black px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-white">Industry experience</span><h2 className="text-[28px] leading-tight font-extrabold mt-3">Strategies shaped around how your customers buy.</h2><p className="mt-2 text-sm text-gray-600">Pick your market to see relevant services, thinking and proof.</p></div>
               <div className="grid grid-cols-3 gap-2 p-4 max-h-[55vh] overflow-y-auto">
-                {industryList.map((ind, index) => <Link key={ind.href} href={ind.href} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-white hover:bg-gray-50" : "hover:bg-gray-50"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
+                {industryList.map((ind, index) => <Link key={ind.href} href={l(ind.href)} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-white hover:bg-gray-50" : "hover:bg-gray-50"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
               </div>
               <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/en/industries" className="text-sm font-extrabold text-black hover:underline">Explore all industries →</Link></div>
             </div>
@@ -321,7 +322,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             {mobileServicesOpen && (
               <div className="pl-4 py-2 space-y-1">
                 {serviceCategories.map((s) => (
-                  <Link key={s.href} href={s.href} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{s.label}</Link>
+                  <Link key={s.href} href={l(s.href)} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{s.label}</Link>
                 ))}
               </div>
             )}
@@ -334,7 +335,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             {mobileIndustriesOpen && (
               <div className="pl-4 py-2 space-y-1">
                 {industryList.map((ind) => (
-                  <Link key={ind.href} href={ind.href} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{ind.label}</Link>
+                  <Link key={ind.href} href={l(ind.href)} className="block py-2.5 text-base text-gray-600 hover:text-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{ind.label}</Link>
                 ))}
               </div>
             )}
@@ -348,7 +349,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             { label: t.nav.about, href: "/about" },
             { label: t.nav.contact, href: "/contact" },
           ].map((link) => (
-            <Link key={link.href} href={link.href} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{link.label}</Link>
+            <Link key={link.href} href={l(link.href)} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{link.label}</Link>
           ))}
           <div className="grid grid-cols-2 gap-3 pt-4">
             <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
