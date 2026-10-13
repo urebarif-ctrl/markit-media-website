@@ -5,6 +5,8 @@ import { useState, useMemo } from "react";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 const CHANNELS = [
   "Email",
   "Social Media",
@@ -54,6 +56,10 @@ function formatDate(d: string): string {
 
 
 export default function MarketingTimelinePlannerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [milestones, setMilestones] = useState<Milestone[]>([]);
   const [form, setForm] = useState({
     name: "",
@@ -161,9 +167,9 @@ export default function MarketingTimelinePlannerPage() {
       />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href={l("/")} className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href={l("/resources")} className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Marketing Timeline Planner</li>
         </ol>

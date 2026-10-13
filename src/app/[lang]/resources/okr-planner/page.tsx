@@ -8,6 +8,8 @@ import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -172,6 +174,10 @@ function StatusBadge({ status }: { status: ObjectiveStatus }) {
 
 
 export default function OkrPlannerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [objectives, setObjectives] = useState<Objective[]>(defaultObjectives);
   const [loaded, setLoaded] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>("progress");
@@ -810,9 +816,9 @@ export default function OkrPlannerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/marketing-goal-setter" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Goal Setter</Link>
-                <Link href="/en/resources/kpi-dashboard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">KPI Dashboard</Link>
-                <Link href="/en/resources/marketing-roi-report" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing ROI Report</Link>
+                <Link href={l("/resources/marketing-goal-setter")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Goal Setter</Link>
+                <Link href={l("/resources/kpi-dashboard")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">KPI Dashboard</Link>
+                <Link href={l("/resources/marketing-roi-report")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing ROI Report</Link>
           </div>
         </div>
       </section>
@@ -830,7 +836,7 @@ export default function OkrPlannerPage() {
               business outcomes. Let&rsquo;s build a plan that drives results.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className={`inline-block mt-8 px-8 py-3.5 text-base font-semibold rounded-full border-2 border-black bg-black text-white transition-colors hover:bg-white hover:text-black ${focusRing}`}
             >
               Get in Touch

@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -553,6 +555,10 @@ function SurveyPreview({ name, questions }: { name: string; questions: SurveyQue
 
 
 export default function CustomerFeedbackSurveyPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* --- State --- */
   const [activeTemplateId, setActiveTemplateId] = useState<string | null>(null);
   const [surveyName, setSurveyName] = useState("My Customer Survey");
@@ -984,7 +990,7 @@ export default function CustomerFeedbackSurveyPage() {
               We design survey strategies, analyze results, and turn feedback into actionable improvements that increase retention and revenue.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
             >
               Get a Free Consultation &rarr;

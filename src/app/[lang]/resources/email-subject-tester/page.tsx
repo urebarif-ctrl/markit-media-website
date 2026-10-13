@@ -7,6 +7,8 @@ import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 const spamWords = [
   "free", "guaranteed", "no obligation", "winner", "congratulations", "act now",
   "limited time", "urgent", "click here", "buy now", "order now", "subscribe",
@@ -147,6 +149,10 @@ function analyze(subject: string): Analysis {
 
 
 export default function EmailSubjectTesterPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [subject, setSubject] = useState("");
   const [result, setResult] = useState<Analysis | null>(null);
 
@@ -174,9 +180,9 @@ export default function EmailSubjectTesterPage() {
       />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href={l("/")} className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href={l("/resources")} className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Email Subject Line Tester</li>
         </ol>
@@ -304,7 +310,7 @@ export default function EmailSubjectTesterPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our email team handles strategy, copywriting, design, automation, and deliverability optimization.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Email Marketing Help &rarr;
             </Link>
           </Animate>
@@ -316,10 +322,10 @@ export default function EmailSubjectTesterPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/email-roi-calculator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email ROI Calculator</Link>
-                <Link href="/en/resources/email-campaign-planner" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Campaign Planner</Link>
-                <Link href="/en/resources/email-sequence-planner" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Sequence Planner</Link>
-                <Link href="/en/resources/email-deliverability" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Deliverability</Link>
+                <Link href={l("/resources/email-roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email ROI Calculator</Link>
+                <Link href={l("/resources/email-campaign-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Campaign Planner</Link>
+                <Link href={l("/resources/email-sequence-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Sequence Planner</Link>
+                <Link href={l("/resources/email-deliverability")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Deliverability</Link>
           </div>
         </div>
       </section>

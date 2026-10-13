@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -420,6 +422,10 @@ function ProgressBar({ score, max }: { score: number; max: number }) {
 
 
 export default function MarketingMaturityPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [submitted, setSubmitted] = useState(false);
   const [currentDimension, setCurrentDimension] = useState(0);
@@ -855,7 +861,7 @@ export default function MarketingMaturityPage() {
               goals and move your marketing to the next level.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

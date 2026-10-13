@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -612,6 +614,10 @@ function SliderInput({
 
 
 export default function ContentPerformanceScorecardPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [pieces, setPieces] = useState<ContentPiece[]>([]);
   const [weights, setWeights] = useState<Weights>({ ...defaultWeights });
   const [newName, setNewName] = useState("");
@@ -1244,25 +1250,25 @@ export default function ContentPerformanceScorecardPage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/en/resources/content-audit-scorecard"
+              href={l("/resources/content-audit-scorecard")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Audit Scorecard
             </Link>
             <Link
-              href="/en/resources/content-roi-calculator"
+              href={l("/resources/content-roi-calculator")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content ROI Calculator
             </Link>
             <Link
-              href="/en/resources/content-gap-finder"
+              href={l("/resources/content-gap-finder")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Gap Finder
             </Link>
             <Link
-              href="/en/resources/content-calendar"
+              href={l("/resources/content-calendar")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Calendar
@@ -1284,7 +1290,7 @@ export default function ContentPerformanceScorecardPage() {
               turn your scorecard into measurable results.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

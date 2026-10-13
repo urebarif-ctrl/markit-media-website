@@ -5,6 +5,8 @@ import { useState } from "react";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 const STAGES = [
   { id: "awareness", label: "Awareness", desc: "Customer discovers a need or your brand" },
   { id: "consideration", label: "Consideration", desc: "Customer researches and evaluates options" },
@@ -30,6 +32,10 @@ let nextId = 1;
 
 
 export default function CustomerJourneyBuilderPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [touchpoints, setTouchpoints] = useState<Touchpoint[]>([]);
   const [form, setForm] = useState({
     stage: "awareness",
@@ -114,9 +120,9 @@ export default function CustomerJourneyBuilderPage() {
       />
       <nav className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href={l("/")} className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href={l("/resources")} className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Customer Journey Map Builder</li>
         </ol>

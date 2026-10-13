@@ -87,7 +87,11 @@ const mistakes = [
   { title: "Copying enterprise strategies", fix: "What works for a company spending $1M/month will not work at $5K/month." },
 ];
 
-export default function StartupMarketingGuidePage() {
+export default async function StartupMarketingGuidePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -197,7 +201,7 @@ export default function StartupMarketingGuidePage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               We work with startups at every stage. Flexible engagements, no long-term lock-ins, and strategies built for growth.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Let&apos;s Talk &rarr;
             </Link>
           </Animate>

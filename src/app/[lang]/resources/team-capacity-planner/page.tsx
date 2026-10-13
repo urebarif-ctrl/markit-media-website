@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
 /* ------------------------------------------------------------------ */
@@ -125,6 +127,10 @@ function defaultProjects(): Project[] {
 
 
 export default function TeamCapacityPlannerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [members, setMembers] = useState<TeamMember[]>(defaultMembers);
   const [projects, setProjects] = useState<Project[]>(defaultProjects);
   const [loaded, setLoaded] = useState(false);
@@ -822,9 +828,9 @@ export default function TeamCapacityPlannerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/meeting-agenda-builder" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Meeting Agenda Builder</Link>
-                <Link href="/en/resources/marketing-timeline-planner" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Timeline Planner</Link>
-                <Link href="/en/resources/scope-of-work-generator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Scope of Work Generator</Link>
+                <Link href={l("/resources/meeting-agenda-builder")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Meeting Agenda Builder</Link>
+                <Link href={l("/resources/marketing-timeline-planner")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Timeline Planner</Link>
+                <Link href={l("/resources/scope-of-work-generator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Scope of Work Generator</Link>
           </div>
         </div>
       </section>
@@ -842,7 +848,7 @@ export default function TeamCapacityPlannerPage() {
             resource strategy, our team can help you plan and execute without the growing pains.
           </p>
           <Link
-            href="/en/contact"
+            href={l("/contact")}
             className="inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
           >
             Get in Touch

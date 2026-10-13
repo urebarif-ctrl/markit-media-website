@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { ToolCTA } from "@/components/tool-cta";
 import { JsonLd } from "@/components/json-ld";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
 /* ------------------------------------------------------------------ */
@@ -99,6 +101,10 @@ function qualityLabel(score: number): { label: string; tier: "high" | "medium" |
 
 
 export default function BacklinkAnalyzerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [links, setLinks] = useState<Backlink[]>([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -932,7 +938,7 @@ export default function BacklinkAnalyzerPage() {
                 strengthen your domain authority.
               </p>
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className={`inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-neutral-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2`}
               >
                 Get a Link Building Strategy &rarr;

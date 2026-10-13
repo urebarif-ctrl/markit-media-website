@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 
 const topics = ["Digital marketing", "SEO & search", "PPC & paid media", "Social media", "Web development", "Ecommerce", "Branding & creative", "AI in marketing"];
 
-export default function WriteForUsPage() {
+export default async function WriteForUsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   return (
     <main>
       <section className="px-6 lg:px-12 py-24 lg:py-32 bg-black text-white">
@@ -18,8 +22,8 @@ export default function WriteForUsPage() {
           <h1 className="text-5xl md:text-7xl font-semibold tracking-tight">Write for Markit Media</h1>
           <p className="mt-8 text-xl md:text-2xl text-white/70 max-w-3xl leading-relaxed">Share original, practical insight with marketers, founders and business leaders. We review every pitch for usefulness, originality and editorial fit.</p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/en/contact?subject=guest-post-pitch" className="bg-white text-black px-7 py-4 font-medium">Pitch an article</Link>
-            <Link href="/en/services/seo/link-building" className="border border-white/30 px-7 py-4 font-medium">Need link building?</Link>
+            <Link href={l("/contact?subject=guest-post-pitch")} className="bg-white text-black px-7 py-4 font-medium">Pitch an article</Link>
+            <Link href={l("/services/seo/link-building")} className="border border-white/30 px-7 py-4 font-medium">Need link building?</Link>
           </div>
         </div>
       </section>
@@ -67,7 +71,7 @@ export default function WriteForUsPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold">What to include in your pitch</h2>
           <p className="mt-5 text-lg text-gray-600">Send your name, company, LinkedIn profile, proposed title, category, a short summary, intended audience, author bio and draft link if one exists. Tell us clearly if the request is sponsored or commercial.</p>
-          <Link href="/en/contact?subject=guest-post-pitch" className="inline-block mt-8 bg-black text-white px-7 py-4 font-medium">Submit your pitch</Link>
+          <Link href={l("/contact?subject=guest-post-pitch")} className="inline-block mt-8 bg-black text-white px-7 py-4 font-medium">Submit your pitch</Link>
         </div>
       </section>
     </main>

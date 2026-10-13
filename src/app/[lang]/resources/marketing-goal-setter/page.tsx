@@ -5,6 +5,8 @@ import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 interface Goal {
   id: number;
   category: string;
@@ -71,6 +73,10 @@ function isSmartComplete(g: Goal): { specific: boolean; measurable: boolean; ach
 
 
 export default function MarketingGoalSetterPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [goals, setGoals] = useState<Goal[]>([emptyGoal()]);
   const [activeGoal, setActiveGoal] = useState(0);
   const [showSummary, setShowSummary] = useState(false);
@@ -146,7 +152,7 @@ export default function MarketingGoalSetterPage() {
       />
       <div className="max-w-4xl mx-auto">
         <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
-          <Link href="/en/resources" className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
+          <Link href={l("/resources")} className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Resources</Link>
           <span className="mx-2">/</span>
           <span className="text-black">Marketing Goal Setter</span>
         </nav>
@@ -295,7 +301,7 @@ export default function MarketingGoalSetterPage() {
             <section aria-label="Need Help Hitting Your Goals?" className="bg-black text-white p-8 lg:p-12 text-center">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold mb-4">Need Help Hitting Your Goals?</h2>
               <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Our team builds data-driven strategies to help you reach your marketing targets on time and on budget.</p>
-              <Link href="/en/contact" className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Plan Your Strategy &rarr;</Link>
+              <Link href={l("/contact")} className="inline-block bg-white text-black px-10 py-5 text-base font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Plan Your Strategy &rarr;</Link>
             </section>
           </div>
         )}

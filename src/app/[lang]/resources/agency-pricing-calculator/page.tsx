@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ─── Types ─── */
 type PricingModel = "hourly" | "retainer" | "project";
 type RetainerTier = "basic" | "standard" | "premium";
@@ -189,6 +191,10 @@ function clamp(val: number, min: number, max: number): number {
 
 
 export default function AgencyPricingCalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* Model selection */
   const [activeModel, setActiveModel] = useState<PricingModel>("hourly");
 
@@ -1198,9 +1204,9 @@ export default function AgencyPricingCalculatorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/pricing-calculator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Pricing Calculator</Link>
-                <Link href="/en/resources/budget-calculator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Budget Calculator</Link>
-                <Link href="/en/resources/marketing-proposal-generator" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Proposal Generator</Link>
+                <Link href={l("/resources/pricing-calculator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Pricing Calculator</Link>
+                <Link href={l("/resources/budget-calculator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Budget Calculator</Link>
+                <Link href={l("/resources/marketing-proposal-generator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Proposal Generator</Link>
           </div>
         </div>
       </section>
@@ -1216,7 +1222,7 @@ export default function AgencyPricingCalculatorPage() {
             covers your costs, and wins the right clients.
           </p>
           <Link
-            href="/en/contact"
+            href={l("/contact")}
             className={`inline-block bg-white text-black font-bold px-8 py-3 text-base hover:bg-neutral-200 transition-colors duration-300 motion-reduce:transition-none ${focusClasses}`}
           >
             Get in Touch

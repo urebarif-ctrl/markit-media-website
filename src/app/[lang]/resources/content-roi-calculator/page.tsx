@@ -7,12 +7,18 @@ import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 function fmt(n: number) { return n.toLocaleString("en-US", { maximumFractionDigits: 0 }); }
 function fmtMoney(n: number) { return "$" + fmt(n); }
 
 
 
 export default function ContentRoiCalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [articlesPerMonth, setArticlesPerMonth] = useState(4);
   const [costPerArticle, setCostPerArticle] = useState(500);
   const [monthlyTraffic, setMonthlyTraffic] = useState(500);
@@ -62,9 +68,9 @@ export default function ContentRoiCalculatorPage() {
       />
       <nav className="px-6 lg:px-12 pt-8" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-neutral-400">
-          <li><Link href="/en/" className="hover:text-black transition-colors">Home</Link></li>
+          <li><Link href={l("/")} className="hover:text-black transition-colors">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/en/resources" className="hover:text-black transition-colors">Resources</Link></li>
+          <li><Link href={l("/resources")} className="hover:text-black transition-colors">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black" aria-current="page">Content Marketing ROI Calculator</li>
         </ol>
@@ -192,7 +198,7 @@ export default function ContentRoiCalculatorPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our content marketing team creates SEO-optimized content that ranks and converts. Strategy, writing, and optimization — all under one roof.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Talk to a Content Strategist &rarr;
             </Link>
           </Animate>
@@ -204,10 +210,10 @@ export default function ContentRoiCalculatorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/content-calendar" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Calendar</Link>
-                <Link href="/en/resources/content-brief-generator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Brief Generator</Link>
-                <Link href="/en/resources/content-gap-finder" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Gap Finder</Link>
-                <Link href="/en/resources/content-pillar-planner" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Pillar Planner</Link>
+                <Link href={l("/resources/content-calendar")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Calendar</Link>
+                <Link href={l("/resources/content-brief-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Brief Generator</Link>
+                <Link href={l("/resources/content-gap-finder")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Gap Finder</Link>
+                <Link href={l("/resources/content-pillar-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Pillar Planner</Link>
           </div>
         </div>
       </section>

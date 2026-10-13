@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -280,6 +282,10 @@ function StackedBarChart({ channels, allAttributions }: {
 
 
 export default function AttributionCalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [channels, setChannels] = useState<Channel[]>(DEFAULT_CHANNELS);
   const [loaded, setLoaded] = useState(false);
   const [scenario, setScenario] = useState<ScenarioInput>({ channelId: "", increasePercent: 20 });
@@ -999,7 +1005,7 @@ export default function AttributionCalculatorPage() {
               connect your data sources, and build dashboards that drive real decisions.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className={`inline-block mt-8 px-8 py-4 bg-black text-white text-base font-bold border-2 border-black transition-colors motion-reduce:transition-none hover:bg-white hover:text-black ${focusClasses}`}
             >
               Get in Touch

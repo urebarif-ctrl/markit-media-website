@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ================================================================== */
 /*  Types                                                              */
 /* ================================================================== */
@@ -530,6 +532,10 @@ function computeCompleteness(data: BriefData): number {
 
 
 export default function CampaignBriefBuilderPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [data, setData] = useState<BriefData>(createInitialData);
   const [activeSection, setActiveSection] = useState<SectionName>("Overview");
   const [showPreview, setShowPreview] = useState(false);
@@ -1876,7 +1882,7 @@ export default function CampaignBriefBuilderPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 font-bold text-base hover:bg-neutral-200 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Get in touch

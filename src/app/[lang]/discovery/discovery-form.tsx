@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useParams } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 
 type Brief = {
@@ -238,7 +238,7 @@ export function DiscoveryForm() {
           ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href="/en/" className="rounded-full bg-black px-6 py-3 text-sm font-bold text-white hover:bg-gray-800">
+          <a href={`/${locale}/`} className="rounded-full bg-black px-6 py-3 text-sm font-bold text-white hover:bg-gray-800">
             Return to Markit Media
           </a>
           <a href="https://wa.me/923002086081" target="_blank" rel="noopener noreferrer" className="rounded-full border border-gray-200 px-6 py-3 text-sm font-bold text-black hover:border-black">

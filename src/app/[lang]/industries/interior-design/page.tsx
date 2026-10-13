@@ -202,10 +202,10 @@ export default async function InteriorDesignMarketingPage({ params }: { params: 
 
             <Animate animation="fade-up" delay={150}>
               <div className="flex flex-wrap gap-3 mt-8">
-                <Link href="/en/get-a-quote" className="bg-black text-white px-7 py-4 font-bold hover:bg-gray-800 transition-colors">
+                <Link href={l("/get-a-quote")} className="bg-black text-white px-7 py-4 font-bold hover:bg-gray-800 transition-colors">
                   Discuss Your Growth Plan
                 </Link>
-                <Link href="/en/services/digital-marketing" className="border border-gray-300 px-7 py-4 font-bold hover:border-black transition-colors">
+                <Link href={l("/services/digital-marketing")} className="border border-gray-300 px-7 py-4 font-bold hover:border-black transition-colors">
                   Explore Digital Marketing
                 </Link>
               </div>
@@ -372,7 +372,7 @@ export default async function InteriorDesignMarketingPage({ params }: { params: 
             <p className="text-lg text-gray-600 mt-5 max-w-2xl mx-auto">
               Tell us whether you are growing a design studio, product brand, showroom or e-commerce business and we will recommend the right channel mix.
             </p>
-            <Link href="/en/get-a-quote" className="inline-flex mt-8 bg-black text-white px-8 py-4 font-bold hover:bg-gray-800 transition-colors">
+            <Link href={l("/get-a-quote")} className="inline-flex mt-8 bg-black text-white px-8 py-4 font-bold hover:bg-gray-800 transition-colors">
               Request a Marketing Plan →
             </Link>
           </Animate>

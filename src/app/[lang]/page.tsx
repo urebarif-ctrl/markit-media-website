@@ -202,10 +202,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </Animate>
               <Animate animation="fade-up" delay={350}>
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <Link href="/en/get-a-quote" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                  <Link href={l("/get-a-quote")} className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                     Request a Quote &rarr;
                   </Link>
-                  <Link href="/en/work" className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                  <Link href={l("/work")} className="inline-flex items-center gap-3 border border-white/30 text-white px-8 py-4 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                     {t.cta.secondary}
                   </Link>
                 </div>
@@ -228,7 +228,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <div className="hidden lg:block relative">
               <Animate animation="fade-up" delay={200}>
                 <div className="hero-mosaic grid grid-cols-12 grid-rows-12 gap-2 h-[520px]">
-                  <Link href="/en/work/fashion-feed" className="group relative col-span-7 row-span-7 overflow-hidden">
+                  <Link href={l("/work/fashion-feed")} className="group relative col-span-7 row-span-7 overflow-hidden">
                     <Image src="/images/portfolio/fashion-feed-hero.jpg" alt="Fashion campaign creative by Markit Media" fill priority sizes="35vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-4 right-4">
@@ -236,7 +236,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       <p className="text-sm font-bold text-white mt-0.5">Campaign Creative</p>
                     </div>
                   </Link>
-                  <Link href="/en/work/logo-folio" className="group relative col-span-5 row-span-5 overflow-hidden">
+                  <Link href={l("/work/logo-folio")} className="group relative col-span-5 row-span-5 overflow-hidden">
                     <Image src="/images/portfolio/logofolio-hero.jpg" alt="Logo and identity work by Markit Media" fill priority sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-4 right-4">
@@ -244,7 +244,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       <p className="text-sm font-bold text-white mt-0.5">Identity Systems</p>
                     </div>
                   </Link>
-                  <Link href="/en/work/foodfolio" className="group relative col-span-5 row-span-7 overflow-hidden">
+                  <Link href={l("/work/foodfolio")} className="group relative col-span-5 row-span-7 overflow-hidden">
                     <Image src="/images/portfolio/foodfolio-hero.jpg" alt="Food and brand creative by Markit Media" fill priority sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-4 right-4">
@@ -252,7 +252,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                       <p className="text-sm font-bold text-white mt-0.5">Product Storytelling</p>
                     </div>
                   </Link>
-                  <Link href="/en/work/social-media-designs" className="group relative col-span-7 row-span-5 overflow-hidden">
+                  <Link href={l("/work/social-media-designs")} className="group relative col-span-7 row-span-5 overflow-hidden">
                     <Image src="/images/portfolio/social-media-hero.jpg" alt="Social media designs by Markit Media" fill priority sizes="35vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     <div className="absolute bottom-3 left-4 right-4">
@@ -290,7 +290,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <SectionTitle>Four capabilities we lead with.</SectionTitle>
                 <SectionDesc>Paid acquisition, organic search, social content and conversion-focused websites — designed to work as one growth system or as focused standalone engagements.</SectionDesc>
               </div>
-              <Link href="/en/services" className="shrink-0 text-sm font-extrabold text-[#5A3ED6] hover:underline">Explore all services →</Link>
+              <Link href={l("/services")} className="shrink-0 text-sm font-extrabold text-[#5A3ED6] hover:underline">Explore all services →</Link>
             </div>
           </Animate>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-10">
@@ -344,8 +344,8 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
 
           <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-            <Link href="/en/work" className="inline-flex items-center gap-2 font-bold hover:underline">Explore all work &rarr;</Link>
-            <Link href="/en/case-studies" className="inline-flex items-center gap-2 text-gray-500 font-semibold hover:text-black transition-colors">View client case studies &rarr;</Link>
+            <Link href={l("/work")} className="inline-flex items-center gap-2 font-bold hover:underline">Explore all work &rarr;</Link>
+            <Link href={l("/case-studies")} className="inline-flex items-center gap-2 text-gray-500 font-semibold hover:text-black transition-colors">View client case studies &rarr;</Link>
           </div>
         </div>
       </section>
@@ -419,7 +419,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Stagger>
           <Animate animation="fade-up" delay={200}>
             <div className="mt-12 text-center">
-              <Link href="/en/services" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/services")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All Services &rarr;
               </Link>
             </div>
@@ -452,7 +452,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </Link>;
             })}
           </Stagger>
-          <div className="mt-8 text-center"><Link href="/en/industries" className="inline-flex items-center gap-2 font-bold border border-black px-6 py-3 hover:bg-black hover:text-white transition-colors">Explore All Industries →</Link></div>
+          <div className="mt-8 text-center"><Link href={l("/industries")} className="inline-flex items-center gap-2 font-bold border border-black px-6 py-3 hover:bg-black hover:text-white transition-colors">Explore All Industries →</Link></div>
         </div>
       </section>
 
@@ -485,7 +485,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Stagger>
           <Animate animation="fade-up" delay={200}>
             <div className="mt-10">
-              <Link href="/en/results" className="inline-flex items-center gap-2 text-base font-bold text-white hover:underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/results")} className="inline-flex items-center gap-2 text-base font-bold text-white hover:underline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 See How We Measure Results &rarr;
               </Link>
             </div>
@@ -555,7 +555,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <Animate animation="fade-up" delay={180}>
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 border-t border-gray-200 pt-7">
               <p className="text-sm text-gray-500">No black-box process. You know what we&apos;re doing, why we&apos;re doing it, and what we&apos;re learning.</p>
-              <Link href="/en/process" className="inline-flex items-center gap-3 font-bold text-black whitespace-nowrap group">See our full process <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">&rarr;</span></Link>
+              <Link href={l("/process")} className="inline-flex items-center gap-3 font-bold text-black whitespace-nowrap group">See our full process <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">&rarr;</span></Link>
             </div>
           </Animate>
         </div>
@@ -607,7 +607,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Stagger>
           <Animate animation="fade-up" delay={200}>
             <div className="mt-10 text-center">
-              <Link href="/en/pricing" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/pricing")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View Pricing Models &rarr;
               </Link>
             </div>
@@ -649,7 +649,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <SectionLabel>Insights</SectionLabel>
                 <SectionTitle as="h3">Latest from the Blog</SectionTitle>
               </div>
-              <Link href="/en/blog" className="hidden md:inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/blog")} className="hidden md:inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All &rarr;
               </Link>
             </div>
@@ -681,7 +681,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             ))}
           </Stagger>
           <div className="mt-8 text-center md:hidden">
-            <Link href="/en/blog" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">View All Articles &rarr;</Link>
+            <Link href={l("/blog")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">View All Articles &rarr;</Link>
           </div>
         </div>
       </section>
@@ -723,7 +723,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Stagger>
           <Animate animation="fade-up" delay={200}>
             <div className="mt-8 text-center">
-              <Link href="/en/free-tools" className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/free-tools")} className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 View All 155+ Free Tools &rarr;
               </Link>
             </div>
@@ -743,7 +743,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                   A closer look at the creative systems, campaigns and digital experiences we build for brands across different categories.
                 </SectionDesc>
               </div>
-              <Link href="/en/work" className="shrink-0 text-sm font-extrabold text-black hover:underline">
+              <Link href={l("/work")} className="shrink-0 text-sm font-extrabold text-black hover:underline">
                 Explore all work →
               </Link>
             </div>
@@ -751,7 +751,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-5">
             <Animate animation="fade-up" className="lg:col-span-7">
-              <Link href="/en/work/social-media-designs" className="group block">
+              <Link href={l("/work/social-media-designs")} className="group block">
                 <div className="relative aspect-[16/11] overflow-hidden bg-gray-100">
                   <Image
                     src="/images/portfolio/social-media-hero.jpg"
@@ -844,7 +844,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Stagger>
           <Animate animation="fade-up" delay={100}>
             <div className="mt-8 text-center">
-              <Link href="/en/work" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">
+              <Link href={l("/work")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">
                 View Full Portfolio &rarr;
               </Link>
             </div>
@@ -877,7 +877,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </div>
           <Animate animation="fade-up" delay={350}>
             <div className="mt-8 flex flex-wrap gap-4 items-center">
-              <Link href="/en/work" className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 text-base font-bold hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/work")} className="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 text-base font-bold hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 View All Projects &rarr;
               </Link>
               <a href="https://www.youtube.com/@themarkitmedia" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base font-medium text-gray-400 hover:text-white transition-colors">

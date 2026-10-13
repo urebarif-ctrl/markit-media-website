@@ -5,6 +5,8 @@ import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 type BusinessType = "B2B" | "B2C" | "E-commerce" | "Local";
 type PrimaryGoal = "Brand Awareness" | "Lead Gen" | "Sales" | "Retention";
 
@@ -158,6 +160,10 @@ const goals: PrimaryGoal[] = ["Brand Awareness", "Lead Gen", "Sales", "Retention
 
 
 export default function BudgetCalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [budget, setBudget] = useState(5000);
   const [businessType, setBusinessType] = useState<BusinessType>("B2B");
   const [goal, setGoal] = useState<PrimaryGoal>("Lead Gen");
@@ -187,9 +193,9 @@ export default function BudgetCalculatorPage() {
       />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
-          <li><Link href="/en/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>
+          <li><Link href={l("/")} className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/en/resources" className="hover:text-black transition-colors motion-reduce:transition-none">Resources</Link></li>
+          <li><Link href={l("/resources")} className="hover:text-black transition-colors motion-reduce:transition-none">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black font-medium">Budget Calculator</li>
         </ol>
@@ -349,7 +355,7 @@ export default function BudgetCalculatorPage() {
             This calculator gives you a starting point. Let our team build a detailed media plan based on
             your specific business, audience, and growth targets.
           </p>
-          <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+          <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
             Get a Custom Strategy &rarr;
           </Link>
         </div>
@@ -360,10 +366,10 @@ export default function BudgetCalculatorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/marketing-budget-planner" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Planner</Link>
-                <Link href="/en/resources/budget-allocator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Allocator</Link>
-                <Link href="/en/resources/marketing-expense-tracker" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Expense Tracker</Link>
-                <Link href="/en/resources/pricing-calculator" className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Pricing Calculator</Link>
+                <Link href={l("/resources/marketing-budget-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Planner</Link>
+                <Link href={l("/resources/budget-allocator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Allocator</Link>
+                <Link href={l("/resources/marketing-expense-tracker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Expense Tracker</Link>
+                <Link href={l("/resources/pricing-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Pricing Calculator</Link>
           </div>
         </div>
       </section>

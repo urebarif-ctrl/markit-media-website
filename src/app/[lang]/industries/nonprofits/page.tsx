@@ -120,7 +120,11 @@ const faq = [
   },
 ];
 
-export default function NonprofitsPage() {
+export default async function NonprofitsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -185,7 +189,7 @@ export default function NonprofitsPage() {
           <Animate animation="fade-up" delay={200}>
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Get a Free Consultation &rarr;
@@ -327,7 +331,7 @@ export default function NonprofitsPage() {
               volunteers, and awareness to your cause.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

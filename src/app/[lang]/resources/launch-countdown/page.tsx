@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
 /* ------------------------------------------------------------------ */
@@ -410,6 +412,10 @@ const howToSteps = [
 
 
 export default function LaunchCountdownPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [launchDate, setLaunchDate] = useState("");
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
@@ -628,7 +634,7 @@ export default function LaunchCountdownPage() {
               live with confidence.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center justify-center gap-3 bg-white text-black px-10 py-5 min-h-[44px] font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Talk to Our Launch Team &rarr;

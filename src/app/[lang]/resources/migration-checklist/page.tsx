@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 interface CheckItem {
   id: string;
   text: string;
@@ -102,6 +104,10 @@ const commonMistakes = [
 
 
 export default function MigrationChecklistPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [checked, setChecked] = useState<Set<string>>(new Set());
 
   const toggleItem = (id: string) => {
@@ -321,7 +327,7 @@ export default function MigrationChecklistPage() {
               rankings or traffic.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 min-h-[44px]"
             >
               Talk to Our Team &rarr;

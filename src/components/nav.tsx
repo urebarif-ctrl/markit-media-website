@@ -194,7 +194,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   return (
     <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-white/95"}`}>
       <div className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-16 lg:h-20"}`}>
-        <Link href="/en/" className="flex items-center gap-2 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+        <Link href={l("/")} className="flex items-center gap-2 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
           <Image
             src="/images/logo-black.png"
             alt="Markit Media"
@@ -211,7 +211,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
           <div ref={servicesRef} className="relative"
             onMouseEnter={() => { clearTimeout(servicesTimeout.current); setServicesOpen(true); setIndustriesOpen(false); }}
             onMouseLeave={() => { servicesTimeout.current = setTimeout(() => setServicesOpen(false), 180); }}>
-            <Link ref={servicesTriggerRef} href="/en/services" className={`${navLinkClass} flex items-center gap-1.5 px-3`}
+            <Link ref={servicesTriggerRef} href={l("/services")} className={`${navLinkClass} flex items-center gap-1.5 px-3`}
               onFocus={() => { clearTimeout(servicesTimeout.current); setServicesOpen(true); }}
               aria-expanded={servicesOpen} aria-haspopup="true" aria-controls="services-dropdown">
               Services <span aria-hidden="true" className="text-xs">⌄</span>
@@ -225,7 +225,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                 </div>
                 <div className="p-7 bg-[#101010] text-white flex flex-col justify-between">
                   <span className="text-xs font-bold uppercase tracking-[.18em] text-white/50">Not sure where to start?</span>
-                  <div><p className="text-lg font-bold">Tell us what you want to grow.</p><Link href="/en/get-a-quote" className="mt-4 inline-flex rounded-full bg-white px-4 py-2.5 text-sm font-extrabold text-black hover:bg-gray-100">Get a recommendation →</Link></div>
+                  <div><p className="text-lg font-bold">Tell us what you want to grow.</p><Link href={l("/get-a-quote")} className="mt-4 inline-flex rounded-full bg-white px-4 py-2.5 text-sm font-extrabold text-black hover:bg-gray-100">Get a recommendation →</Link></div>
                 </div>
               </div>
               <div className="grid grid-cols-[1.45fr_.95fr] gap-5 p-5">
@@ -260,14 +260,14 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                   </div>
                 </div>
               </div>
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/en/services" className="text-sm font-extrabold text-black hover:underline">All services →</Link></div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href={l("/services")} className="text-sm font-extrabold text-black hover:underline">All services →</Link></div>
             </div>
           </div>
 
           <div ref={industriesRef} className="relative"
             onMouseEnter={() => { clearTimeout(industriesTimeout.current); setIndustriesOpen(true); setServicesOpen(false); }}
             onMouseLeave={() => { industriesTimeout.current = setTimeout(() => setIndustriesOpen(false), 180); }}>
-            <Link ref={industriesTriggerRef} href="/en/industries" className={`${navLinkClass} flex items-center gap-1.5 px-3`}
+            <Link ref={industriesTriggerRef} href={l("/industries")} className={`${navLinkClass} flex items-center gap-1.5 px-3`}
               onFocus={() => { clearTimeout(industriesTimeout.current); setIndustriesOpen(true); }}
               aria-expanded={industriesOpen} aria-haspopup="true" aria-controls="industries-dropdown">
               Industries <span aria-hidden="true" className="text-xs">⌄</span>
@@ -277,15 +277,15 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               <div className="grid grid-cols-3 gap-2 p-4 max-h-[55vh] overflow-y-auto">
                 {industryList.map((ind, index) => <Link key={ind.href} href={l(ind.href)} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-white hover:bg-gray-50" : "hover:bg-gray-50"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
               </div>
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/en/industries" className="text-sm font-extrabold text-black hover:underline">Explore all industries →</Link></div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href={l("/industries")} className="text-sm font-extrabold text-black hover:underline">Explore all industries →</Link></div>
             </div>
           </div>
 
-          <Link href="/en/work" className={`${navLinkClass} px-3`}>Work</Link>
-          <Link href="/en/case-studies" className={`${navLinkClass} px-3`}>Case Studies</Link>
-          <Link href="/en/blog" className={`${navLinkClass} px-3`}>Insights</Link>
-          <Link href="/en/tools" className={`${navLinkClass} px-3`}>Free Tools</Link>
-          <Link href="/en/about" className={`${navLinkClass} px-3`}>About</Link>
+          <Link href={l("/work")} className={`${navLinkClass} px-3`}>Work</Link>
+          <Link href={l("/case-studies")} className={`${navLinkClass} px-3`}>Case Studies</Link>
+          <Link href={l("/blog")} className={`${navLinkClass} px-3`}>Insights</Link>
+          <Link href={l("/tools")} className={`${navLinkClass} px-3`}>Free Tools</Link>
+          <Link href={l("/about")} className={`${navLinkClass} px-3`}>About</Link>
 
           <div className="h-6 w-px bg-current opacity-15 mx-1" aria-hidden="true" />
           <div className="relative">
@@ -298,7 +298,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => { setLanguageOpen(!languageOpen); setSearchOpen(false); }} className={`${navLinkClass} flex items-center gap-1 px-2 uppercase text-sm`} aria-label="Change language" aria-expanded={languageOpen}>{locale}<span aria-hidden="true">⌄</span></button>
             {languageOpen && <div className="absolute top-full right-0 min-w-40 bg-white text-black shadow-2xl border border-gray-100 py-2">{[["en","English"],["ar","العربية"],["ur","اردو"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`block px-4 py-3 text-sm hover:bg-gray-50 ${locale === code ? "font-extrabold" : "font-semibold"}`} onClick={() => setLanguageOpen(false)}>{label}{locale === code ? " ✓" : ""}</Link>)}</div>}
           </div>
-          <Link href="/en/get-a-quote" className={`ml-1 px-5 py-3 text-sm font-extrabold transition-colors ${isHome && !scrolled ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"}`}>Request a Quote</Link>
+          <Link href={l("/get-a-quote")} className={`ml-1 px-5 py-3 text-sm font-extrabold transition-colors ${isHome && !scrolled ? "bg-white text-black hover:bg-gray-100" : "bg-black text-white hover:bg-gray-800"}`}>Request a Quote</Link>
         </div>
 
         {/* Mobile toggle */}
@@ -344,7 +344,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             { label: t.nav.work, href: "/work" },
             { label: t.nav.caseStudies, href: "/case-studies" },
             { label: t.nav.insights, href: "/blog" },
-            { label: "Tools", href: "/en/tools" },
+            { label: "Tools", href: "/tools" },
             { label: "Resources", href: "/resources" },
             { label: t.nav.about, href: "/about" },
             { label: t.nav.contact, href: "/contact" },
@@ -356,7 +356,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
           {searchOpen && <div className="py-3"><Suspense><SiteSearch locale={locale} compact /></Suspense></div>}
-<Link href="/en/get-a-quote" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
+<Link href={l("/get-a-quote")} onClick={() => setMobileOpen(false)} className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>
     </nav>

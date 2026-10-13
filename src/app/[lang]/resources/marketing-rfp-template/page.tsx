@@ -8,6 +8,8 @@ import { Animate } from "@/components/animate";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -444,6 +446,10 @@ function Select({
 
 
 export default function MarketingRFPTemplatePage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [data, setData] = useState<RFPData>(defaultData);
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({ companyOverview: true });
   const [showPreview, setShowPreview] = useState(false);
@@ -925,7 +931,7 @@ export default function MarketingRFPTemplatePage() {
               from a team that has delivered results for businesses like yours.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-200 transition-colors motion-reduce:transition-none mt-8 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Contact Us &rarr;

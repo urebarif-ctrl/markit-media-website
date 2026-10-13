@@ -39,7 +39,11 @@ const whenToUsePPC = [
   "Your industry has high commercial intent keywords that convert well",
 ];
 
-export default function SEOvsPPCPage() {
+export default async function SEOvsPPCPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -134,7 +138,7 @@ export default function SEOvsPPCPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/en/services/seo" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/services/seo")} className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Explore Our SEO Services &rarr;
               </Link>
             </div>
@@ -150,7 +154,7 @@ export default function SEOvsPPCPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/en/services/performance-marketing" className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/services/performance-marketing")} className="inline-flex items-center gap-2 mt-6 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Explore Our PPC Services &rarr;
               </Link>
             </div>
@@ -185,10 +189,10 @@ export default function SEOvsPPCPage() {
               We will analyze your business and recommend the right mix of SEO and PPC based on your goals, budget, and timeline.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Free Assessment &rarr;
               </Link>
-              <Link href="/en/services/finder" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/services/finder")} className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Take the Service Finder Quiz
               </Link>
             </div>

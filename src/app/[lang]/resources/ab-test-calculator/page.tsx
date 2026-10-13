@@ -7,6 +7,8 @@ import { SectionLabel, SectionDesc } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 function calculateSampleSize(
   baselineRate: number,
   minimumDetectableEffect: number
@@ -26,6 +28,10 @@ function calculateSampleSize(
 
 
 export default function ABTestCalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [conversionRate, setConversionRate] = useState("5");
   const [expectedLift, setExpectedLift] = useState("10");
   const [dailyVisitors, setDailyVisitors] = useState("1000");
@@ -85,13 +91,13 @@ export default function ABTestCalculatorPage() {
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
           <li>
-            <Link href="/en/" className="hover:text-black transition-colors motion-reduce:transition-none">
+            <Link href={l("/")} className="hover:text-black transition-colors motion-reduce:transition-none">
               Home
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/en/resources" className="hover:text-black transition-colors motion-reduce:transition-none">
+            <Link href={l("/resources")} className="hover:text-black transition-colors motion-reduce:transition-none">
               Resources
             </Link>
           </li>
@@ -440,7 +446,7 @@ export default function ABTestCalculatorPage() {
               so you can make data-driven decisions with confidence.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

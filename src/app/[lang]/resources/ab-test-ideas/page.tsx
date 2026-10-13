@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -704,6 +706,10 @@ function TestIdeaCard({ idea, rank }: { idea: TestIdea; rank: number }) {
 
 
 export default function ABTestIdeasPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [pageType, setPageType] = useState<PageType>("landing-page");
   const [goal, setGoal] = useState<ConversionGoal>("signups");
   const [dailyTraffic, setDailyTraffic] = useState("");
@@ -1129,7 +1135,7 @@ export default function ABTestIdeasPage() {
               so you can make data-driven decisions with confidence.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;

@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -479,6 +481,10 @@ function StrategySection({ strategies }: { strategies: StrategyGroup[] }) {
 
 
 export default function SwotAnalysisPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [swot, setSwot] = useState<SwotData>({ ...emptySwot });
   const [ctx, setCtx] = useState<ContextData>({
     businessName: "",
@@ -929,13 +935,13 @@ export default function SwotAnalysisPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/en/services/digital-marketing"
+                href={l("/services/digital-marketing")}
                 className="inline-flex items-center justify-center gap-3 bg-white text-black px-10 py-5 min-h-[44px] font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Our Marketing Services &rarr;
               </Link>
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-flex items-center justify-center gap-3 border border-white text-white px-10 py-5 min-h-[44px] font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Get in Touch &rarr;

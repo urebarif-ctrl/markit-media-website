@@ -8,6 +8,8 @@ import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -336,6 +338,10 @@ function FieldLabel({ children, htmlFor }: { children: React.ReactNode; htmlFor?
 
 
 export default function CampaignDebriefPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* ---- State: campaign details ---- */
   const sample = sampleDebrief();
   const [name, setName] = useState(sample.name);
@@ -1056,9 +1062,9 @@ export default function CampaignDebriefPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href="/en/resources/campaign-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Campaign Tracker</Link>
-                <Link href="/en/resources/experiment-tracker" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Experiment Tracker</Link>
-                <Link href="/en/resources/marketing-audit-scorecard" className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
+                <Link href={l("/resources/campaign-tracker")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Campaign Tracker</Link>
+                <Link href={l("/resources/experiment-tracker")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Experiment Tracker</Link>
+                <Link href={l("/resources/marketing-audit-scorecard")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
           </div>
         </div>
       </section>
@@ -1074,7 +1080,7 @@ export default function CampaignDebriefPage() {
               Our team helps brands translate campaign learnings into higher-performing strategies.
               Let us turn your debrief data into your next campaign plan.
             </p>
-            <Link href="/en/contact" className={btnPrimary}>
+            <Link href={l("/contact")} className={btnPrimary}>
               Get in Touch
             </Link>
           </Animate>

@@ -7,6 +7,8 @@ import { SectionLabel } from "@/components/section";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Data: Nielsen's 10 Usability Heuristics                           */
 /* ------------------------------------------------------------------ */
@@ -197,6 +199,10 @@ function allQuestionsAnswered(scores: Record<string, number>): boolean {
 
 
 export default function WebsiteHeuristicEvaluatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [websiteUrl, setWebsiteUrl] = useState("");
   const [scores, setScores] = useState<Record<string, number>>({});
   const [notes, setNotes] = useState<Record<string, string>>({});
@@ -360,13 +366,13 @@ export default function WebsiteHeuristicEvaluatorPage() {
       <nav className="px-6 lg:px-12 pt-20 pb-4" aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-1.5 text-base text-gray-500 max-w-7xl mx-auto">
           <li>
-            <Link href="/en/" className="hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href={l("/")} className="hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Home
             </Link>
           </li>
           <li className="flex items-center gap-1.5">
             <span aria-hidden="true">/</span>
-            <Link href="/en/resources" className="hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href={l("/resources")} className="hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Resources
             </Link>
           </li>
@@ -804,13 +810,13 @@ export default function WebsiteHeuristicEvaluatorPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Get a Professional UX Audit &rarr;
               </Link>
               <Link
-                href="/en/services/website-development"
+                href={l("/services/website-development")}
                 className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Website Services

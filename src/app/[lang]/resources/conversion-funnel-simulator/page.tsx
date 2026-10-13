@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
@@ -231,6 +233,10 @@ function buildExportText(
 
 
 export default function ConversionFunnelSimulatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* ---- primary state ---- */
   const [visitors, setVisitors] = useState(10000);
   const [aov, setAov] = useState(5000);
@@ -957,13 +963,13 @@ export default function ConversionFunnelSimulatorPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-flex items-center justify-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 min-h-[44px]"
               >
                 Get a Free Funnel Audit &rarr;
               </Link>
               <Link
-                href="/en/services/digital-marketing"
+                href={l("/services/digital-marketing")}
                 className="inline-flex items-center justify-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 min-h-[44px]"
               >
                 Our Marketing Services

@@ -8,6 +8,8 @@ import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -251,6 +253,10 @@ function FieldLabel({ children, htmlFor }: { children: React.ReactNode; htmlFor?
 
 
 export default function QuarterlyReviewPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* ---- State: quarter selection ---- */
   const [quarter, setQuarter] = useState<Quarter>("Q3");
   const [year, setYear] = useState(2026);
@@ -1280,7 +1286,7 @@ export default function QuarterlyReviewPage() {
               Our team helps brands turn quarterly insights into higher-performing strategies.
               Let us help you plan, execute, and optimize your next quarter.
             </p>
-            <Link href="/en/contact" className={btnPrimary}>
+            <Link href={l("/contact")} className={btnPrimary}>
               Get in Touch
             </Link>
           </Animate>

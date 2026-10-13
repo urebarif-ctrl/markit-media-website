@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { ToolCTA } from "@/components/tool-cta";
 import { JsonLd } from "@/components/json-ld";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -539,6 +541,10 @@ const educationalContent = [
 
 
 export default function ExperimentTrackerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [experiments, setExperiments] = useState<Experiment[]>([]);
   const [form, setForm] = useState<Omit<Experiment, "id">>({ ...EMPTY_FORM });
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -1259,7 +1265,7 @@ export default function ExperimentTrackerPage() {
               businesses. Let us build a testing roadmap that compounds results.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-block mt-8 bg-white text-black px-10 py-4 text-base font-bold hover:bg-neutral-200 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get in Touch

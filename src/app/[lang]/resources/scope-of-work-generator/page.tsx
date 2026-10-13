@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ================================================================== */
 /*  Types                                                              */
 /* ================================================================== */
@@ -436,6 +438,10 @@ type SectionName = (typeof SECTIONS)[number];
 
 
 export default function ScopeOfWorkGeneratorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [data, setData] = useState<SOWData>(createInitialData);
   const [activeSection, setActiveSection] = useState<SectionName>("Setup");
   const [showPreview, setShowPreview] = useState(false);
@@ -1716,7 +1722,7 @@ export default function ScopeOfWorkGeneratorPage() {
               across every marketing channel. Let us handle the strategy so you can focus on growth.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 min-h-[44px]"
             >
               Get a Free Consultation &rarr;

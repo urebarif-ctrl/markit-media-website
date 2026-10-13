@@ -5,9 +5,15 @@ import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 
 
 export default function ROICalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [monthlyBudget, setMonthlyBudget] = useState(5000);
   const [avgDealValue, setAvgDealValue] = useState(2000);
   const [currentLeadsPerMonth, setCurrentLeadsPerMonth] = useState(20);
@@ -42,9 +48,9 @@ export default function ROICalculatorPage() {
       />
       <nav className="px-6 lg:px-12 pt-20" aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-base text-gray-400 max-w-7xl mx-auto">
-          <li><Link href="/en/" className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>
+          <li><Link href={l("/")} className="hover:text-black transition-colors motion-reduce:transition-none">Home</Link></li>
           <li aria-hidden="true">/</li>
-          <li><Link href="/en/resources" className="hover:text-black transition-colors motion-reduce:transition-none">Resources</Link></li>
+          <li><Link href={l("/resources")} className="hover:text-black transition-colors motion-reduce:transition-none">Resources</Link></li>
           <li aria-hidden="true">/</li>
           <li className="text-black font-medium">ROI Calculator</li>
         </ol>
@@ -185,7 +191,7 @@ export default function ROICalculatorPage() {
             </p>
 
             <div className="mt-8">
-              <Link href="/en/get-a-quote" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none w-full justify-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/get-a-quote")} className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none w-full justify-center focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Get a Custom Projection &rarr;
               </Link>
             </div>

@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -136,6 +138,10 @@ const btnDanger =
 
 
 export default function SlaTrackerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* State */
   const [slas, setSlas] = useState<Sla[]>([]);
   const [monthlyRecords, setMonthlyRecords] = useState<MonthlyRecord[]>([]);
@@ -775,7 +781,7 @@ export default function SlaTrackerPage() {
               Our team helps businesses establish clear, measurable SLAs with their marketing partners. Get accountability frameworks that protect your investment and drive consistent results.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className={btnPrimary}
             >
               Contact Us

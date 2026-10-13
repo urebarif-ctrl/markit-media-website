@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types & Constants                                                  */
 /* ------------------------------------------------------------------ */
@@ -773,6 +775,10 @@ function SummaryStats({ stages }: { stages: StageData[] }) {
 
 
 export default function CustomerJourneyMapperPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [businessType, setBusinessType] = useState("");
   const [audience, setAudience] = useState("");
   const [stagesData, setStagesData] = useState<StageData[]>(
@@ -1035,7 +1041,7 @@ export default function CustomerJourneyMapperPage() {
               experience breaks down and how to fix it.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center justify-center gap-3 bg-white text-black px-10 py-5 min-h-[44px] font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Work With Our Team &rarr;

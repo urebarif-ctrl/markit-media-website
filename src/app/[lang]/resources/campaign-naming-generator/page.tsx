@@ -6,6 +6,8 @@ import { Animate } from "@/components/animate";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
@@ -200,6 +202,10 @@ function sanitise(text: string, sep: string): string {
 
 
 export default function CampaignNamingGeneratorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* --- Form state --- */
   const [platform, setPlatform] = useState("");
   const [campaignType, setCampaignType] = useState("");
@@ -463,7 +469,7 @@ export default function CampaignNamingGeneratorPage() {
           <Animate animation="fade-up">
             <nav aria-label="Breadcrumb" className="text-base text-gray-400 mb-8">
               <Link
-                href="/en/resources"
+                href={l("/resources")}
                 className="hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Resources
@@ -994,7 +1000,7 @@ export default function CampaignNamingGeneratorPage() {
               Our team manages campaigns across every major platform with disciplined naming, tracking, and reporting built in from day one.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get Campaign Support &rarr;

@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
 /* ------------------------------------------------------------------ */
@@ -497,6 +499,10 @@ function IntegrationMatrix({
 
 
 export default function MartechStackPlannerPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [state, setState] = useState<StackState>({ tools: [], integrations: [] });
   const [loaded, setLoaded] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
@@ -1319,7 +1325,7 @@ export default function MartechStackPlannerPage() {
             </p>
             <div className="pt-2">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className={`inline-block px-8 py-4 bg-black text-white text-base font-bold border-2 border-black transition-colors motion-reduce:transition-none hover:bg-white hover:text-black ${focusClasses}`}
               >
                 Get a Free Consultation

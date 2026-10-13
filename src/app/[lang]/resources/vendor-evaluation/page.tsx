@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -568,6 +570,10 @@ function ScoreInput({
 
 
 export default function VendorEvaluationPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   const [vendors, setVendors] = useState<Vendor[]>(() => [
     createEmptyVendor("Vendor A"),
     createEmptyVendor("Vendor B"),
@@ -1306,7 +1312,7 @@ export default function VendorEvaluationPage() {
             </p>
             <div className="mt-8">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-block bg-black text-white px-8 py-4 text-base font-bold hover:bg-neutral-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Get in Touch

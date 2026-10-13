@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export default function Error({ reset }: { error: Error; reset: () => void }) {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
   return (
     <section className="px-6 lg:px-12 py-32 text-center" aria-label="Error">
       <div className="max-w-xl mx-auto">
@@ -21,7 +24,7 @@ export default function Error({ reset }: { error: Error; reset: () => void }) {
             Try Again
           </button>
           <Link
-            href="/en/"
+            href={`/${locale}/`}
             className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
           >
             Go Home

@@ -123,7 +123,11 @@ const industries = [
   { title: "Professional Services", href: "/industries/professional-services" },
 ];
 
-export default function MetaAdsPage() {
+export default async function MetaAdsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   return (
     <SubServicePage
       platforms={[{"name":"Facebook"},{"name":"Instagram"},{"name":"WhatsApp"},{"name":"Google Analytics","note":"GA4"},{"name":"Shopify","note":"Pixel integration"}]}
@@ -442,7 +446,7 @@ export default function MetaAdsPage() {
               </Link>
             ))}
           </div>
-          <Link href="/en/case-studies" className="inline-flex mt-8 font-bold underline underline-offset-4 hover:no-underline">
+          <Link href={l("/case-studies")} className="inline-flex mt-8 font-bold underline underline-offset-4 hover:no-underline">
             Browse all case studies →
           </Link>
         </div>
@@ -456,7 +460,7 @@ export default function MetaAdsPage() {
             <p className="text-lg text-gray-500 leading-relaxed mt-5">
               Meta can optimize only toward the signals it receives. Before scaling, we want the account to distinguish between activity that looks good inside Ads Manager and activity that matters to the business.
             </p>
-            <Link href="/en/services/analytics-reporting" className="inline-flex mt-7 font-bold underline underline-offset-4 hover:no-underline">
+            <Link href={l("/services/analytics-reporting")} className="inline-flex mt-7 font-bold underline underline-offset-4 hover:no-underline">
               Explore analytics and reporting →
             </Link>
           </div>

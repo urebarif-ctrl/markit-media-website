@@ -8,6 +8,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { ToolCTA } from "@/components/tool-cta";
 import { JsonLd } from "@/components/json-ld";
 
+import { useParams } from "next/navigation";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -120,6 +122,10 @@ function clamp(val: number, min: number, max: number): number {
 
 
 export default function RetentionCalculatorPage() {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+
   /* ---- basic inputs ---- */
   const [startCustomers, setStartCustomers] = useState("1000");
   const [newCustomers, setNewCustomers] = useState("150");
@@ -1365,7 +1371,7 @@ export default function RetentionCalculatorPage() {
               customers. Let us help you reduce churn and grow lifetime value.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-neutral-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;
