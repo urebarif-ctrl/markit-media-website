@@ -7,6 +7,7 @@ import { BackToTop } from "@/components/back-to-top";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Analytics } from "@/components/analytics";
 import { OutboundTracker } from "@/components/outbound-tracker";
+import { ScrollAnimations } from "@/components/scroll-animations";
 import Script from "next/script";
 
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
@@ -125,6 +126,7 @@ export default async function LangLayout({
         </a>
 
         <CookieConsent />
+        <ScrollAnimations />
         <Analytics />
         <OutboundTracker />
         {isProduction && (

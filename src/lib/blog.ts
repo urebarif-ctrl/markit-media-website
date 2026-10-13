@@ -21,11 +21,13 @@ export interface BlogPost {
   updated_at: string;
 }
 
+const LISTING_COLUMNS = "id, slug, title, excerpt, cover_image, category, tags, author, status, meta_title, meta_description, og_image, reading_time, noindex, published_at, created_at, updated_at";
+
 export function getPublishedPosts(limit = 50, offset = 0): BlogPost[] {
   const db = getDb();
   return db
     .prepare(
-      `SELECT * FROM blog_posts WHERE status = 'published' AND published_at IS NOT NULL ORDER BY published_at DESC LIMIT ? OFFSET ?`
+      `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND published_at IS NOT NULL ORDER BY published_at DESC LIMIT ? OFFSET ?`
     )
     .all(limit, offset) as BlogPost[];
 }
@@ -42,7 +44,7 @@ export function getPostsByCategory(category: string, limit = 50): BlogPost[] {
   const db = getDb();
   return db
     .prepare(
-      `SELECT * FROM blog_posts WHERE status = 'published' AND category = ? ORDER BY published_at DESC LIMIT ?`
+      `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND category = ? ORDER BY published_at DESC LIMIT ?`
     )
     .all(category, limit) as BlogPost[];
 }
@@ -59,7 +61,7 @@ export function getRelatedPosts(slug: string, category: string, limit = 3): Blog
   const db = getDb();
   return db
     .prepare(
-      `SELECT * FROM blog_posts WHERE status = 'published' AND slug != ? AND category = ? ORDER BY published_at DESC LIMIT ?`
+      `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND slug != ? AND category = ? ORDER BY published_at DESC LIMIT ?`
     )
     .all(slug, category, limit) as BlogPost[];
 }
