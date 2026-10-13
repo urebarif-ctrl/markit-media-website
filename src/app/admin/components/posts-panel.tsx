@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { Image as ImageIcon, X } from "lucide-react";
+import { sanitizeHtml } from "@/lib/sanitize";
 
 interface Post {
   id: number;
@@ -271,7 +272,7 @@ export function PostsPanel({ headers }: { headers: Record<string, string> }) {
             ) : (
               <div
                 className="w-full border border-gray-300 px-6 py-4 text-base leading-relaxed prose max-w-none min-h-[300px] bg-white overflow-y-auto"
-                dangerouslySetInnerHTML={{ __html: editing.content }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(editing.content) }}
               />
             )}
           </div>

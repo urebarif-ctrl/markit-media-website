@@ -1,11 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+import { trackEvent } from "@/lib/tracking";
 
 const CONSENT_KEY = "cookie-consent";
 
 export function Analytics() {
   const [consentGiven, setConsentGiven] = useState(false);
+  const pathname = usePathname();
+  const prevPath = useRef(pathname);
 
   useEffect(() => {
     function checkConsent() {
@@ -24,6 +28,16 @@ export function Analytics() {
     if (!consentGiven) return;
     window.dispatchEvent(new CustomEvent("analytics-consent-granted"));
   }, [consentGiven]);
+
+  useEffect(() => {
+    if (prevPath.current === pathname) return;
+    prevPath.current = pathname;
+    trackEvent("page_view", {
+      page_path: pathname,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [pathname]);
 
   return null;
 }

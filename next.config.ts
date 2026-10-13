@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_GTM_ID: "GTM-M69FQSTC",
   },
   images: {
+    loader: "custom",
+    loaderFile: "./src/lib/image-loader.ts",
     remotePatterns: [
       { protocol: "https", hostname: "i.ytimg.com" },
       { protocol: "https", hostname: "img.youtube.com" },
@@ -162,7 +164,7 @@ const nextConfig: NextConfig = {
       { source: "/en/terms-of-service", destination: "/en/terms", statusCode: 301 },
       { source: "/cookie-policy", destination: "/en/privacy-policy", statusCode: 301 },
       { source: "/disclaimer", destination: "/en/terms", statusCode: 301 },
-      { source: "/sitemap", destination: "/sitemap.xml", statusCode: 301 },
+      { source: "/sitemap", destination: "/sitemap-index.xml", statusCode: 301 },
       { source: "/sample-page", destination: "/en", statusCode: 301 },
       { source: "/hello-world", destination: "/en/blog", statusCode: 301 },
       { source: "/blog-2", destination: "/en/blog", statusCode: 301 },
@@ -431,11 +433,11 @@ const nextConfig: NextConfig = {
       { source: "/wp-json/:path*", destination: "/en", statusCode: 302 },
       { source: "/xmlrpc.php", destination: "/en", statusCode: 302 },
       { source: "/wp-cron.php", destination: "/en", statusCode: 302 },
-      { source: "/wp-sitemap.xml", destination: "/sitemap.xml", statusCode: 301 },
-      { source: "/wp-sitemap-posts-post-1.xml", destination: "/sitemap.xml", statusCode: 301 },
-      { source: "/wp-sitemap-posts-page-1.xml", destination: "/sitemap.xml", statusCode: 301 },
-      { source: "/wp-sitemap-taxonomies-category-1.xml", destination: "/sitemap.xml", statusCode: 301 },
-      { source: "/wp-sitemap-users-1.xml", destination: "/sitemap.xml", statusCode: 301 },
+      { source: "/wp-sitemap.xml", destination: "/sitemap-index.xml", statusCode: 301 },
+      { source: "/wp-sitemap-posts-post-1.xml", destination: "/sitemap-index.xml", statusCode: 301 },
+      { source: "/wp-sitemap-posts-page-1.xml", destination: "/sitemap-index.xml", statusCode: 301 },
+      { source: "/wp-sitemap-taxonomies-category-1.xml", destination: "/sitemap-index.xml", statusCode: 301 },
+      { source: "/wp-sitemap-users-1.xml", destination: "/sitemap-index.xml", statusCode: 301 },
     ];
 
     return redirects.filter((redirect) => {

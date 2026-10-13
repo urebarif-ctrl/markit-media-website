@@ -3,11 +3,12 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
-import { BackToTop } from "@/components/back-to-top";
-import { CookieConsent } from "@/components/cookie-consent";
-import { Analytics } from "@/components/analytics";
-import { OutboundTracker } from "@/components/outbound-tracker";
-import { ScrollAnimations } from "@/components/scroll-animations";
+import dynamic from "next/dynamic";
+const BackToTop = dynamic(() => import("@/components/back-to-top").then(m => m.BackToTop));
+const CookieConsent = dynamic(() => import("@/components/cookie-consent").then(m => m.CookieConsent));
+const Analytics = dynamic(() => import("@/components/analytics").then(m => m.Analytics));
+const OutboundTracker = dynamic(() => import("@/components/outbound-tracker").then(m => m.OutboundTracker));
+const ScrollAnimations = dynamic(() => import("@/components/scroll-animations").then(m => m.ScrollAnimations));
 import Script from "next/script";
 
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
@@ -20,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["600", "700", "800"],
 });
 
-const isProduction = process.env.VERCEL_ENV === "production" || process.env.PRODUCTION_DEPLOY === "true" || process.env.CF_PAGES_BRANCH === "main";
+const isProduction = process.env.PRODUCTION_DEPLOY === "true" || process.env.CF_PAGES_BRANCH === "main";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -56,6 +57,8 @@ export async function generateMetadata(
       canonical: `https://themarkitmedia.com/${locale}`,
       languages: {
         "en": "https://themarkitmedia.com/en",
+        "ar": "https://themarkitmedia.com/ar",
+        "ur": "https://themarkitmedia.com/ur",
         "x-default": "https://themarkitmedia.com/en",
       },
       types: { "application/rss+xml": "/feed.xml" },

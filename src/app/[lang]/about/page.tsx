@@ -18,17 +18,24 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "About Us, Full-Stack Digital Marketing Agency",
-  description:
-    "Markit Media is a full-stack digital marketing agency serving clients across 6 countries. Learn about our approach, values, and the team behind the work.",
-  alternates: { canonical: "https://themarkitmedia.com/en/about" },
-  openGraph: {
-    title: "About Us",
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> },
+): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = ["en", "ar", "ur"].includes(lang) ? lang : "en";
+  return {
+    title: "About Us, Full-Stack Digital Marketing Agency",
     description:
-      "Meet the full-stack digital marketing agency serving clients across 6 countries. Our approach, values, and team.",
-  },
-};
+      "Markit Media is a full-stack digital marketing agency serving clients across 6 countries. Learn about our approach, values, and the team behind the work.",
+    alternates: { canonical: `https://themarkitmedia.com/${locale}/about` },
+    openGraph: {
+      title: "About Us",
+      description:
+        "Meet the full-stack digital marketing agency serving clients across 6 countries. Our approach, values, and team.",
+      url: `https://themarkitmedia.com/${locale}/about`,
+    },
+  };
+}
 
 const values = [
   {

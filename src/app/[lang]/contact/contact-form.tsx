@@ -159,10 +159,10 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
             <textarea id="message" name="message" rows={5} required className={inputClass + " resize-y"} placeholder={isQuote ? "What are you trying to achieve? Tell us about your goals, current marketing, timeline, or anything else we should know..." : "Tell us about your project and goals..."} />
           </div>
 
-          <label htmlFor="marketingConsent" className="mt-5 flex items-start gap-3 text-sm text-gray-500">
-            <input type="checkbox" id="marketingConsent" name="marketingConsent" className="mt-1" aria-label="Marketing consent" />
-            <span>Send me occasional marketing insights and updates from Markit Media. Optional.</span>
-          </label>
+          <div className="mt-5 flex items-start gap-3 text-sm text-gray-500">
+            <input type="checkbox" id="marketingConsent" name="marketingConsent" className="mt-1" />
+            <label htmlFor="marketingConsent">Send me occasional marketing insights and updates from Markit Media. Optional.</label>
+          </div>
 
           {state.status === "error" && (
             <div className="mt-4 p-3 bg-red-50 border border-red-200 text-red-700 text-base" role="alert">

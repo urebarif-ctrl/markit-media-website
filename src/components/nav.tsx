@@ -192,6 +192,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const navLinkClass = `text-sm xl:text-[15px] font-semibold transition-colors motion-reduce:transition-none py-5 focus-visible:outline-2 focus-visible:outline-offset-2 ${isHome && !scrolled ? "text-white/90 hover:text-white focus-visible:outline-white" : "text-gray-700 hover:text-black focus-visible:outline-black"}`;
 
   return (
+    <header>
     <nav aria-label={t.accessibility.mainNavigation} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/[0.04]" : isHome ? "bg-black/20 backdrop-blur-sm" : "bg-white/95"}`}>
       <div className={`max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-16 lg:h-20"}`}>
         <Link href={l("/")} className="flex items-center gap-2 flex-shrink-0 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
@@ -201,7 +202,6 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             width={160}
             height={33}
             priority
-            unoptimized
             className={`h-8 w-auto transition-[filter] duration-300 ${isHome && !scrolled ? "brightness-0 invert" : ""}`}
           />
         </Link>
@@ -230,7 +230,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               </div>
               <div className="grid grid-cols-[1.45fr_.95fr] gap-5 p-5">
                 <div>
-                  <div className="flex items-center justify-between mb-3"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-white">Core growth services</span><span className="text-[11px] font-semibold text-gray-400">Start here</span></div>
+                  <div className="flex items-center justify-between mb-3"><span className="text-[11px] font-extrabold uppercase tracking-[.18em] text-gray-400">Core growth services</span><span className="text-[11px] font-semibold text-gray-400">Start here</span></div>
                   <div className="grid grid-cols-2 gap-2">
                     {[
                       { label: "PPC & Paid Ads", href: "/services/performance-marketing", desc: "Meta Ads, Google Ads & PPC management", tag: "PPC" },
@@ -352,7 +352,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <Link key={link.href} href={l(link.href)} className="block py-4 text-base font-bold text-black border-b border-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2" onClick={() => setMobileOpen(false)}>{link.label}</Link>
           ))}
           <div className="grid grid-cols-2 gap-3 pt-4">
-            <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
+            <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold" aria-label="Search website" aria-expanded={searchOpen}>Search</button>
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
           {searchOpen && <div className="py-3"><Suspense><SiteSearch locale={locale} compact /></Suspense></div>}
@@ -360,5 +360,6 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
         </div>
       </div>
     </nav>
+    </header>
   );
 }

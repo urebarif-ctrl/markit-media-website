@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 type Tool = { name: string; desc: string };
 type Category = { title: string; tools: Tool[] };
@@ -41,6 +41,13 @@ const examples: Record<string, string> = {
 
 export function ToolsExplorer({ categories }: { categories: Category[] }) {
   const [query, setQuery] = useState("");
+  const [flipped, setFlipped] = useState<Set<string>>(new Set());
+  const toggleFlip = useCallback((name: string) => {
+    setFlipped((prev) => { const next = new Set(prev); if (next.has(name)) next.delete(name); else next.add(name); return next; });
+  }, []);
+  const handleCardKeyDown = useCallback((e: React.KeyboardEvent, name: string) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleFlip(name); }
+  }, [toggleFlip]);
   const normalized = query.trim().toLowerCase();
   const filtered = useMemo(() => categories.map((category) => ({
     ...category,
@@ -58,7 +65,7 @@ export function ToolsExplorer({ categories }: { categories: Category[] }) {
     </div>
     {filtered.length ? filtered.map((category) => <div key={category.title} className="mb-14">
       <div className="flex items-end justify-between gap-5 mb-6"><h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">{category.title}</h2><span className="text-sm text-gray-400">{category.tools.length} tools</span></div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{category.tools.map((tool) => <article key={tool.name} className="flip-card min-h-64 rounded-xl"><div className="flip-card-inner rounded-xl">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">{category.tools.map((tool) => <article key={tool.name} tabIndex={0} role="button" aria-label={`${tool.name}: ${tool.desc}`} onKeyDown={(e) => handleCardKeyDown(e, tool.name)} className={`flip-card min-h-64 rounded-xl focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2${flipped.has(tool.name) ? " flip-card-flipped" : ""}`}><div className="flip-card-inner rounded-xl">
         <div className="flip-card-face bg-white border border-gray-200 p-6 rounded-xl"><span className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">{category.title}</span><h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mt-4">{tool.name}</h3><p className="text-base text-gray-500 leading-relaxed mt-3">{tool.desc}</p><span className="mt-auto pt-6 text-sm font-bold text-black">Hover for an example →</span></div>
         <div className="flip-card-face flip-card-back bg-black text-white border border-black p-6 rounded-xl"><span className="text-xs font-bold uppercase tracking-[0.14em] text-white/50">How it helps</span><h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold mt-4">{tool.name}</h3><p className="text-sm text-white/70 leading-relaxed mt-4">{examples[tool.name] ?? `Use ${tool.name} inside a measurable workflow where its data or automation directly supports a marketing decision.`}</p><span className="mt-auto pt-6 text-sm font-bold">Part of our working stack</span></div>
       </div></article>)}</div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const STORAGE_KEY = "cookie-consent";
 
@@ -8,6 +8,8 @@ export function CookieConsent() {
   const [shouldShow, setShouldShow] = useState<boolean | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const acceptRef = useRef<HTMLButtonElement>(null);
+  const dismissRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -17,6 +19,27 @@ export function CookieConsent() {
     const timer = setTimeout(() => setIsVisible(true), 2000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const t = setTimeout(() => acceptRef.current?.focus(), 100);
+      return () => clearTimeout(t);
+    }
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    function handleTab(e: KeyboardEvent) {
+      if (e.key !== "Tab") return;
+      const first = acceptRef.current;
+      const last = dismissRef.current;
+      if (!first || !last) return;
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    document.addEventListener("keydown", handleTab);
+    return () => document.removeEventListener("keydown", handleTab);
+  }, [isVisible]);
 
   const dismiss = useCallback((value: "accepted" | "dismissed") => {
     localStorage.setItem(STORAGE_KEY, value);
@@ -46,10 +69,10 @@ export function CookieConsent() {
           We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our use of cookies.
         </p>
         <div className="flex gap-3 shrink-0">
-          <button onClick={() => dismiss("accepted")} className="bg-white text-black px-6 py-3 min-h-[44px] text-base font-bold hover:bg-gray-100 transition-colors motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+          <button ref={acceptRef} onClick={() => dismiss("accepted")} className="bg-white text-black px-6 py-3 min-h-[44px] text-base font-bold hover:bg-gray-100 transition-colors motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
             Accept
           </button>
-          <button onClick={() => dismiss("dismissed")} className="border border-gray-600 text-gray-300 px-6 py-3 min-h-[44px] text-base font-medium hover:border-white hover:text-white transition-colors motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+          <button ref={dismissRef} onClick={() => dismiss("dismissed")} className="border border-gray-600 text-gray-300 px-6 py-3 min-h-[44px] text-base font-medium hover:border-white hover:text-white transition-colors motion-reduce:transition-none cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
             Dismiss
           </button>
         </div>

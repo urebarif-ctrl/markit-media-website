@@ -8,16 +8,23 @@ import { ContactForm } from "./contact-form";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with Markit Media for a free consultation. We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
-  alternates: { canonical: "https://themarkitmedia.com/en/contact" },
-  openGraph: {
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> },
+): Promise<Metadata> {
+  const { lang } = await params;
+  const locale = ["en", "ar", "ur"].includes(lang) ? lang : "en";
+  return {
     title: "Contact Us",
-    description:
-      "Get a free consultation. We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
-  },
-};
+    description: "Get in touch with Markit Media for a free consultation. We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
+    alternates: { canonical: `https://themarkitmedia.com/${locale}/contact` },
+    openGraph: {
+      title: "Contact Us",
+      description:
+        "Get a free consultation. We serve clients across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
+      url: `https://themarkitmedia.com/${locale}/contact`,
+    },
+  };
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

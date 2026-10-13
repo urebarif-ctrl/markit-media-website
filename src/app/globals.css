@@ -233,6 +233,7 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 @media (hover: hover) {
   .flip-card:hover .flip-card-inner, .flip-card:focus-within .flip-card-inner { transform: rotateY(180deg); }
 }
+.flip-card-flipped .flip-card-inner { transform: rotateY(180deg); }
 @media (min-width: 640px) {
   .service-mosaic { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .service-tile { min-height: 230px; }

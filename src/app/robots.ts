@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const isProduction = process.env.VERCEL_ENV === "production" || process.env.PRODUCTION_DEPLOY === "true" || process.env.CF_PAGES_BRANCH === "main";
+  const isProduction = process.env.PRODUCTION_DEPLOY === "true" || process.env.CF_PAGES_BRANCH === "main";
 
   if (!isProduction) {
     return {

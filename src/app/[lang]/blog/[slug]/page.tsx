@@ -12,6 +12,7 @@ import { ShareControls } from "./share-controls";
 import { ReadingProgress } from "@/components/reading-progress";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { QuoteForm } from "@/components/quote-form";
+import { sanitizeHtml } from "@/lib/sanitize";
 
 /* ── Category-to-service mapping ─────────────────────────── */
 const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
@@ -327,7 +328,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: `https://themarkitmedia.com/api/blog-thumbnail?title=${encodeURIComponent(post.title)}`,
   };
 
-  const processedContent = addExternalLinkAttrs(addHeadingIds(markdownToHtml(post.content)));
+  const processedContent = sanitizeHtml(addExternalLinkAttrs(addHeadingIds(markdownToHtml(post.content))));
 
   return (
     <article>

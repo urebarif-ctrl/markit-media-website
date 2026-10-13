@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { trackEvent } from "@/lib/tracking";
 
 type Result={title:string;href:string;description:string;type:string;breadcrumb:string};
 
@@ -11,10 +12,11 @@ export function SiteSearch({locale="en",compact=false,initialQuery=""}:{locale?:
  const [q,setQ]=useState(initialQuery||params.get("q")||"");
  const [results,setResults]=useState<Result[]>([]);
  const [loading,setLoading]=useState(false);
+ const tracked=useRef<string>("");
  useEffect(()=>{
   const term=q.trim();
   if(term.length<2){setResults([]);setLoading(false);return}
-  const controller=new AbortController(),timer=setTimeout(async()=>{setLoading(true);try{const r=await fetch("/api/search?q="+encodeURIComponent(term)+"&limit="+(compact?12:80),{signal:controller.signal});const d=await r.json();setResults(d.results||[])}catch(e){if(!(e instanceof DOMException&&e.name==="AbortError"))setResults([])}finally{if(!controller.signal.aborted)setLoading(false)}},140);
+  const controller=new AbortController(),timer=setTimeout(async()=>{setLoading(true);try{const r=await fetch("/api/search?q="+encodeURIComponent(term)+"&limit="+(compact?12:80),{signal:controller.signal});const d=await r.json();setResults(d.results||[])}catch(e){if(!(e instanceof DOMException&&e.name==="AbortError"))setResults([])}finally{if(!controller.signal.aborted){setLoading(false);if(term!==tracked.current){tracked.current=term;trackEvent("search",{search_term:term})}}}},140);
   return()=>{clearTimeout(timer);controller.abort()}
  },[q,compact]);
  function submit(e:FormEvent){e.preventDefault();const term=q.trim();if(term)router.push("/"+locale+"/search?q="+encodeURIComponent(term))}

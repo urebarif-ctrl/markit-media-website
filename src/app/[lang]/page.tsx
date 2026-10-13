@@ -328,7 +328,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {src:"/images/portfolio/social-media-hero.jpg",eyebrow:"Social · Campaigns",title:"Social Media Designs",desc:"A cross-industry selection of social creative designed to make brands look sharper in the feed.",href:"/work/social-media-designs",span:"lg:col-span-5"},
               {src:"/images/portfolio/logo-folio-hero.jpg",eyebrow:"Branding · Identity",title:"LogoFolio",desc:"Identity and logo work across technology, food, energy, retail and emerging brands.",href:"/work/logo-folio",span:"lg:col-span-7"},
             ].map((item,idx)=><Link key={item.href} href={l(item.href)} className={`group relative overflow-hidden bg-black min-h-[300px] sm:min-h-[360px] md:min-h-[430px] ${item.span}`}>
-              <Image src={item.src} alt={item.title+" — selected work by Markit Media"} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none"/>
+              <Image src={item.src} alt={item.title+" — selected work by Markit Media"} fill sizes="(max-width: 1024px) 100vw, 60vw" loading="lazy" className="object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"/>
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
                 <div className="flex items-end justify-between gap-6">
@@ -376,7 +376,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {label:"Klaviyo",href:"/en/tools",brand:"Klaviyo"},
             ].map((item)=><Link key={item.label} href={item.href.startsWith("/en/") ? item.href : l(item.href)} aria-label={`Explore ${item.label}`} className="group min-h-24 sm:min-h-28 flex flex-col items-center justify-center gap-2.5 border border-gray-200 p-3 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               {item.src
-                ? <Image src={item.src} alt={`${item.label} logo`} width={38} height={38} sizes="38px" className="h-10 w-10 object-contain"/>
+                ? <Image src={item.src} alt={`${item.label} logo`} width={38} height={38} sizes="38px" loading="lazy" className="h-10 w-10 object-contain"/>
                 : <BrandIcon brand={item.brand || item.label} title={`${item.label} logo`} className="h-10 w-10" />}
               <span className="text-[11px] font-bold text-gray-600 group-hover:text-black text-center">{item.label}</span>
             </Link>)}
@@ -628,7 +628,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           ].map(item=><Link key={item.title} href={l(item.href)} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
             <div className="flex items-start justify-between gap-5">
               <div className="w-14 h-14 md:w-16 md:h-16 bg-white border border-gray-200 flex items-center justify-center shadow-sm">
-                {item.logo ? <Image src={item.logo} alt="" width={36} height={36} className="w-9 h-9 object-contain"/> : <BrandIcon brand={item.brand || item.title} className="w-9 h-9" />}
+                {item.logo ? <Image src={item.logo} alt="" width={36} height={36} loading="lazy" className="w-9 h-9 object-contain"/> : <BrandIcon brand={item.brand || item.title} className="w-9 h-9" />}
               </div>
               <span className="text-sm font-bold text-gray-400 group-hover:text-black transition-colors">&rarr;</span>
             </div>
@@ -663,7 +663,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
                   {post.cover_image ? (
-                    <Image src={post.cover_image} alt={post.title} width={640} height={360} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
+                    <Image src={post.cover_image} alt={post.title} width={640} height={360} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <span className="text-5xl text-gray-300" aria-hidden="true">&#9998;</span>
@@ -758,6 +758,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                     alt="Social media creative portfolio"
                     fill
                     sizes="(max-width: 1024px) 100vw, 58vw"
+                    loading="lazy"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none"
                   />
                 </div>
@@ -796,6 +797,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                         alt={item.alt}
                         fill
                         sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 18vw"
+                        loading="lazy"
                         className="object-cover transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transition-none"
                       />
                     </div>
@@ -838,7 +840,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               { src: "/images/portfolio/behance/logofolio.jpg", alt: "Logo design portfolio", href: "/work/logo-folio" },
             ].map((item) => (
               <Link key={item.href} href={l(item.href)} className="group relative aspect-[4/3] overflow-hidden bg-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
+                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
               </Link>
             ))}
           </Stagger>
