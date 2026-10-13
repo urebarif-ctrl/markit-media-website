@@ -10,13 +10,7 @@ import { redirect } from "next/navigation";
 
 const PER_PAGE = 30;
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  const total = getPublishedPostCount();
-  const pages = Math.ceil(total / PER_PAGE);
-  return Array.from({ length: pages - 1 }, (_, i) => ({ num: String(i + 2) }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ num: string }> }): Promise<Metadata> {
   const { num } = await params;

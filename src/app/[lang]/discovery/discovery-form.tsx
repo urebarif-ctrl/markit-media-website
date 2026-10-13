@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 
 type Brief = {
@@ -111,6 +111,8 @@ function SectionHeading({ eyebrow, title, note }: { eyebrow: string; title: stri
 
 export function DiscoveryForm() {
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1] || "en";
   const [brief, setBrief] = useState<Brief>(initialBrief);
   const [step, setStep] = useState(0);
   const [error, setError] = useState("");
@@ -206,7 +208,7 @@ export function DiscoveryForm() {
         source: "Brand Discovery Brief",
       });
       setStatus("sent");
-      router.push("/thank-you?from=discovery");
+      router.push(`/${locale}/thank-you?from=discovery`);
     } catch {
       setError("Network error. Please try again.");
       setStatus("idle");

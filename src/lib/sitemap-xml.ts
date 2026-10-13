@@ -37,7 +37,7 @@ export function renderUrlSet(entries: MetadataRoute.Sitemap) {
 }
 
 export function renderSitemapIndex(urls: string[]) {
-  const lastmod = new Date("2026-09-29").toISOString();
+  const lastmod = new Date("2026-10-13").toISOString();
   const body = urls.map((url) =>
     `<sitemap><loc>${escapeXml(url)}</loc><lastmod>${lastmod}</lastmod></sitemap>`
   ).join("");

@@ -8,6 +8,10 @@ export function ConversionTracker() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    const key = "conversion_tracked";
+    if (sessionStorage.getItem(key)) return;
+    sessionStorage.setItem(key, "1");
+
     const from = searchParams.get("from") || "contact";
     trackEvent("conversion", {
       conversion_type: "lead_form_submit",

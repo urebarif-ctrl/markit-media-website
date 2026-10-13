@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 
 interface FormState {
@@ -13,6 +13,8 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
   const [state, setState] = useState<FormState>({ status: "idle", message: "" });
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1] || "en";
   const isQuote = variant === "quote";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -76,7 +78,7 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
         source: body.source,
       });
       formRef.current?.reset();
-      router.push("/thank-you");
+      router.push(`/${locale}/thank-you`);
     } catch {
       setState({ status: "error", message: "Network error. Please try again." });
     }
@@ -157,8 +159,8 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
             <textarea id="message" name="message" rows={5} required className={inputClass + " resize-y"} placeholder={isQuote ? "What are you trying to achieve? Tell us about your goals, current marketing, timeline, or anything else we should know..." : "Tell us about your project and goals..."} />
           </div>
 
-          <label className="mt-5 flex items-start gap-3 text-sm text-gray-500">
-            <input type="checkbox" name="marketingConsent" className="mt-1" />
+          <label htmlFor="marketingConsent" className="mt-5 flex items-start gap-3 text-sm text-gray-500">
+            <input type="checkbox" id="marketingConsent" name="marketingConsent" className="mt-1" aria-label="Marketing consent" />
             <span>Send me occasional marketing insights and updates from Markit Media. Optional.</span>
           </label>
 

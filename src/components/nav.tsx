@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, Suspense } from "react";
 import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 const SiteSearch = dynamic(() => import("@/components/site-search").then(m => m.SiteSearch));
@@ -236,7 +236,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                       { label: "SEO", href: "/services/seo", desc: "Technical, local, content & AI SEO", tag: "SEO" },
                       { label: "Social Media Marketing", href: "/services/social-media", desc: "Strategy, content & community management", tag: "SMM" },
                       { label: "Website Development", href: "/services/website-development", desc: "WordPress, Shopify & Next.js", tag: "WEB" },
-                    ].map((item) => <Link key={item.href} href={item.href} className="group min-h-[104px] rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-black hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-white px-2 py-1 text-[9px] font-extrabold tracking-wider text-white">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-white">Explore →</span></Link>)}
+                    ].map((item) => <Link key={item.href} href={item.href} className="group min-h-[104px] rounded-2xl border border-gray-200 bg-white p-4 transition-all hover:-translate-y-0.5 hover:border-black hover:shadow-md"><div className="flex items-start justify-between gap-3"><span className="text-base font-extrabold leading-tight text-black">{item.label}</span><span className="rounded-full bg-gray-100 px-2 py-1 text-[9px] font-extrabold tracking-wider text-gray-500">{item.tag}</span></div><span className="mt-2 block text-xs leading-5 text-gray-500">{item.desc}</span><span className="mt-2 inline-block text-xs font-extrabold text-black group-hover:underline">Explore →</span></Link>)}
                   </div>
                 </div>
                 <div className="border-l border-gray-100 pl-5">
@@ -259,7 +259,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
                   </div>
                 </div>
               </div>
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/en/services" className="text-sm font-extrabold text-white">All services →</Link></div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex items-center justify-between"><span className="text-xs font-semibold text-gray-500">Explore by capability or tell us your goal.</span><Link href="/en/services" className="text-sm font-extrabold text-black hover:underline">All services →</Link></div>
             </div>
           </div>
 
@@ -276,7 +276,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               <div className="grid grid-cols-3 gap-2 p-4 max-h-[55vh] overflow-y-auto">
                 {industryList.map((ind, index) => <Link key={ind.href} href={ind.href} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-white hover:bg-gray-50" : "hover:bg-gray-50"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
               </div>
-              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/en/industries" className="text-sm font-extrabold text-white">Explore all industries →</Link></div>
+              <div className="px-6 py-4 border-t border-gray-100 bg-gray-50/70 flex justify-end"><Link href="/en/industries" className="text-sm font-extrabold text-black hover:underline">Explore all industries →</Link></div>
             </div>
           </div>
 
@@ -354,7 +354,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
             <button onClick={() => setSearchOpen(!searchOpen)} className="border border-black py-3 font-bold">Search</button>
             <div className="grid grid-cols-3 border border-black">{[["en","EN"],["ar","AR"],["ur","UR"]].map(([code,label]) => <Link key={code} href={localizedPath(code)} hrefLang={code} className={`flex items-center justify-center text-sm ${locale === code ? "bg-black text-white font-bold" : "font-semibold"}`}>{label}</Link>)}</div>
           </div>
-          {searchOpen && <div className="py-3"><label htmlFor="mobile-site-search" className="sr-only">Search the website</label><input id="mobile-site-search"  placeholder="Search blogs, tools, services and pages..." className="w-full border border-gray-300 px-4 py-3" /><div className="max-h-72 overflow-y-auto mt-2"></div></div>}
+          {searchOpen && <div className="py-3"><Suspense><SiteSearch locale={locale} compact /></Suspense></div>}
 <Link href="/en/get-a-quote" onClick={() => setMobileOpen(false)} className="block w-full text-center bg-black text-white py-4 text-base font-bold mt-6 hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">{t.nav.getQuote}</Link>
         </div>
       </div>

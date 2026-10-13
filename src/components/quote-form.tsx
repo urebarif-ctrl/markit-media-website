@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 
 interface QuoteFormProps {
@@ -19,6 +19,8 @@ export function QuoteForm({
 }: QuoteFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1] || "en";
   const formId = useId();
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
@@ -64,7 +66,7 @@ export function QuoteForm({
           service: body.service,
           source: "Inline Quote Form",
         });
-        router.push("/thank-you?from=quote");
+        router.push(`/${locale}/thank-you?from=quote`);
       } else setStatus("error");
     } catch {
       setStatus("error");

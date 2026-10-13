@@ -268,11 +268,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return getAllPublishedSlugs().map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 function markdownToHtml(md: string): string {
   if (md.includes("<h2>") || md.includes("<p>")) return md;

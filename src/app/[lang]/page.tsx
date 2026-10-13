@@ -117,8 +117,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
     logo: "https://themarkitmedia.com/images/branding/og-image.png",
     description: "Full-stack digital marketing agency serving businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
     email: "ciao@themarkitmedia.com",
+    telephone: "+92-300-208-6081",
+    foundingDate: "2020",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Karachi",
+      addressCountry: "PK",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+92-300-208-6081",
+      contactType: "sales",
+      availableLanguage: ["English", "Urdu", "Arabic"],
+    },
     sameAs: SOCIAL_URLS,
-    areaServed: markets.map((m) => ({ "@type": "Country", name: m })),
+    areaServed: markets.map((m) => ({ "@type": "Country", name: m.name })),
     knowsAbout: [
       "Search Engine Optimization", "Pay-Per-Click Advertising", "Social Media Marketing",
       "Website Development", "Branding", "Video Production", "Email Marketing",

@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   poweredByHeader: false,
-  skipTrailingSlashRedirect: true,
+  skipTrailingSlashRedirect: false,
 
   // Preserve selected legacy URLs that already have search visibility while
   // serving the rebuilt page through the modern localized application shell.
@@ -53,12 +53,12 @@ const nextConfig: NextConfig = {
   async headers() {
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com",
+      "img-src 'self' data: https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
       "font-src 'self'",
-      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com",
-      "frame-src https://www.googletagmanager.com https://www.youtube.com",
+      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://region1.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
+      "frame-src https://www.googletagmanager.com https://www.youtube.com https://td.doubleclick.net",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -159,6 +159,7 @@ const nextConfig: NextConfig = {
       { source: "/terms-and-conditions", destination: "/en/terms", statusCode: 301 },
       { source: "/terms-and-condition", destination: "/en/terms", statusCode: 301 },
       { source: "/terms-of-service", destination: "/en/terms", statusCode: 301 },
+      { source: "/en/terms-of-service", destination: "/en/terms", statusCode: 301 },
       { source: "/cookie-policy", destination: "/en/privacy-policy", statusCode: 301 },
       { source: "/disclaimer", destination: "/en/terms", statusCode: 301 },
       { source: "/sitemap", destination: "/sitemap.xml", statusCode: 301 },

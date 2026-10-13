@@ -73,12 +73,15 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+              <label htmlFor="tool-cta-email" className="sr-only">Email address</label>
               <input
+                id="tool-cta-email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@company.com"
                 required
+                aria-label="Email address"
                 className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none min-h-[44px]"
               />
               {error && <p className="text-sm text-red-600 sm:col-span-2" role="alert">{error}</p>}
