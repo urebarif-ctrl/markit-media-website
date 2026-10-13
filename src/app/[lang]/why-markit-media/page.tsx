@@ -78,7 +78,11 @@ const faqItems = [
   { q: "Can I start with one service and expand later?", a: "Absolutely. Many clients start with one channel, see results, and expand from there. Our full-stack capability means you do not need to find another agency when you are ready to scale." },
 ];
 
-export default function WhyMarkitMediaPage() {
+export default async function WhyMarkitMediaPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -100,7 +104,7 @@ export default function WhyMarkitMediaPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Why Markit Media" }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Why Markit Media" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Why Markit Media">
         <div className="max-w-4xl mx-auto">
@@ -203,7 +207,7 @@ export default function WhyMarkitMediaPage() {
           </Stagger>
           <Animate animation="fade-up">
             <div className="text-center mt-8">
-              <Link href="/en/process" className="inline-flex items-center gap-2 text-base font-bold text-black underline underline-offset-4 hover:no-underline transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/process")} className="inline-flex items-center gap-2 text-base font-bold text-black underline underline-offset-4 hover:no-underline transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 See the full process in detail &rarr;
               </Link>
             </div>
@@ -243,7 +247,7 @@ export default function WhyMarkitMediaPage() {
                 { title: "Case Studies", desc: "Real results from real campaigns across multiple industries.", href: "/case-studies" },
                 { title: "Our Approach", desc: "The frameworks and methodologies behind our strategy.", href: "/approach" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="group border border-gray-200 bg-white p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="group border border-gray-200 bg-white p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
                 </Link>
@@ -262,7 +266,7 @@ export default function WhyMarkitMediaPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Schedule a free consultation. No pitch decks, no pressure — just a conversation about what could work for your business.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get Started &rarr;
             </Link>
           </Animate>

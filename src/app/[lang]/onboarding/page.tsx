@@ -81,7 +81,11 @@ const faqItems = [
   { q: "What happens after the first 30 days?", a: "We shift into ongoing optimization and growth mode. Weekly performance updates, monthly strategy sessions, and continuous campaign improvement. The first 30 days build the foundation — everything after builds on it." },
 ];
 
-export default function OnboardingPage() {
+export default async function OnboardingPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -103,7 +107,7 @@ export default function OnboardingPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Onboarding" }]} />
+      <Breadcrumb items={[{ label: "Home", href: l("/") }, { label: "Onboarding" }]} />
 
       <section aria-label="Getting Started" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-4xl mx-auto">
@@ -241,7 +245,7 @@ export default function OnboardingPage() {
                 { title: "How We Report", desc: "Transparent dashboards and actionable insights.", href: "/results" },
                 { title: "Pricing", desc: "Retainer, project, or performance-based models.", href: "/pricing" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="group border border-gray-200 bg-white p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="group border border-gray-200 bg-white p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
                 </Link>

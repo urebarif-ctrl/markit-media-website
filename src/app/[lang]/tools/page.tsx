@@ -92,7 +92,11 @@ const toolsFaqItems = [
   { q: "How do you stay current with new marketing tools?", a: "Our team continuously evaluates new platforms and tools. We test them on internal projects before recommending them to clients. We only adopt tools that solve a real problem better than existing options." },
 ];
 
-export default function ToolsPage() {
+export default async function ToolsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -114,7 +118,7 @@ export default function ToolsPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Tools & Platforms" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Tools & Platforms" }]} locale={locale} />
 
       <section aria-label="Technology" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -192,13 +196,13 @@ export default function ToolsPage() {
               { title: "UTM Builder", href: "/resources/utm-builder" },
               { title: "Persona Builder", href: "/resources/persona-builder" },
             ].map((t) => (
-              <Link key={t.href} href={t.href} className="bg-white border border-gray-200 px-6 py-4 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 text-center">
+              <Link key={t.href} href={l(t.href)} className="bg-white border border-gray-200 px-6 py-4 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 text-center">
                 {t.title}
               </Link>
             ))}
           </Stagger>
           <div className="mt-6 text-center">
-            <Link href="/en/free-tools" className="inline-flex items-center gap-2 text-base font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href={l("/free-tools")} className="inline-flex items-center gap-2 text-base font-bold text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               View All 155+ Free Tools &rarr;
             </Link>
           </div>
@@ -216,7 +220,7 @@ export default function ToolsPage() {
                 { label: "Our Process", href: "/process" },
                 { label: "Free Marketing Tools", href: "/resources" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}
@@ -234,7 +238,7 @@ export default function ToolsPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               We handle the technology so you can focus on running your business.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Start a Conversation &rarr;
             </Link>
           </Animate>

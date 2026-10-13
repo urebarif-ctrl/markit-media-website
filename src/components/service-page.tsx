@@ -49,6 +49,7 @@ interface ServicePageProps {
   blogCategory?: string;
   comparison?: ComparisonTable;
   platforms?: ServicePlatform[];
+  locale?: string;
 }
 
 export function ServicePage({
@@ -70,7 +71,9 @@ export function ServicePage({
   blogCategory,
   comparison,
   platforms,
+  locale = "en",
 }: ServicePageProps) {
+  const l = (path: string) => `/${locale}${path}`;
   const relatedPosts = blogCategory
     ? getPostsByCategory(blogCategory, 3)
     : [];
@@ -101,7 +104,7 @@ export function ServicePage({
     <article>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, ...(parentTitle && parentHref ? [{ label: parentTitle, href: parentHref }] : []), { label: title }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, ...(parentTitle && parentHref ? [{ label: parentTitle, href: parentHref }] : []), { label: title }]} />
 
       {/* Hero */}
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label={title}>
@@ -148,7 +151,7 @@ export function ServicePage({
             </Animate>
             <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {subServices.map((sub) => (
-                <Link key={sub.href} href={sub.href} className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={sub.href} href={l(sub.href)} className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black uppercase tracking-wide mb-2 group-hover:underline">
                     {sub.title}
                   </h3>
@@ -160,7 +163,7 @@ export function ServicePage({
         </section>
       )}
 
-      {platforms && platforms.length > 0 && <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label="Platforms and tools we work with"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Platforms & Tools</SectionLabel><SectionTitle>Technology We Work With</SectionTitle><p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">We choose the platform around the workflow, data, ownership and growth requirements rather than forcing every project into one tool.</p></Animate><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mt-8">{platforms.map((platform)=><div key={platform.name} className="bg-white min-h-28 p-5"><div className="flex items-center gap-3"><div className="w-9 h-9 border border-gray-200 flex items-center justify-center"><BrandIcon brand={platform.name} className="w-5 h-5" title={platform.name}/></div><div><div className="font-bold text-sm">{platform.href?<Link href={platform.href} className="hover:underline">{platform.name}</Link>:platform.name}</div>{platform.note&&<p className="text-xs text-gray-500 leading-relaxed mt-1">{platform.note}</p>}</div></div></div>)}</div></div></section>}
+      {platforms && platforms.length > 0 && <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label="Platforms and tools we work with"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Platforms & Tools</SectionLabel><SectionTitle>Technology We Work With</SectionTitle><p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">We choose the platform around the workflow, data, ownership and growth requirements rather than forcing every project into one tool.</p></Animate><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mt-8">{platforms.map((platform)=><div key={platform.name} className="bg-white min-h-28 p-5"><div className="flex items-center gap-3"><div className="w-9 h-9 border border-gray-200 flex items-center justify-center"><BrandIcon brand={platform.name} className="w-5 h-5" title={platform.name}/></div><div><div className="font-bold text-sm">{platform.href?<Link href={l(platform.href)} className="hover:underline">{platform.name}</Link>:platform.name}</div>{platform.note&&<p className="text-xs text-gray-500 leading-relaxed mt-1">{platform.note}</p>}</div></div></div>)}</div></div></section>}
 
       {/* Benefits */}
       <section className="px-6 lg:px-12 py-20" aria-label="Benefits">
@@ -244,7 +247,7 @@ export function ServicePage({
             </Animate>
             <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
               {portfolio.map((p) => (
-                <Link key={p.href} href={p.href} className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={p.href} href={l(p.href)} className="group border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{p.client}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{p.desc}</p>
                 </Link>
@@ -253,10 +256,10 @@ export function ServicePage({
             <Animate animation="fade-up" delay={100}>
               <div className="mt-8 text-center">
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Link href="/en/work" className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href={l("/work")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     View All Projects &rarr;
                   </Link>
-                  <Link href="/en/case-studies" className="inline-flex items-center gap-2 text-base font-bold text-gray-500 hover:text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href={l("/case-studies")} className="inline-flex items-center gap-2 text-base font-bold text-gray-500 hover:text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     Explore Case Studies &rarr;
                   </Link>
                 </div>
@@ -340,7 +343,7 @@ export function ServicePage({
             </Animate>
             <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               {relatedPosts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="group border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={post.slug} href={l(`/blog/${post.slug}`)} className="group border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {post.cover_image && (
                     <div className="aspect-[16/9] overflow-hidden">
                       <Image src={post.cover_image} alt={`Cover for ${post.title}`} width={640} height={360} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
@@ -367,7 +370,7 @@ export function ServicePage({
             </Animate>
             <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
               {tools.map((tool) => (
-                <Link key={tool.href} href={tool.href} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={tool.href} href={l(tool.href)} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{tool.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p>
                 </Link>
@@ -385,7 +388,7 @@ export function ServicePage({
               <SectionLabel>Related Services</SectionLabel>
               <div className="flex flex-wrap gap-4 mt-6">
                 {relatedServices.map((rs) => (
-                  <Link key={rs.href} href={rs.href} className="border border-gray-200 px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link key={rs.href} href={l(rs.href)} className="border border-gray-200 px-6 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {rs.title}
                   </Link>
                 ))}
@@ -402,7 +405,7 @@ export function ServicePage({
               <SectionLabel>Industries We Serve</SectionLabel>
               <div className="flex flex-wrap gap-3 mt-6">
                 {industries.map((ind) => (
-                  <Link key={ind.href} href={ind.href} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link key={ind.href} href={l(ind.href)} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {ind.title}
                   </Link>
                 ))}
@@ -419,7 +422,7 @@ export function ServicePage({
               <SectionLabel>Available In</SectionLabel>
               <div className="flex flex-wrap gap-3 mt-6">
                 {locations.map((loc) => (
-                  <Link key={loc.href} href={loc.href} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link key={loc.href} href={l(loc.href)} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     {loc.title}
                   </Link>
                 ))}

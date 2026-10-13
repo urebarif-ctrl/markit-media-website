@@ -41,7 +41,11 @@ const careersFaqItems = [
   { q: "What's the team size?", a: "We are a lean, agile team. Everyone has a direct impact on client outcomes." },
 ];
 
-export default function CareersPage() {
+export default async function CareersPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const careersSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -63,7 +67,7 @@ export default function CareersPage() {
     <article>
       <JsonLd data={careersSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Careers" }]} />
+      <Breadcrumb items={[{ label: "Home", href: l("/") }, { label: "Careers" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-20" aria-label="Careers at Markit Media">
         <div className="max-w-4xl mx-auto">
@@ -253,7 +257,7 @@ export default function CareersPage() {
                 { label: "Our Process", href: "/process" },
                 { label: "Our Work", href: "/work" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

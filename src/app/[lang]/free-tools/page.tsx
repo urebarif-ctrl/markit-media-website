@@ -251,7 +251,11 @@ const categories = [
 const totalTools = categories.reduce((sum, cat) => sum + cat.tools.length, 0);
 
 // Unified dynamic thumbnail deployment: blog, case studies, and free tools.
-export default function FreeToolsPage() {
+export default async function FreeToolsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -262,7 +266,7 @@ export default function FreeToolsPage() {
   return (
     <article>
       <JsonLd data={schema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Free Tools" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Free Tools" }]} locale={locale} />
 
       <section aria-label="Free Resources" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -303,7 +307,7 @@ export default function FreeToolsPage() {
             </Animate>
             <Stagger stagger={30} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {cat.tools.map((tool) => (
-                <Link key={tool.href} href={tool.href} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={tool.href} href={l(tool.href)} className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-5 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <div className="flex items-start gap-3"><span className="mt-0.5 text-gray-500 group-hover:text-black"><FreeToolMiniIcon name={tool.name} /></span><div><h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black group-hover:underline mb-1">{tool.name}</h3><p className="text-base text-gray-500 leading-relaxed">{tool.desc}</p></div></div>
                 </Link>
               ))}
@@ -321,7 +325,7 @@ export default function FreeToolsPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Our team can turn the data from these tools into a growth strategy tailored to your business.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Consultation &rarr;
             </Link>
           </Animate>

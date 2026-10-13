@@ -33,29 +33,33 @@ const creative = [
  {title:"LogoFolio",category:"Branding & Identity",href:"/work/logo-folio",image:"/images/portfolio/behance/logofolio.jpg"},
 ];
 
-export default function CaseStudiesPage(){
+export default async function CaseStudiesPage({ params }: { params: Promise<{ lang: string }> }){
+ const { lang } = await params;
+ const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+ const l = (path: string) => `/${locale}${path}`;
+
  const schema={"@context":"https://schema.org","@type":"CollectionPage",name:"Markit Media Case Studies & Selected Work",url:"https://themarkitmedia.com/en/case-studies",hasPart:studies.map(s=>({"@type":"CreativeWork",name:s.client,url:`https://themarkitmedia.com/en${s.href}`,about:s.service}))};
  return <article>
-  <JsonLd data={schema}/><Breadcrumb items={[{label:"Home",href:"/"},{label:"Work",href:"/work"},{label:"Case Studies"}]}/>
+  <JsonLd data={schema}/><Breadcrumb locale={locale} items={[{label:"Home",href:"/"},{label:"Work",href:"/work"},{label:"Case Studies"}]}/>
   <section className="px-6 lg:px-12 pt-24 pb-16"><div className="max-w-5xl mx-auto"><Animate animation="fade-up">
    <SectionLabel>Case Studies + Work</SectionLabel><h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-tight leading-[1.1] mt-3">The Story Behind the Work</h1>
    <SectionDesc>Our Work page is the visual portfolio. This collection goes one level deeper: what we delivered, the industry context, and the service behind each selected engagement. Where public performance metrics are not available, we describe the work without inventing results.</SectionDesc>
-   <div className="flex flex-wrap gap-3 mt-7"><Link href="/en/work" className="bg-black text-white px-6 py-3 font-bold">Browse Full Portfolio →</Link><Link href="/en/services" className="border border-gray-300 px-6 py-3 font-bold">Explore Services →</Link></div>
+   <div className="flex flex-wrap gap-3 mt-7"><Link href={l("/work")} className="bg-black text-white px-6 py-3 font-bold">Browse Full Portfolio →</Link><Link href={l("/services")} className="border border-gray-300 px-6 py-3 font-bold">Explore Services →</Link></div>
   </Animate></div></section>
   <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Selected client case studies"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Selected Client Work</SectionLabel><SectionTitle>Projects Connected to the Portfolio</SectionTitle><SectionDesc>Every card below opens the corresponding project page, so the case-study collection and portfolio stay connected rather than becoming two separate libraries.</SectionDesc></Animate>
-   <Stagger stagger={60} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">{studies.map(s=><Link key={s.href} href={s.href} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
+   <Stagger stagger={60} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">{studies.map(s=><Link key={s.href} href={l(s.href)} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
     <div className="relative aspect-[16/9] bg-gray-100 overflow-hidden"><CaseStudyThumbnail title={`${s.client}: ${s.service}`} /></div>
     <div className="p-6"><div className="flex gap-2 flex-wrap text-xs font-bold uppercase tracking-wide text-gray-500"><span>{s.industry}</span><span>•</span><span>{s.service}</span></div><h2 className="font-extrabold text-xl mt-3 group-hover:underline">{s.client}</h2><p className="text-gray-500 mt-3 leading-relaxed">{s.desc}</p><span className="font-bold inline-block mt-5">View project details →</span></div>
    </Link>)}</Stagger>
   </div></section>
   <section className="px-6 lg:px-12 py-20" aria-label="Creative portfolio"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Creative Portfolio</SectionLabel><SectionTitle>More Visual Work</SectionTitle><SectionDesc>Design-led collections complement the client project stories above and connect directly to the wider Work library.</SectionDesc></Animate>
-   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={x.href} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><Image src={x.image} alt={`${x.title} — ${x.category} portfolio`} fill sizes="(max-width:640px) 100vw,25vw" className="object-cover group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>
+   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><Image src={x.image} alt={`${x.title} — ${x.category} portfolio`} fill sizes="(max-width:640px) 100vw,25vw" className="object-cover group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>
   </div></section>
   <section className="px-6 lg:px-12 py-16 bg-gray-50"><div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-   {[["Find work by service","Start with a service page to see relevant projects, supporting expertise and related reading.","/services"],["Browse every project","Use the Work page for the complete visual portfolio and individual project pages.","/work"],["Find work by industry","Explore industry pages when sector relevance matters more than the delivery channel.","/industries"]].map(x=><Link key={x[2]} href={x[2]} className="bg-white border border-gray-200 p-6 hover:border-black"><h3 className="font-extrabold">{x[0]}</h3><p className="text-sm text-gray-500 mt-2">{x[1]}</p><span className="font-bold text-sm mt-5 inline-block">Explore →</span></Link>)}
+   {[["Find work by service","Start with a service page to see relevant projects, supporting expertise and related reading.","/services"],["Browse every project","Use the Work page for the complete visual portfolio and individual project pages.","/work"],["Find work by industry","Explore industry pages when sector relevance matters more than the delivery channel.","/industries"]].map(x=><Link key={x[2]} href={l(x[2])} className="bg-white border border-gray-200 p-6 hover:border-black"><h3 className="font-extrabold">{x[0]}</h3><p className="text-sm text-gray-500 mt-2">{x[1]}</p><span className="font-bold text-sm mt-5 inline-block">Explore →</span></Link>)}
   </div></section>
-  <section className="px-6 lg:px-12 py-20 bg-black text-white text-center"><div className="max-w-3xl mx-auto"><h2 className="text-3xl font-extrabold">Looking for work relevant to your project?</h2><p className="text-gray-400 mt-4">Tell us the service, industry and objective. We can point you to the closest relevant work and discuss the right delivery approach.</p><Link href="/en/get-a-quote" className="inline-block bg-white text-black px-8 py-4 font-bold mt-7">Discuss Your Project →</Link></div></section>
+  <section className="px-6 lg:px-12 py-20 bg-black text-white text-center"><div className="max-w-3xl mx-auto"><h2 className="text-3xl font-extrabold">Looking for work relevant to your project?</h2><p className="text-gray-400 mt-4">Tell us the service, industry and objective. We can point you to the closest relevant work and discuss the right delivery approach.</p><Link href={l("/get-a-quote")} className="inline-block bg-white text-black px-8 py-4 font-bold mt-7">Discuss Your Project →</Link></div></section>
  </article>
 }

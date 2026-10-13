@@ -25,7 +25,11 @@ const logoProjects = [
   { client: "MAXUM Agency", industry: "Agency", videoId: "NEsjHsAu9Xs", desc: "Fast animated video for a creative agency." },
 ];
 
-export default function LogoFolioPage() {
+export default async function LogoFolioPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -36,7 +40,7 @@ export default function LogoFolioPage() {
   return (
     <article>
       <JsonLd data={schema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Logo Folio" }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Logo Folio" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Logo Folio overview">
         <div className="max-w-4xl mx-auto">
@@ -85,10 +89,10 @@ export default function LogoFolioPage() {
             From logo design and animation to full brand identity systems, we create visual identities that differentiate and endure.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/en/services/branding" className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href={l("/services/branding")} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               Branding Services
             </Link>
-            <Link href="/en/contact" className="bg-black text-white px-5 py-3 text-base font-bold hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="bg-black text-white px-5 py-3 text-base font-bold hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Quote &rarr;
             </Link>
           </div>

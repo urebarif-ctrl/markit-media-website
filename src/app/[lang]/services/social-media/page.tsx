@@ -264,7 +264,7 @@ const faq = [
   },
 ];
 
-function ServiceCard({ item }: { item: ServiceItem }) {
+function ServiceCard({ item, l }: { item: ServiceItem; l: (path: string) => string }) {
   const Icon = item.icon;
   const body = (
     <>
@@ -278,7 +278,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
   );
 
   return item.href ? (
-    <Link href={item.href} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+    <Link href={l(item.href)} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg hover:-translate-y-0.5 transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
       {body}
     </Link>
   ) : (
@@ -286,7 +286,11 @@ function ServiceCard({ item }: { item: ServiceItem }) {
   );
 }
 
-export default function SocialMediaPage() {
+export default async function SocialMediaPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -315,7 +319,7 @@ export default function SocialMediaPage() {
     <article>
       <JsonLd data={serviceSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Social Media Marketing" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: l("/services") }, { label: "Social Media Marketing" }]} locale={locale} />
 
       <section className="px-6 lg:px-12 pt-20 pb-16" aria-label="Social Media Marketing">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.08fr_0.92fr] gap-12 items-center">
@@ -389,7 +393,7 @@ export default function SocialMediaPage() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold">Strategy & Planning</h2>
             <p className="text-gray-500 mt-2 max-w-2xl">The thinking that decides what to publish, where to publish it, and what the channel is supposed to achieve.</p>
             <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-7">
-              {strategyServices.map((item) => <ServiceCard key={item.title} item={item} />)}
+              {strategyServices.map((item) => <ServiceCard key={item.title} item={item} l={l} />)}
             </Stagger>
           </div>
 
@@ -397,7 +401,7 @@ export default function SocialMediaPage() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold">Content & Creative Production</h2>
             <p className="text-gray-500 mt-2 max-w-2xl">The actual content people see, watch, read, save, share, and respond to.</p>
             <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
-              {creativeServices.map((item) => <ServiceCard key={item.title} item={item} />)}
+              {creativeServices.map((item) => <ServiceCard key={item.title} item={item} l={l} />)}
             </Stagger>
           </div>
 
@@ -405,7 +409,7 @@ export default function SocialMediaPage() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold">Management & Community</h2>
             <p className="text-gray-500 mt-2 max-w-2xl">The ongoing operational work that keeps social channels active, organized, responsive, and consistent.</p>
             <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-7">
-              {managementServices.map((item) => <ServiceCard key={item.title} item={item} />)}
+              {managementServices.map((item) => <ServiceCard key={item.title} item={item} l={l} />)}
             </Stagger>
           </div>
 
@@ -413,7 +417,7 @@ export default function SocialMediaPage() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold">Growth, Paid Social & Measurement</h2>
             <p className="text-gray-500 mt-2 max-w-2xl">Extend strong organic content with creators, advertising, audience growth, and reporting tied to real objectives.</p>
             <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
-              {growthServices.map((item) => <ServiceCard key={item.title} item={item} />)}
+              {growthServices.map((item) => <ServiceCard key={item.title} item={item} l={l} />)}
             </Stagger>
           </div>
         </div>
@@ -489,7 +493,7 @@ export default function SocialMediaPage() {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
             {work.map((item) => (
-              <Link key={item.href} href={item.href} className="group border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all">
+              <Link key={item.href} href={l(item.href)} className="group border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all">
                 <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold group-hover:underline">{item.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed mt-3">{item.desc}</p>
                 <span className="inline-block mt-5 text-sm font-bold">View project →</span>
@@ -497,8 +501,8 @@ export default function SocialMediaPage() {
             ))}
           </div>
           <div className="flex flex-wrap gap-5 mt-8">
-            <Link href="/en/work" className="font-bold underline underline-offset-4 hover:no-underline">View all work →</Link>
-            <Link href="/en/case-studies" className="font-bold text-gray-500 hover:text-black underline underline-offset-4 hover:no-underline">Explore case studies →</Link>
+            <Link href={l("/work")} className="font-bold underline underline-offset-4 hover:no-underline">View all work →</Link>
+            <Link href={l("/case-studies")} className="font-bold text-gray-500 hover:text-black underline underline-offset-4 hover:no-underline">Explore case studies →</Link>
           </div>
         </div>
       </section>

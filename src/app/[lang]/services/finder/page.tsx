@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { Animate } from "@/components/animate";
 import { SectionLabel } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -102,6 +103,10 @@ export default function ServiceFinderPage() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
+  const params = useParams();
+  const lang = typeof params.lang === "string" ? params.lang : "en";
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
 
   function handleSelect(questionId: string, value: string) {
     const updated = { ...answers, [questionId]: value };
@@ -126,7 +131,7 @@ export default function ServiceFinderPage() {
       <title>Service Finder Quiz — Find the Right Marketing Services | Markit Media</title>
       <meta name="description" content="Answer a few quick questions and get personalised marketing service recommendations based on your industry, goals, and budget." />
       <link rel="canonical" href="https://themarkitmedia.com/en/services/finder" />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Service Finder" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: l("/services") }, { label: "Service Finder" }]} locale={locale} />
 
       <section aria-label="Service Finder" className="px-6 lg:px-12 pt-24 pb-20">
         <div className="max-w-3xl mx-auto">
@@ -193,7 +198,7 @@ export default function ServiceFinderPage() {
                 {recommendations.map((rec, i) => (
                   <Animate key={rec.href} animation="fade-up" delay={i * 80}>
                     <Link
-                      href={rec.href}
+                      href={l(rec.href)}
                       className="group flex items-start gap-6 p-6 border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                     >
                       <div className="flex-1">
@@ -215,7 +220,7 @@ export default function ServiceFinderPage() {
 
               <Animate animation="fade-up" delay={400}>
                 <div className="mt-12 flex flex-wrap gap-4">
-                  <Link href="/en/contact" className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                     Get a Free Consultation &rarr;
                   </Link>
                   <button

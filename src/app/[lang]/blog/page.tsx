@@ -21,7 +21,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
+export default async function BlogPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
   const totalCount = getPublishedPostCount();
   const posts = getPublishedPosts(30);
   const dbCategories = getAllCategories();
@@ -46,7 +49,7 @@ export default function BlogPage() {
   return (
     <article>
       <JsonLd data={blogSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog" }]} locale={locale} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Blog overview">
         <div className="max-w-4xl mx-auto">
@@ -81,7 +84,7 @@ export default function BlogPage() {
                 return (
                   <Link
                     key={cat}
-                    href={`/blog/category/${slug}`}
+                    href={l(`/blog/category/${slug}`)}
                     className="px-4 py-2 text-base font-medium bg-gray-100 text-gray-600 hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                   >
                     {cat}
@@ -98,7 +101,7 @@ export default function BlogPage() {
           <div className="max-w-7xl mx-auto">
             <Animate animation="fade-up">
               <Link
-                href={`/blog/${featured.slug}`}
+                href={l(`/blog/${featured.slug}`)}
                 className="group grid grid-cols-1 lg:grid-cols-2 gap-8 border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] lg:aspect-auto overflow-hidden">
@@ -134,7 +137,7 @@ export default function BlogPage() {
               {remaining.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  href={l(`/blog/${post.slug}`)}
                   className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <div className="aspect-[16/9] bg-gray-100 flex items-center justify-center overflow-hidden">
@@ -167,7 +170,7 @@ export default function BlogPage() {
           <div className="max-w-4xl mx-auto text-center">
             <Animate animation="fade-up">
               <Link
-                href="/en/blog/page/2"
+                href={l("/blog/page/2")}
                 className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 View More Articles &rarr;
@@ -190,7 +193,7 @@ export default function BlogPage() {
                   return (
                     <Link
                       key={cat}
-                      href={`/blog/category/${slug}`}
+                      href={l(`/blog/category/${slug}`)}
                       className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                     >
                       {cat}
@@ -213,7 +216,7 @@ export default function BlogPage() {
                 { label: "FAQ", href: "/faq" },
                 { label: "All Services", href: "/services" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}
@@ -246,7 +249,7 @@ export default function BlogPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Talk to our team about a strategy built around your goals.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Consultation &rarr;
             </Link>
           </Animate>

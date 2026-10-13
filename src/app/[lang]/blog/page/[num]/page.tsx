@@ -27,24 +27,26 @@ export async function generateMetadata({ params }: { params: Promise<{ num: stri
   };
 }
 
-export default async function BlogPaginatedPage({ params }: { params: Promise<{ num: string }> }) {
-  const { num } = await params;
+export default async function BlogPaginatedPage({ params }: { params: Promise<{ num: string; lang: string }> }) {
+  const { num, lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
   const page = parseInt(num, 10);
 
-  if (isNaN(page) || page < 1) redirect("/blog");
-  if (page === 1) redirect("/blog");
+  if (isNaN(page) || page < 1) redirect(l("/blog"));
+  if (page === 1) redirect(l("/blog"));
 
   const totalCount = getPublishedPostCount();
   const totalPages = Math.ceil(totalCount / PER_PAGE);
 
-  if (page > totalPages) redirect("/blog");
+  if (page > totalPages) redirect(l("/blog"));
 
   const offset = (page - 1) * PER_PAGE;
   const posts = getPublishedPosts(PER_PAGE, offset);
 
   return (
     <article>
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: `Page ${page}` }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: `Page ${page}` }]} locale={locale} />
 
       <section aria-label="Blog" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -66,7 +68,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={l(`/blog/${post.slug}`)}
                 className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] bg-gray-100 flex items-center justify-center overflow-hidden">
@@ -98,7 +100,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
           <nav className="flex items-center justify-center gap-2 flex-wrap" aria-label="Blog pagination">
             {page > 1 && (
               <Link
-                href={page === 2 ? "/blog" : `/blog/page/${page - 1}`}
+                href={l(page === 2 ? "/blog" : `/blog/page/${page - 1}`)}
                 className="border border-gray-200 px-5 py-3 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 &larr; Previous
@@ -118,7 +120,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
               return (
                 <Link
                   key={p}
-                  href={p === 1 ? "/blog" : `/blog/page/${p}`}
+                  href={l(p === 1 ? "/blog" : `/blog/page/${p}`)}
                   className={`min-w-[44px] min-h-[44px] flex items-center justify-center text-base font-bold transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                     p === page
                       ? "bg-black text-white"
@@ -132,7 +134,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
             })}
             {page < totalPages && (
               <Link
-                href={`/blog/page/${page + 1}`}
+                href={l(`/blog/page/${page + 1}`)}
                 className="border border-gray-200 px-5 py-3 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Next &rarr;
@@ -151,7 +153,7 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
             <p className="text-lg text-gray-400 mt-4 mb-8">
               Talk to our team about a strategy built around your goals.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get a Free Consultation &rarr;
             </Link>
           </Animate>

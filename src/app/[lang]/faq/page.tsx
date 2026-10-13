@@ -284,7 +284,11 @@ const faqCategories = [
   },
 ];
 
-export default function FaqPage() {
+export default async function FaqPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const allQuestions = faqCategories.flatMap((c) => c.questions);
   const faqSchema = {
     "@context": "https://schema.org",
@@ -299,7 +303,7 @@ export default function FaqPage() {
   return (
     <article>
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "FAQ" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "FAQ" }]} locale={locale} />
 
       <section aria-label="FAQ" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -309,7 +313,7 @@ export default function FaqPage() {
               Frequently Asked Questions
             </h1>
             <SectionDesc>
-              Answers to the most common questions about our services, process, and pricing. Can&apos;t find what you&apos;re looking for? <Link href="/en/contact" className="underline hover:text-black">Contact us</Link>.
+              Answers to the most common questions about our services, process, and pricing. Can&apos;t find what you&apos;re looking for? <Link href={l("/contact")} className="underline hover:text-black">Contact us</Link>.
             </SectionDesc>
           </Animate>
         </div>
@@ -353,7 +357,7 @@ export default function FaqPage() {
                 { label: "Our Process", href: "/process" },
                 { label: "Resources", href: "/resources" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}
@@ -371,7 +375,7 @@ export default function FaqPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               We&apos;re here to help. Reach out and we&apos;ll get back to you within one business day.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Contact Us &rarr;
             </Link>
           </Animate>

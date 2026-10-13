@@ -52,7 +52,11 @@ const industryFaqItems = [
   { q: "What if my industry is not listed on this page?", a: "The industries listed here represent our deepest areas of expertise, but we work with businesses across many sectors. Contact us to discuss your specific needs — our core digital marketing skills transfer well across industries." },
 ];
 
-export default function IndustriesPage() {
+export default async function IndustriesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -74,7 +78,7 @@ export default function IndustriesPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Industries" }]} />
+      <Breadcrumb items={[{ label: "Home", href: l("/") }, { label: "Industries" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Industries we serve">
         <div className="max-w-4xl mx-auto">
@@ -94,7 +98,7 @@ export default function IndustriesPage() {
         <div className="max-w-7xl mx-auto">
           <Stagger stagger={50} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {industries.map((ind, index) => (
-              <Link key={ind.href} href={ind.href} className="group relative min-h-[390px] overflow-hidden bg-black border border-black/10 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={ind.href} href={l(ind.href)} className="group relative min-h-[390px] overflow-hidden bg-black border border-black/10 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <Image
                   src={ind.image}
                   alt={`${ind.title} digital marketing`}
@@ -172,7 +176,7 @@ export default function IndustriesPage() {
                 { label: "Our Process", href: "/process" },
                 { label: "Service Finder Quiz", href: "/services/finder" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

@@ -296,8 +296,10 @@ function addExternalLinkAttrs(html: string): string {
   });
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string; lang: string }> }) {
+  const { slug, lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
   const post = getPostBySlug(slug);
 
   if (!post) notFound();
@@ -331,7 +333,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <article>
       <ReadingProgress />
       <JsonLd data={articleSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} locale={locale} />
 
       <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-3xl mx-auto">
@@ -404,7 +406,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <p className="text-base text-gray-500 leading-relaxed mt-3">
                       Continue with the companion guide focused on keyword selection, search intent and the strategies used to turn those terms into useful insurance content.
                     </p>
-                    <Link href="/en/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
+                    <Link href={l("/blog/seo-for-insurance-10-keywords-and-strategies-that-rank-modern-edition")} className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
                       Read the insurance keyword guide →
                     </Link>
                   </>
@@ -416,7 +418,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <p className="text-base text-gray-500 leading-relaxed mt-3">
                       If you want the wider framework first, the companion guide covers backlinks, content planning, technical SEO and ongoing optimization for insurance websites.
                     </p>
-                    <Link href="/en/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough" className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
+                    <Link href={l("/blog/seo-for-insurance-a-complete-ranking-guide-a-step-by-step-walkthrough")} className="inline-flex mt-5 font-bold underline underline-offset-4 hover:no-underline">
                       Read the complete insurance SEO guide →
                     </Link>
                   </>
@@ -433,7 +435,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </h2>
               <div className="grid sm:grid-cols-2 gap-4 mt-7">
                 {INSURANCE_SEO_LINKS.map((item) => (
-                  <Link key={item.href} href={item.href} className="group border border-gray-200 p-5 hover:border-black transition-colors">
+                  <Link key={item.href} href={l(item.href)} className="group border border-gray-200 p-5 hover:border-black transition-colors">
                     <h3 className="font-extrabold text-black group-hover:underline">{item.label}</h3>
                     <p className="text-sm text-gray-500 leading-relaxed mt-2">{item.desc}</p>
                     <span className="inline-block mt-4 text-sm font-bold">Explore →</span>
@@ -441,7 +443,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 ))}
               </div>
               <div className="mt-5 text-sm text-gray-500">
-                Looking for examples of our wider client work? <Link href="/en/case-studies" className="font-bold text-black underline underline-offset-4 hover:no-underline">Browse selected case studies</Link>.
+                Looking for examples of our wider client work? <Link href={l("/case-studies")} className="font-bold text-black underline underline-offset-4 hover:no-underline">Browse selected case studies</Link>.
               </div>
             </div>
           </section>
@@ -522,7 +524,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-base text-gray-500 leading-relaxed mb-6">
             Our team specializes in turning these insights into results. Get a free consultation to discuss your goals.
           </p>
-          <Link href="/en/contact" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             Talk to an Expert &rarr;
           </Link>
         </div>
@@ -536,7 +538,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {related.map((r) => (
                 <Link
                   key={r.slug}
-                  href={`/blog/${r.slug}`}
+                  href={l(`/blog/${r.slug}`)}
                   className="group border border-gray-200 bg-white hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none overflow-hidden focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <div className="aspect-[16/9] overflow-hidden">
@@ -570,7 +572,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {(CATEGORY_SERVICES[post.category] ?? DEFAULT_SERVICES).map((svc) => (
                 <Link
                   key={svc.href}
-                  href={svc.href}
+                  href={l(svc.href)}
                   className="group border border-gray-200 bg-white p-5 hover:border-black hover:shadow-md transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <span className="text-base font-bold text-black group-hover:underline">{svc.label}</span>
@@ -596,7 +598,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {(CATEGORY_TOOLS[post.category] ?? DEFAULT_TOOLS).map((tool) => (
                 <Link
                   key={tool.href}
-                  href={tool.href}
+                  href={l(tool.href)}
                   className="group flex items-center justify-between border border-white/20 p-5 hover:border-white hover:bg-white/5 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                 >
                   <span className="text-base font-bold text-white group-hover:underline">{tool.label}</span>
@@ -610,10 +612,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <section aria-label="Navigation" className="px-6 lg:px-12 py-16 border-t border-gray-200">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/en/blog" className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href={l("/blog")} className="text-base font-bold text-black hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             &larr; Back to Blog
           </Link>
-          <Link href="/en/contact" className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+          <Link href={l("/contact")} className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
             Get in Touch &rarr;
           </Link>
         </div>

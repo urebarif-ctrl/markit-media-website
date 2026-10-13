@@ -17,7 +17,11 @@ const galleryImages = [
   { src: "/images/portfolio/social-media-02.jpg", alt: "Social media promotional design — product feature" },
 ];
 
-export default function SocialMediaDesignsPage() {
+export default async function SocialMediaDesignsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -29,7 +33,7 @@ export default function SocialMediaDesignsPage() {
   return (
     <article>
       <JsonLd data={schema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Social Media Designs" }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Social Media Designs" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Social Media Designs">
         <div className="max-w-4xl mx-auto">
@@ -115,9 +119,9 @@ export default function SocialMediaDesignsPage() {
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-6">Related Services</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              { title: "Social Media", href: "/services/social-media" },
-              { title: "Branding", href: "/services/branding" },
-              { title: "Digital Marketing", href: "/services/digital-marketing" },
+              { title: "Social Media", href: l("/services/social-media") },
+              { title: "Branding", href: l("/services/branding") },
+              { title: "Digital Marketing", href: l("/services/digital-marketing") },
             ].map((s) => (
               <Link key={s.href} href={s.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 {s.title}
@@ -137,10 +141,10 @@ export default function SocialMediaDesignsPage() {
               Let&apos;s build a visual strategy that strengthens your brand across every platform.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/en/contact" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/contact")} className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Free Consultation &rarr;
               </Link>
-              <Link href="/en/work" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/work")} className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 See More Work
               </Link>
             </div>

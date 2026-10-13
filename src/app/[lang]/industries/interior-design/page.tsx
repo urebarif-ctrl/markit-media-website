@@ -137,7 +137,11 @@ const faq = [
   },
 ];
 
-export default function InteriorDesignMarketingPage() {
+export default async function InteriorDesignMarketingPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -177,8 +181,8 @@ export default function InteriorDesignMarketingPage() {
 
       <Breadcrumb
         items={[
-          { label: "Home", href: "/" },
-          { label: "Industries", href: "/industries" },
+          { label: "Home", href: l("/") },
+          { label: "Industries", href: l("/industries") },
           { label: "Home Decor & Interior Design" },
         ]}
       />
@@ -258,7 +262,7 @@ export default function InteriorDesignMarketingPage() {
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <Link key={service.title} href={service.href} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all">
+                <Link key={service.title} href={l(service.href)} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all">
                   <div className="w-11 h-11 bg-black text-white flex items-center justify-center mb-5">
                     <Icon size={21} />
                   </div>

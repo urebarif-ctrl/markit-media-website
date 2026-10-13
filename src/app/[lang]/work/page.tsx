@@ -173,7 +173,11 @@ const faqItems = [
   { q: "How do I start a project?", a: "Contact us for a free consultation. We'll discuss your goals, timeline, and budget, then provide a proposal tailored to your needs." },
 ];
 
-export default function WorkPage() {
+export default async function WorkPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const workSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -201,7 +205,7 @@ export default function WorkPage() {
     <article>
       <JsonLd data={workSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work" }]} locale={locale} />
 
       {/* Hero */}
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Our work">
@@ -262,7 +266,7 @@ export default function WorkPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {featuredProjects.map((project) => (
-              <Link key={project.href} href={project.href} className="group bg-white border border-gray-200 overflow-hidden hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={project.href} href={l(project.href)} className="group bg-white border border-gray-200 overflow-hidden hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="aspect-[16/10] bg-gray-100 flex items-center justify-center">
                   <div className="text-center px-6">
                     <p className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">{project.client}</p>
@@ -280,7 +284,7 @@ export default function WorkPage() {
           <Animate animation="fade-up" delay={100}>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-8">
               <p className="text-gray-500 max-w-2xl">Want the project context rather than only the visual portfolio? Browse the connected case-study collection.</p>
-              <Link href="/en/case-studies" className="inline-flex items-center bg-black text-white px-6 py-3 font-bold hover:bg-gray-800">Explore Case Studies →</Link>
+              <Link href={l("/case-studies")} className="inline-flex items-center bg-black text-white px-6 py-3 font-bold hover:bg-gray-800">Explore Case Studies →</Link>
             </div>
           </Animate>
         </div>
@@ -331,7 +335,7 @@ export default function WorkPage() {
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {creativePortfolio.map((item) => (
-              <Link key={item.title} href={item.href} className="group block overflow-hidden border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={item.title} href={l(item.href)} className="group block overflow-hidden border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="relative aspect-[16/10] bg-gray-100">
                   <Image
                     src={item.image}
@@ -366,7 +370,7 @@ export default function WorkPage() {
             <SectionDesc>
               A selection of our logo design and animation work across industries.
             </SectionDesc>
-            <Link href="/en/work/logo-folio" className="inline-block mt-6 bg-black text-white font-bold px-8 py-4 text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/work/logo-folio")} className="inline-block mt-6 bg-black text-white font-bold px-8 py-4 text-base hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               View Logo Folio &rarr;
             </Link>
           </Animate>
@@ -431,10 +435,10 @@ export default function WorkPage() {
               Contact us for a free consultation. Let&apos;s discuss your next project.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/en/contact" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/contact")} className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Start a Project &rarr;
               </Link>
-              <Link href="/en/get-a-quote" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/get-a-quote")} className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Quote
               </Link>
             </div>

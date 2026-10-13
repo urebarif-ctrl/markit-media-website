@@ -71,7 +71,11 @@ const processFaqItems = [
   { q: "Can I change the scope mid-engagement?", a: "Yes. Marketing priorities shift, and our retainer model is built for flexibility. We work with you to adjust scope, reallocate budgets, and pivot strategy as your business evolves." },
 ];
 
-export default function ProcessPage() {
+export default async function ProcessPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const processSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -99,7 +103,7 @@ export default function ProcessPage() {
     <article>
       <JsonLd data={processSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Process" }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Process" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Our process">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -205,7 +209,7 @@ export default function ProcessPage() {
                 { label: "Why Markit Media", href: "/why-markit-media" },
                 { label: "Get a Quote", href: "/get-a-quote" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
                   {link.label}
                 </Link>
               ))}
@@ -223,7 +227,7 @@ export default function ProcessPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               The first step is a conversation. Let&apos;s talk about your goals.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Schedule a Consultation &rarr;
             </Link>
           </Animate>

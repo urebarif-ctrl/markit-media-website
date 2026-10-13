@@ -237,7 +237,11 @@ const faq = [
   },
 ];
 
-export default function ExteriorCleaningPage() {
+export default async function ExteriorCleaningPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -276,8 +280,8 @@ export default function ExteriorCleaningPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[
-          { label: "Home", href: "/" },
-          { label: "Industries", href: "/industries" },
+          { label: "Home", href: l("/") },
+          { label: "Industries", href: l("/industries") },
           { label: "Exterior Cleaning" },
         ]}
       />
@@ -389,7 +393,7 @@ export default function ExteriorCleaningPage() {
 
           <Stagger stagger={60} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 mt-12 border border-white/10">
             {marketingSystems.map((svc) => (
-              <Link key={svc.title} href={svc.href} className="group bg-black p-7 hover:bg-white/[0.04] transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link key={svc.title} href={l(svc.href)} className="group bg-black p-7 hover:bg-white/[0.04] transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 <div className="w-11 h-11 border border-white/20 flex items-center justify-center mb-5">
                   <svc.icon size={21} strokeWidth={2} aria-hidden="true" />
                 </div>
@@ -608,7 +612,7 @@ export default function ExteriorCleaningPage() {
                 { label: "CRM Consulting", href: "/services/digital-marketing/crm-consulting" },
                 { label: "Case Studies", href: "/case-studies" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

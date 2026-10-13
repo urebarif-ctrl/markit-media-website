@@ -41,7 +41,9 @@ export function CaseStudyPage({
   illustrative = false,
   relatedServices,
   readingTime = "4 min read",
-}: CaseStudyProps) {
+  locale = "en",
+}: CaseStudyProps & { locale?: string }) {
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -152,7 +154,7 @@ export function CaseStudyPage({
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-6">Services Used in This Project</h2>
           <div className="flex flex-wrap gap-3">
             {relatedServices.map((s) => (
-              <Link key={s.href} href={s.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={s.href} href={l(s.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 {s.title}
               </Link>
             ))}
@@ -169,10 +171,10 @@ export function CaseStudyPage({
             Let&apos;s discuss how we can apply the same approach to your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/en/get-a-quote" className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/get-a-quote")} className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Request a Quote &rarr;
             </Link>
-            <Link href="/en/work" className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/work")} className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               See More Work
             </Link>
           </div>

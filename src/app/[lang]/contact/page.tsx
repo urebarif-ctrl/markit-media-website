@@ -19,7 +19,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -51,7 +55,7 @@ export default function ContactPage() {
     <article>
       <JsonLd data={contactSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} locale={locale} />
 
       <section className="px-6 lg:px-12 pt-24 pb-20" aria-label="Contact us">
         <div className="max-w-7xl mx-auto">
@@ -208,7 +212,7 @@ export default function ContactPage() {
                 { label: "Service Finder Quiz", href: "/services/finder" },
                 { label: "ROI Calculator", href: "/resources/roi-calculator" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

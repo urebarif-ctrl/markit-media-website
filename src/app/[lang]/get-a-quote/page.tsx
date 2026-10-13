@@ -30,7 +30,11 @@ const quoteFaqItems = [
   { q: "Can you work with my existing agency or team?", a: "Absolutely. We frequently collaborate with in-house marketing teams and complement existing agency relationships." },
 ];
 
-export default function GetAQuotePage() {
+export default async function GetAQuotePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -52,7 +56,7 @@ export default function GetAQuotePage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Get a Quote" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Get a Quote" }]} locale={locale} />
 
       <section aria-label="Free Consultation" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -160,7 +164,7 @@ export default function GetAQuotePage() {
           </div>
           <Animate animation="fade-up">
             <p className="mt-8 text-base text-gray-500">
-              More questions? Check our <Link href="/en/faq" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link>, <Link href="/en/contact" className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>, or message us on WhatsApp.
+              More questions? Check our <Link href={l("/faq")} className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">complete FAQ</Link>, <Link href={l("/contact")} className="text-black font-bold hover:underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">contact us directly</Link>, or message us on WhatsApp.
             </p>
           </Animate>
         </div>
@@ -177,7 +181,7 @@ export default function GetAQuotePage() {
                 { label: "Client Onboarding", href: "/onboarding" },
                 { label: "Case Studies", href: "/case-studies" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

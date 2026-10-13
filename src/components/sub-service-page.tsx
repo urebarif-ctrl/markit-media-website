@@ -24,9 +24,11 @@ interface SubServicePageProps {
   blogCategory?: string;
   platforms?: ServicePlatform[];
   children?: ReactNode;
+  locale?: string;
 }
 
-export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children }: SubServicePageProps) {
+export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
+  const l = (path: string) => `/${locale}${path}`;
   const relatedPosts = blogCategory ? getPostsByCategory(blogCategory, 3) : [];
   const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title);
   const schema = {
@@ -51,13 +53,13 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: parentTitle, href: parentHref }, { label: title }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: parentTitle, href: parentHref }, { label: title }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label={title}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <Animate animation="fade-up">
-              <Link href={parentHref} className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors mb-3">
+              <Link href={l(parentHref)} className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors mb-3">
                 <span aria-hidden="true">←</span> Part of {parentTitle}
               </Link>
               <SectionLabel>{parentTitle}</SectionLabel>
@@ -131,7 +133,7 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
         </div>
       </section>
 
-      {platforms && platforms.length > 0 && <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label="Platforms and tools we work with"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Platforms & Tools</SectionLabel><SectionTitle>Technology We Work With</SectionTitle><p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">We choose the platform around the workflow, data, ownership and growth requirements rather than forcing every project into one tool.</p></Animate><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mt-8">{platforms.map((platform)=><div key={platform.name} className="bg-white min-h-28 p-5"><div className="flex items-center gap-3"><div className="w-9 h-9 border border-gray-200 flex items-center justify-center"><BrandIcon brand={platform.name} className="w-5 h-5" title={platform.name}/></div><div><div className="font-bold text-sm">{platform.href?<Link href={platform.href} className="hover:underline">{platform.name}</Link>:platform.name}</div>{platform.note&&<p className="text-xs text-gray-500 leading-relaxed mt-1">{platform.note}</p>}</div></div></div>)}</div></div></section>}
+      {platforms && platforms.length > 0 && <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label="Platforms and tools we work with"><div className="max-w-7xl mx-auto"><Animate animation="fade-up"><SectionLabel>Platforms & Tools</SectionLabel><SectionTitle>Technology We Work With</SectionTitle><p className="text-base text-gray-500 leading-relaxed mt-4 max-w-3xl">We choose the platform around the workflow, data, ownership and growth requirements rather than forcing every project into one tool.</p></Animate><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 mt-8">{platforms.map((platform)=><div key={platform.name} className="bg-white min-h-28 p-5"><div className="flex items-center gap-3"><div className="w-9 h-9 border border-gray-200 flex items-center justify-center"><BrandIcon brand={platform.name} className="w-5 h-5" title={platform.name}/></div><div><div className="font-bold text-sm">{platform.href?<Link href={l(platform.href)} className="hover:underline">{platform.name}</Link>:platform.name}</div>{platform.note&&<p className="text-xs text-gray-500 leading-relaxed mt-1">{platform.note}</p>}</div></div></div>)}</div></div></section>}
 
       {children}
 
@@ -143,13 +145,13 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
                 <SectionLabel>Service Family</SectionLabel>
                 <SectionTitle>More {parentTitle} Services</SectionTitle>
               </div>
-              <Link href={parentHref} className="text-sm font-bold border-b border-black pb-1">
+              <Link href={l(parentHref)} className="text-sm font-bold border-b border-black pb-1">
                 View {parentTitle} overview →
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 mt-8">
               {siblingServices.map((service) => (
-                <Link key={service.href} href={service.href} className="group bg-white p-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
+                <Link key={service.href} href={l(service.href)} className="group bg-white p-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors">
                   <span className="font-semibold text-sm">{service.title}</span>
                   <span className="text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all" aria-hidden="true">→</span>
                 </Link>
@@ -162,14 +164,14 @@ export function SubServicePage({ parentTitle, parentHref, title, description, de
       {(portfolio.length > 0 || relatedServices.length > 0) && <section className="px-6 lg:px-12 py-20" aria-label="Related work and services"><div className="max-w-7xl mx-auto">
         <SectionLabel>Keep Exploring</SectionLabel><SectionTitle>Related Work & Services</SectionTitle>
         <div className="grid md:grid-cols-2 gap-8 mt-10">
-          {portfolio.length > 0 && <div><h3 className="font-extrabold mb-4">Relevant work</h3><div className="space-y-3">{portfolio.map(p=><Link key={p.href} href={p.href} className="block border border-gray-200 p-5 hover:border-black"><span className="font-bold">{p.title}</span><span className="block text-sm text-gray-500 mt-1">{p.desc}</span></Link>)}</div></div>}
-          {relatedServices.length > 0 && <div><h3 className="font-extrabold mb-4">Related services</h3><div className="space-y-3">{relatedServices.map(s=><Link key={s.href} href={s.href} className="block border border-gray-200 p-5 hover:border-black"><span className="font-bold">{s.title}</span>{s.desc && <span className="block text-sm text-gray-500 mt-1">{s.desc}</span>}</Link>)}</div></div>}
+          {portfolio.length > 0 && <div><h3 className="font-extrabold mb-4">Relevant work</h3><div className="space-y-3">{portfolio.map(p=><Link key={p.href} href={l(p.href)} className="block border border-gray-200 p-5 hover:border-black"><span className="font-bold">{p.title}</span><span className="block text-sm text-gray-500 mt-1">{p.desc}</span></Link>)}</div></div>}
+          {relatedServices.length > 0 && <div><h3 className="font-extrabold mb-4">Related services</h3><div className="space-y-3">{relatedServices.map(s=><Link key={s.href} href={l(s.href)} className="block border border-gray-200 p-5 hover:border-black"><span className="font-bold">{s.title}</span>{s.desc && <span className="block text-sm text-gray-500 mt-1">{s.desc}</span>}</Link>)}</div></div>}
         </div>
       </div></section>}
 
       {relatedPosts.length > 0 && <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Related insights"><div className="max-w-7xl mx-auto">
         <SectionLabel>Insights</SectionLabel><SectionTitle>Read Next</SectionTitle>
-        <div className="grid md:grid-cols-3 gap-6 mt-10">{relatedPosts.map(post=><Link key={post.slug} href={`/blog/${post.slug}`} className="group bg-white border border-gray-200 p-6 hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-wider text-gray-400">{post.category}</span><h3 className="font-extrabold text-lg mt-3 group-hover:underline">{post.title}</h3><p className="text-sm text-gray-500 mt-3 line-clamp-3">{post.excerpt}</p><span className="inline-block mt-5 text-sm font-bold">Read article →</span></Link>)}</div>
+        <div className="grid md:grid-cols-3 gap-6 mt-10">{relatedPosts.map(post=><Link key={post.slug} href={l(`/blog/${post.slug}`)} className="group bg-white border border-gray-200 p-6 hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-wider text-gray-400">{post.category}</span><h3 className="font-extrabold text-lg mt-3 group-hover:underline">{post.title}</h3><p className="text-sm text-gray-500 mt-3 line-clamp-3">{post.excerpt}</p><span className="inline-block mt-5 text-sm font-bold">Read article →</span></Link>)}</div>
       </div></section>}
 
       <section id="subservice-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">

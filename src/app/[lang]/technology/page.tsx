@@ -122,7 +122,11 @@ const techFaqItems = [
   { q: "How do you handle website security?", a: "We follow established security practices: SSL certificates, regular software updates, strong access controls, and secure hosting environments. For WordPress sites, we harden the installation and use reputable security plugins. For custom applications, we follow OWASP guidelines and test thoroughly before launch. Automated backups are standard so recovery is straightforward if anything goes wrong." },
 ];
 
-export default function TechnologyPage() {
+export default async function TechnologyPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -144,7 +148,7 @@ export default function TechnologyPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Technology" }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Technology" }]} />
 
       <section aria-label="Technology" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -288,7 +292,7 @@ export default function TechnologyPage() {
                 href: "/contact",
               },
             ].map((card) => (
-              <Link key={card.href} href={card.href} className="block bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={card.href} href={l(card.href)} className="block bg-white border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-3">{card.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{card.desc}</p>
                 <span className="inline-block mt-4 text-base font-bold text-black" aria-hidden="true">&rarr;</span>
@@ -308,7 +312,7 @@ export default function TechnologyPage() {
                 { label: "How We Measure Results", href: "/results" },
                 { label: "Our Process", href: "/process" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}
@@ -326,7 +330,7 @@ export default function TechnologyPage() {
             <p className="text-lg text-gray-400 mt-4 mb-8">
               We are happy to walk you through our tools and how they map to your goals.
             </p>
-            <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+            <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
               Get in Touch &rarr;
             </Link>
           </Animate>

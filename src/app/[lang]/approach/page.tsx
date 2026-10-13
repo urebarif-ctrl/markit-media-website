@@ -160,7 +160,11 @@ const approachFaqItems = [
   { q: "How long before I see results from your approach?", a: "Timelines depend on the channel mix. Paid advertising can show results within weeks. SEO and content typically need three to six months to build momentum. We set realistic expectations and share progress data from day one." },
 ];
 
-export default function ApproachPage() {
+export default async function ApproachPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -182,7 +186,7 @@ export default function ApproachPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Our Approach" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Our Approach" }]} locale={locale} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label="Our approach">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -197,10 +201,10 @@ export default function ApproachPage() {
                 your customers, and your competitive landscape. Then we build a plan to win.
               </SectionDesc>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/en/contact" className="inline-flex items-center bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href={l("/contact")} className="inline-flex items-center bg-black text-white px-8 py-4 font-bold text-base hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   Talk to Us &rarr;
                 </Link>
-                <Link href="/en/process" className="inline-flex items-center border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href={l("/process")} className="inline-flex items-center border-2 border-black text-black px-8 py-4 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   See Our Process
                 </Link>
               </div>
@@ -325,12 +329,12 @@ export default function ApproachPage() {
               { title: "Why Markit Media", desc: "How we compare to typical agencies.", href: "/why-markit-media" },
               { title: "Services", desc: "Full list of what we offer.", href: "/services" },
               { title: "Case Studies", desc: "See how we work in practice.", href: "/case-studies" },
-              { title: "Tools We Use", desc: "The technology behind our work.", href: "/en/tools" },
+              { title: "Tools We Use", desc: "The technology behind our work.", href: "/tools" },
               { title: "Pricing", desc: "How we structure our engagements.", href: "/pricing" },
               { title: "Results", desc: "Our KPI framework and measurement.", href: "/results" },
               { title: "Resources", desc: "Free guides, tools, and calculators.", href: "/resources" },
             ].map((link) => (
-              <Link key={link.href} href={link.href} className="group border border-gray-200 bg-white hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link key={link.href} href={l(link.href)} className="group border border-gray-200 bg-white hover:border-black/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
               </Link>
@@ -371,7 +375,7 @@ export default function ApproachPage() {
                 { label: "How We Measure Results", href: "/results" },
                 { label: "Case Studies", href: "/case-studies" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}
@@ -390,10 +394,10 @@ export default function ApproachPage() {
               Every great campaign starts with a conversation. Tell us about your goals, and we will tell you how we would approach them.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Schedule a Call &rarr;
               </Link>
-              <Link href="/en/get-a-quote" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/get-a-quote")} className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Quote
               </Link>
             </div>

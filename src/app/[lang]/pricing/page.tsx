@@ -63,7 +63,11 @@ const faqItems = [
   { q: "How do you determine the right budget for my business?", a: "During our discovery process, we analyze your competitive landscape, target market, and business goals to recommend a realistic budget range. We would rather give you honest advice about what it takes to compete than undersell and underdeliver." },
 ];
 
-export default function PricingPage() {
+export default async function PricingPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -77,7 +81,7 @@ export default function PricingPage() {
   return (
     <article>
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Pricing" }]} />
+      <Breadcrumb items={[{ label: "Home", href: l("/") }, { label: "Pricing" }]} />
 
       <section aria-label="Pricing" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -200,7 +204,7 @@ export default function PricingPage() {
                 { label: "Our Process", href: "/process" },
                 { label: "Client Onboarding", href: "/onboarding" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

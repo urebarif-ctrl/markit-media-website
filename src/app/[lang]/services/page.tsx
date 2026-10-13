@@ -359,7 +359,11 @@ const servicesFaqItems = [
   },
 ];
 
-export default function ServicesPage() {
+export default async function ServicesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -399,7 +403,7 @@ export default function ServicesPage() {
     <article>
       <JsonLd data={servicesSchema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} locale={locale} />
 
       <section className="px-6 lg:px-12 pt-20 lg:pt-28 pb-12" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-end">
@@ -424,7 +428,7 @@ export default function ServicesPage() {
                 Discuss your project <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
-                href="/en/services/finder"
+                href={l("/services/finder")}
                 className="inline-flex items-center gap-2 border border-gray-300 text-black px-6 py-3.5 font-bold text-sm hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Find the right service
@@ -473,7 +477,7 @@ export default function ServicesPage() {
               return (
                 <Link
                   key={service.href}
-                  href={service.href}
+                  href={l(service.href)}
                   className="group bg-white min-h-[420px] flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
@@ -528,7 +532,7 @@ export default function ServicesPage() {
                   {group.services.map(([label, href]) => (
                     <Link
                       key={href}
-                      href={href}
+                      href={l(href)}
                       className="group flex items-center justify-between gap-4 py-3.5 border-b border-gray-100 text-sm font-semibold hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                     >
                       <span>{label}</span>
@@ -552,7 +556,7 @@ export default function ServicesPage() {
             <p className="text-base lg:text-lg text-gray-400 leading-relaxed mt-5 max-w-xl">
               Search, paid media, social, creative and web performance affect each other. We use shared measurement and one operating brief so decisions made in one channel improve the rest.
             </p>
-            <Link href="/en/process" className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-white/40 pb-1 hover:border-white">
+            <Link href={l("/process")} className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-white/40 pb-1 hover:border-white">
               See our process <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </Animate>
@@ -607,7 +611,7 @@ export default function ServicesPage() {
             ].map(([label, href]) => (
               <Link
                 key={href}
-                href={href}
+                href={l(href)}
                 className="group w-1/2 md:w-1/3 lg:w-1/4 border-r border-b border-gray-200 min-h-24 p-4 lg:p-5 flex items-end justify-between gap-3 text-sm font-semibold hover:bg-gray-50 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <span>{label}</span>
@@ -615,7 +619,7 @@ export default function ServicesPage() {
               </Link>
             ))}
           </div>
-          <Link href="/en/industries" className="inline-flex items-center gap-2 mt-7 text-sm font-bold border-b border-black pb-1">
+          <Link href={l("/industries")} className="inline-flex items-center gap-2 mt-7 text-sm font-bold border-b border-black pb-1">
             Explore all industries <ArrowRight size={14} aria-hidden="true" />
           </Link>
         </div>
@@ -628,7 +632,7 @@ export default function ServicesPage() {
             ["Read case studies", "See the context behind selected client engagements and the services connected to them.", "/case-studies"],
             ["Use free tools", "Explore calculators, audits, generators and planners built for practical marketing decisions.", "/free-tools"],
           ].map(([title, copy, href]) => (
-            <Link key={href} href={href} className="group bg-white p-7 lg:p-9 min-h-64 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link key={href} href={l(href)} className="group bg-white p-7 lg:p-9 min-h-64 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold">{title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed mt-3">{copy}</p>
               <span className="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-bold">

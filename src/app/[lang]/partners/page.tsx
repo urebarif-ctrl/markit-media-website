@@ -75,7 +75,11 @@ const partnerFaqItems = [
   { q: "How do you measure partnership success?", a: "We look at the outcomes that matter to you — whether that is campaign performance, client retention, revenue growth, or operational efficiency. We set expectations together at the start and review them regularly. If something is not working, we would rather have that conversation early than let it drift." },
 ];
 
-export default function PartnersPage() {
+export default async function PartnersPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -97,7 +101,7 @@ export default function PartnersPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Partners" }]} />
+      <Breadcrumb items={[{ label: "Home", href: l("/") }, { label: "Partners" }]} />
 
       <section aria-label="Partnerships" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -261,7 +265,7 @@ export default function PartnersPage() {
             ].map((card) => (
               <Link
                 key={card.title}
-                href={card.href}
+                href={l(card.href)}
                 className="block border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-3">{card.title}</h3>

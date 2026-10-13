@@ -72,7 +72,10 @@ const locations = [
   { country: "Saudi Arabia", code: "SA" },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
   const faqItems = [
     { q: "What kind of businesses does Markit Media work with?", a: "We work with businesses of all sizes across 20+ industries, from startups building their first digital presence to established companies scaling their marketing operations. Our services adapt to your stage, goals, and budget." },
     { q: "Where is Markit Media based?", a: "We serve clients across six countries: the United States, Canada, United Arab Emirates, United Kingdom, Australia, and Saudi Arabia. Our team works remotely, allowing us to provide flexible support across time zones." },
@@ -112,6 +115,7 @@ export default function AboutPage() {
       <JsonLd data={faqSchema} />
       <Breadcrumb
         items={[{ label: "Home", href: "/" }, { label: "About" }]}
+        locale={locale}
       />
 
       {/* Hero */}
@@ -175,7 +179,7 @@ export default function AboutPage() {
               </div>
             ))}
           </Stagger>
-          <div className="mt-8"><Link href="/en/work" className="inline-flex bg-white text-black px-7 py-3.5 font-bold hover:bg-gray-100">Explore the work →</Link></div>
+          <div className="mt-8"><Link href={l("/work")} className="inline-flex bg-white text-black px-7 py-3.5 font-bold hover:bg-gray-100">Explore the work →</Link></div>
         </div>
       </section>
 
@@ -372,7 +376,7 @@ export default function AboutPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10"
           >
             <Link
-              href="/en/approach"
+              href={l("/approach")}
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -386,7 +390,7 @@ export default function AboutPage() {
               </span>
             </Link>
             <Link
-              href="/en/process"
+              href={l("/process")}
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -401,7 +405,7 @@ export default function AboutPage() {
               </span>
             </Link>
             <Link
-              href="/en/why-markit-media"
+              href={l("/why-markit-media")}
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -415,7 +419,7 @@ export default function AboutPage() {
               </span>
             </Link>
             <Link
-              href="/en/services"
+              href={l("/services")}
               className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none p-8 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mb-3">
@@ -468,7 +472,7 @@ export default function AboutPage() {
                 { label: "Careers", href: "/careers" },
                 { label: "Contact Us", href: "/contact" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px] inline-flex items-center">
                   {link.label}
                 </Link>
               ))}
@@ -534,13 +538,13 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/en/contact"
+                href={l("/contact")}
                 className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Get in Touch <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link
-                href="/en/careers"
+                href={l("/careers")}
                 className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none min-h-[44px] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
               >
                 Join Our Team

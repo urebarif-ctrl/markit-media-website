@@ -104,7 +104,8 @@ function heading(mode: LocationCapabilityMode, location: string) {
   return "Full-Service Digital Marketing Capabilities in " + location;
 }
 
-export function LocationCapabilities({ location, mode = "all" }: { location: string; mode?: LocationCapabilityMode }) {
+export function LocationCapabilities({ location, mode = "all", locale = "en" }: { location: string; mode?: LocationCapabilityMode; locale?: string }) {
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const capabilities = mode === "all" ? allCapabilities : focusedCapabilities[mode];
 
   return (
@@ -123,7 +124,7 @@ export function LocationCapabilities({ location, mode = "all" }: { location: str
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-12">
           {capabilities.map((capability) => (
-            <Link key={capability.href} href={capability.href} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link key={capability.href} href={l(capability.href)} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline">{capability.title}</h3>
                 <span className="text-lg text-gray-300 group-hover:text-black transition-colors" aria-hidden="true">↗</span>
@@ -138,8 +139,8 @@ export function LocationCapabilities({ location, mode = "all" }: { location: str
           ))}
         </div>
         <div className="flex flex-wrap gap-4 mt-10">
-          <Link href="/en/services" className="inline-flex items-center bg-black text-white px-7 py-3.5 font-bold text-base hover:bg-gray-800 transition-colors">Explore All Services</Link>
-          <Link href="/en/contact" className="inline-flex items-center border-2 border-black text-black px-7 py-3.5 font-bold text-base hover:bg-black hover:text-white transition-colors">Request a Quote</Link>
+          <Link href={l("/services")} className="inline-flex items-center bg-black text-white px-7 py-3.5 font-bold text-base hover:bg-gray-800 transition-colors">Explore All Services</Link>
+          <Link href={l("/contact")} className="inline-flex items-center border-2 border-black text-black px-7 py-3.5 font-bold text-base hover:bg-black hover:text-white transition-colors">Request a Quote</Link>
         </div>
       </div>
     </section>

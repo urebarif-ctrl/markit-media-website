@@ -52,7 +52,11 @@ const resultsFaqItems = [
   { q: "Can I see campaign performance in real time?", a: "Yes. We provide live dashboard access through platforms like Looker Studio, Google Analytics 4, and platform-specific dashboards. You never have to wait for a report to know how your campaigns are performing." },
 ];
 
-export default function ResultsPage() {
+export default async function ResultsPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -74,7 +78,7 @@ export default function ResultsPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Results" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Results" }]} locale={locale} />
 
       <section aria-label="Results" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-4xl mx-auto">
@@ -237,7 +241,7 @@ export default function ResultsPage() {
                 { title: "Case Studies", desc: "Real campaigns with real results across multiple industries.", href: "/case-studies" },
                 { title: "ROI Calculator", desc: "Estimate the potential return on your marketing investment.", href: "/resources/roi-calculator" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{link.desc}</p>
                 </Link>
@@ -257,10 +261,10 @@ export default function ResultsPage() {
               Let&apos;s discuss your goals and build a strategy with clear KPIs from day one.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Free Consultation &rarr;
               </Link>
-              <Link href="/en/process" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/process")} className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 See Our Process
               </Link>
             </div>

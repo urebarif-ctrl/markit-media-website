@@ -114,7 +114,11 @@ const capabilityFaqItems = [
   { q: "How quickly can you ramp up a new capability for my account?", a: "Most capabilities can be active within two to four weeks, including strategy development, account setup, and launch. Some services like SEO take longer to show results, but execution begins quickly." },
 ];
 
-export default function CapabilitiesPage() {
+export default async function CapabilitiesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -136,7 +140,7 @@ export default function CapabilitiesPage() {
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Capabilities" }]} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Capabilities" }]} locale={locale} />
 
       <section aria-label="Capabilities" className="px-6 lg:px-12 pt-24 pb-16">
         <div className="max-w-4xl mx-auto">
@@ -160,7 +164,7 @@ export default function CapabilitiesPage() {
               return (
                 <Link
                   key={cap.title}
-                  href={cap.href}
+                  href={l(cap.href)}
                   className="group border border-gray-200 p-8 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <Icon className="w-8 h-8 text-black mb-4" strokeWidth={1.5} aria-hidden="true" />
@@ -236,7 +240,7 @@ export default function CapabilitiesPage() {
                 { label: "Industries We Serve", href: "/industries" },
                 { label: "Our Process", href: "/process" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}
@@ -255,10 +259,10 @@ export default function CapabilitiesPage() {
               Tell us your goals and we will map the right capabilities to your business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/en/contact" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/contact")} className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Get a Free Consultation &rarr;
               </Link>
-              <Link href="/en/services" className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              <Link href={l("/services")} className="inline-flex items-center gap-3 border-2 border-white text-white px-10 py-5 font-bold text-base hover:bg-white hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
                 Browse All Services
               </Link>
             </div>

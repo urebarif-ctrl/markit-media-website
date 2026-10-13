@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
 
 interface ToolCTAProps {
@@ -12,6 +13,9 @@ interface ToolCTAProps {
 }
 
 export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolCTAProps) {
+  const { lang } = useParams<{ lang: string }>();
+  const locale = lang || "en";
+  const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -110,7 +114,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
             {services.map((s) => (
               <Link
                 key={s.href}
-                href={s.href}
+                href={l(s.href)}
                 className="group bg-white border border-gray-200 hover:border-black/30 hover:shadow-md transition-all motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">
@@ -134,7 +138,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
               {relatedBlog.map((b) => (
                 <Link
                   key={b.href}
-                  href={b.href}
+                  href={l(b.href)}
                   className="border border-gray-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   {b.title}
@@ -156,7 +160,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
               {relatedTools.map((t) => (
                 <Link
                   key={t.href}
-                  href={t.href}
+                  href={l(t.href)}
                   className="border border-gray-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   {t.title}
@@ -177,13 +181,13 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/en/contact"
+            href={l("/contact")}
             className="inline-block bg-white text-black font-bold px-8 py-4 text-base hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
           >
             Get a Free Consultation &rarr;
           </Link>
           <Link
-            href="/en/services"
+            href={l("/services")}
             className="inline-block border-2 border-white text-white font-bold px-8 py-4 text-base hover:bg-white hover:text-black transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
           >
             View All Services

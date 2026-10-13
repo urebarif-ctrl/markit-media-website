@@ -318,7 +318,11 @@ const glossaryTerms = [
   { term: "Zero-Party Data", definition: "Data that a customer intentionally and proactively shares with a brand, such as preferences, purchase intentions, and feedback given through surveys or preference centers." },
 ];
 
-export default function GlossaryPage() {
+export default async function GlossaryPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -334,7 +338,7 @@ export default function GlossaryPage() {
   return (
     <article>
       <JsonLd data={faqSchema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Glossary" }]} />
+      <Breadcrumb items={[{ label: "Home", href: l("/") }, { label: "Glossary" }]} />
 
       <section aria-label="Resources" className="px-6 lg:px-12 pt-24 pb-12">
         <div className="max-w-4xl mx-auto">
@@ -405,7 +409,7 @@ export default function GlossaryPage() {
                 { label: "Resources & Tools", href: "/resources" },
                 { label: "All Services", href: "/services" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
                 </Link>
               ))}

@@ -161,9 +161,11 @@ export async function generateMetadata({
 export default async function BlogCategoryPage({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: Promise<{ category: string; lang: string }>;
 }) {
-  const { category } = await params;
+  const { category, lang } = await params;
+  const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
+  const l = (path: string) => `/${locale}${path}`;
   const allCategories = getAllCategories();
   const matchedCategory = allCategories.find(
     (c) => categoryToSlug(c) === category
@@ -192,6 +194,7 @@ export default async function BlogCategoryPage({
           { label: "Blog", href: "/blog" },
           { label: matchedCategory },
         ]}
+        locale={locale}
       />
 
       <section aria-label="Page header" className="px-6 lg:px-12 pt-24 pb-8">
@@ -213,7 +216,7 @@ export default async function BlogCategoryPage({
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-2 mb-8">
             <Link
-              href="/en/blog"
+              href={l("/blog")}
               className="px-4 py-2 text-base font-medium border border-gray-200 text-gray-600 hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               All
@@ -221,7 +224,7 @@ export default async function BlogCategoryPage({
             {allCategories.map((cat) => (
               <Link
                 key={cat}
-                href={`/blog/category/${categoryToSlug(cat)}`}
+                href={l(`/blog/category/${categoryToSlug(cat)}`)}
                 className={`px-4 py-2 text-base font-medium border transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 ${
                   cat === matchedCategory
                     ? "bg-black text-white border-black"
@@ -241,7 +244,7 @@ export default async function BlogCategoryPage({
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={l(`/blog/${post.slug}`)}
                 className="group border border-gray-200 hover:border-black/30 hover:shadow-md transition-all duration-300 motion-reduce:transition-none flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <div className="aspect-[16/9] bg-gray-100 overflow-hidden">
@@ -271,7 +274,7 @@ export default async function BlogCategoryPage({
                 Showing {posts.length} of {totalCount} articles
               </p>
               <Link
-                href="/en/blog"
+                href={l("/blog")}
                 className="inline-flex items-center gap-3 border-2 border-black text-black px-10 py-5 font-bold text-base hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 Browse All Articles &rarr;
@@ -293,7 +296,7 @@ export default async function BlogCategoryPage({
               {CATEGORY_SERVICES[matchedCategory]?.map((s) => (
                 <Link
                   key={s.href}
-                  href={s.href}
+                  href={l(s.href)}
                   className="flex items-center gap-3 bg-white border border-gray-200 p-4 hover:border-black/30 hover:shadow-md transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <span className="text-base text-gray-400 font-bold uppercase tracking-wide shrink-0">Service</span>
@@ -303,7 +306,7 @@ export default async function BlogCategoryPage({
               {CATEGORY_TOOLS[matchedCategory]?.map((t) => (
                 <Link
                   key={t.href}
-                  href={t.href}
+                  href={l(t.href)}
                   className="flex items-center gap-3 bg-white border border-gray-200 p-4 hover:border-black/30 hover:shadow-md transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
                 >
                   <span className="text-base text-gray-400 font-bold uppercase tracking-wide shrink-0">Tool</span>
@@ -325,7 +328,7 @@ export default async function BlogCategoryPage({
               Our team can turn these insights into a strategy tailored to your business.
             </p>
             <Link
-              href="/en/contact"
+              href={l("/contact")}
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             >
               Get a Free Consultation &rarr;
