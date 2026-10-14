@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
   alternates: { canonical: "https://themarkitmedia.com/en" },
   openGraph: {
+    title: "Markit Media — Full-Stack Digital Marketing Agency",
+    url: "https://themarkitmedia.com/en",
+    siteName: "Markit Media",
     description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
     type: "website",
     images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],

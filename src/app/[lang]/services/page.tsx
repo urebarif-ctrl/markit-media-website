@@ -45,12 +45,6 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://themarkitmedia.com/en/services",
-    languages: {
-      "en": "https://themarkitmedia.com/en/services",
-      "ar": "https://themarkitmedia.com/ar/services",
-      "ur": "https://themarkitmedia.com/ur/services",
-      "x-default": "https://themarkitmedia.com/en/services",
-    },
   },
   openGraph: {
     title: "Digital Marketing Services",
