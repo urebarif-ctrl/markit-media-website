@@ -177,6 +177,10 @@ export function DiscoveryForm() {
       setError(message);
       return;
     }
+    if (brief.website) {
+      setStatus("sent");
+      return;
+    }
     setStatus("sending");
     setError("");
 
