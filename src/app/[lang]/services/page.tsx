@@ -85,7 +85,7 @@ const serviceCategories = [
     title: "SEO",
     desc: "Technical SEO, local SEO, content strategy, link building and AI search optimization built to increase qualified organic visibility.",
     href: "/services/seo",
-    image: "/images/services/seo.jpg",
+    image: "/images/services/analytics.jpg",
     subServices: ["Technical SEO", "Local SEO", "Content SEO", "Link Building", "SEO Audits", "AI SEO"],
   },
   {

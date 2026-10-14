@@ -35,6 +35,7 @@ interface ServicePageProps {
   parentTitle?: string;
   parentHref?: string;
   title: string;
+  heading?: string;
   description: string;
   longDescription: string;
   subServices: SubService[];
@@ -57,6 +58,7 @@ export async function ServicePage({
   parentTitle,
   parentHref,
   title,
+  heading,
   description,
   longDescription,
   subServices,
@@ -115,7 +117,7 @@ export async function ServicePage({
                 <Icon size={28} strokeWidth={2} aria-hidden="true" />
               </div>
               <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1]">
-                {title}
+                {heading ?? title}
               </h1>
               <p className="text-lg text-gray-500 leading-relaxed mt-6">{description}</p>
               <p className="text-base text-gray-500 leading-relaxed mt-4">{longDescription}</p>
@@ -127,6 +129,10 @@ export async function ServicePage({
                   Request a Quote &rarr;
                 </Link>
               </div>
+              <p className="text-sm text-gray-500 mt-4">
+                Free consultation. We respond within one business day.{" "}
+                <Link href={l("/case-studies")} className="font-semibold text-black underline underline-offset-4 hover:no-underline">See case studies</Link>
+              </p>
             </div>
           </Animate>
           {heroImage && (
