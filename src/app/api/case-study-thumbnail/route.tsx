@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
 
-export const runtime = "edge";
 
 function fontSizeFor(title: string) {
   const n = title.trim().length;

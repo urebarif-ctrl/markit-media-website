@@ -17,6 +17,7 @@ export function BlogThumbnail({
       width={1200}
       height={630}
       priority={priority}
+      unoptimized
       className={`w-full h-full object-cover ${className}`}
     />
   );
