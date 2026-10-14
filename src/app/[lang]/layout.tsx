@@ -10,6 +10,7 @@ const Analytics = dynamic(() => import("@/components/analytics").then(m => m.Ana
 const OutboundTracker = dynamic(() => import("@/components/outbound-tracker").then(m => m.OutboundTracker));
 const ScrollAnimations = dynamic(() => import("@/components/scroll-animations").then(m => m.ScrollAnimations));
 import Script from "next/script";
+import { notFound } from "next/navigation";
 
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
 import "../globals.css";
@@ -55,12 +56,6 @@ export async function generateMetadata(
     manifest: "/site.webmanifest?v=6",
     alternates: {
       canonical: `https://themarkitmedia.com/${locale}`,
-      languages: {
-        "en": "https://themarkitmedia.com/en",
-        "ar": "https://themarkitmedia.com/ar",
-        "ur": "https://themarkitmedia.com/ur",
-        "x-default": "https://themarkitmedia.com/en",
-      },
       types: { "application/rss+xml": "/feed.xml" },
     },
     openGraph: {
@@ -94,7 +89,8 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const locale = (locales.includes(lang as Locale) ? lang : "en") as Locale;
+  if (!locales.includes(lang as Locale)) notFound();
+  const locale = lang as Locale;
   setLocale(locale);
   const dir = isRtl(locale) ? "rtl" : "ltr";
   const t = await getDictionary(locale);
