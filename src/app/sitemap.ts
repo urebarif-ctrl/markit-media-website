@@ -642,7 +642,7 @@ const excludedFromIndexSitemap = new Set([
   "/resources/social-media-calendar-template", "/resources/content-calendar",
 ]);
 
-export function getSitemapEntries(): MetadataRoute.Sitemap {
+export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
   const locales = ["en"];
   const entries: MetadataRoute.Sitemap = [
     {
@@ -699,7 +699,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
       });
     }
 
-    const blogPosts = getAllPublishedSlugsWithDates();
+    const blogPosts = await getAllPublishedSlugsWithDates();
     for (const post of blogPosts) {
       entries.push({
         url: `${BASE_URL}/${locale}/blog/${post.slug}`,
@@ -712,7 +712,7 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
     // Paginated blog archives are intentionally omitted from the sitemap.
     // Individual published articles and category hubs carry the indexable search value.
 
-    const blogCategories = getAllCategories();
+    const blogCategories = await getAllCategories();
     for (const cat of blogCategories) {
       const slug = cat.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
       entries.push({
@@ -728,6 +728,6 @@ export function getSitemapEntries(): MetadataRoute.Sitemap {
 }
 
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return getSitemapEntries();
 }

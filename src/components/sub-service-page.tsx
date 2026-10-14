@@ -27,9 +27,9 @@ interface SubServicePageProps {
   locale?: string;
 }
 
-export function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
+export async function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
   const l = (path: string) => `/${locale}${path}`;
-  const relatedPosts = blogCategory ? getPostsByCategory(blogCategory, 3) : [];
+  const relatedPosts = blogCategory ? await getPostsByCategory(blogCategory, 3) : [];
   const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title);
   const schema = {
     "@context": "https://schema.org",

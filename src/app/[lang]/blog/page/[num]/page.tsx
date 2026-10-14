@@ -36,13 +36,13 @@ export default async function BlogPaginatedPage({ params }: { params: Promise<{ 
   if (isNaN(page) || page < 1) redirect(l("/blog"));
   if (page === 1) redirect(l("/blog"));
 
-  const totalCount = getPublishedPostCount();
+  const totalCount = await getPublishedPostCount();
   const totalPages = Math.ceil(totalCount / PER_PAGE);
 
   if (page > totalPages) redirect(l("/blog"));
 
   const offset = (page - 1) * PER_PAGE;
-  const posts = getPublishedPosts(PER_PAGE, offset);
+  const posts = await getPublishedPosts(PER_PAGE, offset);
 
   return (
     <article>

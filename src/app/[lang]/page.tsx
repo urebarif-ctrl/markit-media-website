@@ -109,6 +109,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
   const t = await getDictionary(locale);
+  const latestPosts = await getPublishedPosts(3);
 
   const orgSchema = {
     "@context": "https://schema.org",
@@ -655,7 +656,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {getPublishedPosts(3).map((post) => (
+            {latestPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/${locale}/blog/${post.slug}`}

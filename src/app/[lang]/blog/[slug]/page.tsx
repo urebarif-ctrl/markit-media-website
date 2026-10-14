@@ -240,7 +240,7 @@ function parseTags(tags: string): string[] {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
 
   return {
@@ -301,11 +301,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const { slug, lang } = await params;
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) notFound();
 
-  const related = getRelatedPosts(slug, post.category, 3);
+  const related = await getRelatedPosts(slug, post.category, 3);
 
   const articleSchema = {
     "@context": "https://schema.org",

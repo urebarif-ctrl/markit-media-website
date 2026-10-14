@@ -25,9 +25,9 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
-  const totalCount = getPublishedPostCount();
-  const posts = getPublishedPosts(30);
-  const dbCategories = getAllCategories();
+  const totalCount = await getPublishedPostCount();
+  const posts = await getPublishedPosts(30);
+  const dbCategories = await getAllCategories();
   const categories = ["All", ...dbCategories];
 
   const featured = posts[0] ?? null;

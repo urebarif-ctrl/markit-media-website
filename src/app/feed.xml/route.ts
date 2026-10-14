@@ -14,7 +14,7 @@ function escapeXml(s: string): string {
 export const dynamic = "force-static";
 
 export async function GET() {
-  const posts = getPublishedPosts(50);
+  const posts = await getPublishedPosts(50);
 
   const items = posts
     .map(

@@ -145,7 +145,7 @@ export async function generateMetadata({
   params: Promise<{ category: string }>;
 }): Promise<Metadata> {
   const { category } = await params;
-  const allCategories = getAllCategories();
+  const allCategories = await getAllCategories();
   const displayName = allCategories.find((c) => categoryToSlug(c) === category) || slugToCategory(category);
   return {
     title: `${displayName} Articles`,
@@ -166,7 +166,7 @@ export default async function BlogCategoryPage({
   const { category, lang } = await params;
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
-  const allCategories = getAllCategories();
+  const allCategories = await getAllCategories();
   const matchedCategory = allCategories.find(
     (c) => categoryToSlug(c) === category
   );
@@ -175,8 +175,8 @@ export default async function BlogCategoryPage({
     notFound();
   }
 
-  const posts = getPostsByCategory(matchedCategory, 48);
-  const totalCount = getCategoryPostCount(matchedCategory);
+  const posts = await getPostsByCategory(matchedCategory, 48);
+  const totalCount = await getCategoryPostCount(matchedCategory);
 
   const blogSchema = {
     "@context": "https://schema.org",

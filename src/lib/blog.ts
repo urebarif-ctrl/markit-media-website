@@ -1,4 +1,17 @@
-import { getDb } from "./db";
+import { getDb, isWorkersRuntime } from "./db";
+
+type D1Like = { prepare(sql: string): { bind(...values: unknown[]): { all(): Promise<{ results: unknown[] }> } } };
+
+async function queryAll<T>(sql: string, params: unknown[] = []): Promise<T[]> {
+  if (isWorkersRuntime()) {
+    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+    const { env } = await getCloudflareContext({ async: true });
+    const d1 = (env as unknown as { DB: D1Like }).DB;
+    const { results } = await d1.prepare(sql).bind(...params).all();
+    return results as T[];
+  }
+  return getDb().prepare(sql).all(...params) as T[];
+}
 
 export interface BlogPost {
   id: number;
@@ -23,78 +36,66 @@ export interface BlogPost {
 
 const LISTING_COLUMNS = "id, slug, title, excerpt, cover_image, category, tags, author, status, meta_title, meta_description, og_image, reading_time, noindex, published_at, created_at, updated_at";
 
-export function getPublishedPosts(limit = 50, offset = 0): BlogPost[] {
-  const db = getDb();
-  return db
-    .prepare(
-      `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND published_at IS NOT NULL ORDER BY published_at DESC LIMIT ? OFFSET ?`
-    )
-    .all(limit, offset) as BlogPost[];
+export async function getPublishedPosts(limit = 50, offset = 0): Promise<BlogPost[]> {
+  return queryAll<BlogPost>(
+    `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND published_at IS NOT NULL ORDER BY published_at DESC LIMIT ? OFFSET ?`,
+    [limit, offset],
+  );
 }
 
-export function getPostBySlug(slug: string): BlogPost | null {
-  const db = getDb();
-  const post = db
-    .prepare(`SELECT * FROM blog_posts WHERE slug = ? AND status = 'published'`)
-    .get(slug) as BlogPost | undefined;
-  return post ?? null;
+export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+  const rows = await queryAll<BlogPost>(
+    `SELECT * FROM blog_posts WHERE slug = ? AND status = 'published' LIMIT 1`,
+    [slug],
+  );
+  return rows[0] ?? null;
 }
 
-export function getPostsByCategory(category: string, limit = 50): BlogPost[] {
-  const db = getDb();
-  return db
-    .prepare(
-      `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND category = ? ORDER BY published_at DESC LIMIT ?`
-    )
-    .all(category, limit) as BlogPost[];
+export async function getPostsByCategory(category: string, limit = 50): Promise<BlogPost[]> {
+  return queryAll<BlogPost>(
+    `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND category = ? ORDER BY published_at DESC LIMIT ?`,
+    [category, limit],
+  );
 }
 
-export function getCategoryPostCount(category: string): number {
-  const db = getDb();
-  const row = db
-    .prepare(`SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published' AND category = ?`)
-    .get(category) as { count: number } | undefined;
-  return row?.count ?? 0;
+export async function getCategoryPostCount(category: string): Promise<number> {
+  const rows = await queryAll<{ count: number }>(
+    `SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published' AND category = ?`,
+    [category],
+  );
+  return rows[0]?.count ?? 0;
 }
 
-export function getRelatedPosts(slug: string, category: string, limit = 3): BlogPost[] {
-  const db = getDb();
-  return db
-    .prepare(
-      `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND slug != ? AND category = ? ORDER BY published_at DESC LIMIT ?`
-    )
-    .all(slug, category, limit) as BlogPost[];
+export async function getRelatedPosts(slug: string, category: string, limit = 3): Promise<BlogPost[]> {
+  return queryAll<BlogPost>(
+    `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND slug != ? AND category = ? ORDER BY published_at DESC LIMIT ?`,
+    [slug, category, limit],
+  );
 }
 
-export function getAllCategories(): string[] {
-  const db = getDb();
-  const rows = db
-    .prepare(
-      `SELECT DISTINCT category FROM blog_posts WHERE status = 'published' AND category != '' ORDER BY category`
-    )
-    .all() as { category: string }[];
+export async function getAllCategories(): Promise<string[]> {
+  const rows = await queryAll<{ category: string }>(
+    `SELECT DISTINCT category FROM blog_posts WHERE status = 'published' AND category != '' ORDER BY category`,
+  );
   return rows.map((r) => r.category);
 }
 
-export function getPublishedPostCount(): number {
-  const db = getDb();
-  const row = db
-    .prepare(`SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published'`)
-    .get() as { count: number } | undefined;
-  return row?.count ?? 0;
+export async function getPublishedPostCount(): Promise<number> {
+  const rows = await queryAll<{ count: number }>(
+    `SELECT COUNT(*) as count FROM blog_posts WHERE status = 'published'`,
+  );
+  return rows[0]?.count ?? 0;
 }
 
-export function getAllPublishedSlugs(): string[] {
-  const db = getDb();
-  const rows = db
-    .prepare(`SELECT slug FROM blog_posts WHERE status = 'published' ORDER BY published_at DESC`)
-    .all() as { slug: string }[];
+export async function getAllPublishedSlugs(): Promise<string[]> {
+  const rows = await queryAll<{ slug: string }>(
+    `SELECT slug FROM blog_posts WHERE status = 'published' ORDER BY published_at DESC`,
+  );
   return rows.map((r) => r.slug);
 }
 
-export function getAllPublishedSlugsWithDates(): { slug: string; updated_at: string; published_at: string | null }[] {
-  const db = getDb();
-  return db
-    .prepare(`SELECT slug, updated_at, published_at FROM blog_posts WHERE status = 'published' AND noindex = 0 ORDER BY published_at DESC`)
-    .all() as { slug: string; updated_at: string; published_at: string | null }[];
+export async function getAllPublishedSlugsWithDates(): Promise<{ slug: string; updated_at: string; published_at: string | null }[]> {
+  return queryAll(
+    `SELECT slug, updated_at, published_at FROM blog_posts WHERE status = 'published' AND noindex = 0 ORDER BY published_at DESC`,
+  );
 }

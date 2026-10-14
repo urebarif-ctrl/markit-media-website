@@ -26,7 +26,7 @@ const noopDb = {
   inTransaction: false,
 } as unknown as SqliteDb;
 
-function isWorkersRuntime(): boolean {
+export function isWorkersRuntime(): boolean {
   try {
     return typeof (globalThis as Record<string, unknown>).WebSocketPair === "function";
   } catch {

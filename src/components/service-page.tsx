@@ -52,7 +52,7 @@ interface ServicePageProps {
   locale?: string;
 }
 
-export function ServicePage({
+export async function ServicePage({
   icon: Icon,
   parentTitle,
   parentHref,
@@ -75,7 +75,7 @@ export function ServicePage({
 }: ServicePageProps) {
   const l = (path: string) => `/${locale}${path}`;
   const relatedPosts = blogCategory
-    ? getPostsByCategory(blogCategory, 3)
+    ? await getPostsByCategory(blogCategory, 3)
     : [];
   const serviceSchema = {
     "@context": "https://schema.org",

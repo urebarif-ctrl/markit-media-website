@@ -83,6 +83,6 @@ export async function GET(
     return new Response("Not found", { status: 404 });
   }
 
-  const entries = getSitemapEntries().filter((entry) => belongsTo(group, entry));
+  const entries = (await getSitemapEntries()).filter((entry) => belongsTo(group, entry));
   return xmlResponse(renderUrlSet(entries));
 }
