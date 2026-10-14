@@ -40,17 +40,35 @@ export async function isRateLimited(key: string, limit: number, windowMs = 60_00
   }
 }
 
-/** Client IP for rate limiting. cf-connecting-ip is set by Cloudflare and cannot be spoofed by the caller;
- *  the first X-Forwarded-For entry can be, so only the last entry (added by the nearest proxy) is a fallback. */
+/** IPv6 clients commonly control a whole /64, so bucket them by prefix; otherwise one subscriber could
+ *  rotate through 2^64 addresses. IPv4 and IPv4-mapped addresses are returned unchanged. */
+function bucketIp(ip: string): string {
+  if (!ip.includes(":")) return ip;
+  const mapped = ip.match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/i);
+  if (mapped) return mapped[1];
+  const [head, tail = ""] = ip.split("::");
+  const h = head ? head.split(":") : [];
+  const t = tail ? tail.split(":") : [];
+  if (!ip.includes("::") && h.length !== 8) return ip;
+  const full = ip.includes("::") ? [...h, ...Array(Math.max(0, 8 - h.length - t.length)).fill("0"), ...t] : h;
+  return full.slice(0, 4).map((x) => (x || "0").toLowerCase()).join(":") + "::/64";
+}
+
+/** Client IP for rate limiting.
+ *  Trust model: on Cloudflare, cf-connecting-ip is set by the edge and overwrites any client-supplied value,
+ *  and a Worker has no reachable origin (workers.dev and custom domains both pass through the edge), so it
+ *  cannot be spoofed there. x-real-ip and x-forwarded-for are only consulted when that header is absent
+ *  (local dev, or a non-Cloudflare host such as a Vercel preview). The FIRST x-forwarded-for entry is
+ *  caller-controlled and is never used; the last entry is the one appended by the nearest proxy. */
 export function clientIp(headers: Headers): string {
   const cf = headers.get("cf-connecting-ip")?.trim();
-  if (cf) return cf;
+  if (cf) return bucketIp(cf);
   const real = headers.get("x-real-ip")?.trim();
-  if (real) return real;
+  if (real) return bucketIp(real);
   const xff = headers.get("x-forwarded-for");
   if (xff) {
     const parts = xff.split(",").map((x) => x.trim()).filter(Boolean);
-    if (parts.length) return parts[parts.length - 1];
+    if (parts.length) return bucketIp(parts[parts.length - 1]);
   }
   return "unknown";
 }
