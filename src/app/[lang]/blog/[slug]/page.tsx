@@ -241,7 +241,7 @@ function parseTags(tags: string): string[] {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  if (!post) return { title: "Post Not Found" };
+  if (!post) notFound();
 
   return {
     title: post.meta_title || post.title,
