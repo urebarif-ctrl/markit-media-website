@@ -1,5 +1,5 @@
 import { randomInt, randomUUID } from "crypto";
-import { clientIp } from "@/lib/rate-limit";
+import { clientIp, isRateLimited } from "@/lib/rate-limit";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getMongoDb } from "@/lib/mongodb";
@@ -28,6 +28,15 @@ export async function POST(request: NextRequest) {
     const { email } = await request.json();
     const normalizedEmail = String(email || "").trim().toLowerCase();
     if (!normalizedEmail) return noStore(NextResponse.json({ error: "Email is required." }, { status: 400 }));
+
+    // Each call replaces the OTP challenge (resetting its attempt counter) and emails the account owner,
+    // so it must be throttled both per client and per target address.
+    const tooMany =
+      (await isRateLimited(`admin-code-ip:${getClientIp(request)}`, 5, 10 * 60_000)) ||
+      (await isRateLimited(`admin-code-email:${normalizedEmail}`, 2, 60_000));
+    if (tooMany) {
+      return noStore(NextResponse.json({ error: "Too many code requests. Please wait a minute and try again." }, { status: 429 }));
+    }
 
     const db = await getMongoDb();
     const users = db.collection("admin_users");
