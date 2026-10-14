@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveFormSubmission } from "@/lib/mongodb";
-import { isRateLimited } from "@/lib/rate-limit";
+import { clientIp, isRateLimited } from "@/lib/rate-limit";
 
 async function syncSubscriberToKit(email: string): Promise<boolean> {
   const apiKey = process.env.KIT_API_KEY;
@@ -39,9 +39,7 @@ async function saveLegacySubscriber(email: string, source: string, ip: string): 
 
 export async function POST(request: NextRequest) {
   try {
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-      "unknown";
+    const ip = clientIp(request.headers);
 
     if ((await isRateLimited(`subscribe:${ip}`, 3))) {
       return NextResponse.json(
