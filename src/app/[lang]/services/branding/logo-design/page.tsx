@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/branding/logo-design",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/branding/logo-design",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Logo Design Services",
     description: "Professional logo design with multiple concepts, versatile variations, and production-ready file formats. Markit Media creates logos that work across di...",
   },

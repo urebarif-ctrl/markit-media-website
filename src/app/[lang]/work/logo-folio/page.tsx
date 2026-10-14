@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "A selection of our logo design and animation work across energy, technology, F&B, fashion, and agency brands. Professional motion graphics and brand identity.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/logo-folio" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/work/logo-folio",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Logo Folio",
     description: "Logo design and animation portfolio showcasing identity work across multiple industries.",
   },

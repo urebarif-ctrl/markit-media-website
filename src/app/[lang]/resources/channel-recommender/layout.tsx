@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Answer a few questions about your business, goals, budget, and team to get a ranked list of recommended marketing channels with match scores, ROI estimates, and key tactics.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-channel-recommender" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-channel-recommender",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Marketing Channel Recommender",
     description:
       "Free interactive tool that recommends the best marketing channels based on your business details, goals, budget, and team size.",

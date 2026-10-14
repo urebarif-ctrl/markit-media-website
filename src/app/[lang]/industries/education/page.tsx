@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/education",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/education",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Education",
     description: "Marketing strategies for educational institutions including schools, universities, online courses, and EdTech companies. SEO, PPC, social media, and enr...",
   },

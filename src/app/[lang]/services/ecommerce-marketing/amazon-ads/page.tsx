@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/ecommerce-marketing/amazon-ads",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/ecommerce-marketing/amazon-ads",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Amazon Advertising Services",
     description: "Drive sales on Amazon with Sponsored Products, Sponsored Brands, and DSP campaigns. Markit Media manages your Amazon ad strategy from keyword targeting ...",
   },

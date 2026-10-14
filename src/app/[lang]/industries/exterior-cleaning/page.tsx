@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/exterior-cleaning",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/exterior-cleaning",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Exterior Cleaning Companies",
     description:
       "SEO, paid media, websites, CRM, and follow-up systems for window cleaning, pressure washing, soft washing, roof cleaning, gutter cleaning, and exterior service companies.",

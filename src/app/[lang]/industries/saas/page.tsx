@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/saas",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/saas",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for SaaS Companies",
     description: "Marketing strategies for SaaS companies including performance marketing, SEO, content marketing, email nurture campaigns, LinkedIn marketing, and analyt...",
   },

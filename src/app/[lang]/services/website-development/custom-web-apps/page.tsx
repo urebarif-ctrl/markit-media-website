@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/website-development/custom-web-apps",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/custom-web-apps",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Custom Web Applications",
     description: "Full-stack custom web application development including dashboards, internal tools, SaaS platforms, and third-party integrations. Built to solve your sp...",
   },

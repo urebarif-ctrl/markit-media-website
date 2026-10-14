@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Professional photography services: product photography, corporate headshots, event coverage, architectural shoots, and lifestyle photography for brands.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/photography" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/photography",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Professional Photography — Markit Media",
     description: "Professional photography: product, corporate, event, architectural, and lifestyle photography for brands.",
   },

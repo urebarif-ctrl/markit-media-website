@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ num: stri
     alternates: { canonical: `https://themarkitmedia.com/en/blog/page/${page}` },
     robots: page > 1 ? { index: false, follow: true } : undefined,
     openGraph: {
+    url: `https://themarkitmedia.com/en/blog/page/${page}`,
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
       title: `Blog ,  Page ${page}`,
       description: "Expert insights on digital marketing strategy and execution.",
     },

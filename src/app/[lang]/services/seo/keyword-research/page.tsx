@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/seo/keyword-research",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/seo/keyword-research",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Keyword Research Services",
     description: "Data-driven keyword research including search intent analysis, long-tail keyword discovery, competitor keyword gaps, and strategic keyword mapping. Mark...",
   },

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/video-production/animation",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/video-production/animation",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Animation",
     description: "Professional 2D animation services including explainer videos, animated infographics, character animation, and whiteboard animations that simplify compl...",
   },

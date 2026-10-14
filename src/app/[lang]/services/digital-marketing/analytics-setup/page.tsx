@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/analytics-setup",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/digital-marketing/analytics-setup",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Analytics Setup Services",
     description: "GA4, Google Tag Manager, conversion tracking, and custom dashboards. Markit Media sets up accurate analytics infrastructure so you can measure what matt...",
   },

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/copywriting",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/content-marketing/copywriting",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Copywriting Services",
     description: "Professional copywriting for websites, landing pages, ad campaigns, and brand messaging. Markit Media writes conversion-focused copy that speaks your au...",
   },

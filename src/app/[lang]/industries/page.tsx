@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: "Specialized digital marketing for 20+ industries, including exterior cleaning, home services, e-commerce, healthcare, real estate, restaurants, B2B, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Industries We Serve",
     description:
       "Specialized digital marketing for 20+ industries including e-commerce, healthcare, real estate, SaaS, and more.",

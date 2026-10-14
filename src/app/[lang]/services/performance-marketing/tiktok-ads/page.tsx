@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/performance-marketing/tiktok-ads",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing/tiktok-ads",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "TikTok Ads",
     description: "TikTok advertising management including Spark Ads, TopView, in-feed video ads, advanced targeting, and creator partnerships. Reach engaged audiences thr...",
   },

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Build UTM-tagged tracking URLs for campaign attribution across marketing channels with this free tool. Know exactly which campaigns drive results.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-utm-builder" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-utm-builder",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free UTM Campaign URL Builder",
     description:
       "Build UTM-tagged URLs for accurate campaign attribution across every marketing channel. Know exactly what drives results.",

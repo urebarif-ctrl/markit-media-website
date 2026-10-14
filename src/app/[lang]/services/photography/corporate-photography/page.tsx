@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/photography/corporate-photography",title:"Corporate Photography",description:"Professional corporate photography for teams, leadership, offices, employer branding, PR, websites, LinkedIn, events, and company communications.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Corporate Photography",
   description: "Professional corporate photography for teams, leadership, offices, employer branding, PR, websites, LinkedIn, events, and company communications.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/photography/corporate-photography" },

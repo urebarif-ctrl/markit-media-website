@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/performance-marketing/retargeting",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing/retargeting",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Retargeting & Remarketing",
     description: "Cross-channel retargeting and remarketing campaigns. Dynamic ads, audience segmentation, frequency capping, and sequential messaging to convert warm pro...",
   },

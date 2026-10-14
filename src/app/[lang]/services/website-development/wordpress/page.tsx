@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/website-development/wordpress",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/wordpress",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "WordPress Development",
     description: "Custom WordPress development including theme design, plugin development, headless CMS architecture, and WooCommerce stores. Scalable, secure, and easy t...",
   },

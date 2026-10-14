@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "Digital marketing for real estate agents, brokerages, property managers, and developers. Real estate SEO, PPC, virtual tour marketing, and hyper-local lead generation.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries/real-estate" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/real-estate",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Real Estate",
     description: "Digital marketing for real estate agents, brokerages, property managers, and developers. Real estate SEO, PPC, virtual tour marketing, and hyper-local l...",
   },

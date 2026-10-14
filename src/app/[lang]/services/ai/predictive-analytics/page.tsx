@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/ai/predictive-analytics",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/ai/predictive-analytics",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Predictive Analytics Services",
     description: "Predictive analytics services including demand forecasting, customer behavior modeling, churn prediction, and data-driven decision support. Markit Media...",
   },

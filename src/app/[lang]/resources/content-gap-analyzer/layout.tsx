@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free content gap analyzer to identify missing content across every stage of the buyer journey. Discover topics your competitors cover that you do not.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-content-gap-analyzer" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-content-gap-analyzer",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Content Gap Analyzer",
     description:
       "Identify content gaps across the buyer journey. Discover topics your competitors cover that you're missing.",

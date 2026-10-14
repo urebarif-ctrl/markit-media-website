@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Identify, score, and visualize marketing risks with an interactive 5x5 risk matrix. Assess likelihood, impact, and mitigation strategies for brand, budget, regulatory, and channel risks.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-risk-assessment" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-risk-assessment",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Marketing Risk Assessment Matrix | Free Tool",
     description:
       "Free interactive risk assessment matrix for marketing teams. Plot risks on a 5x5 heatmap, calculate risk scores, and build mitigation strategies.",

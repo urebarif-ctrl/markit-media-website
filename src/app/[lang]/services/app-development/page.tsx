@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServicePage } from "@/components/service-page";
 import { Smartphone } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/app-development",title:"App Development Company | Mobile, iOS, Android & Web Apps",description:"Custom app development for mobile, iOS, Android, cross-platform and web applications. Product strategy, UX, engineering, APIs, analytics and launch support.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "App Development Company | Mobile, iOS, Android & Web Apps",
   description: "Custom app development for mobile, iOS, Android, cross-platform and web applications. Product strategy, UX, engineering, APIs, analytics and launch support.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/app-development" },

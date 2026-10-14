@@ -93,7 +93,7 @@ export default function CampaignNamingConventionPage() {
         <header className="mb-12">
           <p className="text-base font-semibold tracking-widest uppercase text-gray-400 mb-3">Free Organisation Tool</p>
           <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1]">
-            Campaign Naming Convention Generator
+            Campaign Naming Convention Template
           </h1>
           <p className="text-lg text-gray-500 mt-4 max-w-2xl">
             Generate consistent, structured campaign names for any platform. Keep your marketing data clean, searchable, and easy to report on.

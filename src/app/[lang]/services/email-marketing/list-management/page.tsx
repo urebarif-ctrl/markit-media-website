@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/list-management",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/email-marketing/list-management",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Email List Management Services",
     description: "Email list management services including segmentation, list hygiene, subscriber growth strategies, and lifecycle management. Markit Media keeps your lis...",
   },

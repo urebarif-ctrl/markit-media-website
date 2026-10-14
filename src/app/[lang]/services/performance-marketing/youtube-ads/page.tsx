@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/performance-marketing/youtube-ads",title:"YouTube Ads",description:"Plan and manage YouTube advertising across awareness, consideration, remarketing, and conversion-oriented video journeys with creative matched to audience intent.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "YouTube Ads",
   description: "Plan and manage YouTube advertising across awareness, consideration, remarketing, and conversion-oriented video journeys with creative matched to audience intent.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/performance-marketing/youtube-ads" },

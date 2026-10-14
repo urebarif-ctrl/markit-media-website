@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "Explore the platforms, tools, and technologies Markit Media uses to plan, execute, and measure digital marketing campaigns.",
   alternates: { canonical: "https://themarkitmedia.com/en/technology" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/technology",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Our Technology Stack",
     description: "The platforms and tools we use to plan, execute, and measure digital marketing campaigns.",
   },

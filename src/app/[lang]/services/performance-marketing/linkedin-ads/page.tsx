@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/performance-marketing/linkedin-ads",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing/linkedin-ads",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "LinkedIn Ads",
     description: "LinkedIn advertising for B2B companies. Sponsored Content, InMail, lead gen forms, account-based marketing, and precise professional targeting to reach ...",
   },

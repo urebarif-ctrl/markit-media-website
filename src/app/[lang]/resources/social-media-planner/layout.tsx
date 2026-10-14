@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Plan your social media strategy with platform-specific posting formats, frequencies, and best practices using this free tool. Post with purpose on every channel.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-media-planner" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-social-media-planner",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Social Media Strategy Planner",
     description:
       "Build a platform-specific social media strategy with posting formats, frequencies, and best practices for every channel.",

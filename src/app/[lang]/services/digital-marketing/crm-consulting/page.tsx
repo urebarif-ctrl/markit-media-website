@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/crm-consulting",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/digital-marketing/crm-consulting",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "CRM Consulting Services",
     description: "CRM selection, implementation, and workflow automation. Markit Media helps businesses choose the right platform, configure it properly, and automate pro...",
   },

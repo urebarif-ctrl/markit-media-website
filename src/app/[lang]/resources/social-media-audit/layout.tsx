@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Audit your social media presence with this free checklist covering profile optimization, content strategy, engagement metrics, and analytics. Identify gaps and opportunities.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-media-audit" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-social-media-audit",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Social Media Audit Checklist",
     description:
       "Evaluate your social media presence across profile optimization, content strategy, engagement, and analytics. Spot gaps fast.",

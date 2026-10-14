@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "Complete social media marketing and management services including strategy, content creation, graphic design, reels, video editing, community management, influencer marketing, paid social, scheduling, analytics, and reporting.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/social-media" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/social-media",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Social Media Marketing",
     description:
       "Strategy, content, management, creative production, community, paid social, influencer marketing, and analytics for brands that want a stronger social presence.",

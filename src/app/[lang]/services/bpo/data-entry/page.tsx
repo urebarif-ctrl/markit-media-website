@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/bpo/data-entry",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/bpo/data-entry",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Data Entry Services",
     description: "Accurate, high-volume data entry, data cleaning, and database management services. Markit Media handles your data processing so your team can focus on d...",
   },

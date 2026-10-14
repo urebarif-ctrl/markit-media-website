@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "Evaluate your website content across 30 criteria in 6 categories. Get a maturity level, radar chart, quick wins, and category recommendations.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-content-audit-scorecard" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-content-audit-scorecard",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Content Audit Scorecard",
     description: "Score your content across 30 criteria and get prioritized improvement recommendations.",
   },

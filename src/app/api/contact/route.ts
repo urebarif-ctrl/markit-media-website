@@ -1,16 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isRateLimited } from "@/lib/rate-limit";
 import { Resend } from "resend";
 import { saveFormSubmission } from "@/lib/mongodb";
 import { notifyNewLead } from "@/lib/notifications";
 
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-function limited(ip:string){const now=Date.now(),e=rateLimitMap.get(ip);if(!e||now>e.resetTime){rateLimitMap.set(ip,{count:1,resetTime:now+60_000});return false;}e.count++;return e.count>5;}
 function esc(v:unknown){return String(v||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;").trim();}
 function serviceLabel(v:string){return v ? v.split("-").map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(" ") : "General Inquiry";}
 function portfolio(v:string){const m:Record<string,string>={branding:"/work/logo-folio","video-production":"/work","social-media":"/work","website-development":"/work","performance-marketing":"/case-studies",seo:"/case-studies"};return m[v]||"/work";}
 export async function POST(request:NextRequest){
  try{
-  const ip=request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()||"unknown";if(limited(ip))return NextResponse.json({error:"Too many requests. Please try again later."},{status:429});
+  const ip=request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()||"unknown";if(await isRateLimited(`contact:${ip}`,5))return NextResponse.json({error:"Too many requests. Please try again later."},{status:429});
   const body=await request.json();if(body.website)return NextResponse.json({success:true});
   const data={name:esc(body.name),email:esc(body.email),company:esc(body.company),phone:esc(body.phone),service:esc(body.service),budget:esc(body.budget),timeline:esc(body.timeline),message:esc(body.message),source:esc(body.source),landingPage:esc(body.landingPage),referrer:esc(body.referrer),utmSource:esc(body.utmSource),utmMedium:esc(body.utmMedium),utmCampaign:esc(body.utmCampaign),marketingConsent:Boolean(body.marketingConsent),submittedAt:new Date().toISOString(),status:"New"};
   if(!data.name||data.name.length<2)return NextResponse.json({error:"Name is required."},{status:400});

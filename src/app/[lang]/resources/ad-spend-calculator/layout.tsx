@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free ad spend calculator to analyze your advertising efficiency across platforms. Calculate CPA, ROAS, and identify where your budget delivers the best returns.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-ad-spend-calculator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-ad-spend-calculator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Ad Spend Efficiency Calculator",
     description:
       "Free tool to analyze ad spend efficiency, CPA, and ROAS across platforms. Find where your budget delivers the best returns.",

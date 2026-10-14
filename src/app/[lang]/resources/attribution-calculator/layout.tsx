@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Compare Last Touch, First Touch, Linear, and Time Decay attribution models side by side. See how credit is distributed across your marketing channels and optimize spend with this free calculator.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-attribution-calculator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-attribution-calculator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Marketing Attribution Calculator | Free Marketing Tool",
     description:
       "Compare attribution models side by side to see how credit is distributed across your marketing channels. Free, no sign-up required.",

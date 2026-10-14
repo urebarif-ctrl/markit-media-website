@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/hospitality",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/hospitality",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Hospitality & Hotels",
     description: "Marketing strategies for hotels, resorts, vacation rentals, and hospitality brands. SEO, PPC, social media, website development, reputation management, ...",
   },

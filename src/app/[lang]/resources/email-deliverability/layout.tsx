@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Free email deliverability checklist covering authentication, list hygiene, and sending practices to keep your emails out of spam.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-email-deliverability" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-email-deliverability",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Email Deliverability Checklist",
     description:
       "Free checklist covering authentication, list hygiene, and sending practices to keep your emails out of spam folders.",

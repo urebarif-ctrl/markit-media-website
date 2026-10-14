@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Professional video production: commercials, video editing, motion graphics, reels, short-form content, and animation. Tell your brand story through video.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/video-production" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/video-production",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Video Production",
     description: "Professional video production: commercials, video editing, motion graphics, reels, short-form content, and animation. Tell your brand story through video.",
   },

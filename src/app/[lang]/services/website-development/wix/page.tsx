@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/website-development/wix",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/wix",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Wix Development Services",
     description:
       "Structured Wix websites, redesigns, CMS setup, integrations and SEO-ready launches for businesses that want simple content ownership.",

@@ -152,6 +152,9 @@ export async function generateMetadata({
     description: `Read our latest articles on ${displayName.toLowerCase()}. Expert insights and actionable advice from Markit Media.`,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/category/${category}` },
     openGraph: {
+    url: `https://themarkitmedia.com/en/blog/category/${category}`,
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
       title: `${displayName} ,  Marketing Blog`,
       description: `Expert articles on ${displayName.toLowerCase()} from Markit Media.`,
     },

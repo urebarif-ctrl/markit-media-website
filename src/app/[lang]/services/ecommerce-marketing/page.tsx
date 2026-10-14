@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "E-commerce marketing services: Amazon Ads, Shopify marketing, product feed optimization, and marketplace management. Grow your online store revenue.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/ecommerce-marketing" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/ecommerce-marketing",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "E-commerce Marketing",
     description: "E-commerce marketing services: Amazon Ads, Shopify marketing, product feed optimization, and marketplace management. Grow your online store revenue.",
   },

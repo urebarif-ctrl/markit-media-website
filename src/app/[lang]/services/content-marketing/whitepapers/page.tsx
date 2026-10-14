@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/whitepapers",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/content-marketing/whitepapers",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Whitepapers & Reports",
     description: "Professional whitepapers, research reports, and lead magnets that demonstrate expertise and generate qualified leads. Markit Media handles research, wri...",
   },

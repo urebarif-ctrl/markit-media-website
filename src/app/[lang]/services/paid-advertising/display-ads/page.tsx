@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/paid-advertising/display-ads",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/paid-advertising/display-ads",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Display Advertising Services",
     description: "Banner ads, rich media, and publisher network campaigns that build brand awareness and drive conversions. Markit Media designs and manages display campa...",
   },

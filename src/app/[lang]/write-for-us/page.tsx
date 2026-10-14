@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/write-for-us",title:"Write for Us — Guest Contributor Guidelines",description:"Pitch an original marketing, SEO, advertising, ecommerce, branding, AI, or web development article to Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Write for Us — Guest Contributor Guidelines",
   description: "Pitch an original marketing, SEO, advertising, ecommerce, branding, AI, or web development article to Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/write-for-us" },

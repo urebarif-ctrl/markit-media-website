@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/professional-services",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/professional-services",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Professional Services",
     description: "Marketing strategies for law firms, accounting practices, consulting firms, and professional service providers. SEO, content marketing, LinkedIn marketi...",
   },

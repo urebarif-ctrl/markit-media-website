@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/website-development/shopify",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/shopify",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Shopify Development",
     description: "Custom Shopify development including storefront design, theme customization, app integrations, and Shopify Plus solutions. Build a store that converts.",
   },

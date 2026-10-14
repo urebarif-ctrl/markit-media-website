@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/travel",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/travel",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Travel & Tourism",
     description: "Marketing strategies for travel agencies, tour operators, destinations, and tourism brands. Social media marketing, SEO, PPC, video production, content ...",
   },

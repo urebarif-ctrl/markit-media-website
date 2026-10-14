@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/branding/brand-guidelines",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/branding/brand-guidelines",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Brand Guidelines Services",
     description: "Comprehensive brand books and usage guidelines that ensure consistency across every team and touchpoint. Markit Media creates clear brand standards your...",
   },

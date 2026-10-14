@@ -5,7 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/foodfolio",title:"FoodFolio — Food & Beverage Design Portfolio",description:"Food and beverage design portfolio: social media content, brand campaigns, and promotional graphics for restaurants, cafes, and F&B brands by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "FoodFolio — Food & Beverage Design Portfolio",
   description: "Food and beverage design portfolio: social media content, brand campaigns, and promotional graphics for restaurants, cafes, and F&B brands by Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/foodfolio" },

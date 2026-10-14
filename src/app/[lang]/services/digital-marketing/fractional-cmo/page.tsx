@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/fractional-cmo",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/digital-marketing/fractional-cmo",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Fractional CMO Services",
     description: "Senior marketing leadership without the full-time cost. Markit Media provides fractional CMO services — strategy, team guidance, and executive-level ove...",
   },

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/paid-advertising/native-advertising",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/paid-advertising/native-advertising",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Native Advertising Services",
     description: "Sponsored content and in-feed ad campaigns that match the look and feel of the platforms they appear on. Markit Media creates native ads that engage aud...",
   },

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Website development across WordPress, Wix, Webflow, Squarespace, Next.js and custom stacks, including redesigns, migrations, redirects and SEO-safe launches.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Website Development",
     description: "Custom website development across WordPress, Wix, Webflow, Squarespace, Next.js, landing pages and custom web applications.",
   },

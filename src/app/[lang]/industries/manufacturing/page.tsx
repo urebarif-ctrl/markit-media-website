@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/manufacturing",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/manufacturing",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Manufacturing & Industrial",
     description: "Marketing strategies for manufacturers, industrial companies, and B2B suppliers. SEO, content marketing, LinkedIn advertising, website development, vide...",
   },

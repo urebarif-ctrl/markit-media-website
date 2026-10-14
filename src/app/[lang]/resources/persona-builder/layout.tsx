@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Build detailed marketing buyer personas with demographics, goals, challenges, and channel preferences using this free interactive tool. Target smarter, convert more.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-persona-builder" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-persona-builder",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Buyer Persona Builder",
     description:
       "Build detailed buyer personas with demographics, goals, challenges, and channel preferences. Know exactly who you're marketing to.",

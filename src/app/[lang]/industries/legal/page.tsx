@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/legal",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/legal",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Law Firms",
     description: "Marketing strategies for law firms and legal services including SEO, PPC, website development, local SEO, content marketing, and reputation management.",
   },

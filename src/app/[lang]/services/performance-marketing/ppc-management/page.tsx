@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/performance-marketing/ppc-management",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing/ppc-management",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "PPC Management",
     description: "Cross-platform PPC management covering Google, Meta, LinkedIn, TikTok, and Microsoft Ads. Bid optimization, A/B testing, budget allocation, and transpar...",
   },

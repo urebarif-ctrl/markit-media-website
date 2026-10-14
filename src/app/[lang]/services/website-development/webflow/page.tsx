@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/website-development/webflow",title:"Webflow Development",description:"Design and develop responsive Webflow websites with reusable components, CMS structure, clean content editing, technical SEO foundations, and launch QA.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Webflow Development",
   description: "Design and develop responsive Webflow websites with reusable components, CMS structure, clean content editing, technical SEO foundations, and launch QA.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development/webflow" },

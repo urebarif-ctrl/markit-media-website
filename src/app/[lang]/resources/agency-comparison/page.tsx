@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/free-tools/free-agency-comparison",title:"How to Choose a Digital Marketing Agency — Complete Guide",description:"A practical guide to evaluating and choosing a digital marketing agency. Red flags to watch for, questions to ask, and what to expect from a good partnership.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "How to Choose a Digital Marketing Agency — Complete Guide",
   description: "A practical guide to evaluating and choosing a digital marketing agency. Red flags to watch for, questions to ask, and what to expect from a good partnership.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-agency-comparison" },

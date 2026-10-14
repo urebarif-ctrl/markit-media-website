@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/fashion",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/fashion",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Fashion & Apparel Brands",
     description: "Marketing strategies for clothing brands, accessories, footwear, and fashion retailers. E-commerce SEO, paid social, influencer marketing, email campaig...",
   },

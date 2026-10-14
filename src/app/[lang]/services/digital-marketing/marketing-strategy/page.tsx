@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/digital-marketing/marketing-strategy",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/digital-marketing/marketing-strategy",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Marketing Strategy Services",
     description: "Comprehensive marketing strategy covering channel selection, budget allocation, KPIs, and execution roadmaps. Markit Media builds data-informed plans th...",
   },

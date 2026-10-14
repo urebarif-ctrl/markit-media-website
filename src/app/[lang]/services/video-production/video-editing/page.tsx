@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/video-production/video-editing",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/video-production/video-editing",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Video Editing",
     description: "Professional video editing services including color grading, sound design, and post-production. We transform raw footage into polished, engaging content...",
   },

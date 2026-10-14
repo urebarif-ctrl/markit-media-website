@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/bpo/customer-support",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/bpo/customer-support",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Customer Support Services",
     description: "Professional customer support agents for email, live chat, and phone. Markit Media provides trained support teams that integrate with your helpdesk and ...",
   },

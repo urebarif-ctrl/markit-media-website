@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/video-production/motion-graphics",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/video-production/motion-graphics",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Motion Graphics",
     description: "Custom motion graphics including animated titles, lower thirds, logo animations, visual effects, and kinetic typography to elevate your video content an...",
   },

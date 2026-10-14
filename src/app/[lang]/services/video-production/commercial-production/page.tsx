@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/video-production/commercial-production",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/video-production/commercial-production",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Commercial Production",
     description: "End-to-end commercial video production for brands — from concept development and scripting through filming, post-production, and final delivery across a...",
   },

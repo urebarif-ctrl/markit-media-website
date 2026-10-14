@@ -5,7 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/fashion-feed",title:"Fashion Feed — Social Media Design Portfolio",description:"Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Fashion Feed — Social Media Design Portfolio",
   description: "Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/fashion-feed" },

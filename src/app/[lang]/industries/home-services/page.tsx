@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/home-services",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/home-services",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Home Services",
     description: "Marketing strategies for home service businesses including plumbing, HVAC, roofing, electrical, landscaping, and cleaning. SEO, PPC, local search, and r...",
   },

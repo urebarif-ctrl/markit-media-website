@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "BPO and call center outsourcing for inbound customer service, outbound sales, cold calling, appointment setting, virtual assistants and back-office operations.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/bpo" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/bpo",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "BPO Services",
     description: "Business process outsourcing: virtual assistants, data entry, customer support, and operations management. Scale your team with reliable offshore support.",
   },

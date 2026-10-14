@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/public-relations/media-outreach",title:"Media Outreach",description:"Targeted media outreach and journalist pitching built around credible stories, relevant publications, timely angles, and useful relationships rather than mass-emailing generic press lists.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Media Outreach",
   description: "Targeted media outreach and journalist pitching built around credible stories, relevant publications, timely angles, and useful relationships rather than mass-emailing generic press lists.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/media-outreach" },

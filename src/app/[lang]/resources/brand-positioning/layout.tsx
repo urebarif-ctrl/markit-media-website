@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free brand positioning tool to create a clear positioning statement with a differentiation framework. Define your target audience, value proposition, and competitive edge.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-brand-positioning" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-brand-positioning",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Brand Positioning Statement Generator",
     description:
       "Free tool to create positioning statements with a differentiation framework. Define your value proposition and competitive edge.",

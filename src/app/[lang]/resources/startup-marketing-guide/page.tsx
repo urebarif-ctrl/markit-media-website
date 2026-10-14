@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/free-tools/free-startup-marketing-guide",title:"Digital Marketing for Startups — A Practical Guide",description:"A practical digital marketing guide for startups. How to prioritize channels, allocate budget, build brand awareness, and generate leads on a limited budget.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Digital Marketing for Startups — A Practical Guide",
   description: "A practical digital marketing guide for startups. How to prioritize channels, allocate budget, build brand awareness, and generate leads on a limited budget.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-startup-marketing-guide" },

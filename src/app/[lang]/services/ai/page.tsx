@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "AI-powered marketing solutions: chatbots, marketing automation, AI consulting, and predictive analytics. Leverage artificial intelligence to scale your marketing.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/ai" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/ai",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "AI Solutions",
     description: "AI-powered marketing solutions: chatbots, marketing automation, AI consulting, and predictive analytics. Leverage artificial intelligence to scale your ...",
   },

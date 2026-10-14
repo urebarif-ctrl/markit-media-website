@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/free-tools/free-marketing-statistics",title:"Digital Marketing Statistics 2025 — Key Industry Data",description:"Essential digital marketing statistics for 2025. Data on SEO, PPC, social media, email marketing, content marketing, and e-commerce to inform your strategy.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Digital Marketing Statistics 2025 — Key Industry Data",
   description: "Essential digital marketing statistics for 2025. Data on SEO, PPC, social media, email marketing, content marketing, and e-commerce to inform your strategy.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-statistics" },

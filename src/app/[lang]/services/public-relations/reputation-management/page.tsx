@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/public-relations/reputation-management",title:"Reputation Management",description:"Reputation monitoring, response planning, review strategy, search visibility, communications, and escalation workflows designed to help brands protect and improve how they are perceived.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Reputation Management",
   description: "Reputation monitoring, response planning, review strategy, search visibility, communications, and escalation workflows designed to help brands protect and improve how they are perceived.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/reputation-management" },

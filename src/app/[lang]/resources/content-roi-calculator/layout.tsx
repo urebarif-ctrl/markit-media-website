@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free content ROI calculator to project your content marketing returns over time. Factor in traffic growth, conversion rates, and production costs to see real ROI.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-content-roi-calculator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-content-roi-calculator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Content Marketing ROI Calculator",
     description:
       "Project content marketing ROI over time. Factor in traffic growth, conversions, and production costs to see real returns.",

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free color palette generator to create harmonious brand color schemes from a single base color. Get complementary, analogous, and triadic palettes with hex codes.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-color-palette-generator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-color-palette-generator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Brand Color Palette Generator",
     description:
       "Generate harmonious color palettes from a base color. Get complementary, analogous, and triadic schemes with hex codes.",

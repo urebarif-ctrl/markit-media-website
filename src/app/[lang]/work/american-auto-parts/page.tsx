@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/american-auto-parts",title:"American Auto Parts — Video Production",description:"Video production work for American Auto Parts, a long-standing client engagement producing professional video content for the automotive aftermarket.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "American Auto Parts — Video Production",
   description: "Video production work for American Auto Parts, a long-standing client engagement producing professional video content for the automotive aftermarket.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/american-auto-parts" },

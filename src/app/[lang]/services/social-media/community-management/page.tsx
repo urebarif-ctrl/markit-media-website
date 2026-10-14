@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/social-media/community-management",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/social-media/community-management",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Community Management Services",
     description: "Professional community management including audience engagement, comment moderation, response management, and brand voice consistency. Markit Media keep...",
   },

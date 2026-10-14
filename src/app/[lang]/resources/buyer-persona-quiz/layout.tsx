@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free buyer persona quiz to identify your ideal customer profiles. Answer targeted questions to get detailed persona cards with demographics, pain points, and buying behavior.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-buyer-persona-quiz" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-buyer-persona-quiz",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Buyer Persona Quiz",
     description:
       "Identify your ideal buyer personas through a guided quiz. Get detailed persona cards with demographics, pain points, and behavior.",

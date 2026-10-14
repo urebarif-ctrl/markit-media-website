@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/public-relations/crisis-communications",title:"Crisis Communications",description:"Crisis communication planning, message development, monitoring, stakeholder coordination, and response support for sensitive situations where speed and accuracy matter.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Crisis Communications",
   description: "Crisis communication planning, message development, monitoring, stakeholder coordination, and response support for sensitive situations where speed and accuracy matter.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/public-relations/crisis-communications" },

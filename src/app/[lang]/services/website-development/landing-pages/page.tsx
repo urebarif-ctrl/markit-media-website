@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/website-development/landing-pages",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/landing-pages",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Landing Page Design",
     description: "High-converting landing page design for campaigns, product launches, and lead generation. Conversion-focused layouts with A/B testing and performance tr...",
   },

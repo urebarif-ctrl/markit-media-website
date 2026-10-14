@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "Explore free marketing tools, calculators, audits, checklists, guides and digital marketing resources from Markit Media. No signup required for interactive tools.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Marketing Resources",
     description:
       "Blog articles, glossary, checklists, ROI calculator, and guides to help you grow your business online.",

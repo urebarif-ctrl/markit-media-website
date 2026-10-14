@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "Compare SEO and PPC strategies side by side to find the right approach for your business goals.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-seo-vs-ppc" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-seo-vs-ppc",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "SEO vs PPC Comparison Guide",
     description: "Compare SEO and PPC strategies side by side to find the right approach for your business goals.",
   },

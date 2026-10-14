@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/content-strategy",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/content-marketing/content-strategy",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Content Strategy Services",
     description: "Build a content strategy that aligns with business goals. Markit Media provides editorial planning, content audits, governance frameworks, and roadmaps ...",
   },

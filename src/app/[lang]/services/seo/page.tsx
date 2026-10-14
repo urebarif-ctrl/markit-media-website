@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Technical SEO, local SEO, content SEO, link building, and keyword research. Dominate organic search and drive sustainable traffic growth.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/seo" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/seo",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "SEO Services",
     description: "Technical SEO, local SEO, content SEO, link building, and keyword research. Dominate organic search and drive sustainable traffic growth.",
   },

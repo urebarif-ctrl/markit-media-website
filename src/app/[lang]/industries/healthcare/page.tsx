@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "HIPAA-compliant digital marketing for clinics, dental practices, med spas, and healthcare providers. Medical SEO, PPC, reputation management, and patient-focused web design.",
   alternates: { canonical: "https://themarkitmedia.com/en/industries/healthcare" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/healthcare",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Healthcare",
     description: "HIPAA-compliant digital marketing for clinics, dental practices, med spas, and healthcare providers. Medical SEO, PPC, reputation management, and patien...",
   },

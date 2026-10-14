@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/website-development/ecommerce",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/ecommerce",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "E-commerce Solutions",
     description: "End-to-end e-commerce development including online store setup, payment integration, inventory management, and order processing. Sell online with a stor...",
   },

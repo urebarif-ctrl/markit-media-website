@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/hubco",title:"HUBCO — Logo Animation & Brand Video",description:"Logo animation and commercial video production for HUBCO, one of Pakistan's leading energy companies.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "HUBCO — Logo Animation & Brand Video",
   description: "Logo animation and commercial video production for HUBCO, one of Pakistan's leading energy companies.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/hubco" },

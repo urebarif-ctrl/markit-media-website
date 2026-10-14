@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Analyze your content readability using Flesch-Kincaid, Gunning Fog, and other scoring methods with this free tool. Write content your audience actually reads and understands.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-readability-checker" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-readability-checker",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Content Readability Checker",
     description:
       "Analyze content readability with Flesch-Kincaid, Gunning Fog, and more. Get actionable scores and suggestions to improve clarity.",

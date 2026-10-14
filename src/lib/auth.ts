@@ -1,20 +1,12 @@
-import { createHash, createHmac } from "crypto";
+import { createHmac } from "crypto";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
 function getJwtSecret(): string {
   const explicit = process.env.JWT_SECRET?.trim();
   if (explicit) return explicit;
-
-  const serverSecret = process.env.MONGODB_URI?.trim();
-  if (process.env.NODE_ENV === "production") {
-    if (!serverSecret) throw new Error("JWT_SECRET is required in production");
-    return createHash("sha256")
-      .update(`markit-admin-session:v1:${serverSecret}`)
-      .digest("hex");
-  }
-
-  return explicit || "dev-only-markit-admin-secret";
+  if (process.env.NODE_ENV === "production") throw new Error("JWT_SECRET is required in production");
+  return "dev-only-markit-admin-secret";
 }
 
 export interface JwtPayload {

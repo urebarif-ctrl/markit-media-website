@@ -220,7 +220,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               <div className="grid grid-cols-[1.15fr_.85fr] border-b border-gray-100">
                 <div className="p-7 bg-[#F7F7F5]">
                   <span className="inline-flex rounded-full bg-black px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-white">What we do</span>
-                  <h2 className="text-[28px] leading-tight font-extrabold mt-3">Growth, creative & technology that work together.</h2>
+                  <p className="text-[28px] leading-tight font-extrabold mt-3">Growth, creative & technology that work together.</p>
                   <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">Start with your goal. We will help you find the right mix of media, search, creative and technology.</p>
                 </div>
                 <div className="p-7 bg-[#101010] text-white flex flex-col justify-between">
@@ -273,7 +273,7 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
               Industries <span aria-hidden="true" className="text-xs">⌄</span>
             </Link>
             <div id="industries-dropdown" className={`${dropdownPanelBase} w-[min(780px,88vw)] ${industriesOpen ? dropdownVisible : dropdownHidden}`}>
-              <div className="p-7 border-b border-gray-100 bg-[#F7F7F5]"><span className="inline-flex rounded-full bg-black px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-white">Industry experience</span><h2 className="text-[28px] leading-tight font-extrabold mt-3">Strategies shaped around how your customers buy.</h2><p className="mt-2 text-sm text-gray-600">Pick your market to see relevant services, thinking and proof.</p></div>
+              <div className="p-7 border-b border-gray-100 bg-[#F7F7F5]"><span className="inline-flex rounded-full bg-black px-3 py-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-white">Industry experience</span><p className="text-[28px] leading-tight font-extrabold mt-3">Strategies shaped around how your customers buy.</p><p className="mt-2 text-sm text-gray-600">Pick your market to see relevant services, thinking and proof.</p></div>
               <div className="grid grid-cols-3 gap-2 p-4 max-h-[55vh] overflow-y-auto">
                 {industryList.map((ind, index) => <Link key={ind.href} href={l(ind.href)} className={`px-3.5 py-3 text-sm font-bold text-black rounded-xl transition-colors ${index < 6 ? "bg-white hover:bg-gray-50" : "hover:bg-gray-50"}`}>{ind.label}<span className="float-right text-gray-300">↗</span></Link>)}
               </div>

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/email-marketing/automation",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/email-marketing/automation",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Email Automation Services",
     description: "Email automation services including welcome sequences, drip campaigns, abandoned cart recovery, and lifecycle email flows. Markit Media builds automated...",
   },

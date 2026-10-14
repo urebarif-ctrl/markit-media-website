@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Estimate marketing service pricing based on your business size, services needed, and engagement type with this free calculator. Budget with confidence before hiring an agency.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-pricing-calculator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-pricing-calculator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Marketing Pricing Calculator",
     description:
       "Estimate marketing service costs based on business size, services needed, and engagement type. Plan your budget before hiring an agency.",

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/ecommerce-marketing/marketplace-management",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/ecommerce-marketing/marketplace-management",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Marketplace Management Services",
     description: "Manage and grow your presence across Amazon, Walmart, eBay, and other online marketplaces. Markit Media handles listings, pricing, inventory, and multi-...",
   },

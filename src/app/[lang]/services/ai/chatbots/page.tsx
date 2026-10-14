@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/ai/chatbots",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/ai/chatbots",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "AI Chatbot Development",
     description: "Custom AI chatbot development for customer support, lead qualification, and engagement across your website, WhatsApp, and other messaging channels. Mark...",
   },

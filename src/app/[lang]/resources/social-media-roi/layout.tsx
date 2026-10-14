@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Calculate social media ROI from ad spend, engagement, website clicks, and conversion metrics with this free calculator. Show stakeholders the real value of social.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-media-roi" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-social-media-roi",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Social Media ROI Calculator",
     description:
       "Calculate social media ROI from ad spend, engagement, clicks, and conversions. Prove the real business value of your social efforts.",

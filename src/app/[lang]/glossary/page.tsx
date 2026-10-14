@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "A comprehensive glossary of digital marketing terms. Learn the key definitions for SEO, PPC, social media, content marketing, analytics, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/glossary" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/glossary",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing Glossary",
     description: "300 marketing terms explained: SEO, PPC, social media, content marketing, analytics, and more.",
   },

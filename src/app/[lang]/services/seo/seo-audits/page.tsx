@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/seo/seo-audits",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/seo/seo-audits",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "SEO Audit Services",
     description: "Comprehensive SEO audits covering technical health, content gaps, competitor benchmarking, and on-page optimization. Markit Media delivers actionable au...",
   },

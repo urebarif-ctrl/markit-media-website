@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/noorshad",title:"NoorShad — Video-First Real Estate Branding",description:"How Markit Media built a comprehensive video production suite for NoorShad real estate, including property tours, testimonials, and home buying guides.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "NoorShad — Video-First Real Estate Branding",
   description: "How Markit Media built a comprehensive video production suite for NoorShad real estate, including property tours, testimonials, and home buying guides.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/noorshad" },

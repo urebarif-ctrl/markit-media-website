@@ -7,7 +7,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/case-studies",title:"Case Studies & Selected Client Work",description:"Explore selected Markit Media client work across video production, web development, social media, branding, healthcare, real estate, fashion, energy and automotive.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Case Studies & Selected Client Work",
   description: "Explore selected Markit Media client work across video production, web development, social media, branding, healthcare, real estate, fashion, energy and automotive.",
   alternates: { canonical: "https://themarkitmedia.com/en/case-studies" },

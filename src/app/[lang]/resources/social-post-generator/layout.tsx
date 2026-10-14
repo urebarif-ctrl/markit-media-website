@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   description: "Generate platform-specific social media posts for LinkedIn, Instagram, Twitter/X, Facebook, and TikTok. Enter your topic and get ready-to-use templates.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-social-post-generator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-social-post-generator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Social Media Post Generator",
     description: "Create platform-optimized social posts instantly with templates for LinkedIn, Instagram, X, Facebook, and TikTok.",
   },

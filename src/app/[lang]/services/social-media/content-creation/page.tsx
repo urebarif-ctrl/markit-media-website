@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/social-media/content-creation",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/social-media/content-creation",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Social Media Content Creation Services",
     description: "Professional social media content creation including graphics, video, copywriting, and platform-specific formats. Markit Media produces scroll-stopping ...",
   },

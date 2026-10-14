@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description: "Explore Markit Media's portfolio: video production, website development, branding, social media campaigns, and creative work for clients across multiple industries.",
   alternates: { canonical: "https://themarkitmedia.com/en/work" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/work",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Our Work",
     description: "Portfolio of video production, website development, branding, social media campaigns, and creative work.",
   },

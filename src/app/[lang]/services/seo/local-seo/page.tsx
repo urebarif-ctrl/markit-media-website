@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/seo/local-seo",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/seo/local-seo",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Local SEO Services",
     description: "Dominate the local map pack with Google Business Profile optimization, local citations, review management, and NAP consistency. Markit Media helps busin...",
   },

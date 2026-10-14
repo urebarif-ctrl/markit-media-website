@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Grade your website performance across speed, mobile, SEO, content, UX, trust, and conversions with this free tool. See exactly where you stand and what to fix first.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-website-grader" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-website-grader",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Website Grader Tool",
     description:
       "Grade your website across speed, mobile, SEO, content, UX, trust, and conversions. See where you stand and what to fix first.",

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/performance-marketing/google-ads",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing/google-ads",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Google Ads Management",
     description: "Expert Google Ads management covering Search, Display, Shopping, YouTube, and remarketing campaigns. Data-driven bid strategies and conversion tracking ...",
   },

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: "From discovery and strategy through execution, optimization, and reporting. A proven 5-step digital marketing process.",
   alternates: { canonical: "https://themarkitmedia.com/en/process" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/process",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Our 5-Step Marketing Process",
     description:
       "Discovery, strategy, execution, optimization, and reporting — a proven process for digital marketing results.",

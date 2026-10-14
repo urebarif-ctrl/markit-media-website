@@ -10,6 +10,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/website-development/nextjs",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/website-development/nextjs",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Next.js Development",
     description: "High-performance Next.js development with server-side rendering, static site generation, API routes, and React-based architecture. Fast, scalable, SEO-o...",
   },

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/content-marketing/blog-writing",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/content-marketing/blog-writing",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Blog Writing Services",
     description: "SEO-optimized blog writing and thought leadership content. Markit Media produces well-researched articles that rank in search, build authority, and supp...",
   },

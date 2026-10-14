@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Campaign Naming Convention Generator | Free Tool",
+  title: "Campaign Naming Convention Template | Free Tool",
   description:
     "Generate consistent campaign naming conventions for Google Ads, Meta Ads, email, and UTM parameters. Keep your marketing data clean and organised.",
   openGraph: {
-    title: "Campaign Naming Convention Generator",
+    title: "Campaign Naming Convention Template",
     description: "Free tool to standardise your marketing campaign naming across all platforms.",
   },
 };

@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/industries/automotive",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/industries/automotive",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Digital Marketing for Automotive Businesses",
     description: "Marketing strategies for automotive businesses including dealerships, auto repair shops, and car rental companies. SEO, PPC, social media, website devel...",
   },

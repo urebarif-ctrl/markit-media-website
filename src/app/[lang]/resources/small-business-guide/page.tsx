@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/free-tools/free-small-business-guide",title:"Digital Marketing for Small Business — Complete Guide",description:"A comprehensive guide to digital marketing for small businesses. Learn which channels to prioritize, how to allocate your budget, and when to hire an agency.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Digital Marketing for Small Business — Complete Guide",
   description: "A comprehensive guide to digital marketing for small businesses. Learn which channels to prioritize, how to allocate your budget, and when to hire an agency.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-small-business-guide" },

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/website-development/squarespace",title:"Squarespace Development",description:"Build or improve Squarespace websites for service businesses, portfolios, and content-led brands that want straightforward content management without sacrificing structure and conversion clarity.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Squarespace Development",
   description: "Build or improve Squarespace websites for service businesses, portfolios, and content-led brands that want straightforward content management without sacrificing structure and conversion clarity.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development/squarespace" },

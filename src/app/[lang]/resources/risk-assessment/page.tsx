@@ -480,7 +480,17 @@ export default function RiskAssessmentPage() {
   /* ---- Focus style ---- */
   const focusRing = "focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2";
 
-  if (!loaded) return null;
+  if (!loaded) {
+    return (
+      <article className="min-h-screen">
+        <div className="px-6 lg:px-12 pt-32 pb-20 text-center">
+          <JsonLd data={{"@context":"https://schema.org","@type":"WebApplication",name:"Marketing Risk Assessment Matrix",description:"Identify, score and visualize marketing risks on an interactive 5x5 matrix.",url:"https://themarkitmedia.com/en/free-tools/free-risk-assessment",applicationCategory:"Marketing Tool",operatingSystem:"Web",offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},provider:{"@type":"Organization",name:"Markit Media",url:"https://themarkitmedia.com"}}} />
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1]">Marketing Risk Assessment Matrix</h1>
+          <p className="mt-4 text-base text-neutral-500">Loading...</p>
+        </div>
+      </article>
+    );
+  }
 
   return (
     <article className="min-h-screen bg-white text-black">

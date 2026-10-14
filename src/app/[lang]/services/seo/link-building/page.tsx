@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Earn relevant backlinks through digital PR, guest contributor outreach, publisher relationships, broken-link campaigns and link-worthy content.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/seo/link-building" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/seo/link-building",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Link Building Services | Digital PR & Outreach",
     description: "Earn relevant editorial links through digital PR, contributor outreach, publisher relationships and content-led campaigns.",
   },

@@ -1,18 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMongoDb } from "@/lib/mongodb";
-
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-
-function limited(ip: string) {
-  const now = Date.now();
-  const current = rateLimitMap.get(ip);
-  if (!current || now > current.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + 60_000 });
-    return false;
-  }
-  current.count += 1;
-  return current.count > 5;
-}
+import { isRateLimited } from "@/lib/rate-limit";
 
 function clean(value: unknown, max = 500) {
   return String(value || "").trim().slice(0, max);
@@ -26,7 +14,7 @@ function cleanList(value: unknown, maxItems = 20) {
 export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    if (limited(ip)) {
+    if (await isRateLimited(`discovery:${ip}`, 5)) {
       return NextResponse.json({ error: "Too many requests. Please try again shortly." }, { status: 429 });
     }
 

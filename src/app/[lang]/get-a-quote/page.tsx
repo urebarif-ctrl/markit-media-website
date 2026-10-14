@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: "Request a free digital marketing quote. Tell us about your business and goals, and our team will respond within one business day.",
   alternates: { canonical: "https://themarkitmedia.com/en/get-a-quote" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/get-a-quote",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Get a Free Marketing Quote",
     description: "Tell us your goals and our team will respond within one business day with the next steps.",
   },

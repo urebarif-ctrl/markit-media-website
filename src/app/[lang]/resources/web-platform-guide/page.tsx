@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/free-tools/free-web-platform-guide",title:"WordPress vs Shopify vs Next.js: Which Platform Is Right for You?",description:"A comprehensive comparison of WordPress, Shopify, and Next.js to help you choose the right web platform for your business based on cost, speed, SEO, and scalability.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "WordPress vs Shopify vs Next.js: Which Platform Is Right for You?",
   description: "A comprehensive comparison of WordPress, Shopify, and Next.js to help you choose the right web platform for your business based on cost, speed, SEO, and scalability.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-web-platform-guide" },

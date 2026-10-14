@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Rate your brand consistency across website, social media, email, print, and ads. Get an overall score, visual breakdown, and actionable recommendations to strengthen your brand.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-brand-consistency-checker" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-brand-consistency-checker",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Brand Consistency Checker",
     description:
       "Audit your brand consistency across up to 5 touchpoints. Rate logo, color, typography, tone, imagery, and messaging for an instant consistency score with recommendations.",

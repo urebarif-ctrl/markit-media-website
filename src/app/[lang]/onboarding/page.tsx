@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "What to expect when you start working with Markit Media. A transparent look at the first 30 days: access setup, discovery, strategy, and launch.",
   alternates: { canonical: "https://themarkitmedia.com/en/onboarding" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/onboarding",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Client Onboarding",
     description: "Your first 30 days with Markit Media: access setup, discovery, strategy, and launch.",
   },

@@ -5,7 +5,7 @@ import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { fullServiceCatalog } from "@/components/location-landing";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/locations",title:"Digital Marketing Agency Locations",description:"Explore Markit Media digital marketing services across the United States, Pakistan, Canada, UAE, UK, Australia and Saudi Arabia.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Digital Marketing Agency Locations",
   description: "Explore Markit Media digital marketing services across the United States, Pakistan, Canada, UAE, UK, Australia and Saudi Arabia.",
   alternates: { canonical: "https://themarkitmedia.com/en/locations" },

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Privacy policy for Markit Media — how we collect, use, and protect your data.",
   alternates: { canonical: "https://themarkitmedia.com/en/privacy-policy" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/privacy-policy",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Privacy Policy",
     description: "How Markit Media collects, uses, and protects your data.",
   },

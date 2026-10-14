@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Free funnel calculator that computes conversion metrics at each marketing funnel stage so you can spot exactly where leads drop off.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-funnel-calculator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-funnel-calculator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Funnel Calculator — Track Every Stage",
     description:
       "Free calculator that computes conversion metrics at each funnel stage so you can spot exactly where leads drop off.",

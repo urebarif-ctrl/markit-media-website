@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "Learn how Markit Media measures, reports, and optimizes marketing performance. Our transparent reporting framework keeps you informed at every step.",
   alternates: { canonical: "https://themarkitmedia.com/en/results" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/results",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "How We Measure Results",
     description:
       "Transparent reporting on marketing performance — revenue metrics, traffic, conversions, and channel results.",

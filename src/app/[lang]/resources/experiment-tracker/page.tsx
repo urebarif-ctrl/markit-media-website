@@ -774,7 +774,9 @@ export default function ExperimentTrackerPage() {
     return (
       <article className="min-h-screen">
         <div className="px-6 lg:px-12 py-32 text-center">
-          <p className="text-base text-neutral-500">Loading...</p>
+          <JsonLd data={{"@context":"https://schema.org","@type":"WebApplication",name:"Marketing Experiment Tracker",description:"Plan, track and score marketing experiments with hypotheses, results and learnings.",url:"https://themarkitmedia.com/en/free-tools/free-experiment-tracker",applicationCategory:"Marketing Tool",operatingSystem:"Web",offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},provider:{"@type":"Organization",name:"Markit Media",url:"https://themarkitmedia.com"}}} />
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1]">Marketing Experiment Tracker</h1>
+          <p className="mt-4 text-base text-neutral-500">Loading...</p>
         </div>
       </article>
     );

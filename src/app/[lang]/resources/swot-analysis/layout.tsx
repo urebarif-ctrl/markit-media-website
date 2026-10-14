@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Build an interactive SWOT analysis with strategic cross-quadrant recommendations using this free tool. Identify strengths, weaknesses, opportunities, and threats clearly.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-swot-analysis" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-swot-analysis",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Interactive SWOT Analysis Builder",
     description:
       "Build a SWOT analysis with cross-quadrant strategic recommendations. Turn strengths, weaknesses, opportunities, and threats into action.",

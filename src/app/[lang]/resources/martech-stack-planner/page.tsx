@@ -722,7 +722,9 @@ export default function MartechStackPlannerPage() {
     return (
       <article className="min-h-screen">
         <div className="px-6 lg:px-12 pt-40 pb-20 text-center">
-          <p className="text-base text-neutral-500">Loading planner...</p>
+          <JsonLd data={{"@context":"https://schema.org","@type":"WebApplication",name:"Martech Stack Planner",description:"Map, cost and prioritise the tools in your marketing technology stack.",url:"https://themarkitmedia.com/en/free-tools/free-martech-stack-planner",applicationCategory:"Marketing Tool",operatingSystem:"Web",offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},provider:{"@type":"Organization",name:"Markit Media",url:"https://themarkitmedia.com"}}} />
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1]">Martech Stack Planner</h1>
+          <p className="mt-4 text-base text-neutral-500">Loading planner...</p>
         </div>
       </article>
     );

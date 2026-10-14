@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Use our free competitor analysis framework to systematically evaluate your competition. Map their channels, positioning, and strategies to find your competitive advantage.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-competitor-analysis" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-competitor-analysis",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Free Competitor Analysis Framework",
     description:
       "Systematically evaluate competitors with structured analysis. Map channels, positioning, and strategies to find your edge.",

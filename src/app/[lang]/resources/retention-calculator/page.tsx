@@ -423,7 +423,9 @@ export default function RetentionCalculatorPage() {
     return (
       <article className="min-h-screen">
         <div className="px-6 lg:px-12 pt-32 pb-20 text-center">
-          <p className="text-base text-neutral-500">Loading calculator...</p>
+          <JsonLd data={{"@context":"https://schema.org","@type":"WebApplication",name:"Customer Retention Calculator",description:"Calculate customer retention rates, churn metrics, lifetime value and revenue impact.",url:"https://themarkitmedia.com/en/free-tools/free-retention-calculator",applicationCategory:"Marketing Tool",operatingSystem:"Web",offers:{"@type":"Offer",price:"0",priceCurrency:"USD"},provider:{"@type":"Organization",name:"Markit Media",url:"https://themarkitmedia.com"}}} />
+          <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1]">Customer Retention Calculator</h1>
+          <p className="mt-4 text-base text-neutral-500">Loading calculator...</p>
         </div>
       </article>
     );

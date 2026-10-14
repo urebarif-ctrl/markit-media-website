@@ -13,6 +13,9 @@ export const metadata: Metadata = {
       "https://themarkitmedia.com/en/services/performance-marketing/meta-ads",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing/meta-ads",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Meta Ads (Facebook & Instagram)",
     description: "Meta Ads management for Facebook and Instagram. Precision audience targeting, creative testing, catalog ads, lead generation forms, and retargeting to g...",
   },

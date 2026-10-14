@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Free email campaign planner that builds complete campaign schedules with subject lines and content frameworks for every send.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-email-campaign-planner" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-email-campaign-planner",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Email Campaign Planner — Plan Every Send",
     description:
       "Free planner that builds complete email campaign schedules with subject lines and content frameworks for every send.",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SubServicePage } from "@/components/sub-service-page";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/services/website-development/website-migration",title:"Website Migration",description:"Move a website between hosts, CMS platforms, frameworks, or domains with a documented migration plan, content and asset checks, analytics continuity, launch QA, and rollback awareness.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Website Migration",
   description: "Move a website between hosts, CMS platforms, frameworks, or domains with a documented migration plan, content and asset checks, analytics continuity, launch QA, and rollback awareness.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/website-development/website-migration" },

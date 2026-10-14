@@ -263,13 +263,25 @@ export function buildLocationMetadata(cityKey:string, serviceKey?:LocalServiceKe
       title: `Digital Marketing Agency in ${p.city}`,
       description: `Digital marketing agency serving ${p.city}. ${p.market.replace(/\.$/, '')}. SEO, PPC, social media, website development, branding, video and more.`,
       alternates: { canonical: `https://themarkitmedia.com/en${base}` },
+      openGraph: {
+        url: `https://themarkitmedia.com/en${base}`,
+        title: `Digital Marketing Agency in ${p.city}`,
+        siteName: "Markit Media",
+        images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
+      },
     };
   }
   const s = localServiceContent[serviceKey];
   return {
-    title: `${s.title} in ${p.city}`,
+    title: serviceKey === "marketing-agency" ? `Full-Service Marketing Agency in ${p.city}` : `${s.title} in ${p.city}`,
     description: `${s.title} serving ${p.city}. ${s.core} Explore the complete service offering, process, related capabilities and local market approach.`,
     alternates: { canonical: `https://themarkitmedia.com/en${base}/${serviceKey}` },
+    openGraph: {
+      url: `https://themarkitmedia.com/en${base}/${serviceKey}`,
+      title: serviceKey === "marketing-agency" ? `Full-Service Marketing Agency in ${p.city}` : `${s.title} in ${p.city}`,
+      siteName: "Markit Media",
+      images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
+    },
   };
 }
 

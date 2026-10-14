@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ToolCTA } from "@/components/tool-cta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/free-tools/free-marketing-trends-2025",title:"Digital Marketing Trends 2025 — What to Watch",description:"The most important digital marketing trends for 2025: AI in marketing, privacy-first strategies, short-form video, zero-click search, and more.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Digital Marketing Trends 2025 — What to Watch",
   description: "The most important digital marketing trends for 2025: AI in marketing, privacy-first strategies, short-form video, zero-click search, and more.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-trends-2025" },

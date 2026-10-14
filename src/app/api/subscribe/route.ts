@@ -1,18 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveFormSubmission } from "@/lib/mongodb";
-
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-
-function getRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-  if (!entry || now > entry.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + 60_000 });
-    return false;
-  }
-  entry.count++;
-  return entry.count > 3;
-}
+import { isRateLimited } from "@/lib/rate-limit";
 
 async function syncSubscriberToKit(email: string): Promise<boolean> {
   const apiKey = process.env.KIT_API_KEY;
@@ -55,7 +43,7 @@ export async function POST(request: NextRequest) {
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       "unknown";
 
-    if (getRateLimit(ip)) {
+    if ((await isRateLimited(`subscribe:${ip}`, 3))) {
       return NextResponse.json(
         { error: "Too many requests. Please try again later." },
         { status: 429 },

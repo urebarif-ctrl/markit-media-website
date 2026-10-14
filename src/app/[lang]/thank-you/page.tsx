@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://themarkitmedia.com/en/thank-you" },
   robots: { index: false, follow: true },
   openGraph: {
+    url: "https://themarkitmedia.com/en/thank-you",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Thank You",
     description: "Thanks for reaching out. We will respond within one business day.",
   },

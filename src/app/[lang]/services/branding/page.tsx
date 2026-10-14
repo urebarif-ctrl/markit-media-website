@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Brand strategy, logo design, visual identity, brand guidelines, and packaging design. Build a cohesive brand that stands out and earns trust.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/branding" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/branding",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Branding & Design",
     description: "Brand strategy, logo design, visual identity, brand guidelines, and packaging design. Build a cohesive brand that stands out and earns trust.",
   },

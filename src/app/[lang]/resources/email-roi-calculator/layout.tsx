@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     "Free email ROI calculator that computes your email marketing return from list size, open rates, and conversion metrics.",
   alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-email-roi-calculator" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/free-tools/free-email-roi-calculator",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Email ROI Calculator — Measure Returns",
     description:
       "Free calculator that computes your email marketing return from list size, open rates, and conversion metrics.",

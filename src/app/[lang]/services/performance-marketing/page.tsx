@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   description: "Performance marketing across Google, Microsoft Ads, Meta, TikTok, LinkedIn, YouTube and retargeting, with measurement and creative testing built in.",
   alternates: { canonical: "https://themarkitmedia.com/en/services/performance-marketing" },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/performance-marketing",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Performance Marketing",
     description: "Results-driven performance marketing: Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads, and PPC management. Maximize ROI with data-backed campaigns.",
   },

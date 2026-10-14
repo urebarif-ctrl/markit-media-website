@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     canonical: "https://themarkitmedia.com/en/services/branding/visual-identity",
   },
   openGraph: {
+    url: "https://themarkitmedia.com/en/services/branding/visual-identity",
+    siteName: "Markit Media",
+    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
     title: "Visual Identity Design Services",
     description: "Comprehensive visual identity systems including color palettes, typography, iconography, and design elements. Markit Media creates cohesive brand visual...",
   },
