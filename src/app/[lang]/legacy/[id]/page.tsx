@@ -15,6 +15,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { UsCallButton } from "@/components/us-call-cta";
+import { CallHippoWidget } from "@/components/callhippo-widget";
 import { SectionDesc, SectionLabel, SectionTitle } from "@/components/section";
 import {
   legacySeoPageById,
@@ -351,6 +352,7 @@ export default async function LegacySeoPage({
 
   return (
     <article>
+      {isUsGuide && <CallHippoWidget />}
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
 
