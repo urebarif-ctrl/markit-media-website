@@ -299,7 +299,7 @@ export default function PrivacyPolicyPage() {
             <p className={P}>
               Markit Media, Karachi, Pakistan<br />
               Email: <Mail /><br />
-              Phone / WhatsApp: <a href="tel:+923002086081" className="text-black font-bold hover:underline">+92 300 2086081</a>
+              Phone / WhatsApp: <a href="tel:+923002086081" className="text-black font-bold hover:underline">+92 300 2086081</a> <br />US phone: <a href="tel:+16065177561" className="text-black font-bold hover:underline">+1 (606) 517-7561</a>
             </p>
           </div>
         </div>
