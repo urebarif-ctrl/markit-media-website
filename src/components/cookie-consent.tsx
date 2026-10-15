@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { CONSENT_KEY, applyConsent, regionRequiresConsent } from "@/lib/consent";
+import { CONSENT_KEY, CONSENT_SOURCE_KEY, applyConsent, globalPrivacyControlOn, regionRequiresConsent } from "@/lib/consent";
 
 export function CookieConsent() {
   const [shouldShow, setShouldShow] = useState<boolean | null>(null);
@@ -15,7 +15,13 @@ export function CookieConsent() {
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout> | undefined;
 
-    if (localStorage.getItem(CONSENT_KEY)) {
+    const stored = localStorage.getItem(CONSENT_KEY);
+    const source = localStorage.getItem(CONSENT_SOURCE_KEY);
+    if (globalPrivacyControlOn() && (!stored || source !== "user")) {
+      // A Global Privacy Control signal is treated as an opt-out, unless the visitor chose otherwise themselves.
+      if (stored !== "dismissed") applyConsent("dismissed", "gpc");
+      setShouldShow(false);
+    } else if (stored) {
       setShouldShow(false);
     } else {
       // Unless CONSENT_MODE requires it, visitors are marked as accepted without showing a banner.
