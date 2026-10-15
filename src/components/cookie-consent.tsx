@@ -18,11 +18,11 @@ export function CookieConsent() {
     if (localStorage.getItem(CONSENT_KEY)) {
       setShouldShow(false);
     } else {
-      // Regions that do not require opt-in are marked as accepted without showing a banner.
+      // Unless CONSENT_MODE requires it, visitors are marked as accepted without showing a banner.
       regionRequiresConsent().then((required) => {
         if (cancelled) return;
         if (!required) {
-          applyConsent("accepted", "region");
+          applyConsent("accepted", "default");
           setShouldShow(false);
           return;
         }

@@ -1,9 +1,15 @@
 // Cookie consent helpers.
 //
 // Tracking (Google tag via Zaraz, GA4, Meta Pixel) is granted when localStorage["cookie-consent"] === "accepted".
-// Visitors from regions that require opt-in consent see the banner and choose. Everyone else is marked
-// "accepted" automatically (source "region") and never sees a banner; they can still opt out with the
-// "Cookie settings" link in the footer.
+//
+// CONSENT_MODE:
+//   "off"       (current, owner decision 15 Oct 2026) no banner for anyone; every visitor is marked "accepted"
+//               automatically (source "default"). The footer "Cookie settings" link remains so any visitor can
+//               opt out, and an opt-out is respected on later visits.
+//   "by-region" banner only for the UK, EEA, Switzerland and Canada (and when the country is unknown).
+//
+// Note: "off" means UK/EEA/Swiss/Canadian visitors are tracked without prior opt-in consent.
+export const CONSENT_MODE: "off" | "by-region" = "off";
 
 export const CONSENT_KEY = "cookie-consent";
 export const CONSENT_SOURCE_KEY = "cookie-consent-source";
@@ -17,6 +23,7 @@ const CONSENT_REQUIRED_COUNTRIES = new Set([
 
 /** True when the visitor's country needs an opt-in banner. Fails safe: unknown means "ask". */
 export async function regionRequiresConsent(): Promise<boolean> {
+  if (CONSENT_MODE === "off") return false;
   try {
     const cached = sessionStorage.getItem(REGION_CACHE_KEY);
     if (cached === "1" || cached === "0") return cached === "1";
@@ -44,7 +51,7 @@ export async function regionRequiresConsent(): Promise<boolean> {
 }
 
 /** Record a choice and tell the tag loader, analytics and pixel. */
-export function applyConsent(value: "accepted" | "dismissed", source: "user" | "region") {
+export function applyConsent(value: "accepted" | "dismissed", source: "user" | "default") {
   localStorage.setItem(CONSENT_KEY, value);
   localStorage.setItem(CONSENT_SOURCE_KEY, source);
   if (value === "dismissed") revokeTracking();
