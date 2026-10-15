@@ -28,7 +28,7 @@
   ],
   "vars": {
     "PRODUCTION_DEPLOY": "true",
-    "OPEN_NEXT_BUILD_ID": "xRFHMfPfF_gV0sdnOOrXk",
+    "OPEN_NEXT_BUILD_ID": "mrkD2Hvsb_6VgkoB4RWov",
     "NEXT_PUBLIC_SITE_URL": "https://themarkitmedia.com",
     "R2_BUCKET_NAME": "markit-media-assets",
     "R2_PUBLIC_URL": "https://media.themarkitmedia.com",
