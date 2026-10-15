@@ -233,7 +233,8 @@ export default function TermsPage() {
             <p className={P}>
               For questions about these terms, contact us at <Mail />.<br />
               Markit Media, Karachi, Pakistan &nbsp;|&nbsp; Phone / WhatsApp:{" "}
-              <a href="tel:+923002086081" className="text-black font-bold hover:underline">+92 300 2086081</a>
+              <a href="tel:+923002086081" className="text-black font-bold hover:underline">+92 300 2086081</a><br />
+              US phone: <a href="tel:+16065177561" className="text-black font-bold hover:underline">+1 (606) 517-7561</a>
             </p>
           </div>
         </div>

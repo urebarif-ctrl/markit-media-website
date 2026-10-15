@@ -14,6 +14,7 @@ import {
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { UsCallButton } from "@/components/us-call-cta";
 import { SectionDesc, SectionLabel, SectionTitle } from "@/components/section";
 import {
   legacySeoPageById,
@@ -310,6 +311,8 @@ export default async function LegacySeoPage({
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const page = legacySeoPageById.get(id);
   if (!page) notFound();
+  // US-focused guides get the US phone number prominently.
+  const isUsGuide = /-usa(-|$)|-in-us-/.test(page.path);
 
   const area = topicArea(page);
   const framework = articleFramework(area);
@@ -381,6 +384,7 @@ export default async function LegacySeoPage({
               <Link href={l("/get-a-quote")} className="inline-flex items-center gap-2 border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
                 Talk to our team
               </Link>
+              {isUsGuide && <UsCallButton />}
             </div>
           </Animate>
         </div>
@@ -518,6 +522,7 @@ export default async function LegacySeoPage({
             <Link href={l("/get-a-quote")} className="border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
               Request a quote
             </Link>
+            {isUsGuide && <UsCallButton />}
           </div>
         </div>
       </section>

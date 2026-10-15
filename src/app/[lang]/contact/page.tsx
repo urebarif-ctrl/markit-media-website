@@ -5,7 +5,8 @@ import { SectionLabel, SectionTitle } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ContactForm } from "./contact-form";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock, Phone } from "lucide-react";
+import { PHONE_US } from "@/lib/contact";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 
 export async function generateMetadata(
@@ -89,6 +90,18 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                       <h3 className="font-bold text-black text-base">Email</h3>
                       <a href="mailto:ciao@themarkitmedia.com" className="text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                         ciao@themarkitmedia.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-black text-white flex items-center justify-center flex-shrink-0">
+                      <Phone size={20} aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-black text-base">Phone (United States)</h3>
+                      <a href={`tel:${PHONE_US.tel}`} className="text-base text-gray-500 hover:text-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                        {PHONE_US.display}
                       </a>
                     </div>
                   </div>

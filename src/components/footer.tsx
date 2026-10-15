@@ -4,6 +4,7 @@ import { Mail, MessageCircle, Phone, ArrowUpRight } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/social";
 import { BrandIcon } from "@/components/brand-icon";
 import { CookieSettingsLink } from "@/components/cookie-settings-link";
+import { PHONE_US } from "@/lib/contact";
 
 interface FooterTranslations {
   footer: Record<string, string>;
@@ -77,6 +78,7 @@ export function Footer({ locale, translations:t }: { locale:string; translations
             <div className="mt-7 space-y-3">
               <a href="mailto:ciao@themarkitmedia.com" className="flex items-center gap-3 text-sm text-gray-200 hover:text-white"><span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><Mail size={17}/></span>ciao@themarkitmedia.com</a>
               <a href="https://wa.me/923002086081" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-gray-200 hover:text-white"><span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><Phone size={17}/></span>+92 300 2086081</a>
+              <a href={`tel:${PHONE_US.tel}`} className="flex items-center gap-3 text-sm text-gray-200 hover:text-white"><span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><Phone size={17}/></span>{PHONE_US.display} <span className="text-gray-500">(US)</span></a>
             </div>
             <div className="flex gap-2.5 mt-7" aria-label="Follow Markit Media">
               {primarySocial.map(s=>{const b=SOCIAL_BRANDS[s.label];return <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label} aria-label={s.label} className={`w-10 h-10 rounded-full ${b.bg} flex items-center justify-center hover:-translate-y-0.5 transition-transform`}><BrandIcon brand={s.label} color={b.iconColor} className="w-[19px] h-[19px]" /></a>})}

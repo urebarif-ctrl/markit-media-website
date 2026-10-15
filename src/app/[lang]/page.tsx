@@ -129,12 +129,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       addressLocality: "Karachi",
       addressCountry: "PK",
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+92-300-208-6081",
-      contactType: "sales",
-      availableLanguage: ["English", "Urdu", "Arabic"],
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+92-300-208-6081",
+        contactType: "sales",
+        availableLanguage: ["English", "Urdu", "Arabic"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+1-606-517-7561",
+        contactType: "sales",
+        areaServed: "US",
+        availableLanguage: ["English"],
+      },
+    ],
     sameAs: SOCIAL_URLS,
     areaServed: markets.map((m) => ({ "@type": "Country", name: m.name })),
     knowsAbout: [
