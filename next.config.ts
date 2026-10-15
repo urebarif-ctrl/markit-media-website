@@ -55,11 +55,11 @@ const nextConfig: NextConfig = {
   async headers() {
     const csp = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://connect.facebook.net",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com",
+      "img-src 'self' data: https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.facebook.com",
       "font-src 'self'",
-      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://region1.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
+      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://region1.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.facebook.com https://connect.facebook.net",
       "frame-src https://www.googletagmanager.com https://www.youtube.com https://td.doubleclick.net",
       "object-src 'none'",
       "base-uri 'self'",

@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 const BackToTop = dynamic(() => import("@/components/back-to-top").then(m => m.BackToTop));
 const CookieConsent = dynamic(() => import("@/components/cookie-consent").then(m => m.CookieConsent));
 const Analytics = dynamic(() => import("@/components/analytics").then(m => m.Analytics));
+const MetaPixel = dynamic(() => import("@/components/meta-pixel").then(m => m.MetaPixel));
 const OutboundTracker = dynamic(() => import("@/components/outbound-tracker").then(m => m.OutboundTracker));
 const ScrollAnimations = dynamic(() => import("@/components/scroll-animations").then(m => m.ScrollAnimations));
 import Script from "next/script";
@@ -131,6 +132,7 @@ export default async function LangLayout({
         <CookieConsent />
         <ScrollAnimations />
         <Analytics />
+        <MetaPixel />
         <OutboundTracker />
         {isProduction && (
           <Script
