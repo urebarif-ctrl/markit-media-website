@@ -16,12 +16,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: ["/"],
         disallow: ["/admin", "/api/", "/ar/", "/ur/"],
       },
+      // AI search, citation and user-initiated fetch bots: allowed so Markit Media can appear in AI answers.
+      // (Training crawlers GPTBot, CCBot, anthropic-ai and Google-Extended stay blocked below.)
       {
-        userAgent: "GPTBot",
-        disallow: ["/"],
+        userAgent: ["OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Claude-SearchBot", "Claude-User"],
+        allow: ["/"],
+        disallow: ["/admin", "/api/", "/ar/", "/ur/"],
       },
       {
-        userAgent: "ChatGPT-User",
+        userAgent: "GPTBot",
         disallow: ["/"],
       },
       {
