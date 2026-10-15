@@ -1,0 +1,46 @@
+name: Roll back Cloudflare Worker (manual, approval-gated)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_id:
+        description: "Worker version ID to restore (see previous-deployment.txt or Cloudflare dashboard)"
+        required: true
+      confirm:
+        description: "Type ROLLBACK to confirm"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: false
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: production
+    steps:
+      - name: Require explicit confirmation
+        if: ${{ github.event.inputs.confirm != 'ROLLBACK' }}
+        run: |
+          echo "Confirmation text must be exactly ROLLBACK."
+          exit 1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --no-audit --no-fund --ignore-scripts
+      - name: Roll back
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler rollback "${{ github.event.inputs.version_id }}" --name markit-media --message "Manual rollback via GitHub Actions (run ${{ github.run_id }})" --yes
+      - name: Smoke test
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -A "rollback-smoke-test" "https://themarkitmedia.com/en")
+          echo "/en -> ${code}"
+          [ "$code" = "200" ]
