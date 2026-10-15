@@ -75,6 +75,8 @@ jobs:
           path: |
             .open-next
             wrangler.jsonc
+          # .open-next is a dot-folder: upload-artifact@v4 skips hidden files unless told otherwise.
+          include-hidden-files: true
           retention-days: 14
           if-no-files-found: error
 
