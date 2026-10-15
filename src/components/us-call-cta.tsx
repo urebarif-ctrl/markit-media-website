@@ -1,5 +1,6 @@
 import { Phone } from "lucide-react";
 import { PHONE_US } from "@/lib/contact";
+import { CallHippoWidget } from "@/components/callhippo-widget";
 
 /** Inline "Call" button, styled to sit next to the primary and secondary buttons on US pages. */
 export function UsCallButton({ dark = false }: { dark?: boolean }) {
@@ -21,6 +22,7 @@ export function UsCallButton({ dark = false }: { dark?: boolean }) {
 export function UsCallBand() {
   return (
     <section aria-label="Call our US line" className="px-6 lg:px-12 py-8 bg-black text-white">
+      <CallHippoWidget />
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/60">US team line</p>

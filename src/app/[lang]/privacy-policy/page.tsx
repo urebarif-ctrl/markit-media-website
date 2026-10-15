@@ -153,6 +153,7 @@ export default function PrivacyPolicyPage() {
                 ["Marketing source details", "The page you landed on, the referring site and campaign (UTM) parameters, saved with your enquiry so we know which marketing works.", "Collected automatically when you submit a form."],
                 ["Technical and usage data", "IP address, browser and device type, approximate location (country or city), pages viewed, clicks, form starts and other events, and cookie or device identifiers.", "Collected automatically by the Site and our analytics and advertising tools."],
                 ["Account and security data", "For people with dashboard accounts: name, email address, login codes, sign-in activity and IP address.", "You or our team create the account; collected when you sign in."],
+                ["Call-back requests", "The phone number you type into the call-back button on our US pages, so we can ring you, and the page you were on.", "You submit it in the call-back button."],
                 ["Communications", "The content of emails, WhatsApp messages and calls (notes) between you and us.", "When you contact us or we contact you."],
               ]}
             />
@@ -173,6 +174,7 @@ export default function PrivacyPolicyPage() {
                 ["Google Ads and Tag Manager", "Measures ad conversions and supports remarketing.", "_gcl_au, _gcl_aw and similar", "About 90 days"],
                 ["Meta Pixel (Meta Platforms)", "Measures visits and ad performance on Facebook and Instagram and builds advertising audiences.", "_fbp, _fbc", "About 90 days"],
                 ["Cloudflare", "Hosting, content delivery, security and privacy-friendly traffic statistics (Web Analytics).", "Security and performance cookies set as needed", "Session to a few days"],
+                ["CallHippo (call-back button, US pages only)", "Provides the call-back button and places the call. It does not load if you have opted out.", "A short-lived widget cookie", "Short-lived"],
                 ["YouTube (Google)", "Plays embedded videos. Google receives your IP address and may set cookies when you play a video.", "Set by youtube.com", "Varies"],
                 ["Our Site", "Remembers your cookie preference.", "cookie-consent, cookie-consent-source (local storage)", "Until you clear your browser data"],
               ]}
@@ -203,6 +205,7 @@ export default function PrivacyPolicyPage() {
                 ["MongoDB (Atlas)", "Database that stores enquiries, briefs, newsletter sign-ups and dashboard records."],
                 ["Resend", "Sending transactional email such as enquiry notifications, acknowledgements and dashboard sign-in codes."],
                 ["Zoho", "Business email and communications."],
+                ["CallHippo", "Our US phone line and call-back button: receives the number you enter and the call details so it can place the call."],
                 ["Google (Analytics, Tag Manager, Ads, YouTube)", "Analytics, advertising measurement and embedded video."],
                 ["Meta Platforms (Meta Pixel, WhatsApp)", "Advertising measurement and audiences; messaging if you contact us on WhatsApp."],
                 ["Team messaging and project tools", "Internal notifications about new enquiries so we can reply quickly."],
