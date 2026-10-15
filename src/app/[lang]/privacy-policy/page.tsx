@@ -38,8 +38,7 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="font-[family-name:var(--font-display)] text-lg font-bold text-black mt-8">3. Cookies</h2>
             <p className="text-base leading-relaxed">
-              We use cookies and similar technologies for analytics, advertising measurement (Google Analytics and Tag Manager, and the Meta Pixel) and to improve your browsing experience. If you visit from the United Kingdom, the European Economic Area, Switzerland or Canada, these are only loaded after you accept our cookie banner. In other regions they load automatically. In every region you can change or withdraw your choice at any time using the Cookie settings link in the footer, and you can manage cookies in your browser settings.
-            </p>
+              We use cookies and similar technologies for analytics, advertising measurement (Google Analytics and Tag Manager, and the Meta Pixel) and to improve your browsing experience. These load automatically when you visit the site. You can opt out at any time using the Cookie settings link in the footer, and you can also manage or block cookies in your browser settings.</p>
 
             <h2 className="font-[family-name:var(--font-display)] text-lg font-bold text-black mt-8">4. Third-Party Services</h2>
             <p className="text-base leading-relaxed">
