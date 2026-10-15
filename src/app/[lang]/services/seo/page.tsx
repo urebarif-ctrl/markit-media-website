@@ -20,9 +20,10 @@ export default function SeoPage() {
     <ServicePage
       platforms={[{"name":"Google Search Console"},{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"},{"name":"Ahrefs"},{"name":"Moz"},{"name":"Screaming Frog"},{"name":"Surfer"},{"name":"Google Tag Manager"}]}
       icon={Search}
-      heroImage="/images/services/seo.jpg"
+      heroImage="/images/services/analytics.jpg"
       blogCategory="SEO"
       title="SEO"
+      heading="SEO Services"
       description="Dominate organic search with a comprehensive SEO strategy. We handle technical SEO, content optimization, local SEO, and link building to grow your organic traffic."
       longDescription="Search engine optimization is a long-term investment in your digital presence. Our SEO team conducts thorough audits, develops keyword strategies, optimizes your technical infrastructure, creates SEO-driven content, and builds high-quality backlinks to improve your rankings and drive qualified traffic."
       subServices={[
