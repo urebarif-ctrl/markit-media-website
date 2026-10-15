@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Mail, MessageCircle, Phone, ArrowUpRight } from "lucide-react";
 import { SOCIAL_LINKS } from "@/lib/social";
 import { BrandIcon } from "@/components/brand-icon";
+import { CookieSettingsLink } from "@/components/cookie-settings-link";
 
 interface FooterTranslations {
   footer: Record<string, string>;
@@ -96,7 +97,7 @@ export function Footer({ locale, translations:t }: { locale:string; translations
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-5 md:items-end md:justify-between">
         <p className="font-[family-name:var(--font-display)] text-2xl lg:text-3xl font-extrabold tracking-tight">Strategy. Search. Creative. Technology.</p>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-gray-500">
-          <span>{t.footer.copyright}</span><Link href={`/${locale}/privacy-policy`} className="hover:text-white">Privacy</Link><Link href={`/${locale}/terms`} className="hover:text-white">Terms</Link>
+          <span>{t.footer.copyright}</span><Link href={`/${locale}/privacy-policy`} className="hover:text-white">Privacy</Link><Link href={`/${locale}/terms`} className="hover:text-white">Terms</Link><CookieSettingsLink className="hover:text-white" />
         </div>
       </div>
     </div>

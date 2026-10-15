@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-
-const STORAGE_KEY = "cookie-consent";
+import { CONSENT_KEY, applyConsent, regionRequiresConsent } from "@/lib/consent";
 
 export function CookieConsent() {
   const [shouldShow, setShouldShow] = useState<boolean | null>(null);
@@ -13,11 +12,35 @@ export function CookieConsent() {
 
   useEffect(() => {
     setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) { setShouldShow(false); return; }
-    setShouldShow(true);
-    const timer = setTimeout(() => setIsVisible(true), 2000);
-    return () => clearTimeout(timer);
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+
+    if (localStorage.getItem(CONSENT_KEY)) {
+      setShouldShow(false);
+    } else {
+      // Regions that do not require opt-in are marked as accepted without showing a banner.
+      regionRequiresConsent().then((required) => {
+        if (cancelled) return;
+        if (!required) {
+          applyConsent("accepted", "region");
+          setShouldShow(false);
+          return;
+        }
+        setShouldShow(true);
+        timer = setTimeout(() => setIsVisible(true), 2000);
+      });
+    }
+
+    function openSettings() {
+      setShouldShow(true);
+      setTimeout(() => setIsVisible(true), 50);
+    }
+    window.addEventListener("open-cookie-settings", openSettings);
+    return () => {
+      cancelled = true;
+      if (timer) clearTimeout(timer);
+      window.removeEventListener("open-cookie-settings", openSettings);
+    };
   }, []);
 
   useEffect(() => {
@@ -42,8 +65,7 @@ export function CookieConsent() {
   }, [isVisible]);
 
   const dismiss = useCallback((value: "accepted" | "dismissed") => {
-    localStorage.setItem(STORAGE_KEY, value);
-    window.dispatchEvent(new Event("cookie-consent-update"));
+    applyConsent(value, "user");
     setIsVisible(false);
     setTimeout(() => setShouldShow(false), 400);
   }, []);
