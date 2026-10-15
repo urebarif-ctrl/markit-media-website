@@ -252,6 +252,8 @@ const nextConfig: NextConfig = {
       { source: "/service-pictorial-mark-logo-designs", destination: "/en/services/branding/logo-design", statusCode: 301 },
       { source: "/service-symbol-logo-designs", destination: "/en/services/branding/logo-design", statusCode: 301 },
       { source: "/service-wordmark-logo-designs", destination: "/en/services/branding/logo-design", statusCode: 301 },
+      // Misspelled legacy URL that still earns impressions; it had no rule and fell through to the homepage.
+      { source: "/serivce-combination-mark-logo-designs", destination: "/en/services/branding/logo-design", statusCode: 301 },
       { source: "/service-video-production", destination: "/en/services/video-production", statusCode: 301 },
       { source: "/service-video-editing", destination: "/en/services/video-production/video-editing", statusCode: 301 },
       { source: "/service-reel-edit", destination: "/en/services/video-production/reels-short-form", statusCode: 301 },
