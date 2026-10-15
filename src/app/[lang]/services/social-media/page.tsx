@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { BrandIcon } from "@/components/brand-icon";
 import type { LucideIcon } from "lucide-react";
 import {
   Share2,
@@ -43,14 +44,15 @@ export const metadata: Metadata = {
   },
 };
 
+// Only platforms this page already states we work across (see the FAQ). Add one here only after the owner confirms work history.
 const platforms = [
-  "Instagram",
-  "Facebook",
-  "TikTok",
-  "LinkedIn",
-  "YouTube",
-  "X",
-  "Pinterest",
+  { name: "Instagram", brand: "instagram" },
+  { name: "Facebook", brand: "facebook" },
+  { name: "TikTok", brand: "tiktok" },
+  { name: "LinkedIn", brand: "linkedin" },
+  { name: "YouTube", brand: "youtube" },
+  { name: "X", brand: "x" },
+  { name: "Pinterest", brand: "pinterest" },
 ];
 
 type ServiceItem = {
@@ -354,10 +356,11 @@ export default async function SocialMediaPage({ params }: { params: Promise<{ la
           <Animate animation="fade-in" delay={150}>
             <div className="relative">
               <Image
-                src="/images/services/social-media.jpg"
-                alt="Social media marketing and content services"
-                width={900}
-                height={700}
+                src="/images/services/social-media-hero.webp"
+                alt="Social media content strategy, creative production, and analytics for brands"
+                width={1600}
+                height={1200}
+                sizes="(min-width: 1024px) 46vw, 100vw"
                 className="w-full aspect-[4/3] object-cover"
                 priority
               />
@@ -371,14 +374,17 @@ export default async function SocialMediaPage({ params }: { params: Promise<{ la
         </div>
       </section>
 
-      <section className="border-y border-gray-200 bg-gray-50 px-6 lg:px-12 py-8" aria-label="Social platforms">
+      <section className="border-y border-gray-200 bg-gray-50 px-6 lg:px-12 py-10" aria-label="Social media platforms we work with">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500 text-center">Platforms we work with</p>
-          <div className="flex flex-wrap justify-center gap-3 mt-5">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500 text-center">Social Media Platforms We Work With</p>
+          <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mt-6 list-none p-0">
             {platforms.map((platform) => (
-              <span key={platform} className="bg-white border border-gray-200 px-5 py-3 text-sm font-bold text-black">{platform}</span>
+              <li key={platform.name} className="bg-white border border-gray-200 min-h-24 flex flex-col items-center justify-center gap-2 px-3 py-4 last:col-span-2 sm:last:col-span-1">
+                <BrandIcon brand={platform.brand} className="h-9 w-9" />
+                <span className="text-sm font-bold text-black">{platform.name}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
