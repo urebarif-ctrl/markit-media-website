@@ -39,3 +39,18 @@ export async function isRateLimited(key: string, limit: number, windowMs = 60_00
     return memoryLimited(key, limit, windowMs);
   }
 }
+
+/** Client IP for rate limiting. cf-connecting-ip is set by Cloudflare and cannot be spoofed by the caller;
+ *  the first X-Forwarded-For entry can be, so only the last entry (added by the nearest proxy) is a fallback. */
+export function clientIp(headers: Headers): string {
+  const cf = headers.get("cf-connecting-ip")?.trim();
+  if (cf) return cf;
+  const real = headers.get("x-real-ip")?.trim();
+  if (real) return real;
+  const xff = headers.get("x-forwarded-for");
+  if (xff) {
+    const parts = xff.split(",").map((x) => x.trim()).filter(Boolean);
+    if (parts.length) return parts[parts.length - 1];
+  }
+  return "unknown";
+}

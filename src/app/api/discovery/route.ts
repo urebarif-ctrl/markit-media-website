@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMongoDb } from "@/lib/mongodb";
-import { isRateLimited } from "@/lib/rate-limit";
+import { clientIp, isRateLimited } from "@/lib/rate-limit";
 
 function clean(value: unknown, max = 500) {
   return String(value || "").trim().slice(0, max);
@@ -13,7 +13,7 @@ function cleanList(value: unknown, maxItems = 20) {
 
 export async function POST(request: NextRequest) {
   try {
-    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const ip = clientIp(request.headers);
     if (await isRateLimited(`discovery:${ip}`, 5)) {
       return NextResponse.json({ error: "Too many requests. Please try again shortly." }, { status: 429 });
     }

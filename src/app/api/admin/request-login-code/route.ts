@@ -1,4 +1,5 @@
 import { randomInt, randomUUID } from "crypto";
+import { clientIp } from "@/lib/rate-limit";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { getMongoDb } from "@/lib/mongodb";
@@ -19,7 +20,7 @@ function maskEmail(email: string) {
 }
 
 function getClientIp(request: NextRequest) {
-  return request.headers.get("x-real-ip") || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  return clientIp(request.headers);
 }
 
 export async function POST(request: NextRequest) {
