@@ -21,6 +21,11 @@ const CONSENT_REQUIRED_COUNTRIES = new Set([
   "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH", "CA",
 ]);
 
+/** Browser-level opt-out signal (Global Privacy Control). */
+export function globalPrivacyControlOn(): boolean {
+  return (navigator as unknown as { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
+}
+
 /** True when the visitor's country needs an opt-in banner. Fails safe: unknown means "ask". */
 export async function regionRequiresConsent(): Promise<boolean> {
   if (CONSENT_MODE === "off") return false;
@@ -51,7 +56,7 @@ export async function regionRequiresConsent(): Promise<boolean> {
 }
 
 /** Record a choice and tell the tag loader, analytics and pixel. */
-export function applyConsent(value: "accepted" | "dismissed", source: "user" | "default") {
+export function applyConsent(value: "accepted" | "dismissed", source: "user" | "default" | "gpc") {
   localStorage.setItem(CONSENT_KEY, value);
   localStorage.setItem(CONSENT_SOURCE_KEY, source);
   if (value === "dismissed") revokeTracking();
