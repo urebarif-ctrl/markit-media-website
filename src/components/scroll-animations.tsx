@@ -17,21 +17,35 @@ export function ScrollAnimations() {
       { threshold: 0, rootMargin: "0px 0px -24px 0px" }
     );
 
+    // Content already on screen when scripts run must stay visible: hiding it and
+    // fading it back in after hydration delays the Largest Contentful Paint.
+    function onScreenNow(el: HTMLElement) {
+      const r = el.getBoundingClientRect();
+      return r.bottom > 0 && r.top < window.innerHeight;
+    }
+
+    function prepare(el: HTMLElement, delay: string, duration: string | null, animation: string | undefined) {
+      if (el.classList.contains("animate-on-scroll") || el.dataset.animateSkip) return;
+      if (onScreenNow(el)) {
+        el.dataset.animateSkip = "1";
+        return;
+      }
+      el.style.setProperty("--anim-delay", delay);
+      if (duration) el.style.setProperty("--anim-duration", duration);
+      el.classList.add("animate-on-scroll", `animate-${animation}`);
+      observer.observe(el);
+    }
+
     function setup() {
       document.querySelectorAll<HTMLElement>("[data-animate]").forEach((el) => {
         const stagger = el.dataset.stagger;
         if (stagger) {
           const items = Array.from(el.children) as HTMLElement[];
           items.forEach((child, i) => {
-            child.style.setProperty("--anim-delay", `${Math.min(i * Number(stagger), 240)}ms`);
-            child.classList.add("animate-on-scroll", `animate-${el.dataset.animate}`);
-            observer.observe(child);
+            prepare(child, `${Math.min(i * Number(stagger), 240)}ms`, null, el.dataset.animate);
           });
         } else {
-          el.style.setProperty("--anim-delay", `${el.dataset.delay || 0}ms`);
-          el.style.setProperty("--anim-duration", `${el.dataset.duration || 700}ms`);
-          el.classList.add("animate-on-scroll", `animate-${el.dataset.animate}`);
-          observer.observe(el);
+          prepare(el, `${el.dataset.delay || 0}ms`, `${el.dataset.duration || 700}ms`, el.dataset.animate);
         }
       });
     }
@@ -39,20 +53,15 @@ export function ScrollAnimations() {
     setup();
 
     const mo = new MutationObserver(() => {
-      document.querySelectorAll<HTMLElement>("[data-animate]:not(.animate-on-scroll)").forEach((el) => {
-        if (el.dataset.stagger) {
+      document.querySelectorAll<HTMLElement>("[data-animate]:not(.animate-on-scroll):not([data-animate-skip])").forEach((el) => {
+        const stagger = el.dataset.stagger;
+        if (stagger) {
           const items = Array.from(el.children) as HTMLElement[];
           items.forEach((child, i) => {
-            if (child.classList.contains("animate-on-scroll")) return;
-            child.style.setProperty("--anim-delay", `${Math.min(i * Number(el.dataset.stagger), 240)}ms`);
-            child.classList.add("animate-on-scroll", `animate-${el.dataset.animate}`);
-            observer.observe(child);
+            prepare(child, `${Math.min(i * Number(stagger), 240)}ms`, null, el.dataset.animate);
           });
         } else {
-          el.style.setProperty("--anim-delay", `${el.dataset.delay || 0}ms`);
-          el.style.setProperty("--anim-duration", `${el.dataset.duration || 700}ms`);
-          el.classList.add("animate-on-scroll", `animate-${el.dataset.animate}`);
-          observer.observe(el);
+          prepare(el, `${el.dataset.delay || 0}ms`, `${el.dataset.duration || 700}ms`, el.dataset.animate);
         }
       });
     });
