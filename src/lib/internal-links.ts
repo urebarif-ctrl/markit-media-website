@@ -8,6 +8,9 @@ const LINK_ALIASES: Record<string, string> = {
   "resources/email-subject-line-tester": "free-tools/free-email-subject-tester",
   "resources/cpc-calculator": "free-tools/free-google-ads-estimator",
   "resources/meta-tag-analyzer": "free-tools/free-meta-description-generator",
+  "resources/brand-tone-of-voice-generator": "free-tools/free-brand-tone-generator",
+  "resources/email-warm-up-planner": "free-tools/free-email-warmup-planner",
+  "resources/pricing-strategy-calculator": "free-tools/free-pricing-calculator",
   "resources/content-brief-builder": "free-tools/free-content-brief-generator",
   "home-decor-interior-design-online-digital-marketing-agency": "industries/interior-design",
 };

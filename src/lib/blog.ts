@@ -1,3 +1,4 @@
+import { legacySeoAliases, retiredLegacyArticleRedirects } from "@/data/legacy-seo-pages";
 import { getDb, isWorkersRuntime } from "./db";
 
 type D1Like = { prepare(sql: string): { bind(...values: unknown[]): { all(): Promise<{ results: unknown[] }> } } };
@@ -36,11 +37,19 @@ export interface BlogPost {
 
 const LISTING_COLUMNS = "id, slug, title, excerpt, cover_image, category, tags, author, status, meta_title, meta_description, og_image, reading_time, noindex, published_at, created_at, updated_at";
 
+// Posts whose slug has a configured redirect must not be linked from lists (links would redirect).
+const REDIRECTED_SLUGS = new Set(
+  [...legacySeoAliases, ...retiredLegacyArticleRedirects]
+    .map((r) => r.source.match(/^\/(?:en\/)?blog\/([^/]+)$/)?.[1])
+    .filter((x): x is string => Boolean(x)),
+);
+const notRedirected = (rows: BlogPost[]) => rows.filter((p) => !REDIRECTED_SLUGS.has(p.slug));
+
 export async function getPublishedPosts(limit = 50, offset = 0): Promise<BlogPost[]> {
-  return queryAll<BlogPost>(
+  return notRedirected(await queryAll<BlogPost>(
     `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND published_at IS NOT NULL ORDER BY published_at DESC LIMIT ? OFFSET ?`,
     [limit, offset],
-  );
+  ));
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
@@ -52,10 +61,10 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 export async function getPostsByCategory(category: string, limit = 50): Promise<BlogPost[]> {
-  return queryAll<BlogPost>(
+  return notRedirected(await queryAll<BlogPost>(
     `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND category = ? ORDER BY published_at DESC LIMIT ?`,
     [category, limit],
-  );
+  ));
 }
 
 export async function getCategoryPostCount(category: string): Promise<number> {
@@ -67,10 +76,10 @@ export async function getCategoryPostCount(category: string): Promise<number> {
 }
 
 export async function getRelatedPosts(slug: string, category: string, limit = 3): Promise<BlogPost[]> {
-  return queryAll<BlogPost>(
+  return notRedirected(await queryAll<BlogPost>(
     `SELECT ${LISTING_COLUMNS}, '' as content FROM blog_posts WHERE status = 'published' AND slug != ? AND category = ? ORDER BY published_at DESC LIMIT ?`,
     [slug, category, limit],
-  );
+  ));
 }
 
 export async function getAllCategories(): Promise<string[]> {

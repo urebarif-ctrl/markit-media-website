@@ -50,7 +50,7 @@ export default function PhotographyPage() {
         { title: "Real Estate", href: "/industries/real-estate" },
         { title: "Fashion", href: "/industries/fashion" },
         { title: "Hospitality", href: "/industries/hospitality" },
-        { title: "Food & Beverage", href: "/industries/food-beverage" },
+        { title: "Food & Beverage", href: "/industries/restaurants" },
       ]}
       relatedServices={[
         { title: "Video Production", href: "/services/video-production" },
