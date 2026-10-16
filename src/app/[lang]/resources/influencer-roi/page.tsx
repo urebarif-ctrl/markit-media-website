@@ -653,7 +653,7 @@ export default function InfluencerRoiPage() {
             {CROSS_LINKS.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={l(link.href)}
                 className="block p-6 border border-gray-200 bg-white hover:border-black transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 min-h-[44px]"
               >
                 <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-black mb-2">

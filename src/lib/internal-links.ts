@@ -7,6 +7,7 @@ const LINK_ALIASES: Record<string, string> = {
   "services/analytics-reporting": "services/marketing-analytics",
   "resources/email-subject-line-tester": "free-tools/free-email-subject-tester",
   "resources/cpc-calculator": "free-tools/free-google-ads-estimator",
+  "resources/meta-tag-analyzer": "free-tools/free-meta-description-generator",
   "resources/content-brief-builder": "free-tools/free-content-brief-generator",
   "home-decor-interior-design-online-digital-marketing-agency": "industries/interior-design",
 };

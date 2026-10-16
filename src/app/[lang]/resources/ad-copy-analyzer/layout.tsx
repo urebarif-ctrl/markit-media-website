@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-ad-copy-analyzer" },
   title: "Ad Copy Analyser | Free Tool",
   description:
     "Analyse your ad copy against best practices for headlines, descriptions, CTAs, and emotional triggers. Get a score and specific improvement suggestions.",

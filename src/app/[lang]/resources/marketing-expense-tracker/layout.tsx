@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-marketing-expense-tracker" },
   title: "Marketing Expense Tracker | Free Tool",
   description:
     "Track marketing expenses by channel, campaign, and month. Visualise spend distribution, monitor budgets, and export reports.",

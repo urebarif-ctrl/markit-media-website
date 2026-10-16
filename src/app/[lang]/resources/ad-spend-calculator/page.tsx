@@ -605,7 +605,7 @@ export default function AdSpendCalculatorPage() {
             ].map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={l(item.href)}
                 className="group bg-white border border-gray-200 hover:border-black/30 transition-all motion-reduce:transition-none p-6 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
               >
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">

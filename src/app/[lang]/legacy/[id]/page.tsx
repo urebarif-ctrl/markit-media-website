@@ -380,7 +380,7 @@ export default async function LegacySeoPage({
               {description}
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
-              <Link href={page.relatedHref} className="inline-flex items-center gap-2 bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">
+              <Link href={l(page.relatedHref)} className="inline-flex items-center gap-2 bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">
                 Explore related expertise <ArrowRight size={17} />
               </Link>
               <Link href={l("/get-a-quote")} className="inline-flex items-center gap-2 border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
@@ -518,7 +518,7 @@ export default async function LegacySeoPage({
             We can review the current setup, identify the highest value gaps and recommend the right mix of strategy, creative, search, media and technology.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-7">
-            <Link href={page.relatedHref} className="bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">
+            <Link href={l(page.relatedHref)} className="bg-black text-white px-6 py-3.5 font-bold hover:bg-gray-800 transition-colors">
               Explore related service
             </Link>
             <Link href={l("/get-a-quote")} className="border border-gray-300 px-6 py-3.5 font-bold hover:border-black transition-colors">
