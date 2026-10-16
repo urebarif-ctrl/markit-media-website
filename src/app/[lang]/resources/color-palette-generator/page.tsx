@@ -347,10 +347,10 @@ export default function ColorPaletteGeneratorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/brand-name-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Generator</Link>
-                <Link href={l("/resources/brand-name-evaluator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Evaluator</Link>
-                <Link href={l("/resources/brand-voice-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Voice Generator</Link>
-                <Link href={l("/resources/brand-voice-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Voice Checker</Link>
+                <Link href={l("/free-tools/free-brand-name-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Generator</Link>
+                <Link href={l("/free-tools/free-brand-name-evaluator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Evaluator</Link>
+                <Link href={l("/free-tools/free-brand-voice-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Voice Generator</Link>
+                <Link href={l("/free-tools/free-brand-voice-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Voice Checker</Link>
           </div>
         </div>
       </section>
@@ -613,10 +613,10 @@ export default function ColorPaletteGeneratorPage() {
           { title: "Digital Marketing", desc: "Amplify your brand across every digital touchpoint.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Channel Recommender", href: "/resources/channel-recommender" },
-          { title: "Channel Selector", href: "/resources/channel-selector" },
-          { title: "Client Onboarding Checklist", href: "/resources/client-onboarding-checklist" },
-          { title: "Client Reporting Dashboard", href: "/resources/client-reporting-dashboard" },
+          { title: "Channel Recommender", href: "/free-tools/free-channel-recommender" },
+          { title: "Channel Selector", href: "/free-tools/free-channel-selector" },
+          { title: "Client Onboarding Checklist", href: "/free-tools/free-client-onboarding-checklist" },
+          { title: "Client Reporting Dashboard", href: "/free-tools/free-client-reporting-dashboard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

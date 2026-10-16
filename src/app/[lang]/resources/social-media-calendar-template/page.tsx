@@ -891,15 +891,15 @@ export default function SocialMediaCalendarTemplatePage() {
       <ToolCTA
         toolName="Social Media Calendar Template"
         services={[
-          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media" },
           { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
           { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Social Content Rater", href: "/resources/social-content-rater" },
-          { title: "Social Media Audit", href: "/resources/social-media-audit" },
-          { title: "Social Media Bio Generator", href: "/resources/social-media-bio-generator" },
-          { title: "Social Media Planner", href: "/resources/social-media-planner" },
+          { title: "Social Content Rater", href: "/free-tools/free-social-content-rater" },
+          { title: "Social Media Audit", href: "/free-tools/free-social-media-audit" },
+          { title: "Social Media Bio Generator", href: "/free-tools/free-social-media-bio-generator" },
+          { title: "Social Media Planner", href: "/free-tools/free-social-media-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

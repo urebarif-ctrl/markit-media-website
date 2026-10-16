@@ -344,10 +344,10 @@ export default function MigrationChecklistPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
-          { title: "Meeting Agenda Builder", href: "/resources/meeting-agenda-builder" },
-          { title: "Meta Description Generator", href: "/resources/meta-description-generator" },
-          { title: "Og Preview", href: "/resources/og-preview" },
+          { title: "Martech Stack Planner", href: "/free-tools/free-martech-stack-planner" },
+          { title: "Meeting Agenda Builder", href: "/free-tools/free-meeting-agenda-builder" },
+          { title: "Meta Description Generator", href: "/free-tools/free-meta-description-generator" },
+          { title: "Og Preview", href: "/free-tools/free-og-preview" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

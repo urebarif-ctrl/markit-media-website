@@ -197,7 +197,7 @@ export default async function MarketingStatistics2026Page({ params }: { params: 
               </p>
               <p className="text-base text-gray-500 leading-relaxed">
                 Looking for the previous year? See our{" "}
-                <Link href={l("/resources/marketing-statistics")} className="text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                <Link href={l("/free-tools/free-marketing-statistics")} className="text-black underline hover:no-underline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   2025 Marketing Statistics
                 </Link>.
               </p>
@@ -230,10 +230,10 @@ export default async function MarketingStatistics2026Page({ params }: { params: 
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Stack Audit", href: "/resources/marketing-stack-audit" },
-          { title: "Marketing Statistics", href: "/resources/marketing-statistics" },
-          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
-          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
+          { title: "Marketing Stack Audit", href: "/free-tools/free-marketing-stack-audit" },
+          { title: "Marketing Statistics", href: "/free-tools/free-marketing-statistics" },
+          { title: "Marketing Timeline Planner", href: "/free-tools/free-marketing-timeline-planner" },
+          { title: "Marketing Trends 2025", href: "/free-tools/free-marketing-trends-2025" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

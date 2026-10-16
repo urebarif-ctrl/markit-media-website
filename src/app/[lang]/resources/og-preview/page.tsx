@@ -283,10 +283,10 @@ export default function OgPreviewPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Meeting Agenda Builder", href: "/resources/meeting-agenda-builder" },
-          { title: "Meta Description Generator", href: "/resources/meta-description-generator" },
-          { title: "Migration Checklist", href: "/resources/migration-checklist" },
-          { title: "Okr Planner", href: "/resources/okr-planner" },
+          { title: "Meeting Agenda Builder", href: "/free-tools/free-meeting-agenda-builder" },
+          { title: "Meta Description Generator", href: "/free-tools/free-meta-description-generator" },
+          { title: "Migration Checklist", href: "/free-tools/free-migration-checklist" },
+          { title: "Okr Planner", href: "/free-tools/free-okr-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

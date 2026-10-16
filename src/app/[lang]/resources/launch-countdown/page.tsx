@@ -651,10 +651,10 @@ export default function LaunchCountdownPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Lead Magnet Generator", href: "/resources/lead-magnet-generator" },
-          { title: "Lead Scoring Calculator", href: "/resources/lead-scoring-calculator" },
-          { title: "Influencer Roi", href: "/resources/influencer-roi" },
-          { title: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
+          { title: "Lead Magnet Generator", href: "/free-tools/free-lead-magnet-generator" },
+          { title: "Lead Scoring Calculator", href: "/free-tools/free-lead-scoring-calculator" },
+          { title: "Influencer Roi", href: "/free-tools/free-influencer-roi" },
+          { title: "Keyword Density Checker", href: "/free-tools/free-keyword-density-checker" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -1345,10 +1345,10 @@ export default function MartechStackPlannerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
-          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
-          { title: "Marketing Trends 2026", href: "/resources/marketing-trends-2026" },
-          { title: "Meeting Agenda Builder", href: "/resources/meeting-agenda-builder" },
+          { title: "Marketing Timeline Planner", href: "/free-tools/free-marketing-timeline-planner" },
+          { title: "Marketing Trends 2025", href: "/free-tools/free-marketing-trends-2025" },
+          { title: "Marketing Trends 2026", href: "/free-tools/free-marketing-trends-2026" },
+          { title: "Meeting Agenda Builder", href: "/free-tools/free-meeting-agenda-builder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

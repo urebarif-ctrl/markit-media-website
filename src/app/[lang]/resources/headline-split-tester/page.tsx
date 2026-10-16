@@ -376,13 +376,13 @@ export default function HeadlineSplitTesterPage() {
         services={[
           { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
           { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
-          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media" },
         ]}
         relatedTools={[
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
-          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
-          { title: "Competitor Pricing Tracker", href: "/resources/competitor-pricing-tracker" },
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
+          { title: "Campaign Debrief", href: "/free-tools/free-campaign-debrief" },
+          { title: "Competitor Pricing Tracker", href: "/free-tools/free-competitor-pricing-tracker" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

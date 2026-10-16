@@ -798,10 +798,10 @@ export default function SlaTrackerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Small Business Guide", href: "/resources/small-business-guide" },
-          { title: "Seo Audit Score", href: "/resources/seo-audit-score" },
-          { title: "Seo Checklist", href: "/resources/seo-checklist" },
-          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
+          { title: "Small Business Guide", href: "/free-tools/free-small-business-guide" },
+          { title: "Seo Audit Score", href: "/free-tools/free-seo-audit-score" },
+          { title: "Seo Checklist", href: "/free-tools/free-seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/free-tools/free-seo-content-optimizer" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

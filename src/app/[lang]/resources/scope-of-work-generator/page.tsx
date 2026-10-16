@@ -1739,10 +1739,10 @@ export default function ScopeOfWorkGeneratorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Schema Generator", href: "/resources/schema-generator" },
-          { title: "Risk Assessment", href: "/resources/risk-assessment" },
-          { title: "Roi Calculator", href: "/resources/roi-calculator" },
-          { title: "Roi Dashboard", href: "/resources/roi-dashboard" },
+          { title: "Schema Generator", href: "/free-tools/free-schema-generator" },
+          { title: "Risk Assessment", href: "/free-tools/free-risk-assessment" },
+          { title: "Roi Calculator", href: "/free-tools/free-roi-calculator" },
+          { title: "Roi Dashboard", href: "/free-tools/free-roi-dashboard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

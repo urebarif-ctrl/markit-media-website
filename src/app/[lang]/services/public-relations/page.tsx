@@ -58,9 +58,9 @@ export default function PublicRelationsPage() {
         { title: "Branding & Design", href: "/services/branding" },
       ]}
       tools={[
-        { title: "Brand Voice Generator", desc: "Define your brand voice for consistent messaging.", href: "/resources/brand-voice-generator" },
-        { title: "Stakeholder Report", desc: "Build professional stakeholder reports.", href: "/resources/stakeholder-report" },
-        { title: "Content Brief Generator", desc: "Create structured briefs for PR content.", href: "/resources/content-brief-generator" },
+        { title: "Brand Voice Generator", desc: "Define your brand voice for consistent messaging.", href: "/free-tools/free-brand-voice-generator" },
+        { title: "Stakeholder Report", desc: "Build professional stakeholder reports.", href: "/free-tools/free-stakeholder-report" },
+        { title: "Content Brief Generator", desc: "Create structured briefs for PR content.", href: "/free-tools/free-content-brief-generator" },
       ]}
     />
   );

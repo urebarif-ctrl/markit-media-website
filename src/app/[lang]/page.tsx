@@ -381,7 +381,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {label:"LinkedIn",href:"/services/performance-marketing/linkedin-ads",src:"/brand/linkedin.svg"},
               {label:"Shopify",href:"/services/shopify",brand:"Shopify"},
               {label:"WordPress",href:"/services/website-development/wordpress",brand:"WordPress"},
-              {label:"Next.js",href:"/services/website-development/nextjs-websites",brand:"Next.js"},
+              {label:"Next.js",href:"/services/website-development/nextjs",brand:"Next.js"},
               {label:"Figma",href:"/en/tools",brand:"Figma"},
               {label:"GA4",href:"/en/tools",brand:"GA4"},
               {label:"Search Console",href:"/en/tools",brand:"Search Console"},
@@ -636,7 +636,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             { label: "Paid Social", title: "Meta", logo: "/brand/meta.svg", href: "/services/performance-marketing/meta-ads", desc: "Facebook and Instagram campaigns, creative testing, lead generation, audience strategy, and performance optimization." },
             { label: "E-commerce", title: "Shopify", brand: "Shopify", href: "/services/shopify", desc: "Store strategy, Shopify builds, merchandising, paid growth, and conversion-focused customer journeys." },
             { label: "CMS", title: "WordPress", brand: "WordPress", href: "/services/website-development/wordpress", desc: "Flexible content-driven builds, landing pages, performance improvements, migrations, and ongoing website support." },
-            { label: "Web Engineering", title: "Next.js", brand: "Next.js", href: "/services/website-development/nextjs-websites", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
+            { label: "Web Engineering", title: "Next.js", brand: "Next.js", href: "/services/website-development/nextjs", desc: "Fast modern websites and applications with component systems, strong technical SEO, analytics, and deployment workflows." },
             { label: "Measurement", title: "Google Analytics", brand: "GA4", href: "/tools", desc: "Event strategy, conversion measurement, attribution context, reporting, and decision-ready performance analysis." },
           ].map(item=><Link key={item.title} href={l(item.href)} className="group relative overflow-hidden border border-gray-200 bg-gray-50 p-7 md:p-8 hover:bg-white hover:border-gray-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none">
             <div className="flex items-start justify-between gap-5">
@@ -709,13 +709,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <Stagger stagger={50} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
             {[
-              { title: "ROI Calculator", tag:"Performance", icon:"↗", desc: "Estimate marketing return from spend, revenue and campaign economics.", example:"Compare a campaign's revenue against media spend before deciding whether to scale.", href: "/resources/roi-calculator" },
-              { title: "Website Grader", tag:"Website", icon:"◎", desc: "Review performance, SEO and UX signals in one practical scorecard.", example:"Spot obvious speed, search and conversion issues before planning a redesign.", href: "/resources/website-grader" },
-              { title: "Headline Analyzer", tag:"Content", icon:"Aa", desc: "Pressure-test headlines for ads, landing pages, blogs and email.", example:"Compare headline options before putting paid traffic behind a landing page.", href: "/resources/headline-analyzer" },
-              { title: "Budget Calculator", tag:"Media Planning", icon:"$", desc: "Build a starting channel allocation around your available marketing budget.", example:"Turn a monthly budget into a practical starting split across acquisition channels.", href: "/resources/budget-calculator" },
-              { title: "SEO Audit Score", tag:"SEO", icon:"⌕", desc: "Check key technical and on-page factors and identify optimization priorities.", example:"Create a prioritized SEO punch list instead of guessing what to fix first.", href: "/resources/seo-audit-score" },
-              { title: "Persona Builder", tag:"Strategy", icon:"◉", desc: "Turn audience assumptions into a more structured buyer-persona brief.", example:"Turn scattered customer notes into a brief your ads, content and sales team can use.", href: "/resources/persona-builder" },
-              { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", example:"Compare competitors side by side before choosing your offer, messaging and channel plan.", href: "/resources/competitor-analysis" },
+              { title: "ROI Calculator", tag:"Performance", icon:"↗", desc: "Estimate marketing return from spend, revenue and campaign economics.", example:"Compare a campaign's revenue against media spend before deciding whether to scale.", href: "/free-tools/free-roi-calculator" },
+              { title: "Website Grader", tag:"Website", icon:"◎", desc: "Review performance, SEO and UX signals in one practical scorecard.", example:"Spot obvious speed, search and conversion issues before planning a redesign.", href: "/free-tools/free-website-grader" },
+              { title: "Headline Analyzer", tag:"Content", icon:"Aa", desc: "Pressure-test headlines for ads, landing pages, blogs and email.", example:"Compare headline options before putting paid traffic behind a landing page.", href: "/free-tools/free-headline-analyzer" },
+              { title: "Budget Calculator", tag:"Media Planning", icon:"$", desc: "Build a starting channel allocation around your available marketing budget.", example:"Turn a monthly budget into a practical starting split across acquisition channels.", href: "/free-tools/free-budget-calculator" },
+              { title: "SEO Audit Score", tag:"SEO", icon:"⌕", desc: "Check key technical and on-page factors and identify optimization priorities.", example:"Create a prioritized SEO punch list instead of guessing what to fix first.", href: "/free-tools/free-seo-audit-score" },
+              { title: "Persona Builder", tag:"Strategy", icon:"◉", desc: "Turn audience assumptions into a more structured buyer-persona brief.", example:"Turn scattered customer notes into a brief your ads, content and sales team can use.", href: "/free-tools/free-persona-builder" },
+              { title: "Competitor Analysis", tag:"Research", icon:"◇", desc: "Organize competitor positioning, channels and market observations.", example:"Compare competitors side by side before choosing your offer, messaging and channel plan.", href: "/free-tools/free-competitor-analysis" },
               { title: "Service Finder Quiz", tag:"Start Here", icon:"→", desc: "Answer a few questions and find the Markit Media services most relevant to you.", example:"Get a faster starting point when you know the goal but not which marketing service fits.", href: "/services/finder" },
             ].map((r) => (
               <Link key={r.href} href={l(r.href)} className="flip-card tool-flip-card group min-h-56 sm:min-h-64 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">

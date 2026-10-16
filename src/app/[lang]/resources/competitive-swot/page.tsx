@@ -895,10 +895,10 @@ export default function CompetitiveSwotPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/competitor-analysis")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Analysis</Link>
-                <Link href={l("/resources/competitor-benchmarking")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Benchmarking</Link>
-                <Link href={l("/resources/competitor-matrix")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Matrix</Link>
-                <Link href={l("/resources/competitor-pricing-tracker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Pricing</Link>
+                <Link href={l("/free-tools/free-competitor-analysis")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Analysis</Link>
+                <Link href={l("/free-tools/free-competitor-benchmarking")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Benchmarking</Link>
+                <Link href={l("/free-tools/free-competitor-matrix")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Matrix</Link>
+                <Link href={l("/free-tools/free-competitor-pricing-tracker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Pricing</Link>
           </div>
         </div>
       </section>
@@ -1123,10 +1123,10 @@ export default function CompetitiveSwotPage() {
           { title: "Performance Marketing", desc: "Win market share with smarter paid media campaigns.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Competitive Gap", href: "/resources/competitive-gap" },
-          { title: "Competitive Swot Analyzer", href: "/resources/competitive-swot-analyzer" },
-          { title: "Competitor Ad Spy", href: "/resources/competitor-ad-spy" },
-          { title: "Competitor Analysis", href: "/resources/competitor-analysis" },
+          { title: "Competitive Gap", href: "/free-tools/free-competitive-gap" },
+          { title: "Competitive Swot Analyzer", href: "/free-tools/free-competitive-swot-analyzer" },
+          { title: "Competitor Ad Spy", href: "/free-tools/free-competitor-ad-spy" },
+          { title: "Competitor Analysis", href: "/free-tools/free-competitor-analysis" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -1131,9 +1131,9 @@ export default function MarketingProposalGeneratorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Maturity", href: "/resources/marketing-maturity" },
-          { title: "Marketing Rfp Template", href: "/resources/marketing-rfp-template" },
-          { title: "Marketing Stack Audit", href: "/resources/marketing-stack-audit" },
+          { title: "Marketing Maturity", href: "/free-tools/free-marketing-maturity" },
+          { title: "Marketing Rfp Template", href: "/free-tools/free-marketing-rfp-template" },
+          { title: "Marketing Stack Audit", href: "/free-tools/free-marketing-stack-audit" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

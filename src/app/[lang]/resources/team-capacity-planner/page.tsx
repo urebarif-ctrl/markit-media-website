@@ -828,9 +828,9 @@ export default function TeamCapacityPlannerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/meeting-agenda-builder")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Meeting Agenda Builder</Link>
-                <Link href={l("/resources/marketing-timeline-planner")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Timeline Planner</Link>
-                <Link href={l("/resources/scope-of-work-generator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Scope of Work Generator</Link>
+                <Link href={l("/free-tools/free-meeting-agenda-builder")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Meeting Agenda Builder</Link>
+                <Link href={l("/free-tools/free-marketing-timeline-planner")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Timeline Planner</Link>
+                <Link href={l("/free-tools/free-scope-of-work-generator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Scope of Work Generator</Link>
           </div>
         </div>
       </section>
@@ -886,10 +886,10 @@ export default function TeamCapacityPlannerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
-          { title: "Startup Marketing Guide", href: "/resources/startup-marketing-guide" },
-          { title: "Tech Stack Advisor", href: "/resources/tech-stack-advisor" },
-          { title: "Utm Builder", href: "/resources/utm-builder" },
+          { title: "Stakeholder Report", href: "/free-tools/free-stakeholder-report" },
+          { title: "Startup Marketing Guide", href: "/free-tools/free-startup-marketing-guide" },
+          { title: "Tech Stack Advisor", href: "/free-tools/free-tech-stack-advisor" },
+          { title: "Utm Builder", href: "/free-tools/free-utm-builder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

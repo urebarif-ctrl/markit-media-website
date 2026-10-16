@@ -226,10 +226,10 @@ export default async function AgencyComparisonPage({ params }: { params: Promise
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator" },
-          { title: "Audience Targeting Worksheet", href: "/resources/audience-targeting-worksheet" },
-          { title: "Ab Test Ideas", href: "/resources/ab-test-ideas" },
-          { title: "Ad Budget Pacing", href: "/resources/ad-budget-pacing" },
+          { title: "Agency Pricing Calculator", href: "/free-tools/free-agency-pricing-calculator" },
+          { title: "Audience Targeting Worksheet", href: "/free-tools/free-audience-targeting-worksheet" },
+          { title: "Ab Test Ideas", href: "/free-tools/free-ab-test-ideas" },
+          { title: "Ad Budget Pacing", href: "/free-tools/free-ad-budget-pacing" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

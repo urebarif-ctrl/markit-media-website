@@ -51,9 +51,9 @@ export default function SeoPage() {
         { q: "Do you offer local SEO?", a: "Yes. We optimize Google Business Profiles, build local citations, manage reviews, and create location-specific content." },
       ]}
       tools={[
-        { title: "SEO Checklist", desc: "Interactive monthly SEO checklist with progress tracking.", href: "/resources/seo-checklist" },
-        { title: "Website Grader", desc: "Evaluate your website across performance, SEO, and accessibility.", href: "/resources/website-grader" },
-        { title: "Keyword Density Checker", desc: "Analyze keyword usage and optimize on-page content.", href: "/resources/keyword-density-checker" },
+        { title: "SEO Checklist", desc: "Interactive monthly SEO checklist with progress tracking.", href: "/free-tools/free-seo-checklist" },
+        { title: "Website Grader", desc: "Evaluate your website across performance, SEO, and accessibility.", href: "/free-tools/free-website-grader" },
+        { title: "Keyword Density Checker", desc: "Analyze keyword usage and optimize on-page content.", href: "/free-tools/free-keyword-density-checker" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },

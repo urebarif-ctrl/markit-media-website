@@ -1035,10 +1035,10 @@ export default function FunnelVisualizerPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Funnel Calculator", href: "/resources/funnel-calculator" },
-          { title: "Email Subject Ab Tester", href: "/resources/email-subject-ab-tester" },
-          { title: "Email Subject Tester", href: "/resources/email-subject-tester" },
-          { title: "Email Warmup Planner", href: "/resources/email-warmup-planner" },
+          { title: "Funnel Calculator", href: "/free-tools/free-funnel-calculator" },
+          { title: "Email Subject Ab Tester", href: "/free-tools/free-email-subject-ab-tester" },
+          { title: "Email Subject Tester", href: "/free-tools/free-email-subject-tester" },
+          { title: "Email Warmup Planner", href: "/free-tools/free-email-warmup-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

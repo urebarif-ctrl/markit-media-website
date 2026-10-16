@@ -58,9 +58,9 @@ export default function PhotographyPage() {
         { title: "Social Media", href: "/services/social-media" },
       ]}
       tools={[
-        { title: "Image Size Guide", desc: "Optimal image sizes for every platform.", href: "/resources/image-size-guide" },
-        { title: "Brand Guidelines Checklist", desc: "Ensure visual consistency across all shoots.", href: "/resources/brand-guidelines-checklist" },
-        { title: "Content Calendar", desc: "Plan your visual content schedule.", href: "/resources/content-calendar" },
+        { title: "Image Size Guide", desc: "Optimal image sizes for every platform.", href: "/free-tools/free-image-size-guide" },
+        { title: "Brand Guidelines Checklist", desc: "Ensure visual consistency across all shoots.", href: "/free-tools/free-brand-guidelines-checklist" },
+        { title: "Content Calendar", desc: "Plan your visual content schedule.", href: "/free-tools/free-content-calendar" },
       ]}
     />
   );

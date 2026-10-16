@@ -163,17 +163,17 @@ const TIPS = [
 
 const CROSS_LINKS = [
   {
-    href: "/resources/social-media-roi",
+    href: "/free-tools/free-social-media-roi",
     label: "Social Media ROI Calculator",
     desc: "Measure the return on your overall social media investment.",
   },
   {
-    href: "/resources/social-media-planner",
+    href: "/free-tools/free-social-media-planner",
     label: "Social Media Planner",
     desc: "Plan and organize your social media content calendar.",
   },
   {
-    href: "/resources/content-roi-calculator",
+    href: "/free-tools/free-content-roi-calculator",
     label: "Content ROI Calculator",
     desc: "Calculate the return on your content marketing efforts.",
   },
@@ -695,10 +695,10 @@ export default function InfluencerRoiPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Kpi Builder", href: "/resources/kpi-builder" },
-          { title: "Kpi Dashboard", href: "/resources/kpi-dashboard" },
-          { title: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
-          { title: "Hashtag Generator", href: "/resources/hashtag-generator" },
+          { title: "Kpi Builder", href: "/free-tools/free-kpi-builder" },
+          { title: "Kpi Dashboard", href: "/free-tools/free-kpi-dashboard" },
+          { title: "Google Ads Estimator", href: "/free-tools/free-google-ads-estimator" },
+          { title: "Hashtag Generator", href: "/free-tools/free-hashtag-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

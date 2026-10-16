@@ -67,9 +67,9 @@ export default function AiPage() {
         { title: "Performance Marketing", href: "/services/performance-marketing" },
       ]}
       tools={[
-        { title: "Marketing Audit Scorecard", desc: "Evaluate your marketing across 8 categories.", href: "/resources/marketing-audit-scorecard" },
-        { title: "Channel Recommender", desc: "Find the best channels for your business.", href: "/resources/channel-recommender" },
-        { title: "Tech Stack Advisor", desc: "Get recommendations for your marketing tech stack.", href: "/resources/tech-stack-advisor" },
+        { title: "Marketing Audit Scorecard", desc: "Evaluate your marketing across 8 categories.", href: "/free-tools/free-marketing-audit-scorecard" },
+        { title: "Channel Recommender", desc: "Find the best channels for your business.", href: "/free-tools/free-channel-recommender" },
+        { title: "Tech Stack Advisor", desc: "Get recommendations for your marketing tech stack.", href: "/free-tools/free-tech-stack-advisor" },
       ]}
     />
   );

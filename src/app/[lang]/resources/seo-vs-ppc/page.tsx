@@ -208,9 +208,9 @@ export default async function SEOvsPPCPage({ params }: { params: Promise<{ lang:
           { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Seo Checklist", href: "/resources/seo-checklist" },
-          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
-          { title: "Seo Gap Finder", href: "/resources/seo-gap-finder" },
+          { title: "Seo Checklist", href: "/free-tools/free-seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/free-tools/free-seo-content-optimizer" },
+          { title: "Seo Gap Finder", href: "/free-tools/free-seo-gap-finder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

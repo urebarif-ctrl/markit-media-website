@@ -54,9 +54,9 @@ export default function WebsiteDevelopmentPage() {
         { q: "Do you offer ongoing maintenance?", a: "Yes. We offer maintenance packages that include security updates, performance monitoring, content updates, and technical support." },
       ]}
       tools={[
-        { title: "Website Grader", desc: "Evaluate your site across performance, SEO, and UX.", href: "/resources/website-grader" },
-        { title: "Speed Test", desc: "Measure and optimize your website loading speed.", href: "/resources/speed-test" },
-        { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/resources/website-heuristic-evaluator" },
+        { title: "Website Grader", desc: "Evaluate your site across performance, SEO, and UX.", href: "/free-tools/free-website-grader" },
+        { title: "Speed Test", desc: "Measure and optimize your website loading speed.", href: "/free-tools/free-speed-test" },
+        { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/free-tools/free-website-heuristic-evaluator" },
       ]}
       portfolio={[
         { client: "Elite", desc: "Custom website development with professional design and social integration.", href: "/work/elite" },

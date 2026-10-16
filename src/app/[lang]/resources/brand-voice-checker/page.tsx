@@ -594,10 +594,10 @@ export default function BrandVoiceCheckerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/brand-name-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Generator</Link>
-                <Link href={l("/resources/brand-name-evaluator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Evaluator</Link>
-                <Link href={l("/resources/brand-voice-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Voice Generator</Link>
-                <Link href={l("/resources/brand-tone-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Tone Generator</Link>
+                <Link href={l("/free-tools/free-brand-name-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Generator</Link>
+                <Link href={l("/free-tools/free-brand-name-evaluator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Name Evaluator</Link>
+                <Link href={l("/free-tools/free-brand-voice-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Voice Generator</Link>
+                <Link href={l("/free-tools/free-brand-tone-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Brand Tone Generator</Link>
           </div>
         </div>
       </section>
@@ -1131,10 +1131,10 @@ export default function BrandVoiceCheckerPage() {
           { title: "Digital Marketing", desc: "Amplify your brand across every digital touchpoint.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Brand Name Generator", href: "/resources/brand-name-generator" },
-          { title: "Brand Positioning", href: "/resources/brand-positioning" },
-          { title: "Brand Tone Generator", href: "/resources/brand-tone-generator" },
-          { title: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
+          { title: "Brand Name Generator", href: "/free-tools/free-brand-name-generator" },
+          { title: "Brand Positioning", href: "/free-tools/free-brand-positioning" },
+          { title: "Brand Tone Generator", href: "/free-tools/free-brand-tone-generator" },
+          { title: "Brand Voice Generator", href: "/free-tools/free-brand-voice-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

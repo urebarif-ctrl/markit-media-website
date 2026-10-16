@@ -219,10 +219,10 @@ export default function ROICalculatorPage() {
           { title: "Digital Marketing", desc: "Full-stack marketing strategy, analytics, and optimization to hit your revenue targets.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "ROI Dashboard", href: "/resources/roi-dashboard" },
-          { title: "ROI Forecaster", href: "/resources/roi-forecaster" },
-          { title: "Marketing ROI Report", href: "/resources/marketing-roi-report" },
-          { title: "Budget Calculator", href: "/resources/budget-calculator" },
+          { title: "ROI Dashboard", href: "/free-tools/free-roi-dashboard" },
+          { title: "ROI Forecaster", href: "/free-tools/free-roi-forecaster" },
+          { title: "Marketing ROI Report", href: "/free-tools/free-marketing-roi-report" },
+          { title: "Budget Calculator", href: "/free-tools/free-budget-calculator" },
         ]}
         relatedBlog={[
           { title: "How to Calculate Marketing ROI", href: "/blog" },

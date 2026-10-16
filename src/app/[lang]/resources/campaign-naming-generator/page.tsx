@@ -1028,10 +1028,10 @@ export default function CampaignNamingGeneratorPage() {
           { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Campaign Brief Builder", href: "/resources/campaign-brief-builder" },
-          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
-          { title: "Campaign Naming Convention", href: "/resources/campaign-naming-convention" },
-          { title: "Campaign Tracker", href: "/resources/campaign-tracker" },
+          { title: "Campaign Brief Builder", href: "/free-tools/free-campaign-brief-builder" },
+          { title: "Campaign Debrief", href: "/free-tools/free-campaign-debrief" },
+          { title: "Campaign Naming Convention", href: "/free-tools/free-campaign-naming-convention" },
+          { title: "Campaign Tracker", href: "/free-tools/free-campaign-tracker" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

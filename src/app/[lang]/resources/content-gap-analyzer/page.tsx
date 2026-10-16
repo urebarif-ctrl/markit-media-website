@@ -792,13 +792,13 @@ export default function ContentGapAnalyzerPage() {
         services={[
           { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
           { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
-          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media" },
         ]}
         relatedTools={[
-          { title: "Content Brief", href: "/resources/content-brief" },
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
-          { title: "Content Calendar", href: "/resources/content-calendar" },
-          { title: "Content Gap Finder", href: "/resources/content-gap-finder" },
+          { title: "Content Brief", href: "/free-tools/free-content-brief" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
+          { title: "Content Calendar", href: "/free-tools/free-content-calendar" },
+          { title: "Content Gap Finder", href: "/free-tools/free-content-gap-finder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

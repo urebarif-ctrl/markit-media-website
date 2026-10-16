@@ -114,7 +114,7 @@ export default async function MarketingTrends2025Page({ params }: { params: Prom
       <section aria-label="Guide &middot; 2025 Edition" className="px-6 lg:px-12 pt-6 pb-4">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
-            <Link href={l("/resources/marketing-trends-2026")} className="block bg-black text-white px-6 py-4 hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+            <Link href={l("/free-tools/free-marketing-trends-2026")} className="block bg-black text-white px-6 py-4 hover:bg-gray-900 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
               <span className="text-base font-bold">Looking for the latest?</span>{" "}
               <span className="text-base text-gray-300">Read our 2026 Marketing Trends &rarr;</span>
             </Link>
@@ -208,10 +208,10 @@ export default async function MarketingTrends2025Page({ params }: { params: Prom
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Statistics", href: "/resources/marketing-statistics" },
-          { title: "Marketing Statistics 2026", href: "/resources/marketing-statistics-2026" },
-          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
-          { title: "Marketing Trends 2026", href: "/resources/marketing-trends-2026" },
+          { title: "Marketing Statistics", href: "/free-tools/free-marketing-statistics" },
+          { title: "Marketing Statistics 2026", href: "/free-tools/free-marketing-statistics-2026" },
+          { title: "Marketing Timeline Planner", href: "/free-tools/free-marketing-timeline-planner" },
+          { title: "Marketing Trends 2026", href: "/free-tools/free-marketing-trends-2026" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

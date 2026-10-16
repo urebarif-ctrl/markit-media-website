@@ -201,8 +201,8 @@ export default async function PricingPage({ params }: { params: Promise<{ lang: 
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-3">
               {[
-                { label: "ROI Calculator", href: "/resources/roi-calculator" },
-                { label: "Budget Planner", href: "/resources/marketing-budget-planner" },
+                { label: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+                { label: "Budget Planner", href: "/free-tools/free-marketing-budget-planner" },
                 { label: "Service Finder Quiz", href: "/services/finder" },
                 { label: "Our Process", href: "/process" },
                 { label: "Client Onboarding", href: "/onboarding" },

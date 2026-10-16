@@ -72,8 +72,8 @@ export default function ShopifyServicesPage() {
         { title: "SEO", href: "/services/seo" },
       ]}
       tools={[
-        { title: "ROI Calculator", desc: "Model marketing return before increasing spend.", href: "/resources/roi-calculator" },
-        { title: "Website Grader", desc: "Review website performance, SEO and UX fundamentals.", href: "/resources/website-grader" },
+        { title: "ROI Calculator", desc: "Model marketing return before increasing spend.", href: "/free-tools/free-roi-calculator" },
+        { title: "Website Grader", desc: "Review website performance, SEO and UX fundamentals.", href: "/free-tools/free-website-grader" },
       ]}
       industries={[
         { title: "E-commerce", href: "/industries/ecommerce" },

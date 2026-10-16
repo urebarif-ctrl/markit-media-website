@@ -1076,10 +1076,10 @@ export default function MarketingAuditScorecardPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
-          { title: "Kpi Dashboard", href: "/resources/kpi-dashboard" },
-          { title: "Landing Page Grader", href: "/resources/landing-page-grader" },
-          { title: "Launch Countdown", href: "/resources/launch-countdown" },
+          { title: "Marketing Budget Planner", href: "/free-tools/free-marketing-budget-planner" },
+          { title: "Kpi Dashboard", href: "/free-tools/free-kpi-dashboard" },
+          { title: "Landing Page Grader", href: "/free-tools/free-landing-page-grader" },
+          { title: "Launch Countdown", href: "/free-tools/free-launch-countdown" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

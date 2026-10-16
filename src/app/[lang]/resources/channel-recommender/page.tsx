@@ -1646,9 +1646,9 @@ export default function ChannelRecommenderPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Channel Mix Modeller", href: "/resources/channel-mix-modeller" },
-          { title: "Channel Selector", href: "/resources/channel-selector" },
-          { title: "Client Onboarding Checklist", href: "/resources/client-onboarding-checklist" },
+          { title: "Channel Mix Modeller", href: "/free-tools/free-channel-mix-modeller" },
+          { title: "Channel Selector", href: "/free-tools/free-channel-selector" },
+          { title: "Client Onboarding Checklist", href: "/free-tools/free-client-onboarding-checklist" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

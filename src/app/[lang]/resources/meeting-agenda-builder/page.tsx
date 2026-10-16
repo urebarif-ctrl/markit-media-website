@@ -1012,10 +1012,10 @@ export default function MeetingAgendaBuilderPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
-          { title: "Marketing Trends 2026", href: "/resources/marketing-trends-2026" },
-          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
-          { title: "Meta Description Generator", href: "/resources/meta-description-generator" },
+          { title: "Marketing Trends 2025", href: "/free-tools/free-marketing-trends-2025" },
+          { title: "Marketing Trends 2026", href: "/free-tools/free-marketing-trends-2026" },
+          { title: "Martech Stack Planner", href: "/free-tools/free-martech-stack-planner" },
+          { title: "Meta Description Generator", href: "/free-tools/free-meta-description-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

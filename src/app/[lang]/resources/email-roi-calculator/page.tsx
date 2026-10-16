@@ -222,10 +222,10 @@ export default function EmailRoiCalculatorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/email-subject-tester")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Subject Tester</Link>
-                <Link href={l("/resources/email-campaign-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Campaign Planner</Link>
-                <Link href={l("/resources/email-sequence-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Sequence Planner</Link>
-                <Link href={l("/resources/email-deliverability")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Deliverability</Link>
+                <Link href={l("/free-tools/free-email-subject-tester")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Subject Tester</Link>
+                <Link href={l("/free-tools/free-email-campaign-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Campaign Planner</Link>
+                <Link href={l("/free-tools/free-email-sequence-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Sequence Planner</Link>
+                <Link href={l("/free-tools/free-email-deliverability")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Email Deliverability</Link>
           </div>
         </div>
       </section>
@@ -249,10 +249,10 @@ export default function EmailRoiCalculatorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns that fill your email funnel with qualified leads.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Email Campaign Planner", href: "/resources/email-campaign-planner" },
-          { title: "Email Deliverability", href: "/resources/email-deliverability" },
-          { title: "Email Health Checker", href: "/resources/email-health-checker" },
-          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
+          { title: "Email Campaign Planner", href: "/free-tools/free-email-campaign-planner" },
+          { title: "Email Deliverability", href: "/free-tools/free-email-deliverability" },
+          { title: "Email Health Checker", href: "/free-tools/free-email-health-checker" },
+          { title: "Email Sequence Planner", href: "/free-tools/free-email-sequence-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

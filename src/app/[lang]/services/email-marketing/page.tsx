@@ -55,9 +55,9 @@ export default function EmailMarketingPage() {
         { q: "How often should we send emails?", a: "Frequency depends on your audience and content. Most businesses see good results with 1-4 emails per week, but we test and adjust based on engagement data." },
       ]}
       tools={[
-        { title: "Email Subject Line Tester", desc: "A/B test and score your email subject lines.", href: "/resources/email-subject-ab-tester" },
-        { title: "Email Warm-Up Planner", desc: "Plan your email warm-up schedule for new domains.", href: "/resources/email-warmup-planner" },
-        { title: "Email ROI Calculator", desc: "Calculate returns from your email marketing campaigns.", href: "/resources/email-roi-calculator" },
+        { title: "Email Subject Line Tester", desc: "A/B test and score your email subject lines.", href: "/free-tools/free-email-subject-ab-tester" },
+        { title: "Email Warm-Up Planner", desc: "Plan your email warm-up schedule for new domains.", href: "/free-tools/free-email-warmup-planner" },
+        { title: "Email ROI Calculator", desc: "Calculate returns from your email marketing campaigns.", href: "/free-tools/free-email-roi-calculator" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },

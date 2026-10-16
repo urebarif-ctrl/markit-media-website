@@ -47,9 +47,9 @@ export default function ContentMarketingPage() {
         { q: "Can you write for technical or niche industries?", a: "Yes. Our writers research thoroughly and collaborate with your subject matter experts to produce accurate content for specialized industries." },
       ]}
       tools={[
-        { title: "Content Calendar", desc: "Plan and organize your content publishing schedule.", href: "/resources/content-calendar" },
-        { title: "Content Brief Generator", desc: "Create structured content briefs for writers.", href: "/resources/content-brief-generator" },
-        { title: "Headline Analyzer", desc: "Score and optimize your headlines for engagement.", href: "/resources/headline-analyzer" },
+        { title: "Content Calendar", desc: "Plan and organize your content publishing schedule.", href: "/free-tools/free-content-calendar" },
+        { title: "Content Brief Generator", desc: "Create structured content briefs for writers.", href: "/free-tools/free-content-brief-generator" },
+        { title: "Headline Analyzer", desc: "Score and optimize your headlines for engagement.", href: "/free-tools/free-headline-analyzer" },
       ]}
       industries={[
         { title: "SaaS", href: "/industries/saas" },

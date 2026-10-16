@@ -53,9 +53,9 @@ export default function PerformanceMarketingPage() {
         { q: "Do you create the ad creatives?", a: "Yes, our team handles copywriting, creative design, and video production for your campaigns." },
       ]}
       tools={[
-        { title: "Ad Spend Calculator", desc: "Estimate costs and projected results for your ad campaigns.", href: "/resources/ad-spend-calculator" },
-        { title: "Ad Budget Pacing", desc: "Track campaign pacing and forecast end-of-month spend.", href: "/resources/ad-budget-pacing" },
-        { title: "ROI Calculator", desc: "Calculate the potential return on your marketing investment.", href: "/resources/roi-calculator" },
+        { title: "Ad Spend Calculator", desc: "Estimate costs and projected results for your ad campaigns.", href: "/free-tools/free-ad-spend-calculator" },
+        { title: "Ad Budget Pacing", desc: "Track campaign pacing and forecast end-of-month spend.", href: "/free-tools/free-ad-budget-pacing" },
+        { title: "ROI Calculator", desc: "Calculate the potential return on your marketing investment.", href: "/free-tools/free-roi-calculator" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },

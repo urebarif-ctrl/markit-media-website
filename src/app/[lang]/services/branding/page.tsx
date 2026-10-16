@@ -47,9 +47,9 @@ export default function BrandingPage() {
         { q: "Do you design marketing materials too?", a: "Yes. Once your brand identity is established, we can design business cards, brochures, social media templates, presentations, and any other collateral you need." },
       ]}
       tools={[
-        { title: "Brand Voice Generator", desc: "Define your brand voice and tone of voice guidelines.", href: "/resources/brand-voice-generator" },
-        { title: "Brand Name Generator", desc: "Generate and evaluate brand name ideas.", href: "/resources/brand-name-generator" },
-        { title: "Color Palette Generator", desc: "Create cohesive brand color palettes.", href: "/resources/color-palette-generator" },
+        { title: "Brand Voice Generator", desc: "Define your brand voice and tone of voice guidelines.", href: "/free-tools/free-brand-voice-generator" },
+        { title: "Brand Name Generator", desc: "Generate and evaluate brand name ideas.", href: "/free-tools/free-brand-name-generator" },
+        { title: "Color Palette Generator", desc: "Create cohesive brand color palettes.", href: "/free-tools/free-color-palette-generator" },
       ]}
       portfolio={[
         { client: "Logo Folio", desc: "7 professional logo animations across energy, tech, F&B, and fashion brands.", href: "/work/logo-folio" },

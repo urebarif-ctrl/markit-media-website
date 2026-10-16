@@ -928,10 +928,10 @@ export default function ContentGapFinderPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/content-calendar")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Calendar</Link>
-                <Link href={l("/resources/content-brief-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Brief Generator</Link>
-                <Link href={l("/resources/content-roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content ROI Calculator</Link>
-                <Link href={l("/resources/content-pillar-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Pillar Planner</Link>
+                <Link href={l("/free-tools/free-content-calendar")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Calendar</Link>
+                <Link href={l("/free-tools/free-content-brief-generator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Brief Generator</Link>
+                <Link href={l("/free-tools/free-content-roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content ROI Calculator</Link>
+                <Link href={l("/free-tools/free-content-pillar-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Content Pillar Planner</Link>
           </div>
         </div>
       </section>
@@ -1223,13 +1223,13 @@ export default function ContentGapFinderPage() {
         services={[
           { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
           { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
-          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media" },
         ]}
         relatedTools={[
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
-          { title: "Content Calendar", href: "/resources/content-calendar" },
-          { title: "Content Gap Analyzer", href: "/resources/content-gap-analyzer" },
-          { title: "Content Performance Scorecard", href: "/resources/content-performance-scorecard" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
+          { title: "Content Calendar", href: "/free-tools/free-content-calendar" },
+          { title: "Content Gap Analyzer", href: "/free-tools/free-content-gap-analyzer" },
+          { title: "Content Performance Scorecard", href: "/free-tools/free-content-performance-scorecard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

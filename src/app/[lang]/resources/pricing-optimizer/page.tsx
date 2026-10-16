@@ -911,10 +911,10 @@ export default function PricingOptimizerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Persona Workshop", href: "/resources/persona-workshop" },
-          { title: "Pricing Calculator", href: "/resources/pricing-calculator" },
-          { title: "Pricing Page Analyzer", href: "/resources/pricing-page-analyzer" },
-          { title: "Quarterly Review", href: "/resources/quarterly-review" },
+          { title: "Persona Workshop", href: "/free-tools/free-persona-workshop" },
+          { title: "Pricing Calculator", href: "/free-tools/free-pricing-calculator" },
+          { title: "Pricing Page Analyzer", href: "/free-tools/free-pricing-page-analyzer" },
+          { title: "Quarterly Review", href: "/free-tools/free-quarterly-review" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

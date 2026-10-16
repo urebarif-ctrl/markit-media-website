@@ -585,10 +585,10 @@ export default function MarketingExpenseTrackerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/marketing-budget-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Planner</Link>
-                <Link href={l("/resources/budget-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Calculator</Link>
-                <Link href={l("/resources/budget-allocator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Allocator</Link>
-                <Link href={l("/resources/pricing-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Pricing Calculator</Link>
+                <Link href={l("/free-tools/free-marketing-budget-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Planner</Link>
+                <Link href={l("/free-tools/free-budget-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Calculator</Link>
+                <Link href={l("/free-tools/free-budget-allocator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Budget Allocator</Link>
+                <Link href={l("/free-tools/free-pricing-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Pricing Calculator</Link>
           </div>
         </div>
       </section>
@@ -601,10 +601,10 @@ export default function MarketingExpenseTrackerPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
-          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
-          { title: "Competitor Pricing Tracker", href: "/resources/competitor-pricing-tracker" },
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
+          { title: "Campaign Debrief", href: "/free-tools/free-campaign-debrief" },
+          { title: "Competitor Pricing Tracker", href: "/free-tools/free-competitor-pricing-tracker" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

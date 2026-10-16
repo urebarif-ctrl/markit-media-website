@@ -348,10 +348,10 @@ export default function CompetitorPricingTrackerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/competitor-analysis")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Analysis</Link>
-                <Link href={l("/resources/competitor-benchmarking")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Benchmarking</Link>
-                <Link href={l("/resources/competitor-matrix")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Matrix</Link>
-                <Link href={l("/resources/competitive-gap")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitive Gap</Link>
+                <Link href={l("/free-tools/free-competitor-analysis")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Analysis</Link>
+                <Link href={l("/free-tools/free-competitor-benchmarking")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Benchmarking</Link>
+                <Link href={l("/free-tools/free-competitor-matrix")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitor Matrix</Link>
+                <Link href={l("/free-tools/free-competitive-gap")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Competitive Gap</Link>
           </div>
         </div>
       </section>
@@ -364,10 +364,10 @@ export default function CompetitorPricingTrackerPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
-          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
-          { title: "Customer Journey Builder", href: "/resources/customer-journey-builder" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
+          { title: "Campaign Debrief", href: "/free-tools/free-campaign-debrief" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
+          { title: "Customer Journey Builder", href: "/free-tools/free-customer-journey-builder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

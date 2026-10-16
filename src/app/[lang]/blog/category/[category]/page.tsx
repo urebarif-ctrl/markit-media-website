@@ -72,60 +72,60 @@ const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
 
 const CATEGORY_TOOLS: Record<string, { label: string; href: string }[]> = {
   SEO: [
-    { label: "SEO Health Check", href: "/resources/seo-checklist" },
-    { label: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
+    { label: "SEO Health Check", href: "/free-tools/free-seo-checklist" },
+    { label: "Keyword Density Checker", href: "/free-tools/free-keyword-density-checker" },
   ],
   "Digital Marketing": [
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+    { label: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+    { label: "Marketing Budget Planner", href: "/free-tools/free-marketing-budget-planner" },
   ],
   "Social Media": [
-    { label: "Social Media Audit", href: "/resources/social-media-audit" },
-    { label: "Hashtag Generator", href: "/resources/hashtag-generator" },
+    { label: "Social Media Audit", href: "/free-tools/free-social-media-audit" },
+    { label: "Hashtag Generator", href: "/free-tools/free-hashtag-generator" },
   ],
   "Content Marketing": [
-    { label: "Content Brief Generator", href: "/resources/content-brief" },
-    { label: "Headline Analyzer", href: "/resources/headline-analyzer" },
+    { label: "Content Brief Generator", href: "/free-tools/free-content-brief" },
+    { label: "Headline Analyzer", href: "/free-tools/free-headline-analyzer" },
   ],
   "Email Marketing": [
-    { label: "Email Deliverability Checker", href: "/resources/email-deliverability" },
-    { label: "Email Subject Line Tester", href: "/resources/email-subject-tester" },
+    { label: "Email Deliverability Checker", href: "/free-tools/free-email-deliverability" },
+    { label: "Email Subject Line Tester", href: "/free-tools/free-email-subject-tester" },
   ],
   "Website Development": [
-    { label: "Website Grader", href: "/resources/website-grader" },
-    { label: "Schema Markup Generator", href: "/resources/schema-generator" },
+    { label: "Website Grader", href: "/free-tools/free-website-grader" },
+    { label: "Schema Markup Generator", href: "/free-tools/free-schema-generator" },
   ],
   Branding: [
-    { label: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
-    { label: "Color Palette Generator", href: "/resources/color-palette-generator" },
+    { label: "Brand Voice Generator", href: "/free-tools/free-brand-voice-generator" },
+    { label: "Color Palette Generator", href: "/free-tools/free-color-palette-generator" },
   ],
   "Video Production": [
-    { label: "Social Media Planner", href: "/resources/social-media-planner" },
-    { label: "Content ROI Calculator", href: "/resources/content-roi-calculator" },
+    { label: "Social Media Planner", href: "/free-tools/free-social-media-planner" },
+    { label: "Content ROI Calculator", href: "/free-tools/free-content-roi-calculator" },
   ],
   "AI & Technology": [
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Competitor Analysis", href: "/resources/competitor-analysis" },
+    { label: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+    { label: "Competitor Analysis", href: "/free-tools/free-competitor-analysis" },
   ],
   Analytics: [
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
+    { label: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+    { label: "Funnel Calculator", href: "/free-tools/free-funnel-calculator" },
   ],
   "E-Commerce": [
-    { label: "CLV Calculator", href: "/resources/clv-calculator" },
-    { label: "Funnel Calculator", href: "/resources/funnel-calculator" },
+    { label: "CLV Calculator", href: "/free-tools/free-clv-calculator" },
+    { label: "Funnel Calculator", href: "/free-tools/free-funnel-calculator" },
   ],
   "Paid Advertising": [
-    { label: "PPC Audit Checklist", href: "/resources/ppc-audit-checklist" },
-    { label: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
+    { label: "PPC Audit Checklist", href: "/free-tools/free-ppc-audit-checklist" },
+    { label: "Google Ads Estimator", href: "/free-tools/free-google-ads-estimator" },
   ],
   "Marketing Strategy": [
-    { label: "SWOT Analysis", href: "/resources/swot-analysis" },
-    { label: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
+    { label: "SWOT Analysis", href: "/free-tools/free-swot-analysis" },
+    { label: "Marketing Budget Planner", href: "/free-tools/free-marketing-budget-planner" },
   ],
   "Industry Guides": [
-    { label: "ROI Calculator", href: "/resources/roi-calculator" },
-    { label: "Website Grader", href: "/resources/website-grader" },
+    { label: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+    { label: "Website Grader", href: "/free-tools/free-website-grader" },
   ],
 };
 

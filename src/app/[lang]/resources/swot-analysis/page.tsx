@@ -959,10 +959,10 @@ export default function SwotAnalysisPage() {
           { title: "Performance Marketing", desc: "Win market share with smarter paid media campaigns.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Social Proof Guide", href: "/resources/social-proof-guide" },
-          { title: "Speed Test", href: "/resources/speed-test" },
-          { title: "Sprint Planner", href: "/resources/sprint-planner" },
-          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
+          { title: "Social Proof Guide", href: "/free-tools/free-social-proof-guide" },
+          { title: "Speed Test", href: "/free-tools/free-speed-test" },
+          { title: "Sprint Planner", href: "/free-tools/free-sprint-planner" },
+          { title: "Stakeholder Report", href: "/free-tools/free-stakeholder-report" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

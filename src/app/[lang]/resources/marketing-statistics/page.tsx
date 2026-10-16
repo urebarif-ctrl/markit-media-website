@@ -233,10 +233,10 @@ export default async function MarketingStatisticsPage({ params }: { params: Prom
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Rfp Template", href: "/resources/marketing-rfp-template" },
-          { title: "Marketing Stack Audit", href: "/resources/marketing-stack-audit" },
-          { title: "Marketing Statistics 2026", href: "/resources/marketing-statistics-2026" },
-          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
+          { title: "Marketing Rfp Template", href: "/free-tools/free-marketing-rfp-template" },
+          { title: "Marketing Stack Audit", href: "/free-tools/free-marketing-stack-audit" },
+          { title: "Marketing Statistics 2026", href: "/free-tools/free-marketing-statistics-2026" },
+          { title: "Marketing Timeline Planner", href: "/free-tools/free-marketing-timeline-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

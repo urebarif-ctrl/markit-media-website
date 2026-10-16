@@ -336,10 +336,10 @@ export default function MetaDescriptionGeneratorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
-                <Link href={l("/resources/keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
-                <Link href={l("/resources/seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
-                <Link href={l("/resources/seo-audit-score")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Audit Score</Link>
+                <Link href={l("/free-tools/free-seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
+                <Link href={l("/free-tools/free-keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
+                <Link href={l("/free-tools/free-seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
+                <Link href={l("/free-tools/free-seo-audit-score")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Audit Score</Link>
           </div>
         </div>
       </section>
@@ -363,10 +363,10 @@ export default function MetaDescriptionGeneratorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Trends 2026", href: "/resources/marketing-trends-2026" },
-          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
-          { title: "Meeting Agenda Builder", href: "/resources/meeting-agenda-builder" },
-          { title: "Migration Checklist", href: "/resources/migration-checklist" },
+          { title: "Marketing Trends 2026", href: "/free-tools/free-marketing-trends-2026" },
+          { title: "Martech Stack Planner", href: "/free-tools/free-martech-stack-planner" },
+          { title: "Meeting Agenda Builder", href: "/free-tools/free-meeting-agenda-builder" },
+          { title: "Migration Checklist", href: "/free-tools/free-migration-checklist" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

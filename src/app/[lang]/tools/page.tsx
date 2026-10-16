@@ -190,14 +190,14 @@ export default async function ToolsPage({ params }: { params: Promise<{ lang: st
           </Animate>
           <Stagger stagger={40} animation="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
             {[
-              { title: "ROI Calculator", href: "/resources/roi-calculator" },
-              { title: "SEO Checklist", href: "/resources/seo-checklist" },
-              { title: "Website Grader", href: "/resources/website-grader" },
-              { title: "Budget Calculator", href: "/resources/budget-calculator" },
-              { title: "A/B Test Calculator", href: "/resources/ab-test-calculator" },
-              { title: "Headline Analyzer", href: "/resources/headline-analyzer" },
-              { title: "UTM Builder", href: "/resources/utm-builder" },
-              { title: "Persona Builder", href: "/resources/persona-builder" },
+              { title: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+              { title: "SEO Checklist", href: "/free-tools/free-seo-checklist" },
+              { title: "Website Grader", href: "/free-tools/free-website-grader" },
+              { title: "Budget Calculator", href: "/free-tools/free-budget-calculator" },
+              { title: "A/B Test Calculator", href: "/free-tools/free-ab-test-calculator" },
+              { title: "Headline Analyzer", href: "/free-tools/free-headline-analyzer" },
+              { title: "UTM Builder", href: "/free-tools/free-utm-builder" },
+              { title: "Persona Builder", href: "/free-tools/free-persona-builder" },
             ].map((t) => (
               <Link key={t.href} href={l(t.href)} className="bg-white border border-gray-200 px-6 py-4 text-base font-bold text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2 text-center">
                 {t.title}

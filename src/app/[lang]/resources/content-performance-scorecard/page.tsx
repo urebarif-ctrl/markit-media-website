@@ -1250,25 +1250,25 @@ export default function ContentPerformanceScorecardPage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link
-              href={l("/resources/content-audit-scorecard")}
+              href={l("/free-tools/free-content-audit-scorecard")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Audit Scorecard
             </Link>
             <Link
-              href={l("/resources/content-roi-calculator")}
+              href={l("/free-tools/free-content-roi-calculator")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content ROI Calculator
             </Link>
             <Link
-              href={l("/resources/content-gap-finder")}
+              href={l("/free-tools/free-content-gap-finder")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Gap Finder
             </Link>
             <Link
-              href={l("/resources/content-calendar")}
+              href={l("/free-tools/free-content-calendar")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Content Calendar
@@ -1304,13 +1304,13 @@ export default function ContentPerformanceScorecardPage() {
         services={[
           { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
           { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
-          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media" },
         ]}
         relatedTools={[
-          { title: "Content Calendar", href: "/resources/content-calendar" },
-          { title: "Content Gap Analyzer", href: "/resources/content-gap-analyzer" },
-          { title: "Content Gap Finder", href: "/resources/content-gap-finder" },
-          { title: "Content Pillar Planner", href: "/resources/content-pillar-planner" },
+          { title: "Content Calendar", href: "/free-tools/free-content-calendar" },
+          { title: "Content Gap Analyzer", href: "/free-tools/free-content-gap-analyzer" },
+          { title: "Content Gap Finder", href: "/free-tools/free-content-gap-finder" },
+          { title: "Content Pillar Planner", href: "/free-tools/free-content-pillar-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -407,10 +407,10 @@ export default function AudienceTargetingWorksheetPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Agency Comparison", href: "/resources/agency-comparison" },
-          { title: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator" },
-          { title: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
-          { title: "Ad Spend Calculator", href: "/resources/ad-spend-calculator" },
+          { title: "Agency Comparison", href: "/free-tools/free-agency-comparison" },
+          { title: "Agency Pricing Calculator", href: "/free-tools/free-agency-pricing-calculator" },
+          { title: "Ad Copy Generator", href: "/free-tools/free-ad-copy-generator" },
+          { title: "Ad Spend Calculator", href: "/free-tools/free-ad-spend-calculator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

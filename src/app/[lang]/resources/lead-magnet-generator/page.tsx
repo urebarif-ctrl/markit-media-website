@@ -865,10 +865,10 @@ export default function LeadMagnetGeneratorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Launch Countdown", href: "/resources/launch-countdown" },
-          { title: "Lead Scoring Calculator", href: "/resources/lead-scoring-calculator" },
-          { title: "Keyword Density Checker", href: "/resources/keyword-density-checker" },
-          { title: "Kpi Builder", href: "/resources/kpi-builder" },
+          { title: "Launch Countdown", href: "/free-tools/free-launch-countdown" },
+          { title: "Lead Scoring Calculator", href: "/free-tools/free-lead-scoring-calculator" },
+          { title: "Keyword Density Checker", href: "/free-tools/free-keyword-density-checker" },
+          { title: "Kpi Builder", href: "/free-tools/free-kpi-builder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

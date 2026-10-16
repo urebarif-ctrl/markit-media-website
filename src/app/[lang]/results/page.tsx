@@ -242,7 +242,7 @@ export default async function ResultsPage({ params }: { params: Promise<{ lang: 
               {[
                 { title: "Our Process", desc: "See the full 5-step framework from discovery to reporting.", href: "/process" },
                 { title: "Case Studies", desc: "Real campaigns with real results across multiple industries.", href: "/case-studies" },
-                { title: "ROI Calculator", desc: "Estimate the potential return on your marketing investment.", href: "/resources/roi-calculator" },
+                { title: "ROI Calculator", desc: "Estimate the potential return on your marketing investment.", href: "/free-tools/free-roi-calculator" },
               ].map((link) => (
                 <Link key={link.href} href={l(link.href)} className="group border border-gray-200 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mb-2">{link.title}</h3>

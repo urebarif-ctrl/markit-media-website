@@ -1047,10 +1047,10 @@ export default function BuyerPersonaQuizPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Brand Tone Generator", href: "/resources/brand-tone-generator" },
-          { title: "Brand Voice Checker", href: "/resources/brand-voice-checker" },
-          { title: "Brand Voice Generator", href: "/resources/brand-voice-generator" },
-          { title: "Budget Allocator", href: "/resources/budget-allocator" },
+          { title: "Brand Tone Generator", href: "/free-tools/free-brand-tone-generator" },
+          { title: "Brand Voice Checker", href: "/free-tools/free-brand-voice-checker" },
+          { title: "Brand Voice Generator", href: "/free-tools/free-brand-voice-generator" },
+          { title: "Budget Allocator", href: "/free-tools/free-budget-allocator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

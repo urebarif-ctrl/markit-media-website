@@ -260,10 +260,10 @@ export default function MarketingCalendarPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Lead Scoring Calculator", href: "/resources/lead-scoring-calculator" },
-          { title: "Marketing Expense Tracker", href: "/resources/marketing-expense-tracker" },
-          { title: "Launch Countdown", href: "/resources/launch-countdown" },
-          { title: "Lead Magnet Generator", href: "/resources/lead-magnet-generator" },
+          { title: "Lead Scoring Calculator", href: "/free-tools/free-lead-scoring-calculator" },
+          { title: "Marketing Expense Tracker", href: "/free-tools/free-marketing-expense-tracker" },
+          { title: "Launch Countdown", href: "/free-tools/free-launch-countdown" },
+          { title: "Lead Magnet Generator", href: "/free-tools/free-lead-magnet-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -1421,10 +1421,10 @@ export default function MarketingMetricsBenchmarkPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Calculator</Link>
-                <Link href={l("/resources/roi-dashboard")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
-                <Link href={l("/resources/roi-forecaster")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Forecaster</Link>
-                <Link href={l("/resources/marketing-roi-report")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
+                <Link href={l("/free-tools/free-roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Calculator</Link>
+                <Link href={l("/free-tools/free-roi-dashboard")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
+                <Link href={l("/free-tools/free-roi-forecaster")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Forecaster</Link>
+                <Link href={l("/free-tools/free-marketing-roi-report")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
           </div>
         </div>
       </section>
@@ -1448,9 +1448,9 @@ export default function MarketingMetricsBenchmarkPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Marketing Goal Setter", href: "/resources/marketing-goal-setter" },
-          { title: "Marketing Kpi Tracker", href: "/resources/marketing-kpi-tracker" },
-          { title: "Marketing Roi Report", href: "/resources/marketing-roi-report" },
+          { title: "Marketing Goal Setter", href: "/free-tools/free-marketing-goal-setter" },
+          { title: "Marketing Kpi Tracker", href: "/free-tools/free-marketing-kpi-tracker" },
+          { title: "Marketing Roi Report", href: "/free-tools/free-marketing-roi-report" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

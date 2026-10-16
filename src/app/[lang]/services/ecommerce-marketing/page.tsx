@@ -46,9 +46,9 @@ export default function EcommerceMarketingPage() {
         { q: "Do you handle Google Shopping campaigns?", a: "Yes. We set up and optimize Google Shopping feeds, manage Performance Max and Shopping campaigns, and track ROAS at the product and category level." },
       ]}
       tools={[
-        { title: "CLV Calculator", desc: "Calculate customer lifetime value for your business.", href: "/resources/clv-calculator" },
-        { title: "Funnel Calculator", desc: "Model your e-commerce conversion funnel.", href: "/resources/funnel-calculator" },
-        { title: "Pricing Calculator", desc: "Optimize your pricing strategy with data-driven analysis.", href: "/resources/pricing-calculator" },
+        { title: "CLV Calculator", desc: "Calculate customer lifetime value for your business.", href: "/free-tools/free-clv-calculator" },
+        { title: "Funnel Calculator", desc: "Model your e-commerce conversion funnel.", href: "/free-tools/free-funnel-calculator" },
+        { title: "Pricing Calculator", desc: "Optimize your pricing strategy with data-driven analysis.", href: "/free-tools/free-pricing-calculator" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },

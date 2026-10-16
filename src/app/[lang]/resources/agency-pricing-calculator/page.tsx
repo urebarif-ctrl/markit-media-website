@@ -1204,9 +1204,9 @@ export default function AgencyPricingCalculatorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/pricing-calculator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Pricing Calculator</Link>
-                <Link href={l("/resources/budget-calculator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Budget Calculator</Link>
-                <Link href={l("/resources/marketing-proposal-generator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Proposal Generator</Link>
+                <Link href={l("/free-tools/free-pricing-calculator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Pricing Calculator</Link>
+                <Link href={l("/free-tools/free-budget-calculator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Budget Calculator</Link>
+                <Link href={l("/free-tools/free-marketing-proposal-generator")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Proposal Generator</Link>
           </div>
         </div>
       </section>
@@ -1238,10 +1238,10 @@ export default function AgencyPricingCalculatorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Agency Comparison", href: "/resources/agency-comparison" },
-          { title: "Audience Targeting Worksheet", href: "/resources/audience-targeting-worksheet" },
-          { title: "Ad Budget Pacing", href: "/resources/ad-budget-pacing" },
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
+          { title: "Agency Comparison", href: "/free-tools/free-agency-comparison" },
+          { title: "Audience Targeting Worksheet", href: "/free-tools/free-audience-targeting-worksheet" },
+          { title: "Ad Budget Pacing", href: "/free-tools/free-ad-budget-pacing" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

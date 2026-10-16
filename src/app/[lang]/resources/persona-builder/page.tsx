@@ -981,10 +981,10 @@ export default function PersonaBuilderPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Migration Checklist", href: "/resources/migration-checklist" },
-          { title: "Og Preview", href: "/resources/og-preview" },
-          { title: "Okr Planner", href: "/resources/okr-planner" },
-          { title: "Persona Workshop", href: "/resources/persona-workshop" },
+          { title: "Migration Checklist", href: "/free-tools/free-migration-checklist" },
+          { title: "Og Preview", href: "/free-tools/free-og-preview" },
+          { title: "Okr Planner", href: "/free-tools/free-okr-planner" },
+          { title: "Persona Workshop", href: "/free-tools/free-persona-workshop" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

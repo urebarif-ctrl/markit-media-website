@@ -492,9 +492,9 @@ export default function CroAuditPage() {
           { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Contrast Checker", href: "/resources/contrast-checker" },
-          { title: "Conversion Checklist", href: "/resources/conversion-checklist" },
-          { title: "Conversion Funnel Simulator", href: "/resources/conversion-funnel-simulator" },
+          { title: "Contrast Checker", href: "/free-tools/free-contrast-checker" },
+          { title: "Conversion Checklist", href: "/free-tools/free-conversion-checklist" },
+          { title: "Conversion Funnel Simulator", href: "/free-tools/free-conversion-funnel-simulator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

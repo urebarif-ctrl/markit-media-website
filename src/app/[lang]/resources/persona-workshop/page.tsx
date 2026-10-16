@@ -1643,10 +1643,10 @@ export default function PersonaWorkshopPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Og Preview", href: "/resources/og-preview" },
-          { title: "Okr Planner", href: "/resources/okr-planner" },
-          { title: "Persona Builder", href: "/resources/persona-builder" },
-          { title: "Pricing Calculator", href: "/resources/pricing-calculator" },
+          { title: "Og Preview", href: "/free-tools/free-og-preview" },
+          { title: "Okr Planner", href: "/free-tools/free-okr-planner" },
+          { title: "Persona Builder", href: "/free-tools/free-persona-builder" },
+          { title: "Pricing Calculator", href: "/free-tools/free-pricing-calculator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

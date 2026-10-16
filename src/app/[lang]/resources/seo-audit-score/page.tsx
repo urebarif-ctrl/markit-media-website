@@ -247,10 +247,10 @@ export default function SeoAuditScorePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
-                <Link href={l("/resources/keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
-                <Link href={l("/resources/seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
-                <Link href={l("/resources/seo-gap-finder")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Gap Finder</Link>
+                <Link href={l("/free-tools/free-seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
+                <Link href={l("/free-tools/free-keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
+                <Link href={l("/free-tools/free-seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
+                <Link href={l("/free-tools/free-seo-gap-finder")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Gap Finder</Link>
           </div>
         </div>
       </section>
@@ -274,9 +274,9 @@ export default function SeoAuditScorePage() {
           { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Seo Checklist", href: "/resources/seo-checklist" },
-          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
-          { title: "Seo Gap Finder", href: "/resources/seo-gap-finder" },
+          { title: "Seo Checklist", href: "/free-tools/free-seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/free-tools/free-seo-content-optimizer" },
+          { title: "Seo Gap Finder", href: "/free-tools/free-seo-gap-finder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

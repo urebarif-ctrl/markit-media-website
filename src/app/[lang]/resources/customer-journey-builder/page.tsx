@@ -387,10 +387,10 @@ export default function CustomerJourneyBuilderPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
-          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
-          { title: "Competitor Pricing Tracker", href: "/resources/competitor-pricing-tracker" },
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
+          { title: "Campaign Debrief", href: "/free-tools/free-campaign-debrief" },
+          { title: "Competitor Pricing Tracker", href: "/free-tools/free-competitor-pricing-tracker" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

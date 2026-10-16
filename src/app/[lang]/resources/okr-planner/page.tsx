@@ -816,9 +816,9 @@ export default function OkrPlannerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/marketing-goal-setter")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Goal Setter</Link>
-                <Link href={l("/resources/kpi-dashboard")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">KPI Dashboard</Link>
-                <Link href={l("/resources/marketing-roi-report")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing ROI Report</Link>
+                <Link href={l("/free-tools/free-marketing-goal-setter")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Goal Setter</Link>
+                <Link href={l("/free-tools/free-kpi-dashboard")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">KPI Dashboard</Link>
+                <Link href={l("/free-tools/free-marketing-roi-report")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing ROI Report</Link>
           </div>
         </div>
       </section>
@@ -852,9 +852,9 @@ export default function OkrPlannerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "KPI Builder", href: "/resources/kpi-builder" },
-          { title: "ROI Calculator", href: "/resources/roi-calculator" },
-          { title: "Marketing Audit Scorecard", href: "/resources/marketing-audit-scorecard" },
+          { title: "KPI Builder", href: "/free-tools/free-kpi-builder" },
+          { title: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+          { title: "Marketing Audit Scorecard", href: "/free-tools/free-marketing-audit-scorecard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

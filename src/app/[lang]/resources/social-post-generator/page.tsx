@@ -179,10 +179,10 @@ export default function SocialPostGeneratorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/social-media-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media Planner</Link>
-                <Link href={l("/resources/social-media-roi")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media ROI</Link>
-                <Link href={l("/resources/social-media-audit")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media Audit</Link>
-                <Link href={l("/resources/social-calendar")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Calendar</Link>
+                <Link href={l("/free-tools/free-social-media-planner")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media Planner</Link>
+                <Link href={l("/free-tools/free-social-media-roi")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media ROI</Link>
+                <Link href={l("/free-tools/free-social-media-audit")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Media Audit</Link>
+                <Link href={l("/free-tools/free-social-calendar")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Social Calendar</Link>
           </div>
         </div>
       </section>
@@ -201,15 +201,15 @@ export default function SocialPostGeneratorPage() {
       <ToolCTA
         toolName="Social Post Generator"
         services={[
-          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media" },
           { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
           { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Social Media Calendar Template", href: "/resources/social-media-calendar-template" },
-          { title: "Social Media Planner", href: "/resources/social-media-planner" },
-          { title: "Social Media Roi", href: "/resources/social-media-roi" },
-          { title: "Social Proof Guide", href: "/resources/social-proof-guide" },
+          { title: "Social Media Calendar Template", href: "/free-tools/free-social-media-calendar-template" },
+          { title: "Social Media Planner", href: "/free-tools/free-social-media-planner" },
+          { title: "Social Media Roi", href: "/free-tools/free-social-media-roi" },
+          { title: "Social Proof Guide", href: "/free-tools/free-social-proof-guide" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },
