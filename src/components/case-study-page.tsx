@@ -25,6 +25,7 @@ interface CaseStudyProps {
   illustrative?: boolean;
   relatedServices: Array<{ title: string; href: string }>;
   readingTime?: string;
+  children?: React.ReactNode;
 }
 
 export function CaseStudyPage({
@@ -42,6 +43,7 @@ export function CaseStudyPage({
   relatedServices,
   readingTime = "4 min read",
   locale = "en",
+  children,
 }: CaseStudyProps & { locale?: string }) {
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const schema = {
@@ -148,6 +150,8 @@ export function CaseStudyPage({
           )}
         </div>
       </section>
+
+      {children}
 
       <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Related services">
         <div className="max-w-4xl mx-auto">

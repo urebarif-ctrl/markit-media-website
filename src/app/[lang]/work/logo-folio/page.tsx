@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 
 export const metadata: Metadata = {
@@ -84,6 +85,8 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
           </Stagger>
         </div>
       </section>
+
+      <CategoryGallery category="logo-design" locale={locale} heading="Logo design & brand identity boards" intro="Logo and brand identity boards from our design work, showing each mark with its colour palette, typography and applications. Filter by client or open any board full size." />
 
       <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Our branding services">
         <div className="max-w-4xl mx-auto text-center">

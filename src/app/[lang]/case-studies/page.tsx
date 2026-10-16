@@ -6,6 +6,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { ClientDirectorySection } from "@/components/portfolio/portfolio-sections";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/case-studies",title:"Case Studies & Selected Client Work",description:"Explore selected Markit Media client work across video production, web development, social media, branding, healthcare, real estate, fashion, energy and automotive.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Case Studies & Selected Client Work",
@@ -53,6 +54,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ la
     <div className="p-6"><div className="flex gap-2 flex-wrap text-xs font-bold uppercase tracking-wide text-gray-500"><span>{s.industry}</span><span>•</span><span>{s.service}</span></div><h2 className="font-extrabold text-xl mt-3 group-hover:underline">{s.client}</h2><p className="text-gray-500 mt-3 leading-relaxed">{s.desc}</p><span className="font-bold inline-block mt-5">View project details →</span></div>
    </Link>)}</Stagger>
   </div></section>
+  <ClientDirectorySection locale={locale}/>
   <section className="px-6 lg:px-12 py-20" aria-label="Creative portfolio"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Creative Portfolio</SectionLabel><SectionTitle>More Visual Work</SectionTitle><SectionDesc>Design-led collections complement the client project stories above and connect directly to the wider Work library.</SectionDesc></Animate>
    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><Image src={x.image} alt={`${x.title} — ${x.category} portfolio`} fill sizes="(max-width:640px) 100vw,25vw" className="object-cover group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>

@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { Animate, Stagger } from "@/components/animate";
+import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/fashion-feed",title:"Fashion Feed — Social Media Design Portfolio",description:"Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Fashion Feed — Social Media Design Portfolio",
   description: "Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/fashion-feed" },
 };
-
-const galleryImages = [
-  { src: "/images/portfolio/fashion-feed-01.jpg", alt: "Fashion brand promotional social media post — bumper sale campaign" },
-  { src: "/images/portfolio/fashion-feed-02.jpg", alt: "Fashion lifestyle social media post — product showcase" },
-  { src: "/images/portfolio/fashion-feed-hero.jpg", alt: "Find My Apparel — fashion brand social media feed overview" },
-];
 
 export default async function FashionFeedPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -58,17 +52,7 @@ export default async function FashionFeedPage({ params }: { params: Promise<{ la
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-12" aria-label="Portfolio gallery">
-        <div className="max-w-5xl mx-auto">
-          <Stagger stagger={100} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {galleryImages.map((img) => (
-              <div key={img.src} className="relative aspect-square overflow-hidden bg-gray-100 border border-gray-200">
-                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
-              </div>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+      <CategoryGallery category="fashion" locale={locale} heading="Fashion & apparel social media designs" intro="Social media designs for Find My Apparel, Minhaz Couture and Easywear. Filter by client, or open any piece full size." />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Project details">
         <div className="max-w-3xl mx-auto space-y-12">
