@@ -1284,10 +1284,10 @@ export default function ExperimentTrackerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Email Roi Calculator", href: "/resources/email-roi-calculator" },
-          { title: "Email Sequence Planner", href: "/resources/email-sequence-planner" },
-          { title: "Email Subject Ab Tester", href: "/resources/email-subject-ab-tester" },
-          { title: "Email Subject Tester", href: "/resources/email-subject-tester" },
+          { title: "Email Roi Calculator", href: "/free-tools/free-email-roi-calculator" },
+          { title: "Email Sequence Planner", href: "/free-tools/free-email-sequence-planner" },
+          { title: "Email Subject Ab Tester", href: "/free-tools/free-email-subject-ab-tester" },
+          { title: "Email Subject Tester", href: "/free-tools/free-email-subject-tester" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

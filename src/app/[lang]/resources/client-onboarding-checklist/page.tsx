@@ -711,9 +711,9 @@ export default function ClientOnboardingChecklistPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Channel Mix Modeller", href: "/resources/channel-mix-modeller" },
-          { title: "Channel Recommender", href: "/resources/channel-recommender" },
-          { title: "Channel Selector", href: "/resources/channel-selector" },
+          { title: "Channel Mix Modeller", href: "/free-tools/free-channel-mix-modeller" },
+          { title: "Channel Recommender", href: "/free-tools/free-channel-recommender" },
+          { title: "Channel Selector", href: "/free-tools/free-channel-selector" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

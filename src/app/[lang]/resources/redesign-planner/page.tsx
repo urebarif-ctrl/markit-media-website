@@ -1386,10 +1386,10 @@ export default function RedesignPlannerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Pricing Page Analyzer", href: "/resources/pricing-page-analyzer" },
-          { title: "Quarterly Review", href: "/resources/quarterly-review" },
-          { title: "Retention Calculator", href: "/resources/retention-calculator" },
-          { title: "Risk Assessment", href: "/resources/risk-assessment" },
+          { title: "Pricing Page Analyzer", href: "/free-tools/free-pricing-page-analyzer" },
+          { title: "Quarterly Review", href: "/free-tools/free-quarterly-review" },
+          { title: "Retention Calculator", href: "/free-tools/free-retention-calculator" },
+          { title: "Risk Assessment", href: "/free-tools/free-risk-assessment" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

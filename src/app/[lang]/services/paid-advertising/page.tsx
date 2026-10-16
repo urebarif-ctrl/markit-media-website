@@ -46,9 +46,9 @@ export default function PaidAdvertisingPage() {
         { q: "What budget do I need for display and programmatic?", a: "Programmatic campaigns can run at various budget levels. We recommend a budget based on your goals, audience size, and the channels you want to reach." },
       ]}
       tools={[
-        { title: "Google Ads Estimator", desc: "Estimate Google Ads costs and projected performance.", href: "/resources/google-ads-estimator" },
-        { title: "Ad Copy Generator", desc: "Generate high-performing ad copy for multiple platforms.", href: "/resources/ad-copy-generator" },
-        { title: "UTM Builder", desc: "Create UTM parameters for accurate campaign tracking.", href: "/resources/utm-builder" },
+        { title: "Google Ads Estimator", desc: "Estimate Google Ads costs and projected performance.", href: "/free-tools/free-google-ads-estimator" },
+        { title: "Ad Copy Generator", desc: "Generate high-performing ad copy for multiple platforms.", href: "/free-tools/free-ad-copy-generator" },
+        { title: "UTM Builder", desc: "Create UTM parameters for accurate campaign tracking.", href: "/free-tools/free-utm-builder" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },

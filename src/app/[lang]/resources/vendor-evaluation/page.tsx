@@ -1340,10 +1340,10 @@ export default function VendorEvaluationPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Team Capacity Planner", href: "/resources/team-capacity-planner" },
-          { title: "Tech Stack Advisor", href: "/resources/tech-stack-advisor" },
-          { title: "Utm Builder", href: "/resources/utm-builder" },
-          { title: "Web Platform Guide", href: "/resources/web-platform-guide" },
+          { title: "Team Capacity Planner", href: "/free-tools/free-team-capacity-planner" },
+          { title: "Tech Stack Advisor", href: "/free-tools/free-tech-stack-advisor" },
+          { title: "Utm Builder", href: "/free-tools/free-utm-builder" },
+          { title: "Web Platform Guide", href: "/free-tools/free-web-platform-guide" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

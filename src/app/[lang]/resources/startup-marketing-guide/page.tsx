@@ -216,10 +216,10 @@ export default async function StartupMarketingGuidePage({ params }: { params: Pr
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Sprint Planner", href: "/resources/sprint-planner" },
-          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
-          { title: "Team Capacity Planner", href: "/resources/team-capacity-planner" },
-          { title: "Tech Stack Advisor", href: "/resources/tech-stack-advisor" },
+          { title: "Sprint Planner", href: "/free-tools/free-sprint-planner" },
+          { title: "Stakeholder Report", href: "/free-tools/free-stakeholder-report" },
+          { title: "Team Capacity Planner", href: "/free-tools/free-team-capacity-planner" },
+          { title: "Tech Stack Advisor", href: "/free-tools/free-tech-stack-advisor" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

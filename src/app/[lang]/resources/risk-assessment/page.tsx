@@ -1065,9 +1065,9 @@ export default function RiskAssessmentPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/swot-analysis")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">SWOT Analysis</Link>
-                <Link href={l("/resources/competitive-swot-analyzer")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Competitive SWOT Analyzer</Link>
-                <Link href={l("/resources/marketing-audit-scorecard")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
+                <Link href={l("/free-tools/free-swot-analysis")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">SWOT Analysis</Link>
+                <Link href={l("/free-tools/free-competitive-swot-analyzer")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Competitive SWOT Analyzer</Link>
+                <Link href={l("/free-tools/free-marketing-audit-scorecard")} className="border border-gray-200 bg-white px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors">Marketing Audit Scorecard</Link>
           </div>
         </div>
       </section>
@@ -1104,10 +1104,10 @@ export default function RiskAssessmentPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Redesign Planner", href: "/resources/redesign-planner" },
-          { title: "Retention Calculator", href: "/resources/retention-calculator" },
-          { title: "Pricing Page Analyzer", href: "/resources/pricing-page-analyzer" },
-          { title: "Quarterly Review", href: "/resources/quarterly-review" },
+          { title: "Redesign Planner", href: "/free-tools/free-redesign-planner" },
+          { title: "Retention Calculator", href: "/free-tools/free-retention-calculator" },
+          { title: "Pricing Page Analyzer", href: "/free-tools/free-pricing-page-analyzer" },
+          { title: "Quarterly Review", href: "/free-tools/free-quarterly-review" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

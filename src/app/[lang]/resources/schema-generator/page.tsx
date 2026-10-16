@@ -756,10 +756,10 @@ export default function SchemaGeneratorPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
-                <Link href={l("/resources/keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
-                <Link href={l("/resources/seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
-                <Link href={l("/resources/seo-audit-score")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Audit Score</Link>
+                <Link href={l("/free-tools/free-seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
+                <Link href={l("/free-tools/free-keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
+                <Link href={l("/free-tools/free-seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
+                <Link href={l("/free-tools/free-seo-audit-score")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Audit Score</Link>
           </div>
         </div>
       </section>
@@ -772,10 +772,10 @@ export default function SchemaGeneratorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Scope Of Work Generator", href: "/resources/scope-of-work-generator" },
-          { title: "Retention Calculator", href: "/resources/retention-calculator" },
-          { title: "Risk Assessment", href: "/resources/risk-assessment" },
-          { title: "Roi Calculator", href: "/resources/roi-calculator" },
+          { title: "Scope Of Work Generator", href: "/free-tools/free-scope-of-work-generator" },
+          { title: "Retention Calculator", href: "/free-tools/free-retention-calculator" },
+          { title: "Risk Assessment", href: "/free-tools/free-risk-assessment" },
+          { title: "Roi Calculator", href: "/free-tools/free-roi-calculator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

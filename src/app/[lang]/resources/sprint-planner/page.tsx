@@ -888,10 +888,10 @@ export default function SprintPlannerPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Stakeholder Report", href: "/resources/stakeholder-report" },
-          { title: "Startup Marketing Guide", href: "/resources/startup-marketing-guide" },
-          { title: "Social Media Planner", href: "/resources/social-media-planner" },
-          { title: "Social Media Roi", href: "/resources/social-media-roi" },
+          { title: "Stakeholder Report", href: "/free-tools/free-stakeholder-report" },
+          { title: "Startup Marketing Guide", href: "/free-tools/free-startup-marketing-guide" },
+          { title: "Social Media Planner", href: "/free-tools/free-social-media-planner" },
+          { title: "Social Media Roi", href: "/free-tools/free-social-media-roi" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

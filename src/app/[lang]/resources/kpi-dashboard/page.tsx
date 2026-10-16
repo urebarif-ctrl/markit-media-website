@@ -933,10 +933,10 @@ export default function KpiDashboardPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Calculator</Link>
-                <Link href={l("/resources/roi-dashboard")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
-                <Link href={l("/resources/roi-forecaster")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Forecaster</Link>
-                <Link href={l("/resources/marketing-roi-report")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
+                <Link href={l("/free-tools/free-roi-calculator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Calculator</Link>
+                <Link href={l("/free-tools/free-roi-dashboard")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Dashboard</Link>
+                <Link href={l("/free-tools/free-roi-forecaster")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">ROI Forecaster</Link>
+                <Link href={l("/free-tools/free-marketing-roi-report")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Marketing ROI Report</Link>
           </div>
         </div>
       </section>
@@ -1304,10 +1304,10 @@ export default function KpiDashboardPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Influencer Roi", href: "/resources/influencer-roi" },
-          { title: "Kpi Builder", href: "/resources/kpi-builder" },
-          { title: "Headline Split Tester", href: "/resources/headline-split-tester" },
-          { title: "Image Size Guide", href: "/resources/image-size-guide" },
+          { title: "Influencer Roi", href: "/free-tools/free-influencer-roi" },
+          { title: "Kpi Builder", href: "/free-tools/free-kpi-builder" },
+          { title: "Headline Split Tester", href: "/free-tools/free-headline-split-tester" },
+          { title: "Image Size Guide", href: "/free-tools/free-image-size-guide" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

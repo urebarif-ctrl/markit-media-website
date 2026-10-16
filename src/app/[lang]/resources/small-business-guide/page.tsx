@@ -184,7 +184,7 @@ export default async function SmallBusinessGuidePage({ params }: { params: Promi
           </Stagger>
           <Animate animation="fade-up">
             <div className="mt-8 text-center">
-              <Link href={l("/resources/budget-calculator")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">
+              <Link href={l("/free-tools/free-budget-calculator")} className="inline-flex items-center gap-2 text-base font-bold text-black hover:underline">
                 Try Our Budget Calculator &rarr;
               </Link>
             </div>
@@ -273,10 +273,10 @@ export default async function SmallBusinessGuidePage({ params }: { params: Promi
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Sla Tracker", href: "/resources/sla-tracker" },
-          { title: "Seo Checklist", href: "/resources/seo-checklist" },
-          { title: "Seo Content Optimizer", href: "/resources/seo-content-optimizer" },
-          { title: "Seo Gap Finder", href: "/resources/seo-gap-finder" },
+          { title: "Sla Tracker", href: "/free-tools/free-sla-tracker" },
+          { title: "Seo Checklist", href: "/free-tools/free-seo-checklist" },
+          { title: "Seo Content Optimizer", href: "/free-tools/free-seo-content-optimizer" },
+          { title: "Seo Gap Finder", href: "/free-tools/free-seo-gap-finder" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

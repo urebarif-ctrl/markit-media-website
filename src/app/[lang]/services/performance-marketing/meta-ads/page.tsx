@@ -463,7 +463,7 @@ export default async function MetaAdsPage({ params }: { params: Promise<{ lang: 
             <p className="text-lg text-gray-500 leading-relaxed mt-5">
               Meta can optimize only toward the signals it receives. Before scaling, we want the account to distinguish between activity that looks good inside Ads Manager and activity that matters to the business.
             </p>
-            <Link href={l("/services/analytics-reporting")} className="inline-flex mt-7 font-bold underline underline-offset-4 hover:no-underline">
+            <Link href={l("/services/marketing-analytics")} className="inline-flex mt-7 font-bold underline underline-offset-4 hover:no-underline">
               Explore analytics and reporting →
             </Link>
           </div>

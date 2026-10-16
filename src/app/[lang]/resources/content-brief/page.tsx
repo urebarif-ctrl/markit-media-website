@@ -849,13 +849,13 @@ export default function ContentBriefPage() {
         services={[
           { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
           { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
-          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media" },
         ]}
         relatedTools={[
-          { title: "Content Audit Scorecard", href: "/resources/content-audit-scorecard" },
-          { title: "Content Brief Generator", href: "/resources/content-brief-generator" },
-          { title: "Content Calendar", href: "/resources/content-calendar" },
-          { title: "Content Gap Analyzer", href: "/resources/content-gap-analyzer" },
+          { title: "Content Audit Scorecard", href: "/free-tools/free-content-audit-scorecard" },
+          { title: "Content Brief Generator", href: "/free-tools/free-content-brief-generator" },
+          { title: "Content Calendar", href: "/free-tools/free-content-calendar" },
+          { title: "Content Gap Analyzer", href: "/free-tools/free-content-gap-analyzer" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

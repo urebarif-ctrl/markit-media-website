@@ -689,9 +689,9 @@ export default function ConversionChecklistPage() {
           { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Contrast Checker", href: "/resources/contrast-checker" },
-          { title: "Conversion Funnel Simulator", href: "/resources/conversion-funnel-simulator" },
-          { title: "Cro Audit", href: "/resources/cro-audit" },
+          { title: "Contrast Checker", href: "/free-tools/free-contrast-checker" },
+          { title: "Conversion Funnel Simulator", href: "/free-tools/free-conversion-funnel-simulator" },
+          { title: "Cro Audit", href: "/free-tools/free-cro-audit" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

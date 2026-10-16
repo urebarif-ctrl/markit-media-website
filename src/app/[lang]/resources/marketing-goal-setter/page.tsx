@@ -326,9 +326,9 @@ export default function MarketingGoalSetterPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Marketing Budget Planner", href: "/resources/marketing-budget-planner" },
-          { title: "Marketing Kpi Tracker", href: "/resources/marketing-kpi-tracker" },
-          { title: "Marketing Metrics Benchmark", href: "/resources/marketing-metrics-benchmark" },
+          { title: "Marketing Budget Planner", href: "/free-tools/free-marketing-budget-planner" },
+          { title: "Marketing Kpi Tracker", href: "/free-tools/free-marketing-kpi-tracker" },
+          { title: "Marketing Metrics Benchmark", href: "/free-tools/free-marketing-metrics-benchmark" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

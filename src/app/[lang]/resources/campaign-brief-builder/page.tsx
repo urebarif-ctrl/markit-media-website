@@ -1900,9 +1900,9 @@ export default function CampaignBriefBuilderPage() {
           { title: "SEO", desc: "Complement paid with organic — reduce dependency on ad spend over time.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Campaign Debrief", href: "/resources/campaign-debrief" },
-          { title: "Campaign Naming Convention", href: "/resources/campaign-naming-convention" },
-          { title: "Campaign Naming Generator", href: "/resources/campaign-naming-generator" },
+          { title: "Campaign Debrief", href: "/free-tools/free-campaign-debrief" },
+          { title: "Campaign Naming Convention", href: "/free-tools/free-campaign-naming-convention" },
+          { title: "Campaign Naming Generator", href: "/free-tools/free-campaign-naming-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -287,10 +287,10 @@ export default function SpeedTestPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/website-grader")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Website Grader</Link>
-                <Link href={l("/resources/website-audit")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Website Audit</Link>
-                <Link href={l("/resources/landing-page-grader")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Landing Page Grader</Link>
-                <Link href={l("/resources/website-heuristic-evaluator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Heuristic Evaluator</Link>
+                <Link href={l("/free-tools/free-website-grader")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Website Grader</Link>
+                <Link href={l("/free-tools/free-website-audit")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Website Audit</Link>
+                <Link href={l("/free-tools/free-landing-page-grader")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Landing Page Grader</Link>
+                <Link href={l("/free-tools/free-website-heuristic-evaluator")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Heuristic Evaluator</Link>
           </div>
         </div>
       </section>
@@ -314,10 +314,10 @@ export default function SpeedTestPage() {
           { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Social Media Calendar Template", href: "/resources/social-media-calendar-template" },
-          { title: "Social Media Planner", href: "/resources/social-media-planner" },
-          { title: "Social Media Roi", href: "/resources/social-media-roi" },
-          { title: "Social Post Generator", href: "/resources/social-post-generator" },
+          { title: "Social Media Calendar Template", href: "/free-tools/free-social-media-calendar-template" },
+          { title: "Social Media Planner", href: "/free-tools/free-social-media-planner" },
+          { title: "Social Media Roi", href: "/free-tools/free-social-media-roi" },
+          { title: "Social Post Generator", href: "/free-tools/free-social-post-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

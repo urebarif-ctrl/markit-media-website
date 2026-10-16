@@ -955,10 +955,10 @@ export default function BacklinkAnalyzerPage() {
           { title: "Digital Marketing", desc: "Full-stack digital marketing strategy tailored to your business goals.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Ad Spend Calculator", href: "/resources/ad-spend-calculator" },
-          { title: "Agency Comparison", href: "/resources/agency-comparison" },
-          { title: "Agency Pricing Calculator", href: "/resources/agency-pricing-calculator" },
-          { title: "Attribution Calculator", href: "/resources/attribution-calculator" },
+          { title: "Ad Spend Calculator", href: "/free-tools/free-ad-spend-calculator" },
+          { title: "Agency Comparison", href: "/free-tools/free-agency-comparison" },
+          { title: "Agency Pricing Calculator", href: "/free-tools/free-agency-pricing-calculator" },
+          { title: "Attribution Calculator", href: "/free-tools/free-attribution-calculator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

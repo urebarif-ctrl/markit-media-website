@@ -1119,13 +1119,13 @@ export default function CtaGeneratorPage() {
         services={[
           { title: "Content Marketing", desc: "Strategic content that drives traffic, engagement, and conversions.", href: "/services/content-marketing" },
           { title: "SEO", desc: "Content optimized for search engines and human readers alike.", href: "/services/seo" },
-          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Distribute your content where your audience already is.", href: "/services/social-media" },
         ]}
         relatedTools={[
-          { title: "Content Roi Calculator", href: "/resources/content-roi-calculator" },
-          { title: "Contrast Checker", href: "/resources/contrast-checker" },
-          { title: "Conversion Checklist", href: "/resources/conversion-checklist" },
-          { title: "Conversion Funnel Simulator", href: "/resources/conversion-funnel-simulator" },
+          { title: "Content Roi Calculator", href: "/free-tools/free-content-roi-calculator" },
+          { title: "Contrast Checker", href: "/free-tools/free-contrast-checker" },
+          { title: "Conversion Checklist", href: "/free-tools/free-conversion-checklist" },
+          { title: "Conversion Funnel Simulator", href: "/free-tools/free-conversion-funnel-simulator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -845,10 +845,10 @@ export default function WebsiteHeuristicEvaluatorPage() {
           { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Website Audit", href: "/resources/website-audit" },
-          { title: "Website Grader", href: "/resources/website-grader" },
-          { title: "Website Launch Checklist", href: "/resources/website-launch-checklist" },
-          { title: "Website Readiness Scorecard", href: "/resources/website-readiness-scorecard" },
+          { title: "Website Audit", href: "/free-tools/free-website-audit" },
+          { title: "Website Grader", href: "/free-tools/free-website-grader" },
+          { title: "Website Launch Checklist", href: "/free-tools/free-website-launch-checklist" },
+          { title: "Website Readiness Scorecard", href: "/free-tools/free-website-readiness-scorecard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

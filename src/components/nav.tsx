@@ -47,7 +47,7 @@ const serviceCategories = [
 
 const industryList = [
   { label: "Home Services", href: "/industries/home-services" },
-  { label: "Home Decor & Interior Design", href: "/home-decor-interior-design-online-digital-marketing-agency/" },
+  { label: "Home Decor & Interior Design", href: "/industries/interior-design" },
   { label: "Exterior Cleaning", href: "/industries/exterior-cleaning" },
   { label: "Rehab & Recovery", href: "/industries/rehab-recovery" },
   { label: "Personal Branding", href: "/industries/personal-branding" },

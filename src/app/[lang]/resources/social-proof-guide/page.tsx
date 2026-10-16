@@ -970,14 +970,14 @@ export default function SocialProofGuidePage() {
       <ToolCTA
         toolName="Social Proof Guide"
         services={[
-          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media-marketing" },
+          { title: "Social Media Marketing", desc: "Strategy, content, and community management across all platforms.", href: "/services/social-media" },
           { title: "Content Marketing", desc: "Engaging content that builds brand authority and drives engagement.", href: "/services/content-marketing" },
           { title: "Digital Marketing", desc: "Integrated digital strategy connecting social to business results.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Social Media Planner", href: "/resources/social-media-planner" },
-          { title: "Social Media Roi", href: "/resources/social-media-roi" },
-          { title: "Social Post Generator", href: "/resources/social-post-generator" },
+          { title: "Social Media Planner", href: "/free-tools/free-social-media-planner" },
+          { title: "Social Media Roi", href: "/free-tools/free-social-media-roi" },
+          { title: "Social Post Generator", href: "/free-tools/free-social-post-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

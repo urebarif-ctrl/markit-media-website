@@ -298,10 +298,10 @@ export default function MarketingStackAuditPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Proposal Generator", href: "/resources/marketing-proposal-generator" },
-          { title: "Marketing Rfp Template", href: "/resources/marketing-rfp-template" },
-          { title: "Marketing Statistics", href: "/resources/marketing-statistics" },
-          { title: "Marketing Statistics 2026", href: "/resources/marketing-statistics-2026" },
+          { title: "Marketing Proposal Generator", href: "/free-tools/free-marketing-proposal-generator" },
+          { title: "Marketing Rfp Template", href: "/free-tools/free-marketing-rfp-template" },
+          { title: "Marketing Statistics", href: "/free-tools/free-marketing-statistics" },
+          { title: "Marketing Statistics 2026", href: "/free-tools/free-marketing-statistics-2026" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

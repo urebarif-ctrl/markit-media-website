@@ -474,10 +474,10 @@ export default function ABTestCalculatorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Ab Test Ideas", href: "/resources/ab-test-ideas" },
-          { title: "Ad Budget Pacing", href: "/resources/ad-budget-pacing" },
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
-          { title: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
+          { title: "Ab Test Ideas", href: "/free-tools/free-ab-test-ideas" },
+          { title: "Ad Budget Pacing", href: "/free-tools/free-ad-budget-pacing" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
+          { title: "Ad Copy Generator", href: "/free-tools/free-ad-copy-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

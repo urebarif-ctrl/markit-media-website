@@ -405,7 +405,7 @@ export default function ClientReportingDashboardPage() {
         <Breadcrumb
           items={[
             { label: "Resources", href: "/resources" },
-            { label: "Client Reporting Dashboard", href: "/resources/client-reporting-dashboard" },
+            { label: "Client Reporting Dashboard", href: "/free-tools/free-client-reporting-dashboard" },
             { label: "Preview" },
           ]}
         />
@@ -1382,10 +1382,10 @@ export default function ClientReportingDashboardPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Clv Calculator", href: "/resources/clv-calculator" },
-          { title: "Campaign Tracker", href: "/resources/campaign-tracker" },
-          { title: "Channel Mix Modeller", href: "/resources/channel-mix-modeller" },
-          { title: "Channel Recommender", href: "/resources/channel-recommender" },
+          { title: "Clv Calculator", href: "/free-tools/free-clv-calculator" },
+          { title: "Campaign Tracker", href: "/free-tools/free-campaign-tracker" },
+          { title: "Channel Mix Modeller", href: "/free-tools/free-channel-mix-modeller" },
+          { title: "Channel Recommender", href: "/free-tools/free-channel-recommender" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

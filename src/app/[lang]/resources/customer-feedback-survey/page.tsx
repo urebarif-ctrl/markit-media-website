@@ -1018,10 +1018,10 @@ export default function CustomerFeedbackSurveyPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Customer Journey Builder", href: "/resources/customer-journey-builder" },
-          { title: "Customer Journey Mapper", href: "/resources/customer-journey-mapper" },
-          { title: "Contrast Checker", href: "/resources/contrast-checker" },
-          { title: "Conversion Checklist", href: "/resources/conversion-checklist" },
+          { title: "Customer Journey Builder", href: "/free-tools/free-customer-journey-builder" },
+          { title: "Customer Journey Mapper", href: "/free-tools/free-customer-journey-mapper" },
+          { title: "Contrast Checker", href: "/free-tools/free-contrast-checker" },
+          { title: "Conversion Checklist", href: "/free-tools/free-conversion-checklist" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

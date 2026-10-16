@@ -1022,10 +1022,10 @@ export default function AttributionCalculatorPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Ad Copy Analyzer", href: "/resources/ad-copy-analyzer" },
-          { title: "Ad Copy Generator", href: "/resources/ad-copy-generator" },
-          { title: "Ad Spend Calculator", href: "/resources/ad-spend-calculator" },
-          { title: "Agency Comparison", href: "/resources/agency-comparison" },
+          { title: "Ad Copy Analyzer", href: "/free-tools/free-ad-copy-analyzer" },
+          { title: "Ad Copy Generator", href: "/free-tools/free-ad-copy-generator" },
+          { title: "Ad Spend Calculator", href: "/free-tools/free-ad-spend-calculator" },
+          { title: "Agency Comparison", href: "/free-tools/free-agency-comparison" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -1919,10 +1919,10 @@ export default function TechStackAdvisorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Startup Marketing Guide", href: "/resources/startup-marketing-guide" },
-          { title: "Team Capacity Planner", href: "/resources/team-capacity-planner" },
-          { title: "Utm Builder", href: "/resources/utm-builder" },
-          { title: "Vendor Evaluation", href: "/resources/vendor-evaluation" },
+          { title: "Startup Marketing Guide", href: "/free-tools/free-startup-marketing-guide" },
+          { title: "Team Capacity Planner", href: "/free-tools/free-team-capacity-planner" },
+          { title: "Utm Builder", href: "/free-tools/free-utm-builder" },
+          { title: "Vendor Evaluation", href: "/free-tools/free-vendor-evaluation" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

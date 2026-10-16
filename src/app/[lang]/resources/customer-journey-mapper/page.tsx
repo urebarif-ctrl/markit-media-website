@@ -1058,10 +1058,10 @@ export default function CustomerJourneyMapperPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Customer Feedback Survey", href: "/resources/customer-feedback-survey" },
-          { title: "Customer Journey Builder", href: "/resources/customer-journey-builder" },
-          { title: "Conversion Funnel Simulator", href: "/resources/conversion-funnel-simulator" },
-          { title: "Cro Audit", href: "/resources/cro-audit" },
+          { title: "Customer Feedback Survey", href: "/free-tools/free-customer-feedback-survey" },
+          { title: "Customer Journey Builder", href: "/free-tools/free-customer-journey-builder" },
+          { title: "Conversion Funnel Simulator", href: "/free-tools/free-conversion-funnel-simulator" },
+          { title: "Cro Audit", href: "/free-tools/free-cro-audit" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

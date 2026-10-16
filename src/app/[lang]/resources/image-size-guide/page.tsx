@@ -234,10 +234,10 @@ export default function ImageSizeGuidePage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Funnel Visualizer", href: "/resources/funnel-visualizer" },
-          { title: "Google Ads Estimator", href: "/resources/google-ads-estimator" },
-          { title: "Hashtag Generator", href: "/resources/hashtag-generator" },
-          { title: "Headline Analyzer", href: "/resources/headline-analyzer" },
+          { title: "Funnel Visualizer", href: "/free-tools/free-funnel-visualizer" },
+          { title: "Google Ads Estimator", href: "/free-tools/free-google-ads-estimator" },
+          { title: "Hashtag Generator", href: "/free-tools/free-hashtag-generator" },
+          { title: "Headline Analyzer", href: "/free-tools/free-headline-analyzer" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

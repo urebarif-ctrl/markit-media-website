@@ -1,11 +1,14 @@
 import type { MetadataRoute } from "next";
 import { getSitemapEntries } from "@/app/sitemap";
 import { renderUrlSet, xmlResponse } from "@/lib/sitemap-xml";
+import { legacySeoAliases, retiredLegacyArticleRedirects } from "@/data/legacy-seo-pages";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
 const BASE_URL = "https://themarkitmedia.com";
+// A URL that redirects must never be listed in a sitemap.
+const REDIRECTED_PATHS = new Set<string>([...legacySeoAliases, ...retiredLegacyArticleRedirects].map((r) => r.source));
 const GROUPS = [
   "pages",
   "services",
@@ -83,6 +86,8 @@ export async function GET(
     return new Response("Not found", { status: 404 });
   }
 
-  const entries = (await getSitemapEntries()).filter((entry) => belongsTo(group, entry));
+  const entries = (await getSitemapEntries())
+    .filter((entry) => belongsTo(group, entry))
+    .filter((entry) => !REDIRECTED_PATHS.has(new URL(entry.url).pathname));
   return xmlResponse(renderUrlSet(entries));
 }

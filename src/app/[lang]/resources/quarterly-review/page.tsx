@@ -855,9 +855,9 @@ export default function QuarterlyReviewPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "KPI Builder", href: "/resources/kpi-builder" },
-          { title: "ROI Calculator", href: "/resources/roi-calculator" },
-          { title: "Marketing Audit Scorecard", href: "/resources/marketing-audit-scorecard" },
+          { title: "KPI Builder", href: "/free-tools/free-kpi-builder" },
+          { title: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+          { title: "Marketing Audit Scorecard", href: "/free-tools/free-marketing-audit-scorecard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },
@@ -1300,9 +1300,9 @@ export default function QuarterlyReviewPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "KPI Builder", href: "/resources/kpi-builder" },
-          { title: "ROI Calculator", href: "/resources/roi-calculator" },
-          { title: "Marketing Audit Scorecard", href: "/resources/marketing-audit-scorecard" },
+          { title: "KPI Builder", href: "/free-tools/free-kpi-builder" },
+          { title: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
+          { title: "Marketing Audit Scorecard", href: "/free-tools/free-marketing-audit-scorecard" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

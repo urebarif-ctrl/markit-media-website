@@ -959,10 +959,10 @@ export default function MarketingRFPTemplatePage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Maturity", href: "/resources/marketing-maturity" },
-          { title: "Marketing Proposal Generator", href: "/resources/marketing-proposal-generator" },
-          { title: "Marketing Stack Audit", href: "/resources/marketing-stack-audit" },
-          { title: "Marketing Statistics", href: "/resources/marketing-statistics" },
+          { title: "Marketing Maturity", href: "/free-tools/free-marketing-maturity" },
+          { title: "Marketing Proposal Generator", href: "/free-tools/free-marketing-proposal-generator" },
+          { title: "Marketing Stack Audit", href: "/free-tools/free-marketing-stack-audit" },
+          { title: "Marketing Statistics", href: "/free-tools/free-marketing-statistics" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

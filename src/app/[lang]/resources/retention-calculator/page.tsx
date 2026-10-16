@@ -1390,9 +1390,9 @@ export default function RetentionCalculatorPage() {
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Quarterly Review", href: "/resources/quarterly-review" },
-          { title: "Redesign Planner", href: "/resources/redesign-planner" },
-          { title: "Risk Assessment", href: "/resources/risk-assessment" },
+          { title: "Quarterly Review", href: "/free-tools/free-quarterly-review" },
+          { title: "Redesign Planner", href: "/free-tools/free-redesign-planner" },
+          { title: "Risk Assessment", href: "/free-tools/free-risk-assessment" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

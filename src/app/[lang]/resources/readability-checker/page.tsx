@@ -572,10 +572,10 @@ export default function ReadabilityCheckerPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-4">Related Tools</h2>
           <div className="flex flex-wrap gap-3">
-                <Link href={l("/resources/seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
-                <Link href={l("/resources/keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
-                <Link href={l("/resources/seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
-                <Link href={l("/resources/seo-audit-score")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Audit Score</Link>
+                <Link href={l("/free-tools/free-seo-checklist")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Checklist</Link>
+                <Link href={l("/free-tools/free-keyword-density-checker")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Keyword Density Checker</Link>
+                <Link href={l("/free-tools/free-seo-content-optimizer")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Content Optimizer</Link>
+                <Link href={l("/free-tools/free-seo-audit-score")} className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">SEO Audit Score</Link>
           </div>
         </div>
       </section>
@@ -599,10 +599,10 @@ export default function ReadabilityCheckerPage() {
           { title: "Digital Marketing", desc: "Drive the right traffic to your optimized digital experience.", href: "/services/digital-marketing" },
         ]}
         relatedTools={[
-          { title: "Ppc Audit Checklist", href: "/resources/ppc-audit-checklist" },
-          { title: "Pricing Calculator", href: "/resources/pricing-calculator" },
-          { title: "Pricing Optimizer", href: "/resources/pricing-optimizer" },
-          { title: "Pricing Page Analyzer", href: "/resources/pricing-page-analyzer" },
+          { title: "Ppc Audit Checklist", href: "/free-tools/free-ppc-audit-checklist" },
+          { title: "Pricing Calculator", href: "/free-tools/free-pricing-calculator" },
+          { title: "Pricing Optimizer", href: "/free-tools/free-pricing-optimizer" },
+          { title: "Pricing Page Analyzer", href: "/free-tools/free-pricing-page-analyzer" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

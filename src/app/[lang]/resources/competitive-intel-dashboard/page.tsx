@@ -1257,25 +1257,25 @@ export default function CompetitiveIntelDashboardPage() {
           </h2>
           <div className="flex flex-wrap gap-3">
             <Link
-              href={l("/resources/competitor-analysis")}
+              href={l("/free-tools/free-competitor-analysis")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitor Analysis
             </Link>
             <Link
-              href={l("/resources/competitor-benchmarking")}
+              href={l("/free-tools/free-competitor-benchmarking")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitor Benchmarking
             </Link>
             <Link
-              href={l("/resources/competitive-swot")}
+              href={l("/free-tools/free-competitive-swot")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitive SWOT
             </Link>
             <Link
-              href={l("/resources/competitive-gap")}
+              href={l("/free-tools/free-competitive-gap")}
               className="border border-neutral-200 px-4 py-2 text-base font-medium text-black hover:bg-black hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               Competitive Gap
@@ -1292,10 +1292,10 @@ export default function CompetitiveIntelDashboardPage() {
           { title: "SEO", desc: "SEO analytics that show exactly what drives organic growth.", href: "/services/seo" },
         ]}
         relatedTools={[
-          { title: "Clv Calculator", href: "/resources/clv-calculator" },
-          { title: "Client Onboarding Checklist", href: "/resources/client-onboarding-checklist" },
-          { title: "Client Reporting Dashboard", href: "/resources/client-reporting-dashboard" },
-          { title: "Color Palette Generator", href: "/resources/color-palette-generator" },
+          { title: "Clv Calculator", href: "/free-tools/free-clv-calculator" },
+          { title: "Client Onboarding Checklist", href: "/free-tools/free-client-onboarding-checklist" },
+          { title: "Client Reporting Dashboard", href: "/free-tools/free-client-reporting-dashboard" },
+          { title: "Color Palette Generator", href: "/free-tools/free-color-palette-generator" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

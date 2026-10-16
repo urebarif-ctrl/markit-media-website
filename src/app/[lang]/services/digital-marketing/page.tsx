@@ -47,9 +47,9 @@ export default function DigitalMarketingPage() {
         { q: "How do you develop a marketing strategy?", a: "We start with your business goals, analyze your market and competitors, audit your current marketing, then build a plan with channel recommendations, budgets, timelines, and KPIs." },
       ]}
       tools={[
-        { title: "Marketing Budget Planner", desc: "Plan your digital marketing budget across channels.", href: "/resources/marketing-budget-planner" },
-        { title: "ROI Calculator", desc: "Calculate the potential return on marketing investment.", href: "/resources/roi-calculator" },
-        { title: "Marketing Audit Scorecard", desc: "Score your current marketing across 8 key areas.", href: "/resources/marketing-audit-scorecard" },
+        { title: "Marketing Budget Planner", desc: "Plan your digital marketing budget across channels.", href: "/free-tools/free-marketing-budget-planner" },
+        { title: "ROI Calculator", desc: "Calculate the potential return on marketing investment.", href: "/free-tools/free-roi-calculator" },
+        { title: "Marketing Audit Scorecard", desc: "Score your current marketing across 8 key areas.", href: "/free-tools/free-marketing-audit-scorecard" },
       ]}
       industries={[
         { title: "B2B", href: "/industries/b2b" },

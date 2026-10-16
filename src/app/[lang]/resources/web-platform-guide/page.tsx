@@ -294,9 +294,9 @@ export default async function WebPlatformGuidePage({ params }: { params: Promise
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Tech Stack Advisor", href: "/resources/tech-stack-advisor" },
-          { title: "Utm Builder", href: "/resources/utm-builder" },
-          { title: "Vendor Evaluation", href: "/resources/vendor-evaluation" },
+          { title: "Tech Stack Advisor", href: "/free-tools/free-tech-stack-advisor" },
+          { title: "Utm Builder", href: "/free-tools/free-utm-builder" },
+          { title: "Vendor Evaluation", href: "/free-tools/free-vendor-evaluation" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

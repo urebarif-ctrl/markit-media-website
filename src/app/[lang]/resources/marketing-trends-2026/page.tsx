@@ -172,7 +172,7 @@ export default async function MarketingTrends2026Page({ params }: { params: Prom
                 <p className="text-base font-bold text-black">Looking for the 2025 edition?</p>
                 <p className="text-base text-gray-500">See what we predicted last year and how it played out.</p>
               </div>
-              <Link href={l("/resources/marketing-trends-2025")} className="text-base font-bold text-black hover:underline whitespace-nowrap focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              <Link href={l("/free-tools/free-marketing-trends-2025")} className="text-base font-bold text-black hover:underline whitespace-nowrap focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 Read 2025 Trends &rarr;
               </Link>
             </div>
@@ -204,10 +204,10 @@ export default async function MarketingTrends2026Page({ params }: { params: Prom
           { title: "Performance Marketing", desc: "Paid campaigns optimized for maximum return on ad spend.", href: "/services/performance-marketing" },
         ]}
         relatedTools={[
-          { title: "Marketing Statistics 2026", href: "/resources/marketing-statistics-2026" },
-          { title: "Marketing Timeline Planner", href: "/resources/marketing-timeline-planner" },
-          { title: "Marketing Trends 2025", href: "/resources/marketing-trends-2025" },
-          { title: "Martech Stack Planner", href: "/resources/martech-stack-planner" },
+          { title: "Marketing Statistics 2026", href: "/free-tools/free-marketing-statistics-2026" },
+          { title: "Marketing Timeline Planner", href: "/free-tools/free-marketing-timeline-planner" },
+          { title: "Marketing Trends 2025", href: "/free-tools/free-marketing-trends-2025" },
+          { title: "Martech Stack Planner", href: "/free-tools/free-martech-stack-planner" },
         ]}
         relatedBlog={[
           { title: "Digital Marketing Strategy Guide", href: "/blog" },

@@ -230,7 +230,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
                 { label: "Our Process", href: "/process" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Service Finder Quiz", href: "/services/finder" },
-                { label: "ROI Calculator", href: "/resources/roi-calculator" },
+                { label: "ROI Calculator", href: "/free-tools/free-roi-calculator" },
               ].map((link) => (
                 <Link key={link.href} href={l(link.href)} className="border border-gray-200 px-5 py-3 text-base font-medium text-black hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                   {link.label}
