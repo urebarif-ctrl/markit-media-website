@@ -441,7 +441,7 @@ export default async function MetaAdsPage({ params }: { params: Promise<{ lang: 
           </p>
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {caseStudies.map((item) => (
-              <Link key={item.title} href={item.href} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all">
+              <Link key={item.title} href={l(item.href)} className="group bg-white border border-gray-200 p-6 hover:border-black hover:shadow-lg transition-all">
                 <span className="text-xs font-bold uppercase tracking-[0.12em] text-gray-400">{item.eyebrow}</span>
                 <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-3 group-hover:underline">{item.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed mt-3">{item.text}</p>
@@ -494,7 +494,7 @@ export default async function MetaAdsPage({ params }: { params: Promise<{ lang: 
           </p>
           <div className="grid md:grid-cols-2 gap-5 mt-10">
             {resources.map((item) => (
-              <Link key={item.href} href={item.href} className="group bg-white border border-gray-200 p-6 hover:border-black transition-colors">
+              <Link key={item.href} href={l(item.href)} className="group bg-white border border-gray-200 p-6 hover:border-black transition-colors">
                 <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold group-hover:underline">{item.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed mt-3">{item.text}</p>
                 <span className="inline-block mt-5 text-sm font-bold">Read the guide →</span>
@@ -513,7 +513,7 @@ export default async function MetaAdsPage({ params }: { params: Promise<{ lang: 
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-9">
             {industries.map((item) => (
-              <Link key={item.href} href={item.href} className="border border-gray-200 p-5 font-bold hover:border-black hover:bg-gray-50 transition-colors">
+              <Link key={item.href} href={l(item.href)} className="border border-gray-200 p-5 font-bold hover:border-black hover:bg-gray-50 transition-colors">
                 {item.title} →
               </Link>
             ))}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://themarkitmedia.com/en/free-tools/free-headline-split-tester" },
   title: "Headline Split Test Generator | Free Tool",
   description:
     "Generate headline variations for A/B testing using proven formulas. Score each variant and export test plans for blogs, ads, and emails.",
