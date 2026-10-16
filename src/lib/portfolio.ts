@@ -16,6 +16,7 @@ export interface PortfolioMedia {
   a: string; // alt text
   bg: string; // average colour (placeholder background)
   ws: number[]; // available variant widths
+  d: string; // derivative key (first 16 hex of the original's SHA-256; client-independent, immutable)
   t: string[]; // gallery category tags
   f?: number; // featured rank (editorial shortlist)
   fl?: string[]; // review flags
@@ -38,6 +39,7 @@ export interface PortfolioClient {
   summary: string;
   hero: string | null;
   status: "draft" | "held";
+  hold_reason: string;
   existing_route: string | null;
   sections: ClientSection[];
   counts: { published: number; held: number };
@@ -61,6 +63,7 @@ export const MEDIA_BASE = (process.env.NEXT_PUBLIC_PORTFOLIO_MEDIA_BASE ?? "/por
 
 export const CATEGORIES = {
   "logo-design": { label: "Logo Design", route: "/work/logo-folio" },
+  branding: { label: "Branding & Visual Identity", route: "/work/branding-visual-identity" },
   "social-media": { label: "Social Media", route: "/work/social-media-designs" },
   "food-beverage": { label: "Food & Beverage", route: "/work/foodfolio" },
   fashion: { label: "Fashion & Apparel", route: "/work/fashion-feed" },
@@ -95,7 +98,7 @@ export function publishedClients(): PortfolioClient[] {
 }
 
 export function mediaUrl(id: string, width: number): string {
-  return `${MEDIA_BASE}/${id}/${width}.webp`;
+  return `${MEDIA_BASE}/${getMedia(id).d}/${width}.webp`;
 }
 
 export function mediaVariant(id: string, target: number): number {

@@ -20,6 +20,7 @@ export function GalleryGrid({
   filterBy = "cat",
   initial = 12,
   step = 12,
+  moreLabel = "Show more",
   label,
   locale = "en",
 }: {
@@ -28,6 +29,7 @@ export function GalleryGrid({
   filterBy?: "cat" | "client";
   initial?: number;
   step?: number;
+  moreLabel?: string;
   label: string;
   locale?: string;
 }) {
@@ -139,7 +141,7 @@ export function GalleryGrid({
             onClick={() => setVisible((v) => v + step)}
             className="border border-black px-8 py-3 font-bold hover:bg-black hover:text-white transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
-            Show more ({filtered.length - shown.length} remaining)
+            {moreLabel} ({filtered.length - shown.length} more)
           </button>
         </div>
       )}

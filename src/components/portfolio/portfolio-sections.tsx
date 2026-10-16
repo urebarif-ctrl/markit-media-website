@@ -37,7 +37,7 @@ export function ClientDesignWork({ client, locale = "en", heading = "Selected de
             <p className="text-gray-500 mt-2 mb-6">
               {s.media.length} piece{s.media.length === 1 ? "" : "s"} from the {client.name} {s.kind === "logo" ? "identity presentation" : "portfolio"}.
             </p>
-            <GalleryGrid items={s.media.map(toGalleryItem)} label={`${client.name} ${s.label.toLowerCase()}`} initial={12} step={12} locale={locale} />
+            <GalleryGrid items={s.media.map(toGalleryItem)} label={`${client.name} ${s.label.toLowerCase()}`} initial={s.media.length <= 15 ? s.media.length : 12} step={1000} moreLabel="Show full collection" locale={locale} />
           </div>
         ))}
       </div>
@@ -73,7 +73,7 @@ export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioCl
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label={`${client.name} overview`}>
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <div className="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.15em] text-gray-400">
+            <div className="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.15em] text-gray-600">
               {client.industry && <span>{client.industry}</span>}
               {client.type === "internal" && <span className="border border-gray-300 px-2 py-0.5 text-gray-600">In-house brand</span>}
             </div>
@@ -181,7 +181,7 @@ export function OurWorkShowcase({ locale = "en" }: { locale?: string }) {
   return (
     <section className="px-6 lg:px-12 py-16" aria-label="Our work: selected creative" id="selected-creative">
       <div className="max-w-7xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400">Selected Creative</p>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-600">Selected Creative</p>
         <h2 className={`${display} text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold tracking-tight mt-2`}>Our Work, Across Every Client</h2>
         <p className="text-gray-500 mt-3 mb-6 max-w-3xl">
           A curated selection from our logo, social media, food and fashion design work. Every piece links to the client it was made for.
@@ -229,7 +229,7 @@ export function ClientDirectorySection({ locale = "en" }: { locale?: string }) {
   return (
     <section className="px-6 lg:px-12 py-16" aria-label="All client case studies" id="all-clients">
       <div className="max-w-7xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400">Client Case Studies</p>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-600">Client Case Studies</p>
         <h2 className={`${display} text-[clamp(1.75rem,4vw,2.75rem)] font-extrabold tracking-tight mt-2`}>Every client, one page</h2>
         <p className="text-gray-500 mt-3 mb-8 max-w-3xl">
           Each client has one page showing all of their work together: logos, social media and food or fashion design where we made it.

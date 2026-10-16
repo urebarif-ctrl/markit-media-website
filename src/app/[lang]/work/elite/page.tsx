@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
+import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
+import { getClient } from "@/lib/portfolio";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/elite",title:"Elite — Website & Social Media",description:"Website showcase and social media reel production for Elite, demonstrating full-stack digital delivery.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Elite — Website & Social Media",
@@ -33,6 +35,8 @@ export default function ElitePage() {
         { title: "Video Production", href: "/services/video-production" },
       ]}
       readingTime="2 min read"
-    />
+    >
+      <ClientDesignWork client={getClient("elite")!} />
+    </CaseStudyPage>
   );
 }
