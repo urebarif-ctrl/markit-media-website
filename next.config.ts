@@ -89,6 +89,17 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     const redirects = [
+      // === Search Console 'not found' URLs from the old site, sent to the homepage (owner request, 16 Oct 2026) ===
+      { source: "/Markit/digital-marketing/page/6", destination: "/en", statusCode: 301 },
+      { source: "/blog-top-10-tools-for-social-media-management-2025/blog-top-10-tools-for-social-media-management-2026", destination: "/en", statusCode: 301 },
+      { source: "/blogs/using-ai-tools-for-effective-digital-marketing-automation", destination: "/en", statusCode: 301 },
+      { source: "/blogs/how-to-secure-your-wordpress-site-from-cyber-threats", destination: "/en", statusCode: 301 },
+      { source: "/blogs/create-an-seo-friendly-content-strategy-for-your-wordpress-blog", destination: "/en", statusCode: 301 },
+      { source: "/staging/contact", destination: "/en", statusCode: 301 },
+      { source: "/blogs/10-in-demand-it-skills-to-boost-your-resume", destination: "/en", statusCode: 301 },
+      { source: "/blogs/7-strategies-for-effective-coo-leadership", destination: "/en", statusCode: 301 },
+      { source: "/ba_cambridge", destination: "/en", statusCode: 301 },
+
       ...legacySeoAliases.map((alias) => ({ ...alias, statusCode: 301 as const })),
       ...retiredLegacyArticleRedirects.map((item) => ({ ...item, statusCode: 301 as const })),
 
