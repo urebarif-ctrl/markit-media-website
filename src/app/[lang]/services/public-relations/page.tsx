@@ -50,7 +50,7 @@ export default function PublicRelationsPage() {
         { title: "Fashion", href: "/industries/fashion" },
         { title: "Hospitality", href: "/industries/hospitality" },
         { title: "Healthcare", href: "/industries/healthcare" },
-        { title: "Technology", href: "/industries/technology" },
+        { title: "Technology", href: "/industries/saas" },
       ]}
       relatedServices={[
         { title: "Social Media", href: "/services/social-media" },
