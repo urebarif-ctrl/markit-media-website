@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: url },
-  robots: PORTFOLIO_NEW_PAGES_INDEXABLE ? undefined : { index: false, follow: false },
+  robots: PORTFOLIO_NEW_PAGES_INDEXABLE ? undefined : { index: false, follow: true },
   openGraph: { url, title, description, siteName: "Markit Media" },
 };
 

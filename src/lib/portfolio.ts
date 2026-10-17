@@ -41,6 +41,7 @@ export interface PortfolioClient {
   status: "draft" | "held";
   hold_reason: string;
   existing_route: string | null;
+  indexable: boolean;
   sections: ClientSection[];
   counts: { published: number; held: number };
   flags: string[];
@@ -55,11 +56,16 @@ interface SiteData {
 
 const data = raw as unknown as SiteData;
 
-/** New client pages stay noindex (and out of the sitemap) until the owner approves publication. */
-export const PORTFOLIO_NEW_PAGES_INDEXABLE = false;
+/**
+ * Approved for publication 2026-10-17. New client pages are indexable only when they carry enough work to stand alone
+ * (see `indexable`, set at build of the data: 6+ published pieces). Compact pages stay noindex,follow and out of the sitemap.
+ * Set to false to take every new page back to noindex.
+ */
+export const PORTFOLIO_NEW_PAGES_INDEXABLE = true;
 
 export const SITE_ORIGIN = "https://themarkitmedia.com";
-export const MEDIA_BASE = (process.env.NEXT_PUBLIC_PORTFOLIO_MEDIA_BASE ?? "/portfolio-media").replace(/\/+$/, "");
+/** Public R2 prefix (custom domain media.themarkitmedia.com). Override locally with NEXT_PUBLIC_PORTFOLIO_MEDIA_BASE=/portfolio-media. */
+export const MEDIA_BASE = (process.env.NEXT_PUBLIC_PORTFOLIO_MEDIA_BASE ?? "https://media.themarkitmedia.com/portfolio/v1").replace(/\/+$/, "");
 
 export const CATEGORIES = {
   "logo-design": { label: "Logo Design", route: "/work/logo-folio" },
@@ -162,4 +168,14 @@ export function trimDescription(text: string, max = 155): string {
   if (text.length <= max) return text;
   const cut = text.slice(0, max - 1);
   return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:]$/, "") + "…";
+}
+
+export function isClientIndexable(c: Pick<PortfolioClient, "indexable">): boolean {
+  return PORTFOLIO_NEW_PAGES_INDEXABLE && c.indexable;
+}
+
+/** Paths (without locale) of NEW portfolio pages that may enter the sitemap. Existing pages are already listed there. */
+export function portfolioSitemapPaths(): string[] {
+  if (!PORTFOLIO_NEW_PAGES_INDEXABLE) return [];
+  return ["/work/branding-visual-identity", ...clientsWithNewPages().filter((c) => c.indexable).map((c) => `/work/${c.slug}`)];
 }

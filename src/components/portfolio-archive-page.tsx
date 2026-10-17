@@ -7,9 +7,10 @@ interface PortfolioArchivePageProps {
   client: string;
   subtitle: string;
   note: string;
+  children?: React.ReactNode;
 }
 
-export function PortfolioArchivePage({ client, subtitle, note, locale = "en" }: PortfolioArchivePageProps & { locale?: string }) {
+export function PortfolioArchivePage({ client, subtitle, note, children, locale = "en" }: PortfolioArchivePageProps & { locale?: string }) {
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   return (
     <article>
@@ -56,6 +57,8 @@ export function PortfolioArchivePage({ client, subtitle, note, locale = "en" }: 
           </Animate>
         </div>
       </section>
+
+      {children}
     </article>
   );
 }

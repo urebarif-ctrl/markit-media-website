@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ClientCaseStudy } from "@/components/portfolio/portfolio-sections";
-import { PORTFOLIO_NEW_PAGES_INDEXABLE, SITE_ORIGIN, absoluteMediaUrl, clientWorkTypes, clientsWithNewPages, getClient, trimDescription } from "@/lib/portfolio";
+import { SITE_ORIGIN, isClientIndexable, absoluteMediaUrl, clientWorkTypes, clientsWithNewPages, getClient, trimDescription } from "@/lib/portfolio";
 
 export function generateStaticParams() {
   return clientsWithNewPages().map((c) => ({ client: c.slug }));
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title,
     description,
     alternates: { canonical: url },
-    robots: PORTFOLIO_NEW_PAGES_INDEXABLE ? undefined : { index: false, follow: false },
+    robots: isClientIndexable(c) ? undefined : { index: false, follow: true },
     openGraph: {
       url,
       title,

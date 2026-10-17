@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Animate } from "@/components/animate";
+import Image from "next/image";
+import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
@@ -10,6 +11,12 @@ export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/e
   description: "Food and beverage design portfolio: social media content, brand campaigns, and promotional graphics for restaurants, cafes, and F&B brands by Markit Media.",
   alternates: { canonical: "https://themarkitmedia.com/en/work/foodfolio" },
 };
+
+const galleryImages = [
+  { src: "/images/portfolio/foodfolio-hero.jpg", alt: "FoodFolio — food and beverage brand design overview" },
+  { src: "/images/portfolio/foodfolio-01.jpg", alt: "Food brand social media design — restaurant campaign" },
+  { src: "/images/portfolio/foodfolio-02.jpg", alt: "Food and beverage promotional design — menu showcase" },
+];
 
 export default async function FoodFolioPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -52,7 +59,19 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
         </div>
       </section>
 
-      <CategoryGallery category="food-beverage" locale={locale} heading="Food & beverage social media designs" intro="Restaurant, cafe and food-brand social designs. Each piece names the client it was made for and links to their case study." />
+      <section className="px-6 lg:px-12 py-12" aria-label="Portfolio gallery">
+        <div className="max-w-5xl mx-auto">
+          <Stagger stagger={100} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {galleryImages.map((img) => (
+              <div key={img.src} className="relative aspect-square overflow-hidden bg-gray-100 border border-gray-200">
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              </div>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      <CategoryGallery category="food-beverage" locale={locale} heading="More food & beverage social media designs" intro="Restaurant, cafe and food-brand social designs. Each piece names the client it was made for and links to their case study." />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Project details">
         <div className="max-w-3xl mx-auto space-y-12">
