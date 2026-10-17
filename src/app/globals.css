@@ -311,3 +311,27 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
   .home-page [aria-label="Platforms and services we work with"] .grid { gap: 8px; }
   .home-page [aria-label="Markets we serve"] .grid { grid-template-columns: 1fr; }
 }
+
+
+/* ========================================
+   Accessibility: text contrast and tap areas (Phase A, 2026-10)
+   Kept inside the utilities layer so hover/focus variants still win.
+   ======================================== */
+@layer utilities {
+  /* Light backgrounds: grey-400 (2.6:1) -> 4.8:1 */
+  .text-gray-400 { color: #6b7280; }
+  .text-gray-500 { color: #636b79; }
+  /* Dark sections keep their light secondary text, now at >= 4.5:1 */
+  :where(.bg-black, .bg-gray-900, .bg-gray-950, .bg-neutral-900, .bg-neutral-950) .text-gray-400 { color: #a1a8b3; }
+  :where(.bg-black, .bg-gray-900, .bg-gray-950, .bg-neutral-900, .bg-neutral-950) .text-gray-500 { color: #8d94a0; }
+  :where(.bg-black, .bg-gray-900, .bg-gray-950, .bg-neutral-900, .bg-neutral-950) .text-white\/40,
+  :where(.bg-black, .bg-gray-900, .bg-gray-950, .bg-neutral-900, .bg-neutral-950) .text-white\/45,
+  :where(.bg-black, .bg-gray-900, .bg-gray-950, .bg-neutral-900, .bg-neutral-950) .text-white\/50 { color: rgb(255 255 255 / 0.62); }
+  /* Big decorative step numbers on white */
+  .text-gray-300 { color: #868d9a; }
+  :where(.bg-black, .bg-gray-900, .bg-gray-950, .bg-neutral-900, .bg-neutral-950) .text-gray-300 { color: #d1d5db; }
+}
+
+/* Footer text links: at least 24px tall hit area (WCAG 2.2 AA) without changing the layout much */
+footer nav a { display: inline-block; padding-block: 4px; }
+footer a[aria-label*="Markit"], header a[aria-label*="Markit"] { display: inline-flex; min-height: 44px; align-items: center; }

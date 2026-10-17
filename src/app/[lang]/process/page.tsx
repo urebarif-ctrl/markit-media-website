@@ -134,7 +134,7 @@ export default async function ProcessPage({ params }: { params: Promise<{ lang: 
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 ${i < steps.length - 1 ? "border-b border-gray-200" : ""} items-center`}>
                 <div className={i % 2 === 1 ? "lg:order-2" : ""}>
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="font-[family-name:var(--font-display)] text-5xl font-extrabold text-black/10 leading-none">{step.num}</span>
+                    <span className="font-[family-name:var(--font-display)] text-5xl font-extrabold text-black/45 leading-none">{step.num}</span>
                     <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">{step.title}</h2>
                   </div>
                   <p className="text-base text-gray-500 leading-relaxed mb-6">{step.desc}</p>

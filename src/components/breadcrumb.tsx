@@ -8,7 +8,7 @@ interface BreadcrumbItem {
 
 export function Breadcrumb({ items, locale = "en" }: { items: BreadcrumbItem[]; locale?: string }) {
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
-  const filtered = items.filter((item) => item.label !== "Home" || item.href !== "/");
+  const filtered = items.filter((item) => item.label !== "Home");
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

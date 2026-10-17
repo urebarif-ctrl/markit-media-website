@@ -147,7 +147,7 @@ export default async function OnboardingPage({ params }: { params: Promise<{ lan
             <Animate key={w.week} animation="fade-up" delay={i * 80}>
               <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 py-12 ${i < weeklyTimeline.length - 1 ? "border-b border-gray-200" : ""}`}>
                 <div>
-                  <span className="font-[family-name:var(--font-display)] text-5xl font-extrabold text-black/10 block leading-none">{w.week.split(" ")[1]}</span>
+                  <span className="font-[family-name:var(--font-display)] text-5xl font-extrabold text-black/45 block leading-none">{w.week.split(" ")[1]}</span>
                   <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold text-black mt-2">{w.title}</h3>
                 </div>
                 <div>

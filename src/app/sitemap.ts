@@ -5,6 +5,9 @@ import { portfolioSitemapPaths } from "@/lib/portfolio";
 
 const BASE_URL = "https://themarkitmedia.com";
 
+// Published in the database but permanently redirected elsewhere: keep out of the sitemap (Search Console "Page with redirect").
+const REDIRECTED_BLOG_SLUGS = new Set(["marketing-dashboard-actually-gets-used"]);
+
 const staticPages = [
   "",
   "/about",
@@ -702,6 +705,7 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
 
     const blogPosts = await getAllPublishedSlugsWithDates();
     for (const post of blogPosts) {
+      if (REDIRECTED_BLOG_SLUGS.has(post.slug)) continue;
       entries.push({
         url: `${BASE_URL}/${locale}/blog/${post.slug}`,
         lastModified: new Date(post.updated_at || post.published_at || Date.now()),

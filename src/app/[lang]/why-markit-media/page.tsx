@@ -202,7 +202,7 @@ export default async function WhyMarkitMediaPage({ params }: { params: Promise<{
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-12">
             {processSteps.map((step) => (
               <div key={step.num} className="text-center p-6 border border-gray-200 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 motion-reduce:transition-none">
-                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/10 block mb-2">{step.num}</span>
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/45 block mb-2">{step.num}</span>
                 <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{step.title}</h3>
                 <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
               </div>

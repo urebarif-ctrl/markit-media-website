@@ -17,7 +17,6 @@ import {
   Hotel, Dumbbell, Car, HeartHandshake,
   Building, Plane, Factory,
 } from "lucide-react";
-import { TypingEffect } from "@/components/typing-effect";
 import dynamic from "next/dynamic";
 const YouTubeEmbed = dynamic(() => import("@/components/youtube-embed").then(m => m.YouTubeEmbed));
 import { BrandIcon } from "@/components/brand-icon";
@@ -202,17 +201,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </Animate>
               <Animate animation="fade-up" delay={250}>
                 <div className="mt-5 h-10 flex items-center">
-                  <TypingEffect
-                    phrases={[
-                      "Performance Marketing",
-                      "SEO That Ranks",
-                      "Websites That Convert",
-                      "Brands That Stand Out",
-                      "Video Production",
-                      "AI-Powered Solutions",
-                    ]}
-                    className="text-lg text-white/60 font-medium"
-                  />
+                  <p className="text-lg text-white/60 font-medium">Performance Marketing · SEO · Websites · Branding · Video · AI</p>
                 </div>
               </Animate>
               <Animate animation="fade-up" delay={350}>

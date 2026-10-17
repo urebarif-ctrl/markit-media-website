@@ -111,7 +111,11 @@ export function Nav({ locale, translations }: { locale: string; translations: Na
   const servicesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
   const industriesTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  const localizedPath = (nextLocale: string) => pathname.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
+  const localizedPath = (nextLocale: string) => {
+    // Individual free-tool pages exist in English only: other languages go to the tools index instead of a 404.
+    const base = nextLocale !== "en" && /^\/(en|ar|ur)\/free-tools\/.+/.test(pathname) ? `/${pathname.split("/")[1]}/free-tools` : pathname;
+    return base.replace(/^\/(en|ar|ur)(?=\/|$)/, `/${nextLocale}`) || `/${nextLocale}`;
+  };
 
 
   useEffect(() => {
