@@ -59,7 +59,7 @@ const nextConfig: NextConfig = {
       "style-src 'self' 'unsafe-inline' https://d1x9dsge91xf6g.cloudfront.net",
       "img-src 'self' data: https://media.themarkitmedia.com https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.facebook.com",
       "font-src 'self'",
-      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://region1.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.facebook.com https://connect.facebook.net https://call.callhippo.com",
+      "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://region1.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.facebook.com https://connect.facebook.net https://call.callhippo.com https://www.google.com/ccm/collect https://pagead2.googlesyndication.com/ccm/collect",
       "frame-src https://www.googletagmanager.com https://www.youtube.com https://td.doubleclick.net",
       "object-src 'none'",
       "base-uri 'self'",

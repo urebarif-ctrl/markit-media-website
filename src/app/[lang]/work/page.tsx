@@ -240,7 +240,7 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
             <Animate animation="fade-up"><YouTubeEmbed videoId="gP17pGzj85c" title="Markit Media — 2024–2025 Agency Showreel" /></Animate>
             <Animate animation="fade-up" delay={80}><YouTubeEmbed videoId="E_qCzSPRe6I" title="Markit Media — Selected Work 2024–2025" /></Animate>
           </div>
-          <p className="text-sm text-gray-500 mt-5">Press play for a broader view of the work, then explore individual projects and case studies below.</p>
+          <p className="text-sm text-gray-400 mt-5">Press play for a broader view of the work, then explore individual projects and case studies below.</p>
         </div>
       </section>
 
@@ -280,7 +280,7 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
                   </div>
                 </div>
                 <div className="p-6">
-                  <span className="text-base text-gray-400 font-medium">{project.services}</span>
+                  <span className="text-base text-gray-600 font-medium">{project.services}</span>
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-2 mb-2">{project.client}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{project.desc}</p>
                 </div>
@@ -352,7 +352,7 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
                   />
                 </div>
                 <div className="p-6">
-                  <span className="text-base text-gray-400 font-medium">{item.category}</span>
+                  <span className="text-base text-gray-600 font-medium">{item.category}</span>
                   <h3 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black group-hover:underline mt-1">{item.title}</h3>
                   <span className="text-base text-gray-400 mt-2 inline-block">View Project &rarr;</span>
                 </div>

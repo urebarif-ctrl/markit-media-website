@@ -19,7 +19,7 @@ export function PortfolioArchivePage({ client, subtitle, note, children, locale 
       <section className="px-6 lg:px-12 pt-24 pb-14">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-400">Branding & Identity Portfolio</p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-600">Branding & Identity Portfolio</p>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight mt-3">{client}</h1>
             <p className="text-lg md:text-xl text-gray-600 leading-8 mt-5 max-w-3xl">{subtitle}</p>
           </Animate>
