@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
+import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
+import { getClient } from "@/lib/portfolio";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/meezotech",title:"MeezoTech — Technology Branding & Motion Design",description:"MeezoTech branding and motion design work by Markit Media, including animated logo and technology-focused brand presentation.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "MeezoTech — Technology Branding & Motion Design",
@@ -20,5 +22,7 @@ export default function MeezoTechPage() {
     videos={[{id:"OK4E1x-e6m8",title:"MeezoTech logo animation and showreel"}]}
     relatedServices={[{title:"Branding",href:"/services/branding"},{title:"Motion Design",href:"/services/video-production/motion-design"},{title:"Video Production",href:"/services/video-production"}]}
     readingTime="2 min read"
-  />;
+  >
+      <ClientDesignWork client={getClient("meezotech")!} />
+    </CaseStudyPage>;
 }

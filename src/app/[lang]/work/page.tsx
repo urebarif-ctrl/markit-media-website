@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/json-ld";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 import { WorkServiceTabs } from "@/components/work-service-tabs";
+import { OurWorkShowcase } from "@/components/portfolio/portfolio-sections";
 
 export const metadata: Metadata = {
   title: "Our Work — Selected Projects & Portfolio",
@@ -224,6 +225,8 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
           </Animate>
         </div>
       </section>
+
+      <OurWorkShowcase locale={locale} />
 
       {/* Agency showreels */}
       <section className="px-6 lg:px-12 py-16 bg-black text-white" aria-label="Markit Media showreels">

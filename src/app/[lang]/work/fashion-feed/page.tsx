@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/fashion-feed",title:"Fashion Feed — Social Media Design Portfolio",description:"Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Fashion Feed — Social Media Design Portfolio",
@@ -69,6 +70,8 @@ export default async function FashionFeedPage({ params }: { params: Promise<{ la
           </Stagger>
         </div>
       </section>
+
+      <CategoryGallery category="fashion" locale={locale} heading="More fashion & apparel social media designs" intro="Social media designs for Find My Apparel, Minhaz Couture and Easywear. Filter by client, or open any piece full size." />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Project details">
         <div className="max-w-3xl mx-auto space-y-12">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/social-media-designs",title:"Social Media Designs — Creative Portfolio",description:"Social media design portfolio featuring brand identity, campaign graphics, and digital content for technology, lifestyle, and consumer brands by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Social Media Designs — Creative Portfolio",
@@ -69,6 +70,8 @@ export default async function SocialMediaDesignsPage({ params }: { params: Promi
           </Stagger>
         </div>
       </section>
+
+      <CategoryGallery category="social-media" locale={locale} heading="More social media designs across clients" intro="A curated selection from our social media design work. Each piece names the client it was made for and links to their case study." />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Project details">
         <div className="max-w-3xl mx-auto space-y-12">

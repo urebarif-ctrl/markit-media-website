@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPublishedSlugs, getAllPublishedSlugsWithDates, getAllCategories } from "@/lib/blog";
 import { legacySeoPages, retiredLegacyArticlePaths } from "@/data/legacy-seo-pages";
+import { portfolioSitemapPaths } from "@/lib/portfolio";
 
 const BASE_URL = "https://themarkitmedia.com";
 
@@ -668,7 +669,7 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
   }
 
   for (const locale of locales) {
-    for (const page of staticPages) {
+    for (const page of [...staticPages, ...portfolioSitemapPaths()]) {
       const resourceSlug = page.startsWith("/resources/") ? page.slice("/resources/".length) : null;
       const isFreeTool = resourceSlug ? FREE_TOOL_SLUGS.has(resourceSlug) : false;
       if (excludedFromIndexSitemap.has(page) && !isFreeTool) continue;

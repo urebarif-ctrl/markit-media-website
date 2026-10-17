@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
+import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
+import { getClient } from "@/lib/portfolio";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/pur-health",title:"Pur Health — Website & Social Media",description:"Website development and social media content production for Pur Health, a healthcare and wellness brand.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "Pur Health — Website & Social Media",
@@ -32,6 +34,8 @@ export default function PurHealthPage() {
         { title: "Content Marketing", href: "/services/content-marketing" },
       ]}
       readingTime="2 min read"
-    />
+    >
+      <ClientDesignWork client={getClient("pur-health")!} />
+    </CaseStudyPage>
   );
 }

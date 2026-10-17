@@ -55,3 +55,6 @@ scripts/
 # cloudflare
 .open-next/
 .wrangler/
+
+# portfolio media is served from PORTFOLIO_MEDIA_BASE (local symlink in dev, R2 later); never committed
+/public/portfolio-media

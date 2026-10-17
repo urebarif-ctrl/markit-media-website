@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 
 export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/foodfolio",title:"FoodFolio — Food & Beverage Design Portfolio",description:"Food and beverage design portfolio: social media content, brand campaigns, and promotional graphics for restaurants, cafes, and F&B brands by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
   title: "FoodFolio — Food & Beverage Design Portfolio",
@@ -69,6 +70,8 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
           </Stagger>
         </div>
       </section>
+
+      <CategoryGallery category="food-beverage" locale={locale} heading="More food & beverage social media designs" intro="Restaurant, cafe and food-brand social designs. Each piece names the client it was made for and links to their case study." />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Project details">
         <div className="max-w-3xl mx-auto space-y-12">
