@@ -49,7 +49,7 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Logo Folio overview">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
-            <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">Branding Portfolio</span>
+            <span className="text-base font-medium text-gray-600 uppercase tracking-[0.15em]">Branding Portfolio</span>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
               Logo Folio
             </h1>
@@ -76,7 +76,7 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
                   </div>
                 )}
                 <div className="p-6">
-                  <span className="text-base text-gray-400 font-medium">{project.industry}</span>
+                  <span className="text-base text-gray-600 font-medium">{project.industry}</span>
                   <h2 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mt-1">{project.client}</h2>
                   <p className="text-base text-gray-500 mt-2 leading-relaxed">{project.desc}</p>
                 </div>

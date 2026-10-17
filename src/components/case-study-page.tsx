@@ -63,9 +63,9 @@ export function CaseStudyPage({
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-3 mb-4">
-              <span className="text-base font-medium text-gray-400 uppercase tracking-[0.15em]">{industry}</span>
+              <span className="text-base font-medium text-gray-600 uppercase tracking-[0.15em]">{industry}</span>
               <span className="text-gray-300" aria-hidden="true">|</span>
-              <span className="text-base text-gray-400">{readingTime}</span>
+              <span className="text-base text-gray-600">{readingTime}</span>
             </div>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
               {title}
