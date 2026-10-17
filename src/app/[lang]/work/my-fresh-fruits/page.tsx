@@ -10,6 +10,7 @@ export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/e
 export default function MyFreshFruitsWorkPage() {
   return (
     <PortfolioArchivePage
+      coverKey="my-fresh-fruits"
       client="My Fresh Fruits"
       subtitle="Branding and logo design work from the Markit Media portfolio."
       note="My Fresh Fruits is listed in Markit Media's current branding and logo design portfolio. This dedicated project archive gives search visitors a relevant destination instead of sending the old portfolio URL to a generic case studies page."

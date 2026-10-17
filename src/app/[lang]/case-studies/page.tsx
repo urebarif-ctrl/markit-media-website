@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { CaseStudyThumbnail } from "@/components/case-study-thumbnail";
+import { CaseStudyCover, PortfolioFill } from "@/components/portfolio/cover-images";
+import { CATEGORY_COVER } from "@/lib/covers";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -28,10 +29,10 @@ const studies = [
 ];
 
 const creative = [
- {title:"Fashion Feed",category:"Fashion & E-commerce",href:"/work/fashion-feed",image:"/images/portfolio/behance/fashion.jpg"},
- {title:"Social Media Designs",category:"Social Media Creative",href:"/work/social-media-designs",image:"/images/portfolio/behance/social-media-designs.jpg"},
- {title:"FoodFolio",category:"Food & Beverage",href:"/work/foodfolio",image:"/images/portfolio/behance/foodfolio.jpg"},
- {title:"LogoFolio",category:"Branding & Identity",href:"/work/logo-folio",image:"/images/portfolio/behance/logofolio.jpg"},
+ {title:"Fashion Feed",category:"Fashion & E-commerce",href:"/work/fashion-feed",image:CATEGORY_COVER.fashion},
+ {title:"Social Media Designs",category:"Social Media Creative",href:"/work/social-media-designs",image:CATEGORY_COVER.social},
+ {title:"FoodFolio",category:"Food & Beverage",href:"/work/foodfolio",image:CATEGORY_COVER.food},
+ {title:"LogoFolio",category:"Branding & Identity",href:"/work/logo-folio",image:CATEGORY_COVER.logo},
 ];
 
 export default async function CaseStudiesPage({ params }: { params: Promise<{ lang: string }> }){
@@ -50,14 +51,14 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ la
   <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Selected client case studies"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Selected Client Work</SectionLabel><SectionTitle>Projects Connected to the Portfolio</SectionTitle><SectionDesc>Every card below opens the corresponding project page, so the case-study collection and portfolio stay connected rather than becoming two separate libraries.</SectionDesc></Animate>
    <Stagger stagger={60} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">{studies.map(s=><Link key={s.href} href={l(s.href)} className="group bg-white border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
-    <div className="relative aspect-[16/9] bg-gray-100 overflow-hidden"><CaseStudyThumbnail title={`${s.client}: ${s.service}`} /></div>
+    <CaseStudyCover k={s.href.split("/").pop()} />
     <div className="p-6"><div className="flex gap-2 flex-wrap text-xs font-bold uppercase tracking-wide text-gray-500"><span>{s.industry}</span><span>•</span><span>{s.service}</span></div><h2 className="font-extrabold text-xl mt-3 group-hover:underline">{s.client}</h2><p className="text-gray-500 mt-3 leading-relaxed">{s.desc}</p><span className="font-bold inline-block mt-5">View project details →</span></div>
    </Link>)}</Stagger>
   </div></section>
   <ClientDirectorySection locale={locale}/>
   <section className="px-6 lg:px-12 py-20" aria-label="Creative portfolio"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Creative Portfolio</SectionLabel><SectionTitle>More Visual Work</SectionTitle><SectionDesc>Design-led collections complement the client project stories above and connect directly to the wider Work library.</SectionDesc></Animate>
-   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><Image src={x.image} alt={`${x.title} — ${x.category} portfolio`} fill sizes="(max-width:640px) 100vw,25vw" className="object-cover group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>
+   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><PortfolioFill id={x.image} alt={`${x.title} — ${x.category} portfolio`} sizes="(max-width:640px) 100vw,25vw" className=" group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>
   </div></section>
   <section className="px-6 lg:px-12 py-16 bg-gray-50"><div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
    {[["Find work by service","Start with a service page to see relevant projects, supporting expertise and related reading.","/services"],["Browse every project","Use the Work page for the complete visual portfolio and individual project pages.","/work"],["Find work by industry","Explore industry pages when sector relevance matters more than the delivery channel.","/industries"]].map(x=><Link key={x[2]} href={l(x[2])} className="bg-white border border-gray-200 p-6 hover:border-black"><h3 className="font-extrabold">{x[0]}</h3><p className="text-sm text-gray-500 mt-2">{x[1]}</p><span className="font-bold text-sm mt-5 inline-block">Explore →</span></Link>)}

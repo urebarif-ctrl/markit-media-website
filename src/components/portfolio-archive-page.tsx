@@ -2,15 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { CaseStudyCover } from "@/components/portfolio/cover-images";
+import { coverFor } from "@/lib/covers";
 
 interface PortfolioArchivePageProps {
   client: string;
   subtitle: string;
   note: string;
+  coverKey?: string;
   children?: React.ReactNode;
 }
 
-export function PortfolioArchivePage({ client, subtitle, note, children, locale = "en" }: PortfolioArchivePageProps & { locale?: string }) {
+export function PortfolioArchivePage({ client, subtitle, note, coverKey, children, locale = "en" }: PortfolioArchivePageProps & { locale?: string }) {
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   return (
     <article>
@@ -29,6 +32,9 @@ export function PortfolioArchivePage({ client, subtitle, note, children, locale 
       <section className="px-6 lg:px-12 pb-16">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-in">
+            {coverKey && coverFor(coverKey) ? (
+              <div className="group border border-gray-100"><CaseStudyCover k={coverKey} priority sizes="(min-width: 1024px) 960px, 100vw" /></div>
+            ) : (
             <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
               <Image
                 src="/images/portfolio/behance/logofolio.jpg"
@@ -38,6 +44,7 @@ export function PortfolioArchivePage({ client, subtitle, note, children, locale 
                 className="object-cover"
               />
             </div>
+            )}
           </Animate>
         </div>
       </section>
