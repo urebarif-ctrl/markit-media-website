@@ -19,7 +19,6 @@ export interface PortfolioMedia {
   d: string; // derivative key (first 16 hex of the original's SHA-256; client-independent, immutable)
   t: string[]; // gallery category tags
   f?: number; // featured rank (editorial shortlist)
-  fl?: string[]; // review flags
 }
 
 export interface ClientSection {
@@ -38,13 +37,10 @@ export interface PortfolioClient {
   industry: string | null;
   summary: string;
   hero: string | null;
-  status: "draft" | "held";
-  hold_reason: string;
+  status: "draft";
   existing_route: string | null;
   indexable: boolean;
   sections: ClientSection[];
-  counts: { published: number; held: number };
-  flags: string[];
   related: string[];
 }
 
@@ -96,11 +92,11 @@ export function clientRoute(c: Pick<PortfolioClient, "slug" | "existing_route">)
 
 /** Clients that get a page from the new dynamic route (no pre-existing /work/<slug> page). */
 export function clientsWithNewPages(): PortfolioClient[] {
-  return data.clients.filter((c) => c.status === "draft" && !c.existing_route);
+  return data.clients.filter((c) => !c.existing_route);
 }
 
 export function publishedClients(): PortfolioClient[] {
-  return data.clients.filter((c) => c.status === "draft");
+  return data.clients;
 }
 
 export function mediaUrl(id: string, width: number): string {
