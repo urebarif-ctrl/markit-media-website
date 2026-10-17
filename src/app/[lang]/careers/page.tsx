@@ -165,7 +165,7 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
               { num: "05", title: "Offer", desc: "If it is a match, we move fast. Clear terms, fair compensation, and a start date that works for both sides." },
             ].map((step) => (
               <div key={step.num} className="flex gap-6 py-8 border-b border-gray-200">
-                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/10 flex-shrink-0 leading-none w-10">{step.num}</span>
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/45 flex-shrink-0 leading-none w-10">{step.num}</span>
                 <div>
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{step.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
@@ -216,7 +216,7 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
               { num: "05", title: "Offer", desc: "We move fast when we find the right fit. Clear terms, fair compensation, and a start date that works." },
             ].map((step) => (
               <div key={step.num} className="flex gap-6 py-8 border-b border-gray-200">
-                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/10 flex-shrink-0 leading-none w-10">{step.num}</span>
+                <span className="font-[family-name:var(--font-display)] text-3xl font-extrabold text-black/45 flex-shrink-0 leading-none w-10">{step.num}</span>
                 <div>
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black mb-2">{step.title}</h3>
                   <p className="text-base text-gray-500 leading-relaxed">{step.desc}</p>
