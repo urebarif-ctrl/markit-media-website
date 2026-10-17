@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title,
     description,
     alternates: { canonical: url },
-    robots: isClientIndexable(c) ? undefined : { index: false, follow: true },
+    ...(isClientIndexable(c) ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       url,
       title,
