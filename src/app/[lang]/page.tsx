@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { HeroShowcase, PortfolioFill } from "@/components/portfolio/cover-images";
+import { CATEGORY_COVER } from "@/lib/covers";
 import Link from "next/link";
 import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
@@ -240,57 +242,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </div>
             <div className="hidden lg:block relative">
               <Animate animation="fade-up" delay={200}>
-                <div className="hero-mosaic grid grid-cols-12 grid-rows-12 gap-2 h-[520px]">
-                  <Link href={l("/work/fashion-feed")} className="group relative col-span-7 row-span-7 overflow-hidden">
-                    <Image src="/images/portfolio/fashion-feed-hero.jpg" alt="Fashion campaign creative by Markit Media" fill priority sizes="35vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Fashion</span>
-                      <p className="text-sm font-bold text-white mt-0.5">Campaign Creative</p>
-                    </div>
-                  </Link>
-                  <Link href={l("/work/logo-folio")} className="group relative col-span-5 row-span-5 overflow-hidden">
-                    <Image src="/images/portfolio/logofolio-hero.jpg" alt="Logo and identity work by Markit Media" fill priority sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Branding</span>
-                      <p className="text-sm font-bold text-white mt-0.5">Identity Systems</p>
-                    </div>
-                  </Link>
-                  <Link href={l("/work/foodfolio")} className="group relative col-span-5 row-span-7 overflow-hidden">
-                    <Image src="/images/portfolio/foodfolio-hero.jpg" alt="Food and brand creative by Markit Media" fill priority sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Food &amp; Brand</span>
-                      <p className="text-sm font-bold text-white mt-0.5">Product Storytelling</p>
-                    </div>
-                  </Link>
-                  <Link href={l("/work/social-media-designs")} className="group relative col-span-7 row-span-5 overflow-hidden">
-                    <Image src="/images/portfolio/social-media-hero.jpg" alt="Social media designs by Markit Media" fill priority sizes="35vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/60">Social Media</span>
-                      <p className="text-sm font-bold text-white mt-0.5">Campaign Designs</p>
-                    </div>
-                  </Link>
-                </div>
+                <HeroShowcase variant="desktop" locale={locale} />
               </Animate>
             </div>
           </div>
-          <Animate animation="fade-up" delay={500}>
-            <div className="mt-10 lg:hidden">
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { src: "/images/portfolio/fashion-feed-hero.jpg", alt: "Fashion creative" },
-                  { src: "/images/portfolio/logofolio-hero.jpg", alt: "Logo and branding" },
-                ].map((img) => (
-                  <div key={img.alt} className="relative aspect-[4/3] overflow-hidden">
-                    <Image src={img.src} alt={img.alt} fill sizes="45vw" className="object-cover" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Animate>
+          <div className="mt-10 lg:hidden">
+            <HeroShowcase variant="mobile" locale={locale} />
+          </div>
         </div>
       </section>
 
@@ -336,12 +294,12 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-12">
             {[
-              {src:"/images/portfolio/fashion-feed-hero.jpg",eyebrow:"Fashion · E-commerce",title:"Fashion Feed",desc:"Campaign-ready visual direction and social creative built for a fast-moving fashion audience.",href:"/work/fashion-feed",span:"lg:col-span-7"},
-              {src:"/images/portfolio/foodfolio-hero.jpg",eyebrow:"Food · Brand Creative",title:"FoodFolio",desc:"Food-focused creative spanning brand presentation, product storytelling and social content.",href:"/work/foodfolio",span:"lg:col-span-5"},
-              {src:"/images/portfolio/social-media-hero.jpg",eyebrow:"Social · Campaigns",title:"Social Media Designs",desc:"A cross-industry selection of social creative designed to make brands look sharper in the feed.",href:"/work/social-media-designs",span:"lg:col-span-5"},
-              {src:"/images/portfolio/logo-folio-hero.jpg",eyebrow:"Branding · Identity",title:"LogoFolio",desc:"Identity and logo work across technology, food, energy, retail and emerging brands.",href:"/work/logo-folio",span:"lg:col-span-7"},
+              {src:CATEGORY_COVER.fashion,eyebrow:"Fashion · E-commerce",title:"Fashion Feed",desc:"Campaign-ready visual direction and social creative built for a fast-moving fashion audience.",href:"/work/fashion-feed",span:"lg:col-span-7"},
+              {src:CATEGORY_COVER.food,eyebrow:"Food · Brand Creative",title:"FoodFolio",desc:"Food-focused creative spanning brand presentation, product storytelling and social content.",href:"/work/foodfolio",span:"lg:col-span-5"},
+              {src:CATEGORY_COVER.social,eyebrow:"Social · Campaigns",title:"Social Media Designs",desc:"A cross-industry selection of social creative designed to make brands look sharper in the feed.",href:"/work/social-media-designs",span:"lg:col-span-5"},
+              {src:CATEGORY_COVER.logo,eyebrow:"Branding · Identity",title:"LogoFolio",desc:"Identity and logo work across technology, food, energy, retail and emerging brands.",href:"/work/logo-folio",span:"lg:col-span-7"},
             ].map((item,idx)=><Link key={item.href} href={l(item.href)} className={`group relative overflow-hidden bg-black min-h-[300px] sm:min-h-[360px] md:min-h-[430px] ${item.span}`}>
-              <Image src={item.src} alt={item.title+" — selected work by Markit Media"} fill sizes="(max-width: 1024px) 100vw, 60vw" loading="lazy" className="object-cover transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none"/>
+              <PortfolioFill id={item.src} alt={item.title+" — selected work by Markit Media"} sizes="(max-width: 1024px) 100vw, 60vw" className=" transition-transform duration-700 group-hover:scale-[1.035] motion-reduce:transition-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"/>
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
                 <div className="flex items-end justify-between gap-6">
@@ -766,14 +724,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <Animate animation="fade-up" className="lg:col-span-7">
               <Link href={l("/work/social-media-designs")} className="group block">
                 <div className="relative aspect-[16/11] overflow-hidden bg-gray-100">
-                  <Image
-                    src="/images/portfolio/social-media-hero.jpg"
-                    alt="Social media creative portfolio"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    loading="lazy"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none"
-                  />
+                  <PortfolioFill id={CATEGORY_COVER.social} alt="Social media creative portfolio: Texas Super League team reveal" sizes="(max-width: 1024px) 100vw, 58vw" className=" transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
                 </div>
                 <div className="mt-5 flex items-start justify-between gap-6">
                   <div>
@@ -789,14 +740,14 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               {[
                 {
                   href: "/work/foodfolio",
-                  src: "/images/portfolio/foodfolio-hero.jpg",
+                  src: CATEGORY_COVER.food,
                   eyebrow: "Food and Hospitality",
                   title: "Visual systems designed to make products feel worth choosing.",
                   alt: "Food and beverage creative portfolio",
                 },
                 {
                   href: "/work/fashion-feed",
-                  src: "/images/portfolio/fashion-feed-hero.jpg",
+                  src: CATEGORY_COVER.fashion,
                   eyebrow: "Fashion and Lifestyle",
                   title: "Campaign design with a stronger editorial point of view.",
                   alt: "Fashion campaign creative portfolio",
@@ -805,14 +756,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <Animate key={item.href} animation="fade-up" delay={(index + 1) * 100}>
                   <Link href={l(item.href)} className="group grid grid-cols-[0.9fr_1.1fr] min-h-[190px] overflow-hidden border border-gray-200 bg-gray-50 hover:border-black/30 hover:bg-white transition-colors">
                     <div className="relative min-h-[190px] overflow-hidden">
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 18vw"
-                        loading="lazy"
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transition-none"
-                      />
+                      <PortfolioFill id={item.src} alt={item.alt} sizes="(max-width: 640px) 45vw, (max-width: 1024px) 35vw, 18vw" className=" transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transition-none" />
                     </div>
                     <div className="p-5 flex flex-col justify-between">
                       <div>
@@ -847,13 +791,13 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           </Animate>
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             {[
-              { src: "/images/portfolio/behance/fashion.jpg", alt: "Fashion social media design", href: "/work/fashion-feed" },
-              { src: "/images/portfolio/behance/social-media-designs.jpg", alt: "Social media designs portfolio", href: "/work/social-media-designs" },
-              { src: "/images/portfolio/behance/foodfolio.jpg", alt: "Food and beverage design portfolio", href: "/work/foodfolio" },
-              { src: "/images/portfolio/behance/logofolio.jpg", alt: "Logo design portfolio", href: "/work/logo-folio" },
+              { src: CATEGORY_COVER.fashion, alt: "Fashion social media design by Markit Media", href: "/work/fashion-feed" },
+              { src: CATEGORY_COVER.social, alt: "Social media design portfolio", href: "/work/social-media-designs" },
+              { src: CATEGORY_COVER.food, alt: "Food and beverage design portfolio", href: "/work/foodfolio" },
+              { src: CATEGORY_COVER.logo, alt: "Logo and brand identity portfolio", href: "/work/logo-folio" },
             ].map((item) => (
               <Link key={item.href} href={l(item.href)} className="group relative aspect-[4/3] overflow-hidden bg-gray-100 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <Image src={item.src} alt={item.alt} fill sizes="(max-width: 768px) 50vw, 25vw" loading="lazy" className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
+                <PortfolioFill id={item.src} alt={item.alt} sizes="(max-width: 768px) 50vw, 25vw" className=" group-hover:scale-105 transition-transform duration-500 motion-reduce:transition-none" />
               </Link>
             ))}
           </Stagger>

@@ -10,6 +10,8 @@ import { YouTubeEmbed } from "@/components/youtube-embed";
 import { SOCIAL_LINKS, SOCIAL_URLS } from "@/lib/social";
 import { WorkServiceTabs } from "@/components/work-service-tabs";
 import { OurWorkShowcase } from "@/components/portfolio/portfolio-sections";
+import { CaseStudyCover, PortfolioFill } from "@/components/portfolio/cover-images";
+import { CATEGORY_COVER } from "@/lib/covers";
 
 export const metadata: Metadata = {
   title: "Our Work — Selected Projects & Portfolio",
@@ -95,28 +97,28 @@ const creativePortfolio = [
   {
     title: "Fashion Feed",
     category: "Fashion & Lifestyle",
-    image: "/images/portfolio/behance/fashion.jpg",
+    image: CATEGORY_COVER.fashion,
     href: "/work/fashion-feed",
     behanceUrl: "https://www.behance.net/gallery/228648529/Fashion",
   },
   {
     title: "Social Media Designs",
     category: "Social Media",
-    image: "/images/portfolio/behance/social-media-designs.jpg",
+    image: CATEGORY_COVER.social,
     href: "/work/social-media-designs",
     behanceUrl: "https://www.behance.net/gallery/228353933/Social-Media-Designs",
   },
   {
     title: "FoodFolio",
     category: "Food & Beverage",
-    image: "/images/portfolio/behance/foodfolio.jpg",
+    image: CATEGORY_COVER.food,
     href: "/work/foodfolio",
     behanceUrl: "https://www.behance.net/gallery/228262243/FoodFolio",
   },
   {
     title: "LogoFolio",
     category: "Branding & Identity",
-    image: "/images/portfolio/behance/logofolio.jpg",
+    image: CATEGORY_COVER.logo,
     href: "/work/logo-folio",
     behanceUrl: "https://www.behance.net/gallery/226405873/LogoFolio",
   },
@@ -273,12 +275,7 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
           <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {featuredProjects.map((project) => (
               <Link key={project.href} href={l(project.href)} className="group bg-white border border-gray-200 overflow-hidden hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                <div className="aspect-[16/10] bg-gray-100 flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <p className="font-[family-name:var(--font-display)] text-2xl font-extrabold text-black">{project.client}</p>
-                    <p className="text-base text-gray-400 mt-1">{project.industry}</p>
-                  </div>
-                </div>
+                <CaseStudyCover k={project.href.split("/").pop()} ratio="aspect-[16/10]" />
                 <div className="p-6">
                   <span className="text-base text-gray-600 font-medium">{project.services}</span>
                   <h3 className="font-[family-name:var(--font-display)] text-base font-extrabold text-black group-hover:underline mt-2 mb-2">{project.client}</h3>
@@ -343,13 +340,7 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
             {creativePortfolio.map((item) => (
               <Link key={item.title} href={l(item.href)} className="group block overflow-hidden border border-gray-200 hover:border-black/30 hover:shadow-lg transition-all motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
                 <div className="relative aspect-[16/10] bg-gray-100">
-                  <Image
-                    src={item.image}
-                    alt={`${item.title} — ${item.category}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500 motion-reduce:transition-none"
-                  />
+                  <PortfolioFill id={item.image} alt={`${item.title} — ${item.category}`} sizes="(max-width: 768px) 100vw, 50vw" className=" group-hover:scale-[1.02] transition-transform duration-500 motion-reduce:transition-none" />
                 </div>
                 <div className="p-6">
                   <span className="text-base text-gray-600 font-medium">{item.category}</span>
