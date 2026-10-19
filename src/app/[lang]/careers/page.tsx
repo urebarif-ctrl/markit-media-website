@@ -5,6 +5,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { SOCIAL_LINKS } from "@/lib/social";
 import { JsonLd } from "@/components/json-ld";
+import { CareersForm } from "@/components/careers-form";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -82,6 +83,9 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
             <SectionDesc>
               We hire people who care about results, think strategically, and want to work on challenging problems with talented teammates. No bureaucracy. No busywork. Just real impact.
             </SectionDesc>
+            <a href="#apply" className="inline-flex items-center gap-2 mt-8 bg-black text-white px-8 py-4 min-h-12 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+              Apply now <span aria-hidden="true">&rarr;</span>
+            </a>
           </Animate>
         </div>
       </section>
@@ -158,7 +162,7 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
           </Animate>
           <Stagger stagger={60} animation="fade-up" className="space-y-0 mt-12">
             {[
-              { num: "01", title: "Apply", desc: "Send us your resume and a brief note about what excites you about digital marketing. No cover letter template needed." },
+              { num: "01", title: "Apply", desc: "Use the form on this page to send your CV and a brief note about what excites you about digital marketing. No cover letter template needed." },
               { num: "02", title: "Initial Conversation", desc: "A 30-minute call to learn about your background, goals, and what kind of work you enjoy. We will share details about the role and team." },
               { num: "03", title: "Skills Assessment", desc: "A short practical task related to the role. We value real skills over rehearsed answers. You will have time to do your best work." },
               { num: "04", title: "Team Fit", desc: "Meet the people you would work with. Ask anything. Culture fit goes both ways." },
@@ -286,19 +290,17 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-black text-white text-center" aria-label="Apply now">
+      <section id="apply" className="px-6 lg:px-12 py-20 bg-black text-white scroll-mt-24" aria-label="Apply now">
         <div className="max-w-3xl mx-auto">
           <Animate animation="fade-up">
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight text-center">
               Ready to Apply?
             </h2>
-            <p className="text-lg text-gray-400 mt-4 mb-8">
-              Send us your resume and a brief note about what excites you about digital marketing. We review every application.
+            <p className="text-lg text-gray-300 mt-4 mb-10 text-center">
+              Send us your CV and a few words about what excites you about digital marketing. We review every application.
             </p>
-            <a href="mailto:ciao@themarkitmedia.com?subject=Career%20Inquiry" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 font-bold text-base hover:bg-gray-100 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-              Apply Now &rarr;
-            </a>
           </Animate>
+          <CareersForm />
         </div>
       </section>
     </article>

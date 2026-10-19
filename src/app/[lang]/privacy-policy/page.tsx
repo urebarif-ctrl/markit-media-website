@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const EFFECTIVE = "15 October 2026";
+const LAST_UPDATED = "19 October 2026";
 const EMAIL = "ciao@themarkitmedia.com";
 
 const toc: [string, string][] = [
@@ -105,7 +106,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className={P}>
-            <strong>Effective date:</strong> {EFFECTIVE} &nbsp;|&nbsp; <strong>Last updated:</strong> {EFFECTIVE}
+            <strong>Effective date:</strong> {EFFECTIVE} &nbsp;|&nbsp; <strong>Last updated:</strong> {LAST_UPDATED}
           </p>
 
           <div className="mt-8 border border-gray-200 bg-gray-50 p-6">
@@ -153,6 +154,7 @@ export default function PrivacyPolicyPage() {
                 ["Marketing source details", "The page you landed on, the referring site and campaign (UTM) parameters, saved with your enquiry so we know which marketing works.", "Collected automatically when you submit a form."],
                 ["Technical and usage data", "IP address, browser and device type, approximate location (country or city), pages viewed, clicks, form starts and other events, and cookie or device identifiers.", "Collected automatically by the Site and our analytics and advertising tools."],
                 ["Account and security data", "For people with dashboard accounts: name, email address, login codes, sign-in activity and IP address.", "You or our team create the account; collected when you sign in."],
+                ["Job applications", "Name, email, phone or WhatsApp number, city and country, the area you are interested in, a portfolio or LinkedIn link, a short note, and the CV file you upload.", "You submit the application form on our Careers page."],
                 ["Call-back requests", "The phone number you type into the call-back button on our US pages, so we can ring you, and the page you were on.", "You submit it in the call-back button."],
                 ["Communications", "The content of emails, WhatsApp messages and calls (notes) between you and us.", "When you contact us or we contact you."],
               ]}
@@ -239,6 +241,7 @@ export default function PrivacyPolicyPage() {
               rows={[
                 ["Enquiries, briefs and project correspondence", "For as long as needed to deal with your enquiry, deliver services and keep our business and legal records, then deleted or anonymised. You can ask us to delete it sooner."],
                 ["Newsletter sign-ups", "Until you unsubscribe or ask us to delete your address."],
+                ["Job applications and CVs", "Until we delete them. You can ask us at any time to delete your application and CV, and we will."],
                 ["Google Analytics data", "14 months (the retention period configured on our Google Analytics property)."],
                 ["Security and anti-spam counters (IP-based)", "Short-lived: from about one minute up to 24 hours."],
                 ["Dashboard account and activity records", "While the account is active and for a reasonable period afterwards for security and audit purposes."],
