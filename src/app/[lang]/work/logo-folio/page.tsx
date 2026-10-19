@@ -62,11 +62,11 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
 
       <section className="px-6 lg:px-12 py-12" aria-label="Logo animations">
         <div className="max-w-7xl mx-auto">
-          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Stagger stagger={80} animation="fade-up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:[&>.stagger-child:last-child:nth-child(3n+1)]:col-start-2">
             {logoProjects.map((project) => (
-              <div key={project.client} className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
+              <div key={project.client} className="bg-white border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
                 {project.videoId ? (
-                  <YouTubeEmbed videoId={project.videoId} title={`${project.client} logo animation`} />
+                  <YouTubeEmbed videoId={project.videoId} title={`${project.client} logo animation`} className="w-full" />
                 ) : (
                   <div className="aspect-video bg-gray-100 flex items-center justify-center">
                     <div className="text-center px-6">
