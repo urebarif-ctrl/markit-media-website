@@ -25,9 +25,10 @@ interface SubServicePageProps {
   platforms?: ServicePlatform[];
   children?: ReactNode;
   locale?: string;
+  quoteSectionPlacement?: "after-content" | "before-related-services";
 }
 
-export async function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
+export async function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en", quoteSectionPlacement = "after-content" }: SubServicePageProps) {
   const l = (path: string) => `/${locale}${path}`;
   const relatedPosts = blogCategory ? await getPostsByCategory(blogCategory, 3) : [];
   const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title);
@@ -48,6 +49,33 @@ export async function SubServicePage({ parentTitle, parentHref, title, descripti
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
+
+  const quoteSection = (
+    <section id="subservice-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div className="pt-2">
+            <SectionLabel>Request a Quote</SectionLabel>
+            <SectionTitle>Tell Us About the Work You Need</SectionTitle>
+            <p className="text-lg text-gray-500 leading-relaxed mt-5">
+              Share your current setup, the result you want, what has already been tried, and where you need our team to take ownership. We will use that context to recommend the right scope for {title.toLowerCase()}.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3 mt-7">
+              {details.slice(0, 4).map((item, index) => (
+                <div key={index} className="border border-gray-200 bg-gray-50 px-4 py-3">
+                  <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <QuoteForm
+            service={title}
+            title={`Request a ${title} Quote`}
+            buttonText="Send Request"
+            messagePlaceholder="Your business, current setup, goals, timeline, and what you want us to handle..."
+          />
+        </div>
+      </section>
+  );
 
   return (
     <article>
@@ -137,6 +165,8 @@ export async function SubServicePage({ parentTitle, parentHref, title, descripti
 
       {children}
 
+      {quoteSectionPlacement === "before-related-services" && quoteSection}
+
       {siblingServices.length > 0 && (
         <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label={`More ${parentTitle} services`}>
           <div className="max-w-7xl mx-auto">
@@ -174,30 +204,7 @@ export async function SubServicePage({ parentTitle, parentHref, title, descripti
         <div className="grid md:grid-cols-3 gap-6 mt-10">{relatedPosts.map(post=><Link key={post.slug} href={l(`/blog/${post.slug}`)} className="group bg-white border border-gray-200 p-6 hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-wider text-gray-400">{post.category}</span><h3 className="font-extrabold text-lg mt-3 group-hover:underline">{post.title}</h3><p className="text-sm text-gray-500 mt-3 line-clamp-3">{post.excerpt}</p><span className="inline-block mt-5 text-sm font-bold">Read article →</span></Link>)}</div>
       </div></section>}
 
-      <section id="subservice-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-          <div className="pt-2">
-            <SectionLabel>Request a Quote</SectionLabel>
-            <SectionTitle>Tell Us About the Work You Need</SectionTitle>
-            <p className="text-lg text-gray-500 leading-relaxed mt-5">
-              Share your current setup, the result you want, what has already been tried, and where you need our team to take ownership. We will use that context to recommend the right scope for {title.toLowerCase()}.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3 mt-7">
-              {details.slice(0, 4).map((item, index) => (
-                <div key={index} className="border border-gray-200 bg-gray-50 px-4 py-3">
-                  <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <QuoteForm
-            service={title}
-            title={`Request a ${title} Quote`}
-            buttonText="Send Request"
-            messagePlaceholder="Your business, current setup, goals, timeline, and what you want us to handle..."
-          />
-        </div>
-      </section>
+      {quoteSectionPlacement === "after-content" && quoteSection}
 
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="FAQ">
         <div className="max-w-3xl mx-auto">
