@@ -1,19 +1,54 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+import { isWorkersRuntime } from "@/lib/db";
 
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.MONGODB_DB_NAME || "markit_media";
 
-let clientPromise: Promise<MongoClient> | null = null;
+const clientOptions = {
+  serverApi: { version: ServerApiVersion.v1, strict: true, deprecationErrors: true },
+  maxPoolSize: 1,
+  minPoolSize: 0,
+  connectTimeoutMS: 8000,
+  serverSelectionTimeoutMS: 8000,
+} as const;
 
-function getClient() {
+// Node (dev server, builds): one shared client. A failed connect is dropped so the next call retries.
+let sharedClient: Promise<MongoClient> | null = null;
+
+// Workers: sockets are tied to the request that opened them, so a client cached at module level breaks on the
+// next request ("Cannot perform I/O on behalf of a different request") and a failed connect stays cached forever.
+// Keep exactly one client per request instead and close it shortly after the response.
+const requestClients = new WeakMap<object, Promise<MongoClient>>();
+const CLOSE_AFTER_MS = 10_000;
+
+async function getClient(): Promise<MongoClient> {
   if (!uri) throw new Error("MONGODB_URI is not configured.");
-  if (!clientPromise) {
-    const client = new MongoClient(uri, {
-      serverApi: { version: ServerApiVersion.v1, strict: true, deprecationErrors: true },
-    });
-    clientPromise = client.connect();
+
+  if (!isWorkersRuntime()) {
+    if (!sharedClient) {
+      sharedClient = new MongoClient(uri, clientOptions).connect().catch((error) => {
+        sharedClient = null;
+        throw error;
+      });
+    }
+    return sharedClient;
   }
-  return clientPromise;
+
+  const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+  const { ctx } = await getCloudflareContext({ async: true });
+  let pending = requestClients.get(ctx);
+  if (!pending) {
+    const client = new MongoClient(uri, clientOptions);
+    pending = client.connect().catch((error) => {
+      requestClients.delete(ctx);
+      throw error;
+    });
+    requestClients.set(ctx, pending);
+    ctx.waitUntil(
+      new Promise<void>((resolve) => setTimeout(resolve, CLOSE_AFTER_MS)).then(() => client.close().catch(() => undefined)),
+    );
+  }
+  return pending;
 }
 
 export async function getMongoDb() {
