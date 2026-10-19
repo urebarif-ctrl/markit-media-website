@@ -24,6 +24,7 @@ export default function VideoEditingPage() {
       platforms={[{"name":"Premiere Pro","note":"Adobe"},{"name":"DaVinci Resolve"},{"name":"After Effects","note":"Adobe"},{"name":"CapCut"},{"name":"Descript"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
+      servicePath="/services/video-production/video-editing"
       title="Video Editing"
       description="Turn raw footage into polished, compelling video content. Our post-production team handles everything from assembly cuts and narrative editing to color grading, sound design, and final mastering — delivering content that holds attention and communicates your message clearly."
       details={[

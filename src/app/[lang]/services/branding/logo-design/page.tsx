@@ -23,6 +23,7 @@ export default function LogoDesignPage() {
       platforms={[{"name":"Figma"},{"name":"Adobe","note":"Illustrator"},{"name":"Canva"},{"name":"Behance"}]}
       parentTitle="Branding & Design"
       parentHref="/services/branding"
+      servicePath="/services/branding/logo-design"
       title="Logo Design"
       description="Your logo is the most recognized element of your brand. We design logos that are distinctive, versatile, and built to last. Every concept is crafted with strategic intent and delivered in all the formats you need for digital, print, and environmental use."
       details={[

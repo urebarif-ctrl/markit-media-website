@@ -24,6 +24,7 @@ export default function RetargetingPage() {
       platforms={[{"name":"Google Ads"},{"name":"Facebook","note":"Meta Ads"},{"name":"LinkedIn"},{"name":"Google Tag Manager"},{"name":"Google Analytics","note":"GA4"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
+      servicePath="/services/performance-marketing/retargeting"
       title="Retargeting & Remarketing"
       description="Bring back the visitors who already know your brand. Most website visitors leave without converting on their first visit. Retargeting and remarketing campaigns keep your brand visible across channels, delivering relevant messaging to warm prospects and guiding them back to complete a purchase, fill out a form, or take the next step."
       details={[

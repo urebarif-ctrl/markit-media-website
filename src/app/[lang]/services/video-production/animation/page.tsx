@@ -24,6 +24,7 @@ export default function AnimationPage() {
       platforms={[{"name":"After Effects","note":"Adobe"},{"name":"Premiere Pro","note":"Adobe"},{"name":"Lottie"},{"name":"Canva"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
+      servicePath="/services/video-production/animation"
       title="Animation"
       description="Explain complex ideas, tell your brand story, and engage audiences with professionally crafted animation. We produce 2D animated content — from explainer videos and product walkthroughs to animated infographics and character-driven narratives — designed to communicate clearly and hold attention."
       details={[

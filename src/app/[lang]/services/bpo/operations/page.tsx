@@ -23,6 +23,7 @@ export default function OperationsPage() {
       platforms={[{"name":"Asana"},{"name":"Trello"},{"name":"Notion"},{"name":"Slack"},{"name":"Zapier"},{"name":"Google","note":"Workspace"}]}
       parentTitle="BPO Services"
       parentHref="/services/bpo"
+      servicePath="/services/bpo/operations"
       title="Operations Support"
       description="Keep your business running smoothly without growing your internal team. We handle process management, order fulfillment coordination, vendor communication, and back-office tasks that are essential but time-consuming, so your core team can focus on growth."
       details={[

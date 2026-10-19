@@ -24,6 +24,7 @@ export default function CustomWebAppsPage() {
       platforms={[{"name":"React"},{"name":"Next.js"},{"name":"Vercel"},{"name":"AWS"},{"name":"Cloudflare"},{"name":"Stripe"},{"name":"Figma"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
+      servicePath="/services/website-development/custom-web-apps"
       title="Custom Web Applications"
       description="When off-the-shelf software does not fit, we build custom web applications tailored to your workflows. From internal dashboards and client portals to full SaaS platforms, we handle architecture, development, and deployment so you get a tool that works exactly the way your business needs."
       details={[

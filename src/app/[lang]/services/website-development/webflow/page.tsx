@@ -12,6 +12,7 @@ export default function Page() {
       platforms={[{"name":"Webflow"},{"name":"Figma"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Zapier"}]}
     parentTitle="Website Development"
     parentHref="/services/website-development"
+    servicePath="/services/website-development/webflow"
     title="Webflow Development"
     description="Design and develop responsive Webflow websites with reusable components, CMS structure, clean content editing, technical SEO foundations, and launch QA."
     details={["Information architecture and responsive page design","Reusable Webflow components, CMS collections, and content templates","Forms, analytics, integrations, redirects, metadata, and technical launch checks","Performance review, editor handoff, documentation, and post-launch support"]}

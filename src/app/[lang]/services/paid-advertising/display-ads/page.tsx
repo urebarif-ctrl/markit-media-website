@@ -23,6 +23,7 @@ export default function DisplayAdsPage() {
       platforms={[{"name":"Google Ads","note":"Display Network"},{"name":"Facebook","note":"Meta Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Canva"}]}
       parentTitle="Paid Advertising"
       parentHref="/services/paid-advertising"
+      servicePath="/services/paid-advertising/display-ads"
       title="Display Advertising"
       description="Display advertising places your brand visually across websites, apps, and content networks your audience already visits. We handle creative production, placement strategy, and ongoing optimization to turn banner impressions into measurable awareness and conversions."
       details={[

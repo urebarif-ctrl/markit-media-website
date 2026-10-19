@@ -8,6 +8,8 @@ import { JsonLd } from "@/components/json-ld";
 import { QuoteForm } from "@/components/quote-form";
 import { getPostsByCategory } from "@/lib/blog";
 import { serviceClusters } from "@/data/service-clusters";
+import { caseStudiesFor } from "@/data/service-case-studies";
+import { ServiceCaseStudies } from "@/components/service-case-studies";
 
 interface ServicePlatform { name: string; note?: string; href?: string; }
 
@@ -15,6 +17,10 @@ interface SubServicePageProps {
   parentTitle: string;
   parentHref: string;
   title: string;
+  /** Optional H1 when the on-page heading should differ from the short service name used in breadcrumbs, schema and the quote form. */
+  heading?: string;
+  /** Path of this page without the locale. Set it to attach verified case studies and to leave the page out of its own sibling list. */
+  servicePath?: string;
   description: string;
   details: string[];
   benefits: string[];
@@ -27,10 +33,11 @@ interface SubServicePageProps {
   locale?: string;
 }
 
-export async function SubServicePage({ parentTitle, parentHref, title, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
+export async function SubServicePage({ parentTitle, parentHref, title, heading, servicePath, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
   const l = (path: string) => `/${locale}${path}`;
   const relatedPosts = blogCategory ? await getPostsByCategory(blogCategory, 3) : [];
-  const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title);
+  const caseStudies = servicePath ? caseStudiesFor(servicePath) : null;
+  const siblingServices = (serviceClusters[parentHref] || []).filter((item) => item.title !== title && item.href !== servicePath);
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -64,9 +71,12 @@ export async function SubServicePage({ parentTitle, parentHref, title, descripti
               </Link>
               <SectionLabel>{parentTitle}</SectionLabel>
               <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
-                {title}
+                {heading ?? title}
               </h1>
               <p className="text-lg text-gray-500 leading-relaxed mt-6">{description}</p>
+              <Link href="#subservice-quote" className="inline-flex items-center gap-2 mt-8 bg-black text-white px-8 py-4 min-h-12 font-bold text-base hover:bg-gray-800 transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                Request a Quote <span aria-hidden="true">→</span>
+              </Link>
             </Animate>
 
             <Animate animation="fade-up" delay={150}>
@@ -137,6 +147,33 @@ export async function SubServicePage({ parentTitle, parentHref, title, descripti
 
       {children}
 
+      {caseStudies && <ServiceCaseStudies heading={caseStudies.heading} intro={caseStudies.intro} projects={caseStudies.projects} locale={locale} />}
+
+      <section id="subservice-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+          <div className="pt-2">
+            <SectionLabel>Request a Quote</SectionLabel>
+            <SectionTitle>Tell Us About the Work You Need</SectionTitle>
+            <p className="text-lg text-gray-500 leading-relaxed mt-5">
+              Share your current setup, the result you want, what has already been tried, and where you need our team to take ownership. We will use that context to recommend the right scope for {title.toLowerCase()}.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3 mt-7">
+              {details.slice(0, 4).map((item, index) => (
+                <div key={index} className="border border-gray-200 bg-gray-50 px-4 py-3">
+                  <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <QuoteForm
+            service={title}
+            title={`Request a ${title} Quote`}
+            buttonText="Send Request"
+            messagePlaceholder="Your business, current setup, goals, timeline, and what you want us to handle..."
+          />
+        </div>
+      </section>
+
       {siblingServices.length > 0 && (
         <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label={`More ${parentTitle} services`}>
           <div className="max-w-7xl mx-auto">
@@ -169,35 +206,10 @@ export async function SubServicePage({ parentTitle, parentHref, title, descripti
         </div>
       </div></section>}
 
-      {relatedPosts.length > 0 && <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="Related insights"><div className="max-w-7xl mx-auto">
+      {relatedPosts.length > 0 && <section className="px-6 lg:px-12 py-20 border-y border-gray-200" aria-label="Related insights"><div className="max-w-7xl mx-auto">
         <SectionLabel>Insights</SectionLabel><SectionTitle>Read Next</SectionTitle>
         <div className="grid md:grid-cols-3 gap-6 mt-10">{relatedPosts.map(post=><Link key={post.slug} href={l(`/blog/${post.slug}`)} className="group bg-white border border-gray-200 p-6 hover:shadow-lg transition-all"><span className="text-xs font-bold uppercase tracking-wider text-gray-400">{post.category}</span><h3 className="font-extrabold text-lg mt-3 group-hover:underline">{post.title}</h3><p className="text-sm text-gray-500 mt-3 line-clamp-3">{post.excerpt}</p><span className="inline-block mt-5 text-sm font-bold">Read article →</span></Link>)}</div>
       </div></section>}
-
-      <section id="subservice-quote" className="px-6 lg:px-12 py-20 scroll-mt-24" aria-label="Request a quote">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-          <div className="pt-2">
-            <SectionLabel>Request a Quote</SectionLabel>
-            <SectionTitle>Tell Us About the Work You Need</SectionTitle>
-            <p className="text-lg text-gray-500 leading-relaxed mt-5">
-              Share your current setup, the result you want, what has already been tried, and where you need our team to take ownership. We will use that context to recommend the right scope for {title.toLowerCase()}.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3 mt-7">
-              {details.slice(0, 4).map((item, index) => (
-                <div key={index} className="border border-gray-200 bg-gray-50 px-4 py-3">
-                  <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <QuoteForm
-            service={title}
-            title={`Request a ${title} Quote`}
-            buttonText="Send Request"
-            messagePlaceholder="Your business, current setup, goals, timeline, and what you want us to handle..."
-          />
-        </div>
-      </section>
 
       <section className="px-6 lg:px-12 py-20 bg-gray-50" aria-label="FAQ">
         <div className="max-w-3xl mx-auto">

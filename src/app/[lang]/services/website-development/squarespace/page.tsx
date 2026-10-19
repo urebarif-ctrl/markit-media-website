@@ -12,6 +12,7 @@ export default function Page() {
       platforms={[{"name":"Squarespace"},{"name":"Google Analytics","note":"GA4"},{"name":"Stripe"},{"name":"Canva"},{"name":"Google Tag Manager"}]}
     parentTitle="Website Development"
     parentHref="/services/website-development"
+    servicePath="/services/website-development/squarespace"
     title="Squarespace Development"
     description="Build or improve Squarespace websites for service businesses, portfolios, and content-led brands that want straightforward content management without sacrificing structure and conversion clarity."
     details={["Site architecture, page hierarchy, and responsive design","Template customization, content modules, forms, and integrations","On-page SEO, metadata, analytics, redirects, and launch configuration","Content migration, QA, training, and ongoing improvements"]}

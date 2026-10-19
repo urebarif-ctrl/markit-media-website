@@ -23,6 +23,7 @@ export default function SocialAnalyticsPage() {
       platforms={[{"name":"Google Analytics","note":"GA4"},{"name":"Facebook","note":"Meta Business Suite"},{"name":"Instagram"},{"name":"LinkedIn"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
+      servicePath="/services/social-media/social-analytics"
       title="Social Media Analytics"
       description="You cannot improve what you do not measure. We provide in-depth social media analytics that go beyond surface-level metrics to reveal what is actually driving results, where your audience is growing, and how your performance compares to competitors."
       details={[

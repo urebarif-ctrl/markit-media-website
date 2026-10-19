@@ -12,6 +12,7 @@ export default function Page() {
       platforms={[{"name":"Microsoft Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Ads","note":"Import campaigns"}]}
     parentTitle="Performance Marketing"
     parentHref="/services/performance-marketing"
+    servicePath="/services/performance-marketing/microsoft-ads"
     title="Microsoft Ads (Bing)"
     description="Reach high-intent searchers across Microsoft Bing and its search partner ecosystem with campaigns structured around profitable queries, conversion quality, and incremental demand."
     details={["Account and campaign architecture for search intent and business priorities","Keyword, search-term, negative-keyword, audience, location, device, and schedule management","Responsive search ads, extensions/assets, landing-page alignment, and offer testing","Conversion tracking, budget pacing, bid strategy reviews, and ongoing optimization"]}

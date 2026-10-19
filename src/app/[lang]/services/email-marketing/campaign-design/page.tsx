@@ -23,6 +23,7 @@ export default function CampaignDesignPage() {
       platforms={[{"name":"Mailchimp"},{"name":"Klaviyo"},{"name":"Canva"},{"name":"Figma"},{"name":"SendGrid"}]}
       parentTitle="Email Marketing"
       parentHref="/services/email-marketing"
+      servicePath="/services/email-marketing/campaign-design"
       title="Email Campaign Design"
       description="Get professionally designed email campaigns that reflect your brand and drive action. We create custom templates and one-off campaign designs that look great on every device, load quickly, and guide readers toward a clear call to action."
       details={[

@@ -24,6 +24,7 @@ export default function LandingPagesPage() {
       platforms={[{"name":"Webflow"},{"name":"WordPress"},{"name":"Next.js"},{"name":"Figma"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Hotjar"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
+      servicePath="/services/website-development/landing-pages"
       title="Landing Page Design"
       description="Get landing pages built to convert. We design and develop focused, single-purpose pages for your ad campaigns, product launches, and lead generation efforts, with clear messaging, strong calls to action, and the tracking infrastructure to measure what works."
       details={[

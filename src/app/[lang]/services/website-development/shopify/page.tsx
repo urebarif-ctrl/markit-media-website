@@ -24,6 +24,7 @@ export default function ShopifyPage() {
       platforms={[{"name":"Shopify"},{"name":"Google Analytics","note":"GA4"},{"name":"Facebook","note":"Meta Pixel"},{"name":"Klaviyo"},{"name":"Google Tag Manager"},{"name":"Stripe"}]}
       parentTitle="Shopify"
       parentHref="/services/shopify"
+      servicePath="/services/website-development/shopify"
       title="Shopify Development"
       description="Launch a Shopify store that looks professional and drives sales. We build custom storefronts, tailor themes to your brand, and integrate the apps and tools you need to run your e-commerce business efficiently."
       details={[

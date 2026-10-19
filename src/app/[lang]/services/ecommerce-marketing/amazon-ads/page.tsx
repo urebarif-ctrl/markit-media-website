@@ -23,6 +23,7 @@ export default function AmazonAdsPage() {
       platforms={[{"name":"Amazon"},{"name":"Google Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Semrush"}]}
       parentTitle="E-commerce Marketing"
       parentHref="/services/ecommerce-marketing"
+      servicePath="/services/ecommerce-marketing/amazon-ads"
       title="Amazon Advertising"
       description="Increase product visibility and sales on the world's largest marketplace. We build and manage Amazon ad campaigns across Sponsored Products, Sponsored Brands, and Demand-Side Platform (DSP) to put your products in front of high-intent shoppers."
       details={[

@@ -12,6 +12,7 @@ export default function Page() {
       platforms={[{"name":"Google Search Console"},{"name":"Screaming Frog"},{"name":"Ahrefs"},{"name":"Semrush"},{"name":"Cloudflare"},{"name":"WordPress"}]}
     parentTitle="Website Development"
     parentHref="/services/website-development"
+    servicePath="/services/website-development/seo-migration-redirects"
     title="SEO Migration & Redirect Services"
     description="Protect discoverability during redesigns, URL changes, platform migrations, domain moves, and content consolidation with URL mapping, permanent redirects, canonical checks, internal-link updates, sitemaps, and post-launch monitoring."
     details={["Crawl and inventory important existing URLs, backlinks, templates, metadata, and indexable content","Map old URLs to the most relevant new destinations and define server-side permanent redirect rules","Update internal links, canonicals, hreflang where applicable, robots directives, and XML sitemaps","Validate redirects and crawlability after launch, then monitor Search Console and analytics for migration issues"]}

@@ -61,7 +61,7 @@ export default function WebsiteDevelopmentPage() {
       portfolio={[
         { client: "Elite", desc: "Custom website development with professional design and social integration.", href: "/work/elite" },
         { client: "Pur Health", desc: "Healthcare website focused on trust, clarity, and accessibility.", href: "/work/pur-health" },
-        { client: "Minhaz Couture", desc: "Fashion e-commerce website with social media content.", href: "/work/minhaz-couture" },
+        { client: "Minhaz Couture", desc: "Custom website for a fashion brand, with social media content.", href: "/work/minhaz-couture" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },
