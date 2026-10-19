@@ -90,8 +90,12 @@ export function CareersForm() {
           </select>
         </div>
         <div>
-          <label htmlFor={`${id}-link`} className={label}>Portfolio or LinkedIn link</label>
-          <input id={`${id}-link`} name="link" type="url" inputMode="url" placeholder="https://" maxLength={300} className={field} />
+          <label htmlFor={`${id}-link`} className={label}>Portfolio link (optional)</label>
+          <input id={`${id}-link`} name="link" type="url" inputMode="url" placeholder="Behance, GitHub, your website…" maxLength={300} className={field} />
+        </div>
+        <div>
+          <label htmlFor={`${id}-linkedin`} className={label}>LinkedIn profile (optional)</label>
+          <input id={`${id}-linkedin`} name="linkedin" type="url" inputMode="url" placeholder="https://linkedin.com/in/…" maxLength={300} className={field} />
         </div>
       </div>
 

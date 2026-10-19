@@ -42,13 +42,14 @@ export async function POST(request: NextRequest) {
     const location = text(form.get("location"), 120);
     const role = text(form.get("role"), 80);
     const link = text(form.get("link"), 300);
+    const linkedin = text(form.get("linkedin"), 300);
     const note = text(form.get("note"), 2000);
     const consent = text(form.get("consent"), 10) === "yes";
 
     if (name.length < 2) return fail("Please enter your name.", 400);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("Please enter a valid email address.", 400);
     if (!(CAREER_ROLES as readonly string[]).includes(role)) return fail("Please choose the area you are interested in.", 400);
-    if (link && !/^https?:\/\/\S+$/i.test(link)) return fail("The link must start with http:// or https://", 400);
+    if ((link && !/^https?:\/\/\S+$/i.test(link)) || (linkedin && !/^https?:\/\/\S+$/i.test(linkedin))) return fail("Links must start with http:// or https://", 400);
     if (!consent) return fail("Please confirm that we may store your application.", 400);
 
     const file = form.get("cv");
@@ -76,6 +77,7 @@ export async function POST(request: NextRequest) {
         location,
         role,
         link,
+        linkedin,
         note,
         cvId: cv.insertedId,
         cvFilename: safeFilename(file.name),

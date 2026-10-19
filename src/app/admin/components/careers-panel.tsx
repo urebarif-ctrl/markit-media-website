@@ -12,6 +12,7 @@ type Application = {
   location?: string;
   role: string;
   link?: string;
+  linkedin?: string;
   note?: string;
   cvFilename: string;
   cvSize: number;
@@ -216,7 +217,8 @@ export function CareersPanel({ headers }: { headers: Record<string, string> }) {
               <div><dt className="font-bold text-gray-500">Email</dt><dd><a className="underline" href={"mailto:" + selected.email}>{selected.email}</a></dd></div>
               <div><dt className="font-bold text-gray-500">Phone / WhatsApp</dt><dd>{selected.phone || "—"}</dd></div>
               <div><dt className="font-bold text-gray-500">Location</dt><dd>{selected.location || "—"}</dd></div>
-              <div><dt className="font-bold text-gray-500">Link</dt><dd>{selected.link ? <a className="underline break-all" href={selected.link} target="_blank" rel="noopener noreferrer nofollow">{selected.link}</a> : "—"}</dd></div>
+              <div><dt className="font-bold text-gray-500">Portfolio</dt><dd>{selected.link ? <a className="underline break-all" href={selected.link} target="_blank" rel="noopener noreferrer nofollow">{selected.link}</a> : "—"}</dd></div>
+              <div><dt className="font-bold text-gray-500">LinkedIn</dt><dd>{selected.linkedin ? <a className="underline break-all" href={selected.linkedin} target="_blank" rel="noopener noreferrer nofollow">{selected.linkedin}</a> : "—"}</dd></div>
               <div><dt className="font-bold text-gray-500">Note from applicant</dt><dd className="whitespace-pre-wrap">{selected.note || "—"}</dd></div>
               <div><dt className="font-bold text-gray-500">CV</dt><dd><a className="font-bold underline" href={cvHref(selected)} download>{selected.cvFilename}</a> <span className="text-gray-500">({formatSize(selected.cvSize)})</span></dd></div>
             </dl>
