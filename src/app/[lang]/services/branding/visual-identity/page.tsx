@@ -23,6 +23,7 @@ export default function VisualIdentityPage() {
       platforms={[{"name":"Figma"},{"name":"Adobe","note":"Creative Suite"},{"name":"Canva"},{"name":"Behance"}]}
       parentTitle="Branding & Design"
       parentHref="/services/branding"
+      servicePath="/services/branding/visual-identity"
       title="Visual Identity"
       description="Your visual identity is the complete system of design elements that represent your brand. Beyond the logo, we develop color palettes, typography, iconography, patterns, and graphic devices that create a cohesive and recognizable look across every touchpoint."
       details={[

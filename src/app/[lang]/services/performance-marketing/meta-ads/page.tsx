@@ -136,6 +136,7 @@ export default async function MetaAdsPage({ params }: { params: Promise<{ lang: 
       platforms={[{"name":"Facebook"},{"name":"Instagram"},{"name":"WhatsApp"},{"name":"Google Analytics","note":"GA4"},{"name":"Shopify","note":"Pixel integration"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
+      servicePath="/services/performance-marketing/meta-ads"
       title="Meta Ads (Facebook & Instagram)"
       description="Tap into the combined audience of Facebook and Instagram with campaigns built for measurable results. From awareness to conversion, we build full-funnel Meta advertising strategies with precision targeting, creative testing, and data-driven optimization to drive qualified leads and sales."
       details={[

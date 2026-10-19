@@ -23,6 +23,7 @@ export default function WhitepapersPage() {
       platforms={[{"name":"Canva"},{"name":"Adobe","note":"InDesign"},{"name":"Google Analytics","note":"GA4"},{"name":"HubSpot"}]}
       parentTitle="Content Marketing"
       parentHref="/services/content-marketing"
+      servicePath="/services/content-marketing/whitepapers"
       title="Whitepapers & Reports"
       description="Whitepapers and research reports give prospects a reason to share their contact information and give your sales team credibility in complex deals. We research, write, and format long-form content assets designed to generate leads and establish authority in your market."
       details={[

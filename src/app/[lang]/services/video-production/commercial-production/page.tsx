@@ -24,6 +24,7 @@ export default function CommercialProductionPage() {
       platforms={[{"name":"Premiere Pro","note":"Adobe"},{"name":"After Effects","note":"Adobe"},{"name":"DaVinci Resolve"},{"name":"Lightroom","note":"Adobe"},{"name":"YouTube"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
+      servicePath="/services/video-production/commercial-production"
       title="Commercial Production"
       description="Bring your brand story to life with professionally produced commercials built for impact. We handle every stage of production — creative concept, scripting, casting, filming, and post-production — delivering polished video assets ready for broadcast, digital platforms, and social media."
       details={[

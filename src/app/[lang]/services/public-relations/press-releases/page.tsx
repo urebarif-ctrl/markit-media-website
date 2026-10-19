@@ -13,6 +13,7 @@ export default function Page() {
       platforms={[{"name":"Google","note":"News"},{"name":"Semrush"},{"name":"Ahrefs"},{"name":"WordPress"}]}
       parentTitle="Public Relations"
       parentHref="/services/public-relations"
+      servicePath="/services/public-relations/press-releases"
       title="Press Release Writing & Distribution"
       description="Press release strategy, writing, editing, media assets, and distribution support for announcements that have a clear news angle and need professional presentation."
       details={["News-angle assessment before writing so announcements are framed around what matters to readers, media, customers, stakeholders, or the market.","Press release writing with a clear headline, lead, supporting facts, quotes, context, company information, and a structure that makes the announcement easy to understand.","Editing and fact-check coordination with the client to verify names, dates, claims, product information, event details, statistics, and approved spokesperson quotes.","Supporting press assets such as company descriptions, spokesperson information, image links, media contacts, background notes, and campaign landing pages where needed.","Distribution planning based on the objective, including direct media outreach, owned channels, relevant distribution services, stakeholder communication, and website publication.","Post-release follow-up and measurement focused on pickup, referral traffic, enquiries, media responses, branded search, and the next communication opportunity."]}

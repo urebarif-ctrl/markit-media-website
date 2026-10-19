@@ -23,6 +23,7 @@ export default function DataEntryPage() {
       platforms={[{"name":"Google","note":"Sheets"},{"name":"Notion"},{"name":"Zoho"},{"name":"HubSpot"},{"name":"Zapier"}]}
       parentTitle="BPO Services"
       parentHref="/services/bpo"
+      servicePath="/services/bpo/data-entry"
       title="Data Entry Services"
       description="Accurate data is the backbone of every business decision. We provide high-volume data entry, data cleaning, and database management services that keep your records reliable, your systems up to date, and your team focused on work that requires human judgment."
       details={[

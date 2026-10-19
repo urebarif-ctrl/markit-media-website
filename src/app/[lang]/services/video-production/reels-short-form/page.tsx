@@ -24,6 +24,7 @@ export default function ReelsShortFormPage() {
       platforms={[{"name":"Instagram"},{"name":"TikTok"},{"name":"YouTube"},{"name":"CapCut"},{"name":"Premiere Pro","note":"Adobe"},{"name":"Canva"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
+      servicePath="/services/video-production/reels-short-form"
       title="Reels & Short-Form Video"
       description="Capture attention in the first second and hold it. We produce vertical, short-form video content built specifically for Instagram Reels, TikTok, and YouTube Shorts — with hooks, pacing, and editing patterns designed for how people actually consume content on these platforms."
       details={[

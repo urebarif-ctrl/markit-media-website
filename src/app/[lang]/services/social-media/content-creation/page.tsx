@@ -23,6 +23,7 @@ export default function ContentCreationPage() {
       platforms={[{"name":"Canva"},{"name":"Adobe","note":"Creative Suite"},{"name":"Instagram"},{"name":"Facebook"},{"name":"TikTok"},{"name":"LinkedIn"},{"name":"CapCut"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
+      servicePath="/services/social-media/content-creation"
       title="Social Media Content Creation"
       description="Great social media starts with great content. We produce platform-native graphics, videos, and copy designed to capture attention, drive engagement, and communicate your brand message in the formats each audience expects."
       details={[

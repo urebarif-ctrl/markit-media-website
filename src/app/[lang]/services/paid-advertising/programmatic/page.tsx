@@ -23,6 +23,7 @@ export default function ProgrammaticPage() {
       platforms={[{"name":"Google Ads","note":"DV360"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Paid Advertising"
       parentHref="/services/paid-advertising"
+      servicePath="/services/paid-advertising/programmatic"
       title="Programmatic Advertising"
       description="Programmatic advertising uses automated technology to buy ad placements in real time, reaching specific audiences across thousands of websites, apps, and streaming platforms. We manage the strategy, execution, and optimization so you get precise targeting at scale without the manual overhead."
       details={[

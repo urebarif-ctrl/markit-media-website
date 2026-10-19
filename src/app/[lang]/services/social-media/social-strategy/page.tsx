@@ -23,6 +23,7 @@ export default function SocialStrategyPage() {
       platforms={[{"name":"Instagram"},{"name":"Facebook"},{"name":"LinkedIn"},{"name":"TikTok"},{"name":"YouTube"},{"name":"X","note":"Twitter"},{"name":"Google Analytics","note":"GA4"},{"name":"Canva"}]}
       parentTitle="Social Media"
       parentHref="/services/social-media"
+      servicePath="/services/social-media/social-strategy"
       title="Social Media Strategy"
       description="A strong social media presence starts with a clear strategy. We develop data-driven social media plans that align your content, platforms, and goals so every post serves a purpose and moves your business forward."
       details={[

@@ -24,6 +24,7 @@ export default function WordPressPage() {
       platforms={[{"name":"WordPress"},{"name":"WooCommerce"},{"name":"Cloudflare"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Figma"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
+      servicePath="/services/website-development/wordpress"
       title="WordPress Development"
       description="Build a WordPress site that is fast, secure, and easy to manage. We develop custom themes, build purpose-built plugins, and architect headless CMS solutions that give your team full content control without sacrificing performance or design."
       details={[

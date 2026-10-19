@@ -24,6 +24,7 @@ export default function NextJsPage() {
       platforms={[{"name":"Next.js"},{"name":"Vercel"},{"name":"React"},{"name":"Cloudflare"},{"name":"AWS"},{"name":"Figma"}]}
       parentTitle="Website Development"
       parentHref="/services/website-development"
+      servicePath="/services/website-development/nextjs"
       title="Next.js Development"
       description="Build fast, SEO-friendly web applications with Next.js. We use server-side rendering, static site generation, and the React ecosystem to deliver sites that load quickly, rank well, and provide a smooth user experience at any scale."
       details={[

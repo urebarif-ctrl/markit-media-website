@@ -23,6 +23,7 @@ export default function DeliverabilityPage() {
       platforms={[{"name":"Mailchimp"},{"name":"SendGrid"},{"name":"Klaviyo"},{"name":"Google","note":"Postmaster Tools"},{"name":"Brevo","note":"Sendinblue"}]}
       parentTitle="Email Marketing"
       parentHref="/services/email-marketing"
+      servicePath="/services/email-marketing/deliverability"
       title="Email Deliverability"
       description="Your emails cannot drive results if they never reach the inbox. We optimize your email infrastructure, authentication records, and sending practices to maximize inbox placement, protect your sender reputation, and keep your messages out of spam folders."
       details={[

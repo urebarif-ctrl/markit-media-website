@@ -24,6 +24,7 @@ export default function GoogleAdsPage() {
       platforms={[{"name":"Google Ads"},{"name":"Google Analytics","note":"GA4"},{"name":"Google Tag Manager"},{"name":"Google Merchant","note":"Shopping"},{"name":"Google Search Console"},{"name":"Google Data Studio","note":"Looker Studio"}]}
       parentTitle="Performance Marketing"
       parentHref="/services/performance-marketing"
+      servicePath="/services/performance-marketing/google-ads"
       title="Google Ads Management"
       description="Reach high-intent customers at the exact moment they search for your products or services. Our Google Ads management covers every campaign type across the Google ecosystem, from Search and Shopping to Display and YouTube, with continuous optimization to lower your cost per acquisition and scale profitably."
       details={[

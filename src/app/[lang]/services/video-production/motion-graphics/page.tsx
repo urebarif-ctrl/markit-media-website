@@ -24,6 +24,7 @@ export default function MotionGraphicsPage() {
       platforms={[{"name":"After Effects","note":"Adobe"},{"name":"Premiere Pro","note":"Adobe"},{"name":"Canva"},{"name":"Lottie"}]}
       parentTitle="Video Production"
       parentHref="/services/video-production"
+      servicePath="/services/video-production/motion-graphics"
       title="Motion Graphics"
       description="Add visual depth and professional polish to your video content with custom motion graphics. From animated title sequences and lower thirds to data visualizations and visual effects, we create graphics that reinforce your brand identity and make complex information easy to understand."
       details={[
