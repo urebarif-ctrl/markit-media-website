@@ -2,7 +2,7 @@
 //
 //   node docs/seo/qa-case-studies.mjs https://themarkitmedia.com                 (production)
 //   node docs/seo/qa-case-studies.mjs https://<preview-url> --preview            (skips the X-Robots-Tag check)
-//   add --flagged=docs/seo/flagged-pages.json to hold known gaps (copy not written yet / facts missing):
+//   add --flagged=docs/seo/qa-exceptions.json to hold known gaps (copy not written yet / facts missing):
 //       only the problem kinds listed under "holdable" can be held, and only for the pages listed.
 //   add --json=out.json to save every finding.
 //
