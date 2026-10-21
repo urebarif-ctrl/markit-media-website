@@ -1086,5 +1086,69 @@
    "No website, venue, year, results or posting platform supplied: none are claimed",
    "Texas is taken from the league's name on the artwork"
   ]
+ },
+ "markit-media": {
+  "lede": "Markit Media is the agency itself, so this page shows its own social posts as internal creative, not paid client work. It covers a humour-led series for marketers: character cut-outs, talking objects, fonts as characters, ad-platform in-jokes and a desk-contents series by job role.",
+  "deliverables": "27 social posts shown on this page (in-house)",
+  "sections": [
+   {
+    "heading": "What the posts had to do",
+    "paragraphs": [
+     "An agency's own feed is its portfolio, so these posts aim at the people who buy marketing: they should be recognisable to a marketer, funny enough to be shared and good enough to show the standard of the work. Each series turns a familiar piece of marketing life into a short, visual joke."
+    ]
+   },
+   {
+    "heading": "The series",
+    "paragraphs": [
+     "The first series asks \"What if\" a well-known screen character was in digital marketing. Each post cuts the character out over a colour-graded backdrop, repeats the same headline and gives the character one line of marketing advice about click-through rate, vanity metrics, algorithms, trust, audience relationships, sustainable growth, ROI and discounts. These posts use stills of film and television characters, which this page describes without naming. Whether the agency holds the rights to use them has not been confirmed.",
+     "A second series gives everyday objects eyes and lips: a laptop, a phone and a keyboard that talk back. The speech bubbles carry the jokes, such as a phone with no storage left for 3,782 selfies and a keyboard tired of mistyped words.",
+     "A third series treats fonts as characters. Helvetica becomes the confident brand strategist and Times New Roman the traditional copywriter, each as an illustrated figure on a grid with short personality notes. A fourth series is a set of ad-platform in-jokes on mustard and pink sticky notes, about a performance review run by an ad platform, a raise that fails because a budget limit was not met, feedback that is only scheduled for later and reach that has decreased.",
+     "The last series is called What's on our desks. It lists the objects on the desks of a senior social media manager, a junior social media manager, a manager, a graphic designer and a web developer, with hand-lettered labels and arrows on a dark green or orange torn-paper background."
+    ]
+   },
+   {
+    "heading": "The look",
+    "paragraphs": [
+     "The Markit Media logo, a stylised M in slashes beside the name, sits at the top, and the footer is the agency's social handle. Each series has its own palette and type treatment, but all of them are built from large headlines, cut-out imagery and a single joke per post."
+    ]
+   }
+  ],
+  "sources": [
+   "Artwork reviewed by eye: all 27 pieces",
+   "In-house brand: not paid client work; no results claimed",
+   "Posts use stills of film/TV characters: rights unconfirmed (see ledger); names not repeated",
+   "No project year or posting platform supplied: none are claimed"
+  ]
+ },
+ "ureb-digital-marketing": {
+  "lede": "Ureb Digital Marketing is a personal brand of Markit Media's founder, so this page shows its social posts as internal creative, not paid client work. The posts teach digital marketing basics in a black and gold system, with memes for the lighter days.",
+  "deliverables": "19 social posts shown on this page (in-house)",
+  "sections": [
+   {
+    "heading": "What the posts had to do",
+    "paragraphs": [
+     "A personal brand has to prove expertise and personality at once. This feed does both: carousels explain frameworks and tips clearly, and meme posts show the daily reality of agency work, so the account feels like a person rather than a company."
+    ]
+   },
+   {
+    "heading": "The educational posts",
+    "paragraphs": [
+     "Most posts are slides from carousels, marked by a small dot row that shows the position in the set. Titles are short and practical: the 4 C's of digital marketing (conversation, content, community, connection), five steps to follow, defining a niche, a consistent visual identity, a strong online presence, valuable content and networking, and hashtag strategies. Each slide is paired with a single dramatic image: a tortoise on a skateboard for targeted promotions, a robotic hand with a magnifier for measurable results, a staircase for steps, a dart on a target for niche and a row of dark heads with one golden one for identity.",
+     "Two posts introduce the person and the offer, with a portrait on a laptop screen under \"Your digital growth strategist\", and a quote-of-the-day card about ignoring online marketing."
+    ]
+   },
+   {
+    "heading": "The look and the memes",
+    "paragraphs": [
+     "Cream and black alternate as backgrounds, with gold lettering, a faint diamond pattern and the account handle with social icons in the footer. The meme posts use stills of film and television characters with short captions about clients, updates and creative work. This page does not name those sources, and whether the rights are held has not been confirmed. A final four-panel post, The Digital Marketer's Life, compares what parents, friends and clients think the job is with what it actually is."
+    ]
+   }
+  ],
+  "sources": [
+   "Artwork reviewed by eye: all 19 pieces",
+   "In-house personal brand: not paid client work; no results claimed",
+   "Meme posts use stills of film/TV characters: rights unconfirmed (see ledger)",
+   "No project year or posting platform supplied: none are claimed"
+  ]
  }
 }
