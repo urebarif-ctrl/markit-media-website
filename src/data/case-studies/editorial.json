@@ -1456,5 +1456,110 @@
    "Website and location unconfirmed (plan: 'need from Ureb'): none claimed; sensitive health topic: design only",
    "No brief, year, results or posting platform supplied: none are claimed"
   ]
+ },
+ "branding-visual-identity": {
+  "lede": "Branding and Visual Identity presents complete identity systems from Markit Media: not just the logo but the colour palette, typography and the way the brand is applied to stationery, packaging, clothing, signage and screens.",
+  "sections": [
+   {
+    "heading": "What this collection shows",
+    "paragraphs": [
+     "Twenty-one boards show an identity at work. Each one pairs the mark with a palette, a pair of typefaces and a set of mockups, so you can judge how the brand holds together outside a logo file: a lab coat for a clinic, a polo shirt for a flask maker, a gift bag for a fragrance-style label, a menu clipboard for a restaurant and a phone home screen for a technology brand.",
+     "The boards come from many kinds of client, including restaurants, clinics, retailers, technology and education brands, a publication and personal brands."
+    ]
+   },
+   {
+    "heading": "How this differs from Logo Folio",
+    "paragraphs": [
+     "The logo marks themselves, and the logo animations, are collected in Logo Folio. This page is about systems: how colour, type and applications are decided together. The boards on this page also appear in Logo Folio's larger gallery; here they are grouped to answer a different question, which is how a brand looks in use."
+    ]
+   }
+  ],
+  "sources": [
+   "Counts from the portfolio data (21 boards); descriptions from the boards reviewed by eye"
+  ]
+ },
+ "fashion-feed": {
+  "lede": "Fashion Feed is the collection of social media designs Markit Media has made for fashion and apparel brands: promotional sale posts, occasion-wear and menswear campaigns, and lifestyle posts for sleepwear, from three clients.",
+  "sections": [
+   {
+    "heading": "What this collection shows",
+    "paragraphs": [
+     "Fashion social media is a mix of three jobs, and this collection has an example of each. Sale posts turn a discount into a clear headline, with a badge and a button. Collection posts let the clothing carry the picture, with a short line and an ordering route. Lifestyle posts sell a mood: a lazy Sunday, a slumber party, a winter spent in bed.",
+     "The 40 pieces come from three clients: Find My Apparel, with teal and lime sale posts; Minhaz Couture, with peach and teal posts for embroidered women's suits and menswear; and Easywear, with pattern-matched backgrounds for pyjama sets."
+    ]
+   },
+   {
+    "heading": "How to use this page",
+    "paragraphs": [
+     "This page is the gallery. If you want to see how one brand's feed worked as a system, with its identity, its colours and the reasoning behind each post, open that client's own case study from the list below. If you are comparing ways to present clothing on social media, start with the filters in the gallery and open the posts that look closest to your own range."
+    ]
+   }
+  ],
+  "sources": [
+   "Counts and client names from the portfolio data (3 clients, 40 pieces); descriptions from the artwork reviewed by eye"
+  ]
+ },
+ "foodfolio": {
+  "lede": "FoodFolio is the collection of social media designs Markit Media has made for restaurants, cafés, caterers and food brands: dish-led menu posts, seasonal and festival campaigns, offers and product posts, from eight clients.",
+  "sections": [
+   {
+    "heading": "What this collection shows",
+    "paragraphs": [
+     "Food design starts with the photograph and then has to carry a message, a price or a booking route around it. The 114 pieces here show several ways to do that: a dark, gold-accented menu series for a Sugar Land restaurant, flame-lit steakhouse posts for two Texas locations, Ramadan iftar and Eid campaigns, a caterer's event-by-event series, juice-bar coupons, pizza and fries offers with was-and-now prices, seasonal jerky bundles and a supplier's quizzes and product posts.",
+     "The eight clients are Elite, Tourão Brazilian Steakhouse, Sheesha Lounge and Grill, Pakhlanze, Pizza Warma, Qwench Juice Bar, Wild Game Jerky and Chefiality."
+    ]
+   },
+   {
+    "heading": "How to use this page",
+    "paragraphs": [
+     "This page is the gallery of food and beverage creative. Each client's own case study explains its identity, its recurring layout and what each series was for, so open the one closest to your business. If you run a restaurant, the Elite and Tourão pages are the most direct starting points."
+    ]
+   }
+  ],
+  "sources": [
+   "Counts and client names from the portfolio data (8 clients, 114 pieces); descriptions from the artwork reviewed by eye"
+  ]
+ },
+ "logo-folio": {
+  "lede": "Logo Folio is Markit Media's collection of logo design and logo animation: the marks themselves, with their colours, typefaces and applications, for more than thirty brands, plus a set of animated logos.",
+  "sections": [
+   {
+    "heading": "What this collection shows",
+    "paragraphs": [
+     "Each board in the gallery shows one mark and the decisions around it: the symbol and the wordmark, the colour codes, the typefaces and a few applications such as a sign, a tag, a polo shirt or a phone icon. The set ranges from monograms and lettermarks to illustrated emblems, Urdu calligraphy, portrait marks and a mark built from a ring and a diamond.",
+     "The animations at the top show how some of the marks move: a logo reveal for an energy company, a technology brand, a food supplier, a fashion label, a caterer, a fresh-produce brand and a creative agency."
+    ]
+   },
+   {
+    "heading": "How this differs from Branding and Visual Identity",
+    "paragraphs": [
+     "Logo Folio is about the mark and its movement, and it includes every board in the portfolio. The Branding and Visual Identity page is narrower: it presents a smaller group of complete identity systems, where the logo is shown working across stationery, packaging, signage and screens. If you need to see how a brand works in use, start there; if you want to compare logo ideas, start here."
+    ]
+   }
+  ],
+  "sources": [
+   "Counts from the portfolio data (33 identity boards); animation list from the existing page; descriptions from the artwork reviewed by eye"
+  ]
+ },
+ "social-media-designs": {
+  "lede": "Social Media Designs is the cross-industry collection of social posts Markit Media has designed: more than 290 pieces for 25 brands across healthcare, technology, retail, appliances, sport, education and services.",
+  "sections": [
+   {
+    "heading": "What this collection shows",
+    "paragraphs": [
+     "The collection is organised by the work itself rather than by one client. It shows how social post design changes with the job: educational carousels and in-jokes for marketers, supportive quote posts for a treatment centre, product catalogues for appliances, flasks and hardware, sports team reveals and match-day posts, launch teasers and festival greetings.",
+     "Repeated systems are the common thread. Whatever the industry, each brand gets a logo position, a headline style, a colour pair and a footer that repeat from post to post, so the feed reads as one brand."
+    ]
+   },
+   {
+    "heading": "How to use this page",
+    "paragraphs": [
+     "Use this page to compare approaches across industries. Use the individual case studies, linked from the filters and the client list, to see one brand's whole system, its identity board and the reasoning for each series. Food and fashion work has its own collections, FoodFolio and Fashion Feed, so this page does not repeat them in detail."
+    ]
+   }
+  ],
+  "sources": [
+   "Counts from the portfolio data (25 clients, 294 pieces); descriptions from the artwork reviewed by eye"
+  ]
  }
 }
