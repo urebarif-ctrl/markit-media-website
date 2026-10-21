@@ -1,0 +1,3116 @@
+[
+ {
+  "slug": "meezotech",
+  "kind": "featured",
+  "name": "MeezoTech",
+  "routeType": "static",
+  "industryLabel": "IT services",
+  "servicesLabel": [
+   "Motion graphics",
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/video-production/motion-graphics",
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/b2b",
+   "/industries/saas"
+  ],
+  "locationLinks": [],
+  "related": [
+   "binarygrid",
+   "hubco",
+   "logo-folio",
+   "beepers"
+  ],
+  "keywords": [
+   "logo animation case study",
+   "IT company branding",
+   "tech brand identity",
+   "animated logo"
+  ],
+  "title": "MeezoTech Logo Animation & Tech Branding | Markit Media",
+  "h1": "MeezoTech: Logo Animation and Brand Identity for an IT Services Company",
+  "metaDescription": "How Markit Media built MeezoTech's brand identity and animated logo, plus social designs that present an IT services company with clarity and motion.",
+  "planLocation": "- (confirm (search suggests UAE))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://meezotech.com/ (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Shortest featured page (147 words). Explain the brief, show 3-4 key frames of the animation as stills, embed the video with VideoObject.",
+  "today": "147 words · 9 images · 6 generic alts · in sitemap: yes · links from other sections: 8"
+ },
+ {
+  "slug": "noorshad",
+  "kind": "featured",
+  "name": "NoorShad",
+  "routeType": "static",
+  "industryLabel": "Real estate",
+  "servicesLabel": [
+   "Video production",
+   "Reels & short-form",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/video-production",
+   "/services/video-production/reels-short-form",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/real-estate",
+   "/industries/personal-branding"
+  ],
+  "locationLinks": [
+   "/locations/united-states/dallas"
+  ],
+  "related": [
+   "one-homes",
+   "american-auto-parts",
+   "elite",
+   "logo-folio"
+  ],
+  "keywords": [
+   "real estate video production",
+   "real estate agent video marketing",
+   "property tour videos Dallas"
+  ],
+  "title": "NoorShad Real Estate Video Production | Markit Media",
+  "h1": "NoorShad: Video-First Marketing for a Real Estate Agent",
+  "metaDescription": "Property tours, client testimonials and home-buying guides: how Markit Media produced a full video library for NoorShad, a real estate agent brand.",
+  "planLocation": "Plano, Texas (likely)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.har.com/noor-shad/agent_NSHAD (likely (agent profile; Instagram @inoorshad))",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-14",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Embed one property tour and one testimonial; add view counts from Instagram if available.",
+  "today": "214 words · 4 images · 0 generic alts · in sitemap: yes · links from other sections: 5"
+ },
+ {
+  "slug": "vuse",
+  "kind": "featured",
+  "name": "Vuse",
+  "routeType": "static",
+  "industryLabel": "Consumer goods",
+  "servicesLabel": [
+   "Content creation",
+   "Social media",
+   "Reels & short-form"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media",
+   "/services/video-production/reels-short-form"
+  ],
+  "industryLinks": [],
+  "locationLinks": [
+   "/locations/pakistan"
+  ],
+  "related": [
+   "cambridge-electrical",
+   "twister",
+   "thermex",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "social media content production agency",
+   "short-form video production",
+   "brand content Pakistan"
+  ],
+  "title": "Vuse Social Media Content Production | Markit Media",
+  "h1": "Vuse: Ongoing Social Media Content and Short-Form Video",
+  "metaDescription": "How Markit Media supported Vuse with ongoing social media content, combining short-form video and static creative for a global consumer brand's channels.",
+  "planLocation": "Pakistan (likely)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://pk.vuse.com/ (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-14",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Age-restricted product: confirm permission to show the work, state the adult audience, and keep copy free of health claims. Say whether you worked direct or via an agency.",
+  "today": "197 words · 2 images · 0 generic alts · in sitemap: yes · links from other sections: 3"
+ },
+ {
+  "slug": "cambridge-electrical",
+  "kind": "featured",
+  "name": "Cambridge Electrical Appliances",
+  "routeType": "static",
+  "industryLabel": "Home appliances",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/manufacturing",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [
+   "/locations/pakistan"
+  ],
+  "related": [
+   "twister",
+   "thermex",
+   "imh-vacuum-flask",
+   "vuse"
+  ],
+  "keywords": [
+   "appliance brand social media campaign",
+   "seasonal campaign creative",
+   "social media agency Pakistan"
+  ],
+  "title": "Cambridge Appliances Seasonal Social Media | Markit Media",
+  "h1": "Cambridge Electrical Appliances: Seasonal Social Media Campaigns in Pakistan",
+  "metaDescription": "Seasonal social media campaigns for Cambridge Electrical Appliances in Pakistan: product-led creative for its summer and winter ranges, made to sell.",
+  "planLocation": "Pakistan (confirmed)",
+  "locationVerified": true,
+  "location": "Pakistan",
+  "locations": [
+   {
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "cambridgebrand.pk shows a +92 Pakistan phone number",
+  "planWebsite": "https://cambridgebrand.pk/ (confirmed)",
+  "website": "https://cambridgebrand.pk/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Name each campaign by season and year; add Meta Insights reach/engagement per campaign.",
+  "today": "265 words · 17 images · 10 generic alts · in sitemap: yes · links from other sections: 6"
+ },
+ {
+  "slug": "minhaz-couture",
+  "kind": "featured",
+  "name": "Minhaz Couture",
+  "routeType": "static",
+  "industryLabel": "Fashion",
+  "servicesLabel": [
+   "Website development",
+   "Social media",
+   "Reels & short-form"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/social-media",
+   "/services/video-production/reels-short-form"
+  ],
+  "industryLinks": [
+   "/industries/fashion",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "easywear",
+   "find-my-apparel",
+   "fashion-feed",
+   "mehekline"
+  ],
+  "keywords": [
+   "fashion website development case study",
+   "clothing brand website",
+   "fashion social media"
+  ],
+  "title": "Minhaz Couture Fashion Website & Social Media | Markit Media",
+  "h1": "Minhaz Couture: Fashion Website Development and Social Media Content",
+  "metaDescription": "How Markit Media built Minhaz Couture's fashion website and the social content around it, from the Baroque Collection reel to product-led posts.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb (site may be closed: use screenshots))",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Web project with no visible website. Add desktop + mobile screenshots, the stack, pages built, and a live link or an 'archived' note.",
+  "today": "265 words · 16 images · 9 generic alts · in sitemap: yes · links from other sections: 11"
+ },
+ {
+  "slug": "hubco",
+  "kind": "featured",
+  "name": "HUBCO",
+  "routeType": "static",
+  "industryLabel": "Energy",
+  "servicesLabel": [
+   "Motion graphics",
+   "Commercial production",
+   "Video production"
+  ],
+  "serviceLinks": [
+   "/services/video-production/motion-graphics",
+   "/services/video-production/commercial-production",
+   "/services/video-production"
+  ],
+  "industryLinks": [
+   "/industries/b2b"
+  ],
+  "locationLinks": [
+   "/locations/karachi/branding"
+  ],
+  "related": [
+   "meezotech",
+   "logo-folio",
+   "one-homes",
+   "north-charge"
+  ],
+  "keywords": [
+   "corporate video production Pakistan",
+   "logo animation",
+   "energy company video"
+  ],
+  "title": "HUBCO Logo Animation & Corporate Video | Markit Media",
+  "h1": "HUBCO (Hub Power Company): Logo Animation and Commercial Video Production",
+  "metaDescription": "Logo animation and commercial video for HUBCO, the Hub Power Company: motion work by Markit Media that presents a major Pakistani energy brand on screen.",
+  "planLocation": "Karachi, Pakistan (confirmed)",
+  "locationVerified": true,
+  "location": "Karachi, Pakistan",
+  "locations": [
+   {
+    "city": "Karachi",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "hubpower.com lists Karachi",
+  "planWebsite": "https://hubpower.com/ (confirmed)",
+  "website": "https://hubpower.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-14",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Use the full name 'Hub Power Company (HUBCO)' once. Say what the commercial was for. Remove HUBCO from the EV-chargers and finance industry pages (wrong fit).",
+  "today": "176 words · 3 images · 0 generic alts · in sitemap: yes · links from other sections: 8"
+ },
+ {
+  "slug": "one-homes",
+  "kind": "featured",
+  "name": "One Homes",
+  "routeType": "static",
+  "industryLabel": "Real estate",
+  "servicesLabel": [
+   "Video production",
+   "Commercial production"
+  ],
+  "serviceLinks": [
+   "/services/video-production",
+   "/services/video-production/commercial-production"
+  ],
+  "industryLinks": [
+   "/industries/real-estate"
+  ],
+  "locationLinks": [
+   "/locations/pakistan"
+  ],
+  "related": [
+   "noorshad",
+   "hubco",
+   "american-auto-parts",
+   "logo-folio"
+  ],
+  "keywords": [
+   "property walkthrough video",
+   "real estate video Islamabad",
+   "luxury property video"
+  ],
+  "title": "One Homes Amaya Residences Walkthrough Video | Markit Media",
+  "h1": "One Homes: Cinematic Walkthrough Video for Amaya Residences, Islamabad",
+  "metaDescription": "A cinematic property walkthrough for Amaya Residences at Cedar Hills, Islamabad, produced by Markit Media for developer One Homes to show its premium homes.",
+  "planLocation": "Islamabad, Pakistan (confirmed)",
+  "locationVerified": true,
+  "location": "Islamabad, Pakistan",
+  "locations": [
+   {
+    "city": "Islamabad",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "onehomes.com project page for Amaya at Cedar Hills lists Islamabad",
+  "planWebsite": "https://onehomes.com/projects/amaya-at-cedar-hills (confirmed)",
+  "website": "https://onehomes.com/projects/amaya-at-cedar-hills",
+  "websiteVerified": true,
+  "dateModified": "2026-10-14",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Meta description is only 82 characters today.",
+  "today": "153 words · 3 images · 0 generic alts · in sitemap: yes · links from other sections: 3"
+ },
+ {
+  "slug": "elite",
+  "kind": "featured",
+  "name": "Elite Indo-Pak Restaurant",
+  "routeType": "static",
+  "industryLabel": "Restaurant",
+  "servicesLabel": [
+   "Website development",
+   "Social media",
+   "Reels & short-form"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/social-media",
+   "/services/video-production/reels-short-form"
+  ],
+  "industryLinks": [
+   "/industries/restaurants",
+   "/industries/hospitality"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "tourao-brazilian-steakhouse",
+   "ashars-kitchen",
+   "sheesha-lounge-and-grill",
+   "foodfolio"
+  ],
+  "keywords": [
+   "restaurant website design Houston",
+   "restaurant social media Sugar Land",
+   "Indo-Pak restaurant marketing"
+  ],
+  "title": "Elite Indo-Pak Restaurant Website & Social | Markit Media",
+  "h1": "Elite Indo-Pak Restaurant, Sugar Land TX: Website and Social Media Content",
+  "metaDescription": "Website design and social media content for Elite Indo-Pak Restaurant in Sugar Land, Texas, with a showcase reel and food posts that lead diners to the site.",
+  "planLocation": "Sugar Land, Texas (confirmed)",
+  "locationVerified": true,
+  "location": "Sugar Land, Texas",
+  "locations": [
+   {
+    "city": "Sugar Land",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "eliteindopak.com footer: Sugar Land, TX 77498",
+  "planWebsite": "https://www.eliteindopak.com (confirmed)",
+  "website": "https://www.eliteindopak.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Industry label currently 'Various' and the copy never says it is a restaurant. 10 of 15 images have numbered alt text.",
+  "today": "180 words · 15 images · 10 generic alts · in sitemap: yes · links from other sections: 8"
+ },
+ {
+  "slug": "pur-health",
+  "kind": "featured",
+  "name": "Pur Health",
+  "routeType": "static",
+  "industryLabel": "Health & wellness clinic",
+  "servicesLabel": [
+   "Website development",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/healthcare"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "arch-point",
+   "baytown-pediatrics",
+   "crescent-health-system",
+   "viva-diagnostics"
+  ],
+  "keywords": [
+   "healthcare website design Houston",
+   "wellness clinic marketing",
+   "medical social media"
+  ],
+  "title": "Pur Health Wellness Clinic Website & Social | Markit Media",
+  "h1": "Pur Health: Website and Social Media for a Health and Wellness Clinic",
+  "metaDescription": "Website development and social media content for Pur Health, a health and wellness clinic, built to present its services and earn patient trust.",
+  "planLocation": "Houston, Texas (likely (PUUR Health & Wellness?))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://puurhw.com/ (likely - confirm spelling PUUR)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "If the brand is 'PUUR Health & Wellness', change the brand name everywhere (keep slug). Remove Pur Health from the rehab-recovery industry page (Kemah Palms fits).",
+  "today": "165 words · 3 images · 0 generic alts · in sitemap: yes · links from other sections: 10"
+ },
+ {
+  "slug": "american-auto-parts",
+  "kind": "featured",
+  "name": "American Auto Parts",
+  "routeType": "static",
+  "industryLabel": "Automotive aftermarket",
+  "servicesLabel": [
+   "Video production",
+   "Commercial production",
+   "Reels & short-form"
+  ],
+  "serviceLinks": [
+   "/services/video-production",
+   "/services/video-production/commercial-production",
+   "/services/video-production/reels-short-form"
+  ],
+  "industryLinks": [
+   "/industries/automotive"
+  ],
+  "locationLinks": [],
+  "related": [
+   "panthers",
+   "north-charge",
+   "noorshad",
+   "hubco"
+  ],
+  "keywords": [
+   "automotive video production",
+   "auto parts marketing video",
+   "car parts social video"
+  ],
+  "title": "American Auto Parts Video Production | Markit Media",
+  "h1": "American Auto Parts: Long-Term Video Production for the Auto Aftermarket",
+  "metaDescription": "A long-running creative partnership: Markit Media produces professional video content for American Auto Parts, made for the automotive aftermarket audience.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "State how long the relationship has run and how many videos were delivered.",
+  "today": "231 words · 3 images · 0 generic alts · in sitemap: yes · links from other sections: 2"
+ },
+ {
+  "slug": "arch-point",
+  "kind": "client",
+  "name": "ArchPoint Pain Institute",
+  "routeType": "dynamic",
+  "industryLabel": "Pain clinic",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/healthcare"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "pur-health",
+   "baytown-pediatrics",
+   "crescent-health-system",
+   "viva-diagnostics"
+  ],
+  "keywords": [
+   "medical logo design Houston",
+   "clinic branding",
+   "healthcare brand identity"
+  ],
+  "title": "ArchPoint Pain Institute Logo & Branding | Markit Media",
+  "h1": "ArchPoint Pain Institute, Houston: Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for ArchPoint Pain Institute in Houston, Texas: a red and yellow mark, colour palette, typography and mockups by Markit Media.",
+  "planLocation": "Houston, Texas (confirmed)",
+  "locationVerified": true,
+  "location": "Houston, Texas",
+  "locations": [
+   {
+    "city": "Houston",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "archpointpain.com title and offices: Houston-Cypress, TX",
+  "planWebsite": "https://www.archpointpain.com (confirmed)",
+  "website": "https://www.archpointpain.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "97 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "ashars-kitchen",
+  "kind": "client",
+  "name": "Ashar's Kitchen",
+  "routeType": "dynamic",
+  "industryLabel": "Pakistani restaurant",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/restaurants"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "elite",
+   "tourao-brazilian-steakhouse",
+   "sheesha-lounge-and-grill",
+   "the-chefs-lounge"
+  ],
+  "keywords": [
+   "restaurant logo design Houston",
+   "restaurant branding Texas",
+   "Pakistani restaurant Houston"
+  ],
+  "title": "Ashar's Kitchen Restaurant Logo & Branding | Markit Media",
+  "h1": "Ashar's Kitchen, Houston: Restaurant Logo and Brand Identity",
+  "metaDescription": "Restaurant logo and brand identity for Ashar's Kitchen, a Pakistani restaurant in Houston and Sugar Land, Texas: a navy and yellow mark, palette and type.",
+  "planLocation": "Houston & Sugar Land, Texas (confirmed)",
+  "locationVerified": true,
+  "location": "Houston & Sugar Land, Texas",
+  "locations": [
+   {
+    "city": "Houston",
+    "region": "TX",
+    "country": "US"
+   },
+   {
+    "city": "Sugar Land",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "asharskitchen.com title: Pakistani Restaurant in Houston TX; lists Sugar Land",
+  "planWebsite": "https://asharskitchen.com/ (confirmed)",
+  "website": "https://asharskitchen.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "92 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "baytown-pediatrics",
+  "kind": "client",
+  "name": "Baytown Pediatrics",
+  "routeType": "dynamic",
+  "industryLabel": "Pediatric clinic",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/healthcare"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "pur-health",
+   "arch-point",
+   "crescent-health-system",
+   "kemah-palms-recovery"
+  ],
+  "keywords": [
+   "pediatric clinic social media",
+   "medical practice branding Texas"
+  ],
+  "title": "Baytown Pediatrics Logo & Social Media | Markit Media",
+  "h1": "Baytown Pediatrics: Logo and Social Media Design for a Pediatric Clinic",
+  "metaDescription": "Logo identity and social media designs for Baytown Pediatrics, a pediatric clinic, built around a green palette and the line 'Compassionate pediatric care'.",
+  "planLocation": "Baytown, Texas (likely)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.facebook.com/p/Baytown-Pediatrics-100090203177062/ (social (no website found))",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "114 words · 10 images · 6 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "beepers",
+  "kind": "client",
+  "name": "Beepers",
+  "routeType": "dynamic",
+  "industryLabel": "App brand",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/saas"
+  ],
+  "locationLinks": [],
+  "related": [
+   "binarygrid",
+   "meezotech",
+   "logo-folio",
+   "bgn-magazine"
+  ],
+  "keywords": [
+   "app logo design",
+   "app brand identity",
+   "startup logo"
+  ],
+  "title": "Beepers App Logo & Brand Identity | Markit Media",
+  "h1": "Beepers: App-Style Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for Beepers: an app-style mark shown on apparel and device mockups, with a colour palette and typography designed by Markit Media.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "81 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "bgn-magazine",
+  "kind": "client",
+  "name": "BGN Magazine",
+  "routeType": "dynamic",
+  "industryLabel": "Publishing",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "gleam-by-aamnah-b",
+   "mehekline",
+   "mehk-kar",
+   "logo-folio"
+  ],
+  "keywords": [
+   "magazine logo design",
+   "publication branding",
+   "luxury logo design"
+  ],
+  "title": "BGN Magazine Logo & Brand Identity | Markit Media",
+  "h1": "BGN Magazine: Gold-on-Black Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for BGN Magazine: a gold-on-black mark with colour palette, typography and mockups, designed by Markit Media for a publication.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.beautyglobalnetwork.com/pages/magazine (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "93 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "binarygrid",
+  "kind": "client",
+  "name": "BinaryGrid",
+  "routeType": "dynamic",
+  "industryLabel": "Technology",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/saas",
+   "/industries/b2b"
+  ],
+  "locationLinks": [],
+  "related": [
+   "meezotech",
+   "beepers",
+   "north-charge",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "tech company logo design",
+   "IT company social media design"
+  ],
+  "title": "BinaryGrid Tech Logo & Social Media Design | Markit Media",
+  "h1": "BinaryGrid: Logo and Social Media Design for a Technology Company",
+  "metaDescription": "Logo identity and social media designs for BinaryGrid, a technology company, giving every post one consistent look that matches its new brand mark.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.binarygrid.io/ (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "105 words · 14 images · 8 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "brittanye-morris",
+  "kind": "client",
+  "name": "Brittanye Morris",
+  "routeType": "dynamic",
+  "industryLabel": "Judicial campaign",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "quaid-e-azam-foundation",
+   "dr-jason-hayes",
+   "madiha-masood",
+   "logo-folio"
+  ],
+  "keywords": [
+   "political campaign logo design",
+   "campaign branding Texas",
+   "election logo"
+  ],
+  "title": "Brittanye Morris Campaign Logo & Branding | Markit Media",
+  "h1": "Brittanye Morris: Campaign Logo and Brand Identity for a Judicial Re-Election",
+  "metaDescription": "Campaign logo and brand identity for Judge Brittanye Morris's re-election: the mark, colour palette, typography and campaign mockups by Markit Media.",
+  "planLocation": "Harris County, Texas (likely)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://brittanyemorris.com/ (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Keep copy neutral: describe the design work only, no political claims.",
+  "today": "93 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "ceha-halal",
+  "kind": "client",
+  "name": "CEHA Halal",
+  "routeType": "dynamic",
+  "industryLabel": "Halal certification",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/professional-services"
+  ],
+  "locationLinks": [
+   "/locations/pakistan"
+  ],
+  "related": [
+   "global-industries",
+   "chefiality",
+   "cheap-hardware-store",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "certification company social media",
+   "halal certification marketing",
+   "B2B social media Pakistan"
+  ],
+  "title": "CEHA Halal Certification Social Media Design | Markit Media",
+  "h1": "CEHA Halal, Lahore: Social Media Design for a Halal Certification Body",
+  "metaDescription": "Informational social media designs for CEHA, the Center for Halal Assurance in Lahore, explaining halal certification to businesses in clear visuals.",
+  "planLocation": "Lahore, Pakistan (confirmed)",
+  "locationVerified": true,
+  "location": "Lahore, Pakistan",
+  "locations": [
+   {
+    "city": "Lahore",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "cehalal.com lists Lahore",
+  "planWebsite": "https://cehalal.com/ (confirmed)",
+  "website": "https://cehalal.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Thinnest page (80 words); meta only 75 characters.",
+  "today": "80 words · 7 images · 4 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "cheap-hardware-store",
+  "kind": "client",
+  "name": "Cheap Hardware Store",
+  "routeType": "dynamic",
+  "industryLabel": "Hardware retail",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/ecommerce",
+   "/industries/construction"
+  ],
+  "locationLinks": [],
+  "related": [
+   "global-industries",
+   "thermex",
+   "the-bauble-store",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "hardware store social media",
+   "ecommerce product post design"
+  ],
+  "title": "Cheap Hardware Store Logo & Social Media | Markit Media",
+  "h1": "Cheap Hardware Store: Logo and Product Social Media Design",
+  "metaDescription": "Logo and product-focused social media designs for Cheap Hardware Store, a hardware and fasteners retailer, made so products are easy to spot in the feed.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "139 words · 11 images · 7 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "chefiality",
+  "kind": "client",
+  "name": "Chefiality",
+  "routeType": "static",
+  "industryLabel": "Chef & baking supplies",
+  "servicesLabel": [
+   "Branding",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/food-ingredients-ecommerce",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [
+   "/locations/pakistan"
+  ],
+  "related": [
+   "flour-magician",
+   "wild-game-jerky",
+   "foodfolio",
+   "ceha-halal"
+  ],
+  "keywords": [
+   "food ecommerce branding",
+   "baking supplies social media",
+   "Lahore brand design"
+  ],
+  "title": "Chefiality Chef & Baking Supplies Branding | Markit Media",
+  "h1": "Chefiality, Lahore: Branding and Creative for a Chef and Baking Supply Store",
+  "metaDescription": "Branding and creative for Chefiality, the Lahore chef and baking supply store, with designs that present specialty ingredients and tools to bakers and chefs.",
+  "planLocation": "Lahore, Pakistan (confirmed)",
+  "locationVerified": true,
+  "location": "Lahore, Pakistan",
+  "locations": [
+   {
+    "city": "Lahore",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "chefiality.pk lists Lahore",
+  "planWebsite": "https://chefiality.pk/ (confirmed)",
+  "website": "https://chefiality.pk/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Missing a custom OG image; meta only 71 characters.",
+  "today": "102 words · 13 images · 10 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "crescent-health-system",
+  "kind": "client",
+  "name": "Crescent Health System",
+  "routeType": "dynamic",
+  "industryLabel": "Healthcare",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/healthcare"
+  ],
+  "locationLinks": [],
+  "related": [
+   "pur-health",
+   "arch-point",
+   "viva-diagnostics",
+   "baytown-pediatrics"
+  ],
+  "keywords": [
+   "healthcare logo design",
+   "hospital branding",
+   "medical brand identity"
+  ],
+  "title": "Crescent Health System Logo & Branding | Markit Media",
+  "h1": "Crescent Health System: Healthcare Logo and Brand Identity",
+  "metaDescription": "Healthcare logo and brand identity for Crescent Health System: the mark, colour palette, typography and applications, designed to look clear and trustworthy.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "92 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "dallas-panthers",
+  "kind": "client",
+  "name": "Dallas Panthers",
+  "routeType": "dynamic",
+  "industryLabel": "Cricket team",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [],
+  "locationLinks": [
+   "/locations/united-states/dallas"
+  ],
+  "related": [
+   "texas-super-league",
+   "panthers",
+   "elf-and-santa-videos",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "sports team social media design",
+   "cricket club graphics",
+   "Dallas sports marketing"
+  ],
+  "title": "Dallas Panthers Cricket Social Media Design | Markit Media",
+  "h1": "Dallas Panthers: Social Media Design for a Cricket Team",
+  "metaDescription": "Social media designs for the Dallas Panthers cricket team, created to promote the team, its players and match days across its social channels.",
+  "planLocation": "Dallas, Texas (likely (from name))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "94 words · 13 images · 8 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "diana-dulce",
+  "kind": "client",
+  "name": "Diana Dulce",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "gleam-by-aamnah-b",
+   "madiha-masood",
+   "mehekline",
+   "logo-folio"
+  ],
+  "keywords": [
+   "brand identity design",
+   "logo design portfolio"
+  ],
+  "title": "Diana Dulce Logo & Brand Identity | Markit Media",
+  "h1": "Diana Dulce: Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for Diana Dulce by Markit Media: the primary mark, colour palette, typography and mockups that show the brand in real use.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Add the industry to the H1 once confirmed.",
+  "today": "94 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "diaper-world",
+  "kind": "client",
+  "name": "Diaper World",
+  "routeType": "dynamic",
+  "industryLabel": "Baby care retail",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "easywear",
+   "the-bauble-store",
+   "cheap-hardware-store",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "baby brand social media design",
+   "baby care retail marketing"
+  ],
+  "title": "Diaper World Baby Care Logo & Social Media | Markit Media",
+  "h1": "Diaper World: Logo and Social Media Design for a Baby Care Brand",
+  "metaDescription": "Logo and social media designs for Diaper World, a baby care retailer, with product posts written for parents and one consistent look across the feed.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.instagram.com/dwdiaperworld/ (unconfirmed social)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "126 words · 17 images · 12 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "dr-jason-hayes",
+  "kind": "client",
+  "name": "Dr Jason Hayes",
+  "routeType": "dynamic",
+  "industryLabel": "Personal brand",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/personal-branding"
+  ],
+  "locationLinks": [],
+  "related": [
+   "madiha-masood",
+   "arch-point",
+   "brittanye-morris",
+   "logo-folio"
+  ],
+  "keywords": [
+   "personal brand logo design",
+   "doctor branding",
+   "professional logo"
+  ],
+  "title": "Dr Jason Hayes Logo & Personal Branding | Markit Media",
+  "h1": "Dr Jason Hayes: Logo and Personal Brand Identity",
+  "metaDescription": "Personal brand identity for Dr Jason Hayes: a logo, colour palette, typography and mockups designed by Markit Media for a professional practice.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "95 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "easywear",
+  "kind": "client",
+  "name": "Easywear",
+  "routeType": "dynamic",
+  "industryLabel": "Sleepwear",
+  "servicesLabel": [
+   "Logo design",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/fashion",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "minhaz-couture",
+   "find-my-apparel",
+   "fashion-feed",
+   "diaper-world"
+  ],
+  "keywords": [
+   "clothing brand logo design",
+   "fashion product creative",
+   "apparel social media"
+  ],
+  "title": "Easywear Sleepwear Logo & Fashion Creative | Markit Media",
+  "h1": "Easywear: Logo and Fashion Creative for a Sleepwear Brand",
+  "metaDescription": "Logo design and fashion creative for Easywear, a sleepwear brand, with product visuals made for social media and online shopping.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "110 words · 17 images · 11 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "elf-and-santa-videos",
+  "kind": "client",
+  "name": "Elf and Santa Videos",
+  "routeType": "dynamic",
+  "industryLabel": "Personalised video messages",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "the-bauble-store",
+   "diaper-world",
+   "cambridge-electrical",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "seasonal social media campaign",
+   "Christmas social media design"
+  ],
+  "title": "Elf and Santa Videos Social Media Design | Markit Media",
+  "h1": "Elf and Santa Videos: Social Media Design for Personalised Christmas Videos",
+  "metaDescription": "Seasonal social media designs for Elf and Santa Videos, a personalised video message service, created to promote holiday orders on social media.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "120 words · 13 images · 8 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "find-my-apparel",
+  "kind": "client",
+  "name": "Find My Apparel",
+  "routeType": "dynamic",
+  "industryLabel": "Fashion & apparel",
+  "servicesLabel": [
+   "Content creation",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/fashion",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "minhaz-couture",
+   "easywear",
+   "fashion-feed",
+   "mehekline"
+  ],
+  "keywords": [
+   "fashion social media design",
+   "apparel brand creative"
+  ],
+  "title": "Find My Apparel Fashion Social Creative | Markit Media",
+  "h1": "Find My Apparel: Fashion Creative for Social Media",
+  "metaDescription": "Fashion and apparel creative for Find My Apparel: product-led social posts designed to show each style clearly and keep the brand's feed consistent.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "117 words · 13 images · 9 generic alts · in sitemap: yes · links from other sections: 1"
+ },
+ {
+  "slug": "flour-magician",
+  "kind": "client",
+  "name": "Flour Magician",
+  "routeType": "dynamic",
+  "industryLabel": "Bakery",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/restaurants"
+  ],
+  "locationLinks": [],
+  "related": [
+   "chefiality",
+   "pizza-warma",
+   "qwench-juice-bar",
+   "foodfolio"
+  ],
+  "keywords": [
+   "bakery social media design",
+   "bakery marketing",
+   "cake shop Instagram posts"
+  ],
+  "title": "Flour Magician Bakery Social Media Design | Markit Media",
+  "h1": "Flour Magician: Social Media Design for a Bakery",
+  "metaDescription": "Social media designs for Flour Magician, a bakery brand, with posts that show baked goods at their best and give the feed one recognisable look.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "94 words · 10 images · 5 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "gleam-by-aamnah-b",
+  "kind": "client",
+  "name": "Gleam by Aamnah B",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM (beauty?)",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "real-rose-beauty",
+   "mehekline",
+   "madiha-masood",
+   "logo-folio"
+  ],
+  "keywords": [
+   "beauty brand logo design",
+   "brand identity and social media"
+  ],
+  "title": "Gleam by Aamnah B Logo & Social Media | Markit Media",
+  "h1": "Gleam by Aamnah B: Logo and Social Media Design",
+  "metaDescription": "Logo identity and social media designs for Gleam by Aamnah B, created by Markit Media to give the brand one polished look, from its mark to every post.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "136 words · 8 images · 4 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "global-industries",
+  "kind": "client",
+  "name": "Global Industries",
+  "routeType": "dynamic",
+  "industryLabel": "Manufacturing",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/manufacturing",
+   "/industries/b2b"
+  ],
+  "locationLinks": [],
+  "related": [
+   "thermex",
+   "cheap-hardware-store",
+   "imh-vacuum-flask",
+   "cambridge-electrical"
+  ],
+  "keywords": [
+   "manufacturing company branding",
+   "B2B social media design",
+   "industrial logo"
+  ],
+  "title": "Global Industries Logo & Social Media | Markit Media",
+  "h1": "Global Industries: Logo and Social Media Design for a Manufacturer",
+  "metaDescription": "Logo and social media designs for Global Industries, a manufacturing company, presenting its products and capabilities to buyers in one visual style.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "129 words · 11 images · 7 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "h-university",
+  "kind": "client",
+  "name": "H University",
+  "routeType": "dynamic",
+  "industryLabel": "Education",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/education"
+  ],
+  "locationLinks": [],
+  "related": [
+   "quaid-e-azam-foundation",
+   "bgn-magazine",
+   "phf",
+   "logo-folio"
+  ],
+  "keywords": [
+   "education logo design",
+   "university branding"
+  ],
+  "title": "H University Logo & Brand Identity | Markit Media",
+  "h1": "H University: Logo and Brand Identity for an Education Brand",
+  "metaDescription": "Logo and brand identity for H University: the mark, colour palette, typography and applied mockups, designed by Markit Media for an education brand.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Confirm it is an education brand.",
+  "today": "93 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "imh-vacuum-flask",
+  "kind": "client",
+  "name": "IMH Vacuum Flask",
+  "routeType": "dynamic",
+  "industryLabel": "Consumer product",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/manufacturing"
+  ],
+  "locationLinks": [],
+  "related": [
+   "thermex",
+   "twister",
+   "cambridge-electrical",
+   "logo-folio"
+  ],
+  "keywords": [
+   "product logo design",
+   "product brand identity",
+   "packaging branding"
+  ],
+  "title": "IMH Vacuum Flask Logo & Brand Identity | Markit Media",
+  "h1": "IMH Vacuum Flask: Product Logo and Brand Identity",
+  "metaDescription": "Red and black logo and brand identity for IMH Vacuum Flask, with colour palette, typography and product mockups designed by Markit Media.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "97 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "kemah-palms-recovery",
+  "kind": "client",
+  "name": "Kemah Palms Recovery",
+  "routeType": "dynamic",
+  "industryLabel": "Addiction treatment",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/rehab-recovery",
+   "/industries/healthcare"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "pur-health",
+   "baytown-pediatrics",
+   "crescent-health-system",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "rehab center social media marketing",
+   "addiction treatment marketing",
+   "recovery center social media"
+  ],
+  "title": "Kemah Palms Recovery Social Media Design | Markit Media",
+  "h1": "Kemah Palms Recovery: Social Media for an Addiction Treatment Center",
+  "metaDescription": "Mental-health awareness and recovery-support social media designs for Kemah Palms Recovery, an alcohol and drug treatment center, made to be supportive.",
+  "planLocation": "Kemah, Texas (confirmed)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "http://www.kemahpalms.com (confirmed)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Health topic (YMYL): factual tone, no outcome claims, note that content was client-approved. Make this the case study on the rehab-recovery industry page.",
+  "today": "119 words · 16 images · 12 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "madiha-masood",
+  "kind": "client",
+  "name": "Madiha Masood",
+  "routeType": "dynamic",
+  "industryLabel": "Personal brand",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/personal-branding"
+  ],
+  "locationLinks": [],
+  "related": [
+   "dr-jason-hayes",
+   "gleam-by-aamnah-b",
+   "diana-dulce",
+   "logo-folio"
+  ],
+  "keywords": [
+   "personal branding logo",
+   "personal brand identity design"
+  ],
+  "title": "Madiha Masood Logo & Personal Branding | Markit Media",
+  "h1": "Madiha Masood: Logo and Personal Brand Identity",
+  "metaDescription": "Personal brand identity for Madiha Masood: a blue logo, colour palette, typography and mockups designed by Markit Media to give her name one consistent look.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "90 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "mehekline",
+  "kind": "client",
+  "name": "Mehekline",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/fashion"
+  ],
+  "locationLinks": [],
+  "related": [
+   "mehk-kar",
+   "minhaz-couture",
+   "bgn-magazine",
+   "logo-folio"
+  ],
+  "keywords": [
+   "monogram logo design",
+   "luxury brand identity"
+  ],
+  "title": "Mehekline Monogram Logo & Social Media | Markit Media",
+  "h1": "Mehekline: Monogram Logo and Social Media Design",
+  "metaDescription": "A maroon and gold ML monogram, brand identity and social media designs for Mehekline, created by Markit Media to give the brand a premium, consistent look.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Confirm industry (fashion?).",
+  "today": "103 words · 8 images · 4 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "mehk-kar",
+  "kind": "client",
+  "name": "Mehk Kar",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "mehekline",
+   "bgn-magazine",
+   "quaid-e-azam-foundation",
+   "logo-folio"
+  ],
+  "keywords": [
+   "Urdu calligraphy logo design",
+   "Urdu logo",
+   "calligraphy brand identity"
+  ],
+  "title": "Mehk Kar Urdu Calligraphy Logo Design | Markit Media",
+  "h1": "Mehk Kar: Urdu Calligraphy Logo and Brand Identity",
+  "metaDescription": "A red and gold Urdu calligraphy logo for Mehk Kar, with colour palette, typography and applied mockups that bring the mark to life, by Markit Media.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Strong niche keyword: 'Urdu calligraphy logo'.",
+  "today": "96 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "mustcare-vet-centres",
+  "kind": "client",
+  "name": "MustCare Vet Centres",
+  "routeType": "dynamic",
+  "industryLabel": "Veterinary care",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/healthcare"
+  ],
+  "locationLinks": [],
+  "related": [
+   "baytown-pediatrics",
+   "pur-health",
+   "kemah-palms-recovery",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "veterinary clinic social media",
+   "vet practice marketing"
+  ],
+  "title": "MustCare Vet Centres Social Media Design | Markit Media",
+  "h1": "MustCare Vet Centres: Social Media Design for a Veterinary Practice",
+  "metaDescription": "Social media designs for MustCare Vet Centres, a veterinary practice, built around pet photography to help pet owners know and trust their local vets.",
+  "planLocation": "- (confirm (a Brisbane, Australia practice matches))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (confirm)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "If Brisbane is confirmed, link /en/locations/australia.",
+  "today": "102 words · 10 images · 5 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "north-charge",
+  "kind": "client",
+  "name": "North Charge",
+  "routeType": "dynamic",
+  "industryLabel": "EV charging",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/ev-chargers"
+  ],
+  "locationLinks": [],
+  "related": [
+   "american-auto-parts",
+   "panthers",
+   "binarygrid",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "EV charging marketing",
+   "EV charger social media",
+   "electric vehicle brand design"
+  ],
+  "title": "North Charge EV Charging Social Media Design | Markit Media",
+  "h1": "North Charge: Social Media Design for an EV Charging Brand",
+  "metaDescription": "Social media designs for North Charge, an electric-vehicle charging brand, using product renders and clear messaging to explain EV charging to drivers.",
+  "planLocation": "- (confirm (a Canadian company matches))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://northcharge.ca/ (unconfirmed)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Make this the case study on the ev-chargers industry page (currently HUBCO). If Canadian, link /en/locations/canada.",
+  "today": "99 words · 16 images · 12 generic alts · in sitemap: yes · links from other sections: 1"
+ },
+ {
+  "slug": "pakhlanze",
+  "kind": "client",
+  "name": "Pakhlanze by Abeera Khan",
+  "routeType": "dynamic",
+  "industryLabel": "Catering & events",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/hospitality",
+   "/industries/restaurants"
+  ],
+  "locationLinks": [],
+  "related": [
+   "sheesha-lounge-and-grill",
+   "elite",
+   "the-chefs-lounge",
+   "foodfolio"
+  ],
+  "keywords": [
+   "catering company social media",
+   "event business branding"
+  ],
+  "title": "Pakhlanze Catering & Events Branding | Markit Media",
+  "h1": "Pakhlanze by Abeera Khan: Branding and Social Media for Catering and Events",
+  "metaDescription": "Logo identity and social media designs for Pakhlanze by Abeera Khan, covering catering and event styling across 20 pieces of creative by Markit Media.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Most images of any page (20).",
+  "today": "116 words · 20 images · 13 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "panthers",
+  "kind": "client",
+  "name": "Panthers",
+  "routeType": "dynamic",
+  "industryLabel": "Fuel retail",
+  "servicesLabel": [
+   "Social media",
+   "Content creation",
+   "Reels & short-form"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation",
+   "/services/video-production/reels-short-form"
+  ],
+  "industryLinks": [
+   "/industries/automotive"
+  ],
+  "locationLinks": [],
+  "related": [
+   "american-auto-parts",
+   "north-charge",
+   "dallas-panthers",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "gas station social media marketing",
+   "fuel brand marketing",
+   "convenience store social media"
+  ],
+  "title": "Panthers Fuel Station Social Media Design | Markit Media",
+  "h1": "Panthers: Social Media Design for a Fuel Station Brand",
+  "metaDescription": "Social media designs for Panthers (Panthers Group), a fuel-station brand, created to keep its stations visible with consistent, recognisable posts.",
+  "planLocation": "USA (confirm city)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "Instagram @panthersgroupusa1 / @panthersmotorsports1 (social)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Thinnest page (82 words) with 19 images; 15 have numbered alt text. Current client: can add live results and new reels.",
+  "today": "82 words · 19 images · 15 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "phf",
+  "kind": "client",
+  "name": "PHF",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "h-university",
+   "quaid-e-azam-foundation",
+   "logo-folio",
+   "bgn-magazine"
+  ],
+  "keywords": [
+   "logo design",
+   "brand identity"
+  ],
+  "title": "PHF Logo & Brand Identity | Markit Media",
+  "h1": "PHF: Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for PHF by Markit Media: the primary mark, colour palette, typography and mockups that show how the brand is used.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (confirm what PHF stands for)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Expand the acronym in the H1 once known.",
+  "today": "89 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "pizza-warma",
+  "kind": "client",
+  "name": "Pizza Warma",
+  "routeType": "dynamic",
+  "industryLabel": "Pizza & shawarma restaurant",
+  "servicesLabel": [
+   "Content creation",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/restaurants"
+  ],
+  "locationLinks": [],
+  "related": [
+   "elite",
+   "ashars-kitchen",
+   "qwench-juice-bar",
+   "foodfolio"
+  ],
+  "keywords": [
+   "restaurant social media design",
+   "food post design",
+   "pizza restaurant marketing"
+  ],
+  "title": "Pizza Warma Food Social Media Design | Markit Media",
+  "h1": "Pizza Warma: Food Creative for a Pizza and Shawarma Restaurant",
+  "metaDescription": "Food and beverage creative for Pizza Warma, serving pizza, pasta, shawarma and fries, with posts designed to make the menu look irresistible on social media.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "103 words · 9 images · 5 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "professional-hair-salon",
+  "kind": "client",
+  "name": "Professional Hair Salon",
+  "routeType": "dynamic",
+  "industryLabel": "Barbershop",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "real-rose-beauty",
+   "gleam-by-aamnah-b",
+   "ashars-kitchen",
+   "logo-folio"
+  ],
+  "keywords": [
+   "salon logo design Houston",
+   "barbershop branding"
+  ],
+  "title": "Professional Hair Salon Logo & Branding | Markit Media",
+  "h1": "Professional Hair Salon: Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for Professional Hair Salon, a barbershop: the mark, colour palette, typography and mockups designed by Markit Media.",
+  "planLocation": "Houston & Sugar Land, Texas (likely)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.p-hairsalon.com/ (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "96 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "quaid-e-azam-foundation",
+  "kind": "client",
+  "name": "Quaid-e-Azam Foundation",
+  "routeType": "dynamic",
+  "industryLabel": "Nonprofit",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/nonprofits"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "brittanye-morris",
+   "h-university",
+   "mehk-kar",
+   "logo-folio"
+  ],
+  "keywords": [
+   "nonprofit logo design",
+   "foundation branding Houston"
+  ],
+  "title": "Quaid-e-Azam Foundation Logo & Branding | Markit Media",
+  "h1": "Quaid-e-Azam Foundation: Logo and Brand Identity for a Houston Nonprofit",
+  "metaDescription": "Logo and brand identity for the Quaid-e-Azam Foundation, a Houston nonprofit promoting Jinnah's legacy: mark, palette, typography and mockups by Markit Media.",
+  "planLocation": "Houston, Texas (confirmed)",
+  "locationVerified": true,
+  "location": "Houston, Texas",
+  "locations": [
+   {
+    "city": "Houston",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "quaidiazamfoundation.org lists Houston, Texas",
+  "planWebsite": "https://www.quaidiazamfoundation.org/ (confirmed)",
+  "website": "https://www.quaidiazamfoundation.org/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "93 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "qwench-juice-bar",
+  "kind": "client",
+  "name": "Qwench Juice Bar",
+  "routeType": "dynamic",
+  "industryLabel": "Juice bar",
+  "servicesLabel": [
+   "Content creation",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/restaurants"
+  ],
+  "locationLinks": [],
+  "related": [
+   "pizza-warma",
+   "flour-magician",
+   "sheesha-lounge-and-grill",
+   "foodfolio"
+  ],
+  "keywords": [
+   "juice bar social media",
+   "cafe marketing",
+   "drink post design"
+  ],
+  "title": "Qwench Juice Bar Food & Drink Creative | Markit Media",
+  "h1": "Qwench Juice Bar: Food and Drink Creative for Social Media",
+  "metaDescription": "Food and drink creative for Qwench Juice Bar: bright social posts for its fresh juices, designed to stand out in the feed and bring customers in store.",
+  "planLocation": "- (confirm branch)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://qwenchjuice.com/ (likely)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Meta only 84 characters.",
+  "today": "98 words · 9 images · 5 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "real-rose-beauty",
+  "kind": "client",
+  "name": "Real Rose Beauty",
+  "routeType": "dynamic",
+  "industryLabel": "Beauty salon & training",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [],
+  "locationLinks": [
+   "/locations/karachi/social-media-marketing"
+  ],
+  "related": [
+   "gleam-by-aamnah-b",
+   "professional-hair-salon",
+   "mehekline",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "beauty salon social media Karachi",
+   "salon marketing",
+   "beauty academy social media"
+  ],
+  "title": "Real Rose Beauty Salon Social Media Design | Markit Media",
+  "h1": "Real Rose Beauty: Social Media Design for a Salon and Training Centre",
+  "metaDescription": "Social media designs for Real Rose Beauty Salon & Training Center, promoting its salon services and beauty training with clear, easy-to-read creative.",
+  "planLocation": "Karachi, Pakistan (likely)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "https://www.facebook.com/RealRoseBeauty/ (social (no website found))",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "115 words · 16 images · 11 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "sheesha-lounge-and-grill",
+  "kind": "client",
+  "name": "Sheesha Lounge and Grill",
+  "routeType": "dynamic",
+  "industryLabel": "Lounge & grill",
+  "servicesLabel": [
+   "Content creation",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/restaurants",
+   "/industries/hospitality"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "elite",
+   "tourao-brazilian-steakhouse",
+   "ashars-kitchen",
+   "foodfolio"
+  ],
+  "keywords": [
+   "restaurant social media Sugar Land",
+   "lounge marketing Houston",
+   "grill restaurant posts"
+  ],
+  "title": "Sheesha Lounge & Grill Food Creative | Markit Media",
+  "h1": "Sheesha Lounge and Grill, Sugar Land TX: Food and Beverage Social Creative",
+  "metaDescription": "Food and beverage creative for Sheesha Lounge and Grill in Sugar Land, Texas: social designs that show off its grill dishes and its lounge atmosphere.",
+  "planLocation": "Sugar Land, Texas (confirmed)",
+  "locationVerified": true,
+  "location": "Sugar Land, Texas",
+  "locations": [
+   {
+    "city": "Sugar Land",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "sheeshasl.com lists Sugar Land, Texas",
+  "planWebsite": "https://sheeshasl.com/ (confirmed)",
+  "website": "https://sheeshasl.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "131 words · 16 images · 12 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "texas-super-league",
+  "kind": "client",
+  "name": "Texas Super League",
+  "routeType": "dynamic",
+  "industryLabel": "Cricket league",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [],
+  "locationLinks": [
+   "/locations/united-states/dallas"
+  ],
+  "related": [
+   "dallas-panthers",
+   "panthers",
+   "elf-and-santa-videos",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "cricket league social media",
+   "sports league graphics Texas"
+  ],
+  "title": "Cricket League Social Media Design | Markit Media",
+  "h1": "Texas Super League: Social Media Design for a Cricket League",
+  "metaDescription": "Social media designs for the Texas Super League cricket league, created to promote its teams, fixtures and big match days.",
+  "planLocation": "Texas (likely (from name))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Not 'Texas Super Kings' (MLC): avoid confusion in copy.",
+  "today": "94 words · 7 images · 3 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "the-bauble-store",
+  "kind": "client",
+  "name": "The Bauble Store",
+  "routeType": "dynamic",
+  "industryLabel": "Handmade accessories",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "easywear",
+   "find-my-apparel",
+   "diaper-world",
+   "fashion-feed"
+  ],
+  "keywords": [
+   "accessories brand social media",
+   "handmade jewellery marketing",
+   "small business Instagram"
+  ],
+  "title": "The Bauble Store Accessories Social Media | Markit Media",
+  "h1": "The Bauble Store: Social Media Design for Handmade Accessories",
+  "metaDescription": "Social media designs for The Bauble Store, a handmade accessories brand, presenting each piece with clean product visuals that suit an online shop.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Meta only 92 characters.",
+  "today": "93 words · 10 images · 8 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "the-chefs-lounge",
+  "kind": "client",
+  "name": "The Chef's Lounge",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM (food)",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/restaurants"
+  ],
+  "locationLinks": [],
+  "related": [
+   "ashars-kitchen",
+   "elite",
+   "pakhlanze",
+   "logo-folio"
+  ],
+  "keywords": [
+   "restaurant logo design",
+   "food brand identity"
+  ],
+  "title": "The Chef's Lounge Logo & Brand Identity | Markit Media",
+  "h1": "The Chef's Lounge: Restaurant Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for The Chef's Lounge: the mark, colour palette, typography and mockups designed by Markit Media for a food and dining brand.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Confirm it is a restaurant.",
+  "today": "99 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "thermex",
+  "kind": "client",
+  "name": "Thermex",
+  "routeType": "dynamic",
+  "industryLabel": "Household products",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/manufacturing"
+  ],
+  "locationLinks": [],
+  "related": [
+   "twister",
+   "cambridge-electrical",
+   "imh-vacuum-flask",
+   "global-industries"
+  ],
+  "keywords": [
+   "household brand social media",
+   "appliance brand design"
+  ],
+  "title": "Thermex Household Products Logo & Social | Markit Media",
+  "h1": "Thermex: Logo and Social Media Design for a Household Products Brand",
+  "metaDescription": "Logo and social media designs for Thermex, a household products brand, with product-led posts that explain features and keep the brand recognisable.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Not thermex.com (a different company).",
+  "today": "108 words · 17 images · 11 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "thermo-king",
+  "kind": "client",
+  "name": "Thermo King",
+  "routeType": "dynamic",
+  "industryLabel": "CONFIRM",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "thermex",
+   "twister",
+   "imh-vacuum-flask",
+   "logo-folio"
+  ],
+  "keywords": [
+   "logo design",
+   "brand identity"
+  ],
+  "title": "Thermo King Logo & Brand Identity | Markit Media",
+  "h1": "Thermo King: Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for Thermo King by Markit Media: the primary mark, colour palette, typography and mockups that show the brand in use.",
+  "planLocation": "- (confirm (a Thermo King Pakistan Pvt Ltd is registered))",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (confirm)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap. Name clashes with the global Thermo King (Trane) brand: add the country to the H1 to avoid confusion.",
+  "today": "92 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "tourao-brazilian-steakhouse",
+  "kind": "client",
+  "name": "Tourão Brazilian Steakhouse",
+  "routeType": "dynamic",
+  "industryLabel": "Brazilian steakhouse",
+  "servicesLabel": [
+   "Content creation",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/restaurants",
+   "/industries/hospitality"
+  ],
+  "locationLinks": [
+   "/locations/united-states/houston"
+  ],
+  "related": [
+   "elite",
+   "sheesha-lounge-and-grill",
+   "ashars-kitchen",
+   "foodfolio"
+  ],
+  "keywords": [
+   "restaurant social media Houston",
+   "steakhouse marketing",
+   "Brazilian steakhouse Houston"
+  ],
+  "title": "Tourão Brazilian Steakhouse Social Creative | Markit Media",
+  "h1": "Tourão Brazilian Steakhouse, Houston: Food and Beverage Social Creative",
+  "metaDescription": "Food and beverage creative for Tourão Brazilian Churrasqueria in Houston and Katy, Texas: social posts that show its churrasco and dining experience.",
+  "planLocation": "Houston & Katy, Texas (confirmed)",
+  "locationVerified": true,
+  "location": "Houston & Katy, Texas",
+  "locations": [
+   {
+    "city": "Houston",
+    "region": "TX",
+    "country": "US"
+   },
+   {
+    "city": "Katy",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "mytourao.com title: Houston & Katy; phone numbers for both",
+  "planWebsite": "https://mytourao.com/ (confirmed)",
+  "website": "https://mytourao.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Display name uses 'Tourão'; keep slug. Current client: add recent posts and results.",
+  "today": "100 words · 10 images · 4 generic alts · in sitemap: yes · links from other sections: 1"
+ },
+ {
+  "slug": "twister",
+  "kind": "client",
+  "name": "Twister",
+  "routeType": "dynamic",
+  "industryLabel": "Home appliances",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/manufacturing"
+  ],
+  "locationLinks": [
+   "/locations/pakistan"
+  ],
+  "related": [
+   "cambridge-electrical",
+   "thermex",
+   "imh-vacuum-flask",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "appliance brand social media",
+   "home appliances marketing Pakistan"
+  ],
+  "title": "Twister Home Appliances Social Media Design | Markit Media",
+  "h1": "Twister: Social Media Design for a Home Appliances Brand",
+  "metaDescription": "Social media designs for Twister, a home appliances brand, with product-led posts built to show features clearly and keep the brand recognisable.",
+  "planLocation": "Pakistan (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "90 words · 16 images · 12 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "viva-diagnostics",
+  "kind": "client",
+  "name": "Viva Diagnostics",
+  "routeType": "dynamic",
+  "industryLabel": "Diagnostics",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity"
+  ],
+  "industryLinks": [
+   "/industries/healthcare"
+  ],
+  "locationLinks": [],
+  "related": [
+   "crescent-health-system",
+   "arch-point",
+   "pur-health",
+   "logo-folio"
+  ],
+  "keywords": [
+   "diagnostic lab logo design",
+   "medical lab branding"
+  ],
+  "title": "Viva Diagnostics Logo & Brand Identity | Markit Media",
+  "h1": "Viva Diagnostics: Healthcare Logo and Brand Identity",
+  "metaDescription": "Logo and brand identity for Viva Diagnostics: the mark, colour palette, typography and mockups designed by Markit Media for a diagnostics brand.",
+  "planLocation": "- (confirm)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (need from Ureb)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Missing from sitemap.",
+  "today": "91 words · 5 images · 0 generic alts · in sitemap: no - add it · links from other sections: 0"
+ },
+ {
+  "slug": "wild-game-jerky",
+  "kind": "client",
+  "name": "Wild Game Jerky",
+  "routeType": "dynamic",
+  "industryLabel": "Exotic jerky",
+  "servicesLabel": [
+   "Content creation",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/social-media/content-creation",
+   "/services/social-media"
+  ],
+  "industryLinks": [
+   "/industries/food-ingredients-ecommerce",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "chefiality",
+   "pizza-warma",
+   "the-bauble-store",
+   "foodfolio"
+  ],
+  "keywords": [
+   "food brand social media design",
+   "ecommerce food marketing",
+   "jerky brand"
+  ],
+  "title": "Wild Game Jerky Food Social Creative | Markit Media",
+  "h1": "Wild Game Jerky: Food Creative for an Exotic Jerky Brand",
+  "metaDescription": "Food creative for Wild Game Jerky, a family-run California brand making exotic jerky such as alligator, boar and ostrich, made for social and online sales.",
+  "planLocation": "California (confirmed)",
+  "locationVerified": true,
+  "location": "California",
+  "locations": [
+   {
+    "region": "CA",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "wildgamejerky.com: California distributor area",
+  "planWebsite": "https://www.wildgamejerky.com/ (confirmed)",
+  "website": "https://www.wildgamejerky.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "Meta only 83 characters.",
+  "today": "106 words · 13 images · 10 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "markit-mania",
+  "kind": "inhouse",
+  "name": "Markit Mania",
+  "routeType": "dynamic",
+  "industryLabel": "In-house brand",
+  "servicesLabel": [
+   "Logo design",
+   "Social media"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/social-media"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "markit-media",
+   "ureb-digital-marketing",
+   "logo-folio",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "in-house brand design"
+  ],
+  "title": "Markit Mania Logo & Social Media Design | Markit Media",
+  "h1": "Markit Mania: In-House Logo and Social Media Design",
+  "metaDescription": "Logo and social media design for Markit Mania, one of Markit Media's own brands: how we apply our branding process when we are the client.",
+  "planLocation": "- (n/a)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (in-house)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": null,
+  "today": "121 words · 10 images · 8 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "markit-media",
+  "kind": "inhouse",
+  "name": "Markit Media",
+  "routeType": "dynamic",
+  "industryLabel": "In-house brand",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "markit-mania",
+   "ureb-digital-marketing",
+   "social-media-designs",
+   "logo-folio"
+  ],
+  "keywords": [
+   "agency social media design"
+  ],
+  "title": "Our Own Social Media Design | Markit Media",
+  "h1": "Markit Media: Social Media Design for Our Own Agency Brand",
+  "metaDescription": "The social media designs Markit Media creates for its own channels: photography-led, relatable posts that show how we market a brand we know best.",
+  "planLocation": "Karachi, Pakistan (confirmed)",
+  "locationVerified": true,
+  "location": "Karachi, Pakistan",
+  "locations": [
+   {
+    "city": "Karachi",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "own business",
+  "planWebsite": "https://themarkitmedia.com (self)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "14 of 15 images have numbered alt text.",
+  "today": "107 words · 15 images · 14 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "ureb-digital-marketing",
+  "kind": "inhouse",
+  "name": "Ureb Digital Marketing",
+  "routeType": "dynamic",
+  "industryLabel": "In-house brand",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/personal-branding"
+  ],
+  "locationLinks": [],
+  "related": [
+   "markit-media",
+   "markit-mania",
+   "madiha-masood",
+   "social-media-designs"
+  ],
+  "keywords": [
+   "personal brand social media"
+  ],
+  "title": "Ureb Digital Marketing Social Media Design | Markit Media",
+  "h1": "Ureb Digital Marketing: In-House Social Media Design",
+  "metaDescription": "Social media designs for Ureb Digital Marketing, an in-house personal brand at Markit Media, designed with one clear, recognisable style across every post.",
+  "planLocation": "- (n/a)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (in-house)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
+  "planNotes": "14 of 15 images have numbered alt text.",
+  "today": "117 words · 15 images · 14 generic alts · in sitemap: yes · links from other sections: 0"
+ },
+ {
+  "slug": "fashion-feed",
+  "kind": "collection",
+  "name": "Fashion Feed",
+  "routeType": "static",
+  "industryLabel": "Fashion portfolio",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/fashion",
+   "/industries/ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "minhaz-couture",
+   "easywear",
+   "find-my-apparel",
+   "the-bauble-store"
+  ],
+  "keywords": [
+   "fashion social media design portfolio"
+  ],
+  "title": "Fashion Social Media Design Portfolio | Markit Media",
+  "h1": "Fashion Feed: Social Media Design for Fashion and E-commerce Brands",
+  "metaDescription": "A portfolio of fashion and e-commerce social media designs by Markit Media, with product posts and campaign creative for clothing and accessories brands.",
+  "planLocation": "- (n/a)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (n/a)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Link out to every fashion client page.",
+  "today": "190 words · 15 images · 4 generic alts · in sitemap: yes · links from other sections: 4"
+ },
+ {
+  "slug": "social-media-designs",
+  "kind": "collection",
+  "name": "Social Media Designs",
+  "routeType": "static",
+  "industryLabel": "Portfolio",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "panthers",
+   "kemah-palms-recovery",
+   "real-rose-beauty",
+   "cambridge-electrical"
+  ],
+  "keywords": [
+   "social media design portfolio"
+  ],
+  "title": "Social Media Design Portfolio | Markit Media",
+  "h1": "Social Media Design Portfolio: Posts for Brands Across Industries",
+  "metaDescription": "Browse Markit Media's social media design portfolio: posts and campaign creative for restaurants, healthcare, retail, tech and real estate brands.",
+  "planLocation": "- (n/a)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (n/a)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Currently linked from 8 industry pages as a stand-in for real case studies: replace with specific case studies (see linking map).",
+  "today": "224 words · 15 images · 0 generic alts · in sitemap: yes · links from other sections: 12"
+ },
+ {
+  "slug": "foodfolio",
+  "kind": "collection",
+  "name": "FoodFolio",
+  "routeType": "static",
+  "industryLabel": "Food portfolio",
+  "servicesLabel": [
+   "Social media",
+   "Content creation"
+  ],
+  "serviceLinks": [
+   "/services/social-media",
+   "/services/social-media/content-creation"
+  ],
+  "industryLinks": [
+   "/industries/restaurants",
+   "/industries/hospitality",
+   "/industries/food-ingredients-ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "elite",
+   "tourao-brazilian-steakhouse",
+   "sheesha-lounge-and-grill",
+   "pizza-warma"
+  ],
+  "keywords": [
+   "restaurant social media portfolio"
+  ],
+  "title": "Food & Beverage Social Media Portfolio | Markit Media",
+  "h1": "FoodFolio: Food and Beverage Design for Restaurants and Food Brands",
+  "metaDescription": "Food and beverage design by Markit Media: menu posts, dish photography layouts and campaign creative for restaurants, cafes and food brands.",
+  "planLocation": "- (n/a)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (n/a)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Link out to every food client page.",
+  "today": "221 words · 15 images · 0 generic alts · in sitemap: yes · links from other sections: 5"
+ },
+ {
+  "slug": "logo-folio",
+  "kind": "collection",
+  "name": "Logo Folio",
+  "routeType": "static",
+  "industryLabel": "Logo portfolio",
+  "servicesLabel": [
+   "Logo design",
+   "Visual identity",
+   "Motion graphics"
+  ],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/branding/visual-identity",
+   "/services/video-production/motion-graphics"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "arch-point",
+   "mehk-kar",
+   "meezotech",
+   "hubco"
+  ],
+  "keywords": [
+   "logo design portfolio"
+  ],
+  "title": "Logo Design & Logo Animation Portfolio | Markit Media",
+  "h1": "Logo Folio: Logo Design and Logo Animation Portfolio",
+  "metaDescription": "Logo design and logo animation by Markit Media: brand marks, colour palettes and type systems for clinics, restaurants, tech companies and campaigns.",
+  "planLocation": "- (n/a)",
+  "locationVerified": false,
+  "location": null,
+  "locations": [],
+  "locationEvidence": null,
+  "planWebsite": "- (n/a)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-19",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
+  "planNotes": "Link out to every logo client page.",
+  "today": "233 words · 19 images · 0 generic alts · in sitemap: yes · links from other sections: 8"
+ },
+ {
+  "slug": "my-fresh-fruits",
+  "kind": "client",
+  "name": "My Fresh Fruits",
+  "routeType": "static",
+  "industryLabel": "",
+  "servicesLabel": [],
+  "serviceLinks": [
+   "/services/branding/logo-design",
+   "/services/video-production/motion-graphics"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "logo-folio",
+   "foodfolio",
+   "chefiality",
+   "branding-visual-identity"
+  ],
+  "keywords": [],
+  "title": "My Fresh Fruits Logo & Branding | Markit Media",
+  "h1": "My Fresh Fruits",
+  "metaDescription": "Branding and logo design work for My Fresh Fruits from the Markit Media portfolio, including a logo animation video made for the brand.",
+  "planLocation": "(not in plan spec)",
+  "locations": [],
+  "locationVerified": false,
+  "location": null,
+  "locationEvidence": null,
+  "planWebsite": "(not in plan spec)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": null,
+  "datePublishedStatus": "unverified: earliest git commit 26 Sep 2026 is a lower bound only",
+  "planNotes": "Plan section 11: keep separate (owner decision 21 Oct 2026); overlap with Logo Folio to be reported.",
+  "today": null,
+  "specSource": "current"
+ },
+ {
+  "slug": "branding-visual-identity",
+  "kind": "collection",
+  "name": "Branding & Visual Identity",
+  "routeType": "static",
+  "industryLabel": "",
+  "servicesLabel": [],
+  "serviceLinks": [
+   "/services/branding/visual-identity",
+   "/services/branding/logo-design"
+  ],
+  "industryLinks": [],
+  "locationLinks": [],
+  "related": [
+   "logo-folio",
+   "arch-point",
+   "chefiality",
+   "mehk-kar"
+  ],
+  "keywords": [],
+  "title": "Branding & Visual Identity Portfolio | Markit Media",
+  "h1": "Branding & Visual Identity",
+  "metaDescription": "Brand identity boards from Markit Media: marks, colour palettes, typography and applications across stationery, packaging, apparel and digital.",
+  "planLocation": "(not in plan spec)",
+  "locations": [],
+  "locationVerified": false,
+  "location": null,
+  "locationEvidence": null,
+  "planWebsite": "(not in plan spec)",
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17",
+  "datePublishedStatus": "verified: released with PR #48 on 17 Oct 2026",
+  "planNotes": "Plan section 11: keep separate (owner decision 21 Oct 2026); overlap with Logo Folio to be reported.",
+  "today": null,
+  "specSource": "current"
+ }
+]

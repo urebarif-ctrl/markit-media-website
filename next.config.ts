@@ -83,12 +83,14 @@ const nextConfig: NextConfig = {
       { source: "/fonts/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
       { source: "/admin/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "Cache-Control", value: "private, no-store, max-age=0" }] },
       { source: "/api/admin/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "Cache-Control", value: "private, no-store, max-age=0" }] },
-      { source: "/ar/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
-      { source: "/ur/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
+      { source: "/ar/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
+      { source: "/ur/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, follow" }] },
     ];
   },
   async redirects() {
     const redirects = [
+      // One sitemap source: /sitemap.xml was a second 1,575-URL list next to the submitted /sitemap-index.xml (case-studies plan, section 4.1).
+      { source: "/sitemap.xml", destination: "/sitemap-index.xml", statusCode: 301 },
       // === Search Console 'not found' URLs from the old site, sent to the homepage (owner request, 16 Oct 2026) ===
       { source: "/Markit/digital-marketing/page/6", destination: "/en", statusCode: 301 },
       { source: "/blog-top-10-tools-for-social-media-management-2025/blog-top-10-tools-for-social-media-management-2026", destination: "/en", statusCode: 301 },

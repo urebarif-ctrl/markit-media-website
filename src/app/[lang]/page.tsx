@@ -118,9 +118,11 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://themarkitmedia.com/#organization",
     name: "Markit Media",
     url: "https://themarkitmedia.com",
-    logo: "https://themarkitmedia.com/images/branding/og-image.png",
+    // Square 512x512 mark (the 1200x630 social-share image is not a valid logo shape).
+    logo: { "@type": "ImageObject", url: "https://themarkitmedia.com/icon-512.png", width: 512, height: 512 },
     description: "Full-stack digital marketing agency serving businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
     email: "ciao@themarkitmedia.com",
     telephone: "+92-300-208-6081",
@@ -158,8 +160,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://themarkitmedia.com/#website",
     name: "Markit Media",
     url: "https://themarkitmedia.com",
+    publisher: { "@id": "https://themarkitmedia.com/#organization" },
     potentialAction: {
       "@type": "SearchAction",
       target: { "@type": "EntryPoint", urlTemplate: "https://themarkitmedia.com/en/blog?q={search_term_string}" },

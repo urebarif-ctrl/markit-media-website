@@ -6,6 +6,9 @@ import { YouTubeEmbed } from "@/components/youtube-embed";
 import { CaseStudyThumbnail } from "@/components/case-study-thumbnail";
 import { CaseStudyCover } from "@/components/portfolio/cover-images";
 import { coverFor, coverKeyForName } from "@/lib/covers";
+import { CaseStudyEditorial, CaseStudyGraph, CaseStudySnapshot, RelatedCaseStudies } from "@/components/case-study-extras";
+import { getCaseStudy } from "@/lib/case-studies";
+import { editorialFor } from "@/data/case-studies/editorial";
 
 interface CaseStudyVideo {
   id: string;
@@ -27,6 +30,8 @@ interface CaseStudyProps {
   illustrative?: boolean;
   relatedServices: Array<{ title: string; href: string }>;
   readingTime?: string;
+  /** Case-study data slug. When set, SEO fields, schema, snapshot and related links come from the data source. */
+  slug?: string;
   children?: React.ReactNode;
 }
 
@@ -44,9 +49,17 @@ export function CaseStudyPage({
   illustrative = false,
   relatedServices,
   readingTime = "4 min read",
+  slug,
   locale = "en",
   children,
 }: CaseStudyProps & { locale?: string }) {
+  const rec = slug ? getCaseStudy(slug) : undefined;
+  const ed = slug ? editorialFor(slug) : undefined;
+  const h1 = rec?.h1 ?? title;
+  const industryLabel = rec && rec.industryLabel && !/^confirm/i.test(rec.industryLabel) ? rec.industryLabel : industry;
+  // The old "2 min read" labels were guesses. With the data source, show a time only when it is computed from real copy.
+  const words = ed ? [ed.lede, ...ed.sections.flatMap((x) => [...(x.paragraphs ?? []), ...(x.bullets ?? [])])].join(" ").split(/\s+/).length : 0;
+  const readLabel = rec ? (ed ? `${Math.max(1, Math.round(words / 220))} min read` : null) : readingTime;
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const schema = {
     "@context": "https://schema.org",
@@ -58,21 +71,21 @@ export function CaseStudyPage({
 
   return (
     <article>
-      <JsonLd data={schema} />
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: client }]} />
+      {rec ? <CaseStudyGraph slug={rec.slug} locale={locale} /> : <JsonLd data={schema} />}
+      <Breadcrumb locale={locale} emitSchema={!rec} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, ...(rec ? [{ label: "Case Studies", href: "/case-studies" }] : []), { label: client }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label={title}>
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <div className="flex flex-wrap gap-3 mb-4">
-              <span className="text-base font-medium text-gray-600 uppercase tracking-[0.15em]">{industry}</span>
-              <span className="text-gray-300" aria-hidden="true">|</span>
-              <span className="text-base text-gray-600">{readingTime}</span>
+              <span className="text-base font-medium text-gray-600 uppercase tracking-[0.15em]">{industryLabel}</span>
+              {readLabel && <span className="text-gray-300" aria-hidden="true">|</span>}
+              {readLabel && <span className="text-base text-gray-600">{readLabel}</span>}
             </div>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
-              {title}
+              {h1}
             </h1>
-            <p className="text-lg text-gray-500 leading-relaxed mt-4 max-w-3xl">{subtitle}</p>
+            <p className="text-lg text-gray-600 leading-relaxed mt-4 max-w-3xl">{ed?.lede ?? subtitle}</p>
             <div className="flex flex-wrap gap-2 mt-6">
               {services.map((s) => (
                 <span key={s} className="border border-gray-200 px-3 py-1.5 text-base font-medium text-gray-600">{s}</span>
@@ -88,6 +101,8 @@ export function CaseStudyPage({
         </div>
       </section>
 
+      {slug && <CaseStudySnapshot slug={slug} locale={locale} />}
+
       {videos && videos.length > 0 && (
         <section className="px-6 lg:px-12 py-8" aria-label="Project videos">
           <div className="max-w-5xl mx-auto">
@@ -102,6 +117,7 @@ export function CaseStudyPage({
         </section>
       )}
 
+      {ed ? <CaseStudyEditorial slug={slug!} /> : (
       <section className="px-6 lg:px-12 py-12" aria-label="Project details">
         <div className="max-w-3xl mx-auto space-y-12">
           <Animate animation="fade-up">
@@ -152,8 +168,11 @@ export function CaseStudyPage({
           )}
         </div>
       </section>
+      )}
 
       {children}
+
+      {slug && <RelatedCaseStudies slug={slug} locale={locale} />}
 
       <section className="px-6 lg:px-12 py-12 bg-gray-50" aria-label="Related services">
         <div className="max-w-4xl mx-auto">

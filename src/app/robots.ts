@@ -11,17 +11,19 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: [
+      // /ar/ and /ur/ are intentionally NOT disallowed: they are noindexed English copies, and Google can only
+      // honour a noindex it is allowed to crawl.
       {
         userAgent: "*",
         allow: ["/"],
-        disallow: ["/admin", "/api/", "/ar/", "/ur/"],
+        disallow: ["/admin", "/api/"],
       },
       // AI search, citation and user-initiated fetch bots: allowed so Markit Media can appear in AI answers.
       // (Training crawlers GPTBot, CCBot, anthropic-ai and Google-Extended stay blocked below.)
       {
         userAgent: ["OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Claude-SearchBot", "Claude-User"],
         allow: ["/"],
-        disallow: ["/admin", "/api/", "/ar/", "/ur/"],
+        disallow: ["/admin", "/api/"],
       },
       {
         userAgent: "GPTBot",

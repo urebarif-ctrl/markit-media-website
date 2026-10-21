@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
 import { getClient } from "@/lib/portfolio";
+import { caseStudyMetadata } from "@/lib/case-studies";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/pur-health",title:"Pur Health — Website & Social Media",description:"Website development and social media content production for Pur Health, a healthcare and wellness brand.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "Pur Health — Website & Social Media",
-  description: "Website development and social media content production for Pur Health, a healthcare and wellness brand.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/pur-health" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("pur-health", lang);
+}
 
 export default function PurHealthPage() {
   return (
     <CaseStudyPage
+      slug="pur-health"
       client="Pur Health"
       industry="Healthcare / Wellness"
       services={["Website Development", "Social Media Marketing"]}

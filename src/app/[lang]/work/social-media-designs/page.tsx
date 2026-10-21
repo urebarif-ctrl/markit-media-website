@@ -3,14 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { JsonLd } from "@/components/json-ld";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
+import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
+import { CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/social-media-designs",title:"Social Media Designs — Creative Portfolio",description:"Social media design portfolio featuring brand identity, campaign graphics, and digital content for technology, lifestyle, and consumer brands by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "Social Media Designs — Creative Portfolio",
-  description: "Social media design portfolio featuring brand identity, campaign graphics, and digital content for technology, lifestyle, and consumer brands by Markit Media.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/social-media-designs" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("social-media-designs", lang);
+}
 
 const galleryImages = [
   { src: "/images/portfolio/social-media-hero.jpg", alt: "Binarygrid — technology brand social media design" },
@@ -23,18 +23,11 @@ export default async function SocialMediaDesignsPage({ params }: { params: Promi
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: "Social Media Designs — Creative Portfolio",
-    description: "Social media design portfolio by Markit Media for technology, lifestyle, and consumer brands.",
-    creator: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
-  };
 
   return (
     <article>
-      <JsonLd data={schema} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Social Media Designs" }]} />
+      <CaseStudyGraph slug="social-media-designs" locale={locale} />
+      <Breadcrumb locale={locale} emitSchema={false} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Social Media Designs" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Social Media Designs">
         <div className="max-w-4xl mx-auto">
@@ -45,7 +38,7 @@ export default async function SocialMediaDesignsPage({ params }: { params: Promi
               <span className="text-base text-gray-600">Graphic Design</span>
             </div>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
-              Social Media Designs
+              {getCaseStudy("social-media-designs")?.h1 ?? "Social Media Designs"}
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mt-4 max-w-3xl">
               A diverse collection of social media designs spanning technology companies, lifestyle brands, and consumer products. Each project was designed to strengthen brand identity and drive engagement across social platforms.
@@ -154,6 +147,8 @@ export default async function SocialMediaDesignsPage({ params }: { params: Promi
           </Animate>
         </div>
       </section>
+      <CollectionClientList category="social-media" locale={locale} heading="Social media design clients" />
+      <RelatedCaseStudies slug="social-media-designs" locale={locale} />
     </article>
   );
 }

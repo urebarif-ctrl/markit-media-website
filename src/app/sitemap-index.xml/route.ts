@@ -1,4 +1,5 @@
 import { renderSitemapIndex, xmlResponse } from "@/lib/sitemap-xml";
+import { hubLastModified } from "@/lib/case-studies";
 
 export const dynamic = "force-static";
 
@@ -20,6 +21,7 @@ export async function GET() {
   return xmlResponse(
     renderSitemapIndex(
       GROUPS.map((group) => `${BASE_URL}/sitemaps/${group}.xml`),
+      { [`${BASE_URL}/sitemaps/work.xml`]: hubLastModified() },
     ),
   );
 }

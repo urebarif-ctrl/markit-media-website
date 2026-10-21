@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPublishedSlugs, getAllPublishedSlugsWithDates, getAllCategories } from "@/lib/blog";
 import { legacySeoPages, retiredLegacyArticlePaths } from "@/data/legacy-seo-pages";
-import { portfolioSitemapPaths } from "@/lib/portfolio";
+import { caseStudySitemapRows, hubLastModified } from "@/lib/case-studies";
 
 const BASE_URL = "https://themarkitmedia.com";
 
@@ -672,7 +672,9 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
   }
 
   for (const locale of locales) {
-    for (const page of [...staticPages, ...portfolioSitemapPaths()]) {
+    for (const page of staticPages) {
+      // Work pages come from the case-study data source below (real modification dates, image entries).
+      if (page === "/work" || page === "/case-studies" || page.startsWith("/work/")) continue;
       const resourceSlug = page.startsWith("/resources/") ? page.slice("/resources/".length) : null;
       const isFreeTool = resourceSlug ? FREE_TOOL_SLUGS.has(resourceSlug) : false;
       if (excludedFromIndexSitemap.has(page) && !isFreeTool) continue;
@@ -701,6 +703,16 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
               : "monthly",
         priority,
       });
+    }
+
+    if (locale === "en") {
+      const hubDate = hubLastModified();
+      for (const hub of ["/work", "/case-studies"]) {
+        entries.push({ url: `${BASE_URL}/en${hub}`, lastModified: hubDate, changeFrequency: "monthly", priority: 0.8 });
+      }
+      for (const row of caseStudySitemapRows()) {
+        entries.push({ url: row.url, lastModified: row.lastModified, changeFrequency: "monthly", priority: 0.7, images: row.images });
+      }
     }
 
     const blogPosts = await getAllPublishedSlugsWithDates();

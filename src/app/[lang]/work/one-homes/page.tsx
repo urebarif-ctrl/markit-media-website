@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
+import { caseStudyMetadata } from "@/lib/case-studies";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/one-homes",title:"One Homes — Amaya Residences Walkthrough",description:"Property walkthrough video production for One Homes' Amaya Residences development.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "One Homes — Amaya Residences Walkthrough",
-  description: "Property walkthrough video production for One Homes' Amaya Residences development.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/one-homes" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("one-homes", lang);
+}
 
 export default function OneHomesPage() {
   return (
     <CaseStudyPage
+      slug="one-homes"
       client="One Homes"
       industry="Real Estate"
       services={["Video Production", "Property Walkthroughs"]}

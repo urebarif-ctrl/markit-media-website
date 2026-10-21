@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ClientCaseStudy } from "@/components/portfolio/portfolio-sections";
-import { SITE_ORIGIN, isClientIndexable, absoluteMediaUrl, clientWorkTypes, clientsWithNewPages, getClient, trimDescription } from "@/lib/portfolio";
+import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
+import { clientsWithNewPages, getClient } from "@/lib/portfolio";
 
 export function generateStaticParams() {
   return clientsWithNewPages().map((c) => ({ client: c.slug }));
@@ -10,26 +11,10 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; client: string }> }): Promise<Metadata> {
-  const { client } = await params;
+  const { lang, client } = await params;
   const c = getClient(client);
-  if (!c || c.status !== "draft" || c.existing_route) return {};
-  const types = clientWorkTypes(c).join(", ");
-  const title = `${c.name}: ${types}`;
-  const description = trimDescription(c.summary);
-  const url = `${SITE_ORIGIN}/en/work/${c.slug}`;
-  return {
-    title,
-    description,
-    alternates: { canonical: url },
-    ...(isClientIndexable(c) ? {} : { robots: { index: false, follow: true } }),
-    openGraph: {
-      url,
-      title,
-      description,
-      siteName: "Markit Media",
-      ...(c.hero ? { images: [{ url: absoluteMediaUrl(c.hero), alt: `${c.name} work by Markit Media` }] } : {}),
-    },
-  };
+  if (!c || c.status !== "draft" || c.existing_route || !getCaseStudy(client)) return {};
+  return caseStudyMetadata(client, lang);
 }
 
 export default async function ClientWorkPage({ params }: { params: Promise<{ lang: string; client: string }> }) {
