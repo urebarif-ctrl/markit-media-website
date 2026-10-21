@@ -1,0 +1,389 @@
+slug,page,item,plan_value,status,evidence,owner_needs_to
+meezotech,MeezoTech,location,- (confirm (search suggests UAE)),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+meezotech,MeezoTech,client website,https://meezotech.com/ (likely),VERIFIED (linked),https://meezotech.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+meezotech,MeezoTech,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+meezotech,MeezoTech,project year,-,PENDING (not shown),no source for the project year,project year
+meezotech,MeezoTech,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+meezotech,MeezoTech,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+noorshad,NoorShad,location,"Plano, Texas (likely)",PENDING (not shown),har.com agent profile blocks automated access; Plano location and relationship not verified,confirm city and country
+noorshad,NoorShad,client website,https://www.har.com/noor-shad/agent_NSHAD (likely (agent profile; Instagram @inoorshad)),PENDING (not linked),har.com agent profile blocks automated access; Plano location and relationship not verified,"send the correct website or handle, or say there is none / it has closed"
+noorshad,NoorShad,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+noorshad,NoorShad,project year,-,PENDING (not shown),no source for the project year,project year
+noorshad,NoorShad,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+noorshad,NoorShad,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+vuse,Vuse,location,Pakistan (likely),PENDING (not shown),"pk.vuse.com opens a German-language EUR site, not a Pakistan site; age-restricted product; direct vs agency unknown",confirm city and country
+vuse,Vuse,client website,https://pk.vuse.com/ (likely),PENDING (not linked),"pk.vuse.com opens a German-language EUR site, not a Pakistan site; age-restricted product; direct vs agency unknown","send the correct website or handle, or say there is none / it has closed"
+vuse,Vuse,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+vuse,Vuse,project year,-,PENDING (not shown),no source for the project year,project year
+vuse,Vuse,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+vuse,Vuse,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+cambridge-electrical,Cambridge Electrical Appliances,location,Pakistan (confirmed),VERIFIED,cambridgebrand.pk shows a +92 Pakistan phone number,
+cambridge-electrical,Cambridge Electrical Appliances,client website,https://cambridgebrand.pk/ (confirmed),VERIFIED (linked),https://cambridgebrand.pk/ responds and names the brand (domain also printed on the client's artwork where noted),
+cambridge-electrical,Cambridge Electrical Appliances,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+cambridge-electrical,Cambridge Electrical Appliances,project year,-,PENDING (not shown),no source for the project year,project year
+cambridge-electrical,Cambridge Electrical Appliances,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+cambridge-electrical,Cambridge Electrical Appliances,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+minhaz-couture,Minhaz Couture,location,- (confirm),PENDING (not shown),minhazcouture.com printed on the posts: no HTTP response on 21 Oct 2026,confirm city and country
+minhaz-couture,Minhaz Couture,client website,- (need from Ureb (site may be closed: use screenshots)),PENDING (not linked),minhazcouture.com printed on the posts: no HTTP response on 21 Oct 2026,"send the correct website or handle, or say there is none / it has closed"
+minhaz-couture,Minhaz Couture,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+minhaz-couture,Minhaz Couture,project year,-,PENDING (not shown),no source for the project year,project year
+minhaz-couture,Minhaz Couture,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+minhaz-couture,Minhaz Couture,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+hubco,HUBCO,location,"Karachi, Pakistan (confirmed)",VERIFIED,hubpower.com lists Karachi,
+hubco,HUBCO,client website,https://hubpower.com/ (confirmed),VERIFIED (linked),https://hubpower.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+hubco,HUBCO,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+hubco,HUBCO,project year,-,PENDING (not shown),no source for the project year,project year
+hubco,HUBCO,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+hubco,HUBCO,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+one-homes,One Homes,location,"Islamabad, Pakistan (confirmed)",VERIFIED,onehomes.com project page for Amaya at Cedar Hills lists Islamabad,
+one-homes,One Homes,client website,https://onehomes.com/projects/amaya-at-cedar-hills (confirmed),VERIFIED (linked),https://onehomes.com/projects/amaya-at-cedar-hills responds and names the brand (domain also printed on the client's artwork where noted),
+one-homes,One Homes,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+one-homes,One Homes,project year,-,PENDING (not shown),no source for the project year,project year
+one-homes,One Homes,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+one-homes,One Homes,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+elite,Elite Indo-Pak Restaurant,location,"Sugar Land, Texas (confirmed)",VERIFIED,"eliteindopak.com footer: Sugar Land, TX 77498",
+elite,Elite Indo-Pak Restaurant,client website,https://www.eliteindopak.com (confirmed),VERIFIED (linked),https://www.eliteindopak.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+elite,Elite Indo-Pak Restaurant,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+elite,Elite Indo-Pak Restaurant,project year,-,PENDING (not shown),no source for the project year,project year
+elite,Elite Indo-Pak Restaurant,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+elite,Elite Indo-Pak Restaurant,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+pur-health,Pur Health,location,"Houston, Texas (likely (PUUR Health & Wellness?))",PENDING (not shown),puurhw.com is a live Houston clinic named PUUR Health & Wellness; owner rule: do not assume it is the same client,confirm city and country
+pur-health,Pur Health,client website,https://puurhw.com/ (likely - confirm spelling PUUR),PENDING (not linked),puurhw.com is a live Houston clinic named PUUR Health & Wellness; owner rule: do not assume it is the same client,"send the correct website or handle, or say there is none / it has closed"
+pur-health,Pur Health,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+pur-health,Pur Health,project year,-,PENDING (not shown),no source for the project year,project year
+pur-health,Pur Health,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+pur-health,Pur Health,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+american-auto-parts,American Auto Parts,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+american-auto-parts,American Auto Parts,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+american-auto-parts,American Auto Parts,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+american-auto-parts,American Auto Parts,project year,-,PENDING (not shown),no source for the project year,project year
+american-auto-parts,American Auto Parts,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+american-auto-parts,American Auto Parts,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+arch-point,ArchPoint Pain Institute,location,"Houston, Texas (confirmed)",VERIFIED,"archpointpain.com title and offices: Houston-Cypress, TX",
+arch-point,ArchPoint Pain Institute,client website,https://www.archpointpain.com (confirmed),VERIFIED (linked),https://www.archpointpain.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+arch-point,ArchPoint Pain Institute,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+arch-point,ArchPoint Pain Institute,project year,-,PENDING (not shown),no source for the project year,project year
+arch-point,ArchPoint Pain Institute,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+arch-point,ArchPoint Pain Institute,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+ashars-kitchen,Ashar's Kitchen,location,"Houston & Sugar Land, Texas (confirmed)",VERIFIED,asharskitchen.com title: Pakistani Restaurant in Houston TX; lists Sugar Land,
+ashars-kitchen,Ashar's Kitchen,client website,https://asharskitchen.com/ (confirmed),VERIFIED (linked),https://asharskitchen.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+ashars-kitchen,Ashar's Kitchen,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+ashars-kitchen,Ashar's Kitchen,project year,-,PENDING (not shown),no source for the project year,project year
+ashars-kitchen,Ashar's Kitchen,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+ashars-kitchen,Ashar's Kitchen,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+baytown-pediatrics,Baytown Pediatrics,location,"Baytown, Texas (likely)",VERIFIED,"baytownpediatrics.com lists 1113 W Baker Rd, Baytown TX 77521; phone matches the artwork",
+baytown-pediatrics,Baytown Pediatrics,client website,https://www.facebook.com/p/Baytown-Pediatrics-100090203177062/ (social (no website found)),VERIFIED (linked),https://baytownpediatrics.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+baytown-pediatrics,Baytown Pediatrics,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+baytown-pediatrics,Baytown Pediatrics,project year,-,PENDING (not shown),no source for the project year,project year
+baytown-pediatrics,Baytown Pediatrics,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+baytown-pediatrics,Baytown Pediatrics,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+beepers,Beepers,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+beepers,Beepers,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+beepers,Beepers,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+beepers,Beepers,project year,-,PENDING (not shown),no source for the project year,project year
+beepers,Beepers,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+beepers,Beepers,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+bgn-magazine,BGN Magazine,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+bgn-magazine,BGN Magazine,client website,https://www.beautyglobalnetwork.com/pages/magazine (likely),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+bgn-magazine,BGN Magazine,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+bgn-magazine,BGN Magazine,project year,-,PENDING (not shown),no source for the project year,project year
+bgn-magazine,BGN Magazine,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+bgn-magazine,BGN Magazine,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+binarygrid,BinaryGrid,location,- (confirm),PENDING (not shown),binarygrid.io printed on the posts: does not resolve (no DNS) on 21 Oct 2026,confirm city and country
+binarygrid,BinaryGrid,client website,https://www.binarygrid.io/ (likely),PENDING (not linked),binarygrid.io printed on the posts: does not resolve (no DNS) on 21 Oct 2026,"send the correct website or handle, or say there is none / it has closed"
+binarygrid,BinaryGrid,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+binarygrid,BinaryGrid,project year,-,PENDING (not shown),no source for the project year,project year
+binarygrid,BinaryGrid,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+binarygrid,BinaryGrid,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+brittanye-morris,Brittanye Morris,location,"Harris County, Texas (likely)",PENDING (not shown),"site brittanyemorris.com names a judge in Houston; political client, so no link and no location until the owner decides",confirm city and country
+brittanye-morris,Brittanye Morris,client website,https://brittanyemorris.com/ (likely),PENDING (not linked),"site brittanyemorris.com names a judge in Houston; political client, so no link and no location until the owner decides","send the correct website or handle, or say there is none / it has closed"
+brittanye-morris,Brittanye Morris,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+brittanye-morris,Brittanye Morris,project year,-,PENDING (not shown),no source for the project year,project year
+brittanye-morris,Brittanye Morris,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+brittanye-morris,Brittanye Morris,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+ceha-halal,CEHA Halal,location,"Lahore, Pakistan (confirmed)",VERIFIED,cehalal.com lists Lahore,
+ceha-halal,CEHA Halal,client website,https://cehalal.com/ (confirmed),VERIFIED (linked),https://cehalal.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+ceha-halal,CEHA Halal,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+ceha-halal,CEHA Halal,project year,-,PENDING (not shown),no source for the project year,project year
+ceha-halal,CEHA Halal,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+ceha-halal,CEHA Halal,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+cheap-hardware-store,Cheap Hardware Store,location,- (confirm),PENDING (not shown),screws.pk printed on the posts: does not resolve (no DNS) on 21 Oct 2026,confirm city and country
+cheap-hardware-store,Cheap Hardware Store,client website,- (need from Ureb),PENDING (not linked),screws.pk printed on the posts: does not resolve (no DNS) on 21 Oct 2026,"send the correct website or handle, or say there is none / it has closed"
+cheap-hardware-store,Cheap Hardware Store,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+cheap-hardware-store,Cheap Hardware Store,project year,-,PENDING (not shown),no source for the project year,project year
+cheap-hardware-store,Cheap Hardware Store,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+cheap-hardware-store,Cheap Hardware Store,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+chefiality,Chefiality,location,"Lahore, Pakistan (confirmed)",VERIFIED,chefiality.pk lists Lahore,
+chefiality,Chefiality,client website,https://chefiality.pk/ (confirmed),VERIFIED (linked),https://chefiality.pk/ responds and names the brand (domain also printed on the client's artwork where noted),
+chefiality,Chefiality,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+chefiality,Chefiality,project year,-,PENDING (not shown),no source for the project year,project year
+chefiality,Chefiality,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+chefiality,Chefiality,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+crescent-health-system,Crescent Health System,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+crescent-health-system,Crescent Health System,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+crescent-health-system,Crescent Health System,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+crescent-health-system,Crescent Health System,project year,-,PENDING (not shown),no source for the project year,project year
+crescent-health-system,Crescent Health System,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+crescent-health-system,Crescent Health System,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+dallas-panthers,Dallas Panthers,location,"Dallas, Texas (likely (from name))",VERIFIED,team name and its own post: Texas Super League powerhouse team,
+dallas-panthers,Dallas Panthers,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+dallas-panthers,Dallas Panthers,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+dallas-panthers,Dallas Panthers,project year,-,PENDING (not shown),no source for the project year,project year
+dallas-panthers,Dallas Panthers,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+dallas-panthers,Dallas Panthers,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+diana-dulce,Diana Dulce,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+diana-dulce,Diana Dulce,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+diana-dulce,Diana Dulce,industry,CONFIRM,PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+diana-dulce,Diana Dulce,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+diana-dulce,Diana Dulce,project year,-,PENDING (not shown),no source for the project year,project year
+diana-dulce,Diana Dulce,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+diana-dulce,Diana Dulce,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+diaper-world,Diaper World,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+diaper-world,Diaper World,client website,https://www.instagram.com/dwdiaperworld/ (unconfirmed social),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+diaper-world,Diaper World,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+diaper-world,Diaper World,project year,-,PENDING (not shown),no source for the project year,project year
+diaper-world,Diaper World,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+diaper-world,Diaper World,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+dr-jason-hayes,Dr Jason Hayes,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+dr-jason-hayes,Dr Jason Hayes,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+dr-jason-hayes,Dr Jason Hayes,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+dr-jason-hayes,Dr Jason Hayes,project year,-,PENDING (not shown),no source for the project year,project year
+dr-jason-hayes,Dr Jason Hayes,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+dr-jason-hayes,Dr Jason Hayes,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+easywear,Easywear,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+easywear,Easywear,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+easywear,Easywear,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+easywear,Easywear,project year,-,PENDING (not shown),no source for the project year,project year
+easywear,Easywear,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+easywear,Easywear,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+elf-and-santa-videos,Elf and Santa Videos,location,- (confirm),PENDING (not shown),elfandsantavideos.com printed on the posts: no HTTP response on 21 Oct 2026,confirm city and country
+elf-and-santa-videos,Elf and Santa Videos,client website,- (need from Ureb),PENDING (not linked),elfandsantavideos.com printed on the posts: no HTTP response on 21 Oct 2026,"send the correct website or handle, or say there is none / it has closed"
+elf-and-santa-videos,Elf and Santa Videos,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+elf-and-santa-videos,Elf and Santa Videos,project year,-,PENDING (not shown),no source for the project year,project year
+elf-and-santa-videos,Elf and Santa Videos,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+elf-and-santa-videos,Elf and Santa Videos,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+find-my-apparel,Find My Apparel,location,- (confirm),PENDING (not shown),findmyapparel.com printed on the posts: no HTTP response on 21 Oct 2026,confirm city and country
+find-my-apparel,Find My Apparel,client website,- (need from Ureb),PENDING (not linked),findmyapparel.com printed on the posts: no HTTP response on 21 Oct 2026,"send the correct website or handle, or say there is none / it has closed"
+find-my-apparel,Find My Apparel,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+find-my-apparel,Find My Apparel,project year,-,PENDING (not shown),no source for the project year,project year
+find-my-apparel,Find My Apparel,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+find-my-apparel,Find My Apparel,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+flour-magician,Flour Magician,location,- (confirm),VERIFIED,artwork on every post says Delivery for Lahore only,
+flour-magician,Flour Magician,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+flour-magician,Flour Magician,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+flour-magician,Flour Magician,project year,-,PENDING (not shown),no source for the project year,project year
+flour-magician,Flour Magician,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+flour-magician,Flour Magician,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+gleam-by-aamnah-b,Gleam by Aamnah B,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+gleam-by-aamnah-b,Gleam by Aamnah B,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+gleam-by-aamnah-b,Gleam by Aamnah B,industry,CONFIRM (beauty?),PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+gleam-by-aamnah-b,Gleam by Aamnah B,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+gleam-by-aamnah-b,Gleam by Aamnah B,project year,-,PENDING (not shown),no source for the project year,project year
+gleam-by-aamnah-b,Gleam by Aamnah B,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+gleam-by-aamnah-b,Gleam by Aamnah B,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+global-industries,Global Industries,location,- (confirm),PENDING (not shown),gip.com.pk printed on the posts: redirects to an unrelated domain on 21 Oct 2026,confirm city and country
+global-industries,Global Industries,client website,- (need from Ureb),PENDING (not linked),gip.com.pk printed on the posts: redirects to an unrelated domain on 21 Oct 2026,"send the correct website or handle, or say there is none / it has closed"
+global-industries,Global Industries,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+global-industries,Global Industries,project year,-,PENDING (not shown),no source for the project year,project year
+global-industries,Global Industries,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+global-industries,Global Industries,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+h-university,H University,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+h-university,H University,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+h-university,H University,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+h-university,H University,project year,-,PENDING (not shown),no source for the project year,project year
+h-university,H University,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+h-university,H University,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+imh-vacuum-flask,IMH Vacuum Flask,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+imh-vacuum-flask,IMH Vacuum Flask,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+imh-vacuum-flask,IMH Vacuum Flask,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+imh-vacuum-flask,IMH Vacuum Flask,project year,-,PENDING (not shown),no source for the project year,project year
+imh-vacuum-flask,IMH Vacuum Flask,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+imh-vacuum-flask,IMH Vacuum Flask,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+kemah-palms-recovery,Kemah Palms Recovery,location,"Kemah, Texas (confirmed)",PENDING (not shown),"kemahpalms.com printed on the posts: bot challenge to automated checks, brand not confirmed",confirm city and country
+kemah-palms-recovery,Kemah Palms Recovery,client website,http://www.kemahpalms.com (confirmed),PENDING (not linked),"kemahpalms.com printed on the posts: bot challenge to automated checks, brand not confirmed","send the correct website or handle, or say there is none / it has closed"
+kemah-palms-recovery,Kemah Palms Recovery,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+kemah-palms-recovery,Kemah Palms Recovery,project year,-,PENDING (not shown),no source for the project year,project year
+kemah-palms-recovery,Kemah Palms Recovery,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+kemah-palms-recovery,Kemah Palms Recovery,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+madiha-masood,Madiha Masood,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+madiha-masood,Madiha Masood,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+madiha-masood,Madiha Masood,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+madiha-masood,Madiha Masood,project year,-,PENDING (not shown),no source for the project year,project year
+madiha-masood,Madiha Masood,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+madiha-masood,Madiha Masood,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+mehekline,Mehekline,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+mehekline,Mehekline,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+mehekline,Mehekline,industry,CONFIRM,PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+mehekline,Mehekline,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+mehekline,Mehekline,project year,-,PENDING (not shown),no source for the project year,project year
+mehekline,Mehekline,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+mehekline,Mehekline,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+mehk-kar,Mehk Kar,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+mehk-kar,Mehk Kar,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+mehk-kar,Mehk Kar,industry,CONFIRM,PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+mehk-kar,Mehk Kar,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+mehk-kar,Mehk Kar,project year,-,PENDING (not shown),no source for the project year,project year
+mehk-kar,Mehk Kar,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+mehk-kar,Mehk Kar,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+mustcare-vet-centres,MustCare Vet Centres,location,"- (confirm (a Brisbane, Australia practice matches))",VERIFIED,"owner statement 21 Oct 2026: Australian veterinary business, mustcarevets.com.au",
+mustcare-vet-centres,MustCare Vet Centres,client website,- (confirm),VERIFIED (linked),https://mustcarevets.com.au/ responds and names the brand (domain also printed on the client's artwork where noted),
+mustcare-vet-centres,MustCare Vet Centres,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+mustcare-vet-centres,MustCare Vet Centres,project year,-,PENDING (not shown),no source for the project year,project year
+mustcare-vet-centres,MustCare Vet Centres,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+mustcare-vet-centres,MustCare Vet Centres,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+north-charge,North Charge,location,- (confirm (a Canadian company matches)),VERIFIED,northcharge.ca states EV chargers in Canada; same domain printed on the artwork,
+north-charge,North Charge,client website,https://northcharge.ca/ (unconfirmed),VERIFIED (linked),https://northcharge.ca/ responds and names the brand (domain also printed on the client's artwork where noted),
+north-charge,North Charge,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+north-charge,North Charge,project year,-,PENDING (not shown),no source for the project year,project year
+north-charge,North Charge,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+north-charge,North Charge,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+pakhlanze,Pakhlanze by Abeera Khan,location,- (confirm),VERIFIED,artwork prints a Pakistani mobile number and a .pk email address,
+pakhlanze,Pakhlanze by Abeera Khan,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+pakhlanze,Pakhlanze by Abeera Khan,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+pakhlanze,Pakhlanze by Abeera Khan,project year,-,PENDING (not shown),no source for the project year,project year
+pakhlanze,Pakhlanze by Abeera Khan,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+pakhlanze,Pakhlanze by Abeera Khan,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+panthers,Panthers,location,USA (confirm city),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+panthers,Panthers,client website,Instagram @panthersgroupusa1 / @panthersmotorsports1 (social),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+panthers,Panthers,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+panthers,Panthers,project year,-,PENDING (not shown),no source for the project year,project year
+panthers,Panthers,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+panthers,Panthers,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+phf,PHF,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+phf,PHF,client website,- (confirm what PHF stands for),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+phf,PHF,industry,CONFIRM,PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+phf,PHF,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+phf,PHF,project year,-,PENDING (not shown),no source for the project year,project year
+phf,PHF,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+phf,PHF,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+pizza-warma,Pizza Warma,location,- (confirm),VERIFIED,"artwork prints an address in Bahria Town, Karachi",
+pizza-warma,Pizza Warma,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+pizza-warma,Pizza Warma,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+pizza-warma,Pizza Warma,project year,-,PENDING (not shown),no source for the project year,project year
+pizza-warma,Pizza Warma,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+pizza-warma,Pizza Warma,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+professional-hair-salon,Professional Hair Salon,location,"Houston & Sugar Land, Texas (likely)",PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+professional-hair-salon,Professional Hair Salon,client website,https://www.p-hairsalon.com/ (likely),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+professional-hair-salon,Professional Hair Salon,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+professional-hair-salon,Professional Hair Salon,project year,-,PENDING (not shown),no source for the project year,project year
+professional-hair-salon,Professional Hair Salon,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+professional-hair-salon,Professional Hair Salon,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+quaid-e-azam-foundation,Quaid-e-Azam Foundation,location,"Houston, Texas (confirmed)",VERIFIED,"quaidiazamfoundation.org lists Houston, Texas",
+quaid-e-azam-foundation,Quaid-e-Azam Foundation,client website,https://www.quaidiazamfoundation.org/ (confirmed),VERIFIED (linked),https://www.quaidiazamfoundation.org/ responds and names the brand (domain also printed on the client's artwork where noted),
+quaid-e-azam-foundation,Quaid-e-Azam Foundation,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+quaid-e-azam-foundation,Quaid-e-Azam Foundation,project year,-,PENDING (not shown),no source for the project year,project year
+quaid-e-azam-foundation,Quaid-e-Azam Foundation,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+quaid-e-azam-foundation,Quaid-e-Azam Foundation,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+qwench-juice-bar,Qwench Juice Bar,location,- (confirm branch),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+qwench-juice-bar,Qwench Juice Bar,client website,https://qwenchjuice.com/ (likely),VERIFIED (linked),https://qwenchjuice.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+qwench-juice-bar,Qwench Juice Bar,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+qwench-juice-bar,Qwench Juice Bar,project year,-,PENDING (not shown),no source for the project year,project year
+qwench-juice-bar,Qwench Juice Bar,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+qwench-juice-bar,Qwench Juice Bar,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+real-rose-beauty,Real Rose Beauty,location,"Karachi, Pakistan (likely)",VERIFIED,artwork prints Pakistani landline (021) and mobile numbers,
+real-rose-beauty,Real Rose Beauty,client website,https://www.facebook.com/RealRoseBeauty/ (social (no website found)),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+real-rose-beauty,Real Rose Beauty,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+real-rose-beauty,Real Rose Beauty,project year,-,PENDING (not shown),no source for the project year,project year
+real-rose-beauty,Real Rose Beauty,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+real-rose-beauty,Real Rose Beauty,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+sheesha-lounge-and-grill,Sheesha Lounge and Grill,location,"Sugar Land, Texas (confirmed)",VERIFIED,"sheeshasl.com lists Sugar Land, Texas",
+sheesha-lounge-and-grill,Sheesha Lounge and Grill,client website,https://sheeshasl.com/ (confirmed),VERIFIED (linked),https://sheeshasl.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+sheesha-lounge-and-grill,Sheesha Lounge and Grill,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+sheesha-lounge-and-grill,Sheesha Lounge and Grill,project year,-,PENDING (not shown),no source for the project year,project year
+sheesha-lounge-and-grill,Sheesha Lounge and Grill,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+sheesha-lounge-and-grill,Sheesha Lounge and Grill,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+texas-super-league,Texas Super League,location,Texas (likely (from name)),VERIFIED,league name printed on the artwork,
+texas-super-league,Texas Super League,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+texas-super-league,Texas Super League,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+texas-super-league,Texas Super League,project year,-,PENDING (not shown),no source for the project year,project year
+texas-super-league,Texas Super League,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+texas-super-league,Texas Super League,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+the-bauble-store,The Bauble Store,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+the-bauble-store,The Bauble Store,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+the-bauble-store,The Bauble Store,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+the-bauble-store,The Bauble Store,project year,-,PENDING (not shown),no source for the project year,project year
+the-bauble-store,The Bauble Store,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+the-bauble-store,The Bauble Store,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+the-chefs-lounge,The Chef's Lounge,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+the-chefs-lounge,The Chef's Lounge,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+the-chefs-lounge,The Chef's Lounge,industry,CONFIRM (food),PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+the-chefs-lounge,The Chef's Lounge,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+the-chefs-lounge,The Chef's Lounge,project year,-,PENDING (not shown),no source for the project year,project year
+the-chefs-lounge,The Chef's Lounge,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+the-chefs-lounge,The Chef's Lounge,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+thermex,Thermex,location,- (confirm),PENDING (not shown),thermex.pk / thermex.com.pk printed on the posts: root answered with an access error and the www address redirected to an unrelated domain,confirm city and country
+thermex,Thermex,client website,- (need from Ureb),PENDING (not linked),thermex.pk / thermex.com.pk printed on the posts: root answered with an access error and the www address redirected to an unrelated domain,"send the correct website or handle, or say there is none / it has closed"
+thermex,Thermex,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+thermex,Thermex,project year,-,PENDING (not shown),no source for the project year,project year
+thermex,Thermex,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+thermex,Thermex,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+thermo-king,Thermo King,location,- (confirm (a Thermo King Pakistan Pvt Ltd is registered)),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+thermo-king,Thermo King,client website,- (confirm),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+thermo-king,Thermo King,industry,CONFIRM,PENDING,plan marks the industry unconfirmed; the page names none (artwork may suggest one),state the industry
+thermo-king,Thermo King,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+thermo-king,Thermo King,project year,-,PENDING (not shown),no source for the project year,project year
+thermo-king,Thermo King,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+thermo-king,Thermo King,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+tourao-brazilian-steakhouse,Tourão Brazilian Steakhouse,location,"Houston & Katy, Texas (confirmed)",VERIFIED,mytourao.com title: Houston & Katy; phone numbers for both,
+tourao-brazilian-steakhouse,Tourão Brazilian Steakhouse,client website,https://mytourao.com/ (confirmed),VERIFIED (linked),https://mytourao.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+tourao-brazilian-steakhouse,Tourão Brazilian Steakhouse,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+tourao-brazilian-steakhouse,Tourão Brazilian Steakhouse,project year,-,PENDING (not shown),no source for the project year,project year
+tourao-brazilian-steakhouse,Tourão Brazilian Steakhouse,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+tourao-brazilian-steakhouse,Tourão Brazilian Steakhouse,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+twister,Twister,location,Pakistan (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+twister,Twister,client website,- (need from Ureb),VERIFIED (linked),https://twisterhomeappliances.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+twister,Twister,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+twister,Twister,project year,-,PENDING (not shown),no source for the project year,project year
+twister,Twister,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+twister,Twister,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+viva-diagnostics,Viva Diagnostics,location,- (confirm),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+viva-diagnostics,Viva Diagnostics,client website,- (need from Ureb),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+viva-diagnostics,Viva Diagnostics,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+viva-diagnostics,Viva Diagnostics,project year,-,PENDING (not shown),no source for the project year,project year
+viva-diagnostics,Viva Diagnostics,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+viva-diagnostics,Viva Diagnostics,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+wild-game-jerky,Wild Game Jerky,location,California (confirmed),PENDING (not shown),not stated on the artwork or on a verified site,confirm city and country
+wild-game-jerky,Wild Game Jerky,client website,https://www.wildgamejerky.com/ (confirmed),VERIFIED (linked),https://www.wildgamejerky.com/ responds and names the brand (domain also printed on the client's artwork where noted),
+wild-game-jerky,Wild Game Jerky,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+wild-game-jerky,Wild Game Jerky,project year,-,PENDING (not shown),no source for the project year,project year
+wild-game-jerky,Wild Game Jerky,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+wild-game-jerky,Wild Game Jerky,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+markit-mania,Markit Mania,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+markit-mania,Markit Mania,project year,-,PENDING (not shown),no source for the project year,project year
+markit-media,Markit Media,location,"Karachi, Pakistan (confirmed)",VERIFIED,own business,
+markit-media,Markit Media,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+markit-media,Markit Media,project year,-,PENDING (not shown),no source for the project year,project year
+ureb-digital-marketing,Ureb Digital Marketing,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026,
+ureb-digital-marketing,Ureb Digital Marketing,project year,-,PENDING (not shown),no source for the project year,project year
+fashion-feed,Fashion Feed,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+social-media-designs,Social Media Designs,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+foodfolio,FoodFolio,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+logo-folio,Logo Folio,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+my-fresh-fruits,My Fresh Fruits,client website,(not in plan spec),PENDING (not linked),no verified website available,"send the correct website or handle, or say there is none / it has closed"
+my-fresh-fruits,My Fresh Fruits,datePublished,-,UNVERIFIED (omitted from schema),unverified: earliest git commit 26 Sep 2026 is a lower bound only,"give the real first-publication date, or approve the 22 Sep 2026 lower bound"
+my-fresh-fruits,My Fresh Fruits,project year,-,PENDING (not shown),no source for the project year,project year
+my-fresh-fruits,My Fresh Fruits,results / client quote,-,NONE (block omitted),no real numbers or quotes supplied; none invented,"real results with period and source, or a named quote"
+my-fresh-fruits,My Fresh Fruits,brief,-,NOT STATED,"page copy describes only what the work shows, never what the client asked for","a few lines on the brief, if you want it included"
+branding-visual-identity,Branding & Visual Identity,datePublished,2026-10-17,VERIFIED,verified: released with PR #48 on 17 Oct 2026,
+markit-media,Markit Media,sensitivity / rights,-,OWNER DECISION,posts use stills of film and TV characters (likeness rights),approve or restrict (see indexing-approvals.json)
+ureb-digital-marketing,Ureb Digital Marketing,sensitivity / rights,-,OWNER DECISION,meme posts use stills of film and TV characters (likeness rights),approve or restrict (see indexing-approvals.json)
+kemah-palms-recovery,Kemah Palms Recovery,sensitivity / rights,-,OWNER DECISION,sensitive health client: design description only (owner permission 17 Oct 2026),approve or restrict (see indexing-approvals.json)
+brittanye-morris,Brittanye Morris,sensitivity / rights,-,OWNER DECISION,"political campaign: design only, noindex until the owner decides",approve or restrict (see indexing-approvals.json)
+dr-jason-hayes,Dr Jason Hayes,sensitivity / rights,-,OWNER DECISION,"political campaign: design only, noindex until the owner decides",approve or restrict (see indexing-approvals.json)
+vuse,Vuse,sensitivity / rights,-,OWNER DECISION,age-restricted product: permission and relationship unconfirmed,approve or restrict (see indexing-approvals.json)
+hubco,HUBCO,sensitivity / rights,-,OWNER DECISION,"attribution hold: current wording kept, no new links",approve or restrict (see indexing-approvals.json)
+noorshad,NoorShad,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+vuse,Vuse,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+hubco,HUBCO,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+one-homes,One Homes,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+pur-health,Pur Health,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+american-auto-parts,American Auto Parts,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+my-fresh-fruits,My Fresh Fruits,page copy,-,EXISTING OWNER COPY KEPT,"video-led or archive page: videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified",notes on what each video shows
+(all video pages),,YouTube video metadata (26 videos),"VideoObject needs name, description, uploadDate, duration",BLOCKED,YouTube returns LOGIN_REQUIRED to this server: dates and durations unavailable; VideoObject omitted rather than guessed,export from YouTube Studio or give channel read access
+hubco / vuse,,new attribution wording,"plan H1/title/meta add ""Hub Power Company"", ""commercial production"", ""ongoing""",HELD,owner rule: no new attribution; current live title/meta/H1 kept; not added to any new link,approve (or edit) the wording; say whether the work was direct or via an agency
+everest-snacks,,new featured page,plan section 11,PROPOSAL ONLY,"site verified (WordPress, Elementor, WooCommerce; four energy bars); authorship, scope, year unconfirmed: see docs/seo/everest-snacks-proposal.md","confirm authorship, scope, year and screenshots"
+(logo),,square Organization logo,512x512 PNG,USED EXISTING,existing public/icon-512.png referenced,confirm icon-512.png is the logo to use
+/ar/ /ur/,,canonical on noindexed copies,self-referencing while noindexed,PARTIAL,"done for the 66 work pages; the other ~1,500 pages still canonical to /en",approve a site-wide change if wanted
+(site),,static rendering,plan 4.3,"ISOLATED BRANCH, NOT DEPLOYED",see not-found fix report (fix/not-found-static-rendering),separate approval after its tests
+(site),,country restriction coverage,proxy blocks IN and NG on pages only,FINDING,"/api/*, robots.txt and sitemaps are not covered; WAF rule documented",decide whether forms and sitemaps should also be blocked
+branding-visual-identity / logo-folio,,overlap,21 of the 33 boards appear on both pages,PROPOSAL,pages now state distinct purposes; images unchanged; consolidation would need approval,approve or reject consolidation

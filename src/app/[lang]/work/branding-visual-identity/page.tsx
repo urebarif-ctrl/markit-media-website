@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { JsonLd } from "@/components/json-ld";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
-import { PORTFOLIO_NEW_PAGES_INDEXABLE, SITE_ORIGIN } from "@/lib/portfolio";
+import { caseStudyMetadata } from "@/lib/case-studies";
+import { CaseStudyEditorial, CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
-const url = `${SITE_ORIGIN}/en/work/branding-visual-identity`;
-const title = "Branding & Visual Identity Portfolio";
-const description = "Brand identity boards from Markit Media: marks, colour palettes, typography and applications across stationery, packaging, apparel and digital.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: url },
-  ...(PORTFOLIO_NEW_PAGES_INDEXABLE ? {} : { robots: { index: false, follow: true } }),
-  openGraph: { url, title, description, siteName: "Markit Media" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("branding-visual-identity", lang);
+}
 
 export default async function BrandingVisualIdentityPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -23,8 +16,8 @@ export default async function BrandingVisualIdentityPage({ params }: { params: P
   const l = (p: string) => `/${locale}${p}`;
   return (
     <article>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: title, description, url, publisher: { "@type": "Organization", name: "Markit Media", url: SITE_ORIGIN } }} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Branding & Visual Identity" }]} />
+      <CaseStudyGraph slug="branding-visual-identity" locale={locale} />
+      <Breadcrumb locale={locale} emitSchema={false} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Branding & Visual Identity" }]} />
       <section className="px-6 lg:px-12 pt-24 pb-6" aria-label="Branding and visual identity overview">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-600">Branding Portfolio</p>
@@ -38,6 +31,8 @@ export default async function BrandingVisualIdentityPage({ params }: { params: P
           </div>
         </div>
       </section>
+
+      <CaseStudyEditorial slug="branding-visual-identity" showLede />
       <CategoryGallery category="branding" locale={locale} heading="Identity boards" intro="Each board links to its client's case study. Filter by client or open any board full size." />
       <section className="px-6 lg:px-12 py-16 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
@@ -46,6 +41,8 @@ export default async function BrandingVisualIdentityPage({ params }: { params: P
           <Link href={l("/get-a-quote")} className="inline-block bg-white text-black px-8 py-4 font-bold hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Request a Quote →</Link>
         </div>
       </section>
+      <CollectionClientList category="branding" locale={locale} heading="Clients with identity boards" />
+      <RelatedCaseStudies slug="branding-visual-identity" locale={locale} />
     </article>
   );
 }

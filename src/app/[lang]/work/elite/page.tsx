@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
 import { getClient } from "@/lib/portfolio";
+import { caseStudyMetadata } from "@/lib/case-studies";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/elite",title:"Elite — Website & Social Media",description:"Website showcase and social media reel production for Elite, demonstrating full-stack digital delivery.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "Elite — Website & Social Media",
-  description: "Website showcase and social media reel production for Elite, demonstrating full-stack digital delivery.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/elite" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("elite", lang);
+}
 
 export default function ElitePage() {
   return (
     <CaseStudyPage
+      slug="elite"
       client="Elite"
       industry="Various"
       services={["Website Development", "Social Media Marketing", "Video Production"]}

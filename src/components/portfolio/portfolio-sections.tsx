@@ -4,6 +4,9 @@ import { JsonLd } from "@/components/json-ld";
 import { GalleryGrid } from "@/components/portfolio/gallery-grid";
 import { ClientDirectory, type DirectoryEntry } from "@/components/portfolio/client-directory";
 import { PortfolioImage } from "@/components/portfolio/portfolio-image";
+import { CaseStudyEditorial, CaseStudyGraph, CaseStudySnapshot, RelatedCaseStudies } from "@/components/case-study-extras";
+import { getCaseStudy, industryGroup, locationRegion, serviceName } from "@/lib/case-studies";
+import { editorialFor } from "@/data/case-studies/editorial";
 import {
   CATEGORIES,
   type CategorySlug,
@@ -14,7 +17,6 @@ import {
   clientRoute,
   clientWorkTypes,
   galleryItems,
-  getClient,
   getMedia,
   mediaUrl,
   mediaVariant,
@@ -61,24 +63,25 @@ export function clientJsonLd(c: PortfolioClient) {
 /** Full case-study page for one verified client. No invented results, briefs or quotes. */
 export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioClient; locale?: string }) {
   const l = (p: string) => `/${locale}${p}`;
+  const rec = getCaseStudy(client.slug);
+  const ed = editorialFor(client.slug);
   const types = clientWorkTypes(client);
-  const related = client.related.map((id) => getClient(id)).filter((c): c is PortfolioClient => !!c && c.status === "draft");
   const total = client.sections.reduce((n, s) => n + s.media.length, 0);
   const galleries = Array.from(new Set(client.sections.map((s) => s.gallery))) as CategorySlug[];
   return (
     <article>
-      <JsonLd data={clientJsonLd(client)} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Case Studies", href: "/case-studies" }, { label: client.name }]} />
+      {rec ? <CaseStudyGraph slug={rec.slug} locale={locale} /> : <JsonLd data={clientJsonLd(client)} />}
+      <Breadcrumb locale={locale} emitSchema={!rec} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Case Studies", href: "/case-studies" }, { label: client.name }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label={`${client.name} overview`}>
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <div className="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.15em] text-gray-600">
-              {client.industry && <span>{client.industry}</span>}
+              {(rec?.industryLabel && !/^confirm/i.test(rec.industryLabel) && rec.kind !== "inhouse" ? rec.industryLabel : client.industry) && <span>{rec?.industryLabel && !/^confirm/i.test(rec.industryLabel) && rec.kind !== "inhouse" ? rec.industryLabel : client.industry}</span>}
               {client.type === "internal" && <span className="border border-gray-300 px-2 py-0.5 text-gray-600">In-house brand</span>}
             </div>
-            <h1 className={`${display} text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-tight leading-[1.1] mt-3`}>{client.name}</h1>
-            <p className="text-lg text-gray-600 leading-relaxed mt-5 max-w-xl">{client.summary}</p>
+            <h1 className={`${display} text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-tight leading-[1.1] mt-3`}>{rec?.h1 ?? client.name}</h1>
+            <p className="text-lg text-gray-600 leading-relaxed mt-5 max-w-xl">{ed?.lede ?? client.summary}</p>
             <ul className="flex flex-wrap gap-2 mt-6 list-none p-0" aria-label="Work shown on this page">
               {types.map((t) => (
                 <li key={t} className="border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700">
@@ -86,7 +89,7 @@ export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioCl
                 </li>
               ))}
             </ul>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-gray-600 mt-4">
               {total} piece{total === 1 ? "" : "s"} shown. {client.type === "internal" ? "Internal creative for Markit Media's own brand, not paid client work." : "Artwork designed by Markit Media."}
             </p>
             <div className="flex flex-wrap gap-3 mt-7">
@@ -106,9 +109,13 @@ export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioCl
         </div>
       </section>
 
+      <CaseStudySnapshot slug={client.slug} locale={locale} />
+
+      <CaseStudyEditorial slug={client.slug} />
+
       <ClientDesignWork client={client} locale={locale} />
 
-      <section className="px-6 lg:px-12 py-14 bg-gray-50" aria-label="Explore more work">
+      <section className="px-6 lg:px-12 py-14" aria-label="Explore more work">
         <div className="max-w-7xl mx-auto">
           <h2 className={`${display} text-2xl font-extrabold`}>Explore more work</h2>
           <div className="flex flex-wrap gap-3 mt-5">
@@ -121,27 +128,10 @@ export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioCl
               Our Work →
             </Link>
           </div>
-          {related.length > 0 && (
-            <>
-              <h3 className="font-extrabold mt-10 mb-4">Related case studies</h3>
-              <ul className="grid grid-cols-2 md:grid-cols-3 gap-5 list-none p-0">
-                {related.map((r) => (
-                  <li key={r.id}>
-                    <Link href={l(clientRoute(r))} className="group block bg-white border border-gray-200 overflow-hidden hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-                      {r.hero && (
-                        <div className="aspect-[4/3] overflow-hidden bg-gray-100">
-                          <PortfolioImage id={r.hero} sizes="(min-width: 768px) 33vw, 50vw" className="w-full h-full group-hover:scale-[1.03] transition-transform duration-300 motion-reduce:transition-none" />
-                        </div>
-                      )}
-                      <p className="p-4 font-extrabold group-hover:underline">{r.name}</p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
         </div>
       </section>
+
+      <RelatedCaseStudies slug={client.slug} locale={locale} />
 
       <section className="px-6 lg:px-12 py-16 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
@@ -223,6 +213,16 @@ export function ClientDirectorySection({ locale = "en" }: { locale?: string }) {
         types: clientWorkTypes(c),
         kinds: c.sections.map((s) => s.kind),
         internal: c.type === "internal",
+        ...(() => {
+          const r = getCaseStudy(c.slug === "cambridge" ? "cambridge-electrical" : c.slug);
+          return {
+            place: r?.locationVerified ? r.location : null,
+            service: r?.serviceLinks[0] ? serviceName(r.serviceLinks[0]) : null,
+            group: r ? industryGroup(r) : "Other",
+            region: r ? locationRegion(r) : null,
+            featured: r?.kind === "featured",
+          };
+        })(),
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name));

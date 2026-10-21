@@ -1,0 +1,9 @@
+{
+  "brittanye-morris": { "required": true, "approved": false, "reason": "political campaign: indexing a candidate's page needs an explicit owner decision" },
+  "dr-jason-hayes": { "required": true, "approved": false, "reason": "political campaign: indexing a candidate's page needs an explicit owner decision" },
+  "vuse": { "required": true, "approved": false, "reason": "age-restricted product and attribution hold: owner must confirm permission and whether the work was direct or via an agency" },
+  "hubco": { "required": true, "approved": false, "reason": "attribution hold: owner must approve the HUBCO wording and the client relationship" },
+  "markit-media": { "required": true, "approved": false, "reason": "posts use stills of film and TV characters: rights unconfirmed" },
+  "ureb-digital-marketing": { "required": true, "approved": false, "reason": "meme posts use stills of film and TV characters: rights unconfirmed" },
+  "kemah-palms-recovery": { "required": true, "approved": true, "reason": "sensitive health client: owner permission to publish given 17 Oct 2026 and the page is already indexable" }
+}

@@ -12,19 +12,13 @@ import { WorkServiceTabs } from "@/components/work-service-tabs";
 import { OurWorkShowcase } from "@/components/portfolio/portfolio-sections";
 import { CaseStudyCover, PortfolioFill } from "@/components/portfolio/cover-images";
 import { CATEGORY_COVER } from "@/lib/covers";
+import { hubMetadata } from "@/lib/case-studies";
+import { WorkLinksByService } from "@/components/case-study-extras";
 
-export const metadata: Metadata = {
-  title: "Our Work — Selected Projects & Portfolio",
-  description: "Explore Markit Media's portfolio: video production, website development, branding, social media campaigns, and creative work for clients across multiple industries.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work" },
-  openGraph: {
-    url: "https://themarkitmedia.com/en/work",
-    siteName: "Markit Media",
-    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
-    title: "Our Work",
-    description: "Portfolio of video production, website development, branding, social media campaigns, and creative work.",
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return hubMetadata("work", lang);
+}
 
 const featuredProjects = [
   { client: "MeezoTech", industry: "Technology", services: "Branding, Motion Design", desc: "Technology brand identity and animated logo work.", href: "/work/meezotech" },
@@ -219,16 +213,19 @@ export default async function WorkPage({ params }: { params: Promise<{ lang: str
           <Animate animation="fade-up">
             <SectionLabel>Selected Work</SectionLabel>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
-              Results That Speak for Themselves
+              Our Portfolio: Branding, Social Media, Video and Web Design
             </h1>
             <SectionDesc>
-              We help businesses grow through strategic digital marketing, compelling creative, and data-driven execution. Explore our selected projects below.
+              A visual look at the logos, social media designs, videos and websites we have made for clients. For the written client stories, with the brief, the design choices and what we delivered, read our{" "}
+              <Link href={l("/case-studies")} className="underline underline-offset-2 hover:text-black">case studies</Link>.
             </SectionDesc>
           </Animate>
         </div>
       </section>
 
       <OurWorkShowcase locale={locale} />
+
+      <WorkLinksByService locale={locale} />
 
       {/* Agency showreels */}
       <section className="px-6 lg:px-12 py-16 bg-black text-white" aria-label="Markit Media showreels">

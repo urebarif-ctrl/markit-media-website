@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
 import { getClient } from "@/lib/portfolio";
+import { caseStudyMetadata } from "@/lib/case-studies";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/minhaz-couture",title:"Minhaz Couture — Website & Social Media",description:"Full-stack digital delivery for Minhaz Couture: website development plus social media content production for a fashion brand.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "Minhaz Couture — Website & Social Media",
-  description: "Full-stack digital delivery for Minhaz Couture: website development plus social media content production for a fashion brand.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/minhaz-couture" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("minhaz-couture", lang);
+}
 
 export default function MinhazCouturePage() {
   return (
     <CaseStudyPage
+      slug="minhaz-couture"
       client="Minhaz Couture"
       industry="Fashion"
       services={["Website Development", "Social Media Marketing", "Video Production"]}

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { PortfolioArchivePage } from "@/components/portfolio-archive-page";
+import { caseStudyMetadata } from "@/lib/case-studies";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/my-fresh-fruits",title:"My Fresh Fruits Branding & Logo Design Portfolio",description:"My Fresh Fruits branding and logo design work in the Markit Media portfolio.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "My Fresh Fruits Branding & Logo Design Portfolio",
-  description: "My Fresh Fruits branding and logo design work in the Markit Media portfolio.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/my-fresh-fruits" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("my-fresh-fruits", lang);
+}
 
 export default function MyFreshFruitsWorkPage() {
   return (
     <PortfolioArchivePage
+      slug="my-fresh-fruits"
       coverKey="my-fresh-fruits"
       client="My Fresh Fruits"
       subtitle="Branding and logo design work from the Markit Media portfolio."

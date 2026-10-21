@@ -3,14 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { JsonLd } from "@/components/json-ld";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
+import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
+import { CaseStudyEditorial, CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/foodfolio",title:"FoodFolio — Food & Beverage Design Portfolio",description:"Food and beverage design portfolio: social media content, brand campaigns, and promotional graphics for restaurants, cafes, and F&B brands by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "FoodFolio — Food & Beverage Design Portfolio",
-  description: "Food and beverage design portfolio: social media content, brand campaigns, and promotional graphics for restaurants, cafes, and F&B brands by Markit Media.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/foodfolio" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("foodfolio", lang);
+}
 
 const galleryImages = [
   { src: "/images/portfolio/foodfolio-hero.jpg", alt: "FoodFolio — food and beverage brand design overview" },
@@ -23,18 +23,11 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: "FoodFolio — Food & Beverage Design",
-    description: "Food and beverage design portfolio by Markit Media — social media, brand campaigns, and promotional graphics.",
-    creator: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
-  };
 
   return (
     <article>
-      <JsonLd data={schema} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "FoodFolio" }]} />
+      <CaseStudyGraph slug="foodfolio" locale={locale} />
+      <Breadcrumb locale={locale} emitSchema={false} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "FoodFolio" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="FoodFolio">
         <div className="max-w-4xl mx-auto">
@@ -45,7 +38,7 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
               <span className="text-base text-gray-600">Social Media &amp; Branding</span>
             </div>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
-              FoodFolio
+              {getCaseStudy("foodfolio")?.h1 ?? "FoodFolio"}
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mt-4 max-w-3xl">
               A collection of design work for food and beverage brands — from restaurants and cafes to packaged food products. Each project focuses on appetite appeal, brand storytelling, and visual consistency across social media and marketing channels.
@@ -58,6 +51,8 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
           </Animate>
         </div>
       </section>
+
+      <CaseStudyEditorial slug="foodfolio" showLede />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Portfolio gallery">
         <div className="max-w-5xl mx-auto">
@@ -154,6 +149,8 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
           </Animate>
         </div>
       </section>
+      <CollectionClientList category="food-beverage" locale={locale} heading="Food and beverage clients" />
+      <RelatedCaseStudies slug="foodfolio" locale={locale} />
     </article>
   );
 }

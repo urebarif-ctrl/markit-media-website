@@ -6,7 +6,7 @@ interface BreadcrumbItem {
   href?: string;
 }
 
-export function Breadcrumb({ items, locale = "en" }: { items: BreadcrumbItem[]; locale?: string }) {
+export function Breadcrumb({ items, locale = "en", emitSchema = true }: { items: BreadcrumbItem[]; locale?: string; emitSchema?: boolean }) {
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const filtered = items.filter((item) => item.label !== "Home");
 
@@ -26,7 +26,7 @@ export function Breadcrumb({ items, locale = "en" }: { items: BreadcrumbItem[]; 
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
+      {emitSchema && <JsonLd data={breadcrumbSchema} />}
       <nav aria-label="Breadcrumb" className="px-6 lg:px-12 pt-20 -mb-14">
         <ol className="flex flex-wrap items-center gap-1.5 text-base text-gray-500 max-w-7xl mx-auto">
           <li>

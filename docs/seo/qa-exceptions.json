@@ -1,0 +1,70 @@
+{
+ "note": "Open QA items that cannot be fixed with verified facts. Each is an exception REQUEST for the owner (not an approved exception). Only the listed problem kinds can be held, and only for the listed pages.",
+ "holdable": [],
+ "pages": [
+  {
+   "slug": "hubco",
+   "holdable": [
+    "meta description length",
+    "words \\(<"
+   ],
+   "reason": "Attribution hold: live title/meta/H1 kept; the 101-character meta and the short existing owner copy stay until the owner approves new HUBCO wording. Video-only project."
+  },
+  {
+   "slug": "vuse",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "Attribution hold (age-restricted product, direct vs agency unknown). Existing owner copy kept. Video-only project; needs owner notes."
+  },
+  {
+   "slug": "noorshad",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "Video-only project: three videos cannot be watched from this server (YouTube blocks it), so no new facts could be verified. Existing owner copy kept. Needs the owner's notes on the videos."
+  },
+  {
+   "slug": "one-homes",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "Video-only project: same reason as NoorShad. Existing owner copy kept."
+  },
+  {
+   "slug": "pur-health",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "One identity board and one video; identity of the client vs PUUR Health & Wellness unconfirmed (owner rule). Existing owner copy kept."
+  },
+  {
+   "slug": "american-auto-parts",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "One identity board and one video; no verifiable client facts. Existing owner copy kept."
+  },
+  {
+   "slug": "meezotech",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "480 words on the page with 6 verified posts and the identity board described; the 600-word featured minimum would need a client brief or results, which do not exist. Exception requested rather than padding."
+  },
+  {
+   "slug": "minhaz-couture",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "561 words on the page, 39 short of the featured minimum; the remaining facts (brief, year, results, city) are unavailable. Exception requested rather than padding."
+  },
+  {
+   "slug": "my-fresh-fruits",
+   "holdable": [
+    "words \\(<"
+   ],
+   "reason": "Only a logo animation video exists for this client; no artwork or facts to describe. Exception requested; page kept as it was."
+  }
+ ]
+}

@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { CaseStudyPage } from "@/components/case-study-page";
 import { ClientDesignWork } from "@/components/portfolio/portfolio-sections";
 import { getClient } from "@/lib/portfolio";
+import { caseStudyMetadata } from "@/lib/case-studies";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/meezotech",title:"MeezoTech — Technology Branding & Motion Design",description:"MeezoTech branding and motion design work by Markit Media, including animated logo and technology-focused brand presentation.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "MeezoTech — Technology Branding & Motion Design",
-  description: "MeezoTech branding and motion design work by Markit Media, including animated logo and technology-focused brand presentation.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/meezotech" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("meezotech", lang);
+}
 
 export default function MeezoTechPage() {
   return <CaseStudyPage
+      slug="meezotech"
     client="MeezoTech"
     industry="Technology"
     services={["Branding","Logo Animation","Motion Design"]}

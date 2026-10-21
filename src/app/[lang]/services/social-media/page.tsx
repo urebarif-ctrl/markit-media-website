@@ -232,6 +232,9 @@ const work = [
   { title: "Social Media Designs", desc: "A broader look at creative work produced across social channels and industries.", href: "/work/social-media-designs" },
   { title: "Cambridge Electrical", desc: "Creative and video work produced for an established consumer brand.", href: "/work/cambridge-electrical" },
   { title: "Pur Health", desc: "Healthcare social media and wider digital presence work.", href: "/work/pur-health" },
+  { title: "Chefiality", desc: "Fifty posts mixing product shots, quizzes and Ramadan and Eid campaigns for a baking and cooking supplier.", href: "/work/chefiality" },
+  { title: "Tourão Brazilian Steakhouse", desc: "Food social posts with close-up cuts, bold headlines and both restaurant locations in the footer.", href: "/work/tourao-brazilian-steakhouse" },
+  { title: "Thermex", desc: "Lifestyle posts for vacuum flasks and coolers, with a logo and identity board.", href: "/work/thermex" },
 ];
 
 const faq = [

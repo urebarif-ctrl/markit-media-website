@@ -4,26 +4,32 @@ import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { CaseStudyCover } from "@/components/portfolio/cover-images";
 import { coverFor } from "@/lib/covers";
+import { CaseStudyEditorial, CaseStudyGraph, CaseStudySnapshot, RelatedCaseStudies } from "@/components/case-study-extras";
+import { getCaseStudy } from "@/lib/case-studies";
 
 interface PortfolioArchivePageProps {
   client: string;
   subtitle: string;
   note: string;
   coverKey?: string;
+  /** Case-study data slug: SEO fields, schema, snapshot and related links come from the data source. */
+  slug?: string;
   children?: React.ReactNode;
 }
 
-export function PortfolioArchivePage({ client, subtitle, note, coverKey, children, locale = "en" }: PortfolioArchivePageProps & { locale?: string }) {
+export function PortfolioArchivePage({ client, subtitle, note, coverKey, slug, children, locale = "en" }: PortfolioArchivePageProps & { locale?: string }) {
+  const rec = slug ? getCaseStudy(slug) : undefined;
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   return (
     <article>
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: client }]} />
+      {rec && <CaseStudyGraph slug={rec.slug} locale={locale} />}
+      <Breadcrumb emitSchema={!rec} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, ...(rec ? [{ label: "Case Studies", href: "/case-studies" }] : []), { label: client }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-14">
         <div className="max-w-5xl mx-auto">
           <Animate animation="fade-up">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-600">Branding & Identity Portfolio</p>
-            <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight mt-3">{client}</h1>
+            <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight mt-3">{rec?.h1 ?? client}</h1>
             <p className="text-lg md:text-xl text-gray-600 leading-8 mt-5 max-w-3xl">{subtitle}</p>
           </Animate>
         </div>
@@ -65,7 +71,12 @@ export function PortfolioArchivePage({ client, subtitle, note, coverKey, childre
         </div>
       </section>
 
+      {slug && <CaseStudySnapshot slug={slug} locale={locale} />}
+      {slug && <CaseStudyEditorial slug={slug} />}
+
       {children}
+
+      {slug && <RelatedCaseStudies slug={slug} locale={locale} />}
     </article>
   );
 }

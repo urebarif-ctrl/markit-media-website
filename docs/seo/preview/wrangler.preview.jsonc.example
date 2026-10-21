@@ -1,0 +1,30 @@
+// TEMPLATE ONLY. NOT USED, NOT DEPLOYED. Copy to wrangler.preview.jsonc after the owner approves a preview.
+// An isolated preview Worker: its own name, its own empty D1 databases and R2 bucket, no production secrets,
+// no production bindings, no cron, no analytics id, and a build that is noindex everywhere.
+//
+// Before first use (owner approval required for each command, none has been run):
+//   npx wrangler d1 create markit-media-preview-db          -> put the returned id below
+//   npx wrangler r2 bucket create markit-media-preview-cache
+//   (do NOT run `wrangler secret put` for MONGODB_URI, RESEND_API_KEY, JWT or admin secrets: the preview must not have them)
+{
+  "name": "markit-media-preview",
+  "workers_dev": true,
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "markit-media-preview-db", "database_id": "<NEW-EMPTY-PREVIEW-DB-ID>" },
+    { "binding": "NEXT_TAG_CACHE_D1", "database_name": "markit-media-preview-db", "database_id": "<NEW-EMPTY-PREVIEW-DB-ID>" }
+  ],
+  "r2_buckets": [{ "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "markit-media-preview-cache" }],
+  "vars": {
+    // Anything other than "true" makes robots.txt disallow everything, the meta robots noindex,nofollow, and adds X-Robots-Tag.
+    "PRODUCTION_DEPLOY": "false",
+    "NEXT_PUBLIC_SITE_URL": "https://markit-media-preview.<ACCOUNT-SUBDOMAIN>.workers.dev",
+    "OPEN_NEXT_BUILD_ID": "preview"
+    // No NEXT_PUBLIC_GTM_ID: analytics stays off. No R2_BUCKET_NAME / R2_PUBLIC_URL for the production media bucket
+    // (images are read-only from the public media host and need no binding).
+  }
+  // No "triggers": the production cron must not run from the preview.
+}

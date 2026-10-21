@@ -3,14 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { JsonLd } from "@/components/json-ld";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
+import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
+import { CaseStudyEditorial, CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
-export const metadata: Metadata = { openGraph:{url:"https://themarkitmedia.com/en/work/fashion-feed",title:"Fashion Feed — Social Media Design Portfolio",description:"Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",siteName:"Markit Media",images:[{url:"/images/branding/og-image.png",width:1200,height:630,alt:"Markit Media — Full-Stack Digital Marketing Agency"}]},
-  title: "Fashion Feed — Social Media Design Portfolio",
-  description: "Social media design portfolio for fashion and lifestyle brands. Instagram feeds, promotional graphics, and brand campaign visuals by Markit Media.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/fashion-feed" },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("fashion-feed", lang);
+}
 
 const galleryImages = [
   { src: "/images/portfolio/fashion-feed-01.jpg", alt: "Fashion brand promotional social media post — bumper sale campaign" },
@@ -23,18 +23,11 @@ export default async function FashionFeedPage({ params }: { params: Promise<{ la
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: "Fashion Feed — Social Media Design",
-    description: "Social media design portfolio for fashion and lifestyle brands by Markit Media.",
-    creator: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com" },
-  };
 
   return (
     <article>
-      <JsonLd data={schema} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Fashion Feed" }]} />
+      <CaseStudyGraph slug="fashion-feed" locale={locale} />
+      <Breadcrumb locale={locale} emitSchema={false} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Fashion Feed" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Fashion Feed">
         <div className="max-w-4xl mx-auto">
@@ -45,7 +38,7 @@ export default async function FashionFeedPage({ params }: { params: Promise<{ la
               <span className="text-base text-gray-600">Social Media Design</span>
             </div>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1]">
-              Fashion Feed
+              {getCaseStudy("fashion-feed")?.h1 ?? "Fashion Feed"}
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mt-4 max-w-3xl">
               A collection of social media designs created for fashion and lifestyle brands. From promotional campaigns and seasonal sales to curated Instagram feeds and product showcases.
@@ -58,6 +51,8 @@ export default async function FashionFeedPage({ params }: { params: Promise<{ la
           </Animate>
         </div>
       </section>
+
+      <CaseStudyEditorial slug="fashion-feed" showLede />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Portfolio gallery">
         <div className="max-w-5xl mx-auto">
@@ -153,6 +148,8 @@ export default async function FashionFeedPage({ params }: { params: Promise<{ la
           </Animate>
         </div>
       </section>
+      <CollectionClientList category="fashion" locale={locale} heading="Fashion and apparel clients" />
+      <RelatedCaseStudies slug="fashion-feed" locale={locale} />
     </article>
   );
 }

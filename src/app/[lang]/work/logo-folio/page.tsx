@@ -2,22 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { JsonLd } from "@/components/json-ld";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 import { YouTubeEmbed } from "@/components/youtube-embed";
+import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
+import { CaseStudyEditorial, CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
-export const metadata: Metadata = {
-  title: "Logo Folio — Branding & Logo Animation Portfolio",
-  description: "A selection of our logo design and animation work across energy, technology, F&B, fashion, and agency brands. Professional motion graphics and brand identity.",
-  alternates: { canonical: "https://themarkitmedia.com/en/work/logo-folio" },
-  openGraph: {
-    url: "https://themarkitmedia.com/en/work/logo-folio",
-    siteName: "Markit Media",
-    images: [{ url: "/images/branding/og-image.png", width: 1200, height: 630, alt: "Markit Media — Full-Stack Digital Marketing Agency" }],
-    title: "Logo Folio",
-    description: "Logo design and animation portfolio showcasing identity work across multiple industries.",
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  return caseStudyMetadata("logo-folio", lang);
+}
 
 const logoProjects = [
   { client: "HUBCO", industry: "Energy", videoId: "CIr1dFqvmfM", desc: "Professional logo animation for a leading energy company." },
@@ -34,24 +27,18 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Logo Folio",
-    description: "Branding and logo animation portfolio showcasing our identity design work.",
-  };
 
   return (
     <article>
-      <JsonLd data={schema} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Logo Folio" }]} />
+      <CaseStudyGraph slug="logo-folio" locale={locale} />
+      <Breadcrumb locale={locale} emitSchema={false} items={[{ label: "Home", href: "/" }, { label: "Work", href: "/work" }, { label: "Logo Folio" }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-12" aria-label="Logo Folio overview">
         <div className="max-w-4xl mx-auto">
           <Animate animation="fade-up">
             <span className="text-base font-medium text-gray-600 uppercase tracking-[0.15em]">Branding Portfolio</span>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
-              Logo Folio
+              {getCaseStudy("logo-folio")?.h1 ?? "Logo Folio"}
             </h1>
             <p className="text-lg text-gray-500 leading-relaxed mt-4 max-w-2xl">
               A selection of our logo design and animation work. Each project represents a unique brand identity brought to life through thoughtful design and professional motion graphics.
@@ -59,6 +46,8 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
           </Animate>
         </div>
       </section>
+
+      <CaseStudyEditorial slug="logo-folio" showLede />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Logo animations">
         <div className="max-w-7xl mx-auto">
@@ -126,6 +115,8 @@ export default async function LogoFolioPage({ params }: { params: Promise<{ lang
           </div>
         </div>
       </section>
+      <CollectionClientList category="logo-design" locale={locale} heading="Logo and identity clients" />
+      <RelatedCaseStudies slug="logo-folio" locale={locale} />
     </article>
   );
 }
