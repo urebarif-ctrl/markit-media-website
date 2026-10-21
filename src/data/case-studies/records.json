@@ -41,8 +41,8 @@
   "locations": [],
   "locationEvidence": null,
   "planWebsite": "https://meezotech.com/ (likely)",
-  "website": null,
-  "websiteVerified": false,
+  "website": "https://meezotech.com/",
+  "websiteVerified": true,
   "dateModified": "2026-10-21",
   "datePublished": null,
   "datePublishedStatus": "unverified: earliest git commit 22 Sep 2026 is a lower bound only; no deployment/Wayback evidence",
@@ -659,16 +659,22 @@
    "medical practice branding Texas"
   ],
   "title": "Baytown Pediatrics Logo & Social Media | Markit Media",
-  "h1": "Baytown Pediatrics: Logo and Social Media Design for a Pediatric Clinic",
-  "metaDescription": "Logo identity and social media designs for Baytown Pediatrics, a pediatric clinic, built around a green palette and the line 'Compassionate pediatric care'.",
+  "h1": "Baytown Pediatrics, Texas: Logo and Social Media Design for a Pediatric Clinic",
+  "metaDescription": "Logo identity and social media designs for Baytown Pediatrics in Baytown, Texas, built around a green palette and the line 'Compassionate pediatric care'.",
   "planLocation": "Baytown, Texas (likely)",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Baytown, Texas",
+  "locations": [
+   {
+    "city": "Baytown",
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "baytownpediatrics.com lists 1113 W Baker Rd, Baytown TX 77521; phone matches the artwork",
   "planWebsite": "https://www.facebook.com/p/Baytown-Pediatrics-100090203177062/ (social (no website found))",
-  "website": null,
-  "websiteVerified": false,
+  "website": "https://baytownpediatrics.com/",
+  "websiteVerified": true,
   "dateModified": "2026-10-21",
   "datePublished": "2026-10-17",
   "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
@@ -1086,13 +1092,18 @@
    "Dallas sports marketing"
   ],
   "title": "Dallas Panthers Cricket Social Media Design | Markit Media",
-  "h1": "Dallas Panthers: Social Media Design for a Cricket Team",
-  "metaDescription": "Social media designs for the Dallas Panthers cricket team, created to promote the team, its players and match days across its social channels.",
+  "h1": "Dallas Panthers: Social Media Design for a Texas Cricket Team",
+  "metaDescription": "Social media designs for the Dallas Panthers cricket team in Texas, created to promote the team, its players and its matches to local cricket fans.",
   "planLocation": "Dallas, Texas (likely (from name))",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Texas",
+  "locations": [
+   {
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "team name and its own post: Texas Super League powerhouse team",
   "planWebsite": "- (need from Ureb)",
   "website": null,
   "websiteVerified": false,
@@ -1407,10 +1418,15 @@
   "h1": "Flour Magician: Social Media Design for a Bakery",
   "metaDescription": "Social media designs for Flour Magician, a bakery brand, with posts that show baked goods at their best and give the feed one recognisable look.",
   "planLocation": "- (confirm)",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Lahore, Pakistan",
+  "locations": [
+   {
+    "city": "Lahore",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "artwork on every post says Delivery for Lahore only",
   "planWebsite": "- (need from Ureb)",
   "website": null,
   "websiteVerified": false,
@@ -1866,13 +1882,17 @@
   "h1": "North Charge: Social Media Design for an EV Charging Brand",
   "metaDescription": "Social media designs for North Charge, an electric-vehicle charging brand, using product renders and clear messaging to explain EV charging to drivers.",
   "planLocation": "- (confirm (a Canadian company matches))",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Canada",
+  "locations": [
+   {
+    "country": "CA"
+   }
+  ],
+  "locationEvidence": "northcharge.ca states EV chargers in Canada; same domain printed on the artwork",
   "planWebsite": "https://northcharge.ca/ (unconfirmed)",
-  "website": null,
-  "websiteVerified": false,
+  "website": "https://northcharge.ca/",
+  "websiteVerified": true,
   "dateModified": "2026-10-21",
   "datePublished": "2026-10-17",
   "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
@@ -1912,10 +1932,14 @@
   "h1": "Pakhlanze by Abeera Khan: Branding and Social Media for Catering and Events",
   "metaDescription": "Logo identity and social media designs for Pakhlanze by Abeera Khan, covering catering and event styling across 20 pieces of creative by Markit Media.",
   "planLocation": "- (confirm)",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Pakistan",
+  "locations": [
+   {
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "artwork prints a Pakistani mobile number and a .pk email address",
   "planWebsite": "- (need from Ureb)",
   "website": null,
   "websiteVerified": false,
@@ -2049,10 +2073,15 @@
   "h1": "Pizza Warma: Food Creative for a Pizza and Shawarma Restaurant",
   "metaDescription": "Food and beverage creative for Pizza Warma, serving pizza, pasta, shawarma and fries, with posts designed to make the menu look irresistible on social media.",
   "planLocation": "- (confirm)",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Karachi, Pakistan",
+  "locations": [
+   {
+    "city": "Karachi",
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "artwork prints an address in Bahria Town, Karachi",
   "planWebsite": "- (need from Ureb)",
   "website": null,
   "websiteVerified": false,
@@ -2198,8 +2227,8 @@
   "locations": [],
   "locationEvidence": null,
   "planWebsite": "https://qwenchjuice.com/ (likely)",
-  "website": null,
-  "websiteVerified": false,
+  "website": "https://qwenchjuice.com/",
+  "websiteVerified": true,
   "dateModified": "2026-10-21",
   "datePublished": "2026-10-17",
   "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
@@ -2236,13 +2265,17 @@
    "beauty academy social media"
   ],
   "title": "Real Rose Beauty Salon Social Media Design | Markit Media",
-  "h1": "Real Rose Beauty: Social Media Design for a Salon and Training Centre",
-  "metaDescription": "Social media designs for Real Rose Beauty Salon & Training Center, promoting its salon services and beauty training with clear, easy-to-read creative.",
+  "h1": "Real Rose Beauty, Karachi: Social Media Design for a Salon and Training Centre",
+  "metaDescription": "Social media designs for Real Rose Beauty Salon & Training Center in Karachi, promoting salon services and beauty courses with one consistent, polished look.",
   "planLocation": "Karachi, Pakistan (likely)",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Pakistan",
+  "locations": [
+   {
+    "country": "PK"
+   }
+  ],
+  "locationEvidence": "artwork prints Pakistani landline (021) and mobile numbers",
   "planWebsite": "https://www.facebook.com/RealRoseBeauty/ (social (no website found))",
   "website": null,
   "websiteVerified": false,
@@ -2335,14 +2368,19 @@
    "cricket league social media",
    "sports league graphics Texas"
   ],
-  "title": "Cricket League Social Media Design | Markit Media",
+  "title": "Texas Super League Cricket Social Media | Markit Media",
   "h1": "Texas Super League: Social Media Design for a Cricket League",
-  "metaDescription": "Social media designs for the Texas Super League cricket league, created to promote its teams, fixtures and big match days.",
+  "metaDescription": "Social media designs for the Texas Super League cricket league, created to promote its teams, fixtures and big moments to cricket fans across Texas.",
   "planLocation": "Texas (likely (from name))",
-  "locationVerified": false,
-  "location": null,
-  "locations": [],
-  "locationEvidence": null,
+  "locationVerified": true,
+  "location": "Texas",
+  "locations": [
+   {
+    "region": "TX",
+    "country": "US"
+   }
+  ],
+  "locationEvidence": "league name printed on the artwork",
   "planWebsite": "- (need from Ureb)",
   "website": null,
   "websiteVerified": false,
@@ -2630,8 +2668,8 @@
   "locations": [],
   "locationEvidence": null,
   "planWebsite": "- (need from Ureb)",
-  "website": null,
-  "websiteVerified": false,
+  "website": "https://twisterhomeappliances.com/",
+  "websiteVerified": true,
   "dateModified": "2026-10-21",
   "datePublished": "2026-10-17",
   "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
@@ -2715,17 +2753,17 @@
   ],
   "title": "Wild Game Jerky Food Social Creative | Markit Media",
   "h1": "Wild Game Jerky: Food Creative for an Exotic Jerky Brand",
-  "metaDescription": "Food creative for Wild Game Jerky, a family-run California brand making exotic jerky such as alligator, boar and ostrich, made for social and online sales.",
+  "metaDescription": "Food creative for Wild Game Jerky, a family-owned brand making exotic jerky such as alligator, boar and ostrich, designed for social and online sales.",
   "planLocation": "California (confirmed)",
-  "locationVerified": true,
-  "location": "California",
+  "locationVerified": false,
+  "location": null,
   "locations": [
    {
     "region": "CA",
     "country": "US"
    }
   ],
-  "locationEvidence": "wildgamejerky.com: California distributor area",
+  "locationEvidence": null,
   "planWebsite": "https://www.wildgamejerky.com/ (confirmed)",
   "website": "https://www.wildgamejerky.com/",
   "websiteVerified": true,

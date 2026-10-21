@@ -5,7 +5,7 @@ import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
-import { CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
+import { CaseStudyEditorial, CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -51,6 +51,8 @@ export default async function FoodFolioPage({ params }: { params: Promise<{ lang
           </Animate>
         </div>
       </section>
+
+      <CaseStudyEditorial slug="foodfolio" showLede />
 
       <section className="px-6 lg:px-12 py-12" aria-label="Portfolio gallery">
         <div className="max-w-5xl mx-auto">

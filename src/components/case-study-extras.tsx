@@ -75,12 +75,13 @@ export function CaseStudySnapshot({ slug, locale = "en" }: { slug: string; local
 }
 
 /** Rewritten copy: lede + sections. Renders nothing when a page has no editorial entry yet. */
-export function CaseStudyEditorial({ slug }: { slug: string }) {
+export function CaseStudyEditorial({ slug, showLede = false }: { slug: string; showLede?: boolean }) {
   const ed = editorialFor(slug);
   if (!ed) return null;
   return (
     <section className="px-6 lg:px-12 py-10" aria-label="Case study">
       <div className="max-w-3xl mx-auto space-y-10">
+        {showLede && <p className="text-xl text-gray-700 leading-relaxed">{ed.lede}</p>}
         {ed.sections.map((s) => (
           <div key={s.heading}>
             <h2 className={`${display} text-xl md:text-2xl font-extrabold text-black mb-4`}>{s.heading}</h2>

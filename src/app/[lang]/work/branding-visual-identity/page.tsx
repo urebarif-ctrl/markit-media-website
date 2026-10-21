@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
 import { caseStudyMetadata } from "@/lib/case-studies";
-import { CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
+import { CaseStudyEditorial, CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -31,6 +31,8 @@ export default async function BrandingVisualIdentityPage({ params }: { params: P
           </div>
         </div>
       </section>
+
+      <CaseStudyEditorial slug="branding-visual-identity" showLede />
       <CategoryGallery category="branding" locale={locale} heading="Identity boards" intro="Each board links to its client's case study. Filter by client or open any board full size." />
       <section className="px-6 lg:px-12 py-16 bg-black text-white text-center" aria-label="Get started">
         <div className="max-w-3xl mx-auto">
