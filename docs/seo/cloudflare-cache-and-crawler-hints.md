@@ -11,7 +11,7 @@ Status: **PREPARED, NOT ACTIVATED.** No Cloudflare setting has been changed. Own
 
 | Hazard | Why it matters | How the rule avoids it |
 |---|---|---|
-| **Country block bypassed** | `src/proxy.ts` returns 403 to visitors from IN and NG on every request. A cache HIT never reaches the Worker, so those visitors would be served the page. | The rule only applies when `ip.geoip.country` is not IN or NG; those requests go to the Worker as today. (Alternative: move the block into a WAF custom rule, a separate approved change.) |
+| **Country block bypassed** | `src/proxy.ts` returns 403 to visitors from IN and NG, but only for pages: the proxy does not cover `/api/*`, `/robots.txt` or the sitemaps. A cache HIT never reaches the Worker, so cached pages would be served to those countries. | Excluding IN and NG in the cache rule is **defence in depth only, not the control** (see "Country restriction must not depend on the cache" below). The control is a WAF custom rule. |
 | **Forms** | Quote, contact and careers forms POST to `/api/*`. | The rule matches page paths only, GET only. POST and `/api/*` are never cached. |
 | **Auth / admin** | `/admin` redirects to dashboard.themarkitmedia.com; `/api/admin/*` is `no-store`. | Not in the rule's path list; add `not starts_with(path, "/admin")` as a belt-and-braces condition. |
 | **Dynamic content** | The work pages are the same for every visitor (no cookies, no personalisation). Cookie consent is client-side. | Limit to the listed paths; bypass if a request carries a session cookie (see expression). |
@@ -63,3 +63,24 @@ Settings:
 
 - No change to the existing Cloudflare image-resizing, Zaraz, WAF or DNS settings.
 - `media.themarkitmedia.com` (R2 images, `cf-cache-status: DYNAMIC`) could use its own "Cache Everything" rule; noted on 19 Oct, still needs a separate approval.
+
+
+## Country restriction must not depend on the cache (owner requirement, 21 Oct 2026)
+
+Excluding India and Nigeria from the cache rule does not prove the geographic block cannot be bypassed: it only stops those requests from being served *from this rule's cache*. The block has to be enforced by something that runs before any cache and that no application cache can skip.
+
+**Proposed control (documentation only, not created):** a Cloudflare WAF custom rule on the zone.
+
+- Expression: `ip.geoip.country in {"IN" "NG"}` (add `and not starts_with(http.request.uri.path, "/api/")` only if the owner wants forms left open, which is the case today).
+- Action: Block. Where the owner prefers the current behaviour (a plain 403 page from the Worker), use Block with a custom response.
+- Why it holds: Cloudflare runs WAF custom rules before Cache Rules in its phase order, and a request stopped by a terminating custom rule never reaches the cache ([phases list](https://developers.cloudflare.com/ruleset-engine/reference/phases-list/), [cache and WAF](https://developers.cloudflare.com/cache/interaction-cloudflare-products/waf-snippets/)). The docs describe the order, and they do not state in so many words that a cached object is re-checked on every request, so this is verified by test, not assumed.
+- Things that could still bypass it, to check: an IP Access rule with Allow (runs earlier), a URL rewrite or transform rule that changes the path before the custom rule is evaluated, and a Skip action on the rule.
+- Keep `src/proxy.ts` as the second layer.
+
+**Gaps in today's control** (found in the local test): `/api/*`, `/robots.txt` and the sitemaps are not covered by the proxy, so blocked countries can still submit forms and read the sitemaps. Decide whether that is intended; if not, extend the WAF rule rather than the cache rule.
+
+**Test plan after approval, on the isolated preview Worker first, then production:**
+1. Cloudflare's Trace tool (Security > Trace) with country set to IN and NG, for `/en`, `/en/work/elite`, `/en/blog`, `/api/contact`, `/robots.txt`: must show the custom rule as the terminating phase and no cache phase.
+2. Request the same pages once from an allowed country so they are cached, then request again from IN or NG (a VPN exit, or Trace with a spoofed country): expect the block, not a cache HIT. `CF-IPCountry` cannot be spoofed by header on Cloudflare, so a header test is not valid evidence.
+3. Security > Events must log the blocks with no `cf-cache-status`.
+4. Confirm US and PK visitors still get the pages.
