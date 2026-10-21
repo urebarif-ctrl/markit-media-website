@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { CategoryGallery } from "@/components/portfolio/portfolio-sections";
-import { PORTFOLIO_NEW_PAGES_INDEXABLE, SITE_ORIGIN } from "@/lib/portfolio";
-import { caseStudyMetadata, getCaseStudy } from "@/lib/case-studies";
+import { caseStudyMetadata } from "@/lib/case-studies";
 import { CaseStudyGraph, CollectionClientList, RelatedCaseStudies } from "@/components/case-study-extras";
-
-const url = `${SITE_ORIGIN}/en/work/branding-visual-identity`;
-const title = "Branding & Visual Identity Portfolio";
-const description = "Brand identity boards from Markit Media: marks, colour palettes, typography and applications across stationery, packaging, apparel and digital.";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;

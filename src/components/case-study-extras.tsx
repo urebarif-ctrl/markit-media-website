@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/json-ld";
 import { allClients, clientRoute, type CategorySlug } from "@/lib/portfolio";
+import { CASE_CARDS, LOCATION_CASES } from "@/data/case-studies/linking";
 import { editorialFor } from "@/data/case-studies/editorial";
 import {
   SERVICE_GROUPS,
@@ -266,6 +267,32 @@ export function WorkLinksByService({ locale = "en" }: { locale?: string }) {
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/** "Work for {place} businesses": plain links to case studies whose location is verified (see data/case-studies/linking.ts). */
+export function LocationWork({ path, heading, locale = "en" }: { path: string; heading: string; locale?: string }) {
+  const slugs = LOCATION_CASES[path.replace(/^\//, "")] ?? [];
+  const items = slugs.map((s) => ({ s, rec: getCaseStudy(s), card: CASE_CARDS[s] })).filter((x) => x.rec && x.card);
+  if (items.length === 0) return null;
+  const l = (p: string) => `/${locale}${p}`;
+  return (
+    <section className="px-6 lg:px-12 py-14" aria-label={heading}>
+      <div className="max-w-7xl mx-auto">
+        <h2 className={`${display} text-2xl font-extrabold`}>{heading}</h2>
+        <ul className="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0">
+          {items.map(({ s, rec, card }) => (
+            <li key={s}>
+              <Link href={l(`/work/${s}`)} className={`block border border-gray-200 p-5 hover:border-black transition-colors ${focus}`}>
+                <span className="text-xs font-bold uppercase tracking-wide text-gray-600">{card.l}</span>
+                <span className="block font-extrabold mt-2 underline-offset-2 hover:underline">{rec!.name}</span>
+                {rec!.locationVerified && rec!.location && <span className="block text-sm text-gray-600 mt-1">{rec!.location}</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -17,7 +17,6 @@ import {
   clientRoute,
   clientWorkTypes,
   galleryItems,
-  getClient,
   getMedia,
   mediaUrl,
   mediaVariant,
