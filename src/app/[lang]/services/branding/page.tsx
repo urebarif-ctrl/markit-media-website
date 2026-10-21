@@ -54,7 +54,9 @@ export default function BrandingPage() {
       portfolio={[
         { client: "Logo Folio", desc: "7 professional logo animations across energy, tech, F&B, and fashion brands.", href: "/work/logo-folio" },
         { client: "HUBCO", desc: "Logo animation and brand commercial for a leading energy company.", href: "/work/hubco" },
-        { client: "FoodFolio", desc: "Brand design and social media for food and beverage clients.", href: "/work/foodfolio" },
+        { client: "Branding & Visual Identity", desc: "Twenty-one complete identity systems: mark, palette, typography and applications.", href: "/work/branding-visual-identity" },
+        { client: "MeezoTech", desc: "Red and black technology identity with logo animation and a social series.", href: "/work/meezotech" },
+        { client: "Thermex", desc: "Logo and identity board with a long run of product lifestyle posts.", href: "/work/thermex" },
         { client: "Minhaz Couture", desc: "Fashion brand identity and digital presence.", href: "/work/minhaz-couture" },
       ]}
       industries={[

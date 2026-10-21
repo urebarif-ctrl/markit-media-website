@@ -59,7 +59,7 @@ export default function WebsiteDevelopmentPage() {
         { title: "Heuristic Evaluator", desc: "Score your website against Nielsen's 10 usability heuristics.", href: "/free-tools/free-website-heuristic-evaluator" },
       ]}
       portfolio={[
-        { client: "Elite", desc: "Custom website development with professional design and social integration.", href: "/work/elite" },
+        { client: "Elite", desc: "Website for an Indian and Pakistani restaurant in Sugar Land, Texas, with a showcase reel and a matching social series.", href: "/work/elite" },
         { client: "Pur Health", desc: "Healthcare website focused on trust, clarity, and accessibility.", href: "/work/pur-health" },
         { client: "Minhaz Couture", desc: "Custom website for a fashion brand, with social media content.", href: "/work/minhaz-couture" },
       ]}

@@ -98,6 +98,46 @@ export const PROJECTS: Record<string, VerifiedProject> = {
     summary: "A technology brand identity presented through logo animation and motion design.",
     cover: { kind: "case", key: "meezotech" },
   },
+  "tourao-brazilian-steakhouse": {
+    client: "Tourão Brazilian Steakhouse",
+    href: "/work/tourao-brazilian-steakhouse",
+    label: "Food social creative",
+    services: ["Social Media Marketing", "Content Creation"],
+    summary: "Close-up skewer and cut photography, bold headlines and both restaurant locations in every footer.",
+    cover: { kind: "media", id: "tourao-brazilian-steakhouse-food-01" },
+  },
+  chefiality: {
+    client: "Chefiality",
+    href: "/work/chefiality",
+    label: "Social campaigns",
+    services: ["Social Media Marketing", "Content Creation", "Seasonal Campaigns"],
+    summary: "Fifty posts mixing product shots, quizzes and polls, store announcements and Ramadan and Eid campaigns.",
+    cover: { kind: "media", id: "chefiality-food-24" },
+  },
+  thermex: {
+    client: "Thermex",
+    href: "/work/thermex",
+    label: "Brand identity and social",
+    services: ["Visual Identity", "Social Media Marketing", "Content Creation"],
+    summary: "A logo and identity board plus a long run of lifestyle posts for vacuum flasks and coolers.",
+    cover: { kind: "media", id: "thermex-social-04" },
+  },
+  pakhlanze: {
+    client: "Pakhlanze",
+    href: "/work/pakhlanze",
+    label: "Brand identity and social",
+    services: ["Visual Identity", "Social Media Marketing"],
+    summary: "A gold and green catering identity with fifteen event-led social posts.",
+    cover: { kind: "media", id: "pakhlanze-food-02" },
+  },
+  "wild-game-jerky": {
+    client: "Wild Game Jerky",
+    href: "/work/wild-game-jerky",
+    label: "Seasonal promotions",
+    services: ["Social Media Marketing", "Seasonal Campaigns"],
+    summary: "Black Friday, Halloween and Thanksgiving bundle posts for an exotic jerky brand.",
+    cover: { kind: "media", id: "wild-game-jerky-food-01" },
+  },
   "social-media-designs": {
     client: "Social Media Designs",
     href: "/work/social-media-designs",
@@ -180,23 +220,23 @@ export const SERVICE_CASE_STUDIES: Record<string, CaseStudySet> = {
   "/services/social-media/content-creation": {
     heading: "Social Content Case Studies",
     intro: "Social media content and design work from our portfolio.",
-    ids: ["vuse", "cambridge-electrical", "social-media-designs"],
+    ids: ["cambridge-electrical", "tourao-brazilian-steakhouse", "chefiality", "vuse", "social-media-designs"],
   },
   "/services/social-media/social-strategy": {
     heading: "Social Campaign Case Studies",
-    intro: "A campaign-based social engagement from our portfolio.",
-    ids: ["cambridge-electrical"],
+    intro: "Campaign-based social engagements from our portfolio: seasonal series, festival campaigns and recurring content systems.",
+    ids: ["cambridge-electrical", "chefiality", "wild-game-jerky"],
   },
 
   "/services/branding/logo-design": {
     heading: "Logo and Identity Case Studies",
     intro: "Logo and brand identity work from our portfolio.",
-    ids: ["logo-folio", "branding-visual-identity", "meezotech"],
+    ids: ["logo-folio", "branding-visual-identity", "meezotech", "thermex"],
   },
   "/services/branding/visual-identity": {
     heading: "Visual Identity Case Studies",
     intro: "Brand identity boards and identity presentations from our portfolio.",
-    ids: ["branding-visual-identity", "meezotech", "logo-folio"],
+    ids: ["branding-visual-identity", "meezotech", "pakhlanze", "logo-folio"],
   },
 };
 
