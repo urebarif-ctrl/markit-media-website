@@ -24,7 +24,7 @@ Baselines saved: `~/cs_seo_work/phase0/` (URL inspection, 90-day performance, qu
 | Thin Article schema | One `@graph` per page: WebPage, Article (author/publisher `@id`, dates), client Organization (url/address only when verified), hero ImageObject, BreadcrumbList, Services; hub: CollectionPage + ItemList of all 66 + BreadcrumbList. No Review/FAQPage/AggregateRating | `src/lib/case-studies.ts`, `case-study-extras.tsx` |
 | Two different breadcrumb trails | One trail everywhere: Home / Work / Case Studies / Brand (collections: Home / Work / Collection); one BreadcrumbList node per page | `breadcrumb.tsx`, templates |
 | Default OG image on 17 pages, no `og:type` | Per-page OG image (the page's own hero artwork), `og:type=article`, `twitter:card=summary_large_image` | `caseStudyMetadata()` |
-| Titles/H1/meta | From the plan's section 9 (length-checked: 64 of 64 titles 30-60, metas 120-160), with unverified places removed (see ledger) | `src/data/case-studies/records.json` |
+| Titles/H1/meta | From the plan's section 9 (length-checked: all 66 titles 30-60 characters, metas 120-160 except one held), with unverified places removed (see ledger) | `src/data/case-studies/records.json` |
 | Client website never linked; no snapshot facts | Snapshot box on every page; website linked only when verified live (12 clients + MustCare) | `CaseStudySnapshot` |
 | Unrelated "related" cards, none on featured pages | 4 hand-picked related cards on all 66 pages, descriptive anchors | `RelatedCaseStudies` |
 | Wrong-fit industry links (HUBCO on EV chargers/finance, Pur Health on rehab; a link to `/work` for nonprofits) | Industry strip is now data-driven: removed wrong fits; 17 industries link to real case studies | `industry-project-strip.tsx`, `linking.ts` |
@@ -43,7 +43,7 @@ Baselines saved: `~/cs_seo_work/phase0/` (URL inspection, 90-day performance, qu
 | Pages with Article schema | 10 of 66 | 66 of 66 |
 | Pages with a default OG image | 17 | 0 |
 | Pages with 4 related links | 50 of 66 | 66 of 66 |
-| Pages with a generic (numbered) alt | 37 | 34 (4 representative clients done: 80 alts rewritten) |
+| Generic (numbered) alt texts on work pages | 316 images on 37 pages | 290 images on 34 pages (50 alts rewritten for the 4 representative clients; the rest of the drop comes from images shared across pages) |
 | Non-work pages: title/description/canonical/robots/H1 | n/a | **0 differences on 47 sampled pages** |
 | All 66 work URLs, slugs, canonicals | n/a | unchanged, no redirect added (except `/sitemap.xml`) |
 
@@ -99,7 +99,7 @@ See `docs/seo/uncertainty-ledger.csv` (310 rows). Headline items: client website
 **Benefits (not promises):** every indexable work page is in the sitemap with a real date and its images; Google can finally read the noindex on `/ar` `/ur`; richer, valid entity data for Google and AI search (client, image, services, dates); correct internal links in place of wrong-fit ones; clearer split between portfolio and case studies; no regressions on 47 sampled pages.
 
 **Risks:**
-- Changing titles/H1s on 63 pages. Only 7 of them had impressions in 90 days, the largest being HUBCO ("hubco logo", position 5.8): its title and H1 keep the same terms and the HUBCO/Vuse wording was left as is.
+- Titles changed on 63 pages and H1s on 62. Only 7 work pages had any impressions in the last 90 days (largest: HUBCO for "hubco logo", position 5.8, whose title and H1 were deliberately left as they are; the others have 1 to 29 impressions, mostly `site:` queries).
 - Opening `/ar` `/ur` to crawling will add crawl load (about 1,500 noindexed URLs each, some 404) before they drop out.
 - Indexing ArchPoint (one image, ~300 words) is a thin-content risk; reverse by leaving `indexReady` false.
 - 60 pages still carry numbered alt text and short copy until the rollout continues.
