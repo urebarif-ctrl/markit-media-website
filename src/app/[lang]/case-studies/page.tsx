@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CaseStudyCover, PortfolioFill } from "@/components/portfolio/cover-images";
 import { CATEGORY_COVER } from "@/lib/covers";
+import { galleryItems } from "@/lib/portfolio";
 import { Animate, Stagger } from "@/components/animate";
 import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -32,7 +33,8 @@ const creative = [
  {title:"Fashion Feed",category:"Fashion & E-commerce",href:"/work/fashion-feed",image:CATEGORY_COVER.fashion},
  {title:"Social Media Designs",category:"Social Media Creative",href:"/work/social-media-designs",image:CATEGORY_COVER.social},
  {title:"FoodFolio",category:"Food & Beverage",href:"/work/foodfolio",image:CATEGORY_COVER.food},
- {title:"LogoFolio",category:"Branding & Identity",href:"/work/logo-folio",image:CATEGORY_COVER.logo},
+ {title:"LogoFolio",category:"Logo design & animation",href:"/work/logo-folio",image:CATEGORY_COVER.logo},
+ {title:"Branding & Visual Identity",category:"Identity boards",href:"/work/branding-visual-identity",image:galleryItems("branding")[0]?.id ?? CATEGORY_COVER.logo},
 ];
 
 export default async function CaseStudiesPage({ params }: { params: Promise<{ lang: string }> }){
@@ -62,7 +64,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ la
   <ClientDirectorySection locale={locale}/>
   <section className="px-6 lg:px-12 py-20" aria-label="Creative portfolio"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Creative Portfolio</SectionLabel><SectionTitle>More Visual Work</SectionTitle><SectionDesc>Design-led collections complement the client project stories above and connect directly to the wider Work library.</SectionDesc></Animate>
-   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><PortfolioFill id={x.image} alt={`${x.title} — ${x.category} portfolio`} sizes="(max-width:640px) 100vw,25vw" className=" group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>
+   <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><PortfolioFill id={x.image} alt={`${x.title} — ${x.category} portfolio`} sizes="(max-width:640px) 100vw,25vw" className=" group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>
   </div></section>
   <section className="px-6 lg:px-12 py-16 bg-gray-50"><div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
    {[["Find work by service","Start with a service page to see relevant projects, supporting expertise and related reading.","/services"],["Browse every project","Use the Work page for the complete visual portfolio and individual project pages.","/work"],["Find work by industry","Explore industry pages when sector relevance matters more than the delivery channel.","/industries"]].map(x=><Link key={x[2]} href={l(x[2])} className="bg-white border border-gray-200 p-6 hover:border-black"><h3 className="font-extrabold">{x[0]}</h3><p className="text-sm text-gray-500 mt-2">{x[1]}</p><span className="font-bold text-sm mt-5 inline-block">Explore →</span></Link>)}

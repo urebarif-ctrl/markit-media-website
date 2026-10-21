@@ -16,7 +16,10 @@
   },
   {
    "slug": "vuse",
-   "reason": "Copy and alt-text rewrite pending (representative-first rollout; owner reviews the 4 sample pages first)"
+   "reason": "Attribution hold (owner rule: no new HUBCO/Vuse attribution without approval): current live title/meta/H1 kept, so the short meta stays; copy rewrite pending approval",
+   "holdable": [
+    "meta description length"
+   ]
   },
   {
    "slug": "minhaz-couture",
@@ -24,7 +27,10 @@
   },
   {
    "slug": "hubco",
-   "reason": "Copy and alt-text rewrite pending (representative-first rollout; owner reviews the 4 sample pages first)"
+   "reason": "Attribution hold (owner rule: no new HUBCO/Vuse attribution without approval): current live title/meta/H1 kept, so the short meta stays; copy rewrite pending approval",
+   "holdable": [
+    "meta description length"
+   ]
   },
   {
    "slug": "one-homes",

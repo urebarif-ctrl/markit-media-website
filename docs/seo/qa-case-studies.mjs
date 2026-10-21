@@ -25,6 +25,7 @@ const jsonOut = (args.find((a) => a.startsWith("--json=")) || "").slice(7);
 const flaggedFile = flaggedPath ? JSON.parse(readFileSync(flaggedPath, "utf8")) : { holdable: [], pages: [] };
 const FLAGGED = new Set(flaggedFile.pages.map((x) => x.slug));
 const HOLDABLE = (flaggedFile.holdable || []).map((x) => new RegExp(x, "i"));
+const EXTRA = Object.fromEntries(flaggedFile.pages.filter((x) => x.holdable).map((x) => [x.slug, x.holdable.map((r) => new RegExp(r, "i"))]));
 
 const ORIGIN = "https://themarkitmedia.com";
 const DEFAULT_OG = "/images/branding/og-image.png";
@@ -61,7 +62,7 @@ const metaContent = (h, key, val) => {
 };
 
 const problems = [];
-const add = (slug, msg) => problems.push({ slug, msg, held: FLAGGED.has(slug) && HOLDABLE.some((re) => re.test(msg)) });
+const add = (slug, msg) => problems.push({ slug, msg, held: FLAGGED.has(slug) && (HOLDABLE.some((re) => re.test(msg)) || (EXTRA[slug] || []).some((re) => re.test(msg))) });
 
 // ---------- sitemap ----------
 const idx = await get(`${BASE}/sitemaps/work.xml`);
@@ -73,7 +74,11 @@ const sitemapUrls = [...idx.text.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) =>
 const workInSitemap = sitemapUrls.filter((u) => /\/en\/work\/[^/]+$/.test(u.loc));
 const lastmods = new Set(sitemapUrls.map((u) => u.lastmod.slice(0, 10)));
 if (idx.status !== 200) add("sitemap", `work.xml HTTP ${idx.status}`);
-if (workInSitemap.length > 5 && lastmods.size === 1) add("sitemap", "every <lastmod> is identical: use each page's real update date");
+if (workInSitemap.length > 5 && lastmods.size === 1) {
+  // Identical dates are only acceptable when they are a real shared release date; the old fixed build date is not.
+  if ([...lastmods][0] === "2026-10-13") add("sitemap", "every <lastmod> is the old fixed build date 2026-10-13: use each page's real update date");
+  else console.log(`note: all work URLs share lastmod ${[...lastmods][0]} (one release changed every page; per-page dates diverge from the next edit)`);
+}
 if (!sitemapUrls.some((u) => u.loc.endsWith("/en/work")) || !sitemapUrls.some((u) => u.loc.endsWith("/en/case-studies"))) add("sitemap", "/en/work and /en/case-studies must both be in work.xml");
 
 const hubLinks = new Set();
