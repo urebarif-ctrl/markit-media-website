@@ -77,9 +77,10 @@ const nextConfig: NextConfig = {
       { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
       { key: "Content-Security-Policy", value: csp },
     ];
-    // Non-production builds (previews, staging) must never be indexable: add a noindex header to every response.
-    // Production sets PRODUCTION_DEPLOY=true, so this adds nothing there.
-    if (process.env.PRODUCTION_DEPLOY !== "true") securityHeaders.push({ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" });
+    // Preview builds only: add a noindex header to every response. This is an explicit opt-in (PREVIEW_NOINDEX=true at
+    // BUILD time), not keyed on PRODUCTION_DEPLOY: the production CI build does not set that variable (it is a runtime
+    // var in wrangler.jsonc), so keying on it would noindex the live site.
+    if (process.env.PREVIEW_NOINDEX === "true") securityHeaders.push({ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" });
     return [
       { source: "/(.*)", headers: securityHeaders },
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },

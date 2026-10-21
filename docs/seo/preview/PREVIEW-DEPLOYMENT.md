@@ -18,7 +18,7 @@ Note: a "preview version" of the **production** Worker (`wrangler versions uploa
 
 ## Non-indexable
 
-1. Build with `PRODUCTION_DEPLOY` unset or not `true`. The site then serves `robots.txt` with `Disallow: /`, `<meta name="robots" content="noindex, nofollow">` and (new in this branch, `next.config.ts`) `X-Robots-Tag: noindex, nofollow, noarchive` on every response.
+1. Run the preview with `PRODUCTION_DEPLOY` not `true` (runtime var, `"false"` in the example config). The site then serves `robots.txt` with `Disallow: /` and `<meta name="robots" content="noindex, nofollow">`. Also build with `PREVIEW_NOINDEX=true` (new, `next.config.ts`): that adds `X-Robots-Tag: noindex, nofollow, noarchive` to every response. It is an explicit opt-in and is NOT keyed on `PRODUCTION_DEPLOY`, because the production CI build does not set that variable at build time: keying on it would noindex the live site.
 2. Do not submit the preview URL anywhere and do not link to it from a public page.
 
 ## Access-controlled
@@ -34,7 +34,7 @@ Use Cloudflare Access (Zero Trust), which sits in front of the Worker, so unauth
 ## Build and deploy steps (for later, each needs approval; none was run)
 
 ```
-CIRCLE_NODE_TOTAL=2 npx @opennextjs/cloudflare build           # PRODUCTION_DEPLOY unset
+PREVIEW_NOINDEX=true CIRCLE_NODE_TOTAL=2 npx @opennextjs/cloudflare build
 cp docs/seo/preview/wrangler.preview.jsonc.example wrangler.preview.jsonc   # fill the two <...> placeholders
 npx wrangler deploy --config wrangler.preview.jsonc
 ```
