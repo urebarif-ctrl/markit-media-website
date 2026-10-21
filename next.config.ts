@@ -77,6 +77,9 @@ const nextConfig: NextConfig = {
       { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
       { key: "Content-Security-Policy", value: csp },
     ];
+    // Non-production builds (previews, staging) must never be indexable: add a noindex header to every response.
+    // Production sets PRODUCTION_DEPLOY=true, so this adds nothing there.
+    if (process.env.PRODUCTION_DEPLOY !== "true") securityHeaders.push({ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" });
     return [
       { source: "/(.*)", headers: securityHeaders },
       { source: "/images/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
