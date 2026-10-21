@@ -1,6 +1,6 @@
 # Case Studies SEO & Indexing: change log (preview branch)
 
-Branch `seo/case-studies-indexing` (git worktree `~/cs-seo-work`, cut from origin/main 0d39148). **Nothing is deployed, pushed or changed in any external account.** Status date: 21 Oct 2026.
+Branch `seo/case-studies-indexing` (git worktree `~/cs-seo-work`, cut from origin/main 0d39148). **Nothing is deployed, pushed or changed in any external account.** Status date: 21 Oct 2026 (second checkpoint).
 
 ## 1. What the audit got right and wrong (Phase 0, verified)
 
@@ -38,69 +38,72 @@ Baselines saved: `~/cs_seo_work/phase0/` (URL inspection, 90-day performance, qu
 
 | Measure | Live (21 Oct) | This branch (local production build) |
 |---|---|---|
-| QA script problems on 66 work pages + sitemap + robots | **343** | **0** unheld, 66 held (below) |
-| Work URLs in sitemap | 42 (+2 hubs) | 43 (+2 hubs): the 4 rewritten pages that qualify; the other noindex pages stay out until they qualify |
+| QA script problems on 66 work pages + sitemap + robots | **343** | **0** unheld, **10 held** (exception requests, section 6) |
+| Work URLs in sitemap | 42 (+2 hubs) | 42 (+2 hubs): unchanged. 0 of the 24 noindex pages qualified, ArchPoint included |
 | Pages with Article schema | 10 of 66 | 66 of 66 |
 | Pages with a default OG image | 17 | 0 |
 | Pages with 4 related links | 50 of 66 | 66 of 66 |
-| Generic (numbered) alt texts on work pages | 316 images on 37 pages | 290 images on 34 pages (50 alts rewritten for the 4 representative clients; the new related-card images of other clients add some numbered alts back until those clients are done) |
-| Non-work pages: title/description/canonical/robots/H1 | n/a | **0 differences on 47 sampled pages** |
+| Generic (numbered) alt texts on work pages | 316 images on 37 pages | **0** (all 481 media alts rewritten, unique per image, 125 characters or fewer) |
+| Pages under 300 words of copy | not measured | 19 of 66 (median 426, range 139 to 693) |
+| Non-work pages: title/description/canonical/robots/H1 | n/a | **0 differences on 84 sampled pages** (random sample of the sitemap + service, industry and location pages) |
 | All 66 work URLs, slugs, canonicals | n/a | unchanged, no redirect added (except `/sitemap.xml`) |
 
-Side-by-side screenshots: `~/cs_seo_work/shots/cmp_elite.jpg`, `cmp_arch.jpg`, `cmp_hub.jpg`. Per-page title/H1/meta before and after: `docs/seo/before-after-metadata.csv`.
+Per-page title, H1 and meta before and after: `docs/seo/before-after-metadata.csv`. Screenshots of the new pages: `screens/` in the package.
 
-**Inbound links.** Target "every page has 3+ links from non-hub pages" is **not met**: 22 of 66 reach it through industry + location + collection links alone, 58 of 66 when related-card links are counted, 8 have fewer. Left as is rather than forcing links. The 14-post blog proposal and the service-page block (postponed) would add to this.
+## 4. What changed in this round
 
-## 4. QA and build results
+1. **Copy and alt texts for the remaining pages**: about 55 client pages and 5 collections now have page-specific copy built only from verified facts (client sites checked on 21 Oct, artwork read at full size, existing owner copy). Pages that could not be verified keep the owner's existing text and are in the held list. Where a city could not be verified, the title, H1 and meta use a no-location wording.
+2. **Keyword differentiation**: every page has a unique primary keyword; collections and full case studies target different phrases (`keyword-differentiation.csv`, `service-keyword-map.csv`). No cannibalisation pairs remain.
+3. **Service pages link to real projects**: social media, branding and website development lists now include Tourão, Chefiality, Thermex, Pakhlanze and Wild Game Jerky where the work matches the service. No forced links.
+4. **Indexing-readiness framework** (`scripts/seo/indexing-readiness.mjs`, gates G1 to G7, output `indexing-reconciliation.csv/.json`): see section 5.
+5. **Everest Snacks**: proposed structure only (`everest-snacks-proposal.md`). Nothing published.
+6. **Preview deployment**: configuration prepared, not deployed (`docs/seo/preview/PREVIEW-DEPLOYMENT.md`, `wrangler.preview.jsonc.example`): separate Worker, D1 and R2, `PRODUCTION_DEPLOY=false` (noindex everywhere), Cloudflare Access in front, no credentials in the repo.
+7. **Cloudflare**: documentation only. New section: the country block must be a WAF custom rule that runs before any cache; the cache-rule exclusion of IN and NG is not accepted as proof. Trace-based test plan included.
+8. **Uncertainty ledger** rebuilt: 388 rows, one place for every open question.
 
-- `tsc --noEmit`: clean (the two unused-import warnings left are older files).
-- `next build` (Turbopack), `CIRCLE_NODE_TOTAL=2`: success in 45 s, **peak 1.6 GB** (cap 25% of available = 4.2 GB). The default 7 workers exceed the cap, so use that variable.
-- `docs/seo/qa-case-studies.mjs` rebuilt from the plan (the plan's copy was a wrapped PDF listing; it was rewritten, syntax-checked and run). Extended: checks every work page (not only those already in the sitemap), indexable-but-not-in-sitemap and the reverse, robots.txt, `/ar` copy, schema graph, forbidden schema types. Held items need `docs/seo/flagged-pages.json` and only for named problem kinds.
-- Held (66 messages): 34 generic-alt pages, 31 pages under the word minimum (copy not rewritten yet), 1 short meta on HUBCO (attribution hold).
-- Lighthouse on the local server (not comparable to live: no CDN or Zaraz): Elite, ArchPoint, hub all accessibility 100, SEO 100, CLS 0.
-- Not tested: a real device, Google's Rich Results Test (needs a public URL), production caching behaviour.
+## 5. Indexing-readiness reconciliation (66 pages)
 
-## 5. Representative pages rewritten (quality check before expanding)
+- 42 pages are indexable and in the sitemap (preserved), 24 are noindex and out of the sitemap (preserved). **0 promoted.**
+- Of the 42 indexable: **12 pass every gate**, **30 are flagged "review"** (mostly no verified website or city, or under 250 words of unique copy). None was set to noindex: that is an owner decision.
+- ArchPoint stays noindex: one image, about 300 words, no verified website or city. The conditional approval is not met.
+- Of the 24 noindex pages: most lack a second distinct piece, a verified website/city or enough verified copy; two are political-campaign pages that need an explicit owner decision.
 
-| Page | Real copy | Alt texts | Notes |
-|---|---|---|---|
-| Elite (featured) | ~510 words, below the 600 featured minimum | 12 | no brief, results, year: not invented |
-| Cambridge Electrical (featured) | ~480 words, below 600 | 31 | same |
-| ArchPoint Pain Institute (client, was noindex) | ~300 words | 1 | now qualifies as indexable in the preview: **owner approval needed** |
-| Tourão (client, already indexable) | ~255 words, below 300 | 6 | kept indexable only through the existing 6-pieces rule |
+## 6. QA and build results
 
-Facts come from the client's own site (checked 21 Oct), the artwork seen at full size, and the existing page copy. Sources are stored in `editorial.ts`.
+- `next build` (Turbopack), `CIRCLE_NODE_TOTAL=2`, `PRODUCTION_DEPLOY=true`: success, peak 1.39 GB (cap 25% of RAM). `tsc --noEmit` clean.
+- `docs/seo/qa-case-studies.mjs` on the local production server: **66 pages checked, 0 problems, 10 held**.
+- **The 10 held items are unresolved, not passed.** Each is an exception REQUEST waiting for approval (`qa-exceptions.json`): HUBCO (meta 101 characters, 262 words), Vuse, NoorShad, One Homes, Pur Health, American Auto Parts, MeezoTech (480 words vs 600 featured minimum), Minhaz Couture (561 words), My Fresh Fruits (139 words). Cause in every case: not enough verifiable facts, or an attribution hold.
+- 84 non-work pages compared with live on title, description, canonical, robots and H1: no differences.
+- Not tested: a real device, Google's Rich Results Test (needs a public URL), production cache behaviour, Search Console behaviour.
 
-## 6. Information needed from the owner
+## 7. Not-found performance fix (separate branch `fix/not-found-static-rendering`, not applied here)
 
-See `docs/seo/uncertainty-ledger.csv` (310 rows). Headline items: client websites and cities for 50+ brands; project years; real results or quotes (none exist in the repo); first-publication dates for the 17 older pages (only the 49 pages released 17 Oct have a verified date); YouTube upload dates and durations (YouTube blocks this server) so VideoObject can be added; Everest Snacks assets; HUBCO/Vuse wording approval; Pur Health vs PUUR; confirm `icon-512.png` as the logo.
+- Cause: `headers()` in `src/app/[lang]/not-found.tsx` made all 433 routes render per request. Fix: client component with `useParams`; plus `connection()` on pages that read D1 and `force-dynamic` on the free-tools layout, search and thank-you.
+- Local build: 433 dynamic before, 230 dynamic after (38 API, 155 free-tool, 37 other), 618 prerendered.
+- A/B against a baseline build over 1,575 sitemap URLs and 990 prerendered routes: 0 SEO-metadata differences, 0 analytics/consent script differences, 357 redirects and 106 rewrites identical, 404 probes identical, forms, auth and dashboards identical, country block identical. Differences: `Cache-Control` becomes `s-maxage=31536000` (so purge on deploy), 9 routes carry an extra streaming script, and one legacy home-decor URL now shows the industry strip.
+- Hazards found and fixed on the way: stale blog data on D1 pages, wrong free-tool language links via the proxy rewrite, search/thank-you placeholders, and build-time `PRODUCTION_DEPLOY` baking into HTML (a build without it ships noindex,nofollow; `scripts/verify-prerendered-build.mjs` checks for it).
+- **Not deployed. Needs separate approval.** Report: `docs/NOT-FOUND-FIX.md` on that branch.
 
-## 7. Postponed on purpose
+## 8. Information needed from the owner
 
-- Rest of the copy and alt texts (60 pages), pending review of the 4 samples (tool: `~/cs_seo_work/img/sheet.py` makes a labelled contact sheet per client).
-- Everest Snacks page (no assets or verified facts).
-- Branding & Visual Identity: kept separate. All **21** of its boards also appear in Logo Folio's 32; proposal, no change made: give Logo Folio the animations and the 11 boards that are not shown on the identity page, and keep the 21 full identity systems only on Branding & Visual Identity.
-- Service-page blocks (plan 8.4): those pages have a curated registry from the earlier service-pages release, left untouched to avoid conflicts.
-- Blog links: proposal only (see below). No write to D1.
-- Cloudflare cache rule and Crawler Hints: documented, not activated (`cloudflare-cache-and-crawler-hints.md`).
-- Static rendering (plan 4.3): see finding below.
+See `docs/seo/uncertainty-ledger.csv` (388 rows). Headline items: project years; real results or quotes (none exist); client websites and cities for many brands; first-publication dates for the 17 older pages; YouTube upload dates and durations (YouTube blocks this server, so VideoObject is omitted); Everest Snacks authorship, scope and assets; HUBCO and Vuse wording; Pur Health vs PUUR; third-party likeness rights for in-house pages; confirm `icon-512.png` as the logo.
+
+## 9. Postponed on purpose
+
+- Everest Snacks page (no verified facts).
+- Branding & Visual Identity: kept separate, no merge or redirect. All 21 of its boards also appear in Logo Folio's 32; proposal only (needs approval).
+- Blog links: 14 proposals in `docs/seo/blog-links/`; nothing written to D1. Backup and rollback scripts ready.
+- Cloudflare cache rule, Crawler Hints, WAF country rule: documented, not activated.
+- Not-found fix: prepared and tested, not deployed.
 - Site-wide `/ar` `/ur` self-canonical outside the work pages.
-- Hero `fetchpriority`/AVIF changes: the existing templates already prioritise the hero; no further change.
 
-## 8. Findings outside the plan
+## 10. Expected benefits and remaining risks
 
-1. **Every one of 433 routes renders per request** because `src/app/[lang]/not-found.tsx` calls `headers()`. Removing that call in a local build and keeping only the pages that need request-time data dynamic left 230 dynamic route entries (38 are API handlers) and 618 prerendered, with no differences in SEO metadata, redirects, analytics, forms or country blocking in an A/B test (full report in the separate not-found fix branch; not applied here). It is the reason pages are `Cache-Control: private, no-store`, and fixing it is a site-wide change.
-2. **Caching hazard:** `src/proxy.ts` returns 403 for visitors from IN and NG; an edge cache would bypass it unless the rule excludes those countries (done in the prepared rule).
-3. `pk.vuse.com` opens a German EUR site, `binarygrid.io` and `screws.pk` do not resolve, `kemahpalms.com` and `har.com` block automated checks. None of those were linked.
-4. The blog has 4,000 rows in D1 but only 975 are published and indexable; their text is largely templated, so only **14** posts are topically close enough for a real contextual link (`docs/seo/blog-links/`). A full read-only export is saved at `~/backups/blog_posts_export_2026-10-21.jsonl` (the rollback baseline). `apply_blog_links.py` is dry-run by default and applies nothing until rows are marked `approved: true`; `rollback_blog_links.py` restores from the backup it writes.
-
-## 9. Expected benefits and remaining risks
-
-**Benefits (not promises):** every indexable work page is in the sitemap with a real date and its images; Google can finally read the noindex on `/ar` `/ur`; richer, valid entity data for Google and AI search (client, image, services, dates); correct internal links in place of wrong-fit ones; clearer split between portfolio and case studies; no regressions on 47 sampled pages.
+**Benefits (not promises):** indexable work pages carry real dates and images in the sitemap; Google can read the noindex on `/ar` `/ur`; valid entity data; unique titles and keywords; descriptive alts on every image; wrong-fit links replaced; no regressions on 84 sampled pages.
 
 **Risks:**
-- Titles changed on 63 pages and H1s on 62. Only 7 work pages had any impressions in the last 90 days (largest: HUBCO for "hubco logo", position 5.8, whose title and H1 were deliberately left as they are; the others have 1 to 29 impressions, mostly `site:` queries).
-- Opening `/ar` `/ur` to crawling will add crawl load (about 1,500 noindexed URLs each, some 404) before they drop out.
-- Indexing ArchPoint (one image, ~300 words) is a thin-content risk; reverse by leaving `indexReady` false.
-- 60 pages still carry numbered alt text and short copy until the rollout continues.
-- Rich-result eligibility and rankings are not testable until a public preview exists.
+- Titles changed on 63 pages and H1s on 62. Only 7 work pages had impressions in 90 days (100 impressions, 0 clicks in total); HUBCO's title and H1 were left as they are.
+- Opening `/ar` `/ur` to crawling adds crawl load before those URLs drop out.
+- 19 pages are under 300 words and 30 indexed pages are flagged for review: thin-content risk until facts arrive. Nothing was padded.
+- Copy is unreviewed by the owner; the 4 sample pages in particular are not approved.
+- Rich-result eligibility and rankings cannot be tested until a public, access-controlled preview exists.
