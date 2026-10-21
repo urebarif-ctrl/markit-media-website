@@ -5,7 +5,7 @@ Status: **PREPARED, NOT ACTIVATED.** No Cloudflare setting has been changed. Own
 ## What the audit found (checked 21 Oct 2026)
 
 - `/en/work/*`, `/en/case-studies` and the sitemaps are sent with `Cache-Control: private, no-cache, no-store`, and Cloudflare does not cache HTML unless a Cache Rule says so.
-- Root cause on the origin: every page route renders per request because `src/app/[lang]/not-found.tsx` calls `headers()`. A local build without that call left only 45 routes dynamic (433 before). That is a site-wide change, so it was **not** applied (see `uncertainty-ledger.csv`). Until it is, an edge cache must override the origin header; origin-respecting rules will not cache anything.
+- Root cause on the origin: every page route renders per request because `src/app/[lang]/not-found.tsx` calls `headers()`. In a tested local build without that call (and with the pages that need D1 or request-time data kept dynamic) 618 route entries prerender and 230 stay dynamic (433 dynamic before). That is a site-wide change: it is prepared as an isolated branch with its own regression report and was **not** applied here. Until it is, an edge cache must override the origin header; origin-respecting rules will not cache anything.
 
 ## Hazards that the rule must avoid
 
