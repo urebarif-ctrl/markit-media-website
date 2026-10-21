@@ -43,7 +43,7 @@ Baselines saved: `~/cs_seo_work/phase0/` (URL inspection, 90-day performance, qu
 | Pages with Article schema | 10 of 66 | 66 of 66 |
 | Pages with a default OG image | 17 | 0 |
 | Pages with 4 related links | 50 of 66 | 66 of 66 |
-| Generic (numbered) alt texts on work pages | 316 images on 37 pages | 290 images on 34 pages (50 alts rewritten for the 4 representative clients; the rest of the drop comes from images shared across pages) |
+| Generic (numbered) alt texts on work pages | 316 images on 37 pages | 290 images on 34 pages (50 alts rewritten for the 4 representative clients; the new related-card images of other clients add some numbered alts back until those clients are done) |
 | Non-work pages: title/description/canonical/robots/H1 | n/a | **0 differences on 47 sampled pages** |
 | All 66 work URLs, slugs, canonicals | n/a | unchanged, no redirect added (except `/sitemap.xml`) |
 
