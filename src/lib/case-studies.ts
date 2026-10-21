@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import raw from "@/data/case-studies/records.json";
 import { editorialFor, type Editorial } from "@/data/case-studies/editorial";
+import indexing from "@/data/case-studies/indexing.json";
 import { CATEGORY_COVER, coverFor } from "@/lib/covers";
-import { SITE_ORIGIN, absoluteMediaUrl, clientRoute, galleryItems, getClient, getMedia, isClientIndexable, mediaUrl, mediaVariant, srcSet } from "@/lib/portfolio";
+import { PORTFOLIO_NEW_PAGES_INDEXABLE, SITE_ORIGIN, absoluteMediaUrl, clientRoute, galleryItems, getClient, getMedia, mediaUrl, mediaVariant, srcSet } from "@/lib/portfolio";
 
 /**
  * Case-study data source (single source of truth for SEO fields). The hub, the work pages, the sitemap,
@@ -71,13 +72,19 @@ export function caseStudyUrl(slug: string, locale = "en"): string {
   return `${SITE_ORIGIN}${caseStudyPath(slug, locale)}`;
 }
 
-/** Static pages are always indexable. New client pages follow the portfolio index policy, or the editorial gate. */
+/**
+ * Indexing decision per page, read from indexing.json (written by scripts/seo/indexing-readiness.mjs after an individual
+ * readiness check; never inferred from a word count). Pages that are currently live as indexable keep that status.
+ * `PORTFOLIO_NEW_PAGES_INDEXABLE` stays the global kill switch for the new client pages.
+ */
 export function isCaseStudyIndexable(slug: string): boolean {
   const r = bySlug.get(slug);
   if (!r) return false;
+  const decision = (indexing as Record<string, { index: boolean }>)[slug];
+  if (!decision?.index) return false;
   if (r.routeType === "static") return true;
   const c = portfolioClientFor(slug);
-  return !!c && (isClientIndexable(c) || editorialFor(slug)?.indexReady === true);
+  return !!c && PORTFOLIO_NEW_PAGES_INDEXABLE;
 }
 
 export interface CardImage {
