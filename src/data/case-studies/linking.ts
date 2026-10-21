@@ -108,7 +108,8 @@ export const LOCATION_CASES: Record<string, string[]> = {
     "ashars-kitchen",
     "sheesha-lounge-and-grill",
     "arch-point",
-    "quaid-e-azam-foundation"
+    "quaid-e-azam-foundation",
+    "baytown-pediatrics"
   ],
   "locations/united-states/houston/website-development": [
     "elite"
@@ -122,192 +123,213 @@ export const LOCATION_CASES: Record<string, string[]> = {
     "cambridge-electrical",
     "one-homes",
     "chefiality",
-    "ceha-halal"
+    "ceha-halal",
+    "flour-magician",
+    "pizza-warma",
+    "pakhlanze",
+    "real-rose-beauty"
   ],
   "locations/karachi/branding": [
     "logo-folio"
   ],
   "locations/australia": [
     "mustcare-vet-centres"
+  ],
+  "locations/united-states/dallas": [
+    "dallas-panthers"
+  ],
+  "locations/karachi": [
+    "pizza-warma"
+  ],
+  "locations/canada": [
+    "north-charge"
   ]
 };
 
 /** Display name and service label for the slugs above (kept here so client components do not import the full data source). */
 export const CASE_CARDS: Record<string, { n: string; l: string }> = {
-  "qwench-juice-bar": {
-    "n": "Qwench Juice Bar",
-    "l": "Content creation"
-  },
-  "binarygrid": {
-    "n": "BinaryGrid",
-    "l": "Logo design"
-  },
-  "noorshad": {
-    "n": "NoorShad",
-    "l": "Video production"
-  },
-  "crescent-health-system": {
-    "n": "Crescent Health System",
-    "l": "Logo design"
-  },
-  "the-bauble-store": {
-    "n": "The Bauble Store",
-    "l": "Social media"
-  },
-  "sheesha-lounge-and-grill": {
-    "n": "Sheesha Lounge and Grill",
-    "l": "Content creation"
-  },
-  "foodfolio": {
-    "n": "FoodFolio",
-    "l": "Social media"
-  },
-  "fashion-feed": {
-    "n": "Fashion Feed",
-    "l": "Social media"
-  },
-  "mustcare-vet-centres": {
-    "n": "MustCare Vet Centres",
-    "l": "Social media"
-  },
-  "logo-folio": {
-    "n": "Logo Folio",
-    "l": "Logo design"
-  },
-  "imh-vacuum-flask": {
-    "n": "IMH Vacuum Flask",
-    "l": "Logo design"
-  },
-  "beepers": {
-    "n": "Beepers",
-    "l": "Logo design"
-  },
-  "easywear": {
-    "n": "Easywear",
-    "l": "Logo design"
-  },
-  "cambridge-electrical": {
-    "n": "Cambridge Electrical Appliances",
-    "l": "Social media"
-  },
-  "panthers": {
-    "n": "Panthers",
-    "l": "Social media"
-  },
-  "find-my-apparel": {
-    "n": "Find My Apparel",
-    "l": "Content creation"
-  },
-  "arch-point": {
-    "n": "ArchPoint Pain Institute",
-    "l": "Logo design"
-  },
-  "viva-diagnostics": {
-    "n": "Viva Diagnostics",
-    "l": "Logo design"
-  },
-  "american-auto-parts": {
-    "n": "American Auto Parts",
-    "l": "Video production"
-  },
-  "global-industries": {
-    "n": "Global Industries",
-    "l": "Logo design"
-  },
   "diaper-world": {
     "n": "Diaper World",
-    "l": "Logo design"
-  },
-  "twister": {
-    "n": "Twister",
-    "l": "Social media"
-  },
-  "minhaz-couture": {
-    "n": "Minhaz Couture",
-    "l": "Website development"
-  },
-  "cheap-hardware-store": {
-    "n": "Cheap Hardware Store",
-    "l": "Logo design"
-  },
-  "pizza-warma": {
-    "n": "Pizza Warma",
-    "l": "Content creation"
-  },
-  "kemah-palms-recovery": {
-    "n": "Kemah Palms Recovery",
-    "l": "Social media"
-  },
-  "pur-health": {
-    "n": "Pur Health",
-    "l": "Website development"
-  },
-  "dr-jason-hayes": {
-    "n": "Dr Jason Hayes",
-    "l": "Logo design"
-  },
-  "tourao-brazilian-steakhouse": {
-    "n": "Tourão Brazilian Steakhouse",
-    "l": "Content creation"
-  },
-  "madiha-masood": {
-    "n": "Madiha Masood",
-    "l": "Logo design"
-  },
-  "north-charge": {
-    "n": "North Charge",
-    "l": "Social media"
-  },
-  "baytown-pediatrics": {
-    "n": "Baytown Pediatrics",
-    "l": "Logo design"
-  },
-  "ashars-kitchen": {
-    "n": "Ashar's Kitchen",
-    "l": "Logo design"
-  },
-  "wild-game-jerky": {
-    "n": "Wild Game Jerky",
-    "l": "Content creation"
-  },
-  "elite": {
-    "n": "Elite Indo-Pak Restaurant",
-    "l": "Website development"
-  },
-  "chefiality": {
-    "n": "Chefiality",
-    "l": "Branding"
-  },
-  "thermex": {
-    "n": "Thermex",
-    "l": "Logo design"
-  },
-  "ureb-digital-marketing": {
-    "n": "Ureb Digital Marketing",
-    "l": "Social media"
-  },
-  "one-homes": {
-    "n": "One Homes",
-    "l": "Video production"
-  },
-  "flour-magician": {
-    "n": "Flour Magician",
-    "l": "Social media"
-  },
-  "pakhlanze": {
-    "n": "Pakhlanze by Abeera Khan",
     "l": "Logo design"
   },
   "ceha-halal": {
     "n": "CEHA Halal",
     "l": "Social media"
   },
+  "dr-jason-hayes": {
+    "n": "Dr Jason Hayes",
+    "l": "Logo design"
+  },
+  "thermex": {
+    "n": "Thermex",
+    "l": "Logo design"
+  },
+  "easywear": {
+    "n": "Easywear",
+    "l": "Logo design"
+  },
   "meezotech": {
     "n": "MeezoTech",
     "l": "Motion graphics"
   },
+  "real-rose-beauty": {
+    "n": "Real Rose Beauty",
+    "l": "Social media"
+  },
+  "chefiality": {
+    "n": "Chefiality",
+    "l": "Branding"
+  },
+  "cheap-hardware-store": {
+    "n": "Cheap Hardware Store",
+    "l": "Logo design"
+  },
+  "noorshad": {
+    "n": "NoorShad",
+    "l": "Video production"
+  },
+  "twister": {
+    "n": "Twister",
+    "l": "Social media"
+  },
+  "beepers": {
+    "n": "Beepers",
+    "l": "Logo design"
+  },
+  "global-industries": {
+    "n": "Global Industries",
+    "l": "Logo design"
+  },
+  "american-auto-parts": {
+    "n": "American Auto Parts",
+    "l": "Video production"
+  },
+  "ashars-kitchen": {
+    "n": "Ashar's Kitchen",
+    "l": "Logo design"
+  },
+  "imh-vacuum-flask": {
+    "n": "IMH Vacuum Flask",
+    "l": "Logo design"
+  },
+  "binarygrid": {
+    "n": "BinaryGrid",
+    "l": "Logo design"
+  },
+  "crescent-health-system": {
+    "n": "Crescent Health System",
+    "l": "Logo design"
+  },
+  "baytown-pediatrics": {
+    "n": "Baytown Pediatrics",
+    "l": "Logo design"
+  },
+  "viva-diagnostics": {
+    "n": "Viva Diagnostics",
+    "l": "Logo design"
+  },
+  "ureb-digital-marketing": {
+    "n": "Ureb Digital Marketing",
+    "l": "Social media"
+  },
+  "pur-health": {
+    "n": "Pur Health",
+    "l": "Website development"
+  },
+  "sheesha-lounge-and-grill": {
+    "n": "Sheesha Lounge and Grill",
+    "l": "Content creation"
+  },
+  "wild-game-jerky": {
+    "n": "Wild Game Jerky",
+    "l": "Content creation"
+  },
+  "madiha-masood": {
+    "n": "Madiha Masood",
+    "l": "Logo design"
+  },
+  "pizza-warma": {
+    "n": "Pizza Warma",
+    "l": "Content creation"
+  },
+  "the-bauble-store": {
+    "n": "The Bauble Store",
+    "l": "Social media"
+  },
+  "panthers": {
+    "n": "Panthers",
+    "l": "Social media"
+  },
+  "dallas-panthers": {
+    "n": "Dallas Panthers",
+    "l": "Social media"
+  },
+  "arch-point": {
+    "n": "ArchPoint Pain Institute",
+    "l": "Logo design"
+  },
+  "find-my-apparel": {
+    "n": "Find My Apparel",
+    "l": "Content creation"
+  },
+  "minhaz-couture": {
+    "n": "Minhaz Couture",
+    "l": "Website development"
+  },
+  "qwench-juice-bar": {
+    "n": "Qwench Juice Bar",
+    "l": "Content creation"
+  },
   "quaid-e-azam-foundation": {
     "n": "Quaid-e-Azam Foundation",
     "l": "Logo design"
+  },
+  "foodfolio": {
+    "n": "FoodFolio",
+    "l": "Social media"
+  },
+  "pakhlanze": {
+    "n": "Pakhlanze by Abeera Khan",
+    "l": "Logo design"
+  },
+  "kemah-palms-recovery": {
+    "n": "Kemah Palms Recovery",
+    "l": "Social media"
+  },
+  "tourao-brazilian-steakhouse": {
+    "n": "Tourão Brazilian Steakhouse",
+    "l": "Content creation"
+  },
+  "north-charge": {
+    "n": "North Charge",
+    "l": "Social media"
+  },
+  "one-homes": {
+    "n": "One Homes",
+    "l": "Video production"
+  },
+  "logo-folio": {
+    "n": "Logo Folio",
+    "l": "Logo design"
+  },
+  "fashion-feed": {
+    "n": "Fashion Feed",
+    "l": "Social media"
+  },
+  "flour-magician": {
+    "n": "Flour Magician",
+    "l": "Social media"
+  },
+  "mustcare-vet-centres": {
+    "n": "MustCare Vet Centres",
+    "l": "Social media"
+  },
+  "elite": {
+    "n": "Elite Indo-Pak Restaurant",
+    "l": "Website development"
+  },
+  "cambridge-electrical": {
+    "n": "Cambridge Electrical Appliances",
+    "l": "Social media"
   }
 };
