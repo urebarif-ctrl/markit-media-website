@@ -1,5 +1,6 @@
 "use client";
 
+import { PhoneField } from "@/components/phone-field";
 import { useState, type ReactNode } from "react";
 import { useRouter, usePathname, useParams } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
@@ -146,6 +147,9 @@ export function DiscoveryForm() {
     if (step === 4) {
       if (!brief.name.trim() || !brief.company.trim() || !brief.email.trim()) {
         return "Please add your name, company, and email.";
+      }
+      if (!brief.phone) {
+        return "Please enter a valid phone number for the selected country.";
       }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(brief.email.trim())) {
         return "Please enter a valid email address.";
@@ -438,8 +442,7 @@ export function DiscoveryForm() {
                   <input id="email" type="email" value={brief.email} onChange={(e) => update("email", e.target.value)} className={fieldClass} placeholder="you@company.com" autoComplete="email" />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-bold text-black" htmlFor="phone">WhatsApp / Phone</label>
-                  <input id="phone" type="tel" value={brief.phone} onChange={(e) => update("phone", e.target.value)} className={fieldClass} placeholder="+1..." autoComplete="tel" />
+                  <PhoneField id="phone" label="WhatsApp / Phone *" labelClassName="mb-2 block text-sm font-bold text-black" className={fieldClass} onChange={(e164) => update("phone", e164)} />
                 </div>
               </div>
               <div>

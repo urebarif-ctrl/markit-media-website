@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMongoDb } from "@/lib/mongodb";
 import { clientIp, isRateLimited } from "@/lib/rate-limit";
+import { validateE164 } from "@/lib/phone";
 
 function clean(value: unknown, max = 500) {
   return String(value || "").trim().slice(0, max);
@@ -22,6 +23,7 @@ export async function POST(request: NextRequest) {
     if (body.website) return NextResponse.json({ success: true });
 
     const email = clean(body.email, 180).toLowerCase();
+    const validated = validateE164(clean(body.phone, 20), body.phoneCountry);
     const now = new Date();
     const document = {
       brandName: clean(body.brandName, 180),
@@ -46,7 +48,7 @@ export async function POST(request: NextRequest) {
       name: clean(body.name, 180),
       company: clean(body.company, 180),
       email,
-      phone: clean(body.phone, 80),
+      phone: validated.ok ? validated.e164 : "",
       communication: clean(body.communication, 80),
       source: clean(body.source, 100) || "Brand Discovery Brief",
       landingPage: clean(body.landingPage, 300),
@@ -69,6 +71,9 @@ export async function POST(request: NextRequest) {
     }
     if (!document.name || !document.company || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.email)) {
       return NextResponse.json({ error: "A valid name, company, and email are required." }, { status: 400 });
+    }
+    if (!validated.ok) {
+      return NextResponse.json({ error: validated.error }, { status: 400 });
     }
 
     const db = await getMongoDb();

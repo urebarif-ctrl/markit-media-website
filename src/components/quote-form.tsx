@@ -1,5 +1,6 @@
 "use client";
 
+import { PhoneField } from "@/components/phone-field";
 import { useId, useState, type FormEvent } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
@@ -39,6 +40,8 @@ export function QuoteForm({
     const body = {
       name: String(data.get("name") || "").trim(),
       email: String(data.get("email") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      phoneCountry: String(data.get("phoneCountry") || "").trim(),
       service: String(data.get("service") || service || "").trim(),
       message: String(data.get("message") || "").trim(),
       source: "Inline Quote Form",
@@ -49,7 +52,7 @@ export function QuoteForm({
       utmCampaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
     };
 
-    if (!body.name || !body.email || !body.message) {
+    if (!body.name || !body.email || !body.phone || !body.message) {
       setStatus("error");
       return;
     }
@@ -96,12 +99,13 @@ export function QuoteForm({
         <label htmlFor={emailId} className="sr-only">Email address</label>
         <input type="email" id={emailId} name="email" required placeholder="Email address" className="w-full border border-gray-300 px-4 py-3 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none" />
       </div>
+      <PhoneField id={`${formId}-phone`} compact label="Phone number" className="w-full border border-gray-300 px-4 py-3 text-base min-h-[44px] focus-visible:border-black focus-visible:outline-none transition-colors motion-reduce:transition-none" />
       {service && <input type="hidden" name="service" value={service} />}
       <div>
         <label htmlFor={messageId} className="sr-only">Project details</label>
         <textarea id={messageId} name="message" rows={3} required placeholder={messagePlaceholder} className="w-full border border-gray-300 px-4 py-3 text-base focus-visible:border-black focus-visible:outline-none resize-y transition-colors motion-reduce:transition-none" />
       </div>
-      {status === "error" && <p className="text-base text-red-600" role="alert">Please fill in all fields and try again.</p>}
+      {status === "error" && <p className="text-base text-red-600" role="alert">Please fill in every field, including a valid phone number, and try again.</p>}
       <button type="submit" disabled={status === "sending"} className="w-full bg-black text-white py-4 font-bold text-base min-h-[44px] hover:bg-gray-800 transition-colors motion-reduce:transition-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
         {status === "sending" ? "Sending..." : buttonText}
       </button>
