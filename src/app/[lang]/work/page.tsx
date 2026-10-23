@@ -88,8 +88,8 @@ const featuredProjects = [
   {
     client: "Everest Snacks",
     industry: "Food & Beverage",
-    services: "Website Development",
-    desc: "A five-page website for an energy bar brand, with a four-bar product page and a blog.",
+    services: "Website Development, Social Media, Photography, Animation",
+    desc: "A five-page website for an energy bar brand, with social media, photography, AI photo enhancement and animation.",
     href: "/work/everest-snacks",
   },
 ];

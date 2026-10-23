@@ -119,3 +119,7 @@ Draft, noindex, out of the sitemap. Authorship is evidenced by the client's own 
 - **Industry interlinking**: industry pages show up to 12 matching case studies (was 6) and gained Pakhlanze (restaurants), Cambridge Electrical, Easywear, Elf and Santa Videos and Find My Apparel (e-commerce) and H University (education, which had none). Each case study now links to all its industries (up to 3), not only the first. New "Case studies by industry" block on the case-studies hub links every industry page and its case studies (held and political pages excluded).
 - **QWENCH**: added the website, reels and Meta ads to the services and a short "More of what we did" section, without touching the existing copy, title or meta description.
 - Industries still without a matching case study: Home Services, Finance, Fitness, Freelancers & Agencies, Legal, Travel, Interior Design and Exterior Cleaning (which has its own separate case-study page).
+
+## 12. Everest Snacks case study rewritten (23 Oct 2026, owner request)
+
+Full rewrite with the owner-stated scope added: social media, photography, AI enhancement of photos, animation. Title, H1, meta description, keywords, services and the cards on the hub, work page and Website Development page updated. Scope beyond the website rests on the owner's statement only; no image or post is individually credited. See `everest-snacks-proposal.md`.
