@@ -60,7 +60,7 @@ const nextConfig: NextConfig = {
       "img-src 'self' data: https://ad.doubleclick.net https://connect.facebook.net https://media.themarkitmedia.com https://www.googletagmanager.com https://i.ytimg.com https://img.youtube.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.facebook.com",
       "font-src 'self'",
       "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com https://region1.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.facebook.com https://connect.facebook.net https://call.callhippo.com https://www.google.com/ccm/collect https://pagead2.googlesyndication.com/ccm/collect https://www.google.com/rmkt/collect/ https://www.google.com/pagead/1p-conversion/ https://ad.doubleclick.net https://stats.g.doubleclick.net",
-      "frame-src https://www.googletagmanager.com https://www.youtube.com https://td.doubleclick.net",
+      "frame-src https://www.googletagmanager.com https://www.youtube.com https://www.youtube-nocookie.com https://td.doubleclick.net",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
