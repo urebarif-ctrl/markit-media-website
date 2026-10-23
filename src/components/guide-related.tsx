@@ -23,9 +23,9 @@ export function GuideRelated({ guideId, locale }: { guideId: string; locale: str
         {siblings.length > 0 && (
           <>
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight mt-3">Related guides</h2>
-            <ul className="grid gap-px bg-gray-200 border border-gray-200 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid gap-3 mt-6 sm:grid-cols-2 lg:grid-cols-3">
               {siblings.map((p) => (
-                <li key={p.id} className="bg-white">
+                <li key={p.id} className="bg-white border border-gray-200">
                   <Link href={p.path} className="group flex items-center justify-between gap-4 p-5 h-full hover:bg-gray-50 transition-colors motion-reduce:transition-none">
                     <span className="font-semibold text-sm leading-snug">{legacyTitle(p)}</span>
                     <span className="text-gray-300 group-hover:text-black transition-colors" aria-hidden="true">&rarr;</span>
