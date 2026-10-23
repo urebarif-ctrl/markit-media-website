@@ -2197,11 +2197,17 @@
   "industryLabel": "Juice bar",
   "servicesLabel": [
    "Content creation",
-   "Social media"
+   "Social media",
+   "Website development",
+   "Reels & short-form",
+   "Meta ads"
   ],
   "serviceLinks": [
    "/services/social-media/content-creation",
-   "/services/social-media"
+   "/services/social-media",
+   "/services/website-development",
+   "/services/video-production/reels-short-form",
+   "/services/performance-marketing/meta-ads"
   ],
   "industryLinks": [
    "/industries/restaurants"

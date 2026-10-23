@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import raw from "@/data/case-studies/records.json";
 import { editorialFor, type Editorial } from "@/data/case-studies/editorial";
 import indexing from "@/data/case-studies/indexing.json";
+import approvals from "@/data/case-studies/indexing-approvals.json";
 import { CATEGORY_COVER, coverFor } from "@/lib/covers";
 import { PORTFOLIO_NEW_PAGES_INDEXABLE, SITE_ORIGIN, absoluteMediaUrl, clientRoute, galleryItems, getClient, getMedia, mediaUrl, mediaVariant, srcSet } from "@/lib/portfolio";
 
@@ -134,16 +135,75 @@ function ogImageFor(slug: string): { url: string; width: number; height: number;
   return { url: absoluteMediaUrl(id, 1600), width: Math.min(m.w, 1600), height: Math.round((Math.min(m.w, 1600) / m.w) * m.h), alt: m.a };
 }
 
+/** True when the owner must still approve this page (attribution, likeness or sensitivity): it is not linked from new lists. */
+export function isIndexingHeld(slug: string): boolean {
+  const a = (approvals as Record<string, { required: boolean; approved: boolean }>)[slug];
+  return !!a && a.required && !a.approved;
+}
+
+const INDUSTRY_DISPLAY: Record<string, string> = {
+  b2b: "B2B",
+  saas: "SaaS",
+  "ev-chargers": "EV Chargers",
+  ecommerce: "E-commerce",
+  "food-ingredients-ecommerce": "Food & Beverage Brands",
+  "rehab-recovery": "Rehab & Recovery",
+  "freelancers-agencies": "Freelancers & Agencies",
+  "professional-services": "Professional Services",
+  "personal-branding": "Personal Branding",
+};
+
+/** Readable industry name for headings and links (acronyms keep their case). */
+export function industryDisplayName(path: string): string {
+  const slug = path.split("/").filter(Boolean).slice(-1)[0];
+  return INDUSTRY_DISPLAY[slug] ?? industryName(path);
+}
+
+/**
+ * Invisible SEO terms for every case-study page (meta keywords, article:section / article:tag, category and the Article
+ * schema): the words "case study" and "work" plus the industry name, never shown on the page. Placeholder industry labels
+ * ("CONFIRM ...", "In-house brand", "Portfolio") are skipped, so nothing unverified is published as a tag.
+ */
+export function industrySeoName(r: CaseStudyRecord): string | null {
+  const l = (r.industryLabel ?? "").trim();
+  if (!l || /^confirm/i.test(l) || /^(in-house brand|portfolio)$/i.test(l)) return null;
+  return l;
+}
+
+export function seoTerms(r: CaseStudyRecord): { keywords: string[]; tags: string[]; industry: string | null } {
+  const industry = industrySeoName(r);
+  const pages = r.industryLinks.map((p) => industryName(p));
+  const dedupe = (a: string[]) => {
+    const seen = new Set<string>();
+    return a.filter((x) => (seen.has(x.toLowerCase()) ? false : (seen.add(x.toLowerCase()), true)));
+  };
+  if (r.kind === "collection") {
+    return { keywords: dedupe([...r.keywords, `${r.name} work`, "Markit Media work", "Markit Media portfolio"]), tags: dedupe(["Work", "Portfolio", r.name]), industry: null };
+  }
+  const keywords = dedupe([
+    ...r.keywords,
+    `${r.name} case study`,
+    "Markit Media case study",
+    "Markit Media work",
+    ...(industry ? [`${industry} case study`, `${industry} work`] : []),
+    ...pages.map((n) => `${n} case study`),
+  ]);
+  const tags = dedupe(["Case study", "Work", ...(industry ? [industry] : []), ...pages]);
+  return { keywords, tags, industry };
+}
+
 export function caseStudyMetadata(slug: string, locale = "en"): Metadata {
   const r = bySlug.get(slug);
   if (!r) return {};
   const url = caseStudyUrl(slug, locale);
   const og = ogImageFor(slug);
   const indexable = locale === "en" && isCaseStudyIndexable(slug);
+  const seo = seoTerms(r);
   return {
     title: { absolute: r.title },
     description: r.metaDescription,
-    keywords: r.keywords,
+    keywords: seo.keywords,
+    ...(seo.industry ? { category: seo.industry } : {}),
     alternates: { canonical: url },
     // Leave `robots` unset when indexable so the root layout decides (production vs preview).
     ...(indexable ? {} : { robots: { index: false, follow: true } }),
@@ -153,6 +213,8 @@ export function caseStudyMetadata(slug: string, locale = "en"): Metadata {
       title: r.title.replace(/ \| Markit Media$/, ""),
       description: r.metaDescription,
       siteName: "Markit Media",
+      ...(seo.industry ? { section: seo.industry } : {}),
+      tags: seo.tags,
       ...(r.dateModified ? { modifiedTime: r.dateModified } : {}),
       ...(r.datePublished ? { publishedTime: r.datePublished } : {}),
       ...(og ? { images: [{ url: og.url, width: og.width, height: og.height, alt: og.alt }] } : {}),
@@ -185,6 +247,7 @@ const SERVICE_NAMES: Record<string, string> = {
   "/services/video-production/reels-short-form": "Reels and Short-Form Video",
   "/services/video-production/commercial-production": "Commercial Production",
   "/services/website-development": "Website Development",
+  "/services/performance-marketing/meta-ads": "Meta Ads",
 };
 
 export function serviceName(path: string): string {
@@ -261,8 +324,8 @@ export function caseStudyGraph(slug: string, locale = "en"): Record<string, unkn
       "@id": `${url}#article`,
       headline: r.h1,
       description: r.metaDescription,
-      articleSection: isPortfolioCollection ? "Portfolio" : "Case Studies",
-      keywords: r.keywords.join(", "),
+      articleSection: isPortfolioCollection ? "Portfolio" : seoTerms(r).industry ? ["Case Studies", seoTerms(r).industry] : "Case Studies",
+      keywords: seoTerms(r).keywords.join(", "),
       ...(og ? { image: [{ "@id": `${url}#hero` }] } : {}),
       ...(r.datePublished ? { datePublished: r.datePublished } : {}),
       ...(r.dateModified ? { dateModified: r.dateModified } : {}),

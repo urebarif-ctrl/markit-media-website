@@ -9,7 +9,10 @@ import {
   caseStudyGraph,
   getCaseStudy,
   imageFor,
+  industryDisplayName,
   industryName,
+  isCaseStudyIndexable,
+  isIndexingHeld,
   relatedAnchor,
   relatedCaseStudies,
   serviceName,
@@ -158,8 +161,7 @@ export function CaseStudyContextLinks({ slug, locale = "en" }: { slug: string; l
   if (!r) return null;
   const l = (p: string) => `/${locale}${p}`;
   const parts: Array<{ href: string; label: string }> = [];
-  const ind = r.industryLinks[0];
-  if (ind) parts.push({ href: l(ind), label: `More ${industryName(ind).toLowerCase()} work` });
+  for (const ind of r.industryLinks.slice(0, 3)) parts.push({ href: l(ind), label: `More ${industryName(ind).toLowerCase()} work` });
   const svc = r.serviceLinks[0];
   if (svc) parts.push({ href: l(svc), label: `${serviceName(svc)} services` });
   const loc = r.locationVerified ? r.locationLinks[0] : undefined;
@@ -294,6 +296,49 @@ export function LocationWork({ path, heading, locale = "en" }: { path: string; h
             </li>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+/** Plain links from the hub to every industry page, each with that industry's case studies (indexable, not held for approval). */
+export function CaseStudiesByIndustry({ locale = "en" }: { locale?: string }) {
+  const l = (p: string) => `/${locale}${p}`;
+  const groups = new Map<string, ReturnType<typeof allCaseStudies>>();
+  for (const r of allCaseStudies()) {
+    if (r.kind === "collection" || r.kind === "inhouse" || !isCaseStudyIndexable(r.slug) || isIndexingHeld(r.slug)) continue;
+    if (/^confirm/i.test(r.industryLabel ?? "")) continue;
+    for (const p of r.industryLinks) groups.set(p, [...(groups.get(p) ?? []), r]);
+  }
+  const rows = [...groups]
+    .map(([path, items]) => ({ path, name: industryDisplayName(path), items: [...items].sort((a, b) => a.name.localeCompare(b.name)) }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  if (rows.length === 0) return null;
+  return (
+    <section className="px-6 lg:px-12 py-14" aria-label="Case studies by industry" id="by-industry">
+      <div className="max-w-7xl mx-auto">
+        <h2 className={`${display} text-2xl md:text-3xl font-extrabold tracking-tight`}>Case studies by industry</h2>
+        <p className="text-gray-600 mt-3 max-w-3xl">Each industry heading opens our page for that market; the links below it are the matching client stories.</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8 mt-8">
+          {rows.map((g) => (
+            <div key={g.path}>
+              <h3 className="font-extrabold">
+                <Link href={l(g.path)} className={`underline underline-offset-2 hover:text-black ${focus}`}>
+                  {g.name} marketing
+                </Link>
+              </h3>
+              <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 list-none p-0 text-base">
+                {g.items.map((r) => (
+                  <li key={r.slug}>
+                    <Link href={l(`/work/${r.slug}`)} className={`underline underline-offset-2 text-gray-700 hover:text-black ${focus}`}>
+                      {r.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

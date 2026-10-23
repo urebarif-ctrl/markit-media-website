@@ -50,13 +50,13 @@
   "checked": null
  },
  "arch-point": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "ashars-kitchen": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "baytown-pediatrics": {
@@ -65,13 +65,13 @@
   "checked": null
  },
  "beepers": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "bgn-magazine": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "binarygrid": {
@@ -85,8 +85,8 @@
   "checked": null
  },
  "ceha-halal": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "cheap-hardware-store": {
@@ -100,8 +100,8 @@
   "checked": null
  },
  "crescent-health-system": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "dallas-panthers": {
@@ -110,8 +110,8 @@
   "checked": null
  },
  "diana-dulce": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "diaper-world": {
@@ -145,8 +145,8 @@
   "checked": null
  },
  "gleam-by-aamnah-b": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "global-industries": {
@@ -155,13 +155,13 @@
   "checked": null
  },
  "h-university": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "imh-vacuum-flask": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "kemah-palms-recovery": {
@@ -170,18 +170,18 @@
   "checked": null
  },
  "madiha-masood": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "mehekline": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "mehk-kar": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "mustcare-vet-centres": {
@@ -205,28 +205,28 @@
   "checked": null
  },
  "phf": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "pizza-warma": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "professional-hair-salon": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "quaid-e-azam-foundation": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "qwench-juice-bar": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "real-rose-beauty": {
@@ -240,8 +240,8 @@
   "checked": null
  },
  "texas-super-league": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "the-bauble-store": {
@@ -250,8 +250,8 @@
   "checked": null
  },
  "the-chefs-lounge": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "thermex": {
@@ -260,8 +260,8 @@
   "checked": null
  },
  "thermo-king": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "tourao-brazilian-steakhouse": {
@@ -275,8 +275,8 @@
   "checked": null
  },
  "viva-diagnostics": {
-  "index": false,
-  "basis": "current live status (preserved)",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  },
  "wild-game-jerky": {
@@ -330,8 +330,8 @@
   "checked": null
  },
  "everest-snacks": {
-  "index": false,
-  "basis": "new page (23 Oct 2026): noindex until the owner approves indexing",
+  "index": true,
+  "basis": "owner decision 23 Oct 2026: all case studies are indexable",
   "checked": null
  }
 }
