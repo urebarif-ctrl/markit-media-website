@@ -3,6 +3,7 @@
 import { useState, useRef, type FormEvent } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/tracking";
+import { PhoneField } from "@/components/phone-field";
 
 interface FormState {
   status: "idle" | "sending" | "sent" | "error";
@@ -34,6 +35,7 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
       email: String(data.get("email") || "").trim(),
       company: String(data.get("company") || "").trim(),
       phone: String(data.get("phone") || "").trim(),
+      phoneCountry: String(data.get("phoneCountry") || "").trim(),
       service: String(data.get("service") || "").trim(),
       budget: String(data.get("budget") || "").trim(),
       timeline: String(data.get("timeline") || "").trim(),
@@ -49,6 +51,11 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
 
     if (!body.name || !body.email || !body.message) {
       setState({ status: "error", message: "Please fill in all required fields." });
+      return;
+    }
+
+    if (!body.phone) {
+      setState({ status: "error", message: "Please enter a valid phone number for the selected country." });
       return;
     }
 
@@ -119,9 +126,8 @@ export function ContactForm({ variant = "contact" }: { variant?: "contact" | "qu
               <label htmlFor="company" className={labelClass}>Company</label>
               <input type="text" id="company" name="company" className={inputClass} placeholder="Your company" />
             </div>
-            <div>
-              <label htmlFor="phone" className={labelClass}>Phone</label>
-              <input type="tel" id="phone" name="phone" className={inputClass} placeholder="+1 (555) 123-4567" />
+            <div className="sm:col-span-2">
+              <PhoneField id="phone" label="Phone *" labelClassName={labelClass} className={inputClass} />
             </div>
             <div>
               <label htmlFor="service" className={labelClass}>Service Needed</label>

@@ -1,5 +1,6 @@
 "use client";
 
+import { PhoneField } from "@/components/phone-field";
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -17,6 +18,8 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
   const locale = lang || "en";
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [phoneCountry, setPhoneCountry] = useState("US");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -24,6 +27,7 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!email || sending) return;
+    if (!phone) { setError("Please enter a valid phone number for the selected country."); return; }
     setSending(true);
     setError("");
     try {
@@ -33,6 +37,8 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
         body: JSON.stringify({
           name: "Tool Lead",
           email,
+          phone,
+          phoneCountry,
           message: `Lead from ${toolName} tool page. Requested follow-up by email.`,
           service: "general-inquiry",
           source: `${toolName} Tool`,
@@ -69,14 +75,14 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
             Get Your Results by Email
           </h2>
           <p className="text-base text-gray-500 mb-6">
-            Enter your email and we'll send your {toolName} results with additional insights.
+            Enter your email and phone number and we'll send your {toolName} results with additional insights.
           </p>
           {submitted ? (
             <div className="bg-black text-white px-6 py-4 inline-block">
               <p className="font-bold text-base">Thanks — your request was received. Check your inbox for our follow-up.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-lg mx-auto text-left">
               <label htmlFor="tool-cta-email" className="sr-only">Email address</label>
               <input
                 id="tool-cta-email"
@@ -88,7 +94,8 @@ export function ToolCTA({ toolName, services, relatedTools, relatedBlog }: ToolC
                 aria-label="Email address"
                 className="flex-1 border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none min-h-[44px]"
               />
-              {error && <p className="text-sm text-red-600 sm:col-span-2" role="alert">{error}</p>}
+              <PhoneField id="tool-cta-phone" compact label="Phone number" className="border border-gray-300 px-4 py-3 text-base text-black placeholder:text-gray-400 focus-visible:border-black focus-visible:outline-none min-h-[44px]" onChange={(e164, iso) => { setPhone(e164); setPhoneCountry(iso); }} />
+              {error && <p className="text-sm text-red-600" role="alert">{error}</p>}
               <button
                 type="submit"
                 disabled={sending}

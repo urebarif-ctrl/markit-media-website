@@ -3,6 +3,7 @@ import { clientIp, isRateLimited } from "@/lib/rate-limit";
 import { Resend } from "resend";
 import { saveFormSubmission } from "@/lib/mongodb";
 import { notifyNewLead } from "@/lib/notifications";
+import { validateE164 } from "@/lib/phone";
 
 function esc(v:unknown){return String(v||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;").trim();}
 function serviceLabel(v:string){return v ? v.split("-").map(x=>x.charAt(0).toUpperCase()+x.slice(1)).join(" ") : "General Inquiry";}
@@ -11,9 +12,10 @@ export async function POST(request:NextRequest){
  try{
   const ip=clientIp(request.headers);if(await isRateLimited(`contact:${ip}`,5))return NextResponse.json({error:"Too many requests. Please try again later."},{status:429});
   const body=await request.json();if(body.website)return NextResponse.json({success:true});
-  const data={name:esc(String(body.name||"").slice(0,120)),email:esc(String(body.email||"").slice(0,254)),company:esc(String(body.company||"").slice(0,160)),phone:esc(String(body.phone||"").slice(0,40)),service:esc(String(body.service||"").slice(0,80)),budget:esc(String(body.budget||"").slice(0,80)),timeline:esc(String(body.timeline||"").slice(0,80)),message:esc(String(body.message||"").slice(0,5000)),source:esc(String(body.source||"").slice(0,120)),landingPage:esc(String(body.landingPage||"").slice(0,300)),referrer:esc(String(body.referrer||"").slice(0,300)),utmSource:esc(String(body.utmSource||"").slice(0,120)),utmMedium:esc(String(body.utmMedium||"").slice(0,120)),utmCampaign:esc(String(body.utmCampaign||"").slice(0,120)),marketingConsent:Boolean(body.marketingConsent),submittedAt:new Date().toISOString(),status:"New"};
+  const data={name:esc(String(body.name||"").slice(0,120)),email:esc(String(body.email||"").slice(0,254)),company:esc(String(body.company||"").slice(0,160)),phone:esc(String(body.phone||"").trim().slice(0,20)),service:esc(String(body.service||"").slice(0,80)),budget:esc(String(body.budget||"").slice(0,80)),timeline:esc(String(body.timeline||"").slice(0,80)),message:esc(String(body.message||"").slice(0,5000)),source:esc(String(body.source||"").slice(0,120)),landingPage:esc(String(body.landingPage||"").slice(0,300)),referrer:esc(String(body.referrer||"").slice(0,300)),utmSource:esc(String(body.utmSource||"").slice(0,120)),utmMedium:esc(String(body.utmMedium||"").slice(0,120)),utmCampaign:esc(String(body.utmCampaign||"").slice(0,120)),marketingConsent:Boolean(body.marketingConsent),submittedAt:new Date().toISOString(),status:"New"};
   if(!data.name||data.name.length<2)return NextResponse.json({error:"Name is required."},{status:400});
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))return NextResponse.json({error:"A valid email address is required."},{status:400});
+  const phoneCheck=validateE164(String(body.phone||"").trim(),body.phoneCountry);if(!phoneCheck.ok)return NextResponse.json({error:phoneCheck.error},{status:400});
   if(!data.message||data.message.length<5)return NextResponse.json({error:"Please enter a message."},{status:400});
   let saved=true;try{await saveFormSubmission("lead",{...data,internalNotes:"",assignedTo:"",updatedAt:new Date()});}catch(e){saved=false;console.error("Failed to save lead to MongoDB",e);}
   notifyNewLead({name:data.name,email:data.email,service:serviceLabel(data.service),source:data.source||"Website",formType:data.source==="Brand Discovery Brief"?"Discovery Brief":"Website Form",createdAt:data.submittedAt}).catch(()=>{});
