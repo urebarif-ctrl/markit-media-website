@@ -299,7 +299,7 @@ export const CASE_CARDS: Record<string, { n: string; l: string }> = {
   },
   "qwench-juice-bar": {
     "n": "Qwench Juice Bar",
-    "l": "Content creation"
+    "l": "Social media and ads"
   },
   "quaid-e-azam-foundation": {
     "n": "Quaid-e-Azam Foundation",
