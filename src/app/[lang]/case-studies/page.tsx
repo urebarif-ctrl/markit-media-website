@@ -9,6 +9,7 @@ import { SectionLabel, SectionTitle, SectionDesc } from "@/components/section";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { ClientDirectorySection } from "@/components/portfolio/portfolio-sections";
+import { CaseStudiesByIndustry } from "@/components/case-study-extras";
 import { getCaseStudy, hubCounts, hubGraph, hubMetadata, serviceName } from "@/lib/case-studies";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -27,6 +28,7 @@ const studies = [
   {client:"Elite",industry:"Digital Presence",service:"Web Development & Social",desc:"Website development and social media content delivered as a cohesive digital package.",href:"/work/elite",image:"/images/work/website-development.svg"},
   {client:"Pur Health",industry:"Healthcare",service:"Web Development & Social",desc:"Website and social media work supporting a professional healthcare and wellness presence.",href:"/work/pur-health",image:"/images/work/website-development.svg"},
   {client:"American Auto Parts",industry:"Automotive",service:"Video Production",desc:"A long-running creative relationship producing professional video content for the automotive aftermarket.",href:"/work/american-auto-parts",image:"/images/work/video-production.svg"},
+  {client:"Everest Snacks",industry:"Food & Beverage",service:"Web, Social & Visuals",desc:"A five-page website for an energy bar brand, with blog articles, social media, photography, AI photo enhancement and animation.",href:"/work/everest-snacks",image:"/images/work/everest-snacks/cover.webp"},
 ];
 
 const creative = [
@@ -62,6 +64,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ la
   </div></section>
   <section className="px-6 lg:px-12 py-14 bg-black text-white text-center" aria-label="Get a quote"><div className="max-w-3xl mx-auto"><h2 className="text-2xl md:text-3xl font-extrabold">Want results like these?</h2><p className="text-gray-300 mt-3">Tell us what you need and we will point you to the closest relevant work.</p><Link href={l("/get-a-quote")} className="inline-block bg-white text-black px-8 py-4 font-bold mt-6">Get a quote →</Link></div></section>
   <ClientDirectorySection locale={locale}/>
+  <CaseStudiesByIndustry locale={locale}/>
   <section className="px-6 lg:px-12 py-20" aria-label="Creative portfolio"><div className="max-w-7xl mx-auto">
    <Animate animation="fade-up"><SectionLabel>Creative Portfolio</SectionLabel><SectionTitle>More Visual Work</SectionTitle><SectionDesc>Design-led collections complement the client project stories above and connect directly to the wider Work library.</SectionDesc></Animate>
    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">{creative.map(x=><Link key={x.href} href={l(x.href)} className="group border border-gray-200 overflow-hidden"><div className="relative aspect-[4/3]"><PortfolioFill id={x.image} alt={`${x.title} — ${x.category} portfolio`} sizes="(max-width:640px) 100vw,25vw" className=" group-hover:scale-[1.02] transition-transform"/></div><div className="p-5"><span className="text-xs uppercase tracking-wide text-gray-500">{x.category}</span><h3 className="font-extrabold mt-2 group-hover:underline">{x.title}</h3></div></Link>)}</div>

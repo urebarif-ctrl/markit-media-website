@@ -5,8 +5,10 @@ import { GalleryGrid } from "@/components/portfolio/gallery-grid";
 import { ClientDirectory, type DirectoryEntry } from "@/components/portfolio/client-directory";
 import { PortfolioImage } from "@/components/portfolio/portfolio-image";
 import { CaseStudyEditorial, CaseStudyGraph, CaseStudySnapshot, RelatedCaseStudies } from "@/components/case-study-extras";
+import { CaseStudyFeaturedVideo } from "@/components/case-study-featured-video";
 import { getCaseStudy, industryGroup, locationRegion, serviceName } from "@/lib/case-studies";
 import { editorialFor } from "@/data/case-studies/editorial";
+import { featuredVideoFor } from "@/data/featured-videos";
 import {
   CATEGORIES,
   type CategorySlug,
@@ -68,6 +70,7 @@ export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioCl
   const types = clientWorkTypes(client);
   const total = client.sections.reduce((n, s) => n + s.media.length, 0);
   const galleries = Array.from(new Set(client.sections.map((s) => s.gallery))) as CategorySlug[];
+  const featuredVideo = featuredVideoFor(client.slug);
   return (
     <article>
       {rec ? <CaseStudyGraph slug={rec.slug} locale={locale} /> : <JsonLd data={clientJsonLd(client)} />}
@@ -108,6 +111,8 @@ export function ClientCaseStudy({ client, locale = "en" }: { client: PortfolioCl
           )}
         </div>
       </section>
+
+      {featuredVideo && <CaseStudyFeaturedVideo video={featuredVideo} />}
 
       <CaseStudySnapshot slug={client.slug} locale={locale} />
 

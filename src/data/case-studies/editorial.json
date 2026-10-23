@@ -949,27 +949,46 @@
   ]
  },
  "qwench-juice-bar": {
-  "lede": "Qwench Juice Bar (qwenchjuice.com) sells fresh juices, smoothies and acai bowls. Markit Media designed five coupon posts for its Northridge location, each using a bright colour and a real photograph of the drink or bowl.",
-  "deliverables": "5 social posts shown on this page",
+  "lede": "Qwench Juice Bar (qwenchjuice.com) sells fresh juices, smoothies and acai bowls. Markit Media worked on its marketing across the website, social media, reels and Meta ads. This page looks closely at the social media work: five coupon posts for its Northridge location, each using a bright colour and a real photograph of the drink or bowl.",
+  "deliverables": "Website, social media, reels and Meta ads; 5 social posts shown on this page",
   "sections": [
    {
-    "heading": "What the posts had to do",
+    "heading": "What we did for Qwench",
+    "paragraphs": [
+     "Our work for Qwench Juice Bar covered four areas. The case study video at the top of this page is about this work as a whole. Below, the social media area is shown through the five coupon posts, because they can be seen and checked. We are not publishing counts, dates or figures for the other areas."
+    ],
+    "bullets": [
+     "Website: built for Qwench Juice Bar",
+     "Social media: the five coupon posts shown on this page",
+     "Reels: short-form video for the brand",
+     "Meta ads: paid advertising on Meta"
+    ]
+   },
+   {
+    "heading": "The coupon posts: what they had to do",
     "paragraphs": [
      "These are promotion posts. Each pairs one product with one coupon code, and each states that the offer is valid only at the Northridge location. The design had to make the drink look as fresh as the brand says it is, and make the coupon and the code easy to find."
     ]
    },
    {
-    "heading": "The design",
+    "heading": "The coupon posts: the design",
     "paragraphs": [
      "Every post uses a saturated gradient background chosen to match the drink: sunny yellow and green for raw juice and the bowl, pink and green for the acai smoothie. The Qwench logo, an orange sun beside the name and the words juice bar, sits at the top, and the brand cup appears large in the centre with the ingredients arranged around it: oranges and carrots, acai and kale, strawberries, nuts and granola.",
      "Headlines pair a bold sans with a green brush script, such as \"Refresh with raw juice\", \"Smoothie supercharge\" and \"Mix and match, juice madness\". Below, a short line gives the offer and the coupon code, and a rounded button invites people to claim the discount, with the website address in the footer."
+    ]
+   },
+   {
+    "heading": "Results",
+    "paragraphs": [
+     "No traffic, sales or ad figures have been supplied for this project, so none are shown."
     ]
    }
   ],
   "sources": [
    "qwenchjuice.com (checked 21 Oct 2026): QWENCH fresh juice and smoothie, acai bowls; domain printed on the artwork",
    "Artwork reviewed by eye: all 5 pieces; the posts say Northridge but no city or country is claimed on this page; discounts are not repeated because offers change",
-   "No brief, year, results or posting platform supplied: none are claimed"
+   "No brief, year, results or posting platform supplied: none are claimed",
+   "Scope (website, social media, reels, Meta ads): owner statement of 23 Oct 2026 and the description of the case study video; page text rewritten the same day at the owner's request to match it. No pages, reel counts, ad figures, dates or results were supplied, so none are claimed. The five coupon posts are the only work shown, and they are described from the artwork itself"
   ]
  },
  "ceha-halal": {
@@ -1560,6 +1579,128 @@
   ],
   "sources": [
    "Counts from the portfolio data (25 clients, 294 pieces); descriptions from the artwork reviewed by eye"
+  ]
+ },
+ "everest-snacks": {
+  "lede": "Everest Snacks is an energy bar brand that describes itself as backed by Shahi. In 2026 Markit Media worked on its digital presence on several fronts: we designed and developed its website, everestsnacks.com, wrote its blog articles, and handled its social media, photography, AI enhancement of photos and animation.",
+  "projectYear": 2026,
+  "deliverables": "5-page website, 3 blog articles, social media, photography, AI photo enhancement, animation",
+  "sections": [
+   {
+    "heading": "What we did for Everest",
+    "paragraphs": [
+     "Our work for Everest covered six areas. The website is public, so it is described in detail below and can be checked. The others are described by what they are, because we are not publishing counts, dates or figures for them."
+    ],
+    "bullets": [
+     "Website design and development: five pages on WordPress with Elementor",
+     "Blog articles: three written for the site",
+     "Social media",
+     "Photography",
+     "AI enhancement of photos",
+     "Animation"
+    ]
+   },
+   {
+    "heading": "The website at a glance",
+    "paragraphs": [
+     "The site opens with one short message, \"Fuel your adventure\". It shows the four flavours as cards, places four trust claims under the headline and points shoppers to where the bars are sold.",
+     "The brand name sets the theme. The site's FAQ explains that Everest Energy Bars are inspired by Mount Everest, the highest peak in the world, so the mountain runs through the copy, from \"a mountain of energy in every bite\" to the last of the five values, \"Never stop climbing\"."
+    ]
+   },
+   {
+    "heading": "The home page",
+    "paragraphs": [
+     "The home page opens with the headline \"Fuel your adventure\", one line of supporting copy and an \"Explore Bars\" button. Directly beneath sits a strip of four short claims: premium quality, best value, nationwide availability and \"Shahi trusted\", which the site backs with the line \"True to our promise. Backed by Shahi.\"",
+     "Further down, an \"Our Energy Bars\" row shows the four flavours, a \"Goodness in every bite\" row pairs the product with five everyday goals (hiking higher, working harder, living better, training stronger, going further), and a \"Loved by our community\" slider carries testimonials from three named customers.",
+     "A tabbed where-to-buy block follows, split into local modern trade, international modern trade and online stores, each showing retailer logos, and a \"Follow us on Instagram\" block shows three posts. A newsletter sign-up, \"Stay energized\", sits above the footer on every page."
+    ]
+   },
+   {
+    "heading": "The four bars",
+    "paragraphs": [
+     "The Products page gives each bar its own card: the flavour name in capitals, a short description in the brand's own words, and protein and energy badges."
+    ],
+    "bullets": [
+     "Salted Caramel: smooth caramel with a touch of sea salt. Simply irresistible.",
+     "Peanut Butter Chocolate: chocolatey crunch with rich and wholesome peanuts.",
+     "Peanut Butter Choco Royale: rich chocolate with peanut butter and wholesome oats.",
+     "Caramel Indulgence: decadent caramel with nuts and a hint of exotic vanilla."
+    ]
+   },
+   {
+    "heading": "Why Everest and Connect With Us",
+    "paragraphs": [
+     "The Why Everest page opens with a banner (\"Real ingredients. Real energy. Made to fuel real everyday.\") and a message from the founder, then lists five values (people first, grow every day, do what's right, built to perform, never stop climbing). A five-step \"Everest Journey\" graphic, from ingredients to impact, and a ten-question FAQ close the page.",
+     "The contact page is aimed at a specific audience, university students. Besides name, email and phone, the form asks what the message is about, with two options, Final Year Project (FYP) and Campus Ambassador, then the university, an optional semester and message, and a file upload for a project."
+    ]
+   },
+   {
+    "heading": "Photography and AI-enhanced images",
+    "paragraphs": [
+     "Photography and AI enhancement of photos were part of our work for Everest. On the site, pictures do much of the talking: the home page opens on a lifestyle photograph of a man with the bars, each flavour has its own product image with its protein and energy badges, the Why Everest and Connect With Us pages open on illustrated banners, and each blog card carries an illustrated graphic.",
+     "We credit no individual picture here. The disciplines are ours; which image came from which step is not part of this page."
+    ]
+   },
+   {
+    "heading": "Social media and animation",
+    "paragraphs": [
+     "Social media and animation were also part of our work. The site connects to the brand's channels: the \"Follow us on Instagram\" block on the home page links to the brand's account, @everestsnack, and shows three posts, a sports-themed post for Salted Caramel, a Father's Day post and a lifestyle post of someone opening a bar."
+    ]
+   },
+   {
+    "heading": "The blog",
+    "paragraphs": [
+     "Three articles are dated 30 July 2026, each roughly 600 to 800 words: \"Why Natural Ingredients Matter in Healthy Snacks\", \"Are Energy Bars Good for Weight Management?\" and \"Healthy Snacks vs. Energy Bars: Which Is Better?\" We wrote them, and they are published from Markit Media's account. They take on questions a shopper might ask before choosing a snack."
+    ]
+   },
+   {
+    "heading": "How it was built",
+    "paragraphs": [
+     "The site runs on WordPress with Elementor Pro on the Astra theme. Its pages are dated July 2026: the home page on 20 July and the others by 30 July. The footer credits Markit Media as designer and developer of the site, with a link to our site, and lists a phone number, an email address and a Karachi address. The footer credit covers the website; the social media, photography, AI photo enhancement and animation work is described from our own project record."
+    ]
+   },
+   {
+    "heading": "What we delivered",
+    "bullets": [
+     "A five-page website: Home, Why Everest, Products, Connect With Us and Blogs",
+     "A home page built around the headline, a four-claim strip, the bar cards, where-to-buy tabs and an Instagram block",
+     "A products page presenting the four bars",
+     "A contact form for university students, with file upload",
+     "Three blog articles, written by us and published on 30 July 2026",
+     "A newsletter sign-up on every page",
+     "Social media work for the brand",
+     "Photography",
+     "AI enhancement of photos",
+     "Animation"
+    ]
+   },
+   {
+    "heading": "Results",
+    "paragraphs": [
+     "No traffic or sales figures have been supplied for this project, so none are shown."
+    ]
+   },
+   {
+    "heading": "What to take from it",
+    "paragraphs": [
+     "Put the claims next to the headline. On desktop, Everest's four trust claims sit directly under the headline, inside the first screen.",
+     "Keep product descriptions short. Each bar has a flavour name and a brief description, in the same shape across the range.",
+     "Show who you want to hear from. The contact form's student-specific options, Final Year Project and Campus Ambassador, make that plain.",
+     "Answer the buying questions in one place. The ten-question FAQ covers flavours, storage and where to buy on a single page.",
+     "Connect the site to the social channels. The home page's Instagram block shows three posts and links to the brand's account."
+    ]
+   }
+  ],
+  "sources": [
+   "everestsnacks.com read 23 Oct 2026: Home, Why Everest, Products, Connect With Us and Blogs pages and the three articles; the Instagram link on the home page points to instagram.com/everestsnack",
+   "Website authorship: the site footer reads 'Designed & Developed By' beside the Markit Media logo, linked to themarkitmedia.com. This supports design and development only",
+   "Scope beyond the website (social media, photography, AI enhancement of photos, animation): owner statement of 23 Oct 2026 ('etc.' was said but nothing further was named). No counts, dates, examples or results were supplied, and no individual image or post is credited to Markit Media",
+   "The three articles: the owner confirmed on 23 Oct 2026 that Markit Media wrote them; they are published from a Markit Media account (30 Jul 2026)",
+   "Permission to name the client and show screenshots (including the founder photo and retailer logos), the 'backed by Shahi' wording, and indexing: confirmed by the owner on 23 Oct 2026. Year from the site's own WordPress page dates (home 20 Jul 2026, other pages by 30 Jul 2026); these are page dates, not a public launch date",
+   "Platform: generator meta tags, asset paths and the site's public REST namespaces (WordPress, Elementor Pro, Astra theme); no shop pages exist (/shop, /cart, /checkout return 404), so no e-commerce is claimed",
+   "Location: the FAQ says the bars are sold across Pakistan; the footer lists a Karachi address (whose is not stated), so only the country is used",
+   "Shahi: the site's own wording ('Shahi trusted', 'Backed by Shahi'; email at shahi.pk); stated as the site's self-description, not as a verified relationship",
+   "No results, figures or quotes were supplied; the home page testimonials are not repeated (provenance unknown). Product badges (protein and energy) are images; their figures are not quoted"
   ]
  }
 }

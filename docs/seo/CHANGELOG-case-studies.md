@@ -90,7 +90,7 @@ See `docs/seo/uncertainty-ledger.csv` (388 rows). Headline items: project years;
 
 ## 9. Postponed on purpose
 
-- Everest Snacks page (no verified facts).
+- Everest Snacks page: built as a draft on 23 Oct 2026 (section 10); not indexed or in the sitemap until the owner approves.
 - Branding & Visual Identity: kept separate, no merge or redirect. All 21 of its boards also appear in Logo Folio's 32; proposal only (needs approval).
 - Blog links: 14 proposals in `docs/seo/blog-links/`; nothing written to D1. Backup and rollback scripts ready.
 - Cloudflare cache rule, Crawler Hints, WAF country rule: documented, not activated.
@@ -107,3 +107,24 @@ See `docs/seo/uncertainty-ledger.csv` (388 rows). Headline items: project years;
 - 19 pages are under 300 words and 30 indexed pages are flagged for review: thin-content risk until facts arrive. Nothing was padded.
 - Copy is unreviewed by the owner; the 4 sample pages in particular are not approved.
 - Rich-result eligibility and rankings cannot be tested until a public, access-controlled preview exists.
+
+## 10. Everest Snacks case study built (23 Oct 2026)
+
+Draft, noindex, out of the sitemap. Authorship is evidenced by the client's own footer credit and the Markit Media author on its blog posts; scope is website design and development (footer credit); three blog articles are published from a Markit Media account; no shop exists; year 2026; no results published. Details and the resolved confirmations are in `everest-snacks-proposal.md`. Files: `src/app/[lang]/work/everest-snacks/page.tsx`, `src/components/work-screens.tsx`, records, editorial, indexing and linking data, cover in `src/lib/covers.ts`, images in `public/images/work/everest-snacks/`.
+
+## 11. Indexing, SEO tags and industry links (23 Oct 2026, owner request)
+
+- **Indexable**: every case study except the two political-candidate pages (Brittanye Morris, Dr Jason Hayes), which keep their explicit-approval hold. 23 pages changed from noindex to index (indexing.json); they enter the work sitemap automatically. 12 of them are under the plan's 300-word floor, so they are listed in `qa-exceptions.json` with the owner decision as the reason.
+- **SEO-only meta tags on every case-study page** (not visible on the page): `keywords` now include "<client> case study", "Markit Media case study", "Markit Media work" and "<industry> case study / work"; `category` and `article:section` carry the industry name; `article:tag` carries "Case study", "Work", the industry and the matching industry pages; the Article schema's `articleSection` and `keywords` match. Placeholder industries ("CONFIRM...", "In-house brand", "Portfolio") are never published as tags; collections get "Work"/"Portfolio" tags.
+- **Industry interlinking**: industry pages show up to 12 matching case studies (was 6) and gained Pakhlanze (restaurants), Cambridge Electrical, Easywear, Elf and Santa Videos and Find My Apparel (e-commerce) and H University (education, which had none). Each case study now links to all its industries (up to 3), not only the first. New "Case studies by industry" block on the case-studies hub links every industry page and its case studies (held and political pages excluded).
+- **QWENCH**: added the website, reels and Meta ads to the services and a short "More of what we did" section, without touching the existing copy, title or meta description.
+- Industries still without a matching case study: Home Services, Finance, Fitness, Freelancers & Agencies, Legal, Travel, Interior Design and Exterior Cleaning (which has its own separate case-study page).
+
+## 12. Everest Snacks case study rewritten (23 Oct 2026, owner request)
+
+Full rewrite with the owner-stated scope added: social media, photography, AI enhancement of photos, animation. Title, H1, meta description, keywords, services and the cards on the hub, work page and Website Development page updated. Scope beyond the website rests on the owner's statement only; no image or post is individually credited. See `everest-snacks-proposal.md`.
+
+## 13. Everest Snacks go-live confirmations (23 Oct 2026)
+
+Owner confirmed screenshots (founder photo, retailer logos), the Shahi wording, that Markit Media wrote the three articles and indexing, and approved the release. Added the Content Marketing tag, "we wrote them" wording, the publication date and the indexing basis.
+

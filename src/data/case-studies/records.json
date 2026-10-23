@@ -2197,11 +2197,17 @@
   "industryLabel": "Juice bar",
   "servicesLabel": [
    "Content creation",
-   "Social media"
+   "Social media",
+   "Website development",
+   "Reels & short-form",
+   "Meta ads"
   ],
   "serviceLinks": [
    "/services/social-media/content-creation",
-   "/services/social-media"
+   "/services/social-media",
+   "/services/website-development",
+   "/services/video-production/reels-short-form",
+   "/services/performance-marketing/meta-ads"
   ],
   "industryLinks": [
    "/industries/restaurants"
@@ -2215,12 +2221,14 @@
   ],
   "keywords": [
    "juice bar social media",
+   "juice bar website",
    "cafe marketing",
-   "drink post design"
+   "reels for food brands",
+   "Meta ads for juice bars"
   ],
-  "title": "Qwench Juice Bar Food & Drink Creative | Markit Media",
-  "h1": "Qwench Juice Bar: Food and Drink Creative for Social Media",
-  "metaDescription": "Food and drink creative for Qwench Juice Bar: bright social posts for its fresh juices, designed to stand out in the feed and bring customers in store.",
+  "title": "Qwench Juice Bar: Website, Social & Meta Ads | Markit Media",
+  "h1": "Qwench Juice Bar: Website, Social Media, Reels and Meta Ads",
+  "metaDescription": "How Markit Media worked on Qwench Juice Bar: the website, social media, reels and Meta ads, with a closer look at five bright coupon posts for its juices.",
   "planLocation": "- (confirm branch)",
   "locationVerified": false,
   "location": null,
@@ -2229,7 +2237,7 @@
   "planWebsite": "https://qwenchjuice.com/ (likely)",
   "website": "https://qwenchjuice.com/",
   "websiteVerified": true,
-  "dateModified": "2026-10-21",
+  "dateModified": "2026-10-23",
   "datePublished": "2026-10-17",
   "datePublishedStatus": "verified: released with PR #48 / Worker fcf77fc3 on 17 Oct 2026",
   "planNotes": "Missing from sitemap. Meta only 84 characters.",
@@ -3158,5 +3166,65 @@
   "planNotes": "Plan section 11: keep separate (owner decision 21 Oct 2026); overlap with Logo Folio to be reported.",
   "today": null,
   "specSource": "current"
+ },
+ {
+  "slug": "everest-snacks",
+  "kind": "featured",
+  "name": "Everest Snacks",
+  "routeType": "static",
+  "industryLabel": "Food & beverage",
+  "servicesLabel": [
+   "Website development",
+   "Content marketing",
+   "Social media",
+   "Photography",
+   "AI photo enhancement",
+   "Animation"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/content-marketing",
+   "/services/social-media",
+   "/services/photography",
+   "/services/video-production/animation"
+  ],
+  "industryLinks": [
+   "/industries/food-ingredients-ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "chefiality",
+   "wild-game-jerky",
+   "foodfolio",
+   "elite"
+  ],
+  "keywords": [
+   "energy bar website design",
+   "food brand blog content",
+   "food brand social media",
+   "food product photography",
+   "AI photo enhancement",
+   "Everest Snacks case study"
+  ],
+  "title": "Everest Snacks Website, Social & Visuals | Markit Media",
+  "h1": "Everest Snacks: Website, Social Media and Visual Content for an Energy Bar Brand",
+  "metaDescription": "How Markit Media built the Everest Snacks website and handled its social media, photography, AI photo enhancement and animation for an energy bar brand.",
+  "planLocation": "Pakistan (FAQ: sold across Pakistan; footer lists a Karachi address)",
+  "locationVerified": true,
+  "location": "Pakistan",
+  "locations": [
+   {
+    "country": "Pakistan"
+   }
+  ],
+  "locationEvidence": "FAQ on everestsnacks.com: bars are sold across Pakistan (read 23 Oct 2026). The footer's Karachi address is not attributed, so no city is claimed.",
+  "planWebsite": "https://everestsnacks.com/",
+  "website": "https://everestsnacks.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-23",
+  "datePublished": "2026-10-23",
+  "datePublishedStatus": "published 23 Oct 2026 (release date)",
+  "planNotes": "Built from the live site on owner instruction (23 Oct 2026); scope widened by the owner the same day (social media, photography, AI photo enhancement, animation). See docs/seo/everest-snacks-proposal.md.",
+  "today": "new page"
  }
 ]

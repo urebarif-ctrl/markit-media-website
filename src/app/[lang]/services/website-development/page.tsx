@@ -62,6 +62,7 @@ export default function WebsiteDevelopmentPage() {
         { client: "Elite", desc: "Website for an Indian and Pakistani restaurant in Sugar Land, Texas, with a showcase reel and a matching social series.", href: "/work/elite" },
         { client: "Pur Health", desc: "Healthcare website focused on trust, clarity, and accessibility.", href: "/work/pur-health" },
         { client: "Minhaz Couture", desc: "Custom website for a fashion brand, with social media content.", href: "/work/minhaz-couture" },
+        { client: "Everest Snacks", desc: "Five-page WordPress website for an energy bar brand, built alongside its blog articles, social media, photography, AI photo enhancement and animation.", href: "/work/everest-snacks" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },

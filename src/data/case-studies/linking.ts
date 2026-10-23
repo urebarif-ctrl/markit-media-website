@@ -15,7 +15,8 @@ export const INDUSTRY_CASES: Record<string, string[]> = {
     "sheesha-lounge-and-grill",
     "pizza-warma",
     "qwench-juice-bar",
-    "flour-magician"
+    "flour-magician",
+    "pakhlanze"
   ],
   "hospitality": [
     "sheesha-lounge-and-grill",
@@ -26,7 +27,8 @@ export const INDUSTRY_CASES: Record<string, string[]> = {
   "food-ingredients-ecommerce": [
     "chefiality",
     "wild-game-jerky",
-    "foodfolio"
+    "foodfolio",
+    "everest-snacks"
   ],
   "healthcare": [
     "pur-health",
@@ -59,7 +61,11 @@ export const INDUSTRY_CASES: Record<string, string[]> = {
     "the-bauble-store",
     "diaper-world",
     "cheap-hardware-store",
-    "chefiality"
+    "chefiality",
+    "cambridge-electrical",
+    "easywear",
+    "elf-and-santa-videos",
+    "find-my-apparel"
   ],
   "manufacturing": [
     "cambridge-electrical",
@@ -98,6 +104,9 @@ export const INDUSTRY_CASES: Record<string, string[]> = {
   ],
   "construction": [
     "cheap-hardware-store"
+  ],
+  "education": [
+    "h-university"
   ]
 };
 
@@ -276,9 +285,21 @@ export const CASE_CARDS: Record<string, { n: string; l: string }> = {
     "n": "Minhaz Couture",
     "l": "Website development"
   },
+  "elf-and-santa-videos": {
+    "n": "Elf and Santa Videos",
+    "l": "Social media"
+  },
+  "h-university": {
+    "n": "H University",
+    "l": "Logo design"
+  },
+  "everest-snacks": {
+    "n": "Everest Snacks",
+    "l": "Website development"
+  },
   "qwench-juice-bar": {
     "n": "Qwench Juice Bar",
-    "l": "Content creation"
+    "l": "Social media and ads"
   },
   "quaid-e-azam-foundation": {
     "n": "Quaid-e-Azam Foundation",
