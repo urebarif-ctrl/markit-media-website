@@ -48,7 +48,7 @@ export function Footer({ locale, translations:t }: { locale:string; translations
     {label:"Industries",href:"/industries"},{label:"Pricing",href:"/pricing"},{label:"Contact",href:"/contact"},
   ];
   const explore=[
-    {label:"Blog & Insights",href:"/blog"},{label:"Free Tools",href:"/free-tools"},{label:"Technology Stack",href:"/technology"},
+    {label:"Blog & Insights",href:"/blog"},{label:"Guides",href:"/guides"},{label:"Free Tools",href:"/free-tools"},{label:"Technology Stack",href:"/technology"},
     {label:"FAQ",href:"/faq"},{label:"USA Markets",href:"/locations/united-states"},{label:"All Locations",href:"/locations"},{label:"Careers",href:"/careers"},
   ];
   const primarySocial=SOCIAL_LINKS.filter(s=>SOCIAL_BRANDS[s.label]);

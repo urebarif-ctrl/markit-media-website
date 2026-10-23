@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPublishedSlugs, getAllPublishedSlugsWithDates, getAllCategories } from "@/lib/blog";
 import { legacySeoPages, retiredLegacyArticlePaths } from "@/data/legacy-seo-pages";
+import { GUIDE_HUB_LASTMOD } from "@/data/guide-hub";
 import { caseStudySitemapRows, hubLastModified } from "@/lib/case-studies";
 
 const BASE_URL = "https://themarkitmedia.com";
@@ -710,6 +711,7 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       for (const hub of ["/work", "/case-studies"]) {
         entries.push({ url: `${BASE_URL}/en${hub}`, lastModified: hubDate, changeFrequency: "monthly", priority: 0.8 });
       }
+      entries.push({ url: `${BASE_URL}/en/guides`, lastModified: new Date(GUIDE_HUB_LASTMOD), changeFrequency: "monthly", priority: 0.7 });
       for (const row of caseStudySitemapRows()) {
         entries.push({ url: row.url, lastModified: row.lastModified, changeFrequency: "monthly", priority: 0.7, images: row.images });
       }

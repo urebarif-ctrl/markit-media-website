@@ -15,12 +15,14 @@ import { Animate, Stagger } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { UsCallButton } from "@/components/us-call-cta";
+import { GuideRelated } from "@/components/guide-related";
 import { CallHippoWidget } from "@/components/callhippo-widget";
 import { SectionDesc, SectionLabel, SectionTitle } from "@/components/section";
 import {
   legacySeoPageById,
   type LegacySeoPage,
 } from "@/data/legacy-seo-pages";
+import { legacyInterimCopy, legacyTitle } from "@/data/legacy-interim-copy";
 
 const BASE_URL = "https://themarkitmedia.com";
 
@@ -38,7 +40,7 @@ export async function generateMetadata({
   const canonical = `${BASE_URL}${page.path}`;
   const description = getDescription(page);
 
-  const metaTitle = customTitles[page.id] ?? page.title;
+  const metaTitle = legacyTitle(page);
 
   return {
     title: metaTitle,
@@ -66,71 +68,16 @@ function topicArea(page: LegacySeoPage) {
   return "marketing";
 }
 
-const customTitles: Record<string, string> = {
-  "top-web-design-companies-in-the-usa":
-    "Top Web Design Companies in the USA (2026 Ranked List)",
-  "top-web-development-companies-in-the-usa":
-    "Top Web Development Companies in the USA (2026 Ranked List)",
-  "best-animation-software-for-creators-and-professionals":
-    "Best Animation Software (2026): Tools for Creators and Professionals",
-  "how-much-does-website-development-cost-in-the-usa":
-    "Website Development Cost in the USA (2026 Pricing Guide)",
-  "best-personal-website-examples-to-inspire-your-own-brand":
-    "25 Best Personal Website Examples (2026) to Inspire Your Brand",
-  "shopify-vs-woocommerce-vs-magento-which-platform-is-best":
-    "Shopify vs WooCommerce vs Magento (2026): Which Platform Is Best?",
-  "top-10-plugins-for-wordpress-seo-optimization":
-    "10 Best WordPress SEO Plugins (2026 Rankings and Reviews)",
-  "blog-top-10-tools-for-social-media-management-2025":
-    "10 Best Social Media Management Tools (2026 Compared)",
-  "best-practices-for-choosing-a-domain-name-in-2025":
-    "How to Choose a Domain Name in 2026 (Best Practices Guide)",
-};
-
+// Descriptions for guides whose body matches them. Every other guide with a custom description now lives in
+// src/data/legacy-interim-copy.ts, because its old description promised content the page does not have.
 const customDescriptions: Record<string, string> = {
   "beginners-guide-to-website-development":
     "A beginner-friendly guide to website development covering planning, domains, hosting, frontend, backend, CMS options, SEO, analytics, testing and launch.",
-  "22-best-augmented-reality-games-you-must-try":
-    "The 22 best augmented reality games for 2026, including multiplayer AR, mobile AR shooters, AR puzzle games and outdoor AR adventures for iOS and Android.",
-  "social-media-phone-vs-desktop-use":
-    "How social media usage differs between phone and desktop. Platform-by-platform breakdown of mobile vs desktop engagement, demographics and content performance.",
-  "top-web-design-companies-in-the-usa":
-    "A ranked list of top web design companies in the USA for 2026, covering agency specializations, pricing models, portfolios and how to choose the right web design partner.",
-  "best-personal-website-examples-to-inspire-your-own-brand":
-    "25 best personal website examples across portfolios, freelancers, creators and executives. Real sites with design breakdowns to inspire your own personal brand online.",
-  "top-web-development-companies-in-the-usa":
-    "Top web development companies in the USA compared by stack expertise, project size, pricing and client reviews. Updated for 2026 with agency profiles and selection criteria.",
-  "best-animation-software-for-creators-and-professionals":
-    "The best animation software for 2026 compared: 2D, 3D, motion graphics and logo animation tools ranked by features, pricing, learning curve and professional use cases.",
-  "steps-to-create-a-digital-marketing-agency-website":
-    "Step-by-step guide to building a digital marketing agency website that generates leads. Covers structure, copy, portfolio, trust signals, SEO and conversion optimization.",
-  "how-much-does-website-development-cost-in-the-usa":
-    "Website development costs in the USA for 2026: pricing by site type, platform, complexity and agency tier. Includes cost breakdowns for WordPress, Shopify, custom and enterprise builds.",
-  "blog-top-10-tools-for-social-media-management-2025":
-    "The 10 best social media management tools for 2026 compared by scheduling, analytics, team collaboration, pricing and platform support for agencies and businesses.",
-  "top-10-plugins-for-wordpress-seo-optimization":
-    "10 best WordPress SEO plugins for 2026 ranked by features, speed impact, ease of use and pricing. Includes Yoast, Rank Math, All in One SEO and newer alternatives.",
-  "using-influencer-marketing-to-complement-your-digital-strategy":
-    "How to use influencer marketing alongside SEO, paid ads and email to build a multi-channel digital strategy. Covers selection, contracts, measurement and ROI tracking.",
-  "how-accurate-is-semrush-data-and-how-often-is-its-database-updated":
-    "How accurate is Semrush data? Analysis of Semrush keyword volume, traffic estimates, backlink data and ranking accuracy. Includes update frequency and comparison with Google data.",
-  "best-practices-for-choosing-a-domain-name-in-2025":
-    "How to choose a domain name in 2026: best practices for branding, SEO, length, extensions, availability checks and common domain selection mistakes to avoid.",
-  "how-to-create-a-winning-seo-strategy-for-a-new-website":
-    "Complete SEO strategy for new websites: keyword research, technical setup, content planning, link building and measurement. A practical roadmap from launch to first-page rankings.",
-  "common-digital-marketing-mistakes-brands-need-to-avoid":
-    "The most common digital marketing mistakes brands make in 2026 and how to avoid them. Covers strategy, targeting, budget, measurement, content and channel selection errors.",
-  "social-impact-of-ai-how-artificial-intelligence-is-transforming-society":
-    "How artificial intelligence is transforming society: the social impact of AI on jobs, healthcare, education, privacy, creativity and daily life. Benefits, risks and ethical considerations.",
-  "pagination-vs-infinite-scroll-which-is-best-for-your-website":
-    "Pagination vs infinite scroll compared for UX, SEO, performance and conversion. When to use each pattern based on content type, user behavior and search engine requirements.",
-  "shopify-vs-woocommerce-vs-magento-which-platform-is-best":
-    "Shopify vs WooCommerce vs Magento compared for 2026: pricing, scalability, customization, SEO, speed and total cost of ownership. Which ecommerce platform fits your business.",
-  "the-cost-of-social-media-marketing-in-us-2026-guide":
-    "Social media marketing costs in the USA for 2026: monthly management fees, ad spend benchmarks, platform-by-platform pricing and what to expect from agencies vs in-house teams.",
 };
 
 function getDescription(page: LegacySeoPage) {
+  const interim = legacyInterimCopy[page.id]?.description;
+  if (interim) return interim;
   if (customDescriptions[page.id]) {
     return customDescriptions[page.id];
   }
@@ -315,6 +262,8 @@ export default async function LegacySeoPage({
   // US-focused guides get the US phone number prominently.
   const isUsGuide = /-usa(-|$)|-in-us-/.test(page.path);
 
+  const displayTitle = legacyTitle(page);
+  const topic = legacyInterimCopy[page.id]?.topic ?? displayTitle;
   const area = topicArea(page);
   const framework = articleFramework(area);
   const faq = faqFor(page);
@@ -326,7 +275,7 @@ export default async function LegacySeoPage({
     ? {
         "@context": "https://schema.org",
         "@type": "Article",
-        headline: page.title,
+        headline: displayTitle,
         description,
         mainEntityOfPage: canonical,
         publisher: { "@type": "Organization", name: "Markit Media", url: BASE_URL },
@@ -334,7 +283,7 @@ export default async function LegacySeoPage({
     : {
         "@context": "https://schema.org",
         "@type": "Service",
-        name: page.title,
+        name: displayTitle,
         description,
         url: canonical,
         provider: { "@type": "Organization", name: "Markit Media", url: BASE_URL },
@@ -359,8 +308,8 @@ export default async function LegacySeoPage({
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
-          { label: page.kind === "article" ? "Insights" : page.kind === "industry" ? "Industries" : "Services", href: page.kind === "article" ? "/blog" : page.kind === "industry" ? "/industries" : "/services" },
-          { label: page.title },
+          { label: page.kind === "article" ? "Guides" : page.kind === "industry" ? "Industries" : "Services", href: page.kind === "article" ? "/guides" : page.kind === "industry" ? "/industries" : "/services" },
+          { label: displayTitle },
         ]}
       />
 
@@ -374,7 +323,7 @@ export default async function LegacySeoPage({
               <span className="text-sm text-gray-400">Markit Media</span>
             </div>
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-extrabold tracking-tight leading-[1.06]">
-              {page.title}
+              {displayTitle}
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-8 mt-6 max-w-3xl">
               {description}
@@ -398,7 +347,7 @@ export default async function LegacySeoPage({
             <div className="max-w-6xl mx-auto">
               <Animate animation="fade-up">
                 <SectionLabel>{page.kind === "service" ? "What Good Delivery Looks Like" : page.kind === "industry" ? "Growth Framework" : "Practical Framework"}</SectionLabel>
-                <SectionTitle>{page.kind === "service" ? `How We Approach ${page.title}` : `How to Think About ${page.title}`}</SectionTitle>
+                <SectionTitle>{page.kind === "service" ? `How We Approach ${topic}` : `How to Think About ${topic}`}</SectionTitle>
                 <SectionDesc>
                   The useful part of this topic is not a definition alone. It is understanding the decisions, sequence and measurement that turn the idea into a working plan.
                 </SectionDesc>
@@ -507,6 +456,8 @@ export default async function LegacySeoPage({
           </div>
         </div>
       </section>
+
+      {page.kind === "article" && <GuideRelated guideId={page.id} locale={locale} />}
 
       <section className="px-6 lg:px-12 py-20 bg-white" aria-label="Next step">
         <div className="max-w-4xl mx-auto text-center border border-gray-200 p-8 md:p-12">

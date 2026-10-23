@@ -101,14 +101,14 @@ const resources = [
     text: "A practical framework for testing hooks, formats, copy and creative fatigue.",
   },
   {
-    title: "Facebook Ads for Local Businesses: A Step-by-Step Setup Guide",
-    href: "/blog/facebook-ads-local-businesses-step-by-step-setup",
-    text: "How local businesses can think about objectives, geographic targeting and campaign setup.",
+    title: "Meta Ads Audience Targeting in 2026: What Works After Privacy Changes",
+    href: "/blog/meta-ads-audience-targeting-2026-privacy-changes",
+    text: "How Meta Ads targeting works after privacy changes and what to do about it.",
   },
   {
-    title: "How to Scale Facebook Ads Without Killing Performance",
-    href: "/blog/how-to-scale-facebook-ads-without-killing-performance-updated",
-    text: "Why controlled scaling, measurement and landing page alignment matter when budgets increase.",
+    title: "Facebook Ads vs Google Ads in 2026: Where to Put Your Budget",
+    href: "/blog/facebook-ads-vs-google-ads-2026",
+    text: "A comparison of Facebook Ads and Google Ads covering audience targeting differences and where a budget fits.",
   },
   {
     title: "Retargeting Strategy: Bringing Visitors Back to Convert",

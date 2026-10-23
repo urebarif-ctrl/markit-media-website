@@ -33,6 +33,9 @@ interface SubServicePageProps {
   locale?: string;
 }
 
+/** "BPO Services" stays "BPO Services"; "Branding" becomes "Branding Services". */
+const serviceFamilyLabel = (parentTitle: string) => (/services?$/i.test(parentTitle) ? parentTitle : `${parentTitle} Services`);
+
 export async function SubServicePage({ parentTitle, parentHref, title, heading, servicePath, description, details, benefits, faq, relatedServices = [], portfolio = [], blogCategory, platforms, children, locale = "en" }: SubServicePageProps) {
   const l = (path: string) => `/${locale}${path}`;
   const relatedPosts = blogCategory ? await getPostsByCategory(blogCategory, 3) : [];
@@ -56,20 +59,25 @@ export async function SubServicePage({ parentTitle, parentHref, title, heading, 
     })),
   };
 
+  // Some top-level services reuse this template with parentTitle "Services": do not repeat "Services" in the breadcrumb or header.
+  const topLevel = parentTitle === "Services";
+
   return (
     <article>
       <JsonLd data={schema} />
       <JsonLd data={faqSchema} />
-      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: parentTitle, href: parentHref }, { label: title }]} />
+      <Breadcrumb locale={locale} items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, ...(topLevel ? [] : [{ label: parentTitle, href: parentHref }]), { label: title }]} />
 
       <section className="px-6 lg:px-12 pt-24 pb-16" aria-label={title}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <Animate animation="fade-up">
-              <Link href={l(parentHref)} className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors mb-3">
-                <span aria-hidden="true">←</span> Part of {parentTitle}
-              </Link>
-              <SectionLabel>{parentTitle}</SectionLabel>
+              {!topLevel && (
+                <Link href={l(parentHref)} className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-black transition-colors mb-3">
+                  <span aria-hidden="true">←</span> Part of {parentTitle}
+                </Link>
+              )}
+              <SectionLabel>{topLevel ? "Service" : parentTitle}</SectionLabel>
               <h1 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-extrabold text-black tracking-tight leading-[1.1] mt-3">
                 {heading ?? title}
               </h1>
@@ -175,15 +183,15 @@ export async function SubServicePage({ parentTitle, parentHref, title, heading, 
       </section>
 
       {siblingServices.length > 0 && (
-        <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label={`More ${parentTitle} services`}>
+        <section className="px-6 lg:px-12 py-16 border-y border-gray-200" aria-label={`More ${serviceFamilyLabel(parentTitle)}`}>
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <div>
                 <SectionLabel>Service Family</SectionLabel>
-                <SectionTitle>More {parentTitle} Services</SectionTitle>
+                <SectionTitle>More {serviceFamilyLabel(parentTitle)}</SectionTitle>
               </div>
               <Link href={l(parentHref)} className="text-sm font-bold border-b border-black pb-1">
-                View {parentTitle} overview →
+                {topLevel ? "View all services →" : `View ${parentTitle} overview →`}
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 mt-8">
