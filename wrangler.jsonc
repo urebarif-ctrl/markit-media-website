@@ -1,7 +1,7 @@
 {
   "name": "markit-media",
   "workers_dev": true,
-  "main": ".open-next/worker.js",
+  "main": "worker/entry.js",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
@@ -28,7 +28,7 @@
   ],
   "vars": {
     "PRODUCTION_DEPLOY": "true",
-    "OPEN_NEXT_BUILD_ID": "7AgYJtUKIKDq8nTrWXBSB",
+    "OPEN_NEXT_BUILD_ID": "s1pYORB2Pi22tnRw4Huau",
     "NEXT_PUBLIC_SITE_URL": "https://themarkitmedia.com",
     "R2_BUCKET_NAME": "markit-media-assets",
     "R2_PUBLIC_URL": "https://media.themarkitmedia.com",
