@@ -1563,12 +1563,25 @@
   ]
  },
  "everest-snacks": {
-  "lede": "Everest Snacks is an energy bar brand that describes itself as backed by Shahi. In 2026 Markit Media designed and developed its website, everestsnacks.com: five pages on WordPress with Elementor, covering the brand promise, the four bars, the founder's story, a contact form for university students and a blog.",
+  "lede": "Everest Snacks is an energy bar brand that describes itself as backed by Shahi. In 2026 Markit Media worked on its digital presence on several fronts: we designed and developed its website, everestsnacks.com, and we also handled its social media, photography, AI enhancement of photos and animation.",
   "projectYear": 2026,
-  "deliverables": "5-page website, product page for 4 bars, contact form for university students, 3 blog articles published",
+  "deliverables": "5-page website, social media, photography, AI photo enhancement, animation",
   "sections": [
    {
-    "heading": "What the site does",
+    "heading": "What we did for Everest",
+    "paragraphs": [
+     "Our work for Everest covered five areas. The website is public, so it is described in detail below and can be checked. The other four areas are described by what they are, because we are not publishing counts, dates or figures for them."
+    ],
+    "bullets": [
+     "Website design and development: five pages on WordPress with Elementor",
+     "Social media",
+     "Photography",
+     "AI enhancement of photos",
+     "Animation"
+    ]
+   },
+   {
+    "heading": "The website at a glance",
     "paragraphs": [
      "The site opens with one short message, \"Fuel your adventure\". It shows the four flavours as cards, places four trust claims under the headline and points shoppers to where the bars are sold.",
      "The brand name sets the theme. The site's FAQ explains that Everest Energy Bars are inspired by Mount Everest, the highest peak in the world, so the mountain runs through the copy, from \"a mountain of energy in every bite\" to the last of the five values, \"Never stop climbing\"."
@@ -1595,16 +1608,23 @@
     ]
    },
    {
-    "heading": "Why Everest",
+    "heading": "Why Everest and Connect With Us",
     "paragraphs": [
-     "The Why Everest page opens with a banner (\"Real ingredients. Real energy. Made to fuel real everyday.\") and a message from the founder, then lists five values (people first, grow every day, do what's right, built to perform, never stop climbing). A five-step \"Everest Journey\" graphic, from ingredients to impact, and a ten-question FAQ close the page. The founder's message sets the tone: energy, it says, is not only what is inside a bar but the ideas you chase and the goals you set.",
-     "The FAQ answers the questions a first-time buyer asks: what makes the bars different, whether they suit daily eating, which flavours exist, how to store them and where to buy them across Pakistan."
+     "The Why Everest page opens with a banner (\"Real ingredients. Real energy. Made to fuel real everyday.\") and a message from the founder, then lists five values (people first, grow every day, do what's right, built to perform, never stop climbing). A five-step \"Everest Journey\" graphic, from ingredients to impact, and a ten-question FAQ close the page.",
+     "The contact page is aimed at a specific audience, university students. Besides name, email and phone, the form asks what the message is about, with two options, Final Year Project (FYP) and Campus Ambassador, then the university, an optional semester and message, and a file upload for a project."
     ]
    },
    {
-    "heading": "Connect With Us",
+    "heading": "Photography and AI-enhanced images",
     "paragraphs": [
-     "The contact page is aimed at a specific audience, university students. Besides name, email and phone, the form asks what the message is about, with two options, Final Year Project (FYP) and Campus Ambassador, then the university, an optional semester and message, and a file upload for a project."
+     "Photography and AI enhancement of photos were part of our work for Everest. On the site, pictures do much of the talking: the home page opens on a lifestyle photograph of a man with the bars, each flavour has its own product image with its protein and energy badges, the Why Everest and Connect With Us pages open on illustrated banners, and each blog card carries an illustrated graphic.",
+     "We credit no individual picture here. The disciplines are ours; which image came from which step is not part of this page."
+    ]
+   },
+   {
+    "heading": "Social media and animation",
+    "paragraphs": [
+     "Social media and animation were also part of our work. The site connects to the brand's channels: the \"Follow us on Instagram\" block on the home page links to the brand's account, @everestsnack, and shows three posts, a sports-themed post for Salted Caramel, a Father's Day post and a lifestyle post of someone opening a bar."
     ]
    },
    {
@@ -1616,8 +1636,7 @@
    {
     "heading": "How it was built",
     "paragraphs": [
-     "The site runs on WordPress with Elementor Pro on the Astra theme. Its pages are dated July 2026: the home page on 20 July and the others by 30 July. The footer credits Markit Media as designer and developer of the site, with a link to our site, and lists a phone number, an email address and a Karachi address.",
-     "That credit is the basis for this page: it covers the site's design and development. The product renders, photography, brand artwork and wording shown on the site are not claimed here."
+     "The site runs on WordPress with Elementor Pro on the Astra theme. Its pages are dated July 2026: the home page on 20 July and the others by 30 July. The footer credits Markit Media as designer and developer of the site, with a link to our site, and lists a phone number, an email address and a Karachi address. The footer credit covers the website; the social media, photography, AI photo enhancement and animation work is described from our own project record."
     ]
    },
    {
@@ -1628,7 +1647,11 @@
      "A products page presenting the four bars",
      "A contact form for university students, with file upload",
      "Three blog articles published from Markit Media's account on 30 July 2026",
-     "A newsletter sign-up on every page"
+     "A newsletter sign-up on every page",
+     "Social media work for the brand",
+     "Photography",
+     "AI enhancement of photos",
+     "Animation"
     ]
    },
    {
@@ -1643,19 +1666,21 @@
      "Put the claims next to the headline. On desktop, Everest's four trust claims sit directly under the headline, inside the first screen.",
      "Keep product descriptions short. Each bar has a flavour name and a brief description, in the same shape across the range.",
      "Show who you want to hear from. The contact form's student-specific options, Final Year Project and Campus Ambassador, make that plain.",
-     "Answer the buying questions in one place. The ten-question FAQ covers flavours, storage and where to buy on a single page."
+     "Answer the buying questions in one place. The ten-question FAQ covers flavours, storage and where to buy on a single page.",
+     "Connect the site to the social channels. The home page's Instagram block shows three posts and links to the brand's account."
     ]
    }
   ],
   "sources": [
-   "everestsnacks.com read 23 Oct 2026: Home, Why Everest, Products, Connect With Us and Blogs pages and the three articles",
-   "Authorship: the site footer reads 'Designed & Developed By' beside the Markit Media logo, linked to themarkitmedia.com. This supports design and development only; the three articles are published from a Markit Media account (who wrote them is not evidenced)",
-   "Scope, year and permission to name the client and show screenshots: owner instruction of 23 Oct 2026 ('we built this for them'); dates from the site's own WordPress page dates (home 20 Jul 2026, other pages by 30 Jul 2026); these are page dates, not a public launch date",
+   "everestsnacks.com read 23 Oct 2026: Home, Why Everest, Products, Connect With Us and Blogs pages and the three articles; the Instagram link on the home page points to instagram.com/everestsnack",
+   "Website authorship: the site footer reads 'Designed & Developed By' beside the Markit Media logo, linked to themarkitmedia.com. This supports design and development only",
+   "Scope beyond the website (social media, photography, AI enhancement of photos, animation): owner statement of 23 Oct 2026 ('etc.' was said but nothing further was named). No counts, dates, examples or results were supplied, and no individual image or post is credited to Markit Media",
+   "The three articles are published from a Markit Media account (who wrote them is not evidenced)",
+   "Permission to name the client and show screenshots, and the year: owner instruction of 23 Oct 2026; dates from the site's own WordPress page dates (home 20 Jul 2026, other pages by 30 Jul 2026); these are page dates, not a public launch date",
    "Platform: generator meta tags, asset paths and the site's public REST namespaces (WordPress, Elementor Pro, Astra theme); no shop pages exist (/shop, /cart, /checkout return 404), so no e-commerce is claimed",
-   "Location: the FAQ says the bars are sold across Pakistan; the footer lists a Karachi address (whose address it is is not stated), so only the country is used",
+   "Location: the FAQ says the bars are sold across Pakistan; the footer lists a Karachi address (whose is not stated), so only the country is used",
    "Shahi: the site's own wording ('Shahi trusted', 'Backed by Shahi'; email at shahi.pk); stated as the site's self-description, not as a verified relationship",
-   "Not claimed: product renders, photography, brand artwork and site copy (not evidenced as Markit Media's work). No results, figures or quotes were supplied; the home page testimonials are not repeated (provenance unknown)",
-   "Product badges (protein and energy) are images; their figures are not quoted"
+   "No results, figures or quotes were supplied; the home page testimonials are not repeated (provenance unknown). Product badges (protein and energy) are images; their figures are not quoted"
   ]
  }
 }

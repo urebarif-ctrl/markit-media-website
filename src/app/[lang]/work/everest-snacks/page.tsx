@@ -31,14 +31,17 @@ export default async function EverestSnacksPage({ params }: { params: Promise<{ 
       locale={locale}
       client="Everest Snacks"
       industry="Food & beverage"
-      services={["Website Development"]}
-      title="Everest Snacks: Website for an Energy Bar Brand"
-      subtitle="A five-page WordPress website for an energy bar brand, with a four-bar product page and a blog."
-      context="Everest Snacks is an energy bar brand. Markit Media designed and developed its website."
-      approach="The site leads with the brand promise, places four trust claims under it, presents the four bars and opens a contact route for university students."
-      deliverables={["Five-page website", "Products page for four bars", "Contact form for university students", "Three blog articles published"]}
+      services={["Website Development", "Social Media", "Photography", "Animation"]}
+      title="Everest Snacks: Website, Social Media and Visual Content for an Energy Bar Brand"
+      subtitle="A five-page WordPress website for an energy bar brand, with social media, photography, AI photo enhancement and animation."
+      context="Everest Snacks is an energy bar brand. Markit Media designed and developed its website and also handled its social media, photography, AI enhancement of photos and animation."
+      approach="The website leads with the brand promise, places four trust claims under it, presents the four bars and opens a contact route for university students; the other work covered social media, photography, AI photo enhancement and animation."
+      deliverables={["Five-page website", "Social media", "Photography", "AI enhancement of photos", "Animation"]}
       relatedServices={[
         { title: "Website Development", href: "/services/website-development" },
+        { title: "Social Media", href: "/services/social-media" },
+        { title: "Photography", href: "/services/photography" },
+        { title: "Animation", href: "/services/video-production/animation" },
       ]}
     >
       <WorkScreens heading="Screens from the live site" intro="Captured from everestsnacks.com on 23 October 2026." screens={SCREENS} />
