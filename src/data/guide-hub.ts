@@ -5,6 +5,9 @@
 // Titles are not stored here: they come from the legacy registry (and legacyTitle() for honest interim titles).
 // When a guide is merged, redirected or retired, remove its id here too.
 
+/** Date the hub list was last reviewed (used for the sitemap lastmod). Update it when guides are added or removed. */
+export const GUIDE_HUB_LASTMOD = "2026-10-23";
+
 export interface GuideCluster {
   name: string;
   /** Pillar service for this topic, without the locale prefix. */

@@ -53,8 +53,11 @@ function fixTarget(path: string): string {
 export function unlinkNoindexedPosts(html: string, noindexed: Set<string>, currentSlug: string): string {
   if (noindexed.size === 0) return html;
   return html.replace(
-    /<a\b[^>]*?\shref="(?:https:\/\/themarkitmedia\.com)?\/(?:en|ar|ur)\/blog\/([a-z0-9-]+)\/?(?:[?#][^"]*)?"[^>]*>([\s\S]*?)<\/a>/gi,
-    (match, slug: string, inner: string) => (slug !== currentSlug && noindexed.has(slug) ? inner : match),
+    /<a\b[^>]*?\shref=(["'])(?:https?:\/\/(?:www\.)?themarkitmedia\.com)?\/(?:en|ar|ur)\/blog\/([A-Za-z0-9_.-]+)\/?(?:[?#][^"']*)?\1[^>]*>([\s\S]*?)<\/a>/gi,
+    (match, _q: string, slug: string, inner: string) => {
+      const key = slug.toLowerCase();
+      return key !== currentSlug.toLowerCase() && noindexed.has(key) ? inner : match;
+    },
   );
 }
 

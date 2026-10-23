@@ -4,6 +4,7 @@ import { legacySeoPages, retiredLegacyArticlePaths } from "@/data/legacy-seo-pag
 import { legacyTitle } from "@/data/legacy-interim-copy";
 import sitemap from "@/app/sitemap";
 
+const legacyArticleByPath=new Map(legacySeoPages.filter(p=>p.kind==="article").map(p=>[p.path,p]));
 type SearchResult = { title:string; href:string; description:string; type:string; breadcrumb:string; score:number };
 
 const PRIVATE_PATHS=["/admin","/api/","/en/thank-you","/en/onboarding","/en/discovery","/en/proposal/","/meet","/robots.txt","/sitemap.xml","/feed.xml"];
@@ -33,8 +34,7 @@ export async function GET(request:NextRequest){
  const q=String(request.nextUrl.searchParams.get("q")||"").trim().slice(0,120);
  const limit=Math.min(100,Math.max(8,Number(request.nextUrl.searchParams.get("limit"))||30));
  if(q.length<2)return NextResponse.json({results:[],query:q});
- const legacyByPath=new Map(legacySeoPages.map(p=>[p.path,p]));
- const routeResults:SearchResult[]=(await sitemap()).map(entry=>{const url=new URL(entry.url),path=url.pathname,title=legacyByPath.has(path)?legacyTitle(legacyByPath.get(path)!):titleFromPath(path),type=typeFromPath(path),description=type+" on Markit Media";return{title,href:path,description,type,breadcrumb:breadcrumb(path),score:rank(q,title,path,description)}}).filter(x=>isPublic(x.href)&&x.score>0);
+ const routeResults:SearchResult[]=(await sitemap()).map(entry=>{const url=new URL(entry.url),path=url.pathname,title=legacyArticleByPath.has(path)?legacyTitle(legacyArticleByPath.get(path)!):titleFromPath(path),type=typeFromPath(path),description=type+" on Markit Media";return{title,href:path,description,type,breadcrumb:breadcrumb(path),score:rank(q,title,path,description)}}).filter(x=>isPublic(x.href)&&x.score>0);
  for(const page of legacySeoPages){if(page.kind!=="article"||retiredLegacyArticlePaths.has(page.path)||!isPublic(page.path))continue;const title=legacyTitle(page)||titleFromPath(page.path),description=page.kind==="article"?"Marketing insight from Markit Media":page.kind==="service"?"Markit Media service page":"Industry marketing page",score=rank(q,title,page.path,description);if(score>0)routeResults.push({title,href:page.path,description,type:page.kind==="article"?"Article":page.kind==="service"?"Service":"Industry",breadcrumb:page.kind==="article"?"Insights › Legacy Article":page.kind==="service"?"Services › Legacy URL":"Industries › Legacy URL",score})}
  const dynamic:SearchResult[]=[];
  try{

@@ -36,6 +36,7 @@ export default async function GuidesHubPage({ params }: { params: Promise<{ lang
   const clusters = guideClusters
     .map((cluster) => ({
       ...cluster,
+      anchor: `cluster-${cluster.name.replace(/\W+/g, "-").toLowerCase()}`,
       guides: cluster.guideIds
         .map((id) => legacySeoPageById.get(id))
         .filter((p): p is NonNullable<typeof p> => Boolean(p)),
@@ -83,9 +84,9 @@ export default async function GuidesHubPage({ params }: { params: Promise<{ lang
       <div className="px-6 lg:px-12 pb-20 bg-white">
         <div className="max-w-5xl mx-auto grid gap-14">
           {clusters.map((cluster) => (
-            <section key={cluster.name} aria-labelledby={`cluster-${cluster.name.replace(/\W+/g, "-").toLowerCase()}`}>
+            <section key={cluster.name} aria-labelledby={cluster.anchor}>
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b-2 border-black pb-3">
-                <h2 id={`cluster-${cluster.name.replace(/\W+/g, "-").toLowerCase()}`} className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight">
+                <h2 id={cluster.anchor} className="font-[family-name:var(--font-display)] text-2xl font-extrabold tracking-tight">
                   {cluster.name} <span className="text-gray-400 text-base font-semibold">({cluster.guides.length})</span>
                 </h2>
                 {cluster.service && (

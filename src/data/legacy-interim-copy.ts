@@ -260,7 +260,7 @@ export const legacyInterimCopy: Record<string, InterimCopy> = {
   "the-future-of-website-development-trends-to-watch-in-2026": {
     title: "Website Development Trends: A Planning Framework",
     topic: "Website Development Trends",
-    description: "A short framework for planning around website development trends: goal, audience, structure, performance and measurement.",
+    description: "A short framework for looking ahead on website development: goal, audience, structure, performance and measurement.",
   },
   "the-latest-trends-in-website-development-for-2026": {
     title: "Planning Around Website Development Trends",
@@ -301,6 +301,26 @@ export const legacyInterimCopy: Record<string, InterimCopy> = {
     title: "Choosing Web Hosting for a WordPress Site",
     topic: "Choosing Web Hosting",
     description: "How to choose web hosting for a WordPress site: goal, audience, structure, performance and measurement.",
+  },
+  "social-media-automation-tools-2026": {
+    title: "Social Media Automation: A Practical Framework",
+    topic: "Social Media Automation",
+    description: "A short framework for deciding what to automate in social media: objective, audience, channels and measurement.",
+  },
+  "social-media-automation-tools-2025": {
+    title: "Automating Social Media: What to Consider",
+    topic: "Automating Social Media",
+    description: "What to consider before automating social media work: objective, audience, channels and how you will measure results.",
+  },
+  "important-google-ranking-factors-in-2026": {
+    title: "Thinking About SEO Ranking Factors: A Framework",
+    topic: "SEO Ranking Factors",
+    description: "A short framework for thinking about what affects search visibility: objective, audience, structure, performance and measurement.",
+  },
+  "important-google-ranking-factors-in-2025": {
+    title: "SEO Ranking Factors: What to Check First",
+    topic: "Checking SEO Ranking Factors",
+    description: "What to check first when working on search visibility: goal, audience, structure, performance and how you will measure the effect.",
   },
 };
 

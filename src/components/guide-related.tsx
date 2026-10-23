@@ -46,7 +46,7 @@ export function GuideRelated({ guideId, locale }: { guideId: string; locale: str
             </span>
           </Link>
         )}
-        <Link href={l("/guides")} className="inline-flex items-center gap-2 mt-6 font-bold border-b border-black pb-1">
+        <Link href="/en/guides" className="inline-flex items-center gap-2 mt-6 font-bold border-b border-black pb-1">
           Browse all guides <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
