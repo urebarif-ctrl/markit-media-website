@@ -7,13 +7,13 @@ import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { TableOfContents } from "@/components/table-of-contents";
-import { getPostBySlug, getRelatedPosts, getAllPublishedSlugs } from "@/lib/blog";
+import { getPostBySlug, getRelatedPosts, getAllPublishedSlugs, getNoindexedSlugs } from "@/lib/blog";
 import { ShareControls } from "./share-controls";
 import { ReadingProgress } from "@/components/reading-progress";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { QuoteForm } from "@/components/quote-form";
 import { sanitizeHtml } from "@/lib/sanitize";
-import { localizeInternalLinks } from "@/lib/internal-links";
+import { fixKnownTypos, localizeInternalLinks, unlinkNoindexedPosts } from "@/lib/internal-links";
 
 /* ── Category-to-service mapping ─────────────────────────── */
 const CATEGORY_SERVICES: Record<string, { label: string; href: string }[]> = {
@@ -239,19 +239,29 @@ function parseTags(tags: string): string[] {
   return tags.split(",").map((t) => t.trim()).filter(Boolean);
 }
 
+/** The layout title template already appends " | Markit Media"; 40 posts store it in meta_title too. */
+const stripBrand = (t: string) => t.replace(/\s*[|\u2014\u2013-]\s*Markit Media\s*$/i, "").trim();
+
+/** "Need Help With Your {X} Strategy?" without producing "Marketing Strategy Strategy". */
+function strategyHeading(category: string): string {
+  const topic = category === "Industry Guides" ? "Marketing" : category;
+  return /strategy$/i.test(topic) ? topic : `${topic} Strategy`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) notFound();
+  const seoTitle = stripBrand(post.meta_title || post.title);
 
   return {
-    title: post.meta_title || post.title,
+    title: seoTitle,
     description: post.meta_description || post.excerpt,
     alternates: { canonical: `https://themarkitmedia.com/en/blog/${slug}` },
     ...(post.noindex ? { robots: { index: false, follow: true } } : {}),
     keywords: parseTags(post.tags).join(", ") || post.category,
     openGraph: {
-      title: post.meta_title || post.title,
+      title: seoTitle,
       description: post.meta_description || post.excerpt,
       type: "article",
       publishedTime: post.published_at || undefined,
@@ -263,7 +273,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: post.meta_title || post.title,
+      title: seoTitle,
       description: post.meta_description || post.excerpt,
       images: [`https://themarkitmedia.com/api/blog-thumbnail?title=${encodeURIComponent(post.title)}`],
     },
@@ -329,7 +339,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     image: `https://themarkitmedia.com/api/blog-thumbnail?title=${encodeURIComponent(post.title)}`,
   };
 
-  const processedContent = localizeInternalLinks(sanitizeHtml(addExternalLinkAttrs(addHeadingIds(markdownToHtml(post.content)))), locale);
+  const noindexedSlugs = await getNoindexedSlugs();
+  const processedContent = fixKnownTypos(unlinkNoindexedPosts(localizeInternalLinks(sanitizeHtml(addExternalLinkAttrs(addHeadingIds(markdownToHtml(post.content)))), locale), noindexedSlugs, slug));
 
   return (
     <article>
@@ -521,7 +532,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section aria-label="Need help with your strategy" className="px-6 lg:px-12 pb-16">
         <div className="max-w-3xl mx-auto bg-gray-50 p-8 border border-gray-200">
           <h2 className="font-[family-name:var(--font-display)] text-lg font-extrabold text-black mb-3">
-            Need Help With Your {post.category} Strategy?
+            Need Help With Your {strategyHeading(post.category)}?
           </h2>
           <p className="text-base text-gray-500 leading-relaxed mb-6">
             Our team specializes in turning these insights into results. Get a free consultation to discuss your goals.

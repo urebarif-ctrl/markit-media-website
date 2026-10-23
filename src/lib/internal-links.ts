@@ -22,6 +22,8 @@ const SKIP_PREFIX = /^(?:en|ar|ur)(?:\/|$)|^(?:api|_next|images|admin|brand|site
  * redirect to /en/..., which search engines report as "Page with redirect". Rewrite them to the final URL.
  */
 export function localizeInternalLinks(html: string, locale: string): string {
+  // Some bodies carry unquoted values (<a href=/blog/x>), which the pattern below would skip: quote them first.
+  html = html.replace(/(<a\b[^>]*?\shref=)(\/(?!\/)[^\s>"']*)/g, '$1"$2"');
   return html.replace(/href="\/(?!\/)([^"#?]*)([^"]*)"/g, (match, path: string, rest: string) => {
     const clean = path.replace(/\/+$/, "");
     if (SKIP_PREFIX.test(clean)) {
@@ -41,4 +43,22 @@ function fixTarget(path: string): string {
   const tool = path.match(/^resources\/([a-z0-9-]+)$/);
   if (tool && FREE_TOOL_SLUGS.has(tool[1])) return `free-tools/free-${tool[1]}`;
   return path;
+}
+
+/**
+ * Post bodies link to other posts, and most of those targets are now noindexed. Linking to a noindexed page from an
+ * indexable one wastes crawl budget and link equity, so such links render as plain text (the words stay, the link goes).
+ * Expects localized, quoted hrefs: run it after localizeInternalLinks().
+ */
+export function unlinkNoindexedPosts(html: string, noindexed: Set<string>, currentSlug: string): string {
+  if (noindexed.size === 0) return html;
+  return html.replace(
+    /<a\b[^>]*?\shref="(?:https:\/\/themarkitmedia\.com)?\/(?:en|ar|ur)\/blog\/([a-z0-9-]+)\/?(?:[?#][^"]*)?"[^>]*>([\s\S]*?)<\/a>/gi,
+    (match, slug: string, inner: string) => (slug !== currentSlug && noindexed.has(slug) ? inner : match),
+  );
+}
+
+/** One generated post title contains "Strategy Strategy"; other posts quote it in their text. */
+export function fixKnownTypos(html: string): string {
+  return html.replace(/\bMarketing Strategy Strategy\b/g, "Marketing Strategy");
 }

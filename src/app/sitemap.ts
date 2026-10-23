@@ -710,6 +710,7 @@ export async function getSitemapEntries(): Promise<MetadataRoute.Sitemap> {
       for (const hub of ["/work", "/case-studies"]) {
         entries.push({ url: `${BASE_URL}/en${hub}`, lastModified: hubDate, changeFrequency: "monthly", priority: 0.8 });
       }
+      entries.push({ url: `${BASE_URL}/en/guides`, lastModified: new Date("2026-10-23"), changeFrequency: "monthly", priority: 0.7 });
       for (const row of caseStudySitemapRows()) {
         entries.push({ url: row.url, lastModified: row.lastModified, changeFrequency: "monthly", priority: 0.7, images: row.images });
       }
