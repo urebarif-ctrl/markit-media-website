@@ -20,6 +20,7 @@ import {
 import dynamic from "next/dynamic";
 const YouTubeEmbed = dynamic(() => import("@/components/youtube-embed").then(m => m.YouTubeEmbed));
 import { BrandIcon } from "@/components/brand-icon";
+import { QWENCH_VIDEO, videoObjectSchema } from "@/data/featured-videos";
 
 export const metadata: Metadata = {
   description: "Full-stack digital marketing, website development, and creative services for businesses across the USA, Canada, UAE, UK, Australia, and Saudi Arabia.",
@@ -274,6 +275,28 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
               </div>
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Video case study: QWENCH Juice. The player loads YouTube only after a click. */}
+      <section className="px-6 lg:px-12 py-16 md:py-20 bg-black text-white" aria-label="Video case study">
+        <JsonLd data={videoObjectSchema(QWENCH_VIDEO)} />
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-10 lg:gap-16 items-center">
+          <Animate animation="fade-up">
+            <YouTubeEmbed videoId={QWENCH_VIDEO.id} title={QWENCH_VIDEO.title} alt={QWENCH_VIDEO.title} aspect="short" poster={QWENCH_VIDEO.poster} noCookie />
+          </Animate>
+          <Animate animation="fade-up" delay={100}>
+            <div className="text-base font-bold uppercase tracking-[0.2em] text-gray-400 mb-3">Video Case Study</div>
+            <h2 className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight leading-tight">
+              Need a website, social media &amp; reels that actually sell?
+            </h2>
+            <p className="text-lg text-gray-400 leading-relaxed mt-4 max-w-xl">
+              For QWENCH Juice, we blended it all: website, social media, reels and Meta ads, in one fresh brand.
+            </p>
+            <Link href={l("/work/qwench-juice-bar")} className="mt-8 inline-block w-full sm:w-auto text-center bg-white text-black px-6 sm:px-8 py-4 font-bold hover:bg-gray-100 transition-colors after:ms-2 after:content-['→'] rtl:after:content-['←'] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+              View the QWENCH case study
+            </Link>
+          </Animate>
         </div>
       </section>
 
