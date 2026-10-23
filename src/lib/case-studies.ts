@@ -248,6 +248,7 @@ const SERVICE_NAMES: Record<string, string> = {
   "/services/video-production/commercial-production": "Commercial Production",
   "/services/website-development": "Website Development",
   "/services/performance-marketing/meta-ads": "Meta Ads",
+  "/services/content-marketing": "Content Marketing",
   "/services/photography": "Photography",
   "/services/video-production/animation": "Animation",
 };

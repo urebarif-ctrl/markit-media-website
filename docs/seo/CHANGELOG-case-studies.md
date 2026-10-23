@@ -123,3 +123,8 @@ Draft, noindex, out of the sitemap. Authorship is evidenced by the client's own 
 ## 12. Everest Snacks case study rewritten (23 Oct 2026, owner request)
 
 Full rewrite with the owner-stated scope added: social media, photography, AI enhancement of photos, animation. Title, H1, meta description, keywords, services and the cards on the hub, work page and Website Development page updated. Scope beyond the website rests on the owner's statement only; no image or post is individually credited. See `everest-snacks-proposal.md`.
+
+## 13. Everest Snacks go-live confirmations (23 Oct 2026)
+
+Owner confirmed screenshots (founder photo, retailer logos), the Shahi wording, that Markit Media wrote the three articles and indexing, and approved the release. Added the Content Marketing tag, "we wrote them" wording, the publication date and the indexing basis.
+
