@@ -2197,11 +2197,17 @@
   "industryLabel": "Juice bar",
   "servicesLabel": [
    "Content creation",
-   "Social media"
+   "Social media",
+   "Website development",
+   "Reels & short-form",
+   "Meta ads"
   ],
   "serviceLinks": [
    "/services/social-media/content-creation",
-   "/services/social-media"
+   "/services/social-media",
+   "/services/website-development",
+   "/services/video-production/reels-short-form",
+   "/services/performance-marketing/meta-ads"
   ],
   "industryLinks": [
    "/industries/restaurants"
@@ -3167,6 +3173,7 @@
   "industryLabel": "Food & beverage",
   "servicesLabel": [
    "Website development",
+   "Content marketing",
    "Social media",
    "Photography",
    "AI photo enhancement",
@@ -3174,6 +3181,7 @@
   ],
   "serviceLinks": [
    "/services/website-development",
+   "/services/content-marketing",
    "/services/social-media",
    "/services/photography",
    "/services/video-production/animation"
@@ -3190,6 +3198,7 @@
   ],
   "keywords": [
    "energy bar website design",
+   "food brand blog content",
    "food brand social media",
    "food product photography",
    "AI photo enhancement",
@@ -3211,8 +3220,8 @@
   "website": "https://everestsnacks.com/",
   "websiteVerified": true,
   "dateModified": "2026-10-23",
-  "datePublished": null,
-  "datePublishedStatus": "not yet published: page built 23 Oct 2026, set the date when it goes live",
+  "datePublished": "2026-10-23",
+  "datePublishedStatus": "published 23 Oct 2026 (release date)",
   "planNotes": "Built from the live site on owner instruction (23 Oct 2026); scope widened by the owner the same day (social media, photography, AI photo enhancement, animation). See docs/seo/everest-snacks-proposal.md.",
   "today": "new page"
  }

@@ -57,3 +57,8 @@ Built: `/en/work/everest-snacks` (static route, featured record, editorial copy 
 ## Update 23 Oct 2026 (later): scope widened by the owner, copy rewritten
 
 The owner asked for the full case study to be rewritten with more of what Markit Media did: **social media, photography, AI enhancement of photos and animation** (and said "etc." without naming more). These are published as scope, taken from the owner's statement. Nothing else was supplied: no counts, dates, examples or results, and **no individual image or post is credited to Markit Media** (the page says so). New title "Everest Snacks Website, Social & Visuals | Markit Media", new H1, new meta description, service links to social media, photography and animation (there is no AI-photo service page, so that discipline appears in the text and the snapshot only). The website evidence (footer credit, platform, dates, no shop) is unchanged. To make the non-website sections richer the owner can send: which pictures/posts/animations were ours, how many, and where they are used.
+
+## Update 23 Oct 2026 (go-live): owner confirmations received
+
+The owner approved, on 23 Oct 2026: going live; showing the client's pages as screenshots (including the founder photo and retailer logos); the "backed by Shahi" self-description wording; **that Markit Media wrote the three blog articles** (so the Content Marketing tag and "we wrote them" wording are now used); and indexing. `datePublished` is set to the release date, 23 Oct 2026. Still open: details (counts, examples) for the social media, photography, AI photo enhancement and animation work.
+

@@ -950,7 +950,7 @@
  },
  "qwench-juice-bar": {
   "lede": "Qwench Juice Bar (qwenchjuice.com) sells fresh juices, smoothies and acai bowls. Markit Media designed five coupon posts for its Northridge location, each using a bright colour and a real photograph of the drink or bowl.",
-  "deliverables": "5 social posts shown on this page",
+  "deliverables": "Website, social media, reels and Meta ads; 5 social posts shown on this page",
   "sections": [
    {
     "heading": "What the posts had to do",
@@ -964,12 +964,25 @@
      "Every post uses a saturated gradient background chosen to match the drink: sunny yellow and green for raw juice and the bowl, pink and green for the acai smoothie. The Qwench logo, an orange sun beside the name and the words juice bar, sits at the top, and the brand cup appears large in the centre with the ingredients arranged around it: oranges and carrots, acai and kale, strawberries, nuts and granola.",
      "Headlines pair a bold sans with a green brush script, such as \"Refresh with raw juice\", \"Smoothie supercharge\" and \"Mix and match, juice madness\". Below, a short line gives the offer and the coupon code, and a rounded button invites people to claim the discount, with the website address in the footer."
     ]
+   },
+   {
+    "heading": "More of what we did for QWENCH",
+    "paragraphs": [
+     "The five posts above are one part of the engagement. Markit Media's work for QWENCH Juice also covered the website, social media, reels and Meta ads, which is what the case study video at the top of this page is about."
+    ],
+    "bullets": [
+     "Website: built for QWENCH Juice",
+     "Social media: the coupon posts shown on this page",
+     "Reels: short-form video for the brand",
+     "Meta ads: paid advertising on Meta"
+    ]
    }
   ],
   "sources": [
    "qwenchjuice.com (checked 21 Oct 2026): QWENCH fresh juice and smoothie, acai bowls; domain printed on the artwork",
    "Artwork reviewed by eye: all 5 pieces; the posts say Northridge but no city or country is claimed on this page; discounts are not repeated because offers change",
-   "No brief, year, results or posting platform supplied: none are claimed"
+   "No brief, year, results or posting platform supplied: none are claimed",
+   "Scope beyond the five posts (website, reels, Meta ads): owner statement of 23 Oct 2026 and the description of the case study video. No pages, reel counts, ad figures, dates or results were supplied, so none are claimed"
   ]
  },
  "ceha-halal": {
@@ -1563,17 +1576,18 @@
   ]
  },
  "everest-snacks": {
-  "lede": "Everest Snacks is an energy bar brand that describes itself as backed by Shahi. In 2026 Markit Media worked on its digital presence on several fronts: we designed and developed its website, everestsnacks.com, and we also handled its social media, photography, AI enhancement of photos and animation.",
+  "lede": "Everest Snacks is an energy bar brand that describes itself as backed by Shahi. In 2026 Markit Media worked on its digital presence on several fronts: we designed and developed its website, everestsnacks.com, wrote its blog articles, and handled its social media, photography, AI enhancement of photos and animation.",
   "projectYear": 2026,
-  "deliverables": "5-page website, social media, photography, AI photo enhancement, animation",
+  "deliverables": "5-page website, 3 blog articles, social media, photography, AI photo enhancement, animation",
   "sections": [
    {
     "heading": "What we did for Everest",
     "paragraphs": [
-     "Our work for Everest covered five areas. The website is public, so it is described in detail below and can be checked. The other four areas are described by what they are, because we are not publishing counts, dates or figures for them."
+     "Our work for Everest covered six areas. The website is public, so it is described in detail below and can be checked. The others are described by what they are, because we are not publishing counts, dates or figures for them."
     ],
     "bullets": [
      "Website design and development: five pages on WordPress with Elementor",
+     "Blog articles: three written for the site",
      "Social media",
      "Photography",
      "AI enhancement of photos",
@@ -1630,7 +1644,7 @@
    {
     "heading": "The blog",
     "paragraphs": [
-     "Three articles are dated 30 July 2026, each roughly 600 to 800 words: \"Why Natural Ingredients Matter in Healthy Snacks\", \"Are Energy Bars Good for Weight Management?\" and \"Healthy Snacks vs. Energy Bars: Which Is Better?\" They take on questions a shopper might ask before choosing a snack, and they are published from Markit Media's account."
+     "Three articles are dated 30 July 2026, each roughly 600 to 800 words: \"Why Natural Ingredients Matter in Healthy Snacks\", \"Are Energy Bars Good for Weight Management?\" and \"Healthy Snacks vs. Energy Bars: Which Is Better?\" We wrote them, and they are published from Markit Media's account. They take on questions a shopper might ask before choosing a snack."
     ]
    },
    {
@@ -1646,7 +1660,7 @@
      "A home page built around the headline, a four-claim strip, the bar cards, where-to-buy tabs and an Instagram block",
      "A products page presenting the four bars",
      "A contact form for university students, with file upload",
-     "Three blog articles published from Markit Media's account on 30 July 2026",
+     "Three blog articles, written by us and published on 30 July 2026",
      "A newsletter sign-up on every page",
      "Social media work for the brand",
      "Photography",
@@ -1675,8 +1689,8 @@
    "everestsnacks.com read 23 Oct 2026: Home, Why Everest, Products, Connect With Us and Blogs pages and the three articles; the Instagram link on the home page points to instagram.com/everestsnack",
    "Website authorship: the site footer reads 'Designed & Developed By' beside the Markit Media logo, linked to themarkitmedia.com. This supports design and development only",
    "Scope beyond the website (social media, photography, AI enhancement of photos, animation): owner statement of 23 Oct 2026 ('etc.' was said but nothing further was named). No counts, dates, examples or results were supplied, and no individual image or post is credited to Markit Media",
-   "The three articles are published from a Markit Media account (who wrote them is not evidenced)",
-   "Permission to name the client and show screenshots, and the year: owner instruction of 23 Oct 2026; dates from the site's own WordPress page dates (home 20 Jul 2026, other pages by 30 Jul 2026); these are page dates, not a public launch date",
+   "The three articles: the owner confirmed on 23 Oct 2026 that Markit Media wrote them; they are published from a Markit Media account (30 Jul 2026)",
+   "Permission to name the client and show screenshots (including the founder photo and retailer logos), the 'backed by Shahi' wording, and indexing: confirmed by the owner on 23 Oct 2026. Year from the site's own WordPress page dates (home 20 Jul 2026, other pages by 30 Jul 2026); these are page dates, not a public launch date",
    "Platform: generator meta tags, asset paths and the site's public REST namespaces (WordPress, Elementor Pro, Astra theme); no shop pages exist (/shop, /cart, /checkout return 404), so no e-commerce is claimed",
    "Location: the FAQ says the bars are sold across Pakistan; the footer lists a Karachi address (whose is not stated), so only the country is used",
    "Shahi: the site's own wording ('Shahi trusted', 'Backed by Shahi'; email at shahi.pk); stated as the site's self-description, not as a verified relationship",

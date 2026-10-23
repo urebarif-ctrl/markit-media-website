@@ -11,7 +11,7 @@ type Project = { title: string; service: string; href: string };
 const direct: Record<string, Project[]> = Object.fromEntries(
   Object.entries(INDUSTRY_CASES).map(([industry, slugs]) => [
     industry,
-    slugs.filter((s) => CASE_CARDS[s]).slice(0, 6).map((s) => ({ title: CASE_CARDS[s].n, service: CASE_CARDS[s].l, href: `/work/${s}` })),
+    slugs.filter((s) => CASE_CARDS[s]).slice(0, 12).map((s) => ({ title: CASE_CARDS[s].n, service: CASE_CARDS[s].l, href: `/work/${s}` })),
   ]),
 );
 
