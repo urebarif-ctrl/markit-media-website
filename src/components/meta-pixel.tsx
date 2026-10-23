@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { onTrackingReady } from "@/lib/deferred-tracking";
 
 const PIXEL_ID = "488175816004115";
 const CONSENT_KEY = "cookie-consent";
@@ -25,8 +26,16 @@ declare global {
   }
 }
 
-/** Meta's standard base code, unchanged in behaviour, run only after cookie consent. */
-function loadPixel() {
+/**
+ * Meta's standard base code, split in two so the page is not slowed down:
+ *  - createQueue(): the tiny fbq() stub that queues calls. No network. Runs as soon as consent is given, so GTM's
+ *    "Meta - Lead" / "Meta - Contact" tags (which only call fbq when it is a function) always have something to call.
+ *  - loadScript(): downloads fbevents.js and sends the first PageView. Deferred until the page has loaded and is idle,
+ *    or until the visitor starts a form / converts (see lib/deferred-tracking.ts). Queued calls are replayed in order.
+ */
+let scriptRequested = false;
+
+function createQueue() {
   if (window.fbq) return;
   const fbq = function (...args: unknown[]) {
     if (fbq.callMethod) fbq.callMethod(...args);
@@ -38,27 +47,42 @@ function loadPixel() {
   fbq.loaded = true;
   fbq.version = "2.0";
   fbq.queue = [];
+  fbq("init", PIXEL_ID);
+}
+
+function loadScript() {
+  if (scriptRequested || !window.fbq) return;
+  scriptRequested = true;
+  window.fbq("track", "PageView");
   const script = document.createElement("script");
   script.async = true;
   script.src = "https://connect.facebook.net/en_US/fbevents.js";
   document.head.appendChild(script);
-  fbq("init", PIXEL_ID);
-  fbq("track", "PageView");
 }
+
+const consentAccepted = () => localStorage.getItem(CONSENT_KEY) === "accepted";
 
 export function MetaPixel() {
   const pathname = usePathname();
   const lastPath = useRef<string | null>(null);
+  const registered = useRef(false);
 
   useEffect(() => {
     if (!ALLOWED_HOSTS.has(window.location.hostname)) return;
 
     function sync() {
-      if (localStorage.getItem(CONSENT_KEY) !== "accepted") return;
+      if (!consentAccepted()) return;
       const first = !window.fbq;
-      loadPixel();
-      // loadPixel() already sent the first PageView; later route changes send their own below.
+      createQueue();
+      // The first PageView is sent by loadScript(); later route changes send their own below.
       if (first) lastPath.current = window.location.pathname;
+      if (!registered.current) {
+        registered.current = true;
+        // Re-check consent at the moment of loading: it may have been withdrawn while we waited.
+        onTrackingReady(() => {
+          if (consentAccepted()) loadScript();
+        });
+      }
     }
 
     sync();
@@ -75,6 +99,8 @@ export function MetaPixel() {
     if (!window.fbq || lastPath.current === null) return;
     if (lastPath.current === pathname) return;
     lastPath.current = pathname;
+    // Until the pixel script has been requested, the PageView queued by loadScript() covers the page being viewed.
+    if (!scriptRequested) return;
     window.fbq("track", "PageView");
   }, [pathname]);
 

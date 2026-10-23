@@ -10,7 +10,6 @@ const Analytics = dynamic(() => import("@/components/analytics").then(m => m.Ana
 const MetaPixel = dynamic(() => import("@/components/meta-pixel").then(m => m.MetaPixel));
 const OutboundTracker = dynamic(() => import("@/components/outbound-tracker").then(m => m.OutboundTracker));
 const ScrollAnimations = dynamic(() => import("@/components/scroll-animations").then(m => m.ScrollAnimations));
-import Script from "next/script";
 import { notFound } from "next/navigation";
 
 import { getDictionary, setLocale, isRtl, type Locale, locales } from "@/i18n/dictionaries";
@@ -130,13 +129,8 @@ export default async function LangLayout({
         <Analytics />
         <MetaPixel />
         <OutboundTracker />
-        {isProduction && (
-          <Script
-            defer
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "fead5badd1b14b4d86c54150eef71286"}'
-          />
-        )}
+        {/* Cloudflare Web Analytics is injected at the edge (automatic setup). A second, manual beacon used to live here with the
+            wrong token (site_tag instead of site_token): it recorded nothing and only added a request. */}
       </body>
     </html>
   );
