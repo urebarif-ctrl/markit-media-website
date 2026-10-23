@@ -27,7 +27,7 @@ const studies = [
   {client:"Elite",industry:"Digital Presence",service:"Web Development & Social",desc:"Website development and social media content delivered as a cohesive digital package.",href:"/work/elite",image:"/images/work/website-development.svg"},
   {client:"Pur Health",industry:"Healthcare",service:"Web Development & Social",desc:"Website and social media work supporting a professional healthcare and wellness presence.",href:"/work/pur-health",image:"/images/work/website-development.svg"},
   {client:"American Auto Parts",industry:"Automotive",service:"Video Production",desc:"A long-running creative relationship producing professional video content for the automotive aftermarket.",href:"/work/american-auto-parts",image:"/images/work/video-production.svg"},
-  {client:"Everest Snacks",industry:"Food & Beverage",service:"Web Development & Content",desc:"A five-page website for an energy bar brand, with a four-bar product page and a launch blog.",href:"/work/everest-snacks",image:"/images/work/everest-snacks/cover.webp"},
+  {client:"Everest Snacks",industry:"Food & Beverage",service:"Web Development",desc:"A five-page website for an energy bar brand, with a four-bar product page and a blog.",href:"/work/everest-snacks",image:"/images/work/everest-snacks/cover.webp"},
 ];
 
 const creative = [

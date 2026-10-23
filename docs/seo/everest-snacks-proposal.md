@@ -46,10 +46,10 @@ Without the six confirmations above, any case-study copy would have to guess at 
 | Open item (from above) | Resolution |
 |---|---|
 | 1. Did Markit Media design and build the site? | Yes. The site footer reads "Designed & Developed By" beside the Markit Media logo, linked to themarkitmedia.com, and the three blog posts are published from a Markit Media account (30 Jul 2026). The owner also confirmed it on 23 Oct 2026. |
-| 2. Scope | Website design and development, plus three launch articles. **No shop**: `/shop`, `/cart` and `/checkout` return 404, so e-commerce is not claimed (WooCommerce files load, but there is no store). |
+| 2. Scope | Website design and development (the footer credit); three blog articles are published from a Markit Media account (who wrote them is not evidenced). **No shop**: `/shop`, `/cart` and `/checkout` return 404, so e-commerce is not claimed (WooCommerce files load, but there is no store). |
 | 3. Year | 2026 (copyright line; home page published 20 Jul 2026, other pages by 30 Jul 2026, from the site's own WordPress dates). |
 | 4. Permission to name the client and show screenshots | Taken from the owner's instruction of 23 Oct 2026 ("we built this for them, build it"). **Worth a one-line confirmation from the owner before go-live.** |
 | 5. Measurable results | None supplied; none published. The page says so. |
-| 6. Shahi | Named only in the site's own words ("Shahi trusted", "Backed by Shahi"). |
+| 6. Shahi | Named only in the site's own words ("Shahi trusted", "Backed by Shahi"), as a self-description. Location is "Pakistan" only: the footer's Karachi address is not attributed. |
 
-Built: `/en/work/everest-snacks` (static route, featured record, editorial copy about 820 words, 9 screenshots of the live site captured 23 Oct 2026 with descriptive alt text, cover image), links from the hub, the work page, the Website Development service page and the food industry page. Indexing decision in `indexing.json`: **false** until the owner approves. Screenshots were taken slowly from a local image cache because the client's CDN rate-limits bursts (HTTP 429).
+Built: `/en/work/everest-snacks` (static route, featured record, editorial copy about 800 words, 9 screenshots of the live site captured 23 Oct 2026 with descriptive alt text, cover image), links from the hub, the work page, the Website Development service page and the food industry page. Indexing decision in `indexing.json`: **false** until the owner approves. Screenshots were taken slowly from a local image cache because the client's CDN rate-limits bursts (HTTP 429).

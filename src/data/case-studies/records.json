@@ -3166,12 +3166,10 @@
   "routeType": "static",
   "industryLabel": "Food & beverage",
   "servicesLabel": [
-   "Website development",
-   "Content marketing"
+   "Website development"
   ],
   "serviceLinks": [
-   "/services/website-development",
-   "/services/content-marketing"
+   "/services/website-development"
   ],
   "industryLinks": [
    "/industries/food-ingredients-ecommerce"
@@ -3191,17 +3189,16 @@
   ],
   "title": "Everest Snacks Website Design & Development | Markit Media",
   "h1": "Everest Snacks: Website for an Energy Bar Brand",
-  "metaDescription": "How Markit Media designed and built the Everest Snacks website: five WordPress pages for an energy bar brand, with a four-bar product page and a launch blog.",
-  "planLocation": "Karachi, Pakistan (address in the site footer)",
+  "metaDescription": "How Markit Media designed and built the Everest Snacks website: five WordPress pages for an energy bar brand, with a four-bar product page and a blog.",
+  "planLocation": "Pakistan (FAQ: sold across Pakistan; footer lists a Karachi address)",
   "locationVerified": true,
-  "location": "Karachi, Pakistan",
+  "location": "Pakistan",
   "locations": [
    {
-    "city": "Karachi",
     "country": "Pakistan"
    }
   ],
-  "locationEvidence": "Address in the footer of everestsnacks.com, read 23 Oct 2026",
+  "locationEvidence": "FAQ on everestsnacks.com: bars are sold across Pakistan (read 23 Oct 2026). The footer's Karachi address is not attributed, so no city is claimed.",
   "planWebsite": "https://everestsnacks.com/",
   "website": "https://everestsnacks.com/",
   "websiteVerified": true,
