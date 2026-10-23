@@ -6,7 +6,10 @@
 // Until each guide is rewritten with researched content, its title, H1 and description describe what the page is.
 //
 // Rules for entries: no numbers of items, no "best/top/ranked/compared", no prices, no year labels, nothing the page lacks.
-// When a guide is rewritten, DELETE its entry here so the real copy takes over.
+// When a guide is rewritten, replace its entry with the FINAL title and description (the registry title is the old
+// clickbait one, so do not simply delete the entry).
+import { US_GUIDE_DESCRIPTION, US_GUIDE_TITLE } from "@/data/us-web-dev-shortlist";
+
 export interface InterimCopy {
   /** H1, <title>, breadcrumb and schema headline. Omit to keep the registry title. */
   title?: string;
@@ -23,10 +26,11 @@ export const legacyInterimCopy: Record<string, InterimCopy> = {
     topic: "Choosing a Web Design Company",
     description: "A practical framework for hiring a web design company in the USA: set the goal and audience, plan structure, check performance and agree how results are measured.",
   },
+  // REWRITTEN (23 Oct 2026): final copy, not interim. The page body is src/components/us-web-dev-guide.tsx.
   "top-web-development-companies-in-the-usa": {
-    title: "How to Choose a Web Development Company in the USA",
+    title: US_GUIDE_TITLE,
     topic: "Choosing a Web Development Company",
-    description: "A practical framework for hiring a web development company in the USA: set the goal and audience, plan structure, check performance and agree how results are measured.",
+    description: US_GUIDE_DESCRIPTION,
   },
   "22-best-augmented-reality-games-you-must-try": {
     title: "Augmented Reality Games: A Planning Framework",

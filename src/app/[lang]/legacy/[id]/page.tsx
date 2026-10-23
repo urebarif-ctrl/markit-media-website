@@ -16,6 +16,8 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
 import { UsCallButton } from "@/components/us-call-cta";
 import { GuideRelated } from "@/components/guide-related";
+import { UsWebDevGuide } from "@/components/us-web-dev-guide";
+import { READ_DATE_ISO, US_GUIDE_ID } from "@/data/us-web-dev-shortlist";
 import { CallHippoWidget } from "@/components/callhippo-widget";
 import { SectionDesc, SectionLabel, SectionTitle } from "@/components/section";
 import {
@@ -41,6 +43,7 @@ export async function generateMetadata({
   const description = getDescription(page);
 
   const metaTitle = legacyTitle(page);
+  const rewritten = page.id === US_GUIDE_ID;
 
   return {
     title: metaTitle,
@@ -51,6 +54,8 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: page.kind === "article" ? "article" : "website",
+      // Rewritten guides carry a real publication date; the generic template has none.
+      ...(rewritten ? { publishedTime: READ_DATE_ISO, modifiedTime: READ_DATE_ISO, authors: ["Markit Media Research Team"] } : {}),
     },
   };
 }
@@ -259,6 +264,8 @@ export default async function LegacySeoPage({
   const l = (path: string) => path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
   const page = legacySeoPageById.get(id);
   if (!page) notFound();
+  // Rewritten, researched guide with its own page body.
+  if (page.id === US_GUIDE_ID) return <UsWebDevGuide locale={locale} />;
   // US-focused guides get the US phone number prominently.
   const isUsGuide = /-usa(-|$)|-in-us-/.test(page.path);
 
