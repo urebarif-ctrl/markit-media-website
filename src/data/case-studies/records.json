@@ -3158,5 +3158,62 @@
   "planNotes": "Plan section 11: keep separate (owner decision 21 Oct 2026); overlap with Logo Folio to be reported.",
   "today": null,
   "specSource": "current"
+ },
+ {
+  "slug": "everest-snacks",
+  "kind": "featured",
+  "name": "Everest Snacks",
+  "routeType": "static",
+  "industryLabel": "Food & beverage",
+  "servicesLabel": [
+   "Website development",
+   "Social media",
+   "Photography",
+   "AI photo enhancement",
+   "Animation"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/social-media",
+   "/services/photography",
+   "/services/video-production/animation"
+  ],
+  "industryLinks": [
+   "/industries/food-ingredients-ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "chefiality",
+   "wild-game-jerky",
+   "foodfolio",
+   "elite"
+  ],
+  "keywords": [
+   "energy bar website design",
+   "food brand social media",
+   "food product photography",
+   "AI photo enhancement",
+   "Everest Snacks case study"
+  ],
+  "title": "Everest Snacks Website, Social & Visuals | Markit Media",
+  "h1": "Everest Snacks: Website, Social Media and Visual Content for an Energy Bar Brand",
+  "metaDescription": "How Markit Media built the Everest Snacks website and handled its social media, photography, AI photo enhancement and animation for an energy bar brand.",
+  "planLocation": "Pakistan (FAQ: sold across Pakistan; footer lists a Karachi address)",
+  "locationVerified": true,
+  "location": "Pakistan",
+  "locations": [
+   {
+    "country": "Pakistan"
+   }
+  ],
+  "locationEvidence": "FAQ on everestsnacks.com: bars are sold across Pakistan (read 23 Oct 2026). The footer's Karachi address is not attributed, so no city is claimed.",
+  "planWebsite": "https://everestsnacks.com/",
+  "website": "https://everestsnacks.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-23",
+  "datePublished": null,
+  "datePublishedStatus": "not yet published: page built 23 Oct 2026, set the date when it goes live",
+  "planNotes": "Built from the live site on owner instruction (23 Oct 2026); scope widened by the owner the same day (social media, photography, AI photo enhancement, animation). See docs/seo/everest-snacks-proposal.md.",
+  "today": "new page"
  }
 ]

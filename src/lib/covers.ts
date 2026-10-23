@@ -16,7 +16,10 @@ export interface CoverImage {
   zoom?: number;
 }
 
-type Spec = { client: string; pick: "board" | "hero" } | { yt: string; alt: string; zoom?: number };
+type Spec =
+  | { client: string; pick: "board" | "hero" }
+  | { yt: string; alt: string; zoom?: number }
+  | { img: string; alt: string; w: number; h: number; bg: string };
 
 const COVER_SPECS: Record<string, Spec> = {
   meezotech: { client: "meezotech", pick: "board" },
@@ -31,6 +34,7 @@ const COVER_SPECS: Record<string, Spec> = {
   hubco: { yt: "TGH1Rgpuzf4", alt: "HUBCO logo animation, still from the project video" },
   "one-homes": { yt: "Lntsa25Xsk4", alt: "One Homes film, still from the project video" },
   "my-fresh-fruits": { yt: "MLFuqpqidHQ", alt: "My Fresh Fruits logo animation, still from the project video", zoom: 1.22 },
+  "everest-snacks": { img: "/images/work/everest-snacks/cover.webp", alt: "Everest Snacks home page on desktop: the headline Fuel your adventure beside a man holding an energy bar", w: 1440, h: 810, bg: "#3b7792" },
 };
 
 /** Display names used by existing case-study pages -> cover key. */
@@ -47,6 +51,7 @@ const NAME_TO_KEY: Record<string, string> = {
   "American Auto Parts": "american-auto-parts",
   Chefiality: "chefiality",
   "My Fresh Fruits": "my-fresh-fruits",
+  "Everest Snacks": "everest-snacks",
 };
 
 export function coverKeyForName(name: string): string | undefined {
@@ -59,6 +64,7 @@ export function coverFor(key: string | undefined): CoverImage | null {
   if ("yt" in spec) {
     return { src: `https://i.ytimg.com/vi/${spec.yt}/maxresdefault.jpg`, alt: spec.alt, w: 1280, h: 720, bg: "#111111", fit: "cover", zoom: spec.zoom };
   }
+  if ("img" in spec) return { src: spec.img, alt: spec.alt, w: spec.w, h: spec.h, bg: spec.bg, fit: "cover" };
   const c = getClient(spec.client);
   if (!c) return null;
   const id = spec.pick === "board" ? (c.sections.find((s) => s.kind === "logo")?.media[0] ?? c.hero) : c.hero;

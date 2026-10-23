@@ -85,6 +85,13 @@ const featuredProjects = [
     desc: "Long-standing creative partnership producing professional video content for the automotive aftermarket.",
     href: "/work/american-auto-parts",
   },
+  {
+    client: "Everest Snacks",
+    industry: "Food & Beverage",
+    services: "Website Development, Social Media, Photography, Animation",
+    desc: "A five-page website for an energy bar brand, with social media, photography, AI photo enhancement and animation.",
+    href: "/work/everest-snacks",
+  },
 ];
 
 const creativePortfolio = [

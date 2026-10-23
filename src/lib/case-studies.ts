@@ -185,6 +185,8 @@ const SERVICE_NAMES: Record<string, string> = {
   "/services/video-production/reels-short-form": "Reels and Short-Form Video",
   "/services/video-production/commercial-production": "Commercial Production",
   "/services/website-development": "Website Development",
+  "/services/photography": "Photography",
+  "/services/video-production/animation": "Animation",
 };
 
 export function serviceName(path: string): string {

@@ -328,5 +328,10 @@
   "index": true,
   "basis": "current live status (preserved)",
   "checked": null
+ },
+ "everest-snacks": {
+  "index": false,
+  "basis": "new page (23 Oct 2026): noindex until the owner approves indexing",
+  "checked": null
  }
 }

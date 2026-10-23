@@ -90,7 +90,7 @@ See `docs/seo/uncertainty-ledger.csv` (388 rows). Headline items: project years;
 
 ## 9. Postponed on purpose
 
-- Everest Snacks page (no verified facts).
+- Everest Snacks page: built as a draft on 23 Oct 2026 (section 10); not indexed or in the sitemap until the owner approves.
 - Branding & Visual Identity: kept separate, no merge or redirect. All 21 of its boards also appear in Logo Folio's 32; proposal only (needs approval).
 - Blog links: 14 proposals in `docs/seo/blog-links/`; nothing written to D1. Backup and rollback scripts ready.
 - Cloudflare cache rule, Crawler Hints, WAF country rule: documented, not activated.
@@ -107,3 +107,11 @@ See `docs/seo/uncertainty-ledger.csv` (388 rows). Headline items: project years;
 - 19 pages are under 300 words and 30 indexed pages are flagged for review: thin-content risk until facts arrive. Nothing was padded.
 - Copy is unreviewed by the owner; the 4 sample pages in particular are not approved.
 - Rich-result eligibility and rankings cannot be tested until a public, access-controlled preview exists.
+
+## 10. Everest Snacks case study built (23 Oct 2026)
+
+Draft, noindex, out of the sitemap. Authorship is evidenced by the client's own footer credit and the Markit Media author on its blog posts; scope is website design and development (footer credit); three blog articles are published from a Markit Media account; no shop exists; year 2026; no results published. Details and the resolved confirmations are in `everest-snacks-proposal.md`. Files: `src/app/[lang]/work/everest-snacks/page.tsx`, `src/components/work-screens.tsx`, records, editorial, indexing and linking data, cover in `src/lib/covers.ts`, images in `public/images/work/everest-snacks/`.
+
+## 12. Everest Snacks case study rewritten (23 Oct 2026, owner request)
+
+Full rewrite with the owner-stated scope added: social media, photography, AI enhancement of photos, animation. Title, H1, meta description, keywords, services and the cards on the hub, work page and Website Development page updated. Scope beyond the website rests on the owner's statement only; no image or post is individually credited. See `everest-snacks-proposal.md`.
