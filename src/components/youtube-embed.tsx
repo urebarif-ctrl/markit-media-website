@@ -28,13 +28,14 @@ export function YouTubeEmbed({ videoId, title, aspect = "landscape", className =
   const [posterFailed, setPosterFailed] = useState(false);
   const isShort = aspect === "short";
   const vertical = aspect !== "landscape";
-  // The short's keyboard focus ring is drawn by the box itself, outside it: the button's own outline sits under its absolutely
+  // The keyboard focus ring is drawn by the box itself, outside it: the button's own outline sits under its absolutely
   // positioned thumbnail, so it would never be visible.
+  const focusRing = "has-[:focus-visible]:outline-4 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#5A3ED6]";
   const aspectClass =
     aspect === "portrait"
       ? "aspect-[9/16] max-h-[500px]"
       : isShort
-        ? "aspect-[9/16] w-full max-w-[380px] rounded-2xl isolate has-[:focus-visible]:outline-4 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-[#5A3ED6]"
+        ? "aspect-[9/16] w-full max-w-[380px] rounded-2xl isolate"
         : "aspect-video";
   // Curated poster (best frame, baked-in bars removed, matching the box shape); YouTube's own frame is the fallback.
   const custom = Boolean(poster) && !posterFailed;
@@ -52,7 +53,7 @@ export function YouTubeEmbed({ videoId, title, aspect = "landscape", className =
   const thumbHeight = custom ? 1920 : curated ? (vertical ? 1280 : 720) : 360;
 
   return (
-    <div className={`relative ${aspectClass} bg-black overflow-hidden group mx-auto ${className}`}>
+    <div className={`relative ${aspectClass} ${focusRing} bg-black overflow-hidden group mx-auto ${className}`}>
       {loaded ? (
         <iframe
           src={`https://${noCookie ? "www.youtube-nocookie.com" : "www.youtube.com"}/embed/${videoId}?autoplay=1&rel=0`}
@@ -65,11 +66,7 @@ export function YouTubeEmbed({ videoId, title, aspect = "landscape", className =
       ) : (
         <button
           onClick={() => setLoaded(true)}
-          className={
-            isShort
-              ? "absolute inset-0 w-full h-full cursor-pointer focus-visible:outline-none"
-              : "absolute inset-0 w-full h-full cursor-pointer focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-          }
+          className="absolute inset-0 w-full h-full cursor-pointer focus-visible:outline-none"
           aria-label={`Play video: ${title}`}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
