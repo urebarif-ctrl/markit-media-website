@@ -1,6 +1,6 @@
-# Everest Snacks case study: proposed structure (NOT built, NOT published)
+# Everest Snacks case study: proposed structure, now BUILT as a draft (23 Oct 2026)
 
-Status: **proposal only.** No route, record, sitemap entry or link exists for `/en/work/everest-snacks`. Owner decision 21 Oct 2026: prepare the structure, do not publish an incomplete or fabricated case study.
+Status: **built, noindex, not in the sitemap, awaiting the owner's go-live.** On 21 Oct 2026 the owner decided to prepare the structure and not publish an incomplete case study. On 23 Oct 2026 the owner confirmed the work was done for the client and asked for the full case study; see the update at the end of this file.
 
 ## What is verified about the public site (checked 21 Oct 2026)
 
@@ -39,3 +39,17 @@ Status: **proposal only.** No route, record, sitemap entry or link exists for `/
 ## Why it is not built now
 
 Without the six confirmations above, any case-study copy would have to guess at authorship, scope and dates. Everything above that is marked verified comes from the public site and can be used as soon as the owner confirms the relationship.
+
+
+## Update 23 Oct 2026: what was resolved and what was built
+
+| Open item (from above) | Resolution |
+|---|---|
+| 1. Did Markit Media design and build the site? | Yes. The site footer reads "Designed & Developed By" beside the Markit Media logo, linked to themarkitmedia.com, and the three blog posts are published from a Markit Media account (30 Jul 2026). The owner also confirmed it on 23 Oct 2026. |
+| 2. Scope | Website design and development, plus three launch articles. **No shop**: `/shop`, `/cart` and `/checkout` return 404, so e-commerce is not claimed (WooCommerce files load, but there is no store). |
+| 3. Year | 2026 (copyright line; home page published 20 Jul 2026, other pages by 30 Jul 2026, from the site's own WordPress dates). |
+| 4. Permission to name the client and show screenshots | Taken from the owner's instruction of 23 Oct 2026 ("we built this for them, build it"). **Worth a one-line confirmation from the owner before go-live.** |
+| 5. Measurable results | None supplied; none published. The page says so. |
+| 6. Shahi | Named only in the site's own words ("Shahi trusted", "Backed by Shahi"). |
+
+Built: `/en/work/everest-snacks` (static route, featured record, editorial copy about 820 words, 9 screenshots of the live site captured 23 Oct 2026 with descriptive alt text, cover image), links from the hub, the work page, the Website Development service page and the food industry page. Indexing decision in `indexing.json`: **false** until the owner approves. Screenshots were taken slowly from a local image cache because the client's CDN rate-limits bursts (HTTP 429).

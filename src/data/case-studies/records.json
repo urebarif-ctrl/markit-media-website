@@ -3158,5 +3158,57 @@
   "planNotes": "Plan section 11: keep separate (owner decision 21 Oct 2026); overlap with Logo Folio to be reported.",
   "today": null,
   "specSource": "current"
+ },
+ {
+  "slug": "everest-snacks",
+  "kind": "featured",
+  "name": "Everest Snacks",
+  "routeType": "static",
+  "industryLabel": "Food & beverage",
+  "servicesLabel": [
+   "Website development",
+   "Content marketing"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/content-marketing"
+  ],
+  "industryLinks": [
+   "/industries/food-ingredients-ecommerce"
+  ],
+  "locationLinks": [],
+  "related": [
+   "chefiality",
+   "wild-game-jerky",
+   "foodfolio",
+   "elite"
+  ],
+  "keywords": [
+   "energy bar website design",
+   "food brand website development",
+   "WordPress Elementor case study",
+   "Everest Snacks website"
+  ],
+  "title": "Everest Snacks Website Design & Development | Markit Media",
+  "h1": "Everest Snacks: Website for an Energy Bar Brand",
+  "metaDescription": "How Markit Media designed and built the Everest Snacks website: five WordPress pages for an energy bar brand, with a four-bar product page and a launch blog.",
+  "planLocation": "Karachi, Pakistan (address in the site footer)",
+  "locationVerified": true,
+  "location": "Karachi, Pakistan",
+  "locations": [
+   {
+    "city": "Karachi",
+    "country": "Pakistan"
+   }
+  ],
+  "locationEvidence": "Address in the footer of everestsnacks.com, read 23 Oct 2026",
+  "planWebsite": "https://everestsnacks.com/",
+  "website": "https://everestsnacks.com/",
+  "websiteVerified": true,
+  "dateModified": "2026-10-23",
+  "datePublished": null,
+  "datePublishedStatus": "not yet published: page built 23 Oct 2026, set the date when it goes live",
+  "planNotes": "Built from the live site on owner instruction (23 Oct 2026). See docs/seo/everest-snacks-proposal.md.",
+  "today": "new page"
  }
 ]

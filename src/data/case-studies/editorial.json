@@ -1561,5 +1561,99 @@
   "sources": [
    "Counts from the portfolio data (25 clients, 294 pieces); descriptions from the artwork reviewed by eye"
   ]
+ },
+ "everest-snacks": {
+  "lede": "Everest Snacks is an energy bar brand backed by Shahi, with its address in Karachi, Pakistan. In 2026 Markit Media designed and developed its website, everestsnacks.com: five pages on WordPress with Elementor, covering the brand promise, the four bars, the founder's story, a contact form for university partnerships and a launch blog.",
+  "projectYear": 2026,
+  "deliverables": "5-page website, product page for 4 bars, university contact form, 3 launch articles",
+  "sections": [
+   {
+    "heading": "What the site had to do",
+    "paragraphs": [
+     "Everest introduced its bars with one short message, \"Fuel your adventure\". The website had to say that on the first screen, show the four flavours without clutter, and give a new brand enough credibility to be trusted as someone's everyday snack. It also had to tell shoppers where the bars are sold.",
+     "The brand name set the theme. The site's FAQ explains that Everest Energy Bars are inspired by Mount Everest, the highest peak in the world, so the mountain runs through the copy, from \"a mountain of energy in every bite\" to the last of the five values, \"Never stop climbing\"."
+    ]
+   },
+   {
+    "heading": "The home page",
+    "paragraphs": [
+     "The home page opens with the headline \"Fuel your adventure\", one line of supporting copy and an \"Explore Bars\" button. Directly beneath sits a strip of four short claims: premium quality, best value, nationwide availability and \"Shahi trusted\", which the site backs with the line \"True to our promise. Backed by Shahi.\"",
+     "Further down, an \"Our Energy Bars\" row shows the four flavours, a \"Goodness in every bite\" row pairs the product with five everyday goals (hiking higher, working harder, living better, training stronger, going further), and a \"Loved by our community\" slider carries customer quotes.",
+     "A tabbed where-to-buy block follows, split into local modern trade, international modern trade and online stores, each showing retailer logos, and a \"Follow us on Instagram\" block shows three posts. A newsletter sign-up, \"Stay energized\", sits above the footer on every page."
+    ]
+   },
+   {
+    "heading": "The four bars",
+    "paragraphs": [
+     "The Products page gives each bar its own card: the flavour name in capitals, one line of description in the brand's own words, and protein and energy badges."
+    ],
+    "bullets": [
+     "Salted Caramel: smooth caramel with a touch of sea salt.",
+     "Peanut Butter Chocolate: chocolatey crunch with rich and wholesome peanuts.",
+     "Peanut Butter Choco Royale: rich chocolate with peanut butter and wholesome oats.",
+     "Caramel Indulgence: decadent caramel with nuts and a hint of exotic vanilla."
+    ]
+   },
+   {
+    "heading": "Why Everest",
+    "paragraphs": [
+     "The Why Everest page opens with a banner (\"Real ingredients. Real energy. Made to fuel real everyday.\") and a message from the founder, then lists five values (people first, grow every day, do what's right, built to perform, never stop climbing). A five-step \"Everest Journey\" graphic, from ingredients to impact, and a ten-question FAQ close the page. The founder's message sets the tone: energy, it says, is not only what is inside a bar but the ideas you chase and the goals you set.",
+     "The FAQ answers the questions a first-time buyer asks: what makes the bars different, whether they suit daily eating, which flavours exist, how to store them and where to buy them across Pakistan."
+    ]
+   },
+   {
+    "heading": "Connect With Us",
+    "paragraphs": [
+     "The contact page is built for a specific audience, university students. Besides name, email and phone, the form asks what the message is about, with two options, Final Year Project (FYP) and Campus Ambassador, then the university, an optional semester and message, and a file upload for a project."
+    ]
+   },
+   {
+    "heading": "The blog",
+    "paragraphs": [
+     "Three launch articles went live on 30 July 2026, each roughly 600 to 800 words: \"Why Natural Ingredients Matter in Healthy Snacks\", \"Are Energy Bars Good for Weight Management?\" and \"Healthy Snacks vs. Energy Bars: Which Is Better?\" They take on questions a shopper might ask before choosing a snack, and they were published through Markit Media's account."
+    ]
+   },
+   {
+    "heading": "How it was built",
+    "paragraphs": [
+     "The site runs on WordPress with Elementor Pro on the Astra theme. Its home page was published on 20 July 2026 and the other pages followed by 30 July. The footer credits Markit Media as designer and developer, with a link to our site, and carries the brand's phone number, email address and Karachi address."
+    ]
+   },
+   {
+    "heading": "What we delivered",
+    "bullets": [
+     "A five-page website: Home, Why Everest, Products, Connect With Us and Blogs",
+     "A home page that leads with the brand promise and a four-point trust strip",
+     "A products page presenting the four bars",
+     "A contact form for university partnerships, with file upload",
+     "Three launch articles, published on 30 July 2026",
+     "A newsletter sign-up on every page"
+    ]
+   },
+   {
+    "heading": "Results",
+    "paragraphs": [
+     "We are not publishing traffic or sales figures for this project."
+    ]
+   },
+   {
+    "heading": "What to take from it",
+    "paragraphs": [
+     "Put the proof next to the promise. Everest places its four trust claims directly under the headline, so a new brand answers \"why believe this?\" before anyone scrolls.",
+     "Give every product one line. Each bar is a flavour name and a single sentence, which keeps a four-product range easy to scan on a phone.",
+     "Open a route for the audience you want. A contact form with student-specific options makes it clear that the brand welcomes university collaborations.",
+     "Answer the buying questions in one place. The ten-question FAQ covers flavours, storage and where to buy on a single page."
+    ]
+   }
+  ],
+  "sources": [
+   "everestsnacks.com read 23 Oct 2026: Home, Why Everest, Products, Connect With Us and Blogs pages and the three articles",
+   "Authorship: the site footer reads 'Designed & Developed By' beside the Markit Media logo, linked to themarkitmedia.com; the three articles are published from a Markit Media account",
+   "Scope, year and permission to name the client and show screenshots: owner instruction of 23 Oct 2026 ('we built this for them'); publication window from the site's own page dates (home 20 Jul 2026, other pages by 30 Jul 2026)",
+   "Platform: generator meta tags, asset paths and the site's public REST namespaces (WordPress, Elementor Pro, Astra theme); no shop pages exist (/shop, /cart, /checkout return 404), so no e-commerce is claimed",
+   "Location: Karachi address printed in the site footer",
+   "Shahi: named by the client's own site ('Backed by Shahi', @shahi.pk email); no wording beyond the site's own is used",
+   "No results, figures or quotes were supplied; the customer quotes on the home page are not repeated (provenance unknown)"
+  ]
  }
 }
