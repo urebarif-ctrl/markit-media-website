@@ -28,6 +28,7 @@ export default async function PreviewHub({ params }: { params: Promise<{ lang: s
           <p className="text-lg text-gray-400 mt-5 max-w-3xl">Our Instagram archive reconciled with the live case studies. {all.length} projects, {live} with an existing live page and {all.length - live} new. Client work and office-life content are kept in separate galleries.</p>
           <div className="flex flex-wrap gap-3 mt-7">
             <Link href={L("/preview-work/event-partners")} className="bg-white text-black px-6 py-3 font-bold hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Event partners and inquiry form →</Link>
+            <Link href={L("/preview-work/compare")} className="border border-white/30 px-6 py-3 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Before and after galleries →</Link>
             <Link href={L("/preview-work/office-life")} className="border border-white/30 px-6 py-3 font-bold hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">Office life gallery (not client work) →</Link>
           </div>
           <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 pt-8 border-t border-white/10 max-w-3xl">

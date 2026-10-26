@@ -38,7 +38,7 @@ export const video = (id: string) => `${PM}/v/${id}.mp4`;
 export const story = (id: string) => `${PM}/s/${id}.webp`;
 export const office = (id: string) => `${PM}/o/${id}.webp`;
 
-export const RESERVED = ["event-partners", "office-life"];
+export const RESERVED = ["event-partners", "office-life", "compare"];
 export const allProjects = () => data.projects;
 export const getProject = (slug: string) => data.projects.find((p) => p.slug === slug);
 export const officeItems = () => data.office;

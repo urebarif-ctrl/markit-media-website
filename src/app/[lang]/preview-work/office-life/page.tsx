@@ -17,7 +17,7 @@ export default async function OfficeLife({ params }: { params: Promise<{ lang: s
   const cell = (o: (typeof all)[number]) => (
     <li key={o.id} className="bg-gray-100 border border-gray-200">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={office(o.id)} loading="lazy" decoding="async" alt={clean(o.cap) ? `Office content: ${clean(o.cap).slice(0, 90)}` : `Office content, ${fmtDate(o.date)}`} className="w-full h-auto block" />
+      <img src={office(o.id)} width={o.kind === "reel" ? 180 : 200} height={o.kind === "reel" ? 320 : 250} loading="lazy" decoding="async" alt={clean(o.cap) ? `Office content: ${clean(o.cap).slice(0, 90)}` : `Office content, ${fmtDate(o.date)}`} className={`w-full object-cover block ${o.kind === "reel" ? "aspect-[9/16]" : "aspect-[4/5]"}`} />
       <p className="text-[11px] text-gray-600 px-2 py-1">{fmtDate(o.date)}</p>
     </li>
   );

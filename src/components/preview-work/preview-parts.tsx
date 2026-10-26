@@ -68,7 +68,7 @@ export function StoryGrid({ items, name, max = 24 }: { items: PMedia[]; name: st
   const cell = (m: PMedia) => (
     <li key={m.id} className="bg-gray-100 border border-gray-200">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={story(m.id)} loading="lazy" decoding="async" alt={`${name} Instagram story, ${fmtDate(m.date)}`} className="w-full h-auto block" />
+      <img src={story(m.id)} width={270} height={480} loading="lazy" decoding="async" alt={`${name} Instagram story, ${fmtDate(m.date)}`} className="w-full aspect-[9/16] object-cover block" />
     </li>
   );
   const head = items.slice(0, max), tail = items.slice(max);
