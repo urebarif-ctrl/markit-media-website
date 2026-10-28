@@ -1,30 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Animate, Stagger } from "@/components/animate";
-import { SectionLabel, SectionTitle } from "@/components/section";
+import { ArrowRight } from "lucide-react";
+import { Animate } from "@/components/animate";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { JsonLd } from "@/components/json-ld";
+import { BrandIcon } from "@/components/brand-icon";
+import { YouTubeEmbed } from "@/components/youtube-embed";
+import { QWENCH_VIDEO } from "@/data/featured-videos";
 import { SOCIAL_URLS } from "@/lib/social";
-import { QuoteForm } from "@/components/quote-form";
-import {
-  Search,
-  Share2,
-  Code,
-  Palette,
-  Video,
-  Bot,
-  Mail,
-  TrendingUp,
-  BarChart3,
-  Megaphone,
-  FileText,
-  Briefcase,
-  ShoppingCart,
-  Camera,
-  ArrowRight,
-  Check,
-} from "lucide-react";
+import { SERVICE_DIRECTORY } from "@/data/services-directory";
+import { AUDIT_PROCESS, ENGAGEMENTS, HUB_INDUSTRIES, OUTCOMES, PLATFORM_SETS, SERVICES_V2_FAQ, START_HERE, SYSTEM_NODES, type Platform } from "@/data/services-v2";
+import { SUBSERVICES } from "@/data/services-v2-subs";
+import { D, Eyebrow, FaqBlock, PAD, Tile } from "@/components/services-hub-parts";
+import { ServicesHubQuoteForm } from "@/components/services-hub-quote";
+import { getMedia, mediaUrl, mediaVariant } from "@/lib/portfolio";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Services | SEO, PPC, Web & Social",
@@ -71,644 +61,471 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const serviceCategories = [
-  {
-    icon: Megaphone,
-    title: "Performance Marketing",
-    desc: "Google Ads, Meta Ads, TikTok Ads, LinkedIn Ads and PPC management focused on qualified demand and measurable acquisition.",
-    href: "/services/performance-marketing",
-    image: "/images/services/analytics.jpg",
-    subServices: ["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "PPC Management", "Retargeting"],
-  },
-  {
-    icon: Search,
-    title: "SEO",
-    desc: "Technical SEO, local SEO, content strategy, link building and AI search optimization built to increase qualified organic visibility.",
-    href: "/services/seo",
-    image: "/images/services/analytics.jpg",
-    subServices: ["Technical SEO", "Local SEO", "Content SEO", "Link Building", "SEO Audits", "AI SEO"],
-  },
-  {
-    icon: Share2,
-    title: "Social Media Marketing",
-    desc: "Strategy, content creation, reels, community management, influencer support and paid social for brands that need a stronger feed and clearer growth system.",
-    href: "/services/social-media",
-    image: "/images/services/social-media.jpg",
-    subServices: ["Social Strategy", "Content Creation", "Reels & Video", "Community Management", "Influencer Marketing", "Paid Social"],
-  },
-  {
-    icon: Code,
-    title: "Website Development",
-    desc: "WordPress, Wix, Webflow, Squarespace, Next.js, landing pages and custom web builds designed around speed, search visibility and conversion.",
-    href: "/services/website-development",
-    image: "/images/services/web-dev.jpg",
-    subServices: ["WordPress", "Wix", "Webflow", "Squarespace", "Next.js", "Custom Development"],
-  },
-  {
-    icon: ShoppingCart,
-    title: "Shopify",
-    desc: "Shopify development and growth services covering storefronts, themes, integrations, migrations, conversion and ecommerce marketing.",
-    href: "/services/shopify",
-    image: "/images/services/ecommerce-marketing.jpg",
-    subServices: ["Shopify Development", "Shopify Marketing", "Shopify Plus", "Store Migration", "CRO"],
-  },
-  {
-    icon: Palette,
-    title: "Branding & Design",
-    desc: "Brand strategy, identity systems, logo design, brand books, packaging and campaign creative with practical rollout guidance.",
-    href: "/services/branding",
-    image: "/images/services/branding.jpg",
-    subServices: ["Brand Strategy", "Logo Design", "Visual Identity", "Brand Guidelines", "Packaging"],
-  },
-  {
-    icon: Video,
-    title: "Video Production",
-    desc: "Commercial production, editing, motion graphics, reels, testimonials and animation for paid media, social and brand storytelling.",
-    href: "/services/video-production",
-    image: "/images/services/video.jpg",
-    subServices: ["Commercial Production", "Video Editing", "Motion Graphics", "Reels & Shorts", "Animation"],
-  },
-  {
-    icon: Bot,
-    title: "AI Solutions",
-    desc: "AI chatbots, marketing automation, consulting and workflow optimization for teams that want practical AI adoption.",
-    href: "/services/ai",
-    image: "/images/services/ai.jpg",
-    subServices: ["AI Chatbots", "Marketing Automation", "AI Consulting", "Predictive Analytics"],
-  },
-  {
-    icon: Mail,
-    title: "Email Marketing",
-    desc: "Campaign strategy, automation, list management, testing and deliverability programs that improve retention and lifecycle performance.",
-    href: "/services/email-marketing",
-    image: "/images/services/email.jpg",
-    subServices: ["Campaign Design", "Email Automation", "List Management", "A/B Testing", "Deliverability"],
-  },
-  {
-    icon: FileText,
-    title: "Content Marketing",
-    desc: "Content strategy, copywriting, blogs, landing page copy, case studies and search-led editorial production.",
-    href: "/services/content-marketing",
-    image: "/images/services/content-marketing.jpg",
-    subServices: ["Content Strategy", "Copywriting", "Blog Writing", "Case Studies", "SEO Content"],
-  },
-  {
-    icon: TrendingUp,
-    title: "Paid Advertising",
-    desc: "Display, programmatic, native, media buying and cross-channel paid campaigns beyond standard search and social buying.",
-    href: "/services/paid-advertising",
-    image: "/images/services/paid-advertising.jpg",
-    subServices: ["Programmatic", "Display Ads", "Native Advertising", "Media Buying"],
-  },
-  {
-    icon: BarChart3,
-    title: "Digital Marketing Strategy",
-    desc: "Analytics, CRM consulting, reputation management, fractional CMO support and integrated marketing planning.",
-    href: "/services/digital-marketing",
-    image: "/images/services/digital-marketing.jpg",
-    subServices: ["Analytics", "CRM Consulting", "ORM", "Fractional CMO", "Marketing Strategy"],
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Marketing",
-    desc: "Shopify marketing, product feeds, marketplace growth, paid acquisition and conversion work for ecommerce brands.",
-    href: "/services/ecommerce-marketing",
-    image: "/images/services/ecommerce-marketing.jpg",
-    subServices: ["Amazon Ads", "Shopify Marketing", "Product Feeds", "Marketplace Management"],
-  },
-  {
-    icon: Megaphone,
-    title: "Public Relations",
-    desc: "Media outreach, press releases, reputation support, event PR and crisis communications.",
-    href: "/services/public-relations",
-    image: "/images/services/pr.jpg",
-    subServices: ["Media Outreach", "Press Releases", "Reputation Management", "Event PR", "Crisis Comms"],
-  },
-  {
-    icon: Camera,
-    title: "Professional Photography",
-    desc: "Product, food, corporate, event, architectural and lifestyle photography for campaigns, websites and social content.",
-    href: "/services/photography",
-    image: "/images/services/photography.jpg",
-    subServices: ["Product Photography", "Corporate Photos", "Event Coverage", "Architectural", "Lifestyle"],
-  },
-  {
-    icon: Briefcase,
-    title: "BPO Services",
-    desc: "Customer support, appointment setting, virtual assistance, data operations and outsourced business processes.",
-    href: "/services/bpo",
-    image: "/images/services/bpo.jpg",
-    subServices: ["Customer Support", "Appointment Setting", "Virtual Assistants", "Data Entry", "Operations"],
-  },
-  {
-    icon: Code,
-    title: "App Development",
-    desc: "Web apps, MVPs, internal tools, customer portals and dashboards for businesses that need more than a marketing website.",
-    href: "/services/app-development",
-    image: "/images/services/web-dev.jpg",
-    subServices: ["Web Apps", "MVP Development", "Portals", "Dashboards", "Custom Product Builds"],
-  },
-  {
-    icon: BarChart3,
-    title: "CRM Development",
-    desc: "Custom CRM development, HubSpot, Salesforce, Zoho, CRM automation, integrations, migration and consulting.",
-    href: "/services/crm-development",
-    image: "/images/services/digital-marketing.jpg",
-    subServices: ["Custom CRM", "HubSpot", "Salesforce", "Zoho", "CRM Automation"],
-  },
-  {
-    icon: Briefcase,
-    title: "White Label Services",
-    desc: "Behind-the-scenes delivery for agencies across PPC, SEO, social, creative, web development and AI search.",
-    href: "/services/white-label",
-    image: "/images/services/digital-marketing.jpg",
-    subServices: ["White Label PPC", "SEO", "Meta Ads", "Google Ads", "Social Media", "Web Development"],
-  },
-  {
-    icon: BarChart3,
-    title: "Marketing Analytics",
-    desc: "Measurement planning, dashboards, attribution, conversion tracking and reporting systems across marketing channels.",
-    href: "/services/marketing-analytics",
-    image: "/images/services/analytics.jpg",
-    subServices: ["Measurement", "Dashboards", "Attribution", "Conversion Tracking", "Reporting"],
-  },
-  {
-    icon: Megaphone,
-    title: "Media Planning & Buying",
-    desc: "Media strategy, channel planning, budget allocation, buying, pacing and cross-channel performance review.",
-    href: "/services/media-planning-buying",
-    image: "/images/services/paid-advertising.jpg",
-    subServices: ["Media Planning", "Budget Allocation", "Media Buying", "Pacing", "Cross-Channel Campaigns"],
-  },
-  {
-    icon: Share2,
-    title: "WhatsApp Business",
-    desc: "Lead handling, automation, customer journeys, CRM handoff and support workflows through WhatsApp Business.",
-    href: "/services/whatsapp-business",
-    image: "/images/services/social-media.jpg",
-    subServices: ["Lead Messaging", "Automation", "Customer Journeys", "CRM Handoff", "Support Workflows"],
-  },
-  {
-    icon: Mail,
-    title: "SMS Marketing",
-    desc: "Permission-based promotional messaging, lifecycle communication, reminders and re-engagement campaigns.",
-    href: "/services/sms-marketing",
-    image: "/images/services/email.jpg",
-    subServices: ["Campaigns", "Lifecycle SMS", "Promotions", "Reminders", "Re-engagement"],
-  },
-  {
-    icon: TrendingUp,
-    title: "Upwork Growth",
-    desc: "Profile positioning, proposal strategy, portfolio presentation, agency bidding and client acquisition support.",
-    href: "/services/upwork-growth",
-    image: "/images/services/digital-marketing.jpg",
-    subServices: ["Profile Optimization", "Proposal Strategy", "Agency Bidding", "Portfolio", "Client Acquisition"],
-  },
-  {
-    icon: Palette,
-    title: "Design Systems",
-    desc: "Reusable UI foundations, components, design tokens and documentation for teams that need consistency across digital products.",
-    href: "/services/design-systems",
-    image: "/images/services/branding.jpg",
-    subServices: ["UI Foundations", "Components", "Design Tokens", "Patterns", "Documentation"],
-  },
-];
+const svc = (slug: string) => SERVICE_DIRECTORY.find((s) => s.slug === slug)!;
 
-const priorityServices = serviceCategories.slice(0, 6);
+/** Real project image from the portfolio record: intrinsic size, alt from the record, lazy unless priority. */
+function P({ id, sizes, className = "", priority = false, w = 960 }: { id: string; sizes: string; className?: string; priority?: boolean; w?: number }) {
+  const m = getMedia(id);
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={mediaUrl(id, mediaVariant(id, w))} width={m.w} height={m.h} alt={m.a} sizes={sizes} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : "auto"} style={{ backgroundColor: m.bg }} className={`object-cover ${className}`} />;
+}
+function Logo({ p, size = "h-8 w-8" }: { p: Platform; size?: string }) {
+  return p.svg ? <Image unoptimized src={p.svg} alt="" width={32} height={32} className={`${size} object-contain`} /> : <BrandIcon brand={p.brand} className={size} />;
+}
+function helpers(l: (p: string) => string) {
+const Chips = ({ slug, dark = false, max = 8, skip = [] }: { slug: string; dark?: boolean; max?: number; skip?: string[] }) => (
+  <ul className="flex flex-wrap gap-2 mt-6 list-none p-0" aria-label={`${svc(slug).title} specialities`}>
+    {SUBSERVICES[slug].filter(([t]) => !skip.includes(t)).slice(0, max).map(([t, h]) => (
+      <li key={h}><Link href={l(h)} className={`inline-flex items-center min-h-11 border px-3.5 text-sm font-semibold focus-visible:outline-2 ${dark ? "border-white/30 hover:bg-white hover:text-black focus-visible:outline-white" : "border-gray-300 hover:border-black focus-visible:outline-black"}`}>{t}</Link></li>
+    ))}
+  </ul>
+);
+const Explore = ({ slug, dark = false }: { slug: string; dark?: boolean }) => (
+  <Link href={l(svc(slug).href)} className={`inline-flex items-center gap-2 mt-7 font-bold border-b pb-1 min-h-11 ${dark ? "border-white" : "border-black"}`}>Explore {svc(slug).title} <ArrowRight size={16} aria-hidden="true" /></Link>
+);
+const Proof = ({ client, line, href, dark = false }: { client: string; line: string; href: string; dark?: boolean }) => (
+  <Link href={l(href)} className={`group mt-8 block border-l-2 pl-5 py-1 focus-visible:outline-2 ${dark ? "border-white/50 focus-visible:outline-white" : "border-black focus-visible:outline-black"}`}>
+    <span className={`block text-[11px] font-bold uppercase tracking-[0.16em] ${dark ? "text-white/50" : "text-gray-500"}`}>Proof · {client}</span>
+    <span className={`block text-sm leading-relaxed mt-1 ${dark ? "text-gray-300" : "text-gray-700"} group-hover:underline underline-offset-4`}>{line}</span>
+  </Link>
+);
 
-const serviceGroups = [
-  {
-    name: "Acquire",
-    desc: "Reach people already searching, scrolling or comparing.",
-    services: [
-      ["Performance Marketing", "/services/performance-marketing"],
-      ["SEO", "/services/seo"],
-      ["Paid Advertising", "/services/paid-advertising"],
-      ["Media Planning & Buying", "/services/media-planning-buying"],
-      ["Public Relations", "/services/public-relations"],
-    ],
-  },
-  {
-    name: "Build",
-    desc: "Create the digital products and brand systems customers interact with.",
-    services: [
-      ["Website Development", "/services/website-development"],
-      ["App Development", "/services/app-development"],
-      ["Branding & Design", "/services/branding"],
-      ["Design Systems", "/services/design-systems"],
-      ["Professional Photography", "/services/photography"],
-      ["Video Production", "/services/video-production"],
-    ],
-  },
-  {
-    name: "Engage",
-    desc: "Turn attention into ongoing customer relationships.",
-    services: [
-      ["Social Media Marketing", "/services/social-media"],
-      ["Content Marketing", "/services/content-marketing"],
-      ["Email Marketing", "/services/email-marketing"],
-      ["WhatsApp Business", "/services/whatsapp-business"],
-      ["SMS Marketing", "/services/sms-marketing"],
-    ],
-  },
-  {
-    name: "Scale",
-    desc: "Connect marketing, measurement and operations as the business grows.",
-    services: [
-      ["Digital Marketing Strategy", "/services/digital-marketing"],
-      ["Marketing Analytics", "/services/marketing-analytics"],
-      ["E-commerce Marketing", "/services/ecommerce-marketing"],
-      ["AI Solutions", "/services/ai"],
-      ["BPO Services", "/services/bpo"],
-      ["White Label Services", "/services/white-label"],
-      ["Upwork Growth", "/services/upwork-growth"],
-    ],
-  },
-];
-
-const servicesFaqItems = [
-  {
-    q: "Which digital marketing services should we start with?",
-    a: "Start with the business goal, not the channel. If you need demand now, paid media may be the fastest starting point. If you need durable search visibility, SEO and content are usually stronger. If conversion is the issue, the website and measurement setup may need attention first. We review the current setup before recommending scope.",
-  },
-  {
-    q: "Can Markit Media manage several channels together?",
-    a: "Yes. We can manage a single specialist service or combine SEO, paid media, social, content, website work, analytics and creative under one operating plan.",
-  },
-  {
-    q: "Can we start with one service and expand later?",
-    a: "Yes. Many engagements begin with one priority channel and expand after the measurement, creative and reporting systems are working properly.",
-  },
-  {
-    q: "Do you offer fixed packages?",
-    a: "Some projects have defined scopes, but ongoing marketing is usually priced around goals, channels, workload and media spend. We prefer a clear custom scope over forcing every business into the same package.",
-  },
-  {
-    q: "How quickly can digital marketing produce results?",
-    a: "Paid media can create measurable activity quickly when tracking and the offer are ready. SEO and content usually require a longer compounding period. Website, creative and analytics work can improve performance immediately but should be evaluated against a clear baseline.",
-  },
-  {
-    q: "Which markets do you work in?",
-    a: "We work with businesses across the United States, Canada, the United Arab Emirates, the United Kingdom, Australia, Saudi Arabia and other markets where our services are a fit.",
-  },
-];
+  return { Chips, Explore, Proof };
+}
 
 export default async function ServicesPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const locale = (["en", "ar", "ur"].includes(lang) ? lang : "en") as "en" | "ar" | "ur";
   const l = (path: string) => `/${locale}${path}`;
-
+  const { Chips, Explore, Proof } = helpers(l);
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Digital Marketing Services by Markit Media",
     url: "https://themarkitmedia.com/en/services",
-    description:
-      "SEO, paid media, social media, website development, branding, video, AI, analytics, ecommerce and BPO services from Markit Media.",
-    provider: {
-      "@type": "Organization",
-      name: "Markit Media",
-      url: "https://themarkitmedia.com",
-      sameAs: SOCIAL_URLS,
-    },
+    description: "SEO, paid media, social media, website development, branding, video, AI, analytics, ecommerce and BPO services from Markit Media.",
+    provider: { "@type": "Organization", name: "Markit Media", url: "https://themarkitmedia.com", sameAs: SOCIAL_URLS },
     mainEntity: {
       "@type": "ItemList",
-      numberOfItems: serviceCategories.length,
-      itemListElement: serviceCategories.map((service, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: service.title,
-        url: `https://themarkitmedia.com/en${service.href}`,
-      })),
+      numberOfItems: SERVICE_DIRECTORY.length,
+      itemListElement: SERVICE_DIRECTORY.map((service, index) => ({ "@type": "ListItem", position: index + 1, name: service.title, url: `https://themarkitmedia.com/en${service.href}` })),
     },
   };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: servicesFaqItems.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: item.a },
-    })),
+    mainEntity: SERVICES_V2_FAQ.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
   };
-
+  const perf = svc("performance-marketing"), seo = svc("seo"), social = svc("social-media"), web = svc("website-development"), shop = svc("shopify"), brand = svc("branding"), video = svc("video-production"), ai = svc("ai");
   return (
     <article>
       <JsonLd data={servicesSchema} />
       <JsonLd data={faqSchema} />
       <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Services" }]} locale={locale} />
 
-      <section className="px-6 lg:px-12 pt-20 lg:pt-28 pb-12" aria-labelledby="services-heading">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-end">
-          <Animate animation="fade-up">
-            <SectionLabel>Digital Marketing Services</SectionLabel>
-            <h1
-              id="services-heading"
-              className="font-[family-name:var(--font-display)] text-[clamp(2.6rem,6.5vw,5.6rem)] font-extrabold text-black tracking-[-0.045em] leading-[0.94] mt-4"
-            >
-              Strategy, creative and growth under one roof.
-            </h1>
-          </Animate>
-          <Animate animation="fade-up" delay={100}>
-            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
-              Markit Media brings paid media, SEO, social, websites, branding, video, AI and analytics into one practical growth system. Start with one service or build an integrated team around the channels that matter most.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-7">
-              <Link
-                href="#services-quote"
-                className="inline-flex items-center gap-2 bg-black text-white px-6 py-3.5 font-bold text-sm hover:bg-gray-800 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
-              >
-                Discuss your project <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-              <Link
-                href={l("/services/finder")}
-                className="inline-flex items-center gap-2 border border-gray-300 text-black px-6 py-3.5 font-bold text-sm hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
-              >
-                Find the right service
-              </Link>
+      {/* 1. HERO: outcome line + a collage of real work */}
+      <section className={`${PAD} pt-16 lg:pt-20 pb-14 overflow-hidden`} aria-labelledby="sv2-h1">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.02fr_.98fr] gap-12 lg:gap-16 items-center">
+          <div>
+            <Eyebrow>Digital marketing services</Eyebrow>
+            <h1 id="sv2-h1" className={`${D} text-[clamp(2.3rem,4.6vw,4rem)] font-extrabold tracking-[-0.04em] leading-[1.02] mt-4`}>Strategy, creative, technology and growth, built as one connected system.</h1>
+            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mt-6 max-w-xl">Use us as a specialist partner for one channel, or as an integrated growth team across paid media, SEO, social, websites, brand, video, AI and analytics. Twenty-five services, one team.</p>
+            <div className="flex flex-wrap gap-3 mt-8">
+              <Link href="#quote" className="inline-flex items-center gap-2 bg-black text-white px-7 py-4 font-bold hover:bg-[#5A3ED6] transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Request a Quote <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link href="#choose" className="inline-flex items-center border border-gray-300 px-7 py-4 font-bold hover:border-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">Find your starting point</Link>
             </div>
-          </Animate>
-        </div>
-      </section>
-
-      <section className="px-6 lg:px-12 pb-16" aria-label="Services overview">
-        <div className="max-w-7xl mx-auto border-y border-gray-200 grid grid-cols-2 lg:grid-cols-4">
-          {[
-            ["25", "service categories"],
-            ["100+", "specialist pages"],
-            ["20+", "industries"],
-            ["6+", "core markets"],
-          ].map(([value, label], index) => (
-            <div
-              key={label}
-              className={`py-6 lg:py-8 ${index % 2 === 0 ? "pr-5" : "pl-5"} lg:px-7 first:lg:pl-0 last:lg:pr-0 border-gray-200 ${index < 3 ? "lg:border-r" : ""}`}
-            >
-              <p className="font-[family-name:var(--font-display)] text-3xl lg:text-4xl font-extrabold tracking-tight">{value}</p>
-              <p className="text-sm text-gray-500 mt-1">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="px-6 lg:px-12 py-16 lg:py-24 bg-[#f5f5f3]" aria-labelledby="priority-services">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-[.8fr_1.2fr] gap-8 lg:gap-16 items-end mb-10 lg:mb-14">
-            <Animate animation="fade-up">
-              <SectionLabel>Core Capabilities</SectionLabel>
-              <SectionTitle>Where most growth plans start</SectionTitle>
-            </Animate>
-            <Animate animation="fade-up" delay={80}>
-              <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl lg:ml-auto">
-                These are the services we most often combine to improve demand generation, organic visibility, brand consistency and conversion. Each has a dedicated page with deeper scope and sub-services.
-              </p>
-            </Animate>
           </div>
-
-          <Stagger stagger={70} animation="fade-up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-300 border border-gray-300">
-            {priorityServices.map((service) => {
-              const Icon = service.icon;
-              return (
-                <Link
-                  key={service.href}
-                  href={l(service.href)}
-                  className="group bg-white min-h-[420px] flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
-                >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} by Markit Media`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none"
-                    />
-                  </div>
-                  <div className="p-6 lg:p-7 flex flex-col flex-1">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="w-10 h-10 border border-gray-200 flex items-center justify-center">
-                        <Icon size={19} aria-hidden="true" />
-                      </div>
-                      <ArrowRight size={18} className="text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all motion-reduce:transition-none" aria-hidden="true" />
-                    </div>
-                    <h2 className="font-[family-name:var(--font-display)] text-xl font-extrabold mt-6 tracking-tight">{service.title}</h2>
-                    <p className="text-sm text-gray-600 leading-relaxed mt-3">{service.desc}</p>
-                    <p className="text-xs text-gray-500 mt-auto pt-6 leading-relaxed">
-                      {service.subServices.slice(0, 4).join(" · ")}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </Stagger>
+          <div className="relative mx-auto w-full max-w-[560px] aspect-[1/1.02]" aria-label="Examples of our work">
+            <Tile href={l("/work/meezotech")} label="MeezoTech · branding" rotate="rotate-[-2deg] sv2-float" className="absolute left-0 top-0 w-[58%] shadow-xl"><P id="meezotech-logo-02" sizes="(max-width:1024px) 60vw, 32vw" priority className="w-full aspect-[16/10]" /></Tile>
+            <Tile href={l("/work/qwench-juice-bar")} label="QWENCH Juice · reels and ads" rotate="rotate-[2deg] sv2-float-b" className="absolute right-0 top-[6%] w-[40%] shadow-xl"><Image unoptimized src="/images/services-v2/qwench.webp" alt="QWENCH Juice reel, still from the case study video" width={640} height={1138} priority className="w-full aspect-[9/14] object-cover" /></Tile>
+            <Tile href={l("/work/thermex")} label="Thermex · social media" rotate="rotate-[1.5deg] sv2-float-b" className="absolute left-[4%] top-[34%] w-[44%] shadow-xl"><P id="thermex-social-04" sizes="(max-width:1024px) 45vw, 25vw" priority className="w-full aspect-square" /></Tile>
+            <Tile href={l("/work/everest-snacks")} label="Everest Snacks · website" rotate="rotate-[-1deg] sv2-float" className="absolute left-[40%] bottom-0 w-[56%] shadow-2xl"><Image unoptimized src="/images/services-v2/everest-snacks.webp" alt="Everest Snacks website home page" width={1440} height={810} priority className="w-full aspect-[16/10] object-cover" /></Tile>
+          </div>
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="all-services">
+      {/* 2. QUICK SELECTOR: four outcomes, all links in the HTML */}
+      <section id="choose" className={`${PAD} py-16 md:py-20 bg-black text-white scroll-mt-20`} aria-labelledby="sv2-choose">
         <div className="max-w-7xl mx-auto">
-          <Animate animation="fade-up">
-            <SectionLabel>Complete Service Directory</SectionLabel>
-            <h2 id="all-services" className="font-[family-name:var(--font-display)] text-[clamp(1.9rem,4vw,3.2rem)] font-extrabold tracking-tight mt-3 max-w-3xl">
-              Find the capability you need without digging through a wall of cards.
-            </h2>
-            <p className="text-base text-gray-600 leading-relaxed mt-4 max-w-2xl">
-              We organize the full service stack around four jobs: acquiring demand, building digital experiences, engaging customers and scaling the system.
-            </p>
-          </Animate>
-
-          <div className="mt-12 border-t border-gray-200">
-            {serviceGroups.map((group) => (
-              <div key={group.name} className="grid lg:grid-cols-[.32fr_.68fr] gap-5 lg:gap-10 py-9 border-b border-gray-200">
-                <div>
-                  <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold">{group.name}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed mt-2 max-w-xs">{group.desc}</p>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-x-8">
-                  {group.services.map(([label, href]) => (
-                    <Link
-                      key={href}
-                      href={l(href)}
-                      className="group flex items-center justify-between gap-4 py-3.5 border-b border-gray-100 text-sm font-semibold hover:border-black transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
-                    >
-                      <span>{label}</span>
-                      <ArrowRight size={15} className="text-gray-300 group-hover:text-black group-hover:translate-x-1 transition-all motion-reduce:transition-none" aria-hidden="true" />
-                    </Link>
+          <Eyebrow dark>Start from the outcome</Eyebrow>
+          <h2 id="sv2-choose" className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3 max-w-3xl`}>What do you need your marketing to do?</h2>
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {OUTCOMES.map((o) => (
+              <div key={o.key} className="border-t border-white/25 pt-5">
+                <p className={`${D} text-sm font-extrabold text-white/40`}>{o.n}</p>
+                <h3 className={`${D} text-3xl font-extrabold tracking-tight mt-1`}>{o.key}</h3>
+                <p className="text-sm text-gray-400 mt-2 leading-relaxed">{o.line}</p>
+                <ul className="mt-5 list-none p-0">
+                  {o.slugs.map((s) => (
+                    <li key={s}><Link href={l(svc(s).href)} className="flex items-center justify-between min-h-11 py-1.5 border-b border-white/10 text-[15px] font-semibold hover:text-[#b9a8ff] hover:border-white/40 focus-visible:outline-2 focus-visible:outline-white">{svc(s).title}<ArrowRight size={13} className="opacity-40" aria-hidden="true" /></Link></li>
                   ))}
-                </div>
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-16 lg:py-24 bg-black text-white" aria-label="How services work together">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20">
-          <Animate animation="fade-up">
-            <SectionLabel>One Growth System</SectionLabel>
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,4vw,3.4rem)] font-extrabold tracking-tight leading-tight mt-3">
-              The channel is not the strategy.
-            </h2>
-            <p className="text-base lg:text-lg text-gray-400 leading-relaxed mt-5 max-w-xl">
-              Search, paid media, social, creative and web performance affect each other. We use shared measurement and one operating brief so decisions made in one channel improve the rest.
-            </p>
-            <Link href={l("/process")} className="inline-flex items-center gap-2 mt-7 text-sm font-bold text-white border-b border-white/40 pb-1 hover:border-white">
-              See our process <ArrowRight size={15} aria-hidden="true" />
-            </Link>
-          </Animate>
-
-          <Stagger stagger={70} animation="fade-up" className="grid sm:grid-cols-2 gap-x-8 gap-y-8">
-            {[
-              ["Shared measurement", "Tracking, attribution and reporting use the same business goals across channels."],
-              ["Creative feedback loops", "Paid and organic performance shows which messages deserve more investment."],
-              ["Search intelligence", "Keyword and landing page data informs content, ads and website priorities."],
-              ["Faster handoffs", "Strategy, design, media and development work from the same context instead of separate vendor briefs."],
-            ].map(([title, copy]) => (
-              <div key={title} className="border-t border-white/20 pt-5">
-                <Check size={18} aria-hidden="true" className="mb-4" />
-                <h3 className="font-[family-name:var(--font-display)] text-base font-bold">{title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed mt-2">{copy}</p>
-              </div>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      <section className="px-6 lg:px-12 py-16 lg:py-24" aria-labelledby="industry-heading">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-end">
-            <Animate animation="fade-up">
-              <SectionLabel>Industry Experience</SectionLabel>
-              <h2 id="industry-heading" className="font-[family-name:var(--font-display)] text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3">
-                Different markets need different acquisition logic.
-              </h2>
-            </Animate>
-            <Animate animation="fade-up" delay={80}>
-              <p className="text-base text-gray-600 leading-relaxed max-w-xl lg:ml-auto">
-                We adapt channel mix, creative, lead handling and measurement to the way customers actually buy in each category.
-              </p>
-            </Animate>
-          </div>
-
-          <div className="mt-10 flex flex-wrap border-t border-l border-gray-200">
-            {[
-              ["Exterior Cleaning", "/industries/exterior-cleaning"],
-              ["Rehab & Recovery", "/industries/rehab-recovery"],
-              ["Restaurants", "/industries/restaurants"],
-              ["E-commerce", "/industries/ecommerce"],
-              ["Healthcare", "/industries/healthcare"],
-              ["EV Chargers", "/industries/ev-chargers"],
-              ["Real Estate", "/industries/real-estate"],
-              ["Fashion", "/industries/fashion"],
-              ["SaaS", "/industries/saas"],
-              ["B2B", "/industries/b2b"],
-              ["Construction", "/industries/construction"],
-              ["Professional Services", "/industries/professional-services"],
-            ].map(([label, href]) => (
-              <Link
-                key={href}
-                href={l(href)}
-                className="group w-1/2 md:w-1/3 lg:w-1/4 border-r border-b border-gray-200 min-h-24 p-4 lg:p-5 flex items-end justify-between gap-3 text-sm font-semibold hover:bg-gray-50 transition-colors focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
-              >
-                <span>{label}</span>
-                <ArrowRight size={14} className="text-gray-300 group-hover:text-black" aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
-          <Link href={l("/industries")} className="inline-flex items-center gap-2 mt-7 text-sm font-bold border-b border-black pb-1">
-            Explore all industries <ArrowRight size={14} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
-      <section className="px-6 lg:px-12 py-16 lg:py-24 bg-[#f5f5f3]" aria-label="Proof and resources">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-px bg-gray-300 border border-gray-300">
-          {[
-            ["See the work", "Browse real client projects across websites, social, branding, video and campaigns.", "/work"],
-            ["Read case studies", "See the context behind selected client engagements and the services connected to them.", "/case-studies"],
-            ["Use free tools", "Explore calculators, audits, generators and planners built for practical marketing decisions.", "/free-tools"],
-          ].map(([title, copy, href]) => (
-            <Link key={href} href={l(href)} className="group bg-white p-7 lg:p-9 min-h-64 flex flex-col focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-              <h3 className="font-[family-name:var(--font-display)] text-xl font-extrabold">{title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mt-3">{copy}</p>
-              <span className="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-bold">
-                Explore <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform motion-reduce:transition-none" aria-hidden="true" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section id="services-quote" className="px-6 lg:px-12 py-20 lg:py-28 scroll-mt-24" aria-label="Request a services quote">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-16 items-start">
-          <Animate animation="fade-up">
-            <SectionLabel>Request a Quote</SectionLabel>
-            <SectionTitle>Tell us the business problem. We will map the right service mix.</SectionTitle>
-            <p className="text-base lg:text-lg text-gray-600 leading-relaxed mt-5">
-              Share the goal, current setup, priority market, budget range and what your internal team already handles. We will recommend a practical starting scope rather than forcing a prebuilt package.
-            </p>
-            <div className="mt-7 space-y-3">
-              {[
-                "Paid growth and lead generation",
-                "SEO and organic visibility",
-                "Website, ecommerce or app work",
-                "Social, creative and video",
-                "Analytics, CRM and automation",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 text-sm font-semibold">
-                  <Check size={16} aria-hidden="true" />
-                  <span>{item}</span>
-                </div>
+      {/* 3a. PERFORMANCE: full-width dark feature with platform row */}
+      <section className={`${PAD} py-20 md:py-28 bg-[#0e0b1f] text-white overflow-hidden`} aria-labelledby="f-perf">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.1fr_.9fr] gap-12 lg:gap-20 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9a8ff]">Acquire</p>
+            <h2 id="f-perf" className={`${D} text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.02] mt-3`}>{perf.title}</h2>
+            <p className="text-xl text-white/80 mt-4 font-semibold">Turn ad budget into qualified demand.</p>
+            <p className="text-gray-400 leading-relaxed mt-4 max-w-xl">{perf.desc} We structure accounts around the lead or sale you want, test creative against it, and report on what the spend actually produced.</p>
+            <ul className="flex flex-wrap gap-3 mt-7 list-none p-0" aria-label="Ad platforms">
+              {PLATFORM_SETS[0].items.map((p) => (
+                <li key={p.label}><Link href={l(p.href!)} className="flex items-center gap-2.5 bg-white text-black pl-2.5 pr-4 min-h-11 text-sm font-bold focus-visible:outline-2 focus-visible:outline-white"><Logo p={p} size="h-6 w-6" />{p.label}</Link></li>
               ))}
-            </div>
+            </ul>
+            <Chips slug="performance-marketing" dark max={10} skip={["Google Ads", "Meta Ads", "TikTok Ads", "LinkedIn Ads", "Microsoft Ads"]} />
+            <Proof dark client="QWENCH Juice" line="Website, social media, reels and Meta ads for a juice bar. See the case study." href="/work/qwench-juice-bar" />
+            <Explore slug="performance-marketing" dark />
+          </div>
+          <Animate animation="fade-left" className="max-w-[360px] mx-auto w-full">
+            <YouTubeEmbed videoId={QWENCH_VIDEO.id} title={QWENCH_VIDEO.title} alt={QWENCH_VIDEO.title} aspect="short" poster={QWENCH_VIDEO.poster} noCookie />
+            <p className="text-xs text-white/50 mt-3 text-center">QWENCH Juice case study video</p>
           </Animate>
-          <QuoteForm
-            service="Digital Marketing Services"
-            title="Tell Us What You Need"
-            buttonText="Request Recommendation"
-            messagePlaceholder="Your business, goals, current marketing, priority services, budget range, timeline, and what you want us to handle..."
-          />
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 bg-[#f5f5f3]" aria-labelledby="services-faq">
-        <div className="max-w-4xl mx-auto">
-          <Animate animation="fade-up">
-            <SectionLabel>FAQ</SectionLabel>
-            <h2 id="services-faq" className="font-[family-name:var(--font-display)] text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight mt-3">
-              Questions about working with a full-service digital agency
-            </h2>
-          </Animate>
-          <div className="mt-10 border-t border-gray-300">
-            {servicesFaqItems.map((item, index) => (
-              <Animate key={item.q} animation="fade-up" delay={index * 40}>
-                <details className="group border-b border-gray-300">
-                  <summary className="flex justify-between items-center gap-5 py-5 cursor-pointer text-base font-bold text-black list-none focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
-                    {item.q}
-                    <span className="text-xl text-gray-500 group-open:rotate-45 transition-transform motion-reduce:transition-none flex-shrink-0" aria-hidden="true">+</span>
-                  </summary>
-                  <div className="pb-6 text-base text-gray-600 leading-relaxed max-w-3xl">{item.a}</div>
-                </details>
+      {/* 3b. SEO: typographic split, no stock imagery */}
+      <section className={`${PAD} py-20 md:py-28 bg-white`} aria-labelledby="f-seo">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-24">
+          <div className="lg:sticky lg:top-28 self-start">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5A3ED6]">Acquire</p>
+            <h2 id="f-seo" className={`${D} text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.02] mt-3`}>{seo.title}</h2>
+            <p className="text-xl font-semibold mt-4">Be the answer when your customers search.</p>
+            <p className="text-gray-600 leading-relaxed mt-4 max-w-md">{seo.desc} Includes search visibility in AI answers, not only the ten blue links.</p>
+            <Proof client="Our guides" line="How we approach search, written down. Browse the SEO and AI-search guides." href="/guides" />
+            <Explore slug="seo" />
+          </div>
+          <ol className="list-none p-0 border-t-2 border-black">
+            {SUBSERVICES.seo.map(([t, h], i) => (
+              <li key={h}>
+                <Link href={l(h)} className="group flex items-baseline gap-5 py-5 border-b border-gray-200 hover:border-black focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2">
+                  <span className={`${D} text-sm font-extrabold text-gray-400 w-8`}>{String(i + 1).padStart(2, "0")}</span>
+                  <span className={`${D} text-2xl lg:text-3xl font-extrabold tracking-tight flex-1 group-hover:translate-x-1 transition-transform motion-reduce:transition-none`}>{t}</span>
+                  <ArrowRight size={18} className="text-gray-300 group-hover:text-black" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* 3c. WEBSITE + ECOMMERCE: wide browser frame + platform logos */}
+      <section className={`${PAD} py-20 md:py-28 bg-gray-50`} aria-labelledby="f-web">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-[.8fr_1.2fr] gap-12 lg:gap-16 items-end">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5A3ED6]">Build</p>
+              <h2 id="f-web" className={`${D} text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.02] mt-3`}>{web.title}</h2>
+              <p className="text-xl font-semibold mt-4">A site built to be found and to convert.</p>
+              <p className="text-gray-600 leading-relaxed mt-4 max-w-md">{web.desc}</p>
+              <ul className="flex flex-wrap gap-3 mt-6 list-none p-0" aria-label="Website platforms">
+                {PLATFORM_SETS[2].items.filter((p) => p.href).map((p) => (
+                  <li key={p.label}><Link href={l(p.href!)} className="flex items-center gap-2 border border-gray-300 bg-white pl-2 pr-3.5 min-h-11 text-sm font-bold hover:border-black focus-visible:outline-2 focus-visible:outline-black"><Logo p={p} size="h-6 w-6" />{p.label}</Link></li>
+                ))}
+              </ul>
+              <Proof client="Everest Snacks" line="Design and development of an energy bar brand's 5-page website, plus blog articles and social content." href="/work/everest-snacks" />
+              <Explore slug="website-development" />
+            </div>
+            <Animate animation="fade-up">
+              <Tile href={l("/work/everest-snacks")} label="Everest Snacks · view the case study" className="border border-gray-300 bg-white shadow-2xl">
+                <span className="flex gap-1.5 px-3 py-2.5 border-b border-gray-200 bg-gray-100" aria-hidden="true"><i className="h-2.5 w-2.5 rounded-full bg-gray-300" /><i className="h-2.5 w-2.5 rounded-full bg-gray-300" /><i className="h-2.5 w-2.5 rounded-full bg-gray-300" /></span>
+                <Image unoptimized src="/images/services-v2/everest-snacks.webp" alt="Everest Snacks website home page" width={1440} height={810} className="w-full h-auto" />
+              </Tile>
+            </Animate>
+          </div>
+          <div className="mt-20 pt-10 border-t-2 border-black grid lg:grid-cols-[1.1fr_.9fr] gap-10 lg:gap-16 items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5A3ED6]">Build · Scale</p>
+              <h3 className={`${D} text-3xl lg:text-4xl font-extrabold tracking-tight mt-3`}>{shop.title} and ecommerce growth</h3>
+              <p className="text-lg font-semibold mt-3">Stores and journeys built around the sale.</p>
+              <p className="text-gray-600 leading-relaxed mt-3 max-w-lg">{shop.desc} Pair it with ecommerce marketing, product feeds and email to keep customers buying.</p>
+              <ul className="flex flex-wrap gap-2 mt-5 list-none p-0" aria-label="Ecommerce specialities">
+                {[...SUBSERVICES["ecommerce-marketing"].slice(0, 4), ["Email marketing", "/services/email-marketing"] as [string, string]].map(([t, h]) => <li key={h}><Link href={l(h)} className="inline-flex items-center min-h-11 border border-gray-300 px-3.5 text-sm font-semibold hover:border-black bg-white focus-visible:outline-2 focus-visible:outline-black">{t}</Link></li>)}
+              </ul>
+              <Proof client="Find My Apparel" line="An online apparel brand's promotional social posts: sale banners, product call-outs and a free-delivery offer." href="/work/find-my-apparel" />
+              <div className="flex flex-wrap gap-x-8"><Explore slug="shopify" /><Link href={l("/services/ecommerce-marketing")} className="inline-flex items-center gap-2 mt-7 font-bold border-b border-black pb-1 min-h-11">Ecommerce Marketing <ArrowRight size={16} aria-hidden="true" /></Link></div>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <Tile href={l("/work/find-my-apparel")} label="Find My Apparel · social posts" className="shadow-lg"><P id="find-my-apparel-fashion-01" sizes="(max-width:1024px) 45vw, 22vw" className="w-full aspect-square" /></Tile>
+              <Tile href={l("/work/find-my-apparel")} label="Find My Apparel · social posts" className="shadow-lg mt-8"><P id="find-my-apparel-fashion-04" sizes="(max-width:1024px) 45vw, 22vw" className="w-full aspect-square" /></Tile>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3d. SOCIAL + CONTENT: overlapping real posts */}
+      <section className={`${PAD} py-20 md:py-28 bg-white overflow-hidden`} aria-labelledby="f-soc">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-20 items-center">
+          <div className="relative aspect-[1/.9] max-w-[600px] w-full mx-auto lg:mx-0" aria-label="Examples of social posts we designed">
+            <Tile href={l("/work/thermex")} label="Thermex · social posts" rotate="rotate-[-3deg] sv2-float" className="absolute left-0 top-[6%] w-[46%] shadow-xl"><P id="thermex-social-04" sizes="(max-width:1024px) 45vw, 25vw" className="w-full aspect-square" /></Tile>
+            <Tile href={l("/work/mustcare-vet-centres")} label="MustCare Vet Centres · social posts" rotate="rotate-[2deg] sv2-float-b" className="absolute left-[30%] top-0 w-[40%] shadow-2xl z-10"><P id="mustcare-vet-centres-social-01" sizes="(max-width:1024px) 40vw, 22vw" className="w-full aspect-[4/5]" /></Tile>
+            <Tile href={l("/work/north-charge")} label="North Charge · social posts" rotate="rotate-[3deg] sv2-float" className="absolute right-0 top-[18%] w-[40%] shadow-xl"><P id="north-charge-social-04" sizes="(max-width:1024px) 40vw, 22vw" className="w-full aspect-square" /></Tile>
+            <Tile href={l("/work/cambridge-electrical")} label="Cambridge Appliances · social posts" rotate="rotate-[1deg] sv2-float-b" className="absolute left-[12%] bottom-0 w-[44%] shadow-xl z-20"><P id="cambridge-social-03" sizes="(max-width:1024px) 44vw, 24vw" className="w-full aspect-square" /></Tile>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5A3ED6]">Engage</p>
+            <h2 id="f-soc" className={`${D} text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.02] mt-3`}>{social.title}</h2>
+            <p className="text-xl font-semibold mt-4">Keep your brand in the feed, consistently.</p>
+            <p className="text-gray-600 leading-relaxed mt-4 max-w-md">{social.desc} Backed by content marketing: copy, blogs and case studies that give the posts something to say.</p>
+            <Chips slug="social-media" />
+            <Proof client="Thermex" line="A long run of social posts showing vacuum flasks and coolers in picnics, camping trips and kitchens, with the logo and identity designed to match." href="/work/thermex" />
+            <div className="flex flex-wrap gap-x-8"><Explore slug="social-media" /><Link href={l("/services/content-marketing")} className="inline-flex items-center gap-2 mt-7 font-bold border-b border-black pb-1 min-h-11">Content Marketing <ArrowRight size={16} aria-hidden="true" /></Link></div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3e. BRANDING + VIDEO: two identity boards, then the reel */}
+      <section className={`${PAD} py-20 md:py-28 bg-gray-50`} aria-labelledby="f-brand">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-end">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5A3ED6]">Build</p>
+              <h2 id="f-brand" className={`${D} text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.02] mt-3`}>{brand.title}</h2>
+              <p className="text-xl font-semibold mt-4">An identity that holds across every channel.</p>
+              <p className="text-gray-600 leading-relaxed mt-4 max-w-lg">{brand.desc}</p>
+              <Chips slug="branding" />
+              <Proof client="MeezoTech" line="Red and black identity, logo animation and social posts for a technology company." href="/work/meezotech" />
+              <Explore slug="branding" />
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <Tile href={l("/work/meezotech")} label="MeezoTech · brand identity" className="shadow-lg self-start"><P id="meezotech-logo-02" sizes="(max-width:1024px) 45vw, 28vw" className="w-full aspect-[16/11]" /></Tile>
+              <Tile href={l("/work/minhaz-couture")} label="Minhaz Couture · brand identity" className="shadow-lg mt-10 self-start"><P id="minhaz-couture-logo-02" sizes="(max-width:1024px) 45vw, 28vw" className="w-full aspect-[16/11]" /></Tile>
+            </div>
+          </div>
+          <div className="mt-24 grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-20 items-center">
+            <div className="max-w-[300px] mx-auto w-full order-2 lg:order-1">
+              <Tile href={l("/work/qwench-juice-bar")} label="QWENCH Juice · reels and ads" className="shadow-xl"><Image unoptimized src="/images/services-v2/qwench.webp" alt="QWENCH Juice reel, still from the case study video" width={640} height={1138} className="w-full h-auto" /></Tile>
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#5A3ED6]">Build</p>
+              <h3 className={`${D} text-3xl lg:text-5xl font-extrabold tracking-tight leading-[1.04] mt-3`}>{video.title}</h3>
+              <p className="text-lg font-semibold mt-3">Reels, commercials and motion that carry the story.</p>
+              <p className="text-gray-600 leading-relaxed mt-3 max-w-lg">{video.desc}</p>
+              <Chips slug="video-production" />
+              <Proof client="QWENCH Juice" line="Reels and a case-study video for a juice bar, alongside its website and Meta ads." href="/work/qwench-juice-bar" />
+              <div className="flex flex-wrap gap-x-8"><Explore slug="video-production" /><Link href={l("/services/photography")} className="inline-flex items-center gap-2 mt-7 font-bold border-b border-black pb-1 min-h-11">Photography <ArrowRight size={16} aria-hidden="true" /></Link></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3f. AI + CRM: typographic dark block */}
+      <section className={`${PAD} py-20 md:py-28 bg-black text-white`} aria-labelledby="f-ai">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-24">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#b9a8ff]">Scale</p>
+            <h2 id="f-ai" className={`${D} text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-tight leading-[1.02] mt-3`}>{ai.title}, CRM and automation</h2>
+            <p className="text-xl font-semibold text-white/85 mt-4">Remove the manual work between a lead and a customer.</p>
+            <p className="text-gray-400 leading-relaxed mt-4 max-w-md">{ai.desc} Connected to a CRM so follow-up, reporting and handoffs run without copy-paste.</p>
+            <ul className="flex flex-wrap gap-3 mt-6 list-none p-0" aria-label="CRM platforms">
+              {PLATFORM_SETS[3].items.filter((p) => ["HubSpot", "Salesforce", "Zoho", "GoHighLevel"].includes(p.label)).map((p) => (
+                <li key={p.label}><Link href={l(p.href!)} className="flex items-center gap-2 bg-white text-black pl-2 pr-3.5 min-h-11 text-sm font-bold focus-visible:outline-2 focus-visible:outline-white"><Logo p={p} size="h-6 w-6" />{p.label}</Link></li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-x-8"><Explore slug="ai" dark /><Link href={l("/services/crm-development")} className="inline-flex items-center gap-2 mt-7 font-bold border-b border-white pb-1 min-h-11">CRM Development <ArrowRight size={16} aria-hidden="true" /></Link></div>
+          </div>
+          <ul className="list-none p-0 border-t border-white/20 self-start">
+            {[...SUBSERVICES.ai, ...SUBSERVICES["crm-development"].slice(0, 2)].map(([t, h]) => (
+              <li key={h}><Link href={l(h)} className="group flex items-center justify-between py-5 border-b border-white/20 hover:border-white focus-visible:outline-2 focus-visible:outline-white"><span className={`${D} text-xl lg:text-2xl font-extrabold tracking-tight`}>{t}</span><ArrowRight size={16} className="opacity-40 group-hover:opacity-100" aria-hidden="true" /></Link></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 4. FULL DIRECTORY: all 25, grouped, every sub-service route */}
+      <section className={`${PAD} py-20 md:py-28 bg-white`} aria-labelledby="sv2-dir">
+        <div className="max-w-7xl mx-auto">
+          <Eyebrow>The full directory</Eyebrow>
+          <h2 id="sv2-dir" className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3 max-w-3xl`}>All 25 services and what sits under them.</h2>
+          <div className="mt-12 space-y-16">
+            {OUTCOMES.map((o) => (
+              <div key={o.key} className="grid lg:grid-cols-[.35fr_1.65fr] gap-6 lg:gap-12 border-t-2 border-black pt-6">
+                <div><p className={`${D} text-sm font-extrabold text-gray-400`}>{o.n}</p><h3 className={`${D} text-3xl font-extrabold`}>{o.key}</h3></div>
+                <ul className="list-none p-0 grid md:grid-cols-2 gap-x-12 gap-y-8">
+                  {o.slugs.map((slug) => {
+                    const s = svc(slug); const subs = SUBSERVICES[slug] ?? [];
+                    return (
+                      <li key={slug}>
+                        <Link href={l(s.href)} className={`${D} inline-flex items-center gap-2 text-lg font-extrabold hover:underline underline-offset-4 min-h-11 focus-visible:outline-2 focus-visible:outline-black`}>{s.title}<ArrowRight size={14} aria-hidden="true" /></Link>
+                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">{s.desc}</p>
+                        {subs.length > 0 && (
+                          <ul className="flex flex-wrap gap-x-4 list-none p-0 mt-1" aria-label={`${s.title} sub-services`}>
+                            {subs.map(([t, h]) => <li key={h}><Link href={l(h)} className="inline-flex items-center min-h-8 text-[13px] text-gray-600 underline decoration-gray-300 underline-offset-4 hover:text-black hover:decoration-black">{t}</Link></li>)}
+                          </ul>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PLATFORMS: grouped, real logos */}
+      <section className={`${PAD} py-20 md:py-28 bg-gray-50 border-y border-gray-200`} aria-labelledby="sv2-plat">
+        <div className="max-w-7xl mx-auto">
+          <Eyebrow>Platform and technology expertise</Eyebrow>
+          <h2 id="sv2-plat" className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3 max-w-3xl`}>The tools we work in every day.</h2>
+          <div className="mt-12 grid md:grid-cols-2 gap-x-16 gap-y-12">
+            {PLATFORM_SETS.map((g, gi) => (
+              <div key={g.title} className={gi === 3 ? "md:col-span-2" : ""}>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 border-b-2 border-black pb-2"><h3 className={`${D} text-xl font-extrabold`}>{g.title}</h3><p className="text-sm text-gray-500">{g.line}</p></div>
+                <ul className={`list-none p-0 grid gap-x-8 ${gi === 3 ? "sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-2"}`}>
+                  {g.items.map((p) => {
+                    const inner = (<><Logo p={p} /><span className="font-bold text-sm flex-1">{p.label}</span>{p.href && <ArrowRight size={13} className="text-gray-300 group-hover:text-black" aria-hidden="true" />}</>);
+                    return <li key={p.label}>{p.href ? <Link href={l(p.href)} className="group flex items-center gap-4 min-h-14 py-2 border-b border-gray-200 hover:border-black focus-visible:outline-2 focus-visible:outline-black">{inner}</Link> : <div className="group flex items-center gap-4 min-h-14 py-2 border-b border-gray-200">{inner}</div>}</li>;
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. HOW SERVICES WORK TOGETHER: connected system diagram + notes */}
+      <section className={`${PAD} py-20 md:py-28 bg-white`} aria-labelledby="sv2-sys">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
+          <div>
+            <Eyebrow>One growth system</Eyebrow>
+            <h2 id="sv2-sys" className={`${D} text-[clamp(2rem,4.6vw,3.6rem)] font-extrabold tracking-tight leading-[1.04] mt-3`}>The channel is not the strategy.</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mt-5 max-w-lg">Each service feeds the others. Running them in one team means what you learn in one place improves the rest.</p>
+            <dl className="mt-8 divide-y divide-gray-200 border-y border-gray-200">
+              {SYSTEM_NODES.map((n) => (<div key={n.t} className="grid sm:grid-cols-[9rem_1fr] gap-x-6 py-4"><dt className={`${D} font-extrabold`}>{n.t}</dt><dd className="text-sm text-gray-600 leading-relaxed">{n.d}</dd></div>))}
+            </dl>
+          </div>
+          <figure className="mx-auto w-full max-w-[520px]">
+            <svg viewBox="0 0 400 400" role="img" aria-labelledby="sys-t sys-d" className="w-full h-auto">
+              <title id="sys-t">How the services connect</title>
+              <desc id="sys-d">Six services arranged in a ring around a centre labelled shared goals: paid media, search and content, website, analytics, CRM and email, and brand. Each connects to its neighbours.</desc>
+              <circle cx="200" cy="200" r="130" fill="none" stroke="#d4d4d8" strokeWidth="1.5" strokeDasharray="4 6" />
+              <circle cx="200" cy="200" r="52" fill="#0b0b0b" />
+              <text x="200" y="196" textAnchor="middle" fontSize="12" fontWeight="800" fill="#fff">SHARED</text>
+              <text x="200" y="212" textAnchor="middle" fontSize="12" fontWeight="800" fill="#fff">GOALS</text>
+              {SYSTEM_NODES.map((n, i) => {
+                const a = (-90 + i * 60) * (Math.PI / 180); const x = 200 + 130 * Math.cos(a), y = 200 + 130 * Math.sin(a);
+                const label = n.t.split(" and ");
+                return (
+                  <g key={n.t}>
+                    <line x1="200" y1="200" x2={x} y2={y} stroke="#d4d4d8" strokeWidth="1.5" />
+                    <circle cx={x} cy={y} r="36" fill={i % 2 ? "#fff" : "#5A3ED6"} stroke={i % 2 ? "#0b0b0b" : "#5A3ED6"} strokeWidth="2" />
+                    {label.map((l, k) => <text key={l} x={x} y={y + (label.length === 1 ? 4 : k === 0 ? -2 : 12)} textAnchor="middle" fontSize="10.5" fontWeight="800" fill={i % 2 ? "#0b0b0b" : "#fff"}>{k === 1 ? `& ${l}` : l}</text>)}
+                  </g>
+                );
+              })}
+            </svg>
+          </figure>
+        </div>
+      </section>
+
+      {/* 7. START HERE */}
+      <section className={`${PAD} py-16 md:py-24 bg-[#f7f5ff] border-y border-[#e8e2ff]`} aria-labelledby="sv2-start">
+        <div className="max-w-7xl mx-auto">
+          <Eyebrow>Where to start</Eyebrow>
+          <h2 id="sv2-start" className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3`}>Pick the problem. We&apos;ll point to the mix.</h2>
+          <ul className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 list-none p-0">
+            {START_HERE.map((s, i) => (
+              <li key={s.need} className="border-t-2 border-black pt-4">
+                <p className={`${D} text-sm font-extrabold text-[#5A3ED6]`}>{String(i + 1).padStart(2, "0")}</p>
+                <h3 className={`${D} text-xl font-extrabold mt-1`}>{s.need}</h3>
+                <p className="text-sm text-gray-600 mt-2">Start with:</p>
+                <ul className="mt-1 list-none p-0">{s.mix.map(([t, h]) => <li key={h}><Link href={l(h)} className="inline-flex items-center gap-2 min-h-11 font-bold text-sm underline underline-offset-4 decoration-gray-400 hover:decoration-black">{t} <ArrowRight size={13} aria-hidden="true" /></Link></li>)}</ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 8. SELECTED CASE STUDIES */}
+      <section className={`${PAD} py-20 md:py-28 bg-white`} aria-labelledby="sv2-cases">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div><Eyebrow>Selected work</Eyebrow><h2 id="sv2-cases" className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3`}>Five projects, five disciplines.</h2></div>
+            <div className="flex gap-x-8"><Link href={l("/work")} className="inline-flex items-center gap-2 font-bold border-b border-black pb-1 min-h-11 text-sm">View all work <ArrowRight size={14} aria-hidden="true" /></Link><Link href={l("/case-studies")} className="inline-flex items-center gap-2 font-bold border-b border-black pb-1 min-h-11 text-sm">Explore case studies <ArrowRight size={14} aria-hidden="true" /></Link></div>
+          </div>
+          <div className="mt-12 grid md:grid-cols-12 gap-x-8 gap-y-14">
+            {[
+              { c: "QWENCH Juice", d: "Social, video and paid ads", l: "Website, social media, reels and Meta ads, blended into one fresh brand.", h: "/work/qwench-juice-bar", img: <Image unoptimized src="/images/services-v2/qwench.webp" alt="QWENCH Juice reel, still from the case study video" width={640} height={1138} className="w-full aspect-[4/5] object-cover" />, span: "md:col-span-4 md:row-span-2" },
+              { c: "Everest Snacks", d: "Website development", l: "Design and development of an energy bar brand's website, with the content around it.", h: "/work/everest-snacks", img: <Image unoptimized src="/images/services-v2/everest-snacks.webp" alt="Everest Snacks website home page" width={1440} height={810} className="w-full aspect-[16/9] object-cover" />, span: "md:col-span-8" },
+              { c: "MeezoTech", d: "Branding", l: "A red and black identity, logo animation and social posts for a technology company.", h: "/work/meezotech", img: <P id="meezotech-logo-02" sizes="(max-width:768px) 100vw, 33vw" className="w-full aspect-[4/3]" />, span: "md:col-span-4" },
+              { c: "Thermex", d: "Social media and identity", l: "Logo, identity and a long run of social posts for a household products brand.", h: "/work/thermex", img: <P id="thermex-social-04" sizes="(max-width:768px) 100vw, 33vw" className="w-full aspect-[4/3]" />, span: "md:col-span-4" },
+            ].map((x, i) => (
+              <Animate key={x.c} animation="fade-up" delay={i * 70} className={x.span}>
+                <Link href={l(x.h)} className="group block focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4">
+                  <div className="overflow-hidden bg-gray-100 [&_img]:transition-transform [&_img]:duration-700 group-hover:[&_img]:scale-[1.04] motion-reduce:[&_img]:transition-none">{x.img}</div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#5A3ED6] mt-4">{x.d}</p>
+                  <h3 className={`${D} text-2xl font-extrabold mt-1`}>{x.c}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mt-2">{x.l}</p>
+                  <span className="inline-flex items-center gap-2 mt-3 text-sm font-bold">View the case study <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform motion-reduce:transition-none" aria-hidden="true" /></span>
+                </Link>
               </Animate>
             ))}
           </div>
+          <p className="text-sm text-gray-500 mt-12 max-w-2xl">No campaign results are shown on purpose: figures appear only once a client has confirmed them.</p>
         </div>
       </section>
 
-      <section className="px-6 lg:px-12 py-20 lg:py-24 bg-black text-white" aria-label="Get started">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-          <Animate animation="fade-up">
-            <p className="text-sm uppercase tracking-[0.2em] text-gray-400 font-semibold">Start with the goal</p>
-            <h2 className="font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4.2rem)] font-extrabold tracking-tight leading-[1] mt-4 max-w-3xl">
-              Need a clearer marketing plan?
-            </h2>
-          </Animate>
-          <Animate animation="fade-up" delay={80}>
-            <Link
-              href="#services-quote"
-              className="inline-flex items-center gap-3 bg-white text-black px-7 py-4 font-bold text-sm hover:bg-gray-100 transition-colors focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
-            >
-              Request a recommendation <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          </Animate>
+      {/* 9. INDUSTRIES (compact, with real images where we have them) */}
+      <section className={`${PAD} py-16 md:py-20 bg-gray-50`} aria-labelledby="sv2-ind">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap items-end justify-between gap-4"><div><Eyebrow>Industries</Eyebrow><h2 id="sv2-ind" className={`${D} text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight mt-3`}>Industries we serve</h2></div><Link href={l("/industries")} className="inline-flex items-center gap-2 font-bold border-b border-black pb-1 min-h-11 text-sm">All industries <ArrowRight size={14} aria-hidden="true" /></Link></div>
+          <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 list-none p-0">
+            {[
+              ["Restaurants and hospitality", "/industries/restaurants", "elite-food-01"], ["Ecommerce", "/industries/ecommerce", "find-my-apparel-fashion-01"], ["Fashion", "/industries/fashion", "minhaz-couture-logo-02"], ["EV charging", "/industries/ev-chargers", "north-charge-social-04"],
+            ].map(([t, h, id]) => (
+              <li key={h}><Link href={l(h)} className="group relative block overflow-hidden focus-visible:outline-2 focus-visible:outline-black"><P id={id} sizes="(max-width:768px) 45vw, 22vw" className="w-full aspect-[4/5] transition-transform duration-700 group-hover:scale-[1.04] motion-reduce:transition-none" /><span className={`${D} absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-4 pt-12 text-white font-extrabold text-lg`}>{t}</span></Link></li>
+            ))}
+          </ul>
+          <ul className="mt-6 flex flex-wrap gap-x-2 list-none p-0">
+            {HUB_INDUSTRIES.filter(([, h]) => !["/industries/restaurants", "/industries/ecommerce", "/industries/fashion", "/industries/ev-chargers"].includes(h)).map(([t, h]) => <li key={h}><Link href={l(h)} className="inline-flex items-center min-h-11 px-3.5 border border-gray-300 bg-white text-sm font-semibold hover:border-black">{t}</Link></li>)}
+          </ul>
+        </div>
+      </section>
+
+      {/* 10 + 11. PROCESS and ENGAGEMENT MODELS side by side */}
+      <section className={`${PAD} py-20 md:py-28 bg-white`} aria-labelledby="sv2-proc">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24">
+          <div>
+            <Eyebrow>How we work</Eyebrow>
+            <h2 id="sv2-proc" className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3`}>From first call to steady improvement.</h2>
+            <ol className="mt-10 list-none p-0">
+              {AUDIT_PROCESS.map((s) => (
+                <li key={s.n}><Animate animation="fade-up"><div className="grid grid-cols-[4.5rem_1fr] gap-x-4 py-5 border-b border-gray-200"><span className={`${D} text-5xl font-extrabold leading-none text-transparent [-webkit-text-stroke:1.5px_#0b0b0b]`} aria-hidden="true">{s.n}</span><div><h3 className={`${D} text-xl font-extrabold`}><span className="sr-only">Step {s.n}: </span>{s.t}</h3><p className="text-sm text-gray-600 leading-relaxed mt-1">{s.d}</p></div></div></Animate></li>
+              ))}
+            </ol>
+            <Link href={l("/process")} className="inline-flex items-center gap-2 mt-6 font-bold border-b border-black pb-1 min-h-11 text-sm">See our full process <ArrowRight size={14} aria-hidden="true" /></Link>
+          </div>
+          <div>
+            <Eyebrow>Engagement models</Eyebrow>
+            <h2 className={`${D} text-[clamp(1.9rem,4vw,3rem)] font-extrabold tracking-tight mt-3`}>Work with us the way that fits.</h2>
+            <ul className="mt-10 list-none p-0 border-t-2 border-black">
+              {ENGAGEMENTS.map((e) => (<li key={e.t} className="py-5 border-b border-gray-200"><h3 className={`${D} text-xl font-extrabold`}>{e.t}</h3><p className="text-sm text-gray-600 leading-relaxed mt-1 max-w-md">{e.d}</p></li>))}
+            </ul>
+            <p className="text-sm text-gray-500 mt-5">Pricing depends on goals, channels and workload, so it is quoted per project.</p>
+            <Link href={l("/pricing")} className="inline-flex items-center gap-2 mt-2 font-bold border-b border-black pb-1 min-h-11 text-sm">How pricing works <ArrowRight size={14} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
+
+      <FaqBlock items={SERVICES_V2_FAQ} title="Questions about working with Markit Media" bg="bg-gray-50" />
+
+      {/* 14. QUOTE */}
+      <section id="quote" className={`${PAD} py-20 md:py-28 scroll-mt-20 bg-white`} aria-labelledby="sv2-quote">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-12 lg:gap-20 items-start">
+          <div>
+            <Eyebrow>Request a quote</Eyebrow>
+            <h2 id="sv2-quote" className={`${D} text-[clamp(2rem,4.4vw,3.2rem)] font-extrabold tracking-tight leading-[1.05] mt-3`}>Tell us the problem. We&apos;ll map the right services.</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mt-5">Choose the services you are considering, share the goal and a budget range. We reply by email or WhatsApp with a practical starting scope, not a prebuilt package.</p>
+            <ul className="mt-8 space-y-1 list-none p-0 text-sm font-semibold"><li><a href="mailto:ciao@themarkitmedia.com" className="inline-flex items-center min-h-11 underline underline-offset-4">ciao@themarkitmedia.com</a></li><li><a href="https://wa.me/923002086081" target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-11 underline underline-offset-4">WhatsApp us</a></li></ul>
+          </div>
+          <div className="bg-gray-50 border border-gray-200 p-6 lg:p-10"><ServicesHubQuoteForm /></div>
         </div>
       </section>
     </article>
