@@ -16,6 +16,7 @@ const OPTIONS = [
     ["Option A: clean index", "/en/demo/services-a", "All 25 services in four groups, each with its own diagram."],
     ["Option B: work-led", "/en/demo/services-b", "Six core services shown through real work, the rest in a compact list."],
     ["Option C: goal bundles", "/en/demo/services-c", "Five goals, each with one large scene and the services behind it."],
+    ["V2: hybrid", "/en/demo/services-v2", "Outcome-led hub with real work and logos beside each service, the full directory, platforms, process and a multi-service quote form."],
   ] },
 ] as const;
 
