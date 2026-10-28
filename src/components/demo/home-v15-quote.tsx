@@ -26,13 +26,16 @@ export function HomeQuoteForm() {
     const er: Errors = {};
     if (v("name").length < 2) er.name = "Please enter your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"))) er.email = "Please enter a valid email address.";
-    if (!phone) er.phone = "Please enter a valid phone number for the selected country.";
+    // An empty number gets our message; a typed-but-invalid one is explained by the phone field itself (shown after blur).
+    const numEl = document.getElementById("q-phone-number") as HTMLInputElement | null;
+    if (!phone) er.phone = numEl && numEl.value.trim() ? "invalid" : "Please enter a valid phone number for the selected country.";
     if (!v("service")) er.service = "Please choose a service.";
     if (v("message").length < 10) er.message = "Please tell us a little about the project.";
     setErrs(er);
     if (Object.keys(er).length) {
       const first = Object.keys(er)[0];
-      (first === "phone" ? document.getElementById("q-phone-number") : (e.currentTarget.elements.namedItem(first) as HTMLElement | null))?.focus();
+      if (first === "phone" && er.phone === "invalid") { numEl?.focus(); numEl?.blur(); numEl?.focus(); }
+      else (first === "phone" ? document.getElementById("q-phone-number") : (e.currentTarget.elements.namedItem(first) as HTMLElement | null))?.focus();
       return;
     }
     setDone(true);
@@ -47,7 +50,7 @@ export function HomeQuoteForm() {
       </div>
     );
   }
-  const err = (k: string) => errs[k] && <p id={`q-${k}-err`} className="text-red-700 text-sm mt-1.5">{errs[k]}</p>;
+  const err = (k: string) => errs[k] && errs[k] !== "invalid" && <p id={`q-${k}-err`} className="text-red-700 text-sm mt-1.5">{errs[k]}</p>;
   const bad = (k: string) => (errs[k] ? { "aria-invalid": true as const, "aria-describedby": `q-${k}-err` } : {});
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-5" aria-label="Request a quote">
