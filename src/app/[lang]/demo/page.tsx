@@ -10,6 +10,7 @@ const OPTIONS = [
     ["Option A: work first", "/en/demo/home-a", "Real work and the QWENCH video lead; services once, near the end."],
     ["Option B: guided", "/en/demo/home-b", "The hero asks what you need and changes one panel; proof strip below."],
     ["Option C: specialist doors", "/en/demo/home-c", "Three paths (local service, e-commerce and food, agencies) each with its own message."],
+    ["V1.5: hybrid (Version B)", "/en/demo/home-v15", "Option A's look with the live site's strongest parts: platforms, full services, industries, process, markets, blog and a quote form."],
   ] },
   { group: "Services page", items: [
     ["Option A: clean index", "/en/demo/services-a", "All 25 services in four groups, each with its own diagram."],
