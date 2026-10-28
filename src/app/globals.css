@@ -335,3 +335,11 @@ main h1, main h2, main h3 { overflow-wrap: anywhere; }
 /* Footer text links: at least 24px tall hit area (WCAG 2.2 AA) without changing the layout much */
 footer nav a { display: inline-block; padding-block: 4px; }
 footer a[aria-label*="Markit"], header a[aria-label*="Markit"] { display: inline-flex; min-height: 44px; align-items: center; }
+
+/* Services hub: slow idle float on the collage tiles (transform only; individual rotate/translate props still apply on hover). */
+@keyframes sv2-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .sv2-float { animation: sv2-float 7s ease-in-out infinite; }
+  .sv2-float-b { animation: sv2-float 9s ease-in-out -3s infinite; }
+  .sv2-float:hover, .sv2-float-b:hover, .sv2-float:focus-visible, .sv2-float-b:focus-visible { animation-play-state: paused; }
+}
