@@ -3226,5 +3226,61 @@
   "datePublishedStatus": "published 23 Oct 2026 (release date)",
   "planNotes": "Built from the live site on owner instruction (23 Oct 2026); scope widened by the owner the same day (social media, photography, AI photo enhancement, animation). See docs/seo/everest-snacks-proposal.md.",
   "today": "new page"
+ },
+ {
+  "slug": "inspection-management-platform",
+  "kind": "featured",
+  "name": "Inspection & Laboratory Management Platform",
+  "routeType": "static",
+  "industryLabel": "Food & agriculture inspection",
+  "servicesLabel": [
+   "Website development",
+   "CRM development",
+   "Laboratory software development"
+  ],
+  "serviceLinks": [
+   "/services/website-development",
+   "/services/website-development/custom-web-apps",
+   "/services/crm-development/custom-crm"
+  ],
+  "industryLinks": [
+   "/industries/professional-services"
+  ],
+  "locationLinks": [],
+  "related": [
+   "pur-health",
+   "minhaz-couture",
+   "everest-snacks",
+   "elite"
+  ],
+  "keywords": [
+   "Markit Media software development",
+   "laboratory software development",
+   "inspection management software",
+   "custom CRM development",
+   "food inspection software",
+   "custom web application development",
+   "inspection and laboratory management case study"
+  ],
+  "title": "Inspection & Lab Software by Markit Media | Case Study",
+  "h1": "Inspection and Laboratory Management Software, Designed and Built by Markit Media",
+  "metaDescription": "See the inspection and laboratory platform Markit Media designed, engineered and tested: reports, lab results, invoices and certificates.",
+  "planLocation": "Pakistan (demonstration configured for PKR and the Asia/Karachi time zone; no client location is claimed)",
+  "locationVerified": false,
+  "location": "Pakistan",
+  "locations": [
+   {
+    "country": "Pakistan"
+   }
+  ],
+  "locationEvidence": "The demonstration uses PKR and Asia/Karachi time by configuration only. There is no client, so no client location exists. Owner to decide whether to show a location at all.",
+  "planWebsite": null,
+  "website": null,
+  "websiteVerified": false,
+  "dateModified": "2026-10-29",
+  "datePublished": "2026-10-29",
+  "datePublishedStatus": "published 29 Oct 2026 on the owner's instruction (date of go-live)",
+  "planNotes": "Markit Media self-initiated working demonstration, fictional data, written from Markit Media's perspective. Draft export revised 29 Oct 2026; see README_IMPORT.md and EVIDENCE_AND_OPEN_QUESTIONS.md.",
+  "today": "new page"
  }
 ]

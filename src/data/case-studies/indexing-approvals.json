@@ -5,5 +5,6 @@
   "hubco": { "required": true, "approved": false, "reason": "attribution hold: owner must approve the HUBCO wording and the client relationship" },
   "markit-media": { "required": true, "approved": false, "reason": "posts use stills of film and TV characters: rights unconfirmed" },
   "ureb-digital-marketing": { "required": true, "approved": false, "reason": "meme posts use stills of film and TV characters: rights unconfirmed" },
-  "kemah-palms-recovery": { "required": true, "approved": true, "reason": "sensitive health client: owner permission to publish given 17 Oct 2026 and the page is already indexable" }
+  "kemah-palms-recovery": { "required": true, "approved": true, "reason": "sensitive health client: owner permission to publish given 17 Oct 2026 and the page is already indexable" },
+ "inspection-management-platform": { "required": true, "approved": true, "reason": "owner asked to make the case study live on 29 Oct 2026; it is framed as our own demonstration on fictional data" }
 }

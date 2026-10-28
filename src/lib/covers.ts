@@ -22,6 +22,7 @@ type Spec =
   | { img: string; alt: string; w: number; h: number; bg: string };
 
 const COVER_SPECS: Record<string, Spec> = {
+  "inspection-management-platform": { img: "/images/work/inspection-management-platform/cover.webp", alt: "Inspection platform dashboard with a work queue, key figures and a tonnage chart", w: 1440, h: 810, bg: "#161616" },
   meezotech: { client: "meezotech", pick: "board" },
   "minhaz-couture": { client: "minhaz-couture", pick: "board" },
   "pur-health": { client: "pur-health", pick: "board" },
@@ -39,6 +40,7 @@ const COVER_SPECS: Record<string, Spec> = {
 
 /** Display names used by existing case-study pages -> cover key. */
 const NAME_TO_KEY: Record<string, string> = {
+  "Inspection & Laboratory Management Platform": "inspection-management-platform",
   MeezoTech: "meezotech",
   NoorShad: "noorshad",
   Vuse: "vuse",
