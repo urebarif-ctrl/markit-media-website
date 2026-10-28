@@ -100,7 +100,8 @@ export const INDUSTRY_CASES: Record<string, string[]> = {
   ],
   "professional-services": [
     "ceha-halal",
-    "noorshad"
+    "noorshad",
+    "inspection-management-platform"
   ],
   "construction": [
     "cheap-hardware-store"
@@ -295,6 +296,10 @@ export const CASE_CARDS: Record<string, { n: string; l: string }> = {
   },
   "everest-snacks": {
     "n": "Everest Snacks",
+    "l": "Website development"
+  },
+  "inspection-management-platform": {
+    "n": "Inspection & Laboratory Management Platform",
     "l": "Website development"
   },
   "qwench-juice-bar": {
