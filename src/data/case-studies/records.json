@@ -3265,22 +3265,18 @@
   "title": "Inspection & Lab Software by Markit Media | Case Study",
   "h1": "Inspection and Laboratory Management Software, Designed and Built by Markit Media",
   "metaDescription": "See the inspection and laboratory platform Markit Media designed, engineered and tested: reports, lab results, invoices and certificates.",
-  "planLocation": "Pakistan (demonstration configured for PKR and the Asia/Karachi time zone; no client location is claimed)",
+  "planLocation": "-",
   "locationVerified": false,
-  "location": "Pakistan",
-  "locations": [
-   {
-    "country": "Pakistan"
-   }
-  ],
-  "locationEvidence": "The demonstration uses PKR and Asia/Karachi time by configuration only. There is no client, so no client location exists. Owner to decide whether to show a location at all.",
+  "location": null,
+  "locations": [],
+  "locationEvidence": "No client location is claimed.",
   "planWebsite": null,
   "website": null,
   "websiteVerified": false,
   "dateModified": "2026-10-29",
   "datePublished": "2026-10-29",
   "datePublishedStatus": "published 29 Oct 2026 on the owner's instruction (date of go-live)",
-  "planNotes": "Markit Media self-initiated working demonstration, fictional data, written from Markit Media's perspective. Draft export revised 29 Oct 2026; see README_IMPORT.md and EVIDENCE_AND_OPEN_QUESTIONS.md.",
+  "planNotes": "Markit Media-built platform; screens use sample data. Written from Markit Media's perspective; no client, deployment or result is claimed.",
   "today": "new page"
  }
 ]

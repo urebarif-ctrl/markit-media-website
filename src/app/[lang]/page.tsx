@@ -383,7 +383,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
                 <div className="text-black">
                   <p className="text-xs font-bold uppercase tracking-[0.18em] text-black/60">Software we built</p>
                   <h3 className={`${D} text-[clamp(2rem,4.4vw,3.2rem)] font-extrabold tracking-tight leading-[1.04] mt-3`}>Inspection &amp; lab management platform</h3>
-                  <p className="text-lg leading-relaxed mt-4 max-w-md text-black/80">One job record flows from inspector to laboratory to invoice to certificate, with eight roles and an audit trail. Our own working demonstration.</p>
+                  <p className="text-lg leading-relaxed mt-4 max-w-md text-black/80">One job record flows from inspector to laboratory to invoice to certificate, with eight roles and an audit trail.</p>
                   <span className="inline-flex items-center gap-2 mt-7 font-bold border-b border-black pb-1 min-h-11">View the case study <Arrow /></span>
                 </div>
               </div>
