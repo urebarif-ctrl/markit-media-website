@@ -343,3 +343,17 @@ footer a[aria-label*="Markit"], header a[aria-label*="Markit"] { display: inline
   .sv2-float-b { animation: sv2-float 9s ease-in-out -3s infinite; }
   .sv2-float:hover, .sv2-float-b:hover, .sv2-float:focus-visible, .sv2-float-b:focus-visible { animation-play-state: paused; }
 }
+
+/* Homepage V1.6 motion: logo rails, hero glow. Transform/opacity only; static and scrollable for reduced-motion users. */
+@keyframes hm-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes hm-glow { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(40px, -30px, 0) scale(1.12); } }
+.hm-rail { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.hm-track { display: flex; width: max-content; gap: 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  .hm-track { animation: hm-scroll var(--hm-speed, 55s) linear infinite; }
+  .hm-track.hm-rev { animation-direction: reverse; }
+  .hm-rail:hover .hm-track, .hm-rail:focus-within .hm-track { animation-play-state: paused; }
+  .hm-glow { animation: hm-glow 14s ease-in-out infinite; }
+  .hm-glow-b { animation: hm-glow 18s ease-in-out -6s infinite; }
+}
+@media (prefers-reduced-motion: reduce) { .hm-rail { overflow-x: auto; -webkit-mask-image: none; mask-image: none; } }
