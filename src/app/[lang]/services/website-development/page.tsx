@@ -63,7 +63,7 @@ export default function WebsiteDevelopmentPage() {
         { client: "Pur Health", desc: "Healthcare website focused on trust, clarity, and accessibility.", href: "/work/pur-health" },
         { client: "Minhaz Couture", desc: "Custom website for a fashion brand, with social media content.", href: "/work/minhaz-couture" },
         { client: "Everest Snacks", desc: "Five-page WordPress website for an energy bar brand, built alongside its blog articles, social media, photography, AI photo enhancement and animation.", href: "/work/everest-snacks" },
-        { client: "Inspection & Laboratory Management Platform", desc: "A four-module web platform for inspection reports, laboratory results, invoices and certificates, built as our own working demonstration on fictional data.", href: "/work/inspection-management-platform" },
+        { client: "Inspection & Laboratory Management Platform", desc: "A four-module web platform for inspection reports, laboratory results, invoices and certificates, designed and built by Markit Media.", href: "/work/inspection-management-platform" },
       ]}
       industries={[
         { title: "E-Commerce", href: "/industries/ecommerce" },
